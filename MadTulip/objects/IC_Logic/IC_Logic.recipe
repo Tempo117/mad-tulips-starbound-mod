@@ -1,6 +1,6 @@
 {
   "input" : [
-    { "item" : "polymer", "count" : 2 },
+    { "item" : "polymer_alternate", "count" : 2 },
     { "item" : "silicium", "count" : 1 },
 	{ "item" : "copperbar", "count" : 1 },
     { "item" : "money", "count" : 100 }

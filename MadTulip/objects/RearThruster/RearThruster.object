@@ -46,7 +46,7 @@
   "orientations" : [
     {
       "image" : "RearThruster.png:<color>.<frame>",
-      "imagePosition" : [-32, -32],
+      "imagePosition" : [-72, -32],
       "frames" : 4,
       "animationCycle" : 1.0,
 
@@ -58,7 +58,7 @@
   "engineOnOrientations" : [
     {
       "image" : "MadTulip/objects/RearThruster/RearThrusterON.png:<color>.<frame>",
-      "imagePosition" : [-32, -32],
+      "imagePosition" : [-72, -32],
       "frames" : 3,
       "animationCycle" : 0.3,
 
