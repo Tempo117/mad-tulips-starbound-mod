@@ -1,0 +1,10 @@
+{
+  "input" : [
+    { "item" : "cobblestonematerial", "count" : 1 }
+  ],
+  "output" : {
+    "item" : "techstation",
+    "count" : 1
+  },
+  "groups" : [ "shipstation", "all", "other" ]
+}
