@@ -1,0 +1,7 @@
+{
+  "itemName" : "Mainboard",
+  "rarity" : "common",
+  "inventoryIcon" : "Mainboard.png",
+  "description" : "A simple circuit board.",
+  "shortdescription" : "Mainboard"
+}

@@ -1,0 +1,7 @@
+{
+  "itemName" : "IC_Logic",
+  "rarity" : "common",
+  "inventoryIcon" : "IC_Logic.png",
+  "description" : "A simple logic integrated in a chip.",
+  "shortdescription" : "IC Logic"
+}
