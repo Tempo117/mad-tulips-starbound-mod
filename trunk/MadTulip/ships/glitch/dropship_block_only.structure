@@ -23,6 +23,26 @@
     },
 
     {
+      "value" : [23, 73, 143, 255],
+      "foregroundBlock" : false,
+      "backgroundBlock" : false,
+      "object" : "RearThruster",
+      "objectParameters" : {
+        "unbreakable" : false
+      }
+    },
+	
+    {
+      "value" : [0, 134, 202, 255],
+      "foregroundBlock" : false,
+      "backgroundBlock" : false,
+      "object" : "SmallThruster",
+      "objectParameters" : {
+        "unbreakable" : false
+      }
+    },
+	
+    {
       "value" : [0, 255, 0, 255],
       "foregroundBlock" : false,
       "backgroundBlock" : true,
@@ -55,6 +75,17 @@
       "objectParameters" : {
         "unbreakable" : false
       }
+    },
+	
+    {
+      "value" : [144, 255, 144, 255],
+      "foregroundBlock" : false,
+      "backgroundBlock" : true,
+	  "backgroundMat" : "glass",
+      "object" : "ShipNavigationConsole",
+      "objectParameters" : {
+        "unbreakable" : false
+      }
     },	
 
     {
@@ -73,6 +104,14 @@
       "foregroundBlock" : false,
       "backgroundBlock" : true,
       "backgroundMat" : "apexshipdetails",
+      "object" : "apexshiplight"
+    },
+	
+    {
+      "value" : [255, 255, 130, 255],
+      "foregroundBlock" : false,
+      "backgroundBlock" : true,
+      "backgroundMat" : "glass",
       "object" : "apexshiplight"
     },
 

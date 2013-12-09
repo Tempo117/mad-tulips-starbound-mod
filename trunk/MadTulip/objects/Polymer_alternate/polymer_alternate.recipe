@@ -1,0 +1,12 @@
+{
+  "input" : [
+    { "item" : "alienmeat", "count" : 2 },
+    { "item" : "copperore", "count" : 2 },
+    { "item" : "coalore", "count" : 2 }
+  ],
+  "output" : {
+    "item" : "polymer_alternate",
+    "count" : 1
+  },
+  "groups" : [ "shipstation", "all", "other" ]
+}
