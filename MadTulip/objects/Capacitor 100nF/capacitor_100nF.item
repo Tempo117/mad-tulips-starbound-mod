@@ -1,0 +1,7 @@
+{
+  "itemName" : "capacitor_100nF",
+  "rarity" : "common",
+  "inventoryIcon" : "capacitor_100nF.png",
+  "description" : "A common capacitor type.",
+  "shortdescription" : "Capacitor 100nF"
+}

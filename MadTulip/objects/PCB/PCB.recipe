@@ -1,0 +1,12 @@
+{
+  "input" : [
+    { "item" : "polymer", "count" : 4 },
+    { "item" : "copperbar", "count" : 2 },
+    { "item" : "money", "count" : 50 }
+  ],
+  "output" : {
+    "item" : "PCB",
+    "count" : 1
+  },
+  "groups" : [ "shipstation", "all" ]
+}

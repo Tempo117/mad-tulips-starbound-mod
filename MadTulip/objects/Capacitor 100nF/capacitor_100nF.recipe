@@ -1,0 +1,12 @@
+{
+  "input" : [
+    { "item" : "copperbar", "count" : 1 },
+	{ "item" : "sand", "count" : 1 },
+    { "item" : "money", "count" : 25 }
+  ],
+  "output" : {
+    "item" : "capacitor_100nF",
+    "count" : 10
+  },
+  "groups" : [ "shipstation", "all" ]
+}

@@ -1,0 +1,12 @@
+{
+  "input" : [
+    { "item" : "polymer", "count" : 3 },
+    { "item" : "steelbar", "count" : 7 },
+	{ "item" : "money", "count" : 175 }
+  ],
+  "output" : {
+    "item" : "SmallThruster",
+    "count" : 1
+  },
+  "groups" : [ "shipstation", "all", "other" ]
+}
