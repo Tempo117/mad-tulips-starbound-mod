@@ -1,0 +1,38 @@
+{
+  "objectName" : "shipstation",
+  "rarity" : "Common",
+
+  "objectType" : "interactable",
+  "interactAction" : "OpenCraftingInterface",
+  "interactData" : {
+    "config" : "/MadTulip/objects/shipstation/shipstation.config",
+    "filter" : [ "shipstation" ]
+  },
+  "printable" : false,
+  "description" : "A ship station. For building ship parts!",
+  "shortdescription" : "Ship Station",
+  "race" : "generic",
+  "category" : "crafting",
+  "price" : "200",
+
+  "apexDescription" : "A ship station. Useful.",
+  "avianDescription" : "I can use this ship station to make things.",
+  "floranDescription" : "Floran create magic bang bangs!",
+  "glitchDescription" : "Admiration. An extremely advanced ship station.",
+  "humanDescription" : "A ship station. I can create awesome stuff here!",
+  "hylotlDescription" : "This ship station looks decent enough.",
+
+  "inventoryIcon" : "shipstation_inv.png",
+  "orientations" : [
+    {
+      "dualImage" : "shipstation.png:<color>.<frame>",
+      "imagePosition" : [-16, -8],
+      "frames" : 8,
+      "animationCycle" : 1.0,
+
+      "spaceScan" : 0.1,
+      "anchors" : [ "background" ]
+
+    }
+  ]
+}
