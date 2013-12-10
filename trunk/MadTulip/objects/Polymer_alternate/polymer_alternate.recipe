@@ -1,8 +1,8 @@
 {
   "input" : [
-    { "item" : "alienmeat", "count" : 2 },
-    { "item" : "copperore", "count" : 2 },
-    { "item" : "coalore", "count" : 2 }
+    { "item" : "alienmeat", "count" : 1 },
+    { "item" : "copperore", "count" : 1 },
+    { "item" : "coalore", "count" : 1 }
   ],
   "output" : {
     "item" : "polymer_alternate",

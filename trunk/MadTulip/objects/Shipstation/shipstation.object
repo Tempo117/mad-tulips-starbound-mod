@@ -34,5 +34,28 @@
       "anchors" : [ "background" ]
 
     }
+  ],
+  
+  "learnBlueprintsOnPickup" : [
+	"polymer_alternate",
+	"apexcaptainschair",
+	"apexfuelhatch",
+	"apexshipdetails",
+	"apexshiplight",
+	"apexshiplocker",
+	"apexshipsupport",
+	"apexshipwall",
+	"RearThruster",
+	"shipstation",
+	"silicium",
+	"ShipNavigationConsole",
+	"SmallThruster",
+	"techstation",
+	"teleporter",
+	"capacitor_100nF",
+	"IC_Logic",
+	"Mainboard",
+	"PCB",
+	"resistor_4k7"
   ]
 }

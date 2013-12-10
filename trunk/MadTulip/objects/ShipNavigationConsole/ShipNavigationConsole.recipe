@@ -1,8 +1,8 @@
 {
   "input" : [
-    { "item" : "polymer_alternate", "count" : 4 },
+    { "item" : "polymer_alternate", "count" : 3 },
     { "item" : "steelbar", "count" : 2 },
-	{ "item" : "money", "count" : 300 }
+	{ "item" : "money", "count" : 150 }
   ],
   "output" : {
     "item" : "ShipNavigationConsole",

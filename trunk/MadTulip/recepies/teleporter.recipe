@@ -2,8 +2,8 @@
   "input" : [
     { "item" : "polymer_alternate", "count" : 5 },
     { "item" : "steelbar", "count" : 10 },
-	{ "item" : "diamond", "count" : 5 },
-	{ "item" : "money", "count" : 750 }
+	{ "item" : "diamond", "count" : 1 },
+	{ "item" : "money", "count" : 500 }
   ],
   "output" : {
     "item" : "teleporter",

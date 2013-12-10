@@ -1,11 +1,10 @@
 {
   "input" : [
-    { "item" : "steelbar", "count" : 1 },
-	{ "item" : "money", "count" : 5 }
+    { "item" : "steelbar", "count" : 1 }
   ],
   "output" : {
     "item" : "apexshipsupport",
-    "count" : 1
+    "count" : 2
   },
   "groups" : [ "shipstation", "all", "other" ]
 }
