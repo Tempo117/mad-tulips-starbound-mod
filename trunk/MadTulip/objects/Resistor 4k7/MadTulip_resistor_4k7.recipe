@@ -1,0 +1,11 @@
+{
+  "input" : [
+    { "item" : "copperbar", "count" : 1 },
+	{ "item" : "coalore", "count" : 1 }
+  ],
+  "output" : {
+    "item" : "MadTulip_resistor_4k7",
+    "count" : 10
+  },
+  "groups" : [ "MadTulip_Shipstation", "all" ]
+}

@@ -1,0 +1,12 @@
+{
+  "input" : [
+    { "item" : "MadTulip_polymer", "count" : 2 },
+    { "item" : "steelbar", "count" : 2 },
+	{ "item" : "money", "count" : 100 }
+  ],
+  "output" : {
+    "item" : "MadTulip_ShipNavigationConsole",
+    "count" : 1
+  },
+  "groups" : [ "MadTulip_Shipstation", "all", "other" ]
+}

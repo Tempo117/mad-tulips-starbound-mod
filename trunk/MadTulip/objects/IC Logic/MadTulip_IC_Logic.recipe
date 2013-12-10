@@ -1,0 +1,13 @@
+{
+  "input" : [
+    { "item" : "MadTulip_polymer", "count" : 2 },
+    { "item" : "MadTulip_Silicium", "count" : 1 },
+	{ "item" : "copperbar", "count" : 1 },
+    { "item" : "money", "count" : 50 }
+  ],
+  "output" : {
+    "item" : "MadTulip_IC_Logic",
+    "count" : 5
+  },
+  "groups" : [ "MadTulip_Shipstation", "all" ]
+}
