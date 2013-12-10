@@ -1,7 +1,7 @@
 {
   "input" : [
     { "item" : "tier2chair", "count" : 1 },
-    { "item" : "steelbar", "count" : 5 },
+    { "item" : "steelbar", "count" : 2 },
 	{ "item" : "fabric", "count" : 5 },
 	{ "item" : "polymer_alternate", "count" : 2 },
 	{ "item" : "money", "count" : 200 }

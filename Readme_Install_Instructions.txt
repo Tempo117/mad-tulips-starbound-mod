@@ -5,14 +5,13 @@ This mod will replace youre spaceship with a custom one which is modable block b
 ----------------------
 - close Starbound.
 - backup "/Starbound/player/" to "/Starbound/player_backup".
-- backup "/Starbound/assets/player.config".
 - backup "/Starbound/assets/universe_server.config".
 - delete content of "/Starbound/player/".
 - copy "MadTulip/" directory into "/Starbound/assets" creating "/Starbound/assets/MadTulip".
-- copy "player.config" file into "/Starbound/assets" overwriting "/Starbound/assets/player.config".
 - copy "universe_server.config" file into "/Starbound/assets" overwriting "/Starbound/assets/universe_server.config".
 - start Starbound.
 - create a NEW CHARACTER.
+- there is a new computer on youre shipwall, the ship station. it is used to craft ship components. you need to remove it from the wall, pick it up and place it on the wall again to unlock its recipies once. (this is a worksaround so i dont have to edit some more official files to get you the recipies)
 
 -------------------------------
 2) Importing pre-mod character:

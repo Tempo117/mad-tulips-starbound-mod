@@ -1,11 +1,10 @@
 {
   "input" : [
-    { "item" : "sand", "count" : 3 },
-    { "item" : "money", "count" : 75 }
+    { "item" : "glassmaterial", "count" : 3 }
   ],
   "output" : {
     "item" : "silicium",
     "count" : 1
   },
-  "groups" : [ "shipstation", "all" ]
+  "groups" : [ "stonefurnace", "all" ]
 }

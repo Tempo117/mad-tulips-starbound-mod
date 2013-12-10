@@ -3,8 +3,7 @@
     { "item" : "PCB", "count" : 1 },
 	{ "item" : "IC_Logic", "count" : 2 },
 	{ "item" : "resistor_4k7", "count" : 10 },
-	{ "item" : "capacitor_100nF", "count" : 5 },
-    { "item" : "money", "count" : 50 }
+	{ "item" : "capacitor_100nF", "count" : 5 }
   ],
   "output" : {
     "item" : "Mainboard",

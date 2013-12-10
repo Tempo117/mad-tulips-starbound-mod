@@ -1,8 +1,8 @@
 {
   "input" : [
-    { "item" : "polymer_alternate", "count" : 5 },
-    { "item" : "steelbar", "count" : 10 },
-	{ "item" : "money", "count" : 350 }
+    { "item" : "polymer_alternate", "count" : 3 },
+    { "item" : "steelbar", "count" : 6 },
+	{ "item" : "money", "count" : 250 }
   ],
   "output" : {
     "item" : "RearThruster",
