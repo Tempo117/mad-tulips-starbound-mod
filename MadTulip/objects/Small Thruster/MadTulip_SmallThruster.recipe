@@ -2,10 +2,10 @@
   "input" : [
     { "item" : "MadTulip_polymer", "count" : 3 },
     { "item" : "steelbar", "count" : 5 },
-	{ "item" : "money", "count" : 400 }
+	{ "item" : "money", "count" : 200 }
   ],
   "output" : {
-    "item" : "techstation",
+    "item" : "MadTulip_SmallThruster",
     "count" : 1
   },
   "groups" : [ "MadTulip_Shipstation", "all", "other" ]

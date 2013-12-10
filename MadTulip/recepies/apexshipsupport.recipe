@@ -4,7 +4,7 @@
   ],
   "output" : {
     "item" : "apexshipsupport",
-    "count" : 2
+    "count" : 1
   },
-  "groups" : [ "shipstation", "all", "other" ]
+  "groups" : [ "MadTulip_Shipstation", "all", "other" ]
 }

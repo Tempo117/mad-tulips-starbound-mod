@@ -1,7 +1,0 @@
-{
-  "itemName" : "resistor_4k7",
-  "rarity" : "common",
-  "inventoryIcon" : "resistor_4k7.png",
-  "description" : "A commong resistor type.",
-  "shortdescription" : "Resistor 4k7"
-}
