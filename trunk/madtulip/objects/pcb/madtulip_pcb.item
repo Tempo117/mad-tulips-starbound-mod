@@ -1,0 +1,7 @@
+{
+  "itemName" : "madtulip_pcb",
+  "rarity" : "common",
+  "inventoryIcon" : "madtulip_pcb.png",
+  "description" : "A small printed circuit board.",
+  "shortdescription" : "PCB"
+}

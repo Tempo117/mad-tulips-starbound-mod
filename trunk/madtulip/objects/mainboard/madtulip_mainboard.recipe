@@ -1,0 +1,13 @@
+{
+  "input" : [
+    { "item" : "madtulip_pcb", "count" : 1 },
+	{ "item" : "madtulip_ic_logic", "count" : 2 },
+	{ "item" : "madtulip_resistor_4k7", "count" : 10 },
+	{ "item" : "madtulip_capacitor_100nf", "count" : 6 }
+  ],
+  "output" : {
+    "item" : "madtulip_mainboard",
+    "count" : 1
+  },
+  "groups" : [ "madtulip_shipstation", "all" ]
+}
