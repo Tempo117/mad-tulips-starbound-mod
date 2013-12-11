@@ -1,7 +1,7 @@
 {
-  "itemName" : "MadTulip_resistor_4k7",
+  "itemName" : "madtulip_resistor_4k7",
   "rarity" : "common",
-  "inventoryIcon" : "MadTulip_resistor_4k7.png",
+  "inventoryIcon" : "madtulip_resistor_4k7.png",
   "description" : "A commong resistor type.",
   "shortdescription" : "Resistor 4k7"
 }

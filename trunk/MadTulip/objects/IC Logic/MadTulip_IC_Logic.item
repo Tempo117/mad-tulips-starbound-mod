@@ -1,7 +1,7 @@
 {
-  "itemName" : "MadTulip_IC_Logic",
+  "itemName" : "madtulip_ic_logic",
   "rarity" : "common",
-  "inventoryIcon" : "MadTulip_IC_Logic.png",
+  "inventoryIcon" : "madtulip_ic_logic.png",
   "description" : "A simple logic integrated in a chip.",
   "shortdescription" : "IC Logic"
 }

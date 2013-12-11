@@ -4,8 +4,8 @@
     { "item" : "money", "count" : 25 }
   ],
   "output" : {
-    "item" : "MadTulip_Silicium",
+    "item" : "madtulip_silicium",
     "count" : 1
   },
-  "groups" : [ "MadTulip_Shipstation", "all" ]
+  "groups" : [ "madtulip_shipstation", "all" ]
 }

@@ -3,12 +3,12 @@
     { "item" : "tier2chair", "count" : 1 },
     { "item" : "steelbar", "count" : 5 },
 	{ "item" : "fabric", "count" : 5 },
-	{ "item" : "MadTulip_polymer", "count" : 2 },
+	{ "item" : "madtulip_polymer", "count" : 2 },
 	{ "item" : "money", "count" : 200 }
   ],
   "output" : {
     "item" : "apexcaptainschair",
     "count" : 1
   },
-  "groups" : [ "MadTulip_Shipstation", "all", "other" ]
+  "groups" : [ "madtulip_shipstation", "all", "other" ]
 }

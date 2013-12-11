@@ -5,8 +5,8 @@
     { "item" : "coalore", "count" : 1 }
   ],
   "output" : {
-    "item" : "MadTulip_polymer",
+    "item" : "madtulip_polymer",
     "count" : 1
   },
-  "groups" : [ "MadTulip_Shipstation", "all", "other" ]
+  "groups" : [ "madtulip_shipstation", "all", "other" ]
 }

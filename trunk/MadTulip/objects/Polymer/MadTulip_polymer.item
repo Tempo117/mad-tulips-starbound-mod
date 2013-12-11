@@ -1,7 +1,7 @@
 {
-  "itemName" : "MadTulip_polymer",
+  "itemName" : "madtulip_polymer",
   "rarity" : "common",
-  "inventoryIcon" : "MadTulip_polymer.png",
+  "inventoryIcon" : "madtulip_polymer.png",
   "description" : "Longer and shorter polymeres.",
   "shortdescription" : "Polymeres"
 }

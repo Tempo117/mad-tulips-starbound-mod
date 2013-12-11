@@ -1,7 +1,7 @@
 {
-  "itemName" : "MadTulip_Mainboard",
+  "itemName" : "madtulip_mainboard",
   "rarity" : "common",
-  "inventoryIcon" : "MadTulip_Mainboard.png",
+  "inventoryIcon" : "madtulip_mainboard.png",
   "description" : "A simple circuit board.",
   "shortdescription" : "Mainboard"
 }

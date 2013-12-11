@@ -6,5 +6,5 @@
     "item" : "apexshipwall",
     "count" : 1
   },
-  "groups" : [ "MadTulip_Shipstation", "all", "other" ]
+  "groups" : [ "madtulip_shipstation", "all", "other" ]
 }

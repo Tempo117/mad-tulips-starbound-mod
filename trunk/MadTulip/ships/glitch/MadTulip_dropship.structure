@@ -26,7 +26,7 @@
       "value" : [23, 73, 143, 255],
       "foregroundBlock" : false,
       "backgroundBlock" : false,
-      "object" : "MadTulip_RearThruster",
+      "object" : "madtulip_rear_thruster",
       "objectParameters" : {
         "unbreakable" : false
       }
@@ -36,7 +36,7 @@
       "value" : [0, 134, 202, 255],
       "foregroundBlock" : false,
       "backgroundBlock" : false,
-      "object" : "MadTulip_SmallThruster",
+      "object" : "madtulip_small_thruster",
       "objectParameters" : {
         "unbreakable" : false
       }
@@ -71,7 +71,7 @@
       "foregroundBlock" : false,
       "backgroundBlock" : true,
       "backgroundMat" : "apexshipwall",
-      "object" : "MadTulip_Shipstation",
+      "object" : "madtulip_shipstation",
       "objectParameters" : {
         "unbreakable" : false
       }
@@ -82,7 +82,7 @@
       "foregroundBlock" : false,
       "backgroundBlock" : true,
 	  "backgroundMat" : "glass",
-      "object" : "MadTulip_ShipNavigationConsole",
+      "object" : "madtulip_shipnavigationconsole",
       "objectParameters" : {
         "unbreakable" : false
       }
@@ -202,5 +202,5 @@
     }
   ],
 
-  "blockImage" : "MadTulip_dropshipblocks.png"
+  "blockImage" : "madtulip_dropshipblocks.png"
 }

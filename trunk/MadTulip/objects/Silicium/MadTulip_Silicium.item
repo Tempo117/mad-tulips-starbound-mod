@@ -1,7 +1,7 @@
 {
-  "itemName" : "MadTulip_Silicium",
+  "itemName" : "madtulip_silicium",
   "rarity" : "common",
-  "inventoryIcon" : "MadTulip_Silicium.png",
-  "description" : "A small MadTulip_Silicium waver.",
+  "inventoryIcon" : "madtulip_silicium.png",
+  "description" : "A small silicium waver.",
   "shortdescription" : "Silicium Waver"
 }
