@@ -18,7 +18,7 @@ This mod will replace youre spaceship with a custom one which is modable block b
 2) Importing pre-mod character:
 -------------------------------
 - close starbound.
-- Copy the 2 files "<somelongercode>.shipworld" and "<somelongercode>.shipworld" (do not copy "<somelongercode>.shipworld") from your "Starbound/player_backup/" to "Starbound/player/"
+- Copy the 2 files "<somelongercode>.metadata" and "<somelongercode>.player" (do not copy "<somelongercode>.shipworld") from your "Starbound/player_backup/" to "Starbound/player/"
 - start starbound.
 - log in with the character. starbound will search for the "<somelongercode>" in "Starbound/player/" and will not find it -> it will create a new default one from the "Starbound/assets/MadTulip/" directory, the new modded one.
 - if you do not remove the old /Starbound/player/"<somelongercode>.shipworld" stored version of the old ship this will interfere with the new version of it and lead to a crash.
