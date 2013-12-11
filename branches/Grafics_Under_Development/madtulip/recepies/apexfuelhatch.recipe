@@ -1,0 +1,12 @@
+{
+  "input" : [
+    { "item" : "madtulip_polymer", "count" : 5 },
+    { "item" : "steelbar", "count" : 3 },
+	{ "item" : "money", "count" : 300 }
+  ],
+  "output" : {
+    "item" : "apexfuelhatch",
+    "count" : 1
+  },
+  "groups" : [ "madtulip_shipstation", "all", "other" ]
+}
