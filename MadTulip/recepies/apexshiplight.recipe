@@ -1,6 +1,6 @@
 {
   "input" : [
-    { "item" : "MadTulip_polymer", "count" : 1 },
+    { "item" : "madtulip_polymer", "count" : 1 },
     { "item" : "steelbar", "count" : 1 },
 	{ "item" : "tier2light", "count" : 1 }
   ],
@@ -8,5 +8,5 @@
     "item" : "apexshiplight",
     "count" : 1
   },
-  "groups" : [ "MadTulip_Shipstation", "all", "other" ]
+  "groups" : [ "madtulip_shipstation", "all", "other" ]
 }

@@ -1,7 +1,7 @@
 {
-  "itemName" : "MadTulip_capacitor_100nF",
+  "itemName" : "madtulip_capacitor_100nf",
   "rarity" : "common",
-  "inventoryIcon" : "MadTulip_capacitor_100nF.png",
+  "inventoryIcon" : "madtulip_capacitor_100nf.png",
   "description" : "A common capacitor type.",
   "shortdescription" : "Capacitor 100nF"
 }

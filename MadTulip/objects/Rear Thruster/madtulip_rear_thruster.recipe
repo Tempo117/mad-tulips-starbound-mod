@@ -1,11 +1,11 @@
 {
   "input" : [
-    { "item" : "madtulip_polymer", "count" : 5 },
-    { "item" : "steelbar", "count" : 3 },
+    { "item" : "madtulip_polymer", "count" : 4 },
+    { "item" : "steelbar", "count" : 8 },
 	{ "item" : "money", "count" : 300 }
   ],
   "output" : {
-    "item" : "apexfuelhatch",
+    "item" : "madtulip_rear_thruster",
     "count" : 1
   },
   "groups" : [ "madtulip_shipstation", "all", "other" ]

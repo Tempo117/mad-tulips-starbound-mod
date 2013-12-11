@@ -4,8 +4,8 @@
 	{ "item" : "coalore", "count" : 1 }
   ],
   "output" : {
-    "item" : "MadTulip_resistor_4k7",
+    "item" : "madtulip_resistor_4k7",
     "count" : 10
   },
-  "groups" : [ "MadTulip_Shipstation", "all" ]
+  "groups" : [ "madtulip_shipstation", "all" ]
 }
