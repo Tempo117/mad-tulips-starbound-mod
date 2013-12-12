@@ -10,10 +10,12 @@
   "inventoryIcon" : "madtulip_human_top_fin_weapon_icon.png",
   "orientations" : [
     {
-      "dualImage" : "madtulip_human_top_fin_weapon.png:<color>.<frame>",
+      "image" : "madtulip_human_top_fin_weapon.png:<color>.<frame>",
       "imagePosition" : [-80,-52],
-      "frames" : 1,
-      "animationCycle" : 1.0,
+      "frames" : 3,
+      "animationCycle" : 0.3,
+	  
+	  "spaces" : [[0, 1], [0, 0], [0, -1]],
       "spaceScan" : 0.1,
       "anchors" : [ "bottom" ]
     }
