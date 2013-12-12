@@ -1,7 +1,7 @@
 {
   "input" : [
-    { "item" : "steelbar", "count" : 1 },
-	{ "item" : "money", "count" : 10 }
+    { "item" : "steelbar", "count" : 3 },
+	{ "item" : "money", "count" : 25 }
   ],
   "output" : {
     "item" : "madtulip_human_top_misc_deco",

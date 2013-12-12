@@ -2,7 +2,7 @@
   "objectName" : "madtulip_human_back_thruster",
   "rarity" : "Common",
   "description" : "A back thruster for a human spaceship.",
-  "shortdescription" : "Back Thruster",
+  "shortdescription" : "Human Back Thruster",
   "race" : "generic",
   "category" : "decorative",
   "price" : "10",

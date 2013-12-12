@@ -1,7 +1,8 @@
 {
   "input" : [
-    { "item" : "steelbar", "count" : 1 },
-	{ "item" : "money", "count" : 10 }
+    { "item" : "madtulip_polymer", "count" : 4 },
+    { "item" : "steelbar", "count" : 8 },
+	{ "item" : "money", "count" : 300 }
   ],
   "output" : {
     "item" : "madtulip_human_back_thruster",
