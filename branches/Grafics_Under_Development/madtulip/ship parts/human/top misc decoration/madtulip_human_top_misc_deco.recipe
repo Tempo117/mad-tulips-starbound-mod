@@ -1,0 +1,11 @@
+{
+  "input" : [
+    { "item" : "steelbar", "count" : 1 },
+	{ "item" : "money", "count" : 10 }
+  ],
+  "output" : {
+    "item" : "madtulip_human_top_misc_deco",
+    "count" : 1
+  },
+  "groups" : [ "madtulip_shipstation", "all", "other" ]
+}
