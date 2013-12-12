@@ -11,7 +11,7 @@
   "orientations" : [
     {
       "image" : "madtulip_human_top_fin_weapon.png:<color>.<frame>",
-      "imagePosition" : [-80,-52],
+      "imagePosition" : [-80,-48],
       "frames" : 3,
       "animationCycle" : 0.3,
       "spaceScan" : 0.1,
