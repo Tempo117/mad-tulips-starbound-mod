@@ -1,0 +1,217 @@
+{
+  "config" : {
+    "fuelMax" : 1000
+  },
+
+  "blockKey" : [
+    {
+      "value" : [255, 255, 255, 255],
+      "foregroundBlock" : false,
+      "backgroundBlock" : false
+    },
+
+    {
+      "value" : [0, 0, 255, 255],
+      "foregroundBlock" : false,
+      "backgroundBlock" : true
+    },
+
+    {
+      "value" : [255, 0, 0, 255],
+      "foregroundBlock" : true,
+      "backgroundBlock" : true
+    },
+
+    {
+      "value" : [23, 73, 143, 255],
+      "foregroundBlock" : false,
+      "backgroundBlock" : false,
+      "object" : "madtulip_glitch_back_thruster",
+      "objectParameters" : {
+        "unbreakable" : false
+      }
+    },
+	
+    {
+      "value" : [0, 134, 202, 255],
+      "foregroundBlock" : false,
+      "backgroundBlock" : false,
+      "object" : "madtulip_glitch_bottom_thruster",
+      "objectParameters" : {
+        "unbreakable" : false
+      }
+    },
+	
+    {
+      "value" : [0, 255, 0, 255],
+      "foregroundBlock" : false,
+      "backgroundBlock" : true,
+      "backgroundMat" : "apexshipwall",
+      "object" : "apexshiplocker",
+      "objectParameters" : {
+        "treasurePools" : [ "floranStarterTreasure" ],
+        "level" : 1,
+        "unbreakable" : false
+      }
+    },
+
+    {
+      "value" : [142, 255, 142, 255],
+      "foregroundBlock" : false,
+      "backgroundBlock" : true,
+      "backgroundMat" : "apexshipwall",
+      "object" : "techstation",
+      "objectParameters" : {
+        "unbreakable" : false
+      }
+    },
+	
+    {
+      "value" : [143, 255, 143, 255],
+      "foregroundBlock" : false,
+      "backgroundBlock" : true,
+      "backgroundMat" : "apexshipwall",
+      "object" : "madtulip_shipstation",
+      "objectParameters" : {
+        "unbreakable" : false
+      }
+    },
+	
+    {
+      "value" : [144, 255, 144, 255],
+      "foregroundBlock" : false,
+      "backgroundBlock" : true,
+	  "backgroundMat" : "glass",
+      "object" : "madtulip_shipnavigationconsole",
+      "objectParameters" : {
+        "unbreakable" : false
+      }
+    },
+	
+    {
+      "value" : [145, 255, 145, 255],
+      "foregroundBlock" : false,
+      "backgroundBlock" : true,
+	  "backgroundMat" : "apexshipdetails",
+      "object" : "madtulip_shipstationmanual",
+      "objectParameters" : {
+        "unbreakable" : false
+      }
+    },
+
+    {
+      "value" : [255, 87, 81, 255],
+      "foregroundBlock" : false,
+      "backgroundBlock" : true,
+	  "backgroundMat" : "apexshipwall",
+      "object" : "apexfuelhatch",
+      "objectParameters" : {
+        "unbreakable" : false
+      }
+    },
+
+    {
+      "value" : [255, 255, 0, 255],
+      "foregroundBlock" : false,
+      "backgroundBlock" : true,
+      "backgroundMat" : "apexshipdetails",
+      "object" : "apexshiplight"
+    },
+	
+    {
+      "value" : [255, 255, 130, 255],
+      "foregroundBlock" : false,
+      "backgroundBlock" : true,
+      "backgroundMat" : "glass",
+      "object" : "apexshiplight"
+    },
+
+    {
+      "value" : [255, 102, 0, 255],
+      "foregroundBlock" : false,
+      "backgroundBlock" : true,
+      "object" : "apexshipdoor",
+	  "backgroundMat" : "apexshipdetails"
+    },
+
+    {
+      "value" : [174, 137, 81, 255],
+      "foregroundBlock" : false,
+      "backgroundBlock" : true,
+      "object" : "shipengine",
+      "objectParameters" : {
+        "unbreakable" : true
+      }
+    },
+
+    {
+      "value" : [156, 0, 255, 255],
+      "foregroundBlock" : false,
+      "backgroundBlock" : true,
+      "backgroundMat" : "apexshipdetails",
+      "object" : "teleporter",
+      "flags" : [ "playerSpawn" ],
+      "objectParameters" : {
+        "unbreakable" : false
+      }
+    },
+
+    {
+      "value" : [0, 255, 255, 255],
+      "foregroundBlock" : false,
+      "backgroundBlock" : true,
+	  "backgroundMat" : "apexshipwall",
+      "object" : "apexcaptainschair",
+      "objectDirection" : "left",
+      "objectParameters" : {
+        "unbreakable" : false
+      }
+    },
+
+    {
+      "value" : [255, 255, 144],
+      "foregroundBlock" : false,
+      "backgroundBlock" : true,
+      "backgroundMat" : "apexshipwall"
+    },
+
+    {
+      "value" : [255, 117, 144],
+      "foregroundBlock" : false,
+      "backgroundBlock" : true,
+      "backgroundMat" : "apexshipdetails"
+    },
+
+    {
+      "value" : [255, 117, 255],
+      "foregroundBlock" : false,
+      "backgroundBlock" : true,
+      "backgroundMat" : "apexshipsupport"
+    },
+	
+    {
+      "value" : [0, 187, 211],
+      "foregroundBlock" : true,
+      "backgroundBlock" : true,
+      "foregroundMat" : "glass",
+	  "backgroundMat" : "glass"
+    },
+	
+    {
+      "value" : [0, 142, 200],
+      "foregroundBlock" : false,
+      "backgroundBlock" : true,
+	  "backgroundMat" : "glass"
+    },	
+	
+    {
+      "value" : [100, 255, 100],
+      "foregroundBlock" : true,
+      "backgroundBlock" : true,
+      "foregroundMat" : "apexshipdetails",
+	  "backgroundMat" : "apexshipdetails"
+    }
+  ],
+
+  "blockImage" : "madtulip_dropshipblocks.png"
+}
