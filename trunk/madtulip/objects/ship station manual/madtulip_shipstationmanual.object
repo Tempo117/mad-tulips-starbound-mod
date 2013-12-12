@@ -1,0 +1,43 @@
+{
+	"objectName" : "madtulip_shipstationmanual",
+	"rarity" : "Common",
+	"description" : "A manual for the Ship Station",
+	"shortdescription" : "Ship Station Manual",
+	"race" : "generic",
+	"category" : "decorative",
+	"price" : "200",
+	"inventoryIcon" : "madtulip_shipstationmanual_inv.png",
+	"orientations" : [
+		{
+			"dualImage" : "madtulip_shipstationmanual.png:<color>.<frame>",
+			"imagePosition" : [0,0],
+			"frames" : 1,
+			"animationCycle" : 1.0,
+			"spaceScan" : 0.1,
+			"anchors" : [ "bottom" ]
+		}
+	],
+	"learnBlueprintsOnPickup" : [
+		"apexcaptainschair",
+		"apexfuelhatch",
+		"apexshipdetails",
+		"apexshiplight",
+		"apexshiplocker",
+		"apexshipsupport",
+		"apexshipwall",
+		"techstation",
+		"teleporter",
+		"madtulip_shipstation",		
+		"madtulip_shipnavigationconsole",
+		"madtulip_polymer",		
+		"madtulip_capacitor_100nf",
+		"madtulip_ic_logic",
+		"madtulip_mainboard",
+		"madtulip_pcb",
+		"madtulip_resistor_4k7",
+		"madtulip_silicium",
+		"madtulip_glitch_back_thruster",
+		"madtulip_glitch_bottom_thruster"	
+	]
+
+}

@@ -1,10 +1,11 @@
 {
-  "objectName" : "madtulip_rearthruster",
+  "objectName" : "madtulip_glitch_bottom_thruster",
   "rarity" : "Common",
   "objectType" : "engine",
   "description" : "I wonder how quickly that would cook a burger.",
-  "shortdescription" : "Rear Thruster",
+  "shortdescription" : "Small Thruster",
   "race" : "generic",
+  "price" : "10",
 
   "apexDescription" : "A booster. These have been known to malfunction and explode.",
   "avianDescription" : "A booster, the wings of a ship.",
@@ -42,28 +43,28 @@
     }
   },
 
-  "inventoryIcon" : "madtulip_rearthruster_icon.png",
+  "inventoryIcon" : "madtulip_glitch_bottom_thruster_icon.png",
   "orientations" : [
     {
-      "image" : "madtulip_rearthruster.png:<color>.<frame>",
-      "imagePosition" : [-72, -32],
-      "frames" : 4,
-      "animationCycle" : 1.0,
+      "image" : "madtulip_glitch_bottom_thruster.png:<color>.<frame>",
+      "imagePosition" : [-40, -16],
+      "frames" : 3,
+      "animationCycle" : 0.4,
 
-      "spaces" : [ [-3, 2], [-3, 1], [-3, 0], [-3, -1], [-3, -2], [-3, -3], [-2, 2], [-2, 1], [-2, 0], [-2, -1], [-2, -2], [-2, -3], [-1, 2], [-1, 1], [-1, 0], [-1, -1], [-1, -2], [-1, -3], [0, 2], [0, 1], [0, 0], [0, -1], [0, -2], [0, -3] ],
-      "anchors" : [ "right" ]
+      "spaces" : [[-5, 1], [-5, 0], [-5, -1], [-4, 1], [-4, 0], [-4, -1], [-3, 1], [-3, 0], [-3, -1], [-2, 1], [-2, 0], [-2, -1], [-1, 1], [-1, 0], [-1, -1], [0, 1], [0, 0], [0, -1], [1, 1], [1, 0], [1, -1] ],
+      "anchors" : [ "top" ]
     }
   ],
 
   "engineOnOrientations" : [
     {
-      "image" : "madtulip/objects/rear thruster/madtulip_rearthrusteron.png:<color>.<frame>",
-      "imagePosition" : [-72, -32],
+      "image" : "madtulip/ship parts/glitch/bottom thruster/madtulip_glitch_bottom_thruster_on.png:<color>.<frame>",
+      "imagePosition" : [-40, -16],
       "frames" : 3,
       "animationCycle" : 0.3,
 
-      "spaces" : [ [-3, 2], [-3, 1], [-3, 0], [-3, -1], [-3, -2], [-3, -3], [-2, 2], [-2, 1], [-2, 0], [-2, -1], [-2, -2], [-2, -3], [-1, 2], [-1, 1], [-1, 0], [-1, -1], [-1, -2], [-1, -3], [0, 2], [0, 1], [0, 0], [0, -1], [0, -2], [0, -3] ],
-      "anchors" : [ "right" ]
+      "spaces" : [[-5, 1], [-5, 0], [-5, -1], [-4, 1], [-4, 0], [-4, -1], [-3, 1], [-3, 0], [-3, -1], [-2, 1], [-2, 0], [-2, -1], [-1, 1], [-1, 0], [-1, -1], [0, 1], [0, 0], [0, -1], [1, 1], [1, 0], [1, -1] ],
+      "anchors" : [ "top" ]
     }
   ],
 
