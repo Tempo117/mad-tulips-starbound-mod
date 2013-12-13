@@ -11,7 +11,7 @@
   "orientations" : [
     {
       "dualImage" : "madtulip_human_bottom_fin_2.png:<color>.<frame>",
-      "imagePosition" : [-48,-16],
+      "imagePosition" : [-48,-21],
       "frames" : 1,
       "animationCycle" : 1.0,
       "spaceScan" : 0.1,
