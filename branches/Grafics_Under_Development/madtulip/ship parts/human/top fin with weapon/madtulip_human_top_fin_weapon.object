@@ -17,7 +17,16 @@
       "animationCycle" : 1,
       "spaceScan" : 0.1,
       "anchors" : [ "bottom" ]
-    }
+    },
+	
+	{
+      "image" : "madtulip_human_bottom_fin_weapon.png:<color>.<frame>",
+      "imagePosition" : [-80,-48],
+      "frames" : 8,
+      "animationCycle" : 1,
+      "spaceScan" : 0.1,
+      "anchors" : [ "top" ]
+    },
   ],
   "engineOnOrientations" : [
     {
@@ -27,6 +36,15 @@
       "animationCycle" : 0.25,
 	  "spaceScan" : 0.1,
       "anchors" : [ "bottom" ]
+    },
+  
+	{
+      "image" : "madtulip/ship parts/human/top fin with weapon/madtulip_human_bottom_fin_weapon.png:<color>.<frame>",
+      "imagePosition" : [-80,-48],
+      "frames" : 8,
+      "animationCycle" : 0.25,
+	  "spaceScan" : 0.1,
+      "anchors" : [ "top" ]
     }
   ]
 }
