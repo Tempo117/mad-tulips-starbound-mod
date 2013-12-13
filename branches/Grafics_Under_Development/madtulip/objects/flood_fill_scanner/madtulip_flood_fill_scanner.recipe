@@ -1,0 +1,10 @@
+{
+  "input" : [
+    { "item" : "ironbar", "count" : 10 }
+  ],
+  "output" : {
+    "item" : "madtulip_flood_fill_scanner",
+    "count" : 1
+  },
+  "groups" : [ "plain", "all", "other" ]
+}

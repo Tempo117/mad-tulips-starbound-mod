@@ -1,0 +1,34 @@
+{
+  "objectName" : "madtulip_flood_fill_scanner",
+  "rarity" : "Common",
+  "objectType" : "wire",
+  "description" : "Scaner checks, if it is placed in an wall enclosed room section.",
+  "shortdescription" : "Flood fill scanner.",
+  "race" : "generic",
+  "category" : "tools",
+  "printable" : "false",
+
+  "inventoryIcon" : "/objects/boss/ironbeaconicon.png",
+  "orientations" : [
+    {
+      "dualImage" : "/objects/boss/ironbeacon.png:<color>.<frame>",
+
+      "imagePosition" : [-16, 0],
+      "frames" : 12,
+      "animationCycle" : 2,
+
+      "spaceScan" : 0.1,
+      "anchors" : [ "bottom" ]
+
+    }
+  ],
+
+  "animation" : "/objects/wired/ironbeacon/ironbeacon.animation",
+  "animationParts" : {
+    "beacon" : "/objects/boss/ironbeacon.png"
+  },
+  "animationPosition" : [-16, 0],
+
+  "scripts" : [ "/madtulip/objects/flood_fill_scanner/madtulip_flood_fill_scanner_logic.lua" ],
+  "scriptDelta" : 5
+}
