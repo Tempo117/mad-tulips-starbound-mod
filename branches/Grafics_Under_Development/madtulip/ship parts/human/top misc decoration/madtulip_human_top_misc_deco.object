@@ -1,8 +1,8 @@
 {
   "objectName" : "madtulip_human_top_misc_deco",
   "rarity" : "Common",
-  "description" : "Misc deco for a human spaceship.",
-  "shortdescription" : "Spaceship misc deco",
+  "description" : "Decoration for a Spaceship.",
+  "shortdescription" : "Spaceship Top Deco",
   "race" : "generic",
   "category" : "decorative",
   "price" : "10",
