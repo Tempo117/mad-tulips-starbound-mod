@@ -25,9 +25,18 @@ function onInteraction(args)
 	-- first check with very small memory footprint 50 blocks in each direction
 	Scan_for_Room_Breach(Origin,Scanner_ranges[1],1);
 	if (Flood_Data_Matrix.Room_is_not_enclosed == 1) then
-		-- if no closed room was found we enlargen the search area
-		-- this could have been done in the first place, but it takes longer if the initial room is small already
-		Scan_for_Room_Breach(Origin,Scanner_ranges[2],1);
+		if (Flood_Data_Matrix.Background_breach ~= 1) then
+			-- if no closed room was found we enlargen the search area
+			-- this could have been done in the first place, but it takes longer if the initial room is small already
+			Scan_for_Room_Breach(Origin,Scanner_ranges[2],1);
+			if (Flood_Data_Matrix.Room_is_not_enclosed == 1) then
+				if (Flood_Data_Matrix.Background_breach ~= 1) then
+					-- if no closed room was found we enlargen the search area
+					-- this could have been done in the first place, but it takes longer if the initial room is small already
+					Scan_for_Room_Breach(Origin,Scanner_ranges[3],1);
+				end
+			end
+		end
 	end
 	-- now we stop scanning because a larger area which would be larger then (Scanner_ranges*2+1)^2 blocks uses quite some mem and time.
 	-- you can however use Scanner_ranges = 10000 or mor if you like. see how long it takes if you are in a realy large room :)
@@ -61,6 +70,18 @@ function onInteraction(args)
 										   "Area of room:",Flood_Data_Matrix.Area,
 										   "Nr_Iterations:",Flood_Data_Matrix.Cur_Iteration} } };
 	end
+end
+
+function empty_space_at(cur_Position)
+	-- called when empty space at cur_Position is found. put the parameter on a stack if you like
+end
+
+function wall_space_at(cur_Position)
+	-- called when a "wall" at cur_Position is found. put the parameter on a stack if you like
+end
+
+function break_space_at(cur_Position)
+	-- called when a break condition space at cur_Position is found. put the parameter on a stack if you like
 end
 
 function Scan_for_Room_Breach(Origin,size_to_scan,Scan_8_method)
@@ -147,7 +168,6 @@ function Flood_Fill(cur_Position,target_color,none_target_color,replacement_colo
 	-- ----- so far we are good, take next ste in the state machine -----
 	-- increment iteration step
 	Flood_Data_Matrix.Cur_Iteration = Flood_Data_Matrix.Cur_Iteration + 1;	
-	
 	-- check if there is a foreground block
 	--  ,if not then check if there is a background block
 	--  ,if also not its a breach.
@@ -157,6 +177,7 @@ function Flood_Fill(cur_Position,target_color,none_target_color,replacement_colo
 		Flood_Data_Matrix.Content[cur_Position[1]][cur_Position[2]] = target_color;
 		-- if this is also a nil background block we have a breach
 		if get_background_material_at(cur_Position) == nil then
+			break_space_at(cur_Position);
 			Flood_Data_Matrix.Background_Breach_Location = cur_Position;
 			Flood_Data_Matrix.Room_is_not_enclosed       = 1; -- set flag that the room is open
 			Flood_Data_Matrix.Background_breach          = 1; -- not enclose due to hole in the background
@@ -172,11 +193,13 @@ function Flood_Fill(cur_Position,target_color,none_target_color,replacement_colo
 	--  ----- 1. If the "color" of current node is not equal to target-color, return. -----
 	if (Flood_Data_Matrix.Content[cur_Position[1]][cur_Position[2]] ~= target_color) then
 		-- the current block is not an open foreground space -> don`t spawn further searches from this block
+		wall_space_at(cur_Position);
 		return;
 	end
 	
 	-- ----- 2. Set the color of node to replacement-color. -----
 	-- this block is an empty foreground block. we mark it as "processed" by putting the replacement color
+	empty_space_at(cur_Position);
 	Flood_Data_Matrix.Content[cur_Position[1]][cur_Position[2]] = replacement_color;
 	Flood_Data_Matrix.Area = Flood_Data_Matrix.Area + 1; -- increment flooded area
 	
