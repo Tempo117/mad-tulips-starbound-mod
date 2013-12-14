@@ -211,93 +211,11 @@
       "foregroundMat" : "apexshipdetails",
 	  "backgroundMat" : "apexshipdetails"
     },
-	
-    {
-      "value" : [255, 1, 1, 255],
-      "foregroundBlock" : false,
-      "backgroundBlock" : false,
-      "object" : "madtulip_human_back_thruster",
-      "objectParameters" : {
-        "unbreakable" : false
-      }
-    },
-    {
-      "value" : [255, 2, 2, 255],
-      "foregroundBlock" : false,
-      "backgroundBlock" : false,
-      "object" : "madtulip_human_bottom_fin",
-      "objectParameters" : {
-        "unbreakable" : false
-      }
-    },
-    {
-      "value" : [255, 3, 3, 255],
-      "foregroundBlock" : false,
-      "backgroundBlock" : false,
-      "object" : "madtulip_human_bottom_fin",
-      "objectParameters" : {
-        "unbreakable" : false
-      }
-    },
-    {
-      "value" : [255, 4, 4, 255],
-      "foregroundBlock" : false,
-      "backgroundBlock" : false,
-      "object" : "madtulip_human_bottom_fin_2",
-      "objectParameters" : {
-        "unbreakable" : false
-      }
-    },
-    {
-      "value" : [255, 5, 5, 255],
-      "foregroundBlock" : false,
-      "backgroundBlock" : false,
-      "object" : "madtulip_human_bottom_fin_weapon",
-      "objectParameters" : {
-        "unbreakable" : false
-      }
-    },
     {
       "value" : [255, 6, 6, 255],
       "foregroundBlock" : false,
       "backgroundBlock" : false,
-      "object" : "madtulip_human_bottom_misc_deco_2",
-      "objectParameters" : {
-        "unbreakable" : false
-      }
-    },
-    {
-      "value" : [255, 7, 7, 255],
-      "foregroundBlock" : false,
-      "backgroundBlock" : false,
-      "object" : "madtulip_human_bottom_misc_deco",
-      "objectParameters" : {
-        "unbreakable" : false
-      }
-    },
-    {
-      "value" : [255, 8, 8, 255],
-      "foregroundBlock" : false,
-      "backgroundBlock" : false,
-      "object" : "madtulip_human_bottom_thruster",
-      "objectParameters" : {
-        "unbreakable" : false
-      }
-    },
-    {
-      "value" : [255, 9, 9, 255],
-      "foregroundBlock" : false,
-      "backgroundBlock" : false,
-      "object" : "madtulip_human_top_fin",
-      "objectParameters" : {
-        "unbreakable" : false
-      }
-    },
-    {
-      "value" : [255, 10, 10, 255],
-      "foregroundBlock" : false,
-      "backgroundBlock" : false,
-      "object" : "madtulip_human_top_fin_2",
+      "object" : "madtulip_human_gyro_stabilizer",
       "objectParameters" : {
         "unbreakable" : false
       }
@@ -306,25 +224,7 @@
       "value" : [255, 11, 11, 255],
       "foregroundBlock" : false,
 	  "backgroundBlock" : false,
-      "object" : "madtulip_human_top_fin_weapon",
-      "objectParameters" : {
-        "unbreakable" : false
-      }
-    },
-    {
-      "value" : [255, 12, 12, 255],
-      "foregroundBlock" : false,
-      "backgroundBlock" : false,
-      "object" : "madtulip_human_top_misc_deco_2",
-      "objectParameters" : {
-        "unbreakable" : false
-      }
-    },
-    {
-      "value" : [255, 13, 13, 255],
-      "foregroundBlock" : false,
-      "backgroundBlock" : false,
-      "object" : "madtulip_human_top_misc_deco",
+      "object" : "madtulip_human_large_fin",
       "objectParameters" : {
         "unbreakable" : false
       }

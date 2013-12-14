@@ -5,7 +5,7 @@
 	{ "item" : "money", "count" : 75 }
   ],
   "output" : {
-    "item" : "madtulip_human_top_misc_deco_2",
+    "item" : "madtulip_human_gyro_stabilizer",
     "count" : 1
   },
   "groups" : [ "madtulip_shipstation", "all", "other" ]

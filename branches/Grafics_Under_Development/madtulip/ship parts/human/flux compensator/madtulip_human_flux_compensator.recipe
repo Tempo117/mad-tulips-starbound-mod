@@ -4,7 +4,7 @@
 	{ "item" : "money", "count" : 25 }
   ],
   "output" : {
-    "item" : "madtulip_human_bottom_misc_deco",
+    "item" : "madtulip_human_flux_compensator",
     "count" : 1
   },
   "groups" : [ "madtulip_shipstation", "all", "other" ]

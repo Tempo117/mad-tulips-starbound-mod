@@ -1,11 +1,11 @@
 {
   "input" : [
     { "item" : "madtulip_polymer", "count" : 3 },
-    { "item" : "steelbar", "count" : 2 },
-	{ "item" : "money", "count" : 75 }
+    { "item" : "steelbar", "count" : 6 },
+	{ "item" : "money", "count" : 200 }
   ],
   "output" : {
-    "item" : "madtulip_human_bottom_misc_deco_2",
+    "item" : "madtulip_human_medium_fin",
     "count" : 1
   },
   "groups" : [ "madtulip_shipstation", "all", "other" ]
