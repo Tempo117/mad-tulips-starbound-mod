@@ -18,6 +18,8 @@
 		}
 	],
 	"learnBlueprintsOnPickup" : [
+		"madtulip_shipstationmanual",
+		
 		"apexcaptainschair",
 		"apexfuelhatch",
 		"apexshipdetails",
