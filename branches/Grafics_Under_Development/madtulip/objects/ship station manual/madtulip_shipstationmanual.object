@@ -37,10 +37,10 @@
 		"madtulip_pcb",
 		"madtulip_resistor_4k7",
 		"madtulip_silicium",
-		"madtulip_glitch_back_thruster",
-		"madtulip_glitch_bottom_thruster",
+		"madtulip_glitch_ftl_thruster",
+		"madtulip_glitch_stabilization_thruster",
 		
-		"madtulip_human_back_thruster",
+		"madtulip_human_ftl_thruster",
 		"madtulip_human_ship_comms",
 		"madtulip_human_engine_core",
 		"madtulip_human_flux_compensator",
@@ -50,8 +50,8 @@
 		"madtulip_human_small_fin",
 		"madtulip_human_stabilization_thruster",
 		
-		"madtulip_glitch_back_thruster",
-		"madtulip_glitch_bottom_thruster"
+		"madtulip_glitch_ftl_thruster",
+		"madtulip_glitch_stabilization_thruster"
 	]
 
 }

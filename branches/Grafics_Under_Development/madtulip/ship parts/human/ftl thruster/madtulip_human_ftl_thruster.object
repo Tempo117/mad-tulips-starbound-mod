@@ -1,9 +1,9 @@
 {
-  "objectName" : "madtulip_glitch_back_thruster",
+  "objectName" : "madtulip_human_ftl_thruster",
   "rarity" : "Common",
   "objectType" : "engine",
   "description" : "I wonder how quickly that would cook a burger.",
-  "shortdescription" : "Rear Thruster",
+  "shortdescription" : "Human FTL Thruster",
   "race" : "generic",
   "price" : "10",
 
@@ -43,11 +43,11 @@
     }
   },
 
-  "inventoryIcon" : "madtulip_glitch_back_thruster_icon.png",
+  "inventoryIcon" : "madtulip_human_ftl_thruster_icon.png",
   "orientations" : [
     {
-      "image" : "madtulip_glitch_back_thruster.png:<color>.<frame>",
-      "imagePosition" : [-72, -32],
+      "image" : "madtulip_human_ftl_thruster.png:<color>.<frame>",
+      "imagePosition" : [-88, -24],
       "frames" : 4,
       "animationCycle" : 1.0,
 
@@ -58,8 +58,8 @@
 
   "engineOnOrientations" : [
     {
-      "image" : "madtulip/ship parts/glitch/back thruster/madtulip_glitch_back_thruster_on.png:<color>.<frame>",
-      "imagePosition" : [-72, -32],
+      "image" : "ship parts/human/ftl thruster/madtulip_human_ftl_thruster_on.png:<color>.<frame>",
+      "imagePosition" : [-88, -24],
       "frames" : 3,
       "animationCycle" : 0.3,
 
@@ -70,5 +70,4 @@
 
   "soundEffect" : "/sfx/objects/boosterflame.wav",
   "soundEffectRadius" : 25
-
 }

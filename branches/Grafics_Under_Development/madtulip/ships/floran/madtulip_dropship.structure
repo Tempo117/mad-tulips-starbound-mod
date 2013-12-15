@@ -26,7 +26,7 @@
       "value" : [23, 73, 143, 255],
       "foregroundBlock" : false,
       "backgroundBlock" : false,
-      "object" : "madtulip_glitch_back_thruster",
+      "object" : "madtulip_human_ftl_thruster",
       "objectParameters" : {
         "unbreakable" : false
       }
@@ -36,7 +36,7 @@
       "value" : [0, 134, 202, 255],
       "foregroundBlock" : false,
       "backgroundBlock" : false,
-      "object" : "madtulip_glitch_bottom_thruster",
+      "object" : "madtulip_human_stabilization_thruster",
       "objectParameters" : {
         "unbreakable" : false
       }

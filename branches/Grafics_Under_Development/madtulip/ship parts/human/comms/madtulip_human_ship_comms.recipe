@@ -1,8 +1,8 @@
 {
   "input" : [
-    { "item" : "madtulip_polymer", "count" : 5 },
-    { "item" : "steelbar", "count" : 10 },
-	{ "item" : "money", "count" : 300 }
+    { "item" : "ironbeacon", "count" : 1 },
+    { "item" : "steelbar", "count" : 2 },
+	{ "item" : "money", "count" : 100 }
   ],
   "output" : {
     "item" : "madtulip_human_ship_comms",

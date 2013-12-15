@@ -7,6 +7,7 @@
   "race" : "generic",
   "category" : "tools",
   "printable" : "false",
+  "price" : "200",
 
   "inventoryIcon" : "/objects/boss/ironbeaconicon.png",
   "orientations" : [
@@ -26,6 +27,6 @@
   },
   "animationPosition" : [-16, 0],
 
-  "scripts" : [ "/madtulip/objects/flood_fill_scanner/madtulip_flood_fill_scanner_logic.lua" ],
+  "scripts" : [ "/objects/flood_fill_scanner/madtulip_flood_fill_scanner_logic.lua" ],
   "scriptDelta" : 5
 }

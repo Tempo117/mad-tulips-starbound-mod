@@ -5,7 +5,7 @@
 	{ "item" : "money", "count" : 300 }
   ],
   "output" : {
-    "item" : "madtulip_glitch_back_thruster",
+    "item" : "madtulip_glitch_ftl_thruster",
     "count" : 1
   },
   "groups" : [ "madtulip_shipstation", "all", "other" ]
