@@ -16,6 +16,14 @@
       "animationCycle" : 0.5,
       "spaceScan" : 0.1,
       "anchors" : [ "bottom" ]
+    },
+	{
+      "dualImage" : "madtulip_human_bottom_ship_comms.png:<color>.<frame>",
+      "imagePosition" : [-14,-16],
+      "frames" : 12,
+      "animationCycle" : 0.5,
+      "spaceScan" : 0.1,
+      "anchors" : [ "top" ]
     }
   ]
 }

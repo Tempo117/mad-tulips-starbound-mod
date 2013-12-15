@@ -12,16 +12,16 @@
     {
       "dualImage" : "madtulip_human_medium_top_fin.png:<color>.<frame>",
       "imagePosition" : [-66,-32],
-      "frames" : 1,
-      "animationCycle" : 1.0,
+      "frames" : 8,
+      "animationCycle" : 1,
       "spaceScan" : 0.1,
       "anchors" : [ "bottom" ]
     },
     {
       "dualImage" : "madtulip_human_medium_bottom_fin.png:<color>.<frame>",
       "imagePosition" : [-66,-32],
-      "frames" : 1,
-      "animationCycle" : 1.0,
+      "frames" : 8,
+      "animationCycle" : 1,
       "spaceScan" : 0.1,
       "anchors" : [ "top" ]
     }
