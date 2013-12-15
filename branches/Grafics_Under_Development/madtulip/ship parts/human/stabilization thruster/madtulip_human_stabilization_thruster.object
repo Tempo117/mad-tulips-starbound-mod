@@ -46,36 +46,24 @@
   "inventoryIcon" : "madtulip_human_stabilization_thruster_icon.png",
   "orientations" : [
     {
-      "image" : "madtulip_human_top_stabilization_thruster.png:<color>.<frame>",
-      "imagePosition" : [-20,-16],
-      "frames" : 3,
-      "animationCycle" : 0.4,
-      "spaceScan" : 0.1,
-      "anchors" : [ "bottom" ]
-    },
-    {
       "image" : "madtulip_human_bottom_stabilization_thruster.png:<color>.<frame>",
-      "imagePosition" : [-20,-16],
+      "imagePosition" : [-20, -16],
       "frames" : 3,
       "animationCycle" : 0.4,
-      "spaceScan" : 0.1,
+
+      "spaces" : [[-3, 1], [-3, 0], [-3, -1], [-2, 1], [-2, 0], [-2, -1], [-1, 1], [-1, 0], [-1, -1], [0, 1], [0, 0], [0, -1], [1, 1], [1, 0], [1, -1] ],
       "anchors" : [ "top" ]
-    }	
+    }
   ],
 
   "engineOnOrientations" : [
-    {
-      "image" : "madtulip/ship parts/human/stabilization thruster/madtulip_human_top_stabilization_thruster_on.png:<color>.<frame>",
-      "imagePosition" : [-20, -16],
-      "frames" : 3,
-      "animationCycle" : 0.3,
-      "anchors" : [ "bottom" ]
-    },
     {
       "image" : "madtulip/ship parts/human/stabilization thruster/madtulip_human_bottom_stabilization_thruster_on.png:<color>.<frame>",
       "imagePosition" : [-20, -16],
       "frames" : 3,
       "animationCycle" : 0.3,
+
+      "spaces" : [[-3, 1], [-3, 0], [-3, -1], [-2, 1], [-2, 0], [-2, -1], [-1, 1], [-1, 0], [-1, -1], [0, 1], [0, 0], [0, -1], [1, 1], [1, 0], [1, -1] ],
       "anchors" : [ "top" ]
     }
   ],
