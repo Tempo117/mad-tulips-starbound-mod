@@ -19,7 +19,7 @@
     },
     {
       "dualImage" : "madtulip_human_medium_bottom_fin.png:<color>.<frame>",
-      "imagePosition" : [-66,-32],
+      "imagePosition" : [-66,-37],
       "frames" : 8,
       "animationCycle" : 1,
       "spaceScan" : 0.1,
