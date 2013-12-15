@@ -5,7 +5,7 @@
 	{ "item" : "money", "count" : 300 }
   ],
   "output" : {
-    "item" : "madtulip_human_large_fin",
+    "item" : "madtulip_human_ship_comms",
     "count" : 1
   },
   "groups" : [ "madtulip_shipstation", "all", "other" ]
