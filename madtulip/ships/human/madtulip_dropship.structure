@@ -49,7 +49,7 @@
       "backgroundMat" : "apexshipwall",
       "object" : "apexshiplocker",
       "objectParameters" : {
-        "treasurePools" : [ "glitchStarterTreasure" ],
+        "treasurePools" : [ "humanStarterTreasure" ],
         "level" : 1,
         "unbreakable" : false
       }

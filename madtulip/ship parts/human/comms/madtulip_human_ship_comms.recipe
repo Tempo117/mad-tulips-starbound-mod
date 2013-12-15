@@ -1,0 +1,12 @@
+{
+  "input" : [
+    { "item" : "ironbeacon", "count" : 1 },
+    { "item" : "steelbar", "count" : 2 },
+	{ "item" : "money", "count" : 100 }
+  ],
+  "output" : {
+    "item" : "madtulip_human_ship_comms",
+    "count" : 1
+  },
+  "groups" : [ "madtulip_shipstation", "all", "other" ]
+}

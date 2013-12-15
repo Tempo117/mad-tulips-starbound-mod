@@ -5,7 +5,7 @@
   "objectType" : "interactable",
   "interactAction" : "OpenCraftingInterface",
   "interactData" : {
-    "config" : "/madtulip/objects/ship station/madtulip_shipstation.config",
+    "config" : "/objects/ship station/madtulip_shipstation.config",
     "filter" : [ "madtulip_shipstation" ]
   },
   "printable" : false,
