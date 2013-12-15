@@ -2,7 +2,7 @@
   "objectName" : "madtulip_human_stabilization_thruster",
   "rarity" : "Common",
   "objectType" : "engine",
-  "description" : "Thruster for sub ftl maneuvers.",
+  "description" : "Thruster for sub FTL maneuvers.",
   "shortdescription" : "Stabilization Thruster",
   "race" : "generic",
   "price" : "10",

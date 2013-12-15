@@ -2,8 +2,8 @@
   "objectName" : "madtulip_human_ftl_thruster",
   "rarity" : "Common",
   "objectType" : "engine",
-  "description" : "I wonder how quickly that would cook a burger.",
-  "shortdescription" : "Human FTL Thruster",
+  "description" : "Thruster for faster than light travels",
+  "shortdescription" : "FTL Thruster",
   "race" : "generic",
   "price" : "10",
 

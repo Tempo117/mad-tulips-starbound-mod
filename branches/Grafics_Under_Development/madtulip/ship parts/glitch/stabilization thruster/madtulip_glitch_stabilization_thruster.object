@@ -2,8 +2,8 @@
   "objectName" : "madtulip_glitch_stabilization_thruster",
   "rarity" : "Common",
   "objectType" : "engine",
-  "description" : "I wonder how quickly that would cook a burger.",
-  "shortdescription" : "Small Thruster",
+  "description" : "Thruster for sub FTL maneuvers.",
+  "shortdescription" : "Stabilization Thruster",
   "race" : "generic",
   "price" : "10",
 
