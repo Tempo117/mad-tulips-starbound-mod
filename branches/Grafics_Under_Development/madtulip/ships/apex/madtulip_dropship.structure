@@ -161,7 +161,7 @@
       "foregroundBlock" : false,
       "backgroundBlock" : true,
 	  "backgroundMat" : "apexshipwall",
-      "object" : "apexcaptainschair",
+      "object" : "madtulip_captainschair",
       "objectDirection" : "left",
       "objectParameters" : {
         "unbreakable" : false

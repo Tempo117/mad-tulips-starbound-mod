@@ -7,7 +7,7 @@
 	{ "item" : "money", "count" : 200 }
   ],
   "output" : {
-    "item" : "apexcaptainschair",
+    "item" : "madtulip_captainschair,",
     "count" : 1
   },
   "groups" : [ "madtulip_shipstation", "all", "other" ]

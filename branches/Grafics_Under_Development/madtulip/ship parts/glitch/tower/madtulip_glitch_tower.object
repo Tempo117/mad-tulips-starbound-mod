@@ -1,0 +1,21 @@
+{
+  "objectName" : "madtulip_glitch_tower",
+  "rarity" : "Common",
+  "description" : "An impressive tower top !",
+  "shortdescription" : "Tower Top",
+  "race" : "generic",
+  "category" : "decorative",
+  "price" : "10",
+  
+  "inventoryIcon" : "madtulip_glitch_tower_icon.png",
+  "orientations" : [
+    {
+      "dualImage" : "madtulip_glitch_tower.png:<color>.<frame>",
+      "imagePosition" : [-54,-16],
+      "frames" : 1,
+      "animationCycle" : 1,
+      "spaceScan" : 0.1,
+      "anchors" : [ "bottom" ]
+    }
+  ]
+}

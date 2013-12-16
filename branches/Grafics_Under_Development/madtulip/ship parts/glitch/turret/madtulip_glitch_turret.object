@@ -1,0 +1,21 @@
+{
+  "objectName" : "madtulip_glitch_turret",
+  "rarity" : "Common",
+  "description" : "This one goes BOOOM!",
+  "shortdescription" : "Main Gun Turret",
+  "race" : "generic",
+  "category" : "decorative",
+  "price" : "10",
+  
+  "inventoryIcon" : "madtulip_glitch_turret_icon.png",
+  "orientations" : [
+    {
+      "dualImage" : "madtulip_glitch_turret.png:<color>.<frame>",
+      "imagePosition" : [-43,-16],
+      "frames" : 1,
+      "animationCycle" : 1,
+      "spaceScan" : 0.1,
+      "anchors" : [ "bottom" ]
+    }
+  ]
+}

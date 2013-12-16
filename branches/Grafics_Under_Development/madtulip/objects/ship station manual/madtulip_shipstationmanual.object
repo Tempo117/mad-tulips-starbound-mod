@@ -20,7 +20,6 @@
 	"learnBlueprintsOnPickup" : [
 		"madtulip_shipstationmanual",
 		
-		"apexcaptainschair",
 		"apexfuelhatch",
 		"apexshipdetails",
 		"apexshiplight",
@@ -29,6 +28,8 @@
 		"apexshipwall",
 		"techstation",
 		"teleporter",
+		
+		"madtulip_captainschair",
 		
 		"madtulip_shipstation",		
 		"madtulip_shipnavigationconsole",
@@ -39,8 +40,6 @@
 		"madtulip_pcb",
 		"madtulip_resistor_4k7",
 		"madtulip_silicium",
-		"madtulip_glitch_ftl_thruster",
-		"madtulip_glitch_stabilization_thruster",
 		
 		"madtulip_human_ftl_thruster",
 		"madtulip_human_ship_comms",
@@ -53,7 +52,11 @@
 		"madtulip_human_stabilization_thruster",
 		
 		"madtulip_glitch_ftl_thruster",
-		"madtulip_glitch_stabilization_thruster"
+		"madtulip_glitch_stabilization_thruster",
+		"madtulip_glitch_flux_compensator",
+		"madtulip_glitch_gyro_stabilizer",
+		"madtulip_glitch_tower",
+		"madtulip_glitch_turret"
 	]
 
 }
