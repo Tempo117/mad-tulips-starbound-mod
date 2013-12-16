@@ -1,40 +1,60 @@
 {
   "animatedParts" : {
     "stateTypes" : {
-      "beaconState" : {
+      "DisplayState" : {
         "default" : "normal_operation",
         "states" : {
           "normal_operation" : {
             "frames" : 4,
-            "cycle" : 1,
-			"mode" : "loop"
+            "cycle" : 2,
+			"mode" : "loop",
+			"direction" : "left"
           },
           "breach" : {
-            "frames" : 8,
-            "cycle" : 0.5,
-            "mode" : "loop"
+            "frames" : 4,
+            "cycle" : 2,
+            "mode" : "loop",
+			"direction" : "left"
           }
         }
       }
     },
 
     "parts" : {
-      "beacon" : {
+      "O2_is_ok" : {
         "properties" : {
           "centered" : false
         },
-
         "partStates" : {
-          "beaconState" : {
+          "DisplayState" : {
             "normal_operation" : {
               "properties" : {
-                "image" : "<partImage>:default.<frame>"
+                "image" : "<partImage>:default.<frame>",
+				"direction" : "left"
               }
             },
-
             "breach" : {
               "properties" : {
-                "image" : "<partImage>:default.<frame>"
+              }
+            }
+          }
+        }
+      },
+      "O2_is_bad" : {
+        "properties" : {
+          "centered" : false
+        },
+        "partStates" : {
+          "DisplayState" : {
+            "normal_operation" : {
+              "properties" : {
+
+              }
+            },
+            "breach" : {
+              "properties" : {
+                "image" : "<partImage>:default.<frame>",
+				"direction" : "left"
               }
             }
           }

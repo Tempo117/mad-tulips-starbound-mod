@@ -3,7 +3,7 @@ function initializeObject()
 	object.setInteractive(true);
 	
 	-- Change animation for state "normal_operation"
-	object.setAnimationState("beaconState", "normal_operation");
+	object.setAnimationState("DisplayState", "normal_operation");
 end
 
 function main()
@@ -90,10 +90,11 @@ function Automatic_Scan()
 	
 	if (Flood_Data_Matrix.Room_is_not_enclosed == 1) then
 		-- set animation state to breach!
-		object.setAnimationState("beaconState", "breach");	
+		object.setAnimationState("DisplayState", "breach");
+		object.playSound("Breach_Warning_Sound");
 	else
 		-- set animation state to breach!
-		object.setAnimationState("beaconState", "normal_operation");
+		object.setAnimationState("DisplayState", "normal_operation");
 	end
 end
 

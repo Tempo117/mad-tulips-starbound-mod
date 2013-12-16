@@ -6,6 +6,7 @@
   "shortdescription" : "Captain's Chair",
   "race" : "generic",
   "category" : "furniture",
+  "price" : "200",
 
   "apexDescription" : "Ahh freedom...",
   "avianDescription" : "Bless my beak, such a comfortable captain's chair.",
