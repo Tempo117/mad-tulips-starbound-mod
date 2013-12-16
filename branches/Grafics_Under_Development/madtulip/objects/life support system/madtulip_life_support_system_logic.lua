@@ -1,8 +1,12 @@
 function initializeObject()
 	-- Make our object interactive (we can interract by 'Use')
 	object.setInteractive(true);
-	-- Change animation for state "active"
-	object.setAnimationState("beaconState", "active");
+	
+	-- start timer which is used for scanning
+	self.timers = createTimers()
+	
+	-- Change animation for state "normal_operation"
+	object.setAnimationState("beaconState", "normal_operation");
 end
 
 function main()
@@ -17,7 +21,44 @@ end
 
 function onInteraction(args)
 	-- if clicked by middle mouse or "e"
-	
+	Automatic_Scan();
+
+	-- so lets give debug feedback about the result which is stored in a global variable
+	-- if we had nice write permission lua by now we could even do something with the result here.
+	if (Flood_Data_Matrix.Room_is_not_enclosed == 1) then
+		-- no closed room found
+		-- what was the reason ?
+		if (Flood_Data_Matrix.Background_breach == 1) then
+			-- there was an open background tile
+			local relative_breach_position = {};
+			relative_breach_position[1] = Flood_Data_Matrix.Background_Breach_Location[1] - Flood_Data_Matrix.Origin[1];
+			relative_breach_position[2] = Flood_Data_Matrix.Background_Breach_Location[2] - Flood_Data_Matrix.Origin[2];
+			return { "ShowPopup", { message = {"Background Breach!",
+											   " Breach at [x,y] absolute:",Flood_Data_Matrix.Background_Breach_Location,
+											   " [x,y] relative:",relative_breach_position,
+											   " Area scanned:",Flood_Data_Matrix.Area,
+											   " Nr_Iterations:",Flood_Data_Matrix.Cur_Iteration} } };
+		end
+		if (Flood_Data_Matrix.Max_Nr_of_Iterations_happend == 1) then
+			-- there was an open background tile
+			return { "ShowPopup", { message = {"Max Nr. of Iterations happend!",
+											   " Area scanned:",Flood_Data_Matrix.Area,
+											   " Nr_Iterations:",Flood_Data_Matrix.Cur_Iteration} } };
+		end
+		if (Flood_Data_Matrix.Maximum_size_to_scan_reached == 1) then
+			-- there was an open background tile
+			return { "ShowPopup", { message = {"Max size to scan reached!",
+											   " Area scanned:",Flood_Data_Matrix.Area,
+											   " Nr_Iterations:",Flood_Data_Matrix.Cur_Iteration} } };
+		end
+	else
+		return { "ShowPopup", { message = {"Closed Room!",
+										   "Area of room:",Flood_Data_Matrix.Area,
+										   "Nr_Iterations:",Flood_Data_Matrix.Cur_Iteration} } };
+	end
+end
+
+function Automatic_Scan()
 	-- check a +-50,+-50 square area around the Origin for a closed room
 	local Origin          = object.toAbsolutePosition({ 0.0, 0.0 });;
 	local Scanner_ranges  = {50,250,1000}; -- ....
@@ -41,34 +82,12 @@ function onInteraction(args)
 	-- now we stop scanning because a larger area which would be larger then (Scanner_ranges*2+1)^2 blocks uses quite some mem and time.
 	-- you can however use Scanner_ranges = 10000 or mor if you like. see how long it takes if you are in a realy large room :)
 	
-	-- so lets give debug feedback about the result which is stored in a global variable
-	-- if we had nice write permission lua by now we could even do something with the result here.
 	if (Flood_Data_Matrix.Room_is_not_enclosed == 1) then
-		-- no closed room found
-		-- what was the reason ?
-		if (Flood_Data_Matrix.Background_breach == 1) then
-			-- there was an open background tile
-			return { "ShowPopup", { message = {"Background Breach!",
-											   " Breach at [x,y]:",Flood_Data_Matrix.Background_Breach_Location,
-											   " Area scanned:",Flood_Data_Matrix.Area,
-											   " Nr_Iterations:",Flood_Data_Matrix.Cur_Iteration} } };
-		end
-		if (Flood_Data_Matrix.Max_Nr_of_Iterations_happend == 1) then
-			-- there was an open background tile
-			return { "ShowPopup", { message = {"Max Nr. of Iterations happend!",
-											   " Area scanned:",Flood_Data_Matrix.Area,
-											   " Nr_Iterations:",Flood_Data_Matrix.Cur_Iteration} } };
-		end
-		if (Flood_Data_Matrix.Maximum_size_to_scan_reached == 1) then
-			-- there was an open background tile
-			return { "ShowPopup", { message = {"Max size to scan reached!",
-											   " Area scanned:",Flood_Data_Matrix.Area,
-											   " Nr_Iterations:",Flood_Data_Matrix.Cur_Iteration} } };
-		end
+		-- set animation state to breach!
+		object.setAnimationState("beaconState", "breach");	
 	else
-		return { "ShowPopup", { message = {"Closed Room!",
-										   "Area of room:",Flood_Data_Matrix.Area,
-										   "Nr_Iterations:",Flood_Data_Matrix.Cur_Iteration} } };
+		-- set animation state to breach!
+		object.setAnimationState("beaconState", "normal_operation");
 	end
 end
 

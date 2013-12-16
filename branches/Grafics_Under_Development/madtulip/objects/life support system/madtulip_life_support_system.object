@@ -1,0 +1,32 @@
+{
+  "objectName" : "madtulip_life_support_system",
+  "rarity" : "Common",
+  "objectType" : "wire",
+  "description" : "Scaner checks, if it is placed in an wall enclosed room section.",
+  "shortdescription" : "Life Support System",
+  "race" : "generic",
+  "category" : "tools",
+  "printable" : "false",
+  "price" : "200",
+
+  "inventoryIcon" : "madtulip_life_support_system_icon.png",
+  "orientations" : [
+    {
+      "dualImage" : "madtulip_life_support_system.png:<color>.<frame>",
+      "imagePosition" : [-16, -8],
+      "frames" : 8,
+      "animationCycle" : 0.5,
+      "spaceScan" : 0.1,
+      "anchors" : [ "background" ]
+    }
+  ],
+
+  "animation" : "/objects/life support system/madtulip_life_support_system.animation",
+  "animationParts" : {
+    "beacon" : "/objects/life support system/madtulip_life_support_system.png"
+  },
+  "animationPosition" : [-16, -8],
+
+  "scripts" : [ "/objects/life support system/madtulip_life_support_system_logic.lua" ],
+  "scriptDelta" : 5
+}

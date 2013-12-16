@@ -1,0 +1,45 @@
+{
+  "animatedParts" : {
+    "stateTypes" : {
+      "beaconState" : {
+        "default" : "normal_operation",
+        "states" : {
+          "normal_operation" : {
+            "frames" : 4,
+            "cycle" : 1,
+			"mode" : "loop"
+          },
+          "breach" : {
+            "frames" : 8,
+            "cycle" : 0.5,
+            "mode" : "loop"
+          }
+        }
+      }
+    },
+
+    "parts" : {
+      "beacon" : {
+        "properties" : {
+          "centered" : false
+        },
+
+        "partStates" : {
+          "beaconState" : {
+            "normal_operation" : {
+              "properties" : {
+                "image" : "<partImage>:default.<frame>"
+              }
+            },
+
+            "breach" : {
+              "properties" : {
+                "image" : "<partImage>:default.<frame>"
+              }
+            }
+          }
+        }
+      }
+    }
+  }
+}
