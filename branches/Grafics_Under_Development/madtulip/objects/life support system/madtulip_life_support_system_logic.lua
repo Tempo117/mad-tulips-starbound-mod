@@ -10,6 +10,9 @@ function initializeObject()
 end
 
 function main()
+    -- perform scan for hull breach
+	Automatic_Scan();
+	
 	-- Check for the single execution
 	if self.initialized == nil then
 		-- Init object
@@ -21,6 +24,7 @@ end
 
 function onInteraction(args)
 	-- if clicked by middle mouse or "e"
+	
 	Automatic_Scan();
 
 	-- so lets give debug feedback about the result which is stored in a global variable
