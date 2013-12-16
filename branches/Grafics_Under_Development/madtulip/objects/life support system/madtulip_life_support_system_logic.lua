@@ -2,17 +2,15 @@ function initializeObject()
 	-- Make our object interactive (we can interract by 'Use')
 	object.setInteractive(true);
 	
-	-- start timer which is used for scanning
-	self.timers = createTimers()
-	
 	-- Change animation for state "normal_operation"
 	object.setAnimationState("beaconState", "normal_operation");
 end
 
 function main()
-    -- perform scan for hull breach
-	Automatic_Scan();
-	
+    -- due to
+	-- "scriptDelta" : 100
+	-- in the object script this is called approximately every 1s for my hardware
+
 	-- Check for the single execution
 	if self.initialized == nil then
 		-- Init object
@@ -20,11 +18,15 @@ function main()
 		-- Set flag
 		self.initialized = true;
 	end
+	
+    -- Perform scan for hull breach
+	Automatic_Scan();
 end
 
 function onInteraction(args)
 	-- if clicked by middle mouse or "e"
 	
+	-- Perform scan for hull breach
 	Automatic_Scan();
 
 	-- so lets give debug feedback about the result which is stored in a global variable
