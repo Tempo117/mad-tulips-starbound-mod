@@ -5,14 +5,14 @@
         "default" : "normal_operation",
         "states" : {
           "normal_operation" : {
-            "frames" : 4,
-            "cycle" : 2,
+            "frames" : 8,
+            "cycle" : 1,
 			"mode" : "loop",
 			"direction" : "left"
           },
           "breach" : {
-            "frames" : 4,
-            "cycle" : 2,
+            "frames" : 8,
+            "cycle" : 1,
             "mode" : "loop",
 			"direction" : "left"
           }

@@ -26,6 +26,19 @@ end
 function onInteraction(args)
 	-- if clicked by middle mouse or "e"
 	
+	-- add additional information about surrounding, like doors
+	--local radius_to_scan = 250*2;
+	--local closedDoorIds = world.objectQuery (object.toAbsolutePosition({ 0.0, 0.0 }), radius_to_scan, { callScript = "hasCapability", callScriptArgs = { "closedDoor" } });
+	
+	--local closedDoorPositions = {};
+	--for ID_counter, closedDoorId in pairs(closedDoorIds) do
+		--closedDoorPositions[ID_counter] = world.entityPosition (closedDoorId);
+	--end	
+	--if(closedDoorBoundbox ~= nil) then
+		--return { "ShowPopup", { message = {closedDoorBoundbox} } };
+	--end	
+
+	
 	-- Perform scan for hull breach
 	Automatic_Scan();
 
@@ -66,7 +79,7 @@ end
 
 function Automatic_Scan()
 	-- check a +-50,+-50 square area around the Origin for a closed room
-	local Origin          = object.toAbsolutePosition({ 0.0, 0.0 });;
+	local Origin          = object.toAbsolutePosition({ 0.0, 0.0 });
 	local Scanner_ranges  = {50,250,1000}; -- ....
 
 	-- first check with very small memory footprint 50 blocks in each direction
@@ -146,7 +159,7 @@ function Scan_for_Room_Breach(Origin,size_to_scan,Scan_8_method)
 			Flood_Data_Matrix.Content[cur_X][cur_Y] = {};
 		end	
 	end
-
+	
 	-- test the area around the block where this is placed for beeing an enclosed room
 	Flood_Fill(Flood_Data_Matrix.Origin,1,2,3);
 end
