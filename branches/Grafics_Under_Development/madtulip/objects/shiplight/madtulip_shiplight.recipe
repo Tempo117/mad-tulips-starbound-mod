@@ -5,7 +5,7 @@
 	{ "item" : "tier2light", "count" : 1 }
   ],
   "output" : {
-    "item" : "apexshiplight",
+    "item" : "madtulip_shiplight",
     "count" : 1
   },
   "groups" : [ "madtulip_shipstation", "all", "other" ]

@@ -5,6 +5,7 @@
   "shortdescription" : "Ship Navigation Console",
   "race" : "generic",
   "category" : "decorative",
+  "printable" : false,
   "price" : "200",
 
   "inventoryIcon" : "madtulip_shipnavigationconsole_inv.png",

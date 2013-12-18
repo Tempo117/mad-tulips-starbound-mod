@@ -6,6 +6,8 @@
 	"race" : "generic",
 	"category" : "decorative",
 	"price" : "200",
+	"printable" : false,
+	
 	"inventoryIcon" : "madtulip_shipstationmanual_inv.png",
 	"orientations" : [
 		{
@@ -20,16 +22,17 @@
 	"learnBlueprintsOnPickup" : [
 		"madtulip_shipstationmanual",
 		
-		"apexfuelhatch",
 		"apexshipdetails",
-		"apexshiplight",
-		"apexshiplocker",
 		"apexshipsupport",
 		"apexshipwall",
-		"techstation",
-		"teleporter",
 		
+		"madtulip_fuelhatch",
+		"madtulip_shiplight",
+		"madtulip_shiplocker",
+		"madtulip_techstation",
+		"madtulip_teleporter",
 		"madtulip_captainschair",
+		"madtulip_shipdoor",
 		
 		"madtulip_shipstation",		
 		"madtulip_shipnavigationconsole",

@@ -1,0 +1,36 @@
+{
+  "objectName" : "madtulip_techstation",
+  "rarity" : "Common",
+
+  "objectType" : "interactable",
+  "interactAction" : "OpenTech3DPrinterDialog",
+
+  "category" : "decorative",
+  "price" : "2500",
+  "printable" : false,  
+
+  "description" : "A tech station. For creating awesome tech!",
+  "shortdescription" : "Tech Station",
+  "race" : "apex",
+
+  "apexDescription" : "A tech station. Useful.",
+  "avianDescription" : "I can use this tech station to make things.",
+  "floranDescription" : "Floran create magic bang bangs!",
+  "glitchDescription" : "Admiration. An extremely advanced tech station.",
+  "humanDescription" : "A tech station. I can create awesome stuff here!",
+  "hylotlDescription" : "This tech station looks decent enough.",
+
+  "inventoryIcon" : "madtulip_techstation_icon.png",
+  "orientations" : [
+    {
+      "dualImage" : "madtulip_techstation.png:<color>.<frame>",
+      "imagePosition" : [-16, -8],
+      "frames" : 8,
+      "animationCycle" : 1.0,
+
+      "spaceScan" : 0.1,
+      "anchors" : [ "background" ]
+
+    }
+  ]
+}

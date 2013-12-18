@@ -6,6 +6,7 @@
   "shortdescription" : "Captain's Chair",
   "race" : "generic",
   "category" : "furniture",
+  "printable" : false,
   "price" : "200",
 
   "apexDescription" : "Ahh freedom...",
