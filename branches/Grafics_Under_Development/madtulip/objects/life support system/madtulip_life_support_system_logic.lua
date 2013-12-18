@@ -89,6 +89,10 @@ function Automatic_Multi_Stage_Scan()
 	-- now we stop scanning because a larger area which would be larger then (Scanner_ranges*2+1)^2 blocks uses quite some mem and time.
 	-- you can however use Scanner_ranges = 10000 or mor if you like. see how long it takes if you are in a realy large room :)
 	
+	Perform_Action_After_Multistage_Scan();
+end
+
+function Perform_Action_After_Multistage_Scan()
 	if (Flood_Data_Matrix.Room_is_not_enclosed == 1) then
 		-- set animation state to breach!
 		object.setAnimationState("DisplayState", "breach");
@@ -96,6 +100,10 @@ function Automatic_Multi_Stage_Scan()
 	else
 		-- set animation state to breach!
 		object.setAnimationState("DisplayState", "normal_operation");
+	end
+	
+	for _, Breach_Location in pairs(Flood_Data_Matrix.Breaches) do
+		world.spawnProjectile("madtulip_breach", Breach_Location);
 	end
 end
 

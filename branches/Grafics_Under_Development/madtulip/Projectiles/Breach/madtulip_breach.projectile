@@ -1,0 +1,15 @@
+{
+  "projectileName" : "madtulip_breach",
+  "frames" : "madtulip_breach.png",
+  "animationCycle" : 0.2,
+  "level" : 1,
+  "frameNumber" : 6,
+  "speed" : 0,
+  "fallSpeed" : 0,
+  "damagePoly" : [ [-36, 0], [-24, -24], [0, -36], [24, -24], [36, 0], [24, 24], [0, 36], [-24, 24] ],
+  "animationLoops" : false,
+  "piercing" : false,
+  "flippable" : false,
+  "universalDamage" : false,
+  "damageKind" : "default"
+}
