@@ -1,0 +1,22 @@
+{
+  "kind" : "madtulip_dust_few_an_slow",
+  "location" : "mouth",
+  "definition" : {
+    "duration" : 10,
+    "loops" : true,
+    "start" : {
+      "particles" : [["madtulip_dust_few_an_slow" ]],
+      "sounds" : [ [ ] ]
+    },
+    "particles" : [
+      []
+    ],
+    "sounds" : [ [ ] ],
+    "stop" : {
+      "particles" : [
+        [ ]
+      ],
+      "sounds" : [ [ ] ]
+    }
+  }
+}

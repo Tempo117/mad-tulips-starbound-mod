@@ -94,16 +94,25 @@ end
 
 function Perform_Action_After_Multistage_Scan()
 	if (Flood_Data_Matrix.Room_is_not_enclosed == 1) then
-		-- set animation state to breach!
+		-- set animation state of wall panel to breach!
 		object.setAnimationState("DisplayState", "breach");
-		object.playSound("Breach_Warning_Sound");
+		if(Flood_Data_Matrix.Background_breach == 1) then
+			-- play a meeping warning sound
+			object.playSound("Breach_Warning_Sound");
+			-- the interior of the room also emits some kind of effect
+			--for _, Room_Background_Location in pairs(Flood_Data_Matrix.Background_in_scanned_Area) do
+				--world.spawnProjectile("madtulip_breached_room_background", Room_Background_Location);
+			--end
+			
+			-- the breach positions
+			for _, Breach_Location in pairs(Flood_Data_Matrix.Breaches) do
+				-- spawn some fast moving particles
+				world.spawnProjectile("madtulip_breach", Breach_Location);
+			end
+		end
 	else
 		-- set animation state to breach!
 		object.setAnimationState("DisplayState", "normal_operation");
-	end
-	
-	for _, Breach_Location in pairs(Flood_Data_Matrix.Breaches) do
-		world.spawnProjectile("madtulip_breach", Breach_Location);
 	end
 end
 
@@ -117,6 +126,7 @@ function Start_New_Room_Breach_Scan(Origin,size_to_scan,Scan_8_method)
 	-- data
 	Flood_Data_Matrix.Content       = {}; -- stores at [x,y] the "color" of the block which tells if its background, foreground or open
 	Flood_Data_Matrix.Breaches      = {}; -- stores {x,y} pairs of locations of breach
+	Flood_Data_Matrix.Background_in_scanned_Area = {}; -- stores {x,y} pairs of background only (interior) locations of enclosed area
 	-- settings
 	Flood_Data_Matrix.Origin        = Origin;
 	Flood_Data_Matrix.size_to_scan  = size_to_scan;
@@ -329,7 +339,8 @@ function Flood_Fill(cur_Position)
 	-- ----- 2. Set the color of node to replacement-color. -----
 	-- this block is an empty foreground block. we mark it as "processed" by putting the replacement color
 	Flood_Data_Matrix.Content[cur_Position[1]][cur_Position[2]] = Flood_Data_Matrix.replacement_color;
-	Flood_Data_Matrix.Area = Flood_Data_Matrix.Area + 1; -- increment flooded area
+	Flood_Data_Matrix.Area = Flood_Data_Matrix.Area + 1; -- increment flooded area (starts at 0)
+	Flood_Data_Matrix.Background_in_scanned_Area[Flood_Data_Matrix.Area] = cur_Position;
 	
 	-- ----- 3. Spawn searches in the surrounding blocks -----
 	--	Perform Flood-fill (one step to the west of node, target-color, replacement-color).
@@ -346,7 +357,7 @@ function Flood_Fill(cur_Position)
 		Flood_Fill({cur_Position[1]    ,cur_Position[2] - 1});
 	end
 	
-	if Flood_Data_Matrix.Scan_8_method ~= 0 then
+	if Flood_Data_Matrix.Scan_8_method == 1 then
 		if Flood_Data_Matrix.Stop_Iteration == 0 then -- north west
 			Flood_Fill({cur_Position[1] - 1,cur_Position[2] + 1});
 		end

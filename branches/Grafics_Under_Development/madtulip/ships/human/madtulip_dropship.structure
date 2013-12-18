@@ -98,7 +98,16 @@
         "unbreakable" : false
       }
     },
-
+    {
+      "value" : [146, 255, 146, 255],
+      "foregroundBlock" : false,
+      "backgroundBlock" : true,
+	  "backgroundMat" : "apexshipwall",
+      "object" : "madtulip_life_support_system",
+      "objectParameters" : {
+        "unbreakable" : false
+      }
+    },
     {
       "value" : [255, 87, 81, 255],
       "foregroundBlock" : false,
