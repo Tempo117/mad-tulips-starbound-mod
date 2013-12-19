@@ -18,9 +18,34 @@ function main()
 		-- Set flag
 		self.initialized = true;
 	end
+
+	------------------------- Automatic Hull Breach Scans ----------------------------------
+	-- MASTER ONLY:
+	-- Perform scan for hull breach using the master itself as point to start
+	--local cur_Vent_Position = object.toAbsolutePosition({ 0.0, 0.0 });
+	--Automatic_Multi_Stage_Scan((cur_Vent_Position),{50,250,1000});
 	
-    -- Perform scan for hull breach
-	Automatic_Multi_Stage_Scan();
+	-- ALL VENTS:
+	Vents = {};
+	Vents.ANY_Room_is_not_enclosed = 0;
+	Vents.ANY_Background_breach    = 0;
+	
+	-- find all vents in the area and get theire position
+	local Vents_Ids  = world.objectQuery (object.toAbsolutePosition({ 0.0, 0.0 }),1000,{name = "madtulip_vent"});
+	-- Perform scan for hull breach using each vents origin as point to start an individual scan
+	for _, Vents_Id in pairs(Vents_Ids) do
+		local cur_Vent_Position = world.entityPosition (Vents_Id);
+		Automatic_Multi_Stage_Scan((cur_Vent_Position),{50,250,1000});
+		
+		if (Flood_Data_Matrix.Room_is_not_enclosed == 1) then
+			Vents.ANY_Room_is_not_enclosed = 1;
+		end
+		if (Flood_Data_Matrix.Background_breach == 1) then
+			Vents.ANY_Background_breach    = 1;		
+		end		
+		
+		Perform_Action_After_Multistage_Scan();
+	end
 end
 
 function onInteraction(args)
@@ -65,11 +90,7 @@ function onInteraction(args)
 	end
 end
 
-function Automatic_Multi_Stage_Scan()
-	-- check a +-50,+-50 square area around the Origin for a closed room
-	local Origin          = object.toAbsolutePosition({ 0.0, 0.0 });
-	local Scanner_ranges  = {50,250,1000}; -- ....
-
+function Automatic_Multi_Stage_Scan(Origin,Scanner_ranges)
 	-- first check with very small memory footprint 50 blocks in each direction
 	Start_New_Room_Breach_Scan(Origin,Scanner_ranges[1],1);
 	if (Flood_Data_Matrix.Room_is_not_enclosed == 1) then
@@ -88,15 +109,13 @@ function Automatic_Multi_Stage_Scan()
 	end
 	-- now we stop scanning because a larger area which would be larger then (Scanner_ranges*2+1)^2 blocks uses quite some mem and time.
 	-- you can however use Scanner_ranges = 10000 or mor if you like. see how long it takes if you are in a realy large room :)
-	
-	Perform_Action_After_Multistage_Scan();
 end
 
 function Perform_Action_After_Multistage_Scan()
-	if (Flood_Data_Matrix.Room_is_not_enclosed == 1) then
+	if (Vents.ANY_Room_is_not_enclosed == 1) then
 		-- set animation state of wall panel to breach!
 		object.setAnimationState("DisplayState", "breach");
-		if(Flood_Data_Matrix.Background_breach == 1) then
+		if(Vents.ANY_Background_breach == 1) then
 			-- play a meeping warning sound
 			object.playSound("Breach_Warning_Sound");
 			-- the interior of the room also emits some kind of effect
