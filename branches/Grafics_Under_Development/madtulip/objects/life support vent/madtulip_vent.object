@@ -1,6 +1,7 @@
 {
   "objectName" : "madtulip_vent",
   "rarity" : "Common",
+  "objectType" : "wire",
   "category" : "decorative",
   "price" : "300",
 
@@ -28,6 +29,16 @@
 
     }
   ],
+  
+  "animation" : "/objects/life support vent/madtulip_vent.animation",
+  "animationParts" : {
+    "O2_is_ok" : "/objects/life support vent/madtulip_vent_green.png",
+	"O2_is_bad" : "/objects/life support vent/madtulip_vent_red.png"
+  },
+  "animationPosition" : [-8, -8],
+
+  "scripts" : [ "/objects/life support vent/madtulip_vent_logic.lua" ],
+  "scriptDelta" : 5,
 
   "soundEffect" : "/sfx/objects/bunkervent.wav"
 

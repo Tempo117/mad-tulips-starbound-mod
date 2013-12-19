@@ -38,11 +38,15 @@ function main()
 		Automatic_Multi_Stage_Scan((cur_Vent_Position),{50,250,1000});
 		
 		if (Flood_Data_Matrix.Room_is_not_enclosed == 1) then
+			world.callScriptedEntity(Vents_Id, "set_O2_BAD_State");
 			Vents.ANY_Room_is_not_enclosed = 1;
+			if (Flood_Data_Matrix.Background_breach == 1) then
+				Vents.ANY_Background_breach    = 1;		
+			end
+		else
+			world.callScriptedEntity(Vents_Id, "set_O2_OK_State");
 		end
-		if (Flood_Data_Matrix.Background_breach == 1) then
-			Vents.ANY_Background_breach    = 1;		
-		end		
+
 		
 		Perform_Action_After_Multistage_Scan();
 	end
