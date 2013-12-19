@@ -2,29 +2,33 @@
   "objectName" : "madtulip_vent",
   "rarity" : "Common",
   "category" : "decorative",
-  "price" : "100",
-  "printable" : false,
+  "price" : "300",
 
-  "description" : "This vent clangs as air whistles through.",
-  "shortdescription" : "Air Vent",
-  "race" : "generic",
+  "description" : "Sterile, recycled air whirs through the fanblades at a steady pace.",
+  "shortdescription" : "Life Support Vent",
+  "race" : "human",
 
-  "apexDescription" : "An air vent.",
-  "avianDescription" : "A vent.",
-  "floranDescription" : "Vent.",
-  "glitchDescription" : "Identify. Vent.",
-  "humanDescription" : "A small air vent.",
-  "hylotlDescription" : "Ventilation.",
+  "apexDescription" : "A vent.",
+  "avianDescription" : "A vent to recycle air.",
+  "floranDescription" : "Blowing grate.",
+  "glitchDescription" : "Analyse. The recycling process isn't fully functional.",
+  "humanDescription" : "An uninspiring vent.",
+  "hylotlDescription" : "A vent with a fan.",
 
   "inventoryIcon" : "madtulip_vent_icon.png",
   "orientations" : [
     {
-      "image" : "madtulip_vent_red.png:<color>.<frame>",
-      "imagePosition" : [-8, 0],
-      "frames" : 4,
-      "animationCycle" : 0.5,
+      "image" : "madtulip_vent_green.png:<color>.<frame>",
+      "imagePosition" : [-8, -8],
+      "frames" : 3,
+      "animationCycle" : 0.2,
+
       "spaceScan" : 0.1,
       "anchors" : [ "background" ]
+
     }
-  ]
+  ],
+
+  "soundEffect" : "/sfx/objects/bunkervent.wav"
+
 }
