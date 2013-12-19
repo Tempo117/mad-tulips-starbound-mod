@@ -3,6 +3,7 @@
   "rarity" : "Common",
   "objectType" : "wire",
   "category" : "decorative",
+  "printable" : "false",
   "price" : "300",
 
   "description" : "Sterile, recycled air whirs through the fanblades at a steady pace.",
