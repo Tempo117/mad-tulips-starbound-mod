@@ -15,6 +15,11 @@
             "cycle" : 0.01,
             "mode" : "loop",
 			"direction" : "left"
+          },
+          "offline" : {
+            "frames" : 1,
+            "cycle" : 1,
+			"direction" : "left"
           }
         }
       }
@@ -36,6 +41,10 @@
             "breach" : {
               "properties" : {
               }
+            },
+            "offline" : {
+              "properties" : {
+              }
             }
           }
         }
@@ -52,6 +61,33 @@
               }
             },
             "breach" : {
+              "properties" : {
+                "image" : "<partImage>:default.<frame>",
+				"direction" : "left"
+              }
+            },
+            "offline" : {
+              "properties" : {
+              }
+            }
+          }
+        }
+      },
+	  "O2_is_not_used" : {
+        "properties" : {
+          "centered" : false
+        },
+        "partStates" : {
+          "DisplayState" : {
+            "normal_operation" : {
+              "properties" : {
+              }
+            },
+            "breach" : {
+              "properties" : {
+              }
+            },
+            "offline" : {
               "properties" : {
                 "image" : "<partImage>:default.<frame>",
 				"direction" : "left"

@@ -34,8 +34,6 @@
 		"madtulip_captainschair",
 		"madtulip_shipdoor",
 		
-		"madtulip_shipstation",		
-		"madtulip_shipnavigationconsole",
 		"madtulip_polymer",		
 		"madtulip_capacitor_100nf",
 		"madtulip_ic_logic",
@@ -43,6 +41,11 @@
 		"madtulip_pcb",
 		"madtulip_resistor_4k7",
 		"madtulip_silicium",
+		
+		"madtulip_shipstation",
+		"madtulip_shipnavigationconsole",		
+		"madtulip_life_support_system",
+		"madtulip_vent",
 		
 		"madtulip_human_ftl_thruster",
 		"madtulip_human_ship_comms",

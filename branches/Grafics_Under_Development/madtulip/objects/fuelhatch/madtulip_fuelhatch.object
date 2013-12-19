@@ -4,6 +4,7 @@
   "objectType" : "container",
   "description" : "Accepts a bunch of different kinds of fuel.",
   "shortdescription" : "Fuel Hatch",
+  "category" : "wired",
   "race" : "generic",
   "price" : "500",
   "printable" : false,  

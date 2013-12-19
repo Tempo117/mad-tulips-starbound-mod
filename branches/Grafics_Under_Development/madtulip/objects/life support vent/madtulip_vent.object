@@ -33,7 +33,8 @@
   "animation" : "/objects/life support vent/madtulip_vent.animation",
   "animationParts" : {
     "O2_is_ok" : "/objects/life support vent/madtulip_vent_green.png",
-	"O2_is_bad" : "/objects/life support vent/madtulip_vent_red.png"
+	"O2_is_bad" : "/objects/life support vent/madtulip_vent_red.png",
+	"O2_is_not_used" : "/objects/life support vent/madtulip_vent_offline.png"
   },
   "animationPosition" : [-8, -8],
 

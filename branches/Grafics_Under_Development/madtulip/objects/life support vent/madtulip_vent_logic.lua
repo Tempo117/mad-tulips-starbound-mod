@@ -28,3 +28,7 @@ end
 function set_O2_BAD_State()
 	object.setAnimationState("DisplayState", "breach");
 end
+
+function set_O2_Offline_State()
+	object.setAnimationState("DisplayState", "offline");
+end

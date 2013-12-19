@@ -15,6 +15,18 @@
             "cycle" : 1,
             "mode" : "loop",
 			"direction" : "left"
+          },
+          "offline" : {
+            "frames" : 1,
+            "cycle" : 2,
+            "mode" : "loop",
+			"direction" : "left"
+          },
+          "no_vent" : {
+            "frames" : 2,
+            "cycle" : 2,
+            "mode" : "loop",
+			"direction" : "left"
           }
         }
       }
@@ -36,6 +48,14 @@
             "breach" : {
               "properties" : {
               }
+            },
+            "offline" : {
+              "properties" : {
+              }
+            },
+            "no_vent" : {
+              "properties" : {
+              }
             }
           }
         }
@@ -54,6 +74,68 @@
             "breach" : {
               "properties" : {
                 "image" : "<partImage>:default.<frame>",
+				"direction" : "left"
+              }
+            },
+            "offline" : {
+              "properties" : {
+              }
+            },
+            "no_vent" : {
+              "properties" : {
+              }
+            }
+          }
+        }
+      },
+      "O2_is_not_used" : {
+        "properties" : {
+          "centered" : false
+        },
+        "partStates" : {
+          "DisplayState" : {
+            "normal_operation" : {
+              "properties" : {
+              }
+            },
+            "breach" : {
+              "properties" : {
+              }
+            },
+            "offline" : {
+              "properties" : {
+				"image" : "<partImage>:default.<frame>",
+				"direction" : "left"
+              }
+            },
+            "no_vent" : {
+              "properties" : {
+              }
+            }
+          }
+        }
+      },
+      "O2_no_vent_found" : {
+        "properties" : {
+          "centered" : false
+        },
+        "partStates" : {
+          "DisplayState" : {
+            "normal_operation" : {
+              "properties" : {
+              }
+            },
+            "breach" : {
+              "properties" : {
+              }
+            },
+            "offline" : {
+              "properties" : {
+              }
+            },
+            "no_vent" : {
+              "properties" : {
+				"image" : "<partImage>:default.<frame>",
 				"direction" : "left"
               }
             }

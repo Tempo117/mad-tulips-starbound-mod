@@ -3,7 +3,14 @@ function initializeObject()
 	object.setInteractive(true);
 	
 	-- Change animation for state "normal_operation"
-	object.setAnimationState("DisplayState", "normal_operation");
+	object.setAnimationState("DisplayState", "no_vent");
+	
+	On_Off_State = 1; -- "1:ON,2:OFF"
+end
+
+function kill_self()
+	world.spawnItem("madtulip_life_support_system", object.toAbsolutePosition({ 0.0, 0.0 }));
+	object.smash();
 end
 
 function main()
@@ -19,78 +26,89 @@ function main()
 		self.initialized = true;
 	end
 
-	------------------------- Automatic Hull Breach Scans ----------------------------------
-	-- MASTER ONLY:
-	-- Perform scan for hull breach using the master itself as point to start
-	--local cur_Vent_Position = object.toAbsolutePosition({ 0.0, 0.0 });
-	--Automatic_Multi_Stage_Scan((cur_Vent_Position),{50,250,1000});
-	
-	-- ALL VENTS:
-	Vents = {};
-	Vents.ANY_Room_is_not_enclosed = 0;
-	Vents.ANY_Background_breach    = 0;
-	
-	-- find all vents in the area and get theire position
-	local Vents_Ids  = world.objectQuery (object.toAbsolutePosition({ 0.0, 0.0 }),1000,{name = "madtulip_vent"});
-	-- Perform scan for hull breach using each vents origin as point to start an individual scan
-	for _, Vents_Id in pairs(Vents_Ids) do
-		local cur_Vent_Position = world.entityPosition (Vents_Id);
-		Automatic_Multi_Stage_Scan((cur_Vent_Position),{50,250,1000});
-		
-		if (Flood_Data_Matrix.Room_is_not_enclosed == 1) then
-			world.callScriptedEntity(Vents_Id, "set_O2_BAD_State");
-			Vents.ANY_Room_is_not_enclosed = 1;
-			if (Flood_Data_Matrix.Background_breach == 1) then
-				Vents.ANY_Background_breach    = 1;		
-			end
-		else
-			world.callScriptedEntity(Vents_Id, "set_O2_OK_State");
+	--- smash all other live support masters in the area - we only need one, firste come first serve :) ---
+	local madtulip_life_support_system_Ids  = world.objectQuery (object.toAbsolutePosition({ 0.0, 0.0 }),1000,{name = "madtulip_life_support_system"});
+	for _, madtulip_life_support_system_Id in pairs(madtulip_life_support_system_Ids) do
+		if (madtulip_life_support_system_Id > object.id()) then
+			world.callScriptedEntity(madtulip_life_support_system_Id, "kill_self");
 		end
-
-		
-		Perform_Action_After_Multistage_Scan();
 	end
+	
+	-- Automatic Hull Breach Scans for all Vents in the Area
+	Multistage_Scan_all_Vents_in_the_Area(1000);
 end
 
 function onInteraction(args)
-
 	-- if clicked by middle mouse or "e"
-	
-	-- Perform scan for hull breach
-	Automatic_Multi_Stage_Scan();
+	if(On_Off_State == 1) then
+		On_Off_State = 2;
+		object.setAnimationState("DisplayState", "offline");
+	else
+		On_Off_State = 1;
+		object.setAnimationState("DisplayState", "no_vent");
+	end
+end
 
-	-- so lets give debug feedback about the result which is stored in a global variable
-	-- if we had nice write permission lua by now we could even do something with the result here.
-	if (Flood_Data_Matrix.Room_is_not_enclosed == 1) then
-		-- no closed room found
-		-- what was the reason ?
-		if (Flood_Data_Matrix.Background_breach == 1) then
-			-- there was an open background tile
-			local relative_breach_position = {};
-			local first_detected_breach_location = Flood_Data_Matrix.Breaches[1];
-			relative_breach_position[1] = first_detected_breach_location[1] - Flood_Data_Matrix.Origin[1];
-			relative_breach_position[2] = first_detected_breach_location[2] - Flood_Data_Matrix.Origin[2];
-			return { "ShowPopup", { message = {"Hull breach detected!",
-											   " First breach at [x,y] absolute:",first_detected_breach_location,
-											   " [x,y] relative:",relative_breach_position,
-											   " Total Nr. of breaches:",Flood_Data_Matrix.Nr_of_Breaches,
-											   " Total area of room:",Flood_Data_Matrix.Area}}};
-		end
-		if (Flood_Data_Matrix.Max_Nr_of_Iterations_happend == 1) then
-			-- there was an open background tile
-			return { "ShowPopup", { message = {"Max Nr. of iterations happend!",
-											   " Total area of room:",Flood_Data_Matrix.Area,
-											   " Nr_Iterations:",Flood_Data_Matrix.Cur_Iteration}}};
-		end
-		if (Flood_Data_Matrix.Maximum_size_to_scan_reached == 1) then
-			-- there was an open background tile
-			return { "ShowPopup", { message = {"Max size to scan reached!",
-											   " Total area of Room:",Flood_Data_Matrix.Area,
-											   " Nr_Iterations:",Flood_Data_Matrix.Cur_Iteration}}};
+function Multistage_Scan_all_Vents_in_the_Area(Range)
+	-- Range: range from life support system in blocks in which to search for vents
+	
+	local All_Vents_Status = {};
+	All_Vents_Status.ANY_Room_is_not_enclosed = 0;
+	All_Vents_Status.ANY_Background_breach    = 0;
+	
+	-- find all vents in the area and get theire position
+	local Vents_Ids  = world.objectQuery (object.toAbsolutePosition({ 0.0, 0.0 }),Range,{name = "madtulip_vent"});
+	-- Perform scan for hull breach using each vents origin as point to start an individual scan
+	
+	-- check for offline
+	if (On_Off_State ~= 1) then
+		-- its offline
+		object.setAnimationState("DisplayState", "offline");
+		for _, Vents_Id in pairs(Vents_Ids) do
+			-- set vens offline as well
+			world.callScriptedEntity(Vents_Id, "set_O2_Offline_State");
 		end
 	else
-		return { "ShowPopup", { message = {"Room is hermetically sealed!",
-										   " Area of room:",Flood_Data_Matrix.Area}}};
+		-- its online
+		-- default animation: no ventilators found
+		object.setAnimationState("DisplayState", "no_vent");
+		for _, Vents_Id in pairs(Vents_Ids) do
+			local cur_Vent_Position = world.entityPosition (Vents_Id);
+			Automatic_Multi_Stage_Scan((cur_Vent_Position),{50,250,1000});
+			
+			if (Flood_Data_Matrix.Room_is_not_enclosed == 1) then
+				world.callScriptedEntity(Vents_Id, "set_O2_BAD_State");
+				All_Vents_Status.ANY_Room_is_not_enclosed = 1;
+				if (Flood_Data_Matrix.Background_breach == 1) then
+					All_Vents_Status.ANY_Background_breach    = 1;		
+				end
+			else
+				world.callScriptedEntity(Vents_Id, "set_O2_OK_State");
+			end
+			
+			-- perform actions for this vent
+			if (All_Vents_Status.ANY_Room_is_not_enclosed == 1) then
+				-- set animation state of wall panel to breach!
+				object.setAnimationState("DisplayState", "breach");
+				if(All_Vents_Status.ANY_Background_breach == 1) then
+					-- play a meeping warning sound
+					object.playSound("Breach_Warning_Sound");
+					-- the interior of the room also emits some kind of effect
+					--for _, Room_Background_Location in pairs(Flood_Data_Matrix.Background_in_scanned_Area) do
+						--world.spawnProjectile("madtulip_breached_room_background", Room_Background_Location);
+					--end
+					
+					-- the breach positions
+					for _, Breach_Location in pairs(Flood_Data_Matrix.Breaches) do
+						-- spawn some fast moving particles
+						world.spawnProjectile("madtulip_breach", Breach_Location);
+					end
+				end
+			else
+				-- set animation state to breach!
+				object.setAnimationState("DisplayState", "normal_operation");
+			end
+		end
 	end
 end
 
@@ -113,30 +131,6 @@ function Automatic_Multi_Stage_Scan(Origin,Scanner_ranges)
 	end
 	-- now we stop scanning because a larger area which would be larger then (Scanner_ranges*2+1)^2 blocks uses quite some mem and time.
 	-- you can however use Scanner_ranges = 10000 or mor if you like. see how long it takes if you are in a realy large room :)
-end
-
-function Perform_Action_After_Multistage_Scan()
-	if (Vents.ANY_Room_is_not_enclosed == 1) then
-		-- set animation state of wall panel to breach!
-		object.setAnimationState("DisplayState", "breach");
-		if(Vents.ANY_Background_breach == 1) then
-			-- play a meeping warning sound
-			object.playSound("Breach_Warning_Sound");
-			-- the interior of the room also emits some kind of effect
-			--for _, Room_Background_Location in pairs(Flood_Data_Matrix.Background_in_scanned_Area) do
-				--world.spawnProjectile("madtulip_breached_room_background", Room_Background_Location);
-			--end
-			
-			-- the breach positions
-			for _, Breach_Location in pairs(Flood_Data_Matrix.Breaches) do
-				-- spawn some fast moving particles
-				world.spawnProjectile("madtulip_breach", Breach_Location);
-			end
-		end
-	else
-		-- set animation state to breach!
-		object.setAnimationState("DisplayState", "normal_operation");
-	end
 end
 
 function Start_New_Room_Breach_Scan(Origin,size_to_scan,Scan_8_method)

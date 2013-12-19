@@ -18,14 +18,16 @@ end
 function onInteraction(args)
 	-- if clicked by middle mouse or "e"
 	-- define a square:
-	  -- (origin[1]+X_range[1],origin[1]+X_range[2],origin[2]+Y_range[1],origin[2]+Y_range[2])
+	  --(origin[1]-Range,origin[1]+Range,origin[2]-Range,origin[2]+Range)
     local Origin = object.toAbsolutePosition({ 0.0, 0.0 });
-	local X_range = {0,1};
-	local Y_range = {0,1};
+	local Range = 1;
 	
 	-- gather data about blocks at those locations
 	local Data = {};
-	Data = Scan_Area_for_Dead_Content(Origin, X_range, Y_range);
+	Data = Scan_Area_for_Dead_Content(Origin, Range);
+	
+	-- get count of i.e. fins and other objects
+	-- check if we have enough fins for Data.block_weight 
 
 	-- debug out the gathered data
 	if Data.X == nil then
@@ -34,27 +36,28 @@ function onInteraction(args)
 	end
 end
 
-function Scan_Area_for_Dead_Content(Origin, X_range, Y_range)
+function Scan_Area_for_Dead_Content(Origin, Range)
 	-- searches area in a square defined by:
-	  --(origin[1]+X_range[1],origin[1]+X_range[2],origin[2]+Y_range[1],origin[2]+Y_range[2])
+	  --(origin[1]-Range,origin[1]+Range,origin[2]-Range,origin[2]+Range)
 	-- returns a table containing X,Y coordinates and for each of them
 	  -- name of foreground block
 	  -- name of backgroundground block
 	
 	-- init
-	local Data = {};
-	  Data.X = {};
-	  Data.Y = {};
-	  Data.background_material = {};
-	  Data.foreground_material = {};
-	local cur_Position = {};
-	local cur_foreground_material = {};
-	local cur_background_material = {};
+	local Data   = {};
+	local Data.X = {};
+	local Data.Y = {};
+	local Data.block_weight        = 0;
+	local Data.background_material = {};
+	local Data.foreground_material = {};
+	local cur_Position             = {};
+	local cur_foreground_material  = {};
+	local cur_background_material  = {};
 	local n = 1; -- iteration counter
 
 	-- loop over square area
-	for cur_X = X_range[1], X_range[2], 1 do
-		for cur_Y = Y_range[1], Y_range[2], 1 do
+	for cur_X = Origin[1]-Range, Origin[1]+Range, 1 do
+		for cur_Y = Origin[2]-Range, Origin[2]+Range, 1 do
 			-- X coordinate where to get data
 			cur_Position[1] = Origin[1] + cur_X;
 			-- Y coordinate where to get data
@@ -70,6 +73,15 @@ function Scan_Area_for_Dead_Content(Origin, X_range, Y_range)
 			Data.Y[n] = cur_Position[2];
 			Data.foreground_material[n] = cur_foreground_material;
 			Data.background_material[n] = cur_background_material;
+			
+			-- count foreground and background blocks. if both occupy the same position only one is counted
+			if (cur_foreground_material ~= nil) then
+				Data.block_weight = Data.block_weight + 1;
+			else
+				if (background_material ~= nil) then
+					Data.block_weight = Data.block_weight + 1;
+				end
+			end
 			
 			-- inc loop
 			n = n + 1; 

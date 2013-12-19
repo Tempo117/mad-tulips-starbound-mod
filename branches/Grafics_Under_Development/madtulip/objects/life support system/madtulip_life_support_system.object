@@ -25,7 +25,9 @@
   "animation" : "/objects/life support system/madtulip_life_support_system.animation",
   "animationParts" : {
     "O2_is_ok" : "/objects/life support system/madtulip_life_support_system_green.png",
-	"O2_is_bad" : "/objects/life support system/madtulip_life_support_system_red.png"
+	"O2_is_bad" : "/objects/life support system/madtulip_life_support_system_red.png",
+	"O2_no_vent_found" : "/objects/life support system/madtulip_life_support_system_yellow.png",
+	"O2_is_not_used" : "/objects/life support system/madtulip_life_support_system_offline.png"
   },
   "animationPosition" : [-16, -8],
   
