@@ -47,7 +47,7 @@
       "foregroundBlock" : false,
       "backgroundBlock" : true,
       "backgroundMat" : "apexshipwall",
-      "object" : "apexshiplocker",
+      "object" : "madtulip_shiplocker",
       "objectParameters" : {
         "treasurePools" : [ "glitchStarterTreasure" ],
         "level" : 1,
@@ -60,7 +60,7 @@
       "foregroundBlock" : false,
       "backgroundBlock" : true,
       "backgroundMat" : "apexshipwall",
-      "object" : "techstation",
+      "object" : "madtulip_techstation",
       "objectParameters" : {
         "unbreakable" : false
       }
@@ -98,13 +98,32 @@
         "unbreakable" : false
       }
     },
-
+    {
+      "value" : [146, 255, 146, 255],
+      "foregroundBlock" : false,
+      "backgroundBlock" : true,
+	  "backgroundMat" : "apexshipwall",
+      "object" : "madtulip_life_support_system",
+      "objectParameters" : {
+        "unbreakable" : false
+      }
+    },
+    {
+      "value" : [147, 255, 147, 255],
+      "foregroundBlock" : false,
+      "backgroundBlock" : true,
+	  "backgroundMat" : "apexshipwall",
+      "object" : "madtulip_vent",
+      "objectParameters" : {
+        "unbreakable" : false
+      }
+    },
     {
       "value" : [255, 87, 81, 255],
       "foregroundBlock" : false,
       "backgroundBlock" : true,
 	  "backgroundMat" : "apexshipwall",
-      "object" : "apexfuelhatch",
+      "object" : "madtulip_fuelhatch",
       "objectParameters" : {
         "unbreakable" : false
       }
@@ -115,7 +134,7 @@
       "foregroundBlock" : false,
       "backgroundBlock" : true,
       "backgroundMat" : "apexshipdetails",
-      "object" : "apexshiplight"
+      "object" : "madtulip_shiplight"
     },
 	
     {
@@ -123,14 +142,14 @@
       "foregroundBlock" : false,
       "backgroundBlock" : true,
       "backgroundMat" : "glass",
-      "object" : "apexshiplight"
+      "object" : "madtulip_shiplight"
     },
 
     {
       "value" : [255, 102, 0, 255],
       "foregroundBlock" : false,
       "backgroundBlock" : true,
-      "object" : "apexshipdoor",
+      "object" : "madtulip_shipdoor",
 	  "backgroundMat" : "apexshipdetails"
     },
 
@@ -149,7 +168,7 @@
       "foregroundBlock" : false,
       "backgroundBlock" : true,
       "backgroundMat" : "apexshipdetails",
-      "object" : "teleporter",
+      "object" : "madtulip_teleporter",
       "flags" : [ "playerSpawn" ],
       "objectParameters" : {
         "unbreakable" : false
@@ -161,7 +180,7 @@
       "foregroundBlock" : false,
       "backgroundBlock" : true,
 	  "backgroundMat" : "apexshipwall",
-      "object" : "apexcaptainschair",
+      "object" : "madtulip_captainschair",
       "objectDirection" : "left",
       "objectParameters" : {
         "unbreakable" : false

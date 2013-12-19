@@ -8,11 +8,11 @@
     "config" : "/objects/ship station/madtulip_shipstation.config",
     "filter" : [ "madtulip_shipstation" ]
   },
-  "printable" : false,
   "description" : "A ship station. For building ship parts!",
   "shortdescription" : "Ship Station",
   "race" : "generic",
   "category" : "crafting",
+  "printable" : false,
   "price" : "200",
 
   "apexDescription" : "A ship station. Useful.",

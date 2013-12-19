@@ -5,7 +5,7 @@
 	{ "item" : "money", "count" : 2000 }
   ],
   "output" : {
-    "item" : "apexshiplocker",
+    "item" : "madtulip_shiplocker",
     "count" : 1
   },
   "groups" : [ "madtulip_shipstation", "all", "other" ]

@@ -6,6 +6,8 @@
 	"race" : "generic",
 	"category" : "decorative",
 	"price" : "200",
+	"printable" : false,
+	
 	"inventoryIcon" : "madtulip_shipstationmanual_inv.png",
 	"orientations" : [
 		{
@@ -20,18 +22,21 @@
 	"learnBlueprintsOnPickup" : [
 		"madtulip_shipstationmanual",
 		
-		"apexcaptainschair",
-		"apexfuelhatch",
 		"apexshipdetails",
-		"apexshiplight",
-		"apexshiplocker",
 		"apexshipsupport",
 		"apexshipwall",
-		"techstation",
-		"teleporter",
 		
-		"madtulip_shipstation",		
-		"madtulip_shipnavigationconsole",
+		"madtulip_life_support_system",
+		"madtulip_vent",
+		
+		"madtulip_fuelhatch",
+		"madtulip_shiplight",
+		"madtulip_shiplocker",
+		"madtulip_techstation",
+		"madtulip_teleporter",
+		"madtulip_captainschair",
+		"madtulip_shipdoor",
+		
 		"madtulip_polymer",		
 		"madtulip_capacitor_100nf",
 		"madtulip_ic_logic",
@@ -39,8 +44,11 @@
 		"madtulip_pcb",
 		"madtulip_resistor_4k7",
 		"madtulip_silicium",
-		"madtulip_glitch_ftl_thruster",
-		"madtulip_glitch_stabilization_thruster",
+		
+		"madtulip_shipstation",
+		"madtulip_shipnavigationconsole",		
+		"madtulip_life_support_system",
+		"madtulip_vent",
 		
 		"madtulip_human_ftl_thruster",
 		"madtulip_human_ship_comms",
@@ -53,7 +61,11 @@
 		"madtulip_human_stabilization_thruster",
 		
 		"madtulip_glitch_ftl_thruster",
-		"madtulip_glitch_stabilization_thruster"
+		"madtulip_glitch_stabilization_thruster",
+		"madtulip_glitch_flux_compensator",
+		"madtulip_glitch_gyro_stabilizer",
+		"madtulip_glitch_tower",
+		"madtulip_glitch_turret"
 	]
 
 }
