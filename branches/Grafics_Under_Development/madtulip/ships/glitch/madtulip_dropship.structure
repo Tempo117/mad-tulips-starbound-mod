@@ -109,6 +109,16 @@
       }
     },
     {
+      "value" : [147, 255, 147, 255],
+      "foregroundBlock" : false,
+      "backgroundBlock" : true,
+	  "backgroundMat" : "apexshipwall",
+      "object" : "madtulip_vent",
+      "objectParameters" : {
+        "unbreakable" : false
+      }
+    },
+    {
       "value" : [255, 87, 81, 255],
       "foregroundBlock" : false,
       "backgroundBlock" : true,

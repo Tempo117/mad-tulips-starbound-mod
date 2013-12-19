@@ -26,6 +26,9 @@
 		"apexshipsupport",
 		"apexshipwall",
 		
+		"madtulip_life_support_system",
+		"madtulip_vent",
+		
 		"madtulip_fuelhatch",
 		"madtulip_shiplight",
 		"madtulip_shiplocker",

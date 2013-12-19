@@ -8,5 +8,5 @@
     "item" : "madtulip_life_support_system",
     "count" : 1
   },
-  "groups" : [ "plain", "all", "other" ]
+  "groups" : [ "madtulip_shipstation", "all", "other" ]
 }

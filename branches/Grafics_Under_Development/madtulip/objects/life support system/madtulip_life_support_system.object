@@ -2,7 +2,7 @@
   "objectName" : "madtulip_life_support_system",
   "rarity" : "Common",
   "objectType" : "wire",
-  "description" : "Scaner checks, if it is placed in an wall enclosed room section.",
+  "description" : "Life Support System. Needs Life Support Vents to work properly.",
   "shortdescription" : "Life Support System",
   "race" : "generic",
   "category" : "tools",
@@ -34,5 +34,5 @@
   "Breach_Warning_Sound" : [ "/objects/life support system/Breach_Warning_Sound.wav" ],
 
   "scripts" : [ "/objects/life support system/madtulip_life_support_system_logic.lua" ],
-  "scriptDelta" : 25
+  "scriptDelta" : 50
 }
