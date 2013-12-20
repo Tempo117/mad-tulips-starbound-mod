@@ -5,7 +5,15 @@ function initializeObject()
 	-- Change animation for state "normal_operation"
 	object.setAnimationState("DisplayState", "no_vent");
 	
+	-- globals
 	On_Off_State = 1; -- "1:ON,2:OFF"
+	maximum_particle_fountains = 50;
+	
+	-- spawn a new main calculation thread
+	co = coroutine.create(function ()
+		-- Automatic Hull Breach Scans for all Vents in the Area
+		Multistage_Scan_all_Vents_in_the_Area(1000);
+	 end)
 end
 
 function kill_self()
@@ -26,7 +34,7 @@ function main()
 		self.initialized = true;
 	end
 
-	--- smash all other live support masters in the area - we only need one, firste come first serve :) ---
+	--- smash all other life support masters in the area - we only need one, firste come first serve :) ---
 	local madtulip_life_support_system_Ids  = world.objectQuery (object.toAbsolutePosition({ 0.0, 0.0 }),1000,{name = "madtulip_life_support_system"});
 	for _, madtulip_life_support_system_Id in pairs(madtulip_life_support_system_Ids) do
 		if (madtulip_life_support_system_Id > object.id()) then
@@ -34,12 +42,25 @@ function main()
 		end
 	end
 	
-	-- Automatic Hull Breach Scans for all Vents in the Area
-	Multistage_Scan_all_Vents_in_the_Area(1000);
+	--Multistage_Scan_all_Vents_in_the_Area(1000);
+	if (coroutine.status(co) == "suspended") then
+		-- start thread
+		coroutine.resume(co);
+	elseif (coroutine.status(co) == "dead") then
+		-- spawn a new main calculation thread
+		co = coroutine.create(function ()
+			-- Automatic Hull Breach Scans for all Vents in the Area
+			Multistage_Scan_all_Vents_in_the_Area(1000);
+		 end)
+	elseif (coroutine.status(co) == "running") then
+		-- nothing
+	end
 end
 
 function onInteraction(args)
 	-- if clicked by middle mouse or "e"
+	
+	-- here you can switch the main unit and all slaves off
 	if(On_Off_State == 1) then
 		On_Off_State = 2;
 		object.setAnimationState("DisplayState", "offline");
@@ -52,62 +73,120 @@ end
 function Multistage_Scan_all_Vents_in_the_Area(Range)
 	-- Range: range from life support system in blocks in which to search for vents
 	
-	local All_Vents_Status = {};
-	All_Vents_Status.ANY_Room_is_not_enclosed = 0;
-	All_Vents_Status.ANY_Background_breach    = 0;
+	local Scan_Results = {};
+	Scan_Results.Counter_Nr_Vents_Processed = 0;
+	Scan_Results.Nr_Vent_Ids_overlapping    = 0;
+	Scan_Results.Vent_Ids_overlapping       = {};
+	-- while looping over all vents the global results of all flood fill scans are saved here
+	Scan_Results.ANY_Room_is_not_enclosed = 0;
+	Scan_Results.ANY_Background_breach    = 0;
+	Scan_Results.ANY_BREACHES             = {};
+	Scan_Results.counter_breaches         = 0;
+	-- while looping over all vents the results of theire flood fill scans are saved here
+	Scan_Results.SINGLE_VENTS_ID                   = {};
+	Scan_Results.SINGLE_VENTS_WAS_SKIPPED          = {};
+	Scan_Results.SINGLE_VENTS_Room_is_not_enclosed = {};
+	Scan_Results.SINGLE_VENTS_Background_breach    = {};
+	Scan_Results.SINGLE_VENTS_BREACHES             = {};
 	
 	-- find all vents in the area and get theire position
-	local Vents_Ids  = world.objectQuery (object.toAbsolutePosition({ 0.0, 0.0 }),Range,{name = "madtulip_vent"});
+	Vents_Ids  = world.objectQuery (object.toAbsolutePosition({ 0.0, 0.0 }),Range,{name = "madtulip_vent"});
 	-- Perform scan for hull breach using each vents origin as point to start an individual scan
 	
-	-- check for offline
+	-- check for master system beeing offline
 	if (On_Off_State ~= 1) then
-		-- its offline
+		-- master is offline
 		object.setAnimationState("DisplayState", "offline");
 		for _, Vents_Id in pairs(Vents_Ids) do
 			-- set vens offline as well
 			world.callScriptedEntity(Vents_Id, "set_O2_Offline_State");
 		end
 	else
-		-- its online
+		-- master is online
 		-- default animation: no ventilators found
 		object.setAnimationState("DisplayState", "no_vent");
+
+		----- Scan all vents -----
 		for _, Vents_Id in pairs(Vents_Ids) do
-			local cur_Vent_Position = world.entityPosition (Vents_Id);
-			Automatic_Multi_Stage_Scan((cur_Vent_Position),{50,250,1000});
+			-- inc counter
+			Scan_Results.Counter_Nr_Vents_Processed = Scan_Results.Counter_Nr_Vents_Processed +1;
 			
+			-- expensive call (start flood fill for the current Vent)
+			Automatic_Multi_Stage_Scan((world.entityPosition (Vents_Id)),{50,250,1000});
+
+			-- save the impact of this current Vent on the Life Support Main "breached" or "not breached" status
 			if (Flood_Data_Matrix.Room_is_not_enclosed == 1) then
-				world.callScriptedEntity(Vents_Id, "set_O2_BAD_State");
-				All_Vents_Status.ANY_Room_is_not_enclosed = 1;
+				-- globally this is also true (one is enough)
+				Scan_Results.ANY_Room_is_not_enclosed = 1;
 				if (Flood_Data_Matrix.Background_breach == 1) then
-					All_Vents_Status.ANY_Background_breach    = 1;		
+					-- its a defined background breach. no out of memory or iteration counter
+					Scan_Results.ANY_Background_breach    = 1;		
 				end
-			else
-				world.callScriptedEntity(Vents_Id, "set_O2_OK_State");
 			end
 			
-			-- perform actions for this vent
-			if (All_Vents_Status.ANY_Room_is_not_enclosed == 1) then
-				-- set animation state of wall panel to breach!
-				object.setAnimationState("DisplayState", "breach");
-				if(All_Vents_Status.ANY_Background_breach == 1) then
-					-- play a meeping warning sound
-					object.playSound("Breach_Warning_Sound");
-					-- the interior of the room also emits some kind of effect
-					--for _, Room_Background_Location in pairs(Flood_Data_Matrix.Background_in_scanned_Area) do
-						--world.spawnProjectile("madtulip_breached_room_background", Room_Background_Location);
-					--end
-					
-					-- the breach positions
-					for _, Breach_Location in pairs(Flood_Data_Matrix.Breaches) do
-						-- spawn some fast moving particles
-						world.spawnProjectile("madtulip_breach", Breach_Location);
-					end
-				end
+			-- save states of the currently checked vent
+			Scan_Results.SINGLE_VENTS_ID[Scan_Results.Counter_Nr_Vents_Processed]       = Vents_Id;
+			Scan_Results.SINGLE_VENTS_BREACHES[Scan_Results.Counter_Nr_Vents_Processed] = Flood_Data_Matrix.Breaches;
+			for _, Breach_Location in pairs(Flood_Data_Matrix.Breaches) do
+				Scan_Results.counter_breaches = Scan_Results.counter_breaches +1;
+				Scan_Results.ANY_BREACHES[Scan_Results.counter_breaches] = Breach_Location;
+			end
+			Scan_Results.SINGLE_VENTS_WAS_SKIPPED[Scan_Results.Counter_Nr_Vents_Processed]              = 0;
+			if (Flood_Data_Matrix.Room_is_not_enclosed == 1) then
+				Scan_Results.SINGLE_VENTS_Room_is_not_enclosed[Scan_Results.Counter_Nr_Vents_Processed] = 1;
 			else
-				-- set animation state to breach!
+				Scan_Results.SINGLE_VENTS_Room_is_not_enclosed[Scan_Results.Counter_Nr_Vents_Processed] = 0;
+			end
+			if (Flood_Data_Matrix.Background_breach == 1) then
+				Scan_Results.SINGLE_VENTS_Background_breach[Scan_Results.Counter_Nr_Vents_Processed]    = 1;
+			else
+				Scan_Results.SINGLE_VENTS_Background_breach[Scan_Results.Counter_Nr_Vents_Processed]    = 0;
+			end
+		end
+		------- all vents have been scanned -------
+		
+		------- perform actions -------
+		-- if any vents detected at all
+		if (Scan_Results.Counter_Nr_Vents_Processed > 0) then
+			-- for the master based on the scan results
+			if(Scan_Results.ANY_Background_breach == 1) then
+				-- play a meeping warning sound
+				object.playSound("Breach_Warning_Sound");
+			end	
+			if (Scan_Results.ANY_Room_is_not_enclosed == 1) then
+				-- set animation state of master wall panel to breach
+				object.setAnimationState("DisplayState", "breach");
+			else
+				-- set animation state to normal operation
 				object.setAnimationState("DisplayState", "normal_operation");
 			end
+			
+			-- perform actions for each vent based on the scan results
+			--local Scan_Results.counter_breaches = 0;
+			for cur_Vent_Nr = 1,Scan_Results.Counter_Nr_Vents_Processed,1 do
+				if (Scan_Results.SINGLE_VENTS_Room_is_not_enclosed[cur_Vent_Nr] == 1) then
+					-- the current Vent is not in a closed room -> display that graficaly
+					world.callScriptedEntity(Scan_Results.SINGLE_VENTS_ID[cur_Vent_Nr], "set_O2_BAD_State");
+				else
+					-- this vents room was not breached -> display that graficaly
+					world.callScriptedEntity(Scan_Results.SINGLE_VENTS_ID[cur_Vent_Nr], "set_O2_OK_State");
+				end
+			end
+
+			-- spawn breach grafics
+			-- limit theire number
+			if (Scan_Results.counter_breaches > maximum_particle_fountains) then
+				-- spawn them (limited amount)
+				for cur_particle_fountain_to_generate = 1,maximum_particle_fountains,1 do
+					world.spawnProjectile("madtulip_breach", Scan_Results.ANY_BREACHES[math.random(Scan_Results.counter_breaches)]);
+				end
+			else
+				-- spawn them (all)
+				for cur_counter_breaches = 1,Scan_Results.counter_breaches,1 do
+					world.spawnProjectile("madtulip_breach", Scan_Results.ANY_BREACHES[cur_counter_breaches]);
+				end
+			end
+
 		end
 	end
 end
@@ -144,25 +223,26 @@ function Start_New_Room_Breach_Scan(Origin,size_to_scan,Scan_8_method)
 	Flood_Data_Matrix.Content       = {}; -- stores at [x,y] the "color" of the block which tells if its background, foreground or open
 	Flood_Data_Matrix.Breaches      = {}; -- stores {x,y} pairs of locations of breach
 	Flood_Data_Matrix.Background_in_scanned_Area = {}; -- stores {x,y} pairs of background only (interior) locations of enclosed area
+	Flood_Data_Matrix.Vent_Ids_overlapping       = {} -- stroes IDs of Vents that are in the area flooded by the current vent. we dont need to check them again.
 	-- settings
-	Flood_Data_Matrix.Origin        = Origin;
-	Flood_Data_Matrix.size_to_scan  = size_to_scan;
-	Flood_Data_Matrix.X_min         = Origin[1] - size_to_scan;
-	Flood_Data_Matrix.X_max         = Origin[1] + size_to_scan;
-	Flood_Data_Matrix.Y_min         = Origin[2] - size_to_scan;
-	Flood_Data_Matrix.Y_max         = Origin[2] + size_to_scan;
-	Flood_Data_Matrix.Max_Iteration = ((size_to_scan*2)+1)*((size_to_scan*2)+1); -- maximum room size. if the room is larger this will terminate early stating that the room is not closed
-	Flood_Data_Matrix.Scan_8_method = Scan_8_method; -- if == 0 scan 4 surrounding blocks (W,N,E,S) else scan also the 4 diagonal corners
+	Flood_Data_Matrix.Origin         = Origin;
+	Flood_Data_Matrix.size_to_scan   = size_to_scan;
+	Flood_Data_Matrix.X_min          = Origin[1] - size_to_scan;
+	Flood_Data_Matrix.X_max          = Origin[1] + size_to_scan;
+	Flood_Data_Matrix.Y_min          = Origin[2] - size_to_scan;
+	Flood_Data_Matrix.Y_max          = Origin[2] + size_to_scan;
+	Flood_Data_Matrix.Max_Iteration  = ((size_to_scan*2)+1)*((size_to_scan*2)+1); -- maximum room size. if the room is larger this will terminate early stating that the room is not closed
+	Flood_Data_Matrix.Scan_8_method  = Scan_8_method; -- if == 0 scan 4 surrounding blocks (W,N,E,S) else scan also the 4 diagonal corners
 	Flood_Data_Matrix.max_door_hight_top    = 5;
 	Flood_Data_Matrix.max_door_hight_bottom = 5;
 	Flood_Data_Matrix.target_color          = 1;
 	Flood_Data_Matrix.none_target_color     = 2;
 	Flood_Data_Matrix.replacement_color     = 3;
-
 	-- counter
-	Flood_Data_Matrix.Area = 0; -- counts the area filled with flood
-	Flood_Data_Matrix.Cur_Iteration = 0; -- counter for number of iterations done so far
-	Flood_Data_Matrix.Nr_of_Breaches = 0; -- counter for number of breaches detected
+	Flood_Data_Matrix.Area                    = 0; -- counts the area filled with flood
+	Flood_Data_Matrix.Cur_Iteration           = 0; -- counter for number of iterations done so far
+	Flood_Data_Matrix.Nr_of_Breaches          = 0; -- counter for number of breaches detected
+	Flood_Data_Matrix.Nr_Vent_Ids_overlapping = 0; -- counts how many other ventilators area beeing flooded by this one. we dont want to run those again.
 	-- bools
 	Flood_Data_Matrix.Stop_Iteration       = 0; -- bool
 	Flood_Data_Matrix.Room_is_not_enclosed = 0; -- bool
@@ -320,7 +400,8 @@ function Flood_Fill(cur_Position)
 	
 	-- ----- so far we are good, take next step in the state machine -----
 	-- increment iteration step
-	Flood_Data_Matrix.Cur_Iteration = Flood_Data_Matrix.Cur_Iteration + 1;	
+	Flood_Data_Matrix.Cur_Iteration = Flood_Data_Matrix.Cur_Iteration + 1;
+	
 	-- check if there is a foreground block
 	--  ,if not then check if there is a background block
 	--  ,if also not its a breach.
