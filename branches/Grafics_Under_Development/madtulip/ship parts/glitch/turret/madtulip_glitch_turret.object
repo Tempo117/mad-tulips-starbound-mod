@@ -17,6 +17,14 @@
       "animationCycle" : 1,
       "spaceScan" : 0.1,
       "anchors" : [ "bottom" ]
+    },
+	{
+      "dualImage" : "madtulip_glitch_turret_bottom.png:<color>.<frame>",
+      "imagePosition" : [-43,-16],
+      "frames" : 1,
+      "animationCycle" : 1,
+      "spaceScan" : 0.1,
+      "anchors" : [ "top" ]
     }
   ]
 }
