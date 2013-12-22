@@ -73,6 +73,10 @@ end
 function Multistage_Scan_all_Vents_in_the_Area(Range)
 	-- Range: range from life support system in blocks in which to search for vents
 	
+	Nr_of_all_vents = 0;
+	Postion_of_all_vents = {};
+	IDs_of_all_vents = {};
+	
 	local Scan_Results = {};
 	Scan_Results.Counter_Nr_Vents_Processed = 0;
 	Scan_Results.Nr_Vent_Ids_overlapping    = 0;
@@ -90,8 +94,14 @@ function Multistage_Scan_all_Vents_in_the_Area(Range)
 	Scan_Results.SINGLE_VENTS_BREACHES             = {};
 	
 	-- find all vents in the area and get theire position
-	Vents_Ids  = world.objectQuery (object.toAbsolutePosition({ 0.0, 0.0 }),Range,{name = "madtulip_vent"});
+	local Vents_Ids  = world.objectQuery (object.toAbsolutePosition({ 0.0, 0.0 }),Range,{name = "madtulip_vent"});
 	-- Perform scan for hull breach using each vents origin as point to start an individual scan
+	
+	for _, Vents_Id in pairs(Vents_Ids) do
+		Nr_of_all_vents = Nr_of_all_vents+1;
+		Postion_of_all_vents[Nr_of_all_vents] = world.entityPosition (Vents_Id);
+		IDs_of_all_vents[Nr_of_all_vents] = Vents_Id;
+	end
 	
 	-- check for master system beeing offline
 	if (On_Off_State ~= 1) then
@@ -107,40 +117,90 @@ function Multistage_Scan_all_Vents_in_the_Area(Range)
 		object.setAnimationState("DisplayState", "no_vent");
 
 		----- Scan all vents -----
+--world.logInfo ("SCAN ALL VENTS")
 		for _, Vents_Id in pairs(Vents_Ids) do
-			-- inc counter
-			Scan_Results.Counter_Nr_Vents_Processed = Scan_Results.Counter_Nr_Vents_Processed +1;
-			
-			-- expensive call (start flood fill for the current Vent)
-			Automatic_Multi_Stage_Scan((world.entityPosition (Vents_Id)),{50,250,1000});
-
-			-- save the impact of this current Vent on the Life Support Main "breached" or "not breached" status
-			if (Flood_Data_Matrix.Room_is_not_enclosed == 1) then
-				-- globally this is also true (one is enough)
-				Scan_Results.ANY_Room_is_not_enclosed = 1;
-				if (Flood_Data_Matrix.Background_breach == 1) then
-					-- its a defined background breach. no out of memory or iteration counter
-					Scan_Results.ANY_Background_breach    = 1;		
+--world.logInfo ("next vent")
+			-- check if the current vent was already implicitly tested by beeing flooded by another earlier tested vent
+			local process_this_vent; -- bool
+			process_this_vent = 1;
+--world.logInfo ({"Nr_overlapping:",Scan_Results.Nr_Vent_Ids_overlapping})
+			for n = 1,Scan_Results.Nr_Vent_Ids_overlapping,1 do
+--world.logInfo ({"comparing:",Scan_Results.Vent_Ids_overlapping[n],Vents_Id})
+				if(Scan_Results.Vent_Ids_overlapping[n] == Vents_Id) then
+					-- it was hit already, dont test this again.
+					process_this_vent = 0;
+--world.logInfo ("found one to skip")
 				end
 			end
-			
-			-- save states of the currently checked vent
-			Scan_Results.SINGLE_VENTS_ID[Scan_Results.Counter_Nr_Vents_Processed]       = Vents_Id;
-			Scan_Results.SINGLE_VENTS_BREACHES[Scan_Results.Counter_Nr_Vents_Processed] = Flood_Data_Matrix.Breaches;
-			for _, Breach_Location in pairs(Flood_Data_Matrix.Breaches) do
-				Scan_Results.counter_breaches = Scan_Results.counter_breaches +1;
-				Scan_Results.ANY_BREACHES[Scan_Results.counter_breaches] = Breach_Location;
-			end
-			Scan_Results.SINGLE_VENTS_WAS_SKIPPED[Scan_Results.Counter_Nr_Vents_Processed]              = 0;
-			if (Flood_Data_Matrix.Room_is_not_enclosed == 1) then
-				Scan_Results.SINGLE_VENTS_Room_is_not_enclosed[Scan_Results.Counter_Nr_Vents_Processed] = 1;
-			else
-				Scan_Results.SINGLE_VENTS_Room_is_not_enclosed[Scan_Results.Counter_Nr_Vents_Processed] = 0;
-			end
-			if (Flood_Data_Matrix.Background_breach == 1) then
-				Scan_Results.SINGLE_VENTS_Background_breach[Scan_Results.Counter_Nr_Vents_Processed]    = 1;
-			else
-				Scan_Results.SINGLE_VENTS_Background_breach[Scan_Results.Counter_Nr_Vents_Processed]    = 0;
+			if (process_this_vent == 1) then
+--world.logInfo ("processing vent")
+				-- inc counter
+				Scan_Results.Counter_Nr_Vents_Processed = Scan_Results.Counter_Nr_Vents_Processed +1;
+				
+				-- expensive call (start flood fill for the current Vent)
+				Automatic_Multi_Stage_Scan((world.entityPosition (Vents_Id)),{50,250,1000});
+				
+				-- save the impact of this current Vent on the Life Support Main "breached" or "not breached" status
+				if (Flood_Data_Matrix.Room_is_not_enclosed == 1) then
+					-- globally this is also true (one is enough)
+					Scan_Results.ANY_Room_is_not_enclosed = 1;
+					if (Flood_Data_Matrix.Background_breach == 1) then
+						-- its a defined background breach. no out of memory or iteration counter
+						Scan_Results.ANY_Background_breach    = 1;		
+					end
+				end
+				
+				-- save states of the currently checked vent
+				Scan_Results.SINGLE_VENTS_ID[Scan_Results.Counter_Nr_Vents_Processed]       = Vents_Id;
+				Scan_Results.SINGLE_VENTS_BREACHES[Scan_Results.Counter_Nr_Vents_Processed] = Flood_Data_Matrix.Breaches;
+				for _, Breach_Location in pairs(Flood_Data_Matrix.Breaches) do
+					Scan_Results.counter_breaches = Scan_Results.counter_breaches +1;
+					Scan_Results.ANY_BREACHES[Scan_Results.counter_breaches] = Breach_Location;
+				end
+				Scan_Results.SINGLE_VENTS_WAS_SKIPPED[Scan_Results.Counter_Nr_Vents_Processed]              = 0;
+				if (Flood_Data_Matrix.Room_is_not_enclosed == 1) then
+					Scan_Results.SINGLE_VENTS_Room_is_not_enclosed[Scan_Results.Counter_Nr_Vents_Processed] = 1;
+				else
+					Scan_Results.SINGLE_VENTS_Room_is_not_enclosed[Scan_Results.Counter_Nr_Vents_Processed] = 0;
+				end
+				if (Flood_Data_Matrix.Background_breach == 1) then
+					Scan_Results.SINGLE_VENTS_Background_breach[Scan_Results.Counter_Nr_Vents_Processed]    = 1;
+				else
+					Scan_Results.SINGLE_VENTS_Background_breach[Scan_Results.Counter_Nr_Vents_Processed]    = 0;
+				end
+				
+				-- if other vents the the current one where flooded by the current one
+				for cur_overlapping_vent_nr = 1 ,Flood_Data_Matrix.Nr_Vent_Ids_overlapping,1 do
+					local this_vent_is_already_know_for_overlapping = 0;
+					for n = 1,Scan_Results.Nr_Vent_Ids_overlapping,1 do
+						if(Scan_Results.Vent_Ids_overlapping[Scan_Results.Nr_Vent_Ids_overlapping] == Flood_Data_Matrix.Vent_Ids_overlapping[cur_overlapping_vent_nr]) then
+							-- it was not known that theese two vents share the same flooded plain
+							this_vent_is_already_know_for_overlapping = 1;
+						end
+					end
+					
+					if not (this_vent_is_already_know_for_overlapping == 1) then
+						-- register the newly found redundant vent here
+						Scan_Results.Nr_Vent_Ids_overlapping = Scan_Results.Nr_Vent_Ids_overlapping+1;
+						Scan_Results.Vent_Ids_overlapping[Scan_Results.Nr_Vent_Ids_overlapping] = Flood_Data_Matrix.Vent_Ids_overlapping[cur_overlapping_vent_nr];
+						
+						-- save the state of the redundant vent. its the same as the state of the current one
+						Scan_Results.Counter_Nr_Vents_Processed = Scan_Results.Counter_Nr_Vents_Processed +1;
+						
+						Scan_Results.SINGLE_VENTS_ID[Scan_Results.Counter_Nr_Vents_Processed]       = Flood_Data_Matrix.Vent_Ids_overlapping[cur_overlapping_vent_nr];
+						Scan_Results.SINGLE_VENTS_WAS_SKIPPED[Scan_Results.Counter_Nr_Vents_Processed]              = 1;
+						if (Flood_Data_Matrix.Room_is_not_enclosed == 1) then
+							Scan_Results.SINGLE_VENTS_Room_is_not_enclosed[Scan_Results.Counter_Nr_Vents_Processed] = 1;
+						else
+							Scan_Results.SINGLE_VENTS_Room_is_not_enclosed[Scan_Results.Counter_Nr_Vents_Processed] = 0;
+						end
+						if (Flood_Data_Matrix.Background_breach == 1) then
+							Scan_Results.SINGLE_VENTS_Background_breach[Scan_Results.Counter_Nr_Vents_Processed]    = 1;
+						else
+							Scan_Results.SINGLE_VENTS_Background_breach[Scan_Results.Counter_Nr_Vents_Processed]    = 0;
+						end
+					end
+				end
 			end
 		end
 		------- all vents have been scanned -------
@@ -396,6 +456,18 @@ function Flood_Fill(cur_Position)
 		Flood_Data_Matrix.Room_is_not_enclosed          = 1; -- set flag
 		Flood_Data_Matrix.Max_Nr_of_Iterations_happend  = 1; -- set flag
 		Flood_Data_Matrix.Stop_Iteration                = 1; -- break iteration
+	end
+	
+	if (Flood_Data_Matrix.Cur_Iteration > 0) then
+		-- the first iteration checks the vent which initiated this fllod
+		for n=1,Nr_of_all_vents,1 do
+			local cur_vent_position = Postion_of_all_vents[n];
+			if (cur_Position[1] == cur_vent_position[1])and(cur_Position[2] == cur_vent_position[2]) then
+				-- there is another vents beeing flooded. we dont need to search that again, it will have the same result as the current one.
+				Flood_Data_Matrix.Nr_Vent_Ids_overlapping = Flood_Data_Matrix.Nr_Vent_Ids_overlapping +1;
+				Flood_Data_Matrix.Vent_Ids_overlapping[Flood_Data_Matrix.Nr_Vent_Ids_overlapping] = IDs_of_all_vents[n];
+			end
+		end
 	end
 	
 	-- ----- so far we are good, take next step in the state machine -----
