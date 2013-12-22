@@ -20,7 +20,7 @@
     },
 	{
       "dualImage" : "madtulip_glitch_tower_bottom.png:<color>.<frame>",
-      "imagePosition" : [-54,-16],
+      "imagePosition" : [-54,-9],
       "frames" : 1,
       "animationCycle" : 1,
       "spaceScan" : 0.1,

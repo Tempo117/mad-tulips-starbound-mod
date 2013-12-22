@@ -12,7 +12,7 @@
   "orientations" : [
     {
       "dualImage" : "madtulip_glitch_top_flux_compensator.png:<color>.<frame>",
-      "imagePosition" : [-14,0],
+      "imagePosition" : [-14,-8],
       "frames" : 1,
       "animationCycle" : 1.0,
       "spaceScan" : 0.1,
@@ -20,7 +20,7 @@
     },
     {
       "dualImage" : "madtulip_glitch_bottom_flux_compensator.png:<color>.<frame>",
-      "imagePosition" : [-14,-4],
+      "imagePosition" : [-14,-2],
       "frames" : 1,
       "animationCycle" : 1.0,
       "spaceScan" : 0.1,

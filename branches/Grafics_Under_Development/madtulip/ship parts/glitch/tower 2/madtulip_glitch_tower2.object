@@ -12,7 +12,7 @@
   "orientations" : [
     {
       "dualImage" : "madtulip_glitch_tower2.png:<color>.<frame>",
-      "imagePosition" : [-58,-17],
+      "imagePosition" : [-57,-16],
       "frames" : 1,
       "animationCycle" : 1,
       "spaceScan" : 0.1,
@@ -20,7 +20,7 @@
     },
 	{
       "dualImage" : "madtulip_glitch_tower2_bottom.png:<color>.<frame>",
-      "imagePosition" : [-58,-17],
+      "imagePosition" : [-57,-19],
       "frames" : 1,
       "animationCycle" : 1,
       "spaceScan" : 0.1,
