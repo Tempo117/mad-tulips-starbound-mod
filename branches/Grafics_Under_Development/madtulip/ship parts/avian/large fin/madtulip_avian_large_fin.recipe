@@ -1,7 +1,8 @@
 {
   "input" : [
-    { "item" : "steelbar", "count" : 3 },
-	{ "item" : "money", "count" : 25 }
+    { "item" : "madtulip_polymer", "count" : 6 },
+    { "item" : "steelbar", "count" : 14 },
+	{ "item" : "money", "count" : 300 }
   ],
   "output" : {
     "item" : "madtulip_avian_large_fin",
