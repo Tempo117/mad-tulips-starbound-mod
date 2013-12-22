@@ -23,24 +23,10 @@ function onInteraction(args)
 	
 	-- gather data about blocks at those locations
 	local Data = {};
-	--Data = Scan_Area_for_Dead_Content(Origin, Range, Range);
+	Data = Scan_Area_for_Dead_Content(Origin, Range, Range);
 
 	-- debug out the gathered data
-	--return { "ShowPopup", { message = {Data.Material.Position,Data.Material.foreground,Data.Material.background} } };
-
-	world.logInfo ("----------START---------")
-	for key,value in pairs(storage) do
-		world.logInfo  (key)
-	end
-	world.logInfo ("******END*******")
-	
-	if (storage.madtulip_test == nil) then
-		storage.madtulip_test = 1;
-	else
-		storage.madtulip_test = storage.madtulip_test+1;
-	end
-	
-	return { "ShowPopup", { message = {storage.madtulip_test} } };
+	return { "ShowPopup", { message = {Data.Material.Position,Data.Material.foreground,Data.Material.background} } };
 end
 
 function Scan_Area_for_Dead_Content(Origin, Range)
@@ -96,6 +82,9 @@ world.logInfo ("----------START---------");
 		-- works only for .objects which have a "script"
 		if ((world.callScriptedEntity(ObjectId, "object.configParameter", "objectName")) ~= nil) then
 			world.logInfo(world.callScriptedEntity(ObjectId, "object.configParameter", "objectName"));
+			if ((world.callScriptedEntity(ObjectId, "object.configParameter", "objectType")) == "container") then
+				world.logInfo(world.callScriptedEntity(ObjectId, "object"));
+			end
 		else
 			world.logInfo("name is nil");
 		end

@@ -1,7 +1,7 @@
 {
   "objectName" : "madtulip_captainschair",
   "rarity" : "Common",
-  "objectType" : "interactable",
+  "objectType" : "wire",
   "description" : "ENGAGE!",
   "shortdescription" : "Captain's Chair",
   "race" : "generic",
@@ -19,7 +19,7 @@
   "inventoryIcon" : "madtulip_captainschair.png",
   "orientations" : [
     {
-      "dualImage" : "madtulip_captainschair.png:<color>",
+      "dualImage" : "madtulip_captainschair.png:<color>.<frame>",
 
       "imagePosition" : [-12, 0],
       "frames" : 1,
@@ -29,9 +29,16 @@
       "anchors" : [ "bottom" ]
     }
   ],
-
-  "interactAction" : "openCockpitInterface",
   
+  "animation" : "/objects/captainschair/madtulip_captainschair.animation",
+  "animationParts" : {
+    "normal" : "/objects/captainschair/madtulip_captainschair.png"
+  },
+  "animationPosition" : [-12, -0],
+
   "sitFlipDirection" : true,
-  "sitPosition" : [1, 22]
+  "sitPosition" : [1, 22],
+  
+  "scripts" : [ "/objects/captainschair/madtulip_captainschair_logic.lua" ],
+  "scriptDelta" : 10  
 }
