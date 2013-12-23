@@ -2,7 +2,7 @@
   "itemName" : "madtulip_spacesuit_chest",
   "inventoryIcon" : "icons.png:chest",
   "dropCollision" : [-4.0, -3.0, 4.0, 3.0],
-  "maxStack" : 1,
+  "maxStack" : 100,
   "rarity" : "Rare",
   "description" : "An old fashioned spacesuit chest piece!  Looks bulky.",
   "shortdescription" : "Spacesuit Chest",

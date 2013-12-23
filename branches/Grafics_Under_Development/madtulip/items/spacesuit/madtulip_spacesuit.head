@@ -2,7 +2,7 @@
   "itemName" : "madtulip_spacesuit_head",
   "inventoryIcon" : "icons.png:head",
   "dropCollision" : [-4.0, -3.0, 4.0, 3.0],
-  "maxStack" : 1,
+  "maxStack" : 100,
   "rarity" : "Rare",
   "description" : "An old fashioned space helmet!  Wow!",
   "shortdescription" : "Space Helmet",

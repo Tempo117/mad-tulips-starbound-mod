@@ -2,6 +2,7 @@
   "itemName" : "madtulip_spacesuit_back",
   "inventoryIcon" : "icons.png:back",
   "dropCollision" : [-4.0, -3.0, 4.0, 3.0],
+  "maxStack" : 100,
   "rarity" : "Rare",
   "description" : "A spacesuit backpack to help you breathe and stuff.",
   "shortdescription" : "Spacesuit Backpack",
