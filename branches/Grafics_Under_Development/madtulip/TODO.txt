@@ -1,3 +1,5 @@
 - apex stabilization thruster not snapping
 - apex ftl code files
 - avian ftl code files
+- avian comms code files
+- glitch comms code files
