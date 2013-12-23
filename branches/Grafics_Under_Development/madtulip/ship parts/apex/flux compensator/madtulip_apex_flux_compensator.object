@@ -12,7 +12,7 @@
   "orientations" : [
     {
       "dualImage" : "madtulip_apex_top_flux_compensator.png:<color>.<frame>",
-      "imagePosition" : [-14,8],
+      "imagePosition" : [-14,-8],
       "frames" : 1,
       "animationCycle" : 1.0,
       "spaceScan" : 0.1,

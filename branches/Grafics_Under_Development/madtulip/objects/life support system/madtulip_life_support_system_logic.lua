@@ -1,9 +1,9 @@
 function initializeObject()
 	-- Make our object interactive (we can interract by 'Use')
-	object.setInteractive(true);
+	entity.setInteractive(true);
 	
 	-- Change animation for state "normal_operation"
-	object.setAnimationState("DisplayState", "no_vent");
+	entity.setAnimationState("DisplayState", "no_vent");
 	
 	-- globals
 	On_Off_State = 1; -- "1:ON,2:OFF"
@@ -17,8 +17,8 @@ function initializeObject()
 end
 
 function kill_self()
-	world.spawnItem("madtulip_life_support_system", object.toAbsolutePosition({ 0.0, 0.0 }));
-	object.smash();
+	world.spawnItem("madtulip_life_support_system", entity.toAbsolutePosition({ 0.0, 0.0 }));
+	entity.smash();
 end
 
 function main()
@@ -35,9 +35,9 @@ function main()
 	end
 
 	--- smash all other life support masters in the area - we only need one, firste come first serve :) ---
-	local madtulip_life_support_system_Ids  = world.objectQuery (object.toAbsolutePosition({ 0.0, 0.0 }),1000,{name = "madtulip_life_support_system"});
+	local madtulip_life_support_system_Ids  = world.objectQuery (entity.toAbsolutePosition({ 0.0, 0.0 }),1000,{name = "madtulip_life_support_system"});
 	for _, madtulip_life_support_system_Id in pairs(madtulip_life_support_system_Ids) do
-		if (madtulip_life_support_system_Id > object.id()) then
+		if (madtulip_life_support_system_Id > entity.id()) then
 			world.callScriptedEntity(madtulip_life_support_system_Id, "kill_self");
 		end
 	end
@@ -63,10 +63,10 @@ function onInteraction(args)
 	-- here you can switch the main unit and all slaves off
 	if(On_Off_State == 1) then
 		On_Off_State = 2;
-		object.setAnimationState("DisplayState", "offline");
+		entity.setAnimationState("DisplayState", "offline");
 	else
 		On_Off_State = 1;
-		object.setAnimationState("DisplayState", "no_vent");
+		entity.setAnimationState("DisplayState", "no_vent");
 	end
 end
 
@@ -94,7 +94,7 @@ function Multistage_Scan_all_Vents_in_the_Area(Range)
 	Scan_Results.SINGLE_VENTS_BREACHES             = {};
 	
 	-- find all vents in the area and get theire position
-	local Vents_Ids  = world.objectQuery (object.toAbsolutePosition({ 0.0, 0.0 }),Range,{name = "madtulip_vent"});
+	local Vents_Ids  = world.objectQuery (entity.toAbsolutePosition({ 0.0, 0.0 }),Range,{name = "madtulip_vent"});
 	-- Perform scan for hull breach using each vents origin as point to start an individual scan
 	
 	for _, Vents_Id in pairs(Vents_Ids) do
@@ -106,7 +106,7 @@ function Multistage_Scan_all_Vents_in_the_Area(Range)
 	-- check for master system beeing offline
 	if (On_Off_State ~= 1) then
 		-- master is offline
-		object.setAnimationState("DisplayState", "offline");
+		entity.setAnimationState("DisplayState", "offline");
 		for _, Vents_Id in pairs(Vents_Ids) do
 			-- set vens offline as well
 			world.callScriptedEntity(Vents_Id, "set_O2_Offline_State");
@@ -114,7 +114,7 @@ function Multistage_Scan_all_Vents_in_the_Area(Range)
 	else
 		-- master is online
 		-- default animation: no ventilators found
-		object.setAnimationState("DisplayState", "no_vent");
+		entity.setAnimationState("DisplayState", "no_vent");
 
 		----- Scan all vents -----
 --world.logInfo ("SCAN ALL VENTS")
@@ -211,14 +211,14 @@ function Multistage_Scan_all_Vents_in_the_Area(Range)
 			-- for the master based on the scan results
 			if(Scan_Results.ANY_Background_breach == 1) then
 				-- play a meeping warning sound
-				object.playSound("Breach_Warning_Sound");
+				entity.playSound("Breach_Warning_Sound");
 			end	
 			if (Scan_Results.ANY_Room_is_not_enclosed == 1) then
 				-- set animation state of master wall panel to breach
-				object.setAnimationState("DisplayState", "breach");
+				entity.setAnimationState("DisplayState", "breach");
 			else
 				-- set animation state to normal operation
-				object.setAnimationState("DisplayState", "normal_operation");
+				entity.setAnimationState("DisplayState", "normal_operation");
 			end
 			
 			-- perform actions for each vent based on the scan results
