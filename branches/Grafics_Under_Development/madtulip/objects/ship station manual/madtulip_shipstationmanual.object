@@ -65,7 +65,13 @@
 		"madtulip_glitch_flux_compensator",
 		"madtulip_glitch_gyro_stabilizer",
 		"madtulip_glitch_tower",
-		"madtulip_glitch_turret"
+		"madtulip_glitch_turret",
+		
+		// Armor
+		"madtulip_spacesuit_back",
+		"madtulip_spacesuit_chest",
+		"madtulip_spacesuit_head",
+		"madtulip_spacesuit_legs",
 	]
 
 }
