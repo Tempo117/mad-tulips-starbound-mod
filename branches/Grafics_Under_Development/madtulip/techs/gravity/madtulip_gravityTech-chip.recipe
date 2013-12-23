@@ -1,0 +1,8 @@
+{
+  "input" : [{ "item" : "money", "count" : 10 } ],
+  "output" : {
+    "item" : "madtulip_gravityTech-chip",
+    "count" : 1
+  },
+  "groups" : [ "mod", "all", "plain" ]
+}

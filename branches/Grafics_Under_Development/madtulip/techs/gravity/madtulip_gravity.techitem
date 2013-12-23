@@ -1,0 +1,10 @@
+{
+  "itemName" : "madtulip_gravityTech",
+  "rarity" : "Legendary",
+  "inventoryIcon" : "/tech/gravityball.png",
+  "description" : "Unlocked the Ship Tech.",
+  "shortdescription" : "Ship Tech",
+  "inspectionKind" : "tech",
+
+  "techModule" : "madtulip_gravity.tech"
+}
