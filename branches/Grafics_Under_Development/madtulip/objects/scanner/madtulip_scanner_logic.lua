@@ -1,14 +1,14 @@
 function initializeObject()
-	-- Make our object interactive (we can interract by 'Use')
-	object.setInteractive(true);
+	-- Make our entity interactive (we can interract by 'Use')
+	entity.setInteractive(true);
 	-- Change animation for state "active"
-	object.setAnimationState("beaconState", "active");
+	entity.setAnimationState("beaconState", "active");
 end
 
 function main()
 	-- Check for the single execution
 	if self.initialized == nil then
-		-- Init object
+		-- Init entity
 		initializeObject();
 		-- Set flag
 		self.initialized = true;
@@ -18,15 +18,91 @@ end
 function onInteraction(args)
 	-- if clicked by middle mouse or "e"
 	-- define a square:
-    local Origin = object.toAbsolutePosition({ 0.0, 0.0 });
+    local Origin = entity.toAbsolutePosition({ 0.0, 0.0 });
 	local Range = 1;
 	
 	-- gather data about blocks at those locations
-	local Data = {};
-	Data = Scan_Area_for_Dead_Content(Origin, Range, Range);
+	if(false) then
+		local Data = {};
+		Data = Scan_Area_for_Dead_Content(Origin, Range, Range);
+		-- debug out the gathered data
+		return { "ShowPopup", { message = {Data.Material.Position,Data.Material.foreground,Data.Material.background} } };
+	end
+	
+	Scan_ENV_context();
 
-	-- debug out the gathered data
-	return { "ShowPopup", { message = {Data.Material.Position,Data.Material.foreground,Data.Material.background} } };
+	Scan_world_context();
+	
+	Scan_entity_context();
+	
+	-- get names of all entitys in the area
+	Scan_Objects();
+end
+
+function Scan_ENV_context()
+	world.logInfo("----------START _ENV Scan---------")
+	for key,value in pairs(_ENV) do
+		world.logInfo({key});
+		--world.logInfo({value});
+	end
+	world.logInfo("----------END _ENV Scan-----------")
+end
+
+function Scan_world_context()
+	world.logInfo("----------START World Scan---------")
+	for key,value in pairs(world) do
+		world.logInfo({key});
+		--world.logInfo({value});
+	end
+	world.logInfo("----------END World Scan-----------")
+end
+
+function Scan_entity_context()
+	world.logInfo("----------START Entity Scan---------")
+	for key,value in pairs(entity) do
+		world.logInfo({key});
+		--world.logInfo({value});
+	end
+	world.logInfo("----------END Entity Scan-----------")
+end
+
+function Scan_Objects ()
+	-- entity.configParameter
+	world.logInfo ("----------START Object Scan---------");
+		world.logInfo ("My name is (by entity.configparameter):");
+		world.logInfo (entity.configParameter("objectName"));
+		world.logInfo ("My name is (world.entityName):");
+		world.logInfo (world.entityName(entity.id()));
+		world.logInfo ("your names are:");
+		local ObjectIds = world.entityQuery (entity.toAbsolutePosition({ 0.0, 0.0 }), 10000);
+		for _, ObjectId in pairs(ObjectIds) do
+			-- Name
+			world.logInfo({"Name for ID (by call scripted entity):",ObjectId});
+			if ((world.callScriptedEntity(ObjectId, "entity.configParameter", "objectName")) ~= nil) then
+				world.logInfo(world.callScriptedEntity(ObjectId, "entity.configParameter", "objectName"));
+				if ((world.callScriptedEntity(ObjectId, "entity.configParameter", "objectType")) == "container") then
+					world.logInfo("It has objectType = container. the entity is:");
+					world.logInfo(world.callScriptedEntity(ObjectId, "entity"));
+				end
+			else
+				world.logInfo("name is nil");
+			end
+			
+			world.logInfo({"Name for ID (by world.entityName):",ObjectId});
+			if ((world.entityName(ObjectId)) ~= nil) then
+				world.logInfo(world.entityName(ObjectId));
+			else
+				world.logInfo("name is nil");
+			end
+			-- position
+			world.logInfo({"Position for ID:",ObjectId});
+			if ((world.entityPosition(ObjectId)) ~= nil) then
+				world.logInfo(world.entityPosition(ObjectId));
+			else
+				world.logInfo("position is nil");
+			end
+		end
+	world.logInfo ("----------END Object Scan---------");
 end
 
 function Scan_Area_for_Dead_Content(Origin, Range)
@@ -45,7 +121,7 @@ function Scan_Area_for_Dead_Content(Origin, Range)
 		Data.Material.foreground = {};
 		Data.Material.background = {};
 		
-		-- store object content here
+		-- store entity content here
 		Data.Object              = {};
 		Data.Object.size         = 0;
 		Data.Object.Position     = {};
@@ -71,77 +147,17 @@ function Scan_Area_for_Dead_Content(Origin, Range)
 		end	
 	end
 
-if(true) then
--- object.configParameter
-world.logInfo ("----------START---------");
-	world.logInfo ("My name is:");
-	world.logInfo (object.configParameter("objectName"));
-	world.logInfo ("your names are:");
-	local ObjectIds = world.objectQuery (object.toAbsolutePosition({ 0.0, 0.0 }), 10000);
-	for _, ObjectId in pairs(ObjectIds) do
-		-- works only for .objects which have a "script"
-		if ((world.callScriptedEntity(ObjectId, "object.configParameter", "objectName")) ~= nil) then
-			world.logInfo(world.callScriptedEntity(ObjectId, "object.configParameter", "objectName"));
-			if ((world.callScriptedEntity(ObjectId, "object.configParameter", "objectType")) == "container") then
-				world.logInfo(world.callScriptedEntity(ObjectId, "object"));
-			end
-		else
-			world.logInfo("name is nil");
-		end
-	end
-world.logInfo ("----------END---------");
-end
 
 if(false) then
--- object.configParameter
-world.logInfo ("----------START---------");
-	world.logInfo ("My name is:");
-	world.logInfo (object.configParameter("objectName"));
-	world.logInfo ("your names are:");
-	local ObjectIds = world.objectQuery (object.toAbsolutePosition({ 0.0, 0.0 }), 1000);
-	for _, ObjectId in pairs(ObjectIds) do
-		world.logInfo({"--START of next object with ID:",ObjectId,"---"});
-		-- works only for .objects which have a "script"
-		if ((world.callScriptedEntity(ObjectId, "object.configParameter", "objectName")) ~= nil) then
-			world.logInfo(world.callScriptedEntity(ObjectId, "object.configParameter", "objectName"));
-		else
-			world.logInfo("name is nil");
-			if ((world.callScriptedEntity(ObjectId, "initializeObject", "")) ~= nil) then
-				if ((world.callScriptedEntity(ObjectId, "object.configParameter", "objectName")) ~= nil) then
-					world.logInfo(world.callScriptedEntity(ObjectId, "object.configParameter", "objectName"));
-				else
-					world.logInfo("name is still nil");
-				end
-			else
-				world.logInfo("couldnt init object");
-			end
-		end
-		world.logInfo({"--END of current object with ID:",ObjectId,"---"});
-	end
-world.logInfo ("----------END---------");
-end
 
-if(false) then
--- world entityPosition
-world.logInfo ("----------START---------");
-	world.logInfo ("your positions are:");
-	local ObjectIds = world.objectQuery (object.toAbsolutePosition({ 0.0, 0.0 }), 1000);
-	for _, ObjectId in pairs(ObjectIds) do
-		if ((world.entityPosition(ObjectId)) ~= nil) then
-			world.logInfo(world.entityPosition(ObjectId));
-		else
-			world.logInfo("position is nil");
-		end
-	end
-world.logInfo ("----------END---------");
 end
 
 if(false) then
 world.logInfo ("----------START---------");
 	world.logInfo ("My name is:");
-	world.logInfo (object.configParameter("objectName"));
+	world.logInfo (entity.configParameter("entityName"));
 	world.logInfo ("your names are:");
-	local ObjectIds = world.objectQuery (object.toAbsolutePosition({ 0.0, 0.0 }), 1000);
+	local ObjectIds = world.entityQuery (entity.toAbsolutePosition({ 0.0, 0.0 }), 1000);
 	for _, ObjectId in pairs(ObjectIds) do
 		for key,value in pairs(world.callScriptedEntity(ObjectId)) do
 			world.logInfo  (key);
@@ -150,15 +166,15 @@ world.logInfo ("----------START---------");
 world.logInfo ("----------END---------");
 end
 
-	-- get all objects
-	--local ObjectIds = world.objectQuery ({1000,1000}, 1000);
+	-- get all entitys
+	--local ObjectIds = world.entityQuery ({1000,1000}, 1000);
 --world.logInfo ("----------START---------")
 	--for _, ObjectId in pairs(ObjectIds) do
 		--Data.Object.size = Data.Object.size+1;
 		--local cur_Obj_Position = world.entityPosition(ObjectId);
 		--Data.Object.Position[Data.Object.size] = {cur_Obj_Position[1] - Origin[1], cur_Obj_Position[2] - Origin[2]}; -- store relative coordinates
-		--if ((world.logInfo(world.callScriptedEntity(ObjectId, "configParameter", {"objectName"}))) ~= nil) then
-			--world.logInfo(world.callScriptedEntity(ObjectId, "configParameter", "objectName"));
+		--if ((world.logInfo(world.callScriptedEntity(ObjectId, "configParameter", {"entityName"}))) ~= nil) then
+			--world.logInfo(world.callScriptedEntity(ObjectId, "configParameter", "entityName"));
 		--else
 			--world.logInfo("nix");
 		--end
@@ -170,14 +186,10 @@ end
 		--Data.Object.Type       = {};
 		
 --world.logInfo ("----------START---------")
-	--for key,value in pairs(object) do
+	--for key,value in pairs(entity) do
 		--world.logInfo  (key)
 	--end
 --world.logInfo ("******END*******")
 	
 	return (Data);
-end
-
-function data_in(Data)
-	g_Data = Data; -- store global in the context of the thread
 end
