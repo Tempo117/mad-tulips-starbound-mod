@@ -1,8 +1,9 @@
 {
   "input" : [
-    { "item" : "madtulip_polymer", "count" : 5 },
-    { "item" : "steelbar", "count" : 10 },
-	{ "item" : "money", "count" : 300 }
+    { "item" : "madtulip_polymer", "count" : 4 },
+    { "item" : "steelbar", "count" : 3 },
+	{ "item" : "madtulip_mainboard", "count" : 1 },
+	{ "item" : "money", "count" : 75 }
   ],
   "output" : {
     "item" : "madtulip_glitch_gyro_stabilizer",

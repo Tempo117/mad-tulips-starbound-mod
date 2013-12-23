@@ -1,0 +1,11 @@
+{
+  "input" : [
+    { "item" : "steelbar", "count" : 3 },
+	{ "item" : "money", "count" : 25 }
+  ],
+  "output" : {
+    "item" : "madtulip_avian_crystal_energy_core",
+    "count" : 1
+  },
+  "groups" : [ "madtulip_shipstation", "all", "other" ]
+}

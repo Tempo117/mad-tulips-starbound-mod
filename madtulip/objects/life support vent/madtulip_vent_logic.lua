@@ -1,9 +1,9 @@
 function initializeObject()
 	-- Make our object interactive (we can interract by 'Use')
-	object.setInteractive(true);
+	entity.setInteractive(true);
 	
 	-- Change animation for state "normal_operation"
-	object.setAnimationState("DisplayState", "normal_operation");
+	entity.setAnimationState("DisplayState", "normal_operation");
 end
 
 function main()
@@ -22,13 +22,13 @@ function onInteraction(args)
 end
 
 function set_O2_OK_State()
-	object.setAnimationState("DisplayState", "normal_operation");
+	entity.setAnimationState("DisplayState", "normal_operation");
 end
 
 function set_O2_BAD_State()
-	object.setAnimationState("DisplayState", "breach");
+	entity.setAnimationState("DisplayState", "breach");
 end
 
 function set_O2_Offline_State()
-	object.setAnimationState("DisplayState", "offline");
+	entity.setAnimationState("DisplayState", "offline");
 end
