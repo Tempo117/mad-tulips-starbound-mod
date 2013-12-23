@@ -1,8 +1,10 @@
 {
   "input" : [
-    { "item" : "madtulip_polymer", "count" : 4 },
-    { "item" : "steelbar", "count" : 8 },
-	{ "item" : "money", "count" : 300 }
+	{ "item" : "madtulip_mainboard", "count" : 2 },
+	{ "item" : "madtulip_silicium", "count" : 14 },
+    { "item" : "madtulip_polymer", "count" : 12 },
+    { "item" : "steelbar", "count" : 24 },
+	{ "item" : "money", "count" : 600 }
   ],
   "output" : {
     "item" : "madtulip_glitch_ftl_thruster",

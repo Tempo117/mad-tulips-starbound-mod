@@ -87,17 +87,6 @@
         "unbreakable" : false
       }
     },
-	
-    {
-      "value" : [145, 255, 145, 255],
-      "foregroundBlock" : false,
-      "backgroundBlock" : true,
-	  "backgroundMat" : "apexshipdetails",
-      "object" : "madtulip_shipstationmanual",
-      "objectParameters" : {
-        "unbreakable" : false
-      }
-    },
     {
       "value" : [146, 255, 146, 255],
       "foregroundBlock" : false,

@@ -2,7 +2,7 @@
   "objectName" : "madtulip_teleporter",
   "rarity" : "Common",
   "objectType" : "interactable",
-  "interactAction" : "Teleport",
+  "interactAction" : "OpenTeleportDialog",
   "description" : "Trusty teleporter, what would I do without you?",
   "shortdescription" : "Teleporter",
   "race" : "generic",

@@ -1,0 +1,13 @@
+{
+  "input" : [
+    { "item" : "madtulip_polymer", "count" : 4 },
+    { "item" : "steelbar", "count" : 3 },
+	{ "item" : "madtulip_mainboard", "count" : 1 },
+	{ "item" : "money", "count" : 75 }
+  ],
+  "output" : {
+    "item" : "madtulip_apex_gyro_stabilizer",
+    "count" : 1
+  },
+  "groups" : [ "madtulip_shipstation", "all", "other" ]
+}
