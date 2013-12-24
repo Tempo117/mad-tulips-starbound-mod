@@ -18,25 +18,19 @@ end
 function onInteraction(args)
 	-- if clicked by middle mouse or "e"
 	-- define a square:
+	--Scan_ENV_context();
+	--Scan_world_context();
+	--Scan_entity_context();
+	--Scan_Objects();
+	
     local Origin = entity.toAbsolutePosition({ 0.0, 0.0 });
-	local Range = 1;
-	
+	local Range = 1500;
 	-- gather data about blocks at those locations
-	if(false) then
-		local Data = {};
-		Data = Scan_Area_for_Dead_Content(Origin, Range, Range);
-		-- debug out the gathered data
-		return { "ShowPopup", { message = {Data.Material.Position,Data.Material.foreground,Data.Material.background} } };
-	end
-	
-	Scan_ENV_context();
-
-	Scan_world_context();
-	
-	Scan_entity_context();
-	
-	-- get names of all entitys in the area
-	Scan_Objects();
+	local Data = {};
+	Data = Scan_Area_for_Dead_Content(Origin, Range);
+	-- debug out the gathered data
+	--return { "ShowPopup", { message = {Data.Material.Position,Data.Material.foreground,Data.Material.background} } };
+	return ("OpenCockpitInterface");
 end
 
 function Scan_ENV_context()
@@ -125,7 +119,7 @@ function Scan_Area_for_Dead_Content(Origin, Range)
 		Data.Object              = {};
 		Data.Object.size         = 0;
 		Data.Object.Position     = {};
-		Data.Object.Type         = {};
+		Data.Object.Name         = {};
 
 	-- loop over square area
 	for cur_X = -Range, Range, 1 do
@@ -147,49 +141,18 @@ function Scan_Area_for_Dead_Content(Origin, Range)
 		end	
 	end
 
-
-if(false) then
-
-end
-
-if(false) then
-world.logInfo ("----------START---------");
-	world.logInfo ("My name is:");
-	world.logInfo (entity.configParameter("entityName"));
-	world.logInfo ("your names are:");
-	local ObjectIds = world.entityQuery (entity.toAbsolutePosition({ 0.0, 0.0 }), 1000);
+	world.logInfo ("----------START Object Scan---------");
+	local ObjectIds = world.entityQuery (entity.toAbsolutePosition({ 0.0, 0.0 }), Range);
 	for _, ObjectId in pairs(ObjectIds) do
-		for key,value in pairs(world.callScriptedEntity(ObjectId)) do
-			world.logInfo  (key);
-		end
-	end
-world.logInfo ("----------END---------");
-end
-
-	-- get all entitys
-	--local ObjectIds = world.entityQuery ({1000,1000}, 1000);
---world.logInfo ("----------START---------")
-	--for _, ObjectId in pairs(ObjectIds) do
-		--Data.Object.size = Data.Object.size+1;
-		--local cur_Obj_Position = world.entityPosition(ObjectId);
-		--Data.Object.Position[Data.Object.size] = {cur_Obj_Position[1] - Origin[1], cur_Obj_Position[2] - Origin[2]}; -- store relative coordinates
-		--if ((world.logInfo(world.callScriptedEntity(ObjectId, "configParameter", {"entityName"}))) ~= nil) then
-			--world.logInfo(world.callScriptedEntity(ObjectId, "configParameter", "entityName"));
-		--else
-			--world.logInfo("nix");
-		--end
-	--end
---world.logInfo ("----------END---------")
-		--	Data.Object              = {};
-		--Data.Object.size         = 0;
-		--Data.Object.Position   = {};
-		--Data.Object.Type       = {};
+		Data.Object.size                       = Data.Object.size + 1;
+		Data.Object.Name[Data.Object.size]     = world.entityName(ObjectId);
+		Data.Object.Position[Data.Object.size] = world.entityPosition(ObjectId);
 		
---world.logInfo ("----------START---------")
-	--for key,value in pairs(entity) do
-		--world.logInfo  (key)
-	--end
---world.logInfo ("******END*******")
+		world.logInfo (Data.Object.size);
+		world.logInfo (Data.Object.Name[Data.Object.size]);
+		world.logInfo (Data.Object.Position[Data.Object.size]);
+	end
+	world.logInfo ("----------END Object Scan---------");
 	
 	return (Data);
 end
