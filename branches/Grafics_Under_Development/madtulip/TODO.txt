@@ -2,4 +2,8 @@
 - apex ftl code files
 - avian ftl code files
 - avian comms code files
+- avian small fin code files
 - glitch comms code files
+HYLOTL PART DONT BUT CNAT COMMIT THEM SO DONT MAKE HYLOTL PARTS. WILL TRY LATER
+- all hylotl parts code files
+- hylotl ftl and stabilization thruster animation
