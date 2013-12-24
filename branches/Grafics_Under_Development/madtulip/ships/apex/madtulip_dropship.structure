@@ -54,17 +54,6 @@
         "unbreakable" : false
       }
     },
-
-    {
-      "value" : [141, 255, 141, 255],
-      "foregroundBlock" : false,
-      "backgroundBlock" : true,
-	  "backgroundMat" : "apexshipwall",
-      "object" : "madtulip_flag_shipworld",
-      "objectParameters" : {
-        "unbreakable" : false
-      }
-    },
     {
       "value" : [142, 255, 142, 255],
       "foregroundBlock" : false,
@@ -170,7 +159,7 @@
       "object" : "madtulip_teleporter",
       "flags" : [ "playerSpawn" ],
       "objectParameters" : {
-        "unbreakable" : false
+        "unbreakable" : true
       }
     },
 
