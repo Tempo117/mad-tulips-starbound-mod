@@ -2,7 +2,7 @@
   "objectName" : "madtulip_human_ship_comms",
     "rarity" : "Common",
   "description" : "Used to transmit data through space",
-  "shortdescription" : "Interstellar Communications Array",
+  "shortdescription" : "Human Interstellar Communications Array",
   "race" : "generic",
   "category" : "decorative",
   "price" : "10",
