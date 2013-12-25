@@ -1,7 +1,7 @@
 {
   "objectName" : "madtulip_avian_small_fin",
   "rarity" : "Common",
-  "description" : "A fin for a human spaceship.",
+  "description" : "A fin for an avian spaceship.",
   "shortdescription" : "Small Spaceship Fin",
   "race" : "generic",
   "category" : "decorative",

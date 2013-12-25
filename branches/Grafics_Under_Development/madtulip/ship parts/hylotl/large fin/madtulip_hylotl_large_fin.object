@@ -1,8 +1,8 @@
 {
   "objectName" : "madtulip_hylotl_large_fin",
   "rarity" : "Common",
-  "description" : "Compensates for, well .. flux.",
-  "shortdescription" : "Flux Compensator",
+  "description" : "A fin for a hylotl spaceship.",
+  "shortdescription" : "Large Spaceship Fin",
   "race" : "generic",
   "category" : "decorative",
   "price" : "10",

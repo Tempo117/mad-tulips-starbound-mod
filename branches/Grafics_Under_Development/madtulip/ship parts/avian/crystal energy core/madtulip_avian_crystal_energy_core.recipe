@@ -1,7 +1,11 @@
 {
   "input" : [
-    { "item" : "steelbar", "count" : 3 },
-	{ "item" : "money", "count" : 25 }
+    { "item" : "madtulip_mainboard", "count" : 1 },
+    { "item" : "madtulip_silicium", "count" : 8 },
+	{ "item" : "goldore", "count" : 2 },
+	{ "item" : "madtulip_polymer", "count" : 8 },
+    { "item" : "steelbar", "count" : 22 },
+	{ "item" : "money", "count" : 500 }
   ],
   "output" : {
     "item" : "madtulip_avian_crystal_energy_core",
