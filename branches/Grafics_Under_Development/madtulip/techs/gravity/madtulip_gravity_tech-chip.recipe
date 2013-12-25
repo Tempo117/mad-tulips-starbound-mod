@@ -4,5 +4,5 @@
     "item" : "madtulip_gravitytech-chip",
     "count" : 1
   },
-  "groups" : [ "mod", "all", "plain" ]
+  "groups" : [ "madtulip_shipstation", "all", "other" ]
 }
