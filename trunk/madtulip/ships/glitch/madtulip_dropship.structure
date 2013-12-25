@@ -160,7 +160,7 @@
       "object" : "madtulip_teleporter",
       "flags" : [ "playerSpawn" ],
       "objectParameters" : {
-        "unbreakable" : false
+        "unbreakable" : true
       }
     },
 

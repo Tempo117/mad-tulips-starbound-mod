@@ -1,0 +1,15 @@
+{
+  "input" : [
+    { "item" : "ironbeacon", "count" : 1 },
+	{ "item" : "madtulip_mainboard", "count" : 1 },
+	{ "item" : "madtulip_ic_logic", "count" : 2 },
+	{ "item" : "madtulip_resistor_4k7", "count" : 4 },
+    { "item" : "steelbar", "count" : 2 },
+	{ "item" : "money", "count" : 150 }
+  ],
+  "output" : {
+    "item" : "madtulip_avian_ship_comms",
+    "count" : 1
+  },
+  "groups" : [ "madtulip_shipstation", "all", "other" ]
+}

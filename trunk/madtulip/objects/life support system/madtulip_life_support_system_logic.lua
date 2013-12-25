@@ -8,6 +8,7 @@ function initializeObject()
 	-- globals
 	On_Off_State = 1; -- "1:ON,2:OFF"
 	maximum_particle_fountains = 50;
+	ANY_Breach = 0;
 	
 	-- spawn a new main calculation thread
 	co = coroutine.create(function ()
@@ -216,9 +217,11 @@ function Multistage_Scan_all_Vents_in_the_Area(Range)
 			if (Scan_Results.ANY_Room_is_not_enclosed == 1) then
 				-- set animation state of master wall panel to breach
 				entity.setAnimationState("DisplayState", "breach");
+				ANY_Breach = 1;
 			else
 				-- set animation state to normal operation
 				entity.setAnimationState("DisplayState", "normal_operation");
+				ANY_Breach = 0;
 			end
 			
 			-- perform actions for each vent based on the scan results
@@ -541,4 +544,9 @@ function Flood_Fill(cur_Position)
 			Flood_Fill({cur_Position[1] - 1,cur_Position[2] - 1});
 		end
 	end
+end
+
+function get_ANY_Breach()
+	world.logInfo ("LSS received the call.");
+	return ANY_Breach;
 end
