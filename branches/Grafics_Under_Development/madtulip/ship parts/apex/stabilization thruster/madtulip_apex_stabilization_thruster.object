@@ -48,7 +48,7 @@
   "orientations" : [
     {
       "image" : "madtulip_apex_bottom_stabilization_thruster.png:<color>.<frame>",
-      "imagePosition" : [-36, -14],
+      "imagePosition" : [-36, -12],
       "frames" : 3,
       "animationCycle" : 0.4,
 
@@ -59,8 +59,8 @@
 
   "engineOnOrientations" : [
     {
-      "image" : "madtulip_apex_bottom_stabilization_thruster_on.png:<color>.<frame>",
-      "imagePosition" : [-36, -14],
+      "image" : "ship parts/apex/stabilization thruster/madtulip_apex_bottom_stabilization_thruster_on.png:<color>.<frame>",
+      "imagePosition" : [-36, -12],
       "frames" : 3,
       "animationCycle" : 0.3,
 
