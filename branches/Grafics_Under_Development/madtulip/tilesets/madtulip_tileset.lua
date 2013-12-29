@@ -1,5 +1,7 @@
 function init(args)
+	main_counter = 0;
 	if not(Did_Init) then
+	--[[
 		-- update the neighbours
 		local pos = entity.toAbsolutePosition({ 0.0, 0.0 });
 		local BB = {}
@@ -8,19 +10,31 @@ function init(args)
 		BB[3] = pos[1]+1;
 		BB[4] = pos[2]+1;
 		world.objectQuery({BB[1], BB[2]}, {BB[3], BB[4]},{callScript = "madtulip_Update_Grafics"})
-		
-		madtulip_Update_Grafics()
+	]]
 		Did_Init = true;
 	else
 	end
 end
 
 function main()
-	--madtulip_Update_Grafics()
+	if (main_counter < 10) then
+		madtulip_Update_Grafics()
+		main_counter = main_counter +1
+	end
+	if (main_counter < 10) then
+		-- update the neighbours
+		local pos = entity.toAbsolutePosition({ 0.0, 0.0 });
+		local BB = {}
+		BB[1] = pos[1]-1;
+		BB[2] = pos[2]-1;
+		BB[3] = pos[1]+1;
+		BB[4] = pos[2]+1;
+		world.objectQuery({BB[1], BB[2]}, {BB[3], BB[4]},{callScript = "madtulip_Update_Grafics"})
+	end
 end
 
 function madtulip_Update_Grafics()
-world.logInfo("---------------------------------UpdateGrafics---------------------------------")
+--world.logInfo("---------------------------------UpdateGrafics---------------------------------")
 	local pos = entity.toAbsolutePosition({ 0.0, 0.0 });
 	local BB = {}
 	BB[1] = pos[1]-1;
@@ -38,7 +52,7 @@ world.logInfo("---------------------------------UpdateGrafics-------------------
 
 	local ObjectIds = {}
 	--ObjectIds = world.objectQuery({BB[1], BB[2]}, {BB[3], BB[4]})
-	ObjectIds = world.objectQuery({BB[1], BB[2]}, {BB[3], BB[4]},{name = "madtulip_human_hull_tileset"})
+	ObjectIds = world.objectQuery({BB[1], BB[2]}, {BB[3], BB[4]},{name = world.entityName (entity.id())})
 --[[
 	if (AlertNeighbours) then
 world.logInfo("ALERT")
@@ -49,23 +63,23 @@ world.logInfo("NO ALERT")
 	end
 ]]
 	if ObjectIds then
-world.logInfo("ObjectIds -> yes")
+--world.logInfo("ObjectIds -> yes")
 		-- find neighbours
 		local obj_pos
 		local cur_rel_pos
 		for i, ObjectId in pairs(ObjectIds) do
-world.logInfo("Obj. found")
-world.logInfo(ObjectId)
-world.logInfo(i)
+--world.logInfo("Obj. found")
+--world.logInfo(ObjectId)
+--world.logInfo(i)
 			if (ObjectId ~= entity.id()) then
-world.logInfo("Obj is not me. Nr.:" .. i)
+--world.logInfo("Obj is not me. Nr.:" .. i)
 				obj_pos = world.entityPosition(ObjectId)
 				cur_rel_pos = {}
 				cur_rel_pos[1] = obj_pos[1] - pos[1];
 				cur_rel_pos[2] = obj_pos[2] - pos[2];
-world.logInfo("pos: " .. pos[1] .. " " .. pos[2])
-world.logInfo("obj_pos: " .. obj_pos[1] .. " " .. obj_pos[2])
-world.logInfo("cur_rel_pos: " .. cur_rel_pos[1] .. " " .. cur_rel_pos[2])
+--world.logInfo("pos: " .. pos[1] .. " " .. pos[2])
+--world.logInfo("obj_pos: " .. obj_pos[1] .. " " .. obj_pos[2])
+--world.logInfo("cur_rel_pos: " .. cur_rel_pos[1] .. " " .. cur_rel_pos[2])
 				if((cur_rel_pos[1] ==  0) and (cur_rel_pos[2] ==  1)) then neighbours[1] = true end
 				if((cur_rel_pos[1] ==  1) and (cur_rel_pos[2] ==  1)) then neighbours[2] = true end
 				if((cur_rel_pos[1] ==  1) and (cur_rel_pos[2] ==  0)) then neighbours[3] = true end
@@ -78,6 +92,7 @@ world.logInfo("cur_rel_pos: " .. cur_rel_pos[1] .. " " .. cur_rel_pos[2])
 		end
 		
 		-- set grafic according to neighbours
+--[[
 world.logInfo("set grafic according to neighbours")
 if neighbours[1] then world.logInfo("N1") end
 if neighbours[2] then world.logInfo("N2") end
@@ -87,6 +102,7 @@ if neighbours[5] then world.logInfo("N5") end
 if neighbours[6] then world.logInfo("N6") end
 if neighbours[7] then world.logInfo("N7") end
 if neighbours[8] then world.logInfo("N8") end
+]]
 		-- +
 		if     (neighbours[1] and neighbours[3] and neighbours[5] and neighbours[7]) then entity.setAnimationState("DisplayState", "S_TRBL")
 		-- T
@@ -102,10 +118,15 @@ if neighbours[8] then world.logInfo("N8") end
 		-- straight
 		elseif (neighbours[1] and neighbours[5]) then entity.setAnimationState("DisplayState", "S_TB")
 		elseif (neighbours[3] and neighbours[7]) then entity.setAnimationState("DisplayState", "S_LR")
+		-- single ended straight
+		elseif (neighbours[1]) then entity.setAnimationState("DisplayState", "S_TB")
+		elseif (neighbours[5]) then entity.setAnimationState("DisplayState", "S_TB")
+		elseif (neighbours[3]) then entity.setAnimationState("DisplayState", "S_LR")
+		elseif (neighbours[7]) then entity.setAnimationState("DisplayState", "S_LR")
 		end
 	else
 		-- default state
-world.logInfo("set grafics with no neighbours")
+--world.logInfo("set grafics with no neighbours")
 		entity.setAnimationState("DisplayState", "S_TRBL");
 	end	
 end
