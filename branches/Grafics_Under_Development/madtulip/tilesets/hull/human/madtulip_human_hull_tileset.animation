@@ -1,0 +1,211 @@
+{
+  "animatedParts" : {
+    "stateTypes" : {
+      "DisplayState" : {
+        "default" : "S_TB",
+        "states" : {
+		  "S_TB"   : {"frames" : 1,"cycle" : 1,"mode" : "loop","direction" : "left"},
+		  "S_LR"   : {"frames" : 1,"cycle" : 1,"mode" : "loop","direction" : "left"},
+		  "S_TL"   : {"frames" : 1,"cycle" : 1,"mode" : "loop","direction" : "left"},
+		  "S_TR"   : {"frames" : 1,"cycle" : 1,"mode" : "loop","direction" : "left"},
+		  "S_BL"   : {"frames" : 1,"cycle" : 1,"mode" : "loop","direction" : "left"},
+		  "S_BR"   : {"frames" : 1,"cycle" : 1,"mode" : "loop","direction" : "left"},
+		  "S_LTR"  : {"frames" : 1,"cycle" : 1,"mode" : "loop","direction" : "left"},
+		  "S_TRB"  : {"frames" : 1,"cycle" : 1,"mode" : "loop","direction" : "left"},
+		  "S_RBL"  : {"frames" : 1,"cycle" : 1,"mode" : "loop","direction" : "left"},
+		  "S_BLT"  : {"frames" : 1,"cycle" : 1,"mode" : "loop","direction" : "left"},
+		  "S_TRBL" : {"frames" : 1,"cycle" : 1,"mode" : "loop","direction" : "left"}
+        }
+      }
+    },
+    "parts" : {
+      "LR" : {
+        "properties" : {"centered" : false},
+        "partStates" : {"DisplayState" : {
+            "S_LR"   : {"properties" : {"image" : "<partImage>:default.<frame>","direction" : "left"}},
+			"S_TB"   : {"properties" : {}},
+			"S_TL"   : {"properties" : {}},
+			"S_TR"   : {"properties" : {}},
+			"S_BL"   : {"properties" : {}},
+			"S_BR"   : {"properties" : {}},
+			"S_LTR"  : {"properties" : {}},
+			"S_TRB"  : {"properties" : {}},
+			"S_RBL"  : {"properties" : {}},
+			"S_BLT"  : {"properties" : {}},
+			"S_TRBL" : {"properties" : {}}
+          }
+        }
+      },
+      "TB" : {
+        "properties" : {"centered" : false},
+        "partStates" : {"DisplayState" : {
+            "S_LR" : {"properties" : {}},
+			"S_TB" : {"properties" : {"image" : "<partImage>:default.<frame>","direction" : "left"}},
+			"S_TL" : {"properties" : {}},
+			"S_TR" : {"properties" : {}},
+			"S_BL" : {"properties" : {}},
+			"S_BR" : {"properties" : {}},
+			"S_LTR" : {"properties" : {}},
+			"S_TRB" : {"properties" : {}},
+			"S_RBL" : {"properties" : {}},
+			"S_BLT" : {"properties" : {}},
+			"S_TRBL" : {"properties" : {}}
+          }
+        }
+      },
+      "TL" : {
+        "properties" : {"centered" : false},
+        "partStates" : {"DisplayState" : {
+            "S_LR" : {"properties" : {}},
+			"S_TB" : {"properties" : {}},
+			"S_TL" : {"properties" : {"image" : "<partImage>:default.<frame>","direction" : "left"}},
+			"S_TR" : {"properties" : {}},
+			"S_BL" : {"properties" : {}},
+			"S_BR" : {"properties" : {}},
+			"S_LTR" : {"properties" : {}},
+			"S_TRB" : {"properties" : {}},
+			"S_RBL" : {"properties" : {}},
+			"S_BLT" : {"properties" : {}},
+			"S_TRBL" : {"properties" : {}}
+          }
+        }
+      },
+      "TR" : {
+        "properties" : {"centered" : false},
+        "partStates" : {"DisplayState" : {
+            "S_LR" : {"properties" : {}},
+			"S_TB" : {"properties" : {}},
+			"S_TL" : {"properties" : {}},
+			"S_TR" : {"properties" : {"image" : "<partImage>:default.<frame>","direction" : "left"}},
+			"S_BL" : {"properties" : {}},
+			"S_BR" : {"properties" : {}},
+			"S_LTR" : {"properties" : {}},
+			"S_TRB" : {"properties" : {}},
+			"S_RBL" : {"properties" : {}},
+			"S_BLT" : {"properties" : {}},
+			"S_TRBL" : {"properties" : {}}
+          }
+        }
+      },
+      "BL" : {
+        "properties" : {"centered" : false},
+        "partStates" : {"DisplayState" : {
+            "S_LR" : {"properties" : {}},
+			"S_TB" : {"properties" : {}},
+			"S_TL" : {"properties" : {}},
+			"S_TR" : {"properties" : {}},
+			"S_BL" : {"properties" : {"image" : "<partImage>:default.<frame>","direction" : "left"}},
+			"S_BR" : {"properties" : {}},
+			"S_LTR" : {"properties" : {}},
+			"S_TRB" : {"properties" : {}},
+			"S_RBL" : {"properties" : {}},
+			"S_BLT" : {"properties" : {}},
+			"S_TRBL" : {"properties" : {}}
+          }
+        }
+      },
+      "BR" : {
+        "properties" : {"centered" : false},
+        "partStates" : {"DisplayState" : {
+            "S_LR" : {"properties" : {}},
+			"S_TB" : {"properties" : {}},
+			"S_TL" : {"properties" : {}},
+			"S_TR" : {"properties" : {}},
+			"S_BL" : {"properties" : {}},
+			"S_BR" : {"properties" : {"image" : "<partImage>:default.<frame>","direction" : "left"}},
+			"S_LTR" : {"properties" : {}},
+			"S_TRB" : {"properties" : {}},
+			"S_RBL" : {"properties" : {}},
+			"S_BLT" : {"properties" : {}},
+			"S_TRBL" : {"properties" : {}}
+          }
+        }
+      },
+      "LTR" : {
+        "properties" : {"centered" : false},
+        "partStates" : {"DisplayState" : {
+            "S_LR" : {"properties" : {}},
+			"S_TB" : {"properties" : {}},
+			"S_TL" : {"properties" : {}},
+			"S_TR" : {"properties" : {}},
+			"S_BL" : {"properties" : {}},
+			"S_BR" : {"properties" : {}},
+			"S_LTR" : {"properties" : {"image" : "<partImage>:default.<frame>","direction" : "left"}},
+			"S_TRB" : {"properties" : {}},
+			"S_RBL" : {"properties" : {}},
+			"S_BLT" : {"properties" : {}},
+			"S_TRBL" : {"properties" : {}}
+          }
+        }
+      },
+      "TRB" : {
+        "properties" : {"centered" : false},
+        "partStates" : {"DisplayState" : {
+            "S_LR" : {"properties" : {}},
+			"S_TB" : {"properties" : {}},
+			"S_TL" : {"properties" : {}},
+			"S_TR" : {"properties" : {}},
+			"S_BL" : {"properties" : {}},
+			"S_BR" : {"properties" : {}},
+			"S_LTR" : {"properties" : {}},
+			"S_TRB" : {"properties" : {"image" : "<partImage>:default.<frame>","direction" : "left"}},
+			"S_RBL" : {"properties" : {}},
+			"S_BLT" : {"properties" : {}},
+			"S_TRBL" : {"properties" : {}}
+          }
+        }
+      },
+      "RBL" : {
+        "properties" : {"centered" : false},
+        "partStates" : {"DisplayState" : {
+            "S_LR" : {"properties" : {}},
+			"S_TB" : {"properties" : {}},
+			"S_TL" : {"properties" : {}},
+			"S_TR" : {"properties" : {}},
+			"S_BL" : {"properties" : {}},
+			"S_BR" : {"properties" : {}},
+			"S_LTR" : {"properties" : {}},
+			"S_TRB" : {"properties" : {}},
+			"S_RBL" : {"properties" : {"image" : "<partImage>:default.<frame>","direction" : "left"}},
+			"S_BLT" : {"properties" : {}},
+			"S_TRBL" : {"properties" : {}}
+          }
+        }
+      },
+      "BLT" : {
+        "properties" : {"centered" : false},
+        "partStates" : {"DisplayState" : {
+            "S_LR" : {"properties" : {}},
+			"S_TB" : {"properties" : {}},
+			"S_TL" : {"properties" : {}},
+			"S_TR" : {"properties" : {}},
+			"S_BL" : {"properties" : {}},
+			"S_BR" : {"properties" : {}},
+			"S_LTR" : {"properties" : {}},
+			"S_TRB" : {"properties" : {}},
+			"S_RBL" : {"properties" : {}},
+			"S_BLT" : {"properties" : {"image" : "<partImage>:default.<frame>","direction" : "left"}},
+			"S_TRBL" : {"properties" : {}}
+          }
+        }
+      },
+      "TRBL" : {
+        "properties" : {"centered" : false},
+        "partStates" : {"DisplayState" : {
+            "S_LR" : {"properties" : {}},
+			"S_TB" : {"properties" : {}},
+			"S_TL" : {"properties" : {}},
+			"S_TR" : {"properties" : {}},
+			"S_BL" : {"properties" : {}},
+			"S_BR" : {"properties" : {}},
+			"S_LTR" : {"properties" : {}},
+			"S_TRB" : {"properties" : {}},
+			"S_RBL" : {"properties" : {}},
+			"S_BLT" : {"properties" : {}},
+			"S_TRBL" : {"properties" : {"image" : "<partImage>:default.<frame>","direction" : "left"}}
+          }
+        }
+      }
+    }
+  }
+}
