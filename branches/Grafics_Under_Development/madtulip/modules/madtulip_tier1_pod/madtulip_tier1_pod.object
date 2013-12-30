@@ -1,0 +1,384 @@
+{
+	"objectName" : "madtulip_tier1_pod",
+	"rarity" : "Common",
+	"objectType" : "wire",
+	"description" : "A device that will construct a building from it's internal blueprint",
+	"shortdescription" : "Building Printer",
+	"race" : "generic",
+	"category" : "tool",
+	"price" : "1",
+	"printable" : false,
+	
+	"inventoryIcon" : "/objects/basestorage/miab_basestore_printer/miab_basestore_printer_icon.png",
+	"orientations" : [
+		{
+			"dualImage" : "/objects/basestorage/miab_basestore_printer/miab_basestore_printer.png:<color>.<frame>",
+			"imagePosition" : [-8,0],
+			"frames" : 5,
+			"animationCycle" : 1,
+			"spaceScan" : 0.1,
+			"anchors" : ["bottom"]
+		}
+	],
+	
+	"animation" : "/objects/basestorage/miab_basestore_printer/miab_basestore_printer.animation",
+	"animationParts" : {
+		"normal_operation_image" : "/objects/basestorage/miab_basestore_printer/miab_basestore_printer.png"
+	},
+	"animationPosition" : [-8, 0],
+
+	"scripts" : [
+		"/objects/basestorage/miab_basestore_printer/miab_basestore_print_activator.lua",
+		"/scripts/basestorage/miab_basestore_printer.lua",
+		"/scripts/basestorage/miab_basestore_blueprint.lua"
+	],
+	"scriptDelta" : 5,
+
+	"miab_printer_offset" : [1, 0],
+
+ "miab_basestore_blueprint" : {
+ 	"blocksTable" : {
+ 		"glass" : 4,
+ 		"apexshipdetails" : 2,
+ 		"apexshipwall" : 3,
+ 		"apexshipsupport" : 1
+ 	},
+ 	"nextBlockId" : 5,
+ 	"layoutTableBackground" : {
+ 		"3" : {
+ 			"1" : 1,
+ 			"2" : 1
+ 		},
+ 		"4" : {
+ 			"2" : 1
+ 		},
+ 		"5" : {
+ 			"10" : 3,
+ 			"6" : 3,
+ 			"7" : 3,
+ 			"2" : 2,
+ 			"8" : 3,
+ 			"9" : 3
+ 		},
+ 		"6" : {
+ 			"2" : 3,
+ 			"3" : 3,
+ 			"4" : 3,
+ 			"5" : 3,
+ 			"6" : 3,
+ 			"7" : 3,
+ 			"8" : 3,
+ 			"9" : 3,
+ 			"10" : 3,
+ 			"11" : 3,
+ 			"12" : 3,
+ 			"13" : 3
+ 		},
+ 		"7" : {
+ 			"2" : 3,
+ 			"3" : 3,
+ 			"4" : 3,
+ 			"5" : 3,
+ 			"6" : 3,
+ 			"7" : 3,
+ 			"8" : 3,
+ 			"9" : 3,
+ 			"10" : 3,
+ 			"11" : 3,
+ 			"12" : 3,
+ 			"13" : 3
+ 		},
+ 		"8" : {
+ 			"2" : 3,
+ 			"3" : 3,
+ 			"4" : 3,
+ 			"5" : 3,
+ 			"6" : 3,
+ 			"7" : 3,
+ 			"8" : 3,
+ 			"9" : 3,
+ 			"10" : 3,
+ 			"11" : 3,
+ 			"12" : 3,
+ 			"13" : 3
+ 		},
+ 		"9" : {
+ 			"2" : 3,
+ 			"3" : 3,
+ 			"4" : 3,
+ 			"5" : 3,
+ 			"6" : 3,
+ 			"7" : 3,
+ 			"8" : 3,
+ 			"9" : 3,
+ 			"10" : 3,
+ 			"11" : 3,
+ 			"12" : 3,
+ 			"13" : 3
+ 		},
+ 		"10" : {
+ 			"2" : 2,
+ 			"3" : 3,
+ 			"4" : 3,
+ 			"5" : 3,
+ 			"6" : 3,
+ 			"7" : 3,
+ 			"8" : 3,
+ 			"9" : 3,
+ 			"10" : 3,
+ 			"11" : 3,
+ 			"12" : 3,
+ 			"13" : 3
+ 		},
+ 		"11" : {
+ 			"2" : 2,
+ 			"3" : 3,
+ 			"4" : 3,
+ 			"5" : 3,
+ 			"6" : 3,
+ 			"7" : 3,
+ 			"8" : 3,
+ 			"9" : 3,
+ 			"10" : 3,
+ 			"11" : 3,
+ 			"12" : 3,
+ 			"13" : 3
+ 		},
+ 		"12" : {
+ 			"2" : 2,
+ 			"3" : 3,
+ 			"4" : 3,
+ 			"5" : 3,
+ 			"6" : 3,
+ 			"7" : 4,
+ 			"8" : 4,
+ 			"9" : 3,
+ 			"10" : 3,
+ 			"11" : 3,
+ 			"12" : 3,
+ 			"13" : 3
+ 		},
+ 		"13" : {
+ 			"2" : 2,
+ 			"3" : 3,
+ 			"4" : 3,
+ 			"5" : 3,
+ 			"6" : 3,
+ 			"7" : 4,
+ 			"8" : 4,
+ 			"9" : 3,
+ 			"10" : 3,
+ 			"11" : 3,
+ 			"12" : 3,
+ 			"13" : 3
+ 		},
+ 		"14" : {
+ 			"2" : 2,
+ 			"3" : 3,
+ 			"4" : 3,
+ 			"5" : 3,
+ 			"6" : 3,
+ 			"7" : 3,
+ 			"8" : 3,
+ 			"9" : 3,
+ 			"10" : 3,
+ 			"11" : 3,
+ 			"12" : 3,
+ 			"13" : 3
+ 		},
+ 		"15" : {
+ 			"4" : 3,
+ 			"5" : 3,
+ 			"6" : 3,
+ 			"7" : 3,
+ 			"8" : 3,
+ 			"10" : 3,
+ 			"9" : 3,
+ 			"11" : 3,
+ 			"12" : 3
+ 		},
+ 		"16" : {
+ 			"4" : 3,
+ 			"5" : 3,
+ 			"6" : 3,
+ 			"7" : 3,
+ 			"8" : 3,
+ 			"10" : 3,
+ 			"9" : 3,
+ 			"11" : 3
+ 		},
+ 		"17" : {
+ 			"5" : 3,
+ 			"6" : 3,
+ 			"7" : 3,
+ 			"9" : 3,
+ 			"8" : 3,
+ 			"10" : 3
+ 		},
+ 		"18" : {
+ 			"7" : 3,
+ 			"6" : 3,
+ 			"8" : 3
+ 		}
+ 	},
+ 	"layoutTableForeground" : {
+ 		"1" : {
+ 			"1" : 1,
+ 			"2" : 1,
+ 			"13" : 1,
+ 			"15" : 1,
+ 			"14" : 1,
+ 			"0" : 1
+ 		},
+ 		"2" : {
+ 			"1" : 1,
+ 			"2" : 1,
+ 			"13" : 1,
+ 			"14" : 1
+ 		},
+ 		"3" : {
+ 			"1" : 1,
+ 			"2" : 1,
+ 			"3" : 1,
+ 			"13" : 1,
+ 			"12" : 1,
+ 			"14" : 1
+ 		},
+ 		"4" : {
+ 			"2" : 1,
+ 			"12" : 1,
+ 			"3" : 1,
+ 			"13" : 1
+ 		},
+ 		"5" : {
+ 			"2" : 2,
+ 			"3" : 2,
+ 			"4" : 2,
+ 			"5" : 2,
+ 			"6" : 2,
+ 			"7" : 2,
+ 			"8" : 2,
+ 			"9" : 2,
+ 			"10" : 2,
+ 			"11" : 2,
+ 			"12" : 2,
+ 			"13" : 2
+ 		},
+ 		"11" : {
+ 			"2" : 2,
+ 			"12" : 2,
+ 			"3" : 2,
+ 			"13" : 2
+ 		},
+ 		"12" : {
+ 			"2" : 2,
+ 			"12" : 2,
+ 			"3" : 2,
+ 			"13" : 2
+ 		},
+ 		"13" : {
+ 			"2" : 2,
+ 			"12" : 2,
+ 			"3" : 2,
+ 			"13" : 2
+ 		},
+ 		"14" : {
+ 			"2" : 2,
+ 			"12" : 2,
+ 			"3" : 2,
+ 			"13" : 2
+ 		},
+ 		"15" : {
+ 			"4" : 2,
+ 			"12" : 2,
+ 			"3" : 2,
+ 			"11" : 2
+ 		},
+ 		"16" : {
+ 			"4" : 2,
+ 			"5" : 2,
+ 			"11" : 2,
+ 			"10" : 2
+ 		},
+ 		"17" : {
+ 			"10" : 2,
+ 			"5" : 2,
+ 			"6" : 2,
+ 			"9" : 2
+ 		},
+ 		"18" : {
+ 			"7" : 2,
+ 			"9" : 2,
+ 			"6" : 2,
+ 			"8" : 2
+ 		},
+ 		"0" : {
+ 			"1" : 1,
+ 			"0" : 1,
+ 			"15" : 1,
+ 			"14" : 1
+ 		}
+ 	},
+ 	"objectTable" : {
+ 		"16" : {
+ 			"8" : {
+ 				"Name" : "madtulip_shiplight"
+ 			}
+ 		},
+ 		"7" : {
+ 			"11" : {
+ 				"Name" : "madtulip_shipnavigationconsole"
+ 			}
+ 		},
+ 		"21" : {
+ 			"8" : {
+ 				"Name" : "madtulip_human_ship_comms"
+ 			}
+ 		},
+ 		"3" : {
+ 			"8" : {
+ 				"Name" : "madtulip_human_stabilization_thruster"
+ 			}
+ 		},
+ 		"6" : {
+ 			"13" : {
+ 				"Name" : "madtulip_shipdoor"
+ 			},
+ 			"3" : {
+ 				"Name" : "madtulip_shipdoor"
+ 			},
+ 			"7" : {
+ 				"Name" : "tier1chair"
+ 			}
+ 		}
+ 	},
+ 	"optionsTable" : {
+ 		"useInventory" : true
+ 	},
+ 	"accquiredItemsTable" : {
+ 		"madtulip_human_stabilization_thruster" : 1,
+ 		"glassmaterial" : 4,
+ 		"madtulip_shiplight" : 1,
+ 		"apexshipwall" : 130,
+ 		"madtulip_human_ship_comms" : 1,
+ 		"madtulip_shipnavigationconsole" : 1,
+ 		"tier1chair" : 1,
+ 		"apexshipsupport" : 27,
+ 		"apexshipdetails" : 50,
+ 		"madtulip_shipdoor" : 2
+ 	},
+ 	"requiredItemsTable" : {
+ 		"madtulip_human_stabilization_thruster" : 1,
+ 		"madtulip_shiplight" : 1,
+ 		"apexshipsupport" : 27,
+ 		"madtulip_human_ship_comms" : 1,
+ 		"apexshipdetails" : 50,
+ 		"madtulip_shipnavigationconsole" : 1,
+ 		"tier1chair" : 1,
+ 		"glass" : 4,
+ 		"madtulip_shipdoor" : 2,
+ 		"apexshipwall" : 130
+ 	}
+ }	
+	
+}
