@@ -1,0 +1,15 @@
+Info: -------------------------------------------
+Info: Recipe config serialisation:
+Info: -------------------------------------------
+Info: "miab_basestore_recipe" : {
+Info: 	"requiredItemsTable" : {
+Info: 		"tier1chair" : 2,
+Info: 		"madtulip_shiplight" : 3,
+Info: 		"madtulip_human_medium_fin" : 1,
+Info: 		"madtulip_shipdoor" : 1,
+Info: 		"madtulip_human_small_fin" : 1
+Info: 	}
+Info: }
+Info: -------------------------------------------
+Info: Recipe config serialisation ends
+Info: -------------------------------------------
