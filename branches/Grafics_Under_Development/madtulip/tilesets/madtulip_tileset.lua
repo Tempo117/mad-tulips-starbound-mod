@@ -1,13 +1,14 @@
 function init(virtual)
 	if not(virtual) then
+		Update()
 	end
 end
 
 function main()
-	Update()
 end
 
 function Update()
+	self = {}
 	self.pos = entity.toAbsolutePosition({ 0.0, 0.0 });
 	self.BB = {}
 	self.BB[1] = self.pos[1]-1;
@@ -17,7 +18,8 @@ function Update()
 	
 	-- update self
 	madtulip_Update_Grafics()
-	
+
+
 	-- update the neighbours
 	world.entityQuery({self.BB[1], self.BB[2]},
 					  {self.BB[3], self.BB[4]},
@@ -72,8 +74,8 @@ function madtulip_Update_Grafics()
 		elseif (self.neighbours[5] and self.neighbours[7]) then entity.setAnimationState("DisplayState", "S_BL")
 		elseif (self.neighbours[7] and self.neighbours[1]) then entity.setAnimationState("DisplayState", "S_TL")
 		-- straight
-		elseif (self.neighbours[1] and self.self.neighbours[5]) then entity.setAnimationState("DisplayState", "S_TB")
-		elseif (self.neighbours[3] and self.self.neighbours[7]) then entity.setAnimationState("DisplayState", "S_LR")
+		elseif (self.neighbours[1] and self.neighbours[5]) then entity.setAnimationState("DisplayState", "S_TB")
+		elseif (self.neighbours[3] and self.neighbours[7]) then entity.setAnimationState("DisplayState", "S_LR")
 		-- single ended straight
 		elseif (self.neighbours[1]) then entity.setAnimationState("DisplayState", "S_TB")
 		elseif (self.neighbours[5]) then entity.setAnimationState("DisplayState", "S_TB")

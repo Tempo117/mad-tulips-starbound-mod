@@ -12,28 +12,27 @@
 	"inventoryIcon" : "madtulip_human_hull_tileset_icon.png",
 	"orientations" : [
 		{
-		  "dualImage" : "madtulip_human_hull_tileset.png:<color>.<frame>",
+		  "image" : "madtulip_human_hull_TRBL.png:.<frame>",
 		  "imagePosition" : [0, 0],
 		  "frames" : 1,
 		  "animationCycle" : 100,
-		  "spaceScan" : 0,
 		  "collision" : "solid"
 		}
 	],
 
 	"animation" : "madtulip_human_hull_tileset.animation",
 	"animationParts" : {
-		"TB" : "/tilesets/hull/human/madtulip_human_hull_tileset.png:1",
-		"LR" : "/tilesets/hull/human/madtulip_human_hull_tileset.png:2",
-		"BL" : "/tilesets/hull/human/madtulip_human_hull_tileset.png:3",
-		"BR" : "/tilesets/hull/human/madtulip_human_hull_tileset.png:4",
-		"TL" : "/tilesets/hull/human/madtulip_human_hull_tileset.png:5",
-		"TR" : "/tilesets/hull/human/madtulip_human_hull_tileset.png:6",
-		"BLT" : "/tilesets/hull/human/madtulip_human_hull_tileset.png:7",
-		"TRB" : "/tilesets/hull/human/madtulip_human_hull_tileset.png:8",
-		"LTR" : "/tilesets/hull/human/madtulip_human_hull_tileset.png:9",
-		"RBL" : "/tilesets/hull/human/madtulip_human_hull_tileset.png:10",
-		"TRBL" : "/tilesets/hull/human/madtulip_human_hull_tileset.png:11"
+		"TB" : "/tilesets/hull/human/madtulip_human_hull_TB.png",
+		"LR" : "/tilesets/hull/human/madtulip_human_hull_LR.png",
+		"BL" : "/tilesets/hull/human/madtulip_human_hull_BL.png",
+		"BR" : "/tilesets/hull/human/madtulip_human_hull_BR.png",
+		"TL" : "/tilesets/hull/human/madtulip_human_hull_TL.png",
+		"TR" : "/tilesets/hull/human/madtulip_human_hull_TR.png",
+		"BLT" : "/tilesets/hull/human/madtulip_human_hull_BLT.png",
+		"TRB" : "/tilesets/hull/human/madtulip_human_hull_TRB.png",
+		"LTR" : "/tilesets/hull/human/madtulip_human_hull_LTR.png",
+		"RBL" : "/tilesets/hull/human/madtulip_human_hull_RBL.png",
+		"TRBL" : "/tilesets/hull/human/madtulip_human_hull_TRBL.png"
 	},
 	"animationPosition" : [0, 0],
 	"scripts" : [
