@@ -9,5 +9,5 @@
     "item" : "madtulip_human_gyro_stabilizer",
     "count" : 1
   },
-  "groups" : [ "madtulip_shipstation", "all", "other" ]
+  "groups" : [ "madtulip_shipstation", "all", "objects" ]
 }

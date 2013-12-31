@@ -11,5 +11,5 @@
     "item" : "madtulip_avian_crystal_energy_core",
     "count" : 1
   },
-  "groups" : [ "madtulip_shipstation", "all", "other" ]
+  "groups" : [ "madtulip_shipstation", "all", "objects" ]
 }

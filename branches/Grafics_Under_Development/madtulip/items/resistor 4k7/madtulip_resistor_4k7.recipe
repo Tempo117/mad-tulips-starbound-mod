@@ -7,5 +7,5 @@
     "item" : "madtulip_resistor_4k7",
     "count" : 10
   },
-  "groups" : [ "madtulip_shipstation", "all" ]
+  "groups" : [ "madtulip_shipstation", "all", "materials" ]
 }

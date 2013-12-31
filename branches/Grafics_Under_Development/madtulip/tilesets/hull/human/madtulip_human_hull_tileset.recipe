@@ -6,5 +6,5 @@
     "item" : "madtulip_human_hull_tileset",
     "count" : 1
   },
-  "groups" : [ "plain", "tools", "objects", "all"]
+  "groups" : [ "madtulip_shipstation", "all", "hull" ]
 }

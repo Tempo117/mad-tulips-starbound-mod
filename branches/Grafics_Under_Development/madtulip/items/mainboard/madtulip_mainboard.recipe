@@ -9,5 +9,5 @@
     "item" : "madtulip_mainboard",
     "count" : 1
   },
-  "groups" : [ "madtulip_shipstation", "all" ]
+  "groups" : [ "madtulip_shipstation", "all", "materials" ]
 }

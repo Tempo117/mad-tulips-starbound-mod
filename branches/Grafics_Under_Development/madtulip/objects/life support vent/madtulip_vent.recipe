@@ -8,5 +8,5 @@
     "item" : "madtulip_vent",
     "count" : 1
   },
-  "groups" : [ "madtulip_shipstation", "all", "other" ]
+  "groups" : [ "madtulip_shipstation", "all", "systems" ]
 }
