@@ -1,8 +1,8 @@
 {
   "input" : [
     { "item" : "madtulip_polymer", "count" : 1 },
-    { "item" : "steelbar", "count" : 1 },
-	{ "item" : "tier2light", "count" : 1 }
+    { "item" : "ironbar", "count" : 1 },
+	{ "item" : "tier1light", "count" : 1 }
   ],
   "output" : {
     "item" : "madtulip_shiplight",

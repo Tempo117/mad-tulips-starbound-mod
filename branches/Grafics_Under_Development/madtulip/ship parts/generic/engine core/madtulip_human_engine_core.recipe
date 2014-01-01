@@ -1,6 +1,5 @@
 {
   "input" : [
-    { "item" : "madtulip_mainboard", "count" : 1 },
     { "item" : "madtulip_silicium", "count" : 8 },
 	{ "item" : "goldore", "count" : 2 },
 	{ "item" : "madtulip_polymer", "count" : 8 },

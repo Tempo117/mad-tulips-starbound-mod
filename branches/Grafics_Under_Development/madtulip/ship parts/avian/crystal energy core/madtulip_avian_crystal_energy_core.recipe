@@ -1,10 +1,10 @@
 {
   "input" : [
-    { "item" : "madtulip_mainboard", "count" : 1 },
+    { "item" : "circuitboard", "count" : 1 },
     { "item" : "madtulip_silicium", "count" : 8 },
-	{ "item" : "goldore", "count" : 2 },
+	{ "item" : "goldbar", "count" : 4 },
 	{ "item" : "madtulip_polymer", "count" : 8 },
-    { "item" : "steelbar", "count" : 22 },
+    { "item" : "titaniumbar", "count" : 10 },
 	{ "item" : "money", "count" : 500 }
   ],
   "output" : {

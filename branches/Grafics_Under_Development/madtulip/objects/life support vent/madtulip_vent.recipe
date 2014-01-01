@@ -1,7 +1,7 @@
 {
   "input" : [
     { "item" : "madtulip_polymer", "count" : 1 },
-    { "item" : "steelbar", "count" : 3 },
+    { "item" : "titaniumbar", "count" : 3 },
 	{ "item" : "money", "count" : 150 }
   ],
   "output" : {
