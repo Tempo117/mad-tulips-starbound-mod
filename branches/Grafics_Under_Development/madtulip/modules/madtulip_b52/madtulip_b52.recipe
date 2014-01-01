@@ -1,9 +1,10 @@
 {
   "input" : [
-    { "item" : "apexshipsupport", "count" : 10 },
+    { "item" : "steelbar", "count" : 20 }
   ],
   "output" : {
-    "item" : "miab_basestore_brickthing", "count" : 1
+    "item" : "madtulip_b52",
+    "count" : 1
   },
-  "groups" : [ "plain", "tools", "objects", "all"]
+  "groups" : [ "madtulip_shipstation", "all", "modules" ]
 }
