@@ -1,9 +1,10 @@
 {
   "input" : [
-    { "item" : "steelbar", "count" : 20 }
+	{ "item" : "steelbar", "count" : 45 },
+	{ "item" : "money", "count" : 800 }
   ],
   "output" : {
-    "item" : "madtulip_b52",
+    "item" : "madtulip_tier3_pod",
     "count" : 1
   },
   "groups" : [ "madtulip_shipstation", "all", "modules" ]

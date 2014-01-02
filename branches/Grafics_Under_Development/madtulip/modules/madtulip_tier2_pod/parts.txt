@@ -1,0 +1,16 @@
+Info: -------------------------------------------
+Info: Blueprint config serialisation ends
+Info: -------------------------------------------
+Info: -------------------------------------------
+Info: Recipe config serialisation:
+Info: -------------------------------------------
+Info: "miab_basestore_recipe" : {
+Info: 	"requiredItemsTable" : {
+Info: 		"tier1chair" : 1,
+Info: 		"madtulip_shiplight" : 2,
+Info: 		"madtulip_shipdoor" : 2
+Info: 	}
+Info: }
+Info: -------------------------------------------
+Info: Recipe config serialisation ends
+Info: -------------------------------------------
