@@ -16,8 +16,7 @@
 			"imagePosition" : [-8,0],
 			"frames" : 5,
 			"animationCycle" : 1,
-			"spaceScan" : 0.1,
-			"anchors" : ["bottom"]
+			"spaceScan" : 0.1
 		}
 	],
 	
