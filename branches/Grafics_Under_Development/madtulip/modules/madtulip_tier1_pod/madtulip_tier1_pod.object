@@ -29,7 +29,8 @@
 	"scripts" : [
 		"/objects/basestorage/miab_basestore_printer/miab_basestore_print_activator.lua",
 		"/scripts/basestorage/miab_basestore_printer.lua",
-		"/scripts/basestorage/miab_basestore_blueprint.lua"
+		"/scripts/basestorage/miab_basestore_blueprint.lua",
+		"/scripts/basestorage/miab_basestore_matsTable.lua"
 	],
 	"scriptDelta" : 5,
 

@@ -1,0 +1,31 @@
+Info: -------------------------------------------
+Info: Blueprint config serialisation ends
+Info: -------------------------------------------
+Info: -------------------------------------------
+Info: Recipe config serialisation:
+Info: -------------------------------------------
+Info: "miab_basestore_recipe" : {
+Info: 	"requiredItemsTable" : {
+Info: 		"madtulip_human_ftl_thruster" : 1,
+Info: 		"madtulip_human_small_fin" : 1,
+Info: 		"madtulip_shipdoor" : 8,
+Info: 		"madtulip_landing_gear_1" : 1,
+Info: 		"madtulip_human_gyro_stabilizer" : 1,
+Info: 		"madtulip_shiplight" : 11,
+Info: 		"pixelcompressor" : 1,
+Info: 		"madtulip_human_ship_comms" : 1,
+Info: 		"madtulip_landing_gear_2" : 1,
+Info: 		"tier1chair" : 2,
+Info: 		"madtulip_human_flux_compensator" : 1,
+Info: 		"standingturret" : 3,
+Info: 		"madtulip_shipnavigationconsole" : 2,
+Info: 		"roboticcraftingtable" : 1,
+Info: 		"madtulip_human_large_fin" : 1,
+Info: 		"metalworkstation" : 1,
+Info: 		"wiringstation" : 1,
+Info: 		"refinery" : 1
+Info: 	}
+Info: }
+Info: -------------------------------------------
+Info: Recipe config serialisation ends
+Info: -------------------------------------------

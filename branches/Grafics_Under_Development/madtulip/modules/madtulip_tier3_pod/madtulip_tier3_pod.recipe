@@ -1,7 +1,7 @@
 {
   "input" : [
-	{ "item" : "steelbar", "count" : 45 },
-	{ "item" : "money", "count" : 800 }
+	{ "item" : "steelbar", "count" : 40 },
+	{ "item" : "money", "count" : 750 }
   ],
   "output" : {
     "item" : "madtulip_tier3_pod",

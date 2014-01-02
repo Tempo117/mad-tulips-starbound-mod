@@ -1,10 +1,10 @@
 {
   "input" : [
-	{ "item" : "ironbar", "count" : 30 },
-	{ "item" : "money", "count" : 500 }
+	{ "item" : "titaniumbar", "count" : 50 },
+	{ "item" : "money", "count" : 1000 }
   ],
   "output" : {
-    "item" : "madtulip_tier2_pod",
+    "item" : "madtulip_tier4_pod",
     "count" : 1
   },
   "groups" : [ "madtulip_shipstation", "all", "modules" ]
