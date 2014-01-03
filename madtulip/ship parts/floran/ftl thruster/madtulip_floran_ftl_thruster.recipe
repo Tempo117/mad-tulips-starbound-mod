@@ -1,0 +1,14 @@
+{
+  "input" : [
+	{ "item" : "circuitboard", "count" : 2 },
+	{ "item" : "madtulip_silicium", "count" : 14 },
+    { "item" : "madtulip_polymer", "count" : 12 },
+    { "item" : "titaniumbar", "count" : 12 },
+	{ "item" : "money", "count" : 600 }
+  ],
+  "output" : {
+    "item" : "madtulip_floran_ftl_thruster",
+    "count" : 1
+  },
+  "groups" : [ "madtulip_shipstation", "all", "objects" ]
+}

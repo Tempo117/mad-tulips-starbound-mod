@@ -1,13 +1,11 @@
 {
   "input" : [
-    { "item" : "madtulip_ic_logic", "count" : 2 },
-	{ "item" : "madtulip_capacitor_100nf", "count" : 3 },
-	{ "item" : "steelbar", "count" : 3 },
+	{ "item" : "ironbar", "count" : 3 },
 	{ "item" : "money", "count" : 50 }
   ],
   "output" : {
     "item" : "madtulip_hylotl_flux_compensator",
     "count" : 1
   },
-  "groups" : [ "madtulip_shipstation", "all", "other" ]
+  "groups" : [ "madtulip_shipstation", "all", "objects" ]
 }

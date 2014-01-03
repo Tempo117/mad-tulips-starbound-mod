@@ -2,7 +2,7 @@
   "name" : "madtulip",
   "version" : "Beta v. Angry Koala",
   "path" : ".",
-  "dependencies" : [],
+  "dependencies" : ["Modules in a Box"],
   "metadata": {
     "author" : "MadTulip and TooManySecrets",
     "description" : "Spaceship block by block customizeability",

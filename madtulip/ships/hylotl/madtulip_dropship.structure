@@ -49,7 +49,7 @@
       "backgroundMat" : "apexshipwall",
       "object" : "madtulip_shiplocker",
       "objectParameters" : {
-        "treasurePools" : [ "hylotlStarterTreasure" ],
+        "treasurePools" : [ "madtulip_hylotlShipStarterTreasure" ],
         "level" : 1,
         "unbreakable" : false
       }

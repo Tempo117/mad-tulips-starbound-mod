@@ -8,5 +8,5 @@
     "item" : "madtulip_silicium",
     "count" : 3
   },
-  "groups" : [ "madtulip_shipstation", "all" ]
+  "groups" : [ "madtulip_shipstation", "all", "materials" ]
 }

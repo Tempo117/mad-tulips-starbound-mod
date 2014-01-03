@@ -1,7 +1,7 @@
 {
   "input" : [
-    { "item" : "tier2chair", "count" : 1 },
-    { "item" : "steelbar", "count" : 5 },
+    { "item" : "tier3chair", "count" : 1 },
+    { "item" : "titaniumbar", "count" : 3 },
 	{ "item" : "fabric", "count" : 5 },
 	{ "item" : "madtulip_polymer", "count" : 2 },
 	{ "item" : "money", "count" : 200 }
@@ -10,5 +10,5 @@
     "item" : "madtulip_captainschair",
     "count" : 1
   },
-  "groups" : [ "madtulip_shipstation", "all", "other" ]
+  "groups" : [ "madtulip_shipstation", "all", "systems" ]
 }

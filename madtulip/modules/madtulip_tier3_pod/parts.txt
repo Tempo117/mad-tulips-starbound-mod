@@ -1,0 +1,24 @@
+Info: -------------------------------------------
+Info: Blueprint config serialisation ends
+Info: -------------------------------------------
+Info: -------------------------------------------
+Info: Recipe config serialisation:
+Info: -------------------------------------------
+Info: "miab_basestore_recipe" : {
+Info: 	"requiredItemsTable" : {
+Info: 		"pixelcompressor" : 1,
+Info: 		"madtulip_shiplight" : 3,
+Info: 		"standingturret" : 2,
+Info: 		"madtulip_human_large_fin" : 1,
+Info: 		"madtulip_landing_gear_1" : 1,
+Info: 		"roboticcraftingtable" : 1,
+Info: 		"madtulip_shipnavigationconsole" : 1,
+Info: 		"madtulip_shipdoor" : 1,
+Info: 		"refinery" : 1,
+Info: 		"tier1chair" : 2,
+Info: 		"madtulip_landing_gear_2" : 1
+Info: 	}
+Info: }
+Info: -------------------------------------------
+Info: Recipe config serialisation ends
+Info: -------------------------------------------
