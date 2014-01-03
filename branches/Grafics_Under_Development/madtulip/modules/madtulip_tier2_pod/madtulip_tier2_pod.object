@@ -1166,13 +1166,6 @@
 		"useInventory" : false
 	},
 	"accquiredItemsTable" : {
-		"tier1chair" : 1,
-		"yarnspinner" : 1,
-		"woodencookingtable" : 1,
-		"metalworkstation" : 1,
-		"woodencraftingtable1" : 1,
-		"madtulip_shipdoor" : 2,
-		"madtulip_shiplight" : 2
 	},
 	"requiredItemsTable" : {
 		"woodencraftingtable1" : 1,

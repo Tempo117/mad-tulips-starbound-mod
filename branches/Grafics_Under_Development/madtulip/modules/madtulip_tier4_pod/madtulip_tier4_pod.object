@@ -5636,23 +5636,6 @@
 		"useInventory" : false
 	},
 	"accquiredItemsTable" : {
-		"madtulip_human_ftl_thruster" : 1,
-		"madtulip_human_small_fin" : 1,
-		"madtulip_human_large_fin" : 1,
-		"madtulip_landing_gear_1" : 1,
-		"madtulip_human_gyro_stabilizer" : 1,
-		"madtulip_shiplight" : 11,
-		"pixelcompressor" : 1,
-		"madtulip_human_ship_comms" : 1,
-		"metalworkstation" : 1,
-		"tier1chair" : 2,
-		"madtulip_human_flux_compensator" : 1,
-		"roboticcraftingtable" : 1,
-		"madtulip_shipnavigationconsole" : 2,
-		"madtulip_shipdoor" : 8,
-		"madtulip_landing_gear_2" : 1,
-		"wiringstation" : 1,
-		"refinery" : 1
 	},
 	"requiredItemsTable" : {
 		"madtulip_human_ftl_thruster" : 1,

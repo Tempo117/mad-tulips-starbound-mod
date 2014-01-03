@@ -3658,16 +3658,6 @@
 		"useInventory" : false
 	},
 	"accquiredItemsTable" : {
-		"pixelcompressor" : 1,
-		"madtulip_shiplight" : 3,
-		"madtulip_landing_gear_2" : 1,
-		"madtulip_human_large_fin" : 1,
-		"madtulip_landing_gear_1" : 1,
-		"roboticcraftingtable" : 1,
-		"madtulip_shipnavigationconsole" : 1,
-		"madtulip_shipdoor" : 1,
-		"refinery" : 1,
-		"tier1chair" : 2
 	},
 	"requiredItemsTable" : {
 		"pixelcompressor" : 1,
