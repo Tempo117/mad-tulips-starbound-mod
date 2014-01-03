@@ -9,5 +9,5 @@
     "item" : "madtulip_ic_logic",
     "count" : 5
   },
-  "groups" : [ "madtulip_shipstation", "all" ]
+  "groups" : [ "madtulip_shipstation", "all", "materials" ]
 }

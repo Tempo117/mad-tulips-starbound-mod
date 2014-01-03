@@ -1,14 +1,14 @@
 {
   "input" : [
-	{ "item" : "madtulip_mainboard", "count" : 2 },
+	{ "item" : "circuitboard", "count" : 2 },
 	{ "item" : "madtulip_silicium", "count" : 10 },
     { "item" : "madtulip_polymer", "count" : 8 },
-    { "item" : "steelbar", "count" : 16 },
+    { "item" : "titaniumbar", "count" : 8 },
 	{ "item" : "money", "count" : 400 }
   ],
   "output" : {
     "item" : "madtulip_human_stabilization_thruster",
     "count" : 1
   },
-  "groups" : [ "madtulip_shipstation", "all", "other" ]
+  "groups" : [ "madtulip_shipstation", "all", "objects" ]
 }

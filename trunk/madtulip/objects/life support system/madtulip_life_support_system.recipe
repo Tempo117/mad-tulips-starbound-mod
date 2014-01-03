@@ -1,12 +1,13 @@
 {
   "input" : [
+	{ "item" : "circuitboard", "count" : 2 },
     { "item" : "madtulip_polymer", "count" : 3 },
-    { "item" : "steelbar", "count" : 3 },
-	{ "item" : "money", "count" : 400 }
+    { "item" : "titaniumbar", "count" : 3 },
+	{ "item" : "money", "count" : 250 }
   ],
   "output" : {
     "item" : "madtulip_life_support_system",
     "count" : 1
   },
-  "groups" : [ "madtulip_shipstation", "all", "other" ]
+  "groups" : [ "madtulip_shipstation", "all", "systems" ]
 }
