@@ -1,3 +1,6 @@
+-- TODO: check for shipworld using teleporter as in the tech
+-- wire them ? con: cant set up on starter ship
+
 function initializeObject()
 	-- Make our object interactive (we can interract by 'Use')
 	entity.setInteractive(true);
@@ -7,7 +10,9 @@ function initializeObject()
 	
 	-- globals
 	madtulip = {}
-	madtulip.MSS_Range = 1000; -- maximum range to scan for other vents around the master
+	madtulip.MSS_Range = {} -- range to scan for other vents around the master
+	madtulip.MSS_Range[1] = {1,1} -- bottom left corner
+	madtulip.MSS_Range[2] = {1102,1048} -- top right corner (size of the shipmap
 	madtulip.Door_max_range = 10 -- maximum number of blocks in all directions around a door root that are scanned for the door
 	madtulip.On_Off_State = 1; -- "1:ON,2:OFF"
 	madtulip.maximum_particle_fountains = 50;
@@ -38,12 +43,17 @@ function main()
 		self.initialized = true;
 	end
 
-	--- smash all other life support masters in the area - we only need one, firste come first serve :) ---
-	local madtulip_life_support_system_Ids  = world.objectQuery (entity.toAbsolutePosition({ 0.0, 0.0 }),1000,{name = "madtulip_life_support_system"});
+	--- smash all other life support masters in the area - we only need one, first come first serve :) ---
+	local madtulip_life_support_system_Ids  = world.objectQuery (madtulip.MSS_Range[1],madtulip.MSS_Range[2],{name = "madtulip_life_support_system"});
 	for _, madtulip_life_support_system_Id in pairs(madtulip_life_support_system_Ids) do
 		if (madtulip_life_support_system_Id > entity.id()) then
 			world.callScriptedEntity(madtulip_life_support_system_Id, "kill_self");
 		end
+	end
+	
+	-- do not allow placement of this on the planet
+	if not (is_shipworld()) then
+		world.callScriptedEntity(madtulip_life_support_system_Id, "kill_self");
 	end
 	
 	--Multistage_Scan_all_Vents_in_the_Area();
@@ -99,10 +109,10 @@ function Multistage_Scan_all_Vents_in_the_Area()
 	madtulip.Scan_Results.SINGLE_VENTS_Background_breach    = {};
 	madtulip.Scan_Results.SINGLE_VENTS_BREACHES             = {};
 	
-	-- find all vents in the area and get theire position
-	madtulip.Scan_Results.Vents_Ids  = world.objectQuery (entity.toAbsolutePosition({ 0.0, 0.0 }),madtulip.MSS_Range,{name = "madtulip_vent"});
-	-- Perform scan for hull breach using each vents origin as point to start an individual scan
+	-- find all vents in the area and get their position
+	madtulip.Scan_Results.Vents_Ids  = world.objectQuery (madtulip.MSS_Range[1],madtulip.MSS_Range[2],{name = "madtulip_vent"});
 	
+	-- Perform scan for hull breach using each vents origin as point to start an individual scan
 	local process_this_vent = nil
 	local this_vent_is_already_know_for_overlapping = nil	
 
@@ -557,4 +567,19 @@ function set_flood_data_matrix_content (X,Y,Content)
 	   and(Y <= madtulip.Flood_Data_Matrix.Y_max) then
 			madtulip.Flood_Data_Matrix.Content[X][Y] = Content;
    end
+end
+
+function is_shipworld()
+	-- dirty dirty workaround: This searches if a teleporter is at that very location
+	-- this is the case for the fixed teleporter in the ship.
+	-- i didn't know any other way to degine the ship world.
+	local Teleporter_found = false;
+	local TeleporterIds = world.entityQuery ({1026,1016}, 1);
+	-- loop over one object, brilliant
+	for _, TeleporterId in pairs(TeleporterIds) do
+		if (world.entityName(TeleporterId) == "madtulip_teleporter") then
+			Teleporter_found = true;
+		end
+	end
+	return Teleporter_found;
 end
