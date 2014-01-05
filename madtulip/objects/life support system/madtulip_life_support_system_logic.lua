@@ -142,7 +142,7 @@ function Multistage_Scan_all_Vents_in_the_Area()
 				end
 			end
 			if (process_this_vent == 1) then
---world.logInfo ("processing vent")
+-- world.logInfo ("processing vent")
 				-- inc counter
 				madtulip.Scan_Results.Counter_Nr_Vents_Processed = madtulip.Scan_Results.Counter_Nr_Vents_Processed +1;
 				
@@ -150,7 +150,7 @@ function Multistage_Scan_all_Vents_in_the_Area()
 				madtulip.Scan_Results.Origin = (world.entityPosition (Vents_Id))
 				madtulip.Scan_Results.Stage_ranges = {50,250,1000}
 				Automatic_Multi_Stage_Scan();
---world.logInfo ("Flood_Fill DONE")
+-- world.logInfo ("Flood_Fill DONE")
 				
 				-- save the impact of this current Vent on the Life Support Main "breached" or "not breached" status
 				if (madtulip.Flood_Data_Matrix.Room_is_not_enclosed == 1) then
@@ -329,12 +329,14 @@ function Start_New_Room_Breach_Scan(size_to_scan,Scan_8_method)
 	for cur_X = madtulip.Flood_Data_Matrix.X_min,madtulip.Flood_Data_Matrix.X_max,1 do
 		madtulip.Flood_Data_Matrix.Content[cur_X] = {};
 		for cur_Y = madtulip.Flood_Data_Matrix.Y_min,madtulip.Flood_Data_Matrix.Y_max,1 do
-			madtulip.Flood_Data_Matrix.Content[cur_X][cur_Y] = {};
+			set_flood_data_matrix_content(cur_X,cur_Y,0)
 		end	
 	end
 	
 	-- check for doors in the area first
+-- world.logInfo ("Prepare_Doors_for_Flood_Fill()")
 	Prepare_Doors_for_Flood_Fill();
+-- world.logInfo ("Prepare_Doors_for_Flood_Fill() -- DONE")
 
 	-- test the area around the block where this is placed for beeing an enclosed room
 	Flood_Fill(madtulip.Flood_Data_Matrix.Origin,1,2,3);
@@ -360,11 +362,9 @@ function Prepare_Doors_for_Flood_Fill()
 		-- door is inside currently intialized memory
 --world.logInfo ("Root closed door #" .. closed_door_nr .. "@X:" .. root_Door_Position[1] .. "Y:" .. root_Door_Position[2])
 		set_flood_data_matrix_content (root_Door_Position[1],root_Door_Position[2],madtulip.Flood_Data_Matrix.replacement_color)
-		--madtulip.Flood_Data_Matrix.Content[root_Door_Position[1]][root_Door_Position[2]] = madtulip.Flood_Data_Matrix.replacement_color;
-		
 		cur_door_pos = { root_Door_Position[1], root_Door_Position[2] }
 		if (world.material(cur_door_pos, "foreground")) then
---world.logInfo ("Door root has foreground")
+-- world.logInfo ("Door root has foreground")
 			-- root of the door is a foreground block -> we asume its going only up
 			-- scan from root to top
 			foreground_block_found = false;
@@ -374,14 +374,13 @@ function Prepare_Doors_for_Flood_Fill()
 					if (world.material(cur_door_pos, "foreground")) then
 						foreground_block_found = true
 					else
---world.logInfo ("Closed door #" .. closed_door_nr .. "@X:" .. root_Door_Position[1] .. "Y:" .. cur_Y)
+-- world.logInfo ("Closed door #" .. closed_door_nr .. "@X:" .. root_Door_Position[1] .. "Y:" .. cur_Y)
 						set_flood_data_matrix_content (root_Door_Position[1],cur_Y,madtulip.Flood_Data_Matrix.replacement_color)
-						--madtulip.Flood_Data_Matrix.Content[root_Door_Position[1]][cur_Y] = madtulip.Flood_Data_Matrix.replacement_color;
 					end
 				end
 			end
 		else
---world.logInfo ("Door root has NO foreground")
+-- world.logInfo ("Door root has NO foreground")
 			-- root of the door is NO foreground block. we scan towards top and bottom
 			-- scan from root to top
 			foreground_block_found = false;
@@ -393,7 +392,6 @@ function Prepare_Doors_for_Flood_Fill()
 					else
 --world.logInfo ("Closed door #" .. closed_door_nr .. "@X:" .. root_Door_Position[1] .. "Y:" .. cur_Y)
 						set_flood_data_matrix_content (root_Door_Position[1],cur_Y,madtulip.Flood_Data_Matrix.replacement_color)
-						--madtulip.Flood_Data_Matrix.Content[root_Door_Position[1]][cur_Y] = madtulip.Flood_Data_Matrix.replacement_color;
 					end
 				end
 			end
@@ -407,7 +405,6 @@ function Prepare_Doors_for_Flood_Fill()
 					else
 --world.logInfo ("Closed door #" .. closed_door_nr .. "@X:" .. root_Door_Position[1] .. "Y:" .. cur_Y)
 						set_flood_data_matrix_content (root_Door_Position[1],cur_Y,madtulip.Flood_Data_Matrix.replacement_color)
-						--madtulip.Flood_Data_Matrix.Content[root_Door_Position[1]][cur_Y] = madtulip.Flood_Data_Matrix.replacement_color;
 					end
 				end
 			end
@@ -421,6 +418,14 @@ function Flood_Fill(cur_Position)
 	if madtulip.Flood_Data_Matrix.Stop_Iteration == 1 then
 		return;
 	end
+	if not ((cur_Position[1] >= madtulip.Flood_Data_Matrix.X_min)
+	     and(cur_Position[1] <= madtulip.Flood_Data_Matrix.X_max)
+	     and(cur_Position[2] >= madtulip.Flood_Data_Matrix.Y_min)
+	     and(cur_Position[2] <= madtulip.Flood_Data_Matrix.Y_max)) then
+	   -- we left initialized memory
+	   return
+   end
+	
 	-- if this block has already been scanned
 	if madtulip.Flood_Data_Matrix.Content[cur_Position[1]][cur_Position[2]] == madtulip.Flood_Data_Matrix.replacement_color then
 		-- we have already been here
@@ -482,7 +487,7 @@ function Flood_Fill(cur_Position)
 	-- write the gathered info to "madtulip.Flood_Data_Matrix.Content[x,y]" which is the data object used further on
 	if world.material(cur_Position, "foreground") == nil then
 		-- nil foreground block found. This is our target.
-		madtulip.Flood_Data_Matrix.Content[cur_Position[1]][cur_Position[2]] = madtulip.Flood_Data_Matrix.target_color;
+		set_flood_data_matrix_content(cur_Position[1],cur_Position[2],madtulip.Flood_Data_Matrix.target_color)
 		-- if this is also a nil background block we have a breach that we might or might not be aware of yet
 		if  world.material(cur_Position, "background") == nil then
 		
@@ -493,13 +498,13 @@ function Flood_Fill(cur_Position)
 			madtulip.Flood_Data_Matrix.Background_breach          = 1; -- not enclose due to hole in the background
 			
 			-- we did hit the a breach here, don`t spawn further searches from this block
-			madtulip.Flood_Data_Matrix.Content[cur_Position[1]][cur_Position[2]] = madtulip.Flood_Data_Matrix.none_target_color;
+			set_flood_data_matrix_content(cur_Position[1],cur_Position[2],madtulip.Flood_Data_Matrix.none_target_color)
 			return;
 		end
 	else
 		-- an existing foreground block is a none target
 		-- we did hit the wall here, don`t spawn further searches from this block
-		madtulip.Flood_Data_Matrix.Content[cur_Position[1]][cur_Position[2]] = madtulip.Flood_Data_Matrix.none_target_color;
+		set_flood_data_matrix_content(cur_Position[1],cur_Position[2],madtulip.Flood_Data_Matrix.none_target_color)
 	end
 
 	--  ----- 1. If the "color" of current node is not equal to target-color, return. -----
@@ -510,7 +515,7 @@ function Flood_Fill(cur_Position)
 	
 	-- ----- 2. Set the color of node to replacement-color. -----
 	-- this block is an empty foreground block. we mark it as "processed" by putting the replacement color
-	madtulip.Flood_Data_Matrix.Content[cur_Position[1]][cur_Position[2]] = madtulip.Flood_Data_Matrix.replacement_color;
+	set_flood_data_matrix_content(cur_Position[1],cur_Position[2],madtulip.Flood_Data_Matrix.replacement_color)
 	madtulip.Flood_Data_Matrix.Area = madtulip.Flood_Data_Matrix.Area + 1; -- increment flooded area (starts at 0)
 	madtulip.Flood_Data_Matrix.Background_in_scanned_Area[madtulip.Flood_Data_Matrix.Area] = cur_Position;
 	
@@ -551,5 +556,5 @@ function set_flood_data_matrix_content (X,Y,Content)
 	   and(Y >= madtulip.Flood_Data_Matrix.Y_min)
 	   and(Y <= madtulip.Flood_Data_Matrix.Y_max) then
 			madtulip.Flood_Data_Matrix.Content[X][Y] = Content;
-	   end
+   end
 end
