@@ -3,3 +3,14 @@
 -
 -
 - apex small fins in todo looks the same as apex stabilization thruster - new grafic for small fin
+
+----------------------------------
+Landing gear shape
+- landing gear 4 is good. i like the solid leg and the unconnected "hooves" triangles at the bottom
+- landing gear 3 leg is to thin. looks like it would break (try deploying the tier 1 landing pod to see how it looks).
+- landing gear 2 leg is to thin same as with landing gear 3. i needs to look more solid. the part between the 2 hooves needs to be more slim or be similar to landing gear 4, the foot looks like one solid clunky part where it should more look like 2 independen claw or teath so those could adapt to not totaly flat ground.
+- landing gear 1 should have a Y shaped support very similar to the old version of the "boot"-like landing gear. the current joints and beams mechanicaly do not look realistic.
+
+it doesnt matter anymore if the top row of pixels in each foot is of the same size as the old legs or if they are in the same position, we will just do the landing pods again so that you new landing gears look good on them.
+
+- try placing landin pod 1,3 and 4 and see how you can place the legs under them. seeing it live at least gave a sense of scale or mass or proportion to me.
