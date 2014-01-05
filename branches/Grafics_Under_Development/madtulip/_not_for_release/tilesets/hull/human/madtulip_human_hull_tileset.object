@@ -1,0 +1,42 @@
+{
+	"objectName" : "madtulip_human_hull_tileset",
+	"rarity" : "Common",
+	"objectType" : "wire",
+	"description" : "Human Spaceship Hull Plating",
+	"shortdescription" : "Human Spaceship Hull Plating",
+	"race" : "generic",
+	"category" : "decorative",
+	"price" : "1",
+	"printable" : false,
+	
+	"inventoryIcon" : "madtulip_human_hull_tileset_icon.png",
+	"orientations" : [
+		{
+		  "image" : "madtulip_human_hull_TRBL.png:.<frame>",
+		  "imagePosition" : [0, 0],
+		  "frames" : 1,
+		  "animationCycle" : 100,
+		  "collision" : "solid"
+		}
+	],
+
+	"animation" : "madtulip_human_hull_tileset.animation",
+	"animationParts" : {
+		"TB" : "/_not_for_release/tilesets/hull/human/madtulip_human_hull_TB.png",
+		"LR" : "/_not_for_release/tilesets/hull/human/madtulip_human_hull_LR.png",
+		"BL" : "/_not_for_release/tilesets/hull/human/madtulip_human_hull_BL.png",
+		"BR" : "/_not_for_release/tilesets/hull/human/madtulip_human_hull_BR.png",
+		"TL" : "/_not_for_release/tilesets/hull/human/madtulip_human_hull_TL.png",
+		"TR" : "/_not_for_release/tilesets/hull/human/madtulip_human_hull_TR.png",
+		"BLT" : "/_not_for_release/tilesets/hull/human/madtulip_human_hull_BLT.png",
+		"TRB" : "/_not_for_release/tilesets/hull/human/madtulip_human_hull_TRB.png",
+		"LTR" : "/_not_for_release/tilesets/hull/human/madtulip_human_hull_LTR.png",
+		"RBL" : "/_not_for_release/tilesets/hull/human/madtulip_human_hull_RBL.png",
+		"TRBL" : "/_not_for_release/tilesets/hull/human/madtulip_human_hull_TRBL.png"
+	},
+	"animationPosition" : [0, 0],
+	"scripts" : [
+		"/tilesets/madtulip_tileset.lua"
+	],
+	"scriptDelta" : 1
+}
