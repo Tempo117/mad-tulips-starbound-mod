@@ -88,10 +88,13 @@ function main_threaded()
 	if (madtulip.Flood_Data_Matrix.Room_is_not_enclosed == 1) then
 		-- set animation state of master wall panel to breach
 		entity.setAnimationState("DisplayState", "breach");
+		entity.setAllOutboundNodes(false)
 	else
 		-- set animation state to normal operation
 		entity.setAnimationState("DisplayState", "normal_operation");
+		entity.setAllOutboundNodes(true)
 	end
+	
 	-- spawn breach grafics
 	local counter_breaches = 0;
 	local breach_pos = {}

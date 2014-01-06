@@ -7,7 +7,7 @@
   "price" : "300",
 
   "description" : "Sterile, recycled air whirs through the fanblades at a steady pace.",
-  "shortdescription" : "Life Support Vent",
+  "shortdescription" : "Life Support System",
   "race" : "human",
 
   "apexDescription" : "A vent.",
@@ -41,6 +41,8 @@
 
   "scripts" : [ "/objects/life support vent/madtulip_vent_logic.lua" ],
   "scriptDelta" : 5,
+  
+  "outboundNodes" : [ [1, -1] ],
 
   "soundEffect" : "/sfx/objects/bunkervent.wav"
 
