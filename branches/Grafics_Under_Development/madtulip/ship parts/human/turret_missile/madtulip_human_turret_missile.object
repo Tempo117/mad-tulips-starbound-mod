@@ -13,7 +13,7 @@
 	"orientations" : [
 		{
 			"dualImage" : "madtulip_human_turret_missile_ON.png:<color>.<frame>",
-			"imagePosition" : [-49,-16],
+			"imagePosition" : [-25,-16],
 			"frames" : 1,
 			"animationCycle" : 1,
 			"spaceScan" : 0.1,
@@ -26,12 +26,12 @@
 		"ON_PNG" : "madtulip_human_turret_missile_ON.png",
 		"OFF_PNG" : "madtulip_human_turret_missile_OFF.png"
 	},
-	"animationPosition" : [-49, -16],
+	"animationPosition" : [-25, -16],
 
 	"scripts" : [ "madtulip_human_turret_missile.lua" ],
 	"scriptDelta" : 5,
 	
-	"inboundNodes" : [ [-4, -2] ],
+	"inboundNodes" : [ [-2, -2] ],
 	"outboundNodes" : [ ],
 
 	"gates" : 1,
