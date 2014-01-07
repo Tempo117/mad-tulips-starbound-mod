@@ -13,7 +13,7 @@
   "orientations" : [
 	{
       "dualImage" : "madtulip_landing_gear_1.png:<color>.<frame>",
-      "imagePosition" : [-44,-32],
+      "imagePosition" : [-32,-32],
       "frames" : 1,
       "animationCycle" : 1,
       "spaceScan" : 0.1,
@@ -25,7 +25,7 @@
 	"animationParts" : {
 		"only_picture" : "madtulip_landing_gear_1.png"
 	},
-	"animationPosition" : [-44,-32],
+	"animationPosition" : [-32,-32],
 
 	"scripts" : [ "madtulip_landing_gear_1.lua" ],
 	"scriptDelta" : 5
