@@ -3,8 +3,8 @@
     { "item" : "steelbar", "count" : 1 }
   ],
   "output" : {
-    "item" : "modernplatform",
+    "item" : "smoothmetal",
     "count" : 2
   },
-  "groups" : [ "madtulip_shipstation", "all", "hull" ]
+  "groups" : [ "madtulip_shipstation", "all", "materials" ]
 }
