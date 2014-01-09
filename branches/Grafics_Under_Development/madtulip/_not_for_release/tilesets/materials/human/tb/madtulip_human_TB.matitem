@@ -1,0 +1,9 @@
+{
+  "itemName" : "madtulip_human_TB",
+  "rarity" : "Common",
+  "inventoryIcon" : "madtulip_human_TB_icon.png",
+  "dropCollision" : [-2.5, -2.0, 2.5, 2.0],
+  "description" : "TODO",
+  "shortdescription" : "TODO",
+  "materialId" : 21007
+}

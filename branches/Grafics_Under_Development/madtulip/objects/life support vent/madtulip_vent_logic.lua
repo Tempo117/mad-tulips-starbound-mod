@@ -11,8 +11,6 @@ function init()
 	
 	-- globals
 	madtulip = {}
-	madtulip.time_last_executed = os.time()
-	madtulip.sound_intervall = 1; -- minimum intervall between breach warning beeps in [s]
 	madtulip.MSS_Range = {} -- range to scan for other vents around the master
 	madtulip.MSS_Range[1] = {1,1} -- bottom left corner
 	madtulip.MSS_Range[2] = {1102,1048} -- top right corner (size of the shipmap
@@ -80,15 +78,16 @@ function main_threaded()
 	Automatic_Multi_Stage_Scan();
 	
 	------- perform actions -------
-	-- own graphics and sound
+	-- sound
+	if(madtulip.Flood_Data_Matrix.Background_breach == 1) then
+		-- play a meeping warning sound
+		entity.playSound("Breach_Warning_Sound");
+	end	
+	
+	-- own graphics
 	if (madtulip.Flood_Data_Matrix.Room_is_not_enclosed == 1) then
 		-- set animation state of master wall panel to breach
 		entity.setAnimationState("DisplayState", "breach");
-		-- play sound only once every "madtulip.sound_intervall" seconds
-		if(os.time() >= madtulip.time_last_executed + madtulip.sound_intervall) then
-			entity.playSound("Breach_Warning_Sound");
-			madtulip.time_last_executed = os.time()
-		end
 		entity.setAllOutboundNodes(false)
 	else
 		-- set animation state to normal operation
