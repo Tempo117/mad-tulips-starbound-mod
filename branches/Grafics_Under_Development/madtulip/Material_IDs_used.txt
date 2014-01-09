@@ -1,0 +1,14 @@
+Here i keep track of the material IDs used in this mod:
+
+human tile set in tileset/human:
+21001 bl
+21002 blt
+21003 br
+21004 lr
+21005 ltr
+21006 rbl
+21007 tb
+21008 tl
+21009 tr
+21010 trb
+21011 trbl
