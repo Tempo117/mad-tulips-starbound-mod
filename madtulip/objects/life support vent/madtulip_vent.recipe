@@ -1,8 +1,9 @@
 {
   "input" : [
-    { "item" : "madtulip_polymer", "count" : 1 },
+	{ "item" : "circuitboard", "count" : 2 },
+    { "item" : "madtulip_polymer", "count" : 3 },
     { "item" : "titaniumbar", "count" : 3 },
-	{ "item" : "money", "count" : 150 }
+	{ "item" : "money", "count" : 250 }
   ],
   "output" : {
     "item" : "madtulip_vent",

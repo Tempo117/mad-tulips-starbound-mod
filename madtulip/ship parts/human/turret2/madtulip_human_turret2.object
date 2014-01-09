@@ -1,0 +1,39 @@
+{
+	"objectName" : "madtulip_human_turret2",
+	"rarity" : "Common",
+	"objectType" : "wire",
+	"description" : "This one goes DAKKA DAKKA!",
+	"shortdescription" : "Main Gun Turret",
+	"race" : "generic",
+	"category" : "decorative",
+	"price" : "10",
+	"printable" : false,
+
+	"inventoryIcon" : "madtulip_human_turret2_icon.png",
+	"orientations" : [
+		{
+			"dualImage" : "madtulip_human_turret2_ON.png:<color>.<frame>",
+			"imagePosition" : [-49,-16],
+			"frames" : 1,
+			"animationCycle" : 1,
+			"spaceScan" : 0.1,
+			"anchors" : [ "bottom" ]
+		}
+	],
+	
+	"animation" : "madtulip_human_turret2.animation",
+	"animationParts" : {
+		"ON_PNG" : "madtulip_human_turret2_ON.png",
+		"OFF_PNG" : "madtulip_human_turret2_OFF.png"
+	},
+	"animationPosition" : [-49, -16],
+
+	"scripts" : [ "madtulip_human_turret2.lua" ],
+	"scriptDelta" : 5,
+	
+	"inboundNodes" : [ [-4, -2] ],
+	"outboundNodes" : [ ],
+
+	"gates" : 1,
+	"truthtable" : [ false, true ]
+}
