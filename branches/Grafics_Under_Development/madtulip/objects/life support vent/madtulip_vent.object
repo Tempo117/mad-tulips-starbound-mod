@@ -43,6 +43,8 @@
   "scriptDelta" : 5,
   
   "outboundNodes" : [ [1, -1] ],
+  
+  "Breach_Warning_Sound" : [ "/objects/life support vent/Breach_Warning_Sound.wav" ],
 
   "soundEffect" : "/sfx/objects/bunkervent.wav"
 
