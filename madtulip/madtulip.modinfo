@@ -5,7 +5,8 @@
   "dependencies" : ["Modules in a Box"],
   "metadata": {
     "author" : "MadTulip and TooManySecrets",
-    "description" : "Spaceship block by block customizeability",
+    "description" : "Spaceship block by block and object customizeability plus some space mechanics like ZERO gravity",
+	"MatIDs_used" : "21000 till 21200",
     "support_url" : "http://community.playstarbound.com/index.php?resources/madtulips-ship-mod.59/"
   }
 }

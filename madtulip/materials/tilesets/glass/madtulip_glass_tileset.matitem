@@ -1,0 +1,9 @@
+{
+  "itemName" : "madtulip_glass_tileset",
+  "rarity" : "Common",
+  "inventoryIcon" : "madtulip_glass_tileset_icon.png",
+  "dropCollision" : [-2.5, -2.0, 2.5, 2.0],
+  "description" : "Glass Tileset",
+  "shortdescription" : "Glass Tileset",
+  "materialId" : 21132
+}
