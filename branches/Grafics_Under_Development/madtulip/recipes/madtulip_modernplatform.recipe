@@ -6,5 +6,5 @@
     "item" : "modernplatform",
     "count" : 2
   },
-  "groups" : [ "madtulip_shipstation", "all", "hull" ]
+  "groups" : [ "madtulip_shipstation", "all", "materials" ]
 }

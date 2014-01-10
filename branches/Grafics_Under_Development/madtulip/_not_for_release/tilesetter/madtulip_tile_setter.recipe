@@ -1,0 +1,11 @@
+{
+  "input" : [
+    { "item" : "durasteelbar", "count" : 30 },
+	{ "item" : "money", "count" : 500 }
+  ],
+  "output" : {
+    "item" : "madtulip_tile_setter",
+    "count" : 1
+  },
+  "groups" : [ "madtulip_shipstation", "all", "systems" ]
+}

@@ -16,7 +16,7 @@ function init()
 	madtulip.MSS_Range[2] = {1102,1048} -- top right corner (size of the shipmap
 	madtulip.Door_max_range = 10 -- maximum number of blocks in all directions around a door root that are scanned for the door
 	madtulip.On_Off_State = 1; -- "1:ON,2:OFF"
-	madtulip.maximum_particle_fountains = 50;
+	madtulip.maximum_particle_fountains = 20;
 	madtulip.ANY_Breach = 0;	
 	
 	-- spawn a new main calculation thread
