@@ -18,6 +18,7 @@ function onInteraction(args)
 	
 	self = {}
 	self.stackcounter = 0;
+	self.timeoutcounter = 0
 	self.boxsize = 100;
 	self.pos = entity.toAbsolutePosition({ 0.0, 0.0 });
 	self.BB = {}
@@ -30,11 +31,10 @@ function onInteraction(args)
 	local cur_Pos = {};
 	local cur_Neigh_Pos = {};
 	local cur_F_mat = nil;
-	local cur_B_mat = nil;
 	local f_tileset_mat_type = nil -- nil,human,glitch ...
 	local X_abs = nil;
 	local Y_abs = nil;
-	local own_mat_to_be_set = nil
+	local own_mat_to_be_set = nil -- "BL","TL", ...
 	local layer = "foreground"
 	local place_block_here = false
 	for layer_nr=1,2,1 do
@@ -76,7 +76,7 @@ function onInteraction(args)
 						end
 					end
 					
-					-- set grafic according to neighbours
+					-- set graphic according to neighbours
 					-- +
 					if     (self.neighbours[1] and self.neighbours[3] and self.neighbours[5] and self.neighbours[7]) then own_mat_to_be_set = "TRBL"
 					-- T
@@ -102,8 +102,11 @@ function onInteraction(args)
 					end
 					
 					if (place_block_here) then
-						--set_own_mat (cur_Pos,layer,f_tileset_mat_type,own_mat_to_be_set)
-						add_mat_to_placement_stack (cur_Pos[1],cur_Pos[2],layer,f_tileset_mat_type,own_mat_to_be_set)
+						-- check if the current block is already the same as the block we want to place
+						if not (cur_F_mat == "madtulip_" .. f_tileset_mat_type .. "_" .. own_mat_to_be_set) then
+							-- place only if block to be placed is different from current block.
+							add_mat_to_placement_stack (cur_Pos[1],cur_Pos[2],layer,f_tileset_mat_type,own_mat_to_be_set)
+						end
 					end
 				end
 			end
@@ -235,10 +238,11 @@ function add_mat_to_placement_stack (X,Y,layer,f_tileset_mat_type,own_mat_to_be_
 end
 
 function place_stack()
-	if (self.stackcounter < 1) then return end
+	if (self.stackcounter < 1) then return end -- no more blocks to place
 	
 	local done_placing = true
 	local could_place = false
+	local could_place_anything = false
 	for cur_stackcounter = 1,self.stackcounter,1 do
 		if not(self.stack.was_processed[cur_stackcounter]) then
 			could_place = set_own_mat (self.stack.cur_Pos[cur_stackcounter]
@@ -247,21 +251,34 @@ function place_stack()
 									  ,self.stack.own_mat_to_be_set[cur_stackcounter])
 			if (could_place)then
 				self.stack.was_processed[cur_stackcounter] = true
+				could_place_anything = true;
 			else
 				done_placing = false
 			end
 		end
 	end
 	
+	if not (could_place_anything) then
+		-- in case placing cant finish
+		self.timeoutcounter = self.timeoutcounter + 1
+		if (self.timeoutcounter > 10) then
+			--> reset state machine
+			self.stackcounter = 0
+			self.timeoutcounter = 0
+			return
+		end
+	end
+	
 	if (done_placing) then
-		-- reade to read again
+		-- ready to read again
 		self.stackcounter = 0
+		self.timeoutcounter = 0
 	end
 end
 
 function set_own_mat (cur_Pos,layer,f_tileset_mat_type,own_mat_to_be_set)
 --world.logInfo ("cur_Pos:" .. " layer:" .. layer .. " f_tileset_mat_type:" .. f_tileset_mat_type .. " own_mat_to_be_set:" .. own_mat_to_be_set)
-	-- parameters are i.e. {X,Y},"TB","human"
+	-- parameters are i.e. {X,Y},"foreground","TB","human"
 	-- remove old block
 	world.damageTiles({cur_Pos}, layer, cur_Pos, "crushing", 10000)
 	-- place new block
