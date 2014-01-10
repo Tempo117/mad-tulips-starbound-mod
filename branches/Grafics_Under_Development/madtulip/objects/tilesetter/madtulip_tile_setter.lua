@@ -1,6 +1,6 @@
 function init()
 	-- Change animation for state "active"
-	entity.setAnimationState("beaconState", "active");
+	entity.setAnimationState("DisplayState", "normal_operation");
 	
 	-- Make our object interactive (we can interract by 'Use')
 	entity.setInteractive(true);
