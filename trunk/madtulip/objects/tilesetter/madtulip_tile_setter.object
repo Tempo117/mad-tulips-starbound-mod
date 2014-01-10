@@ -1,0 +1,35 @@
+{
+  "objectName" : "madtulip_tile_setter",
+  "rarity" : "Common",
+  "objectType" : "wire",
+  "category" : "decorative",
+  "printable" : "false",
+  "price" : "300",
+
+  "description" : "A Tilesetter. It bends space!",
+  "shortdescription" : "Tilesetter",
+  "race" : "generic",
+
+  "inventoryIcon" : "madtulip_tile_setter_icon.png",
+  "orientations" : [
+    {
+      "image" : "madtulip_tile_setter.png:<color>.<frame>",
+      "imagePosition" : [-16, -16],
+      "frames" : 6,
+      "animationCycle" : 1,
+
+      "spaceScan" : 0.1,
+      "anchors" : [ "background" ]
+
+    }
+  ],
+  
+  "animation" : "madtulip_tile_setter.animation",
+  "animationParts" : {
+    "default" : "madtulip_tile_setter.png"
+  },
+  "animationPosition" : [-16, -16],
+
+  "scripts" : [ "madtulip_tile_setter.lua" ],
+  "scriptDelta" : 5
+}
