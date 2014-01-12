@@ -16,7 +16,7 @@ function init()
 	madtulip.MSS_Range[2] = {1102,1048} -- top right corner (size of the shipmap
 	madtulip.Door_max_range = 10 -- maximum number of blocks in all directions around a door root that are scanned for the door
 	madtulip.On_Off_State = 1; -- "1:ON,2:OFF"
-	madtulip.maximum_particle_fountains = 20;
+	madtulip.maximum_particle_fountains = 10;
 	madtulip.ANY_Breach = 0;	
 	
 	-- spawn a new main calculation thread
@@ -74,7 +74,7 @@ function main_threaded()
 	entity.setAnimationState("DisplayState", "offline");
 
 	madtulip.Origin       = entity.toAbsolutePosition({ 0.0, 0.0 })
-	madtulip.Stage_ranges = {50,250,1000}
+	madtulip.Stage_ranges = {50,250}
 	Automatic_Multi_Stage_Scan();
 	
 	------- perform actions -------
@@ -125,6 +125,7 @@ function Automatic_Multi_Stage_Scan()
 			-- if no closed room was found we enlargen the search area
 			-- this could have been done in the first place, but it takes longer if the initial room is small already
 			Start_New_Room_Breach_Scan(madtulip.Stage_ranges[2],1);
+--[[
 			if (madtulip.Flood_Data_Matrix.Room_is_not_enclosed == 1) then
 				if (madtulip.Flood_Data_Matrix.Background_breach ~= 1) then
 					-- if no closed room was found we enlargen the search area
@@ -132,6 +133,7 @@ function Automatic_Multi_Stage_Scan()
 					Start_New_Room_Breach_Scan(madtulip.Stage_ranges[3],1);
 				end
 			end
+]]
 		end
 	end
 	-- now we stop scanning because a larger area which would be larger then (Scanner_ranges*2+1)^2 blocks uses quite some mem and time.

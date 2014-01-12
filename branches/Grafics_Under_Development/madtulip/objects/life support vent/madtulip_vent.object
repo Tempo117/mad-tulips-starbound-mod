@@ -27,7 +27,6 @@
 
       "spaceScan" : 0.1,
       "anchors" : [ "background" ]
-
     }
   ],
   
@@ -40,7 +39,7 @@
   "animationPosition" : [-8, -8],
 
   "scripts" : [ "/objects/life support vent/madtulip_vent_logic.lua" ],
-  "scriptDelta" : 5,
+  "scriptDelta" : 50,
   
   "outboundNodes" : [ [1, -1] ],
 
