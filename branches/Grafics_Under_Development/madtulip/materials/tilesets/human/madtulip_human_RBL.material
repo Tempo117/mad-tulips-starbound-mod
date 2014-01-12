@@ -1,7 +1,7 @@
 {
   "materialId" : 21086,
-  "materialName" : "madtulip_human_RBL",
-  "frames" : "madtulip_human_RBL.png",
+  "materialName" : "madtulip_human_rbl",
+  "frames" : "madtulip_human_rbl.png",
   "transparent" : true,
   "particleColor" : [110, 110, 110, 255],
   "variants" : 1,

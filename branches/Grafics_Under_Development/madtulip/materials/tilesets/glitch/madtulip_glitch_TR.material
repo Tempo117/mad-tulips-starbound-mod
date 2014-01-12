@@ -1,7 +1,7 @@
 {
   "materialId" : 21069,
-  "materialName" : "madtulip_glitch_TR",
-  "frames" : "madtulip_glitch_TR.png",
+  "materialName" : "madtulip_glitch_tr",
+  "frames" : "madtulip_glitch_tr.png",
   "transparent" : true,
   "particleColor" : [110, 110, 110, 255],
   "variants" : 1,

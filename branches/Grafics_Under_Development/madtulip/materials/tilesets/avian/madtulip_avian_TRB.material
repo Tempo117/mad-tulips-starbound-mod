@@ -1,7 +1,7 @@
 {
   "materialId" : 21030,
-  "materialName" : "madtulip_avian_TRB",
-  "frames" : "madtulip_avian_TRB.png",
+  "materialName" : "madtulip_avian_trb",
+  "frames" : "madtulip_avian_trb.png",
   "transparent" : true,
   "particleColor" : [110, 110, 110, 255],
   "variants" : 1,

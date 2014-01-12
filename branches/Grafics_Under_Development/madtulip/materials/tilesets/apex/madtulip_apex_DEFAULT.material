@@ -1,7 +1,7 @@
 {
   "materialId" : 21012,
-  "materialName" : "madtulip_apex_DEFAULT",
-  "frames" : "madtulip_apex_DEFAULT.png",
+  "materialName" : "madtulip_apex_default",
+  "frames" : "madtulip_apex_default.png",
   "transparent" : true,
   "particleColor" : [110, 110, 110, 255],
   "variants" : 1,

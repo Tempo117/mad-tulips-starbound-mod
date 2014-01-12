@@ -1,7 +1,7 @@
 {
   "materialId" : 21110,
-  "materialName" : "madtulip_hylotl_TRB",
-  "frames" : "madtulip_hylotl_TRB.png",
+  "materialName" : "madtulip_hylotl_trb",
+  "frames" : "madtulip_hylotl_trb.png",
   "transparent" : true,
   "particleColor" : [110, 110, 110, 255],
   "variants" : 1,

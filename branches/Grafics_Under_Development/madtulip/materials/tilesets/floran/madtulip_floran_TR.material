@@ -1,7 +1,7 @@
 {
   "materialId" : 21049,
-  "materialName" : "madtulip_floran_TR",
-  "frames" : "madtulip_floran_TR.png",
+  "materialName" : "madtulip_floran_tr",
+  "frames" : "madtulip_floran_tr.png",
   "transparent" : true,
   "particleColor" : [110, 110, 110, 255],
   "variants" : 1,

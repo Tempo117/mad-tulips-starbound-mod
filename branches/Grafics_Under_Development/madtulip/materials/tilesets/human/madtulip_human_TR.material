@@ -1,7 +1,7 @@
 {
   "materialId" : 21089,
-  "materialName" : "madtulip_human_TR",
-  "frames" : "madtulip_human_TR.png",
+  "materialName" : "madtulip_human_tr",
+  "frames" : "madtulip_human_tr.png",
   "transparent" : true,
   "particleColor" : [110, 110, 110, 255],
   "variants" : 1,

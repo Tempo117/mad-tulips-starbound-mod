@@ -40,27 +40,27 @@
 		52, 30
 	],
 	"blocksTable" : {
-		"madtulip_human_BL" : 12,
-		"madtulip_glass_BL" : 16,
-		"madtulip_human_LR" : 3,
-		"madtulip_human_BR" : 11,
-		"madtulip_glass_TB" : 14,
-		"modernplatform" : 2,
-		"madtulip_glass_LR" : 8,
-		"madtulip_human_TL" : 4,
-		"apexshipwall" : 10,
-		"madtulip_glass_TL" : 9,
-		"miab_scaffold" : 1,
+		"madtulip_human_RBL" : 19,
 		"madtulip_glass_BR" : 13,
-		"smoothmetal" : 6,
+		"madtulip_human_LR" : 3,
+		"madtulip_glass_TL" : 9,
 		"madtulip_human_TR" : 5,
-		"madtulip_human_LTR" : 17,
-		"pressurizedsteel" : 21,
-		"madtulip_human_TB" : 20,
-		"glass" : 7,
+		"madtulip_human_BR" : 11,
+		"smoothmetal" : 6,
+		"apexshipwall" : 10,
 		"madtulip_glass_TR" : 15,
+		"madtulip_glass_BL" : 16,
+		"madtulip_human_TL" : 4,
+		"glass" : 7,
+		"madtulip_human_LTR" : 17,
+		"modernplatform" : 2,
 		"madtulip_human_BLT" : 18,
-		"madtulip_human_RBL" : 19
+		"madtulip_human_TB" : 20,
+		"pressurizedsteel" : 21,
+		"madtulip_glass_TB" : 14,
+		"miab_scaffold" : 1,
+		"madtulip_glass_LR" : 8,
+		"madtulip_human_BL" : 12
 	},
 	"nextBlockId" : 22,
 	"layoutTableBackground" : {
@@ -728,7 +728,7 @@
 			"1" : 1,
 			"2" : 1,
 			"3" : 1,
-			"4" : 6,
+			"4" : 1,
 			"5" : 6,
 			"6" : 10,
 			"7" : 10,
@@ -784,7 +784,7 @@
 			"2" : 1,
 			"3" : 1,
 			"4" : 1,
-			"5" : 6,
+			"5" : 1,
 			"6" : 6,
 			"7" : 10,
 			"8" : 10,
@@ -810,7 +810,7 @@
 			"28" : 10,
 			"29" : 10,
 			"30" : 10,
-			"31" : 6,
+			"31" : 10,
 			"32" : 6,
 			"33" : 6,
 			"34" : 10,
@@ -840,7 +840,7 @@
 			"3" : 1,
 			"4" : 1,
 			"5" : 1,
-			"6" : 10,
+			"6" : 1,
 			"7" : 10,
 			"8" : 10,
 			"9" : 10,
@@ -865,7 +865,7 @@
 			"28" : 10,
 			"29" : 6,
 			"30" : 6,
-			"31" : 6,
+			"31" : 21,
 			"32" : 21,
 			"33" : 21,
 			"34" : 21,
@@ -920,7 +920,7 @@
 			"28" : 1,
 			"29" : 1,
 			"30" : 6,
-			"31" : 6,
+			"31" : 21,
 			"32" : 21,
 			"33" : 21,
 			"34" : 21,
@@ -3491,13 +3491,13 @@
 			}
 		},
 		"6" : {
-			"42" : {
-				"Facing" : 1,
-				"Name" : "madtulip_shipdoor"
-			},
 			"46" : {
 				"Facing" : 1,
 				"Name" : "tier1chair"
+			},
+			"42" : {
+				"Facing" : 1,
+				"Name" : "madtulip_shipdoor"
 			}
 		},
 		"13" : {
@@ -3529,17 +3529,17 @@
 				"Facing" : 1,
 				"Name" : "refinery"
 			},
-			"27" : {
+			"18" : {
 				"Facing" : 1,
-				"Name" : "pixelcompressor"
+				"Name" : "roboticcraftingtable"
 			},
 			"22" : {
 				"Facing" : 1,
 				"Name" : "metalworkstation"
 			},
-			"18" : {
+			"27" : {
 				"Facing" : 1,
-				"Name" : "roboticcraftingtable"
+				"Name" : "pixelcompressor"
 			}
 		},
 		"4" : {
@@ -3555,7 +3555,7 @@
 			}
 		},
 		"14" : {
-			"12" : {
+			"24" : {
 				"Facing" : 1,
 				"Name" : "madtulip_shiplight"
 			},
@@ -3563,7 +3563,7 @@
 				"Facing" : 1,
 				"Name" : "standingturret"
 			},
-			"24" : {
+			"12" : {
 				"Facing" : 1,
 				"Name" : "madtulip_shiplight"
 			}
@@ -3575,23 +3575,23 @@
 	"accquiredItemsTable" : {
 	},
 	"requiredItemsTable" : {
-		"madtulip_shiplight" : 4,
-		"glassmaterial" : 79,
-		"modernplatform" : 18,
-		"roboticcraftingtable" : 1,
-		"pixelcompressor" : 1,
-		"refinery" : 1,
-		"apexshipwall" : 344,
-		"tier1chair" : 2,
-		"smoothmetal" : 20,
 		"madtulip_landing_gear_2" : 1,
-		"metalworkstation" : 1,
-		"madtulip_landing_gear_1" : 1,
-		"madtulip_shipnavigationconsole" : 1,
-		"pressurizedsteel" : 13,
-		"madtulip_shipdoor" : 1,
+		"roboticcraftingtable" : 1,
+		"refinery" : 1,
+		"tier1chair" : 2,
+		"smoothmetal" : 15,
+		"apexshipwall" : 344,
+		"madtulip_shiplight" : 4,
 		"madtulip_human_large_fin" : 1,
-		"standingturret" : 2
+		"glassmaterial" : 79,
+		"pixelcompressor" : 1,
+		"modernplatform" : 18,
+		"standingturret" : 2,
+		"madtulip_landing_gear_1" : 1,
+		"pressurizedsteel" : 15,
+		"madtulip_shipdoor" : 1,
+		"madtulip_shipnavigationconsole" : 1,
+		"metalworkstation" : 1
 	}
 }
 }

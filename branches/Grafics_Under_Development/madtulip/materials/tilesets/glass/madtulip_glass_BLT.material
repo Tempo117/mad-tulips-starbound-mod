@@ -1,7 +1,7 @@
 {
   "materialId" : 21122,
-  "materialName" : "madtulip_glass_BLT",
-  "frames" : "madtulip_glass_BLT.png",
+  "materialName" : "madtulip_glass_blt",
+  "frames" : "madtulip_glass_blt.png",
   "transparent" : true,
   "particleColor" : [110, 110, 110, 255],
   "variants" : 1,
