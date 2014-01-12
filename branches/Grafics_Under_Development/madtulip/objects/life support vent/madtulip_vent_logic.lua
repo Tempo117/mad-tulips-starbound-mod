@@ -79,7 +79,8 @@ function main_threaded()
 	
 	------- perform actions -------
 	-- sound
-	if(madtulip.Flood_Data_Matrix.Background_breach == 1) then
+	if (madtulip.Flood_Data_Matrix.Background_breach == 1)
+	   or (madtulip.Flood_Data_Matrix.Room_is_not_enclosed == 1) then
 		-- play a meeping warning sound
 		entity.playSound("Breach_Warning_Sound");
 	end	
