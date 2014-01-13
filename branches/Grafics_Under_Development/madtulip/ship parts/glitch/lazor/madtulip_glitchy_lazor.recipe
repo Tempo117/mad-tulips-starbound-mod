@@ -1,11 +1,11 @@
 {
   "input" : [
     { "item" : "madtulip_polymer", "count" : 5 },
-    { "item" : "steelbar", "count" : 10 },
-	{ "item" : "money", "count" : 300 }
+    { "item" : "ironbar", "count" : 10 },
+	{ "item" : "money", "count" : 150 }
   ],
   "output" : {
-    "item" : "madtulip_floran_blossoming_cannon",
+    "item" : "madtulip_glitchy_lazor",
     "count" : 1
   },
   "groups" : [ "madtulip_shipstation", "all", "objects" ]

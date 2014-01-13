@@ -5,13 +5,13 @@
         "default" : "ON_operation",
         "states" : {
           "ON_operation" : {
-            "frames" : 25,
+            "frames" : 34,
             "cycle" : 1,
 			//"mode" : "loop",
 			"direction" : "left"
           },
           "OFF_operation" : {
-            "frames" : 25,
+            "frames" : 34,
             "cycle" : 1,
             //"mode" : "loop",
 			"direction" : "left"

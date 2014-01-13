@@ -1,7 +1,7 @@
 {
   "frameGrid" : {
-    "size" : [107, 34],
-    "dimensions" : [25, 1],
+    "size" : [220, 36],
+    "dimensions" : [34, 1],
     "names" : [
       ["default.1",
 	   "default.2",
@@ -27,7 +27,16 @@
 	   "default.22",
 	   "default.23",
 	   "default.24",
-	   "default.25"]
+	   "default.25",
+	   "default.26",
+	   "default.27",
+	   "default.28",
+	   "default.29",
+	   "default.30",
+	   "default.31",
+	   "default.32",
+	   "default.32",
+	   "default.34"]
     ]
   },
   "aliases" : {"default.default" : "default.1"}
