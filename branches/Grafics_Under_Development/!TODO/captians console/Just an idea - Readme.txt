@@ -1,0 +1,2 @@
+I had an idea for a merge of the ship navigation thing and the captians chair into one glorious item, I also have plans to animate it
+hopefully this shouldn't be to difficult to implement, and if it becomes an issue then its not perfectly necessary for them to be one item
