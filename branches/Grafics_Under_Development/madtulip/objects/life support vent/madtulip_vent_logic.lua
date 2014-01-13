@@ -16,8 +16,18 @@ function init()
 	madtulip.MSS_Range[2] = {1102,1048} -- top right corner (size of the shipmap
 	madtulip.Door_max_range = 10 -- maximum number of blocks in all directions around a door root that are scanned for the door
 	madtulip.On_Off_State = 1; -- "1:ON,2:OFF"
-	madtulip.maximum_particle_fountains = 10;
 	madtulip.ANY_Breach = 0;	
+
+	-- read CPU performance settings from .object file
+	madtulip.maximum_particle_fountains = entity.configParameter("madtulip_maximum_particle_fountains_per_spawn", 10)
+	madtulip.scan_intervall_time = entity.configParameter("madtulip_scan_intervall_time", 1)
+	madtulip.beep_intervall_time = entity.configParameter("madtulip_beep_intervall_time", 1)
+	madtulip.spawn_projectile_intervall_time = entity.configParameter("madtulip_spawn_projectile_intervall_time", 1)
+	madtulip.Stage_ranges = entity.configParameter("madtulip_scan_stage_ranges", {50,250})
+	
+	madtulip.scan_time_last_executiong = os.time()  --[s]
+	madtulip.beep_time_last_execution = os.time() --[s]
+	madtulip.spawn_projectile_time_last_execution = os.time() --[s]
 	
 	-- spawn a new main calculation thread
 	co = coroutine.create(function ()
@@ -61,60 +71,74 @@ function onInteraction(args)
 end
 
 function main_threaded()
-	-- check for system beeing offline
-	if (madtulip.On_Off_State ~= 1) then
-		-- master is offline
-		entity.setAnimationState("DisplayState", "offline");
-		return;
-	end
-	-- master is online
-	
-	-- default animation: offline
-	--entity.setAnimationState("DisplayState", "no_vent");
-	entity.setAnimationState("DisplayState", "offline");
 
-	madtulip.Origin       = entity.toAbsolutePosition({ 0.0, 0.0 })
-	madtulip.Stage_ranges = {50,250}
-	Automatic_Multi_Stage_Scan();
-	
-	------- perform actions -------
+	-- grafic update
+	if(os.time() >= madtulip.spawn_projectile_time_last_execution + madtulip.spawn_projectile_intervall_time) then
+		-- check for system beeing offline
+		if (madtulip.On_Off_State ~= 1) then
+			-- offline
+			entity.setAnimationState("DisplayState", "offline");
+		else
+			if (madtulip.Flood_Data_Matrix ~= nil) then
+				-- online
+				-- own graphics
+				if (madtulip.Flood_Data_Matrix.Room_is_not_enclosed == 1) then
+					-- set animation state of master wall panel to breach
+					entity.setAnimationState("DisplayState", "breach");
+					entity.setAllOutboundNodes(false)
+				else
+					-- set animation state to normal operation
+					entity.setAnimationState("DisplayState", "normal_operation");
+					entity.setAllOutboundNodes(true)
+				end
+				
+				-- spawn breach grafics
+				local counter_breaches = 0;
+				local breach_pos = {}
+				-- save states of the currently checked vent
+				for _, Breach_Location in pairs(madtulip.Flood_Data_Matrix.Breaches) do
+					counter_breaches = counter_breaches +1;
+					breach_pos[counter_breaches] = Breach_Location;
+				end
+				-- limit theire number
+				if (counter_breaches > madtulip.maximum_particle_fountains) then
+					-- spawn them (limited amount)
+					for cur_particle_fountain_to_generate = 1,madtulip.maximum_particle_fountains,1 do
+						world.spawnProjectile("madtulip_breach", breach_pos[math.random(counter_breaches)]);
+					end
+				else
+					-- spawn them (all)
+					for cur_counter_breaches = 1,counter_breaches,1 do
+						world.spawnProjectile("madtulip_breach", breach_pos[cur_counter_breaches]);
+					end
+				end
+			end	
+		end		
+		madtulip.spawn_projectile_time_last_execution = os.time() --[s]
+	end
 	-- sound
-	if (madtulip.Flood_Data_Matrix.Background_breach == 1)
-	   or (madtulip.Flood_Data_Matrix.Room_is_not_enclosed == 1) then
-		-- play a meeping warning sound
-		entity.playSound("Breach_Warning_Sound");
-	end	
-	
-	-- own graphics
-	if (madtulip.Flood_Data_Matrix.Room_is_not_enclosed == 1) then
-		-- set animation state of master wall panel to breach
-		entity.setAnimationState("DisplayState", "breach");
-		entity.setAllOutboundNodes(false)
-	else
-		-- set animation state to normal operation
-		entity.setAnimationState("DisplayState", "normal_operation");
-		entity.setAllOutboundNodes(true)
-	end
-	
-	-- spawn breach grafics
-	local counter_breaches = 0;
-	local breach_pos = {}
-	-- save states of the currently checked vent
-	for _, Breach_Location in pairs(madtulip.Flood_Data_Matrix.Breaches) do
-		counter_breaches = counter_breaches +1;
-		breach_pos[counter_breaches] = Breach_Location;
-	end
-	-- limit theire number
-	if (counter_breaches > madtulip.maximum_particle_fountains) then
-		-- spawn them (limited amount)
-		for cur_particle_fountain_to_generate = 1,madtulip.maximum_particle_fountains,1 do
-			world.spawnProjectile("madtulip_breach", breach_pos[math.random(counter_breaches)]);
+	if(os.time() >= madtulip.beep_time_last_execution + madtulip.beep_intervall_time) then
+		-- check for system beeing offline
+		if (madtulip.On_Off_State ~= 1) then
+			-- offline
+		else
+			-- online
+			if (madtulip.Flood_Data_Matrix ~= nil) then
+				if (madtulip.Flood_Data_Matrix.Background_breach == 1)
+				   or (madtulip.Flood_Data_Matrix.Room_is_not_enclosed == 1) then
+					-- play a meeping warning sound
+					entity.playSound("Breach_Warning_Sound");
+				end
+			end
 		end
-	else
-		-- spawn them (all)
-		for cur_counter_breaches = 1,counter_breaches,1 do
-			world.spawnProjectile("madtulip_breach", breach_pos[cur_counter_breaches]);
-		end
+		madtulip.beep_time_last_execution = os.time() --[s]
+	end
+	-- area scan
+	if(os.time() >= madtulip.scan_time_last_executiong + madtulip.scan_intervall_time) then
+		madtulip.Origin       = entity.toAbsolutePosition({ 0.0, 0.0 })
+		Automatic_Multi_Stage_Scan();
+		
+		madtulip.scan_time_last_executiong = os.time()
 	end
 end
 
