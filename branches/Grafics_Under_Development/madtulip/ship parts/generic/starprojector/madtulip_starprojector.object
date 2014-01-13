@@ -1,9 +1,9 @@
 {
-  "objectName" : "starprojector",
+  "objectName" : "madtulip_starprojector",
   "rarity" : "Common",
   "category" : "decorative",
   "price" : "200",
-  
+  "printable" : false,
   "lightColor" : [200, 200, 255],
   "flickerDistance" : 0.4,
   "flickerStrength" : 0.1,
@@ -19,19 +19,17 @@
   "humanDescription" : "I wonder if I can watch some movies with that!",
   "hylotlDescription" : "Useless nicknack. It is blending me. I can't properly see outside.",
 
-  "inventoryIcon" : "starprojectoricon.png",
-  
+  "inventoryIcon" : "madtulip_starprojector_icon.png",
   
   "orientations" : [
     {
-      "image" : "starprojector.png:<color>.<frame>",
-      "imagePosition" : [-16, -16],
+      "image" : "madtulip_starprojector.png:<color>.<frame>",
+      "imagePosition" : [-28, -32],
       "frames" : 4,
       "animationCycle" : 0.8,
 
       "spaceScan" : 0.1,
       "anchors" : [ "background" ]
-
     }
   ]
   

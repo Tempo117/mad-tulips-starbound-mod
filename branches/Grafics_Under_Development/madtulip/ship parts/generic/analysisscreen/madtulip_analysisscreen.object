@@ -1,9 +1,10 @@
 {
-  "objectName" : "analysisscreen",
+  "objectName" : "madtulip_analysisscreen",
   "rarity" : "Common",
   "objectType" : "engine",
   "category" : "decorative",
   "price" : "200",
+  "printable" : false,
   "lightColor" : [106, 125, 142],
   "flickerDistance" : 0.2,
   "flickerStrength" : 0.05,
@@ -18,26 +19,24 @@
   "humanDescription" : "That looks cool. What is it about?",
   "hylotlDescription" : "I'm eager to find anything this scanner doesn't show.",
 
-  "inventoryIcon" : "analysisscreenicon.png",
-  
+  "inventoryIcon" : "madtulip_analysisscreen_icon.png",
   
   "orientations" : [
     {
-      "image" : "analysisscreen.png:<color>.<frame>",
-      "imagePosition" : [-16, 0],
+      "image" : "madtulip_analysisscreen.png:<color>.<frame>",
+      "imagePosition" : [-16, -8],
       "frames" : 40,
       "animationCycle" : 4,
 
       "spaceScan" : 0.1,
       "anchors" : [ "background" ]
-
     }
   ],
   
   "engineOnOrientations" : [
     {
-      "image" : "/objects/generic/analysisscreen/analysisscreenjump.png:<color>.<frame>",
-      "imagePosition" : [-16, 0],
+      "image" : "/ship parts/generic/analysisscreen/madtulip_analysisscreenjump.png:<color>.<frame>",
+      "imagePosition" : [-16, -8],
       "frames" : 4,
       "animationCycle" : 0.4,
 

@@ -1,9 +1,10 @@
 {
-  "objectName" : "textscreen",
+  "objectName" : "madtulip_textscreen",
   "rarity" : "Common",
   "objectType" : "engine",
   "category" : "decorative",
   "price" : "200",
+  "printable" : false,
   "lightColor" : [106, 125, 142],
   "flickerDistance" : 0.2,
   "flickerStrength" : 0.05,
@@ -18,12 +19,12 @@
   "humanDescription" : "I wish I could read as fast as it zooms by.",
   "hylotlDescription" : "Oh! It says there is a hylotl settlement on this planet. Or, was there? The text went by so fast, I'm not sure.",
 
-  "inventoryIcon" : "textscreenicon.png",
+  "inventoryIcon" : "madtulip_textscreen_icon.png",
   
   
   "orientations" : [
     {
-      "image" : "textscreen.png:<color>.<frame>",
+      "image" : "madtulip_textscreen.png:<color>.<frame>",
       "imagePosition" : [-16, 0],
       "frames" : 10,
       "animationCycle" : 1.0,
@@ -36,7 +37,7 @@
   
   "engineOnOrientations" : [
     {
-      "image" : "/objects/generic/textscreen/textscreenjump.png:<color>.<frame>",
+      "image" : "/ship parts/generic/textscreen/madtulip_textscreenjump.png:<color>.<frame>",
       "imagePosition" : [-16, 0],
       "frames" : 4,
       "animationCycle" : 0.4,

@@ -1,9 +1,10 @@
 {
-  "objectName" : "barscreen",
+  "objectName" : "madtulip_barscreen",
   "rarity" : "Common",
   "objectType" : "engine",
   "category" : "decorative",
   "price" : "200",
+  "printable" : false,
   "lightColor" : [106, 125, 142],
   "flickerDistance" : 0.2,
   "flickerStrength" : 0.05,
@@ -18,13 +19,13 @@
   "humanDescription" : "Reminds me to my hi-fi system back at home.",
   "hylotlDescription" : "These readings seem to highly fluctuate. Useless.",
 
-  "inventoryIcon" : "barscreenicon.png",
+  "inventoryIcon" : "madtulip_barscreen_icon.png",
   
   
   "orientations" : [
     {
-      "image" : "barscreen.png:<color>.<frame>",
-      "imagePosition" : [-16, 0],
+      "image" : "madtulip_barscreen.png:<color>.<frame>",
+      "imagePosition" : [-16, -16],
       "frames" : 8,
       "animationCycle" : 0.8,
 
@@ -36,8 +37,8 @@
   
   "engineOnOrientations" : [
     {
-      "image" : "/objects/generic/barscreen/barscreenjump.png:<color>.<frame>",
-      "imagePosition" : [-16, 0],
+      "image" : "/ship parts/generic/barscreen/madtulip_barscreenjump.png:<color>.<frame>",
+      "imagePosition" : [-16, -16],
       "frames" : 4,
       "animationCycle" : 0.4,
 

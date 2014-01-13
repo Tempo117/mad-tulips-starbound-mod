@@ -1,9 +1,10 @@
 {
-  "objectName" : "mapscreen",
+  "objectName" : "madtulip_mapscreen",
   "rarity" : "Common",
   "objectType" : "engine",
   "category" : "decorative",
   "price" : "200",
+  "printable" : false,
   "lightColor" : [106, 125, 142],
   "flickerDistance" : 0.2,
   "flickerStrength" : 0.05,
@@ -18,13 +19,13 @@
   "humanDescription" : "I can see my house from here! Oh wait, no, that's not it.",
   "hylotlDescription" : "Sadly this map does not show what's underwater.",
 
-  "inventoryIcon" : "mapscreenicon.png",
+  "inventoryIcon" : "madtulip_mapscreen_icon.png",
   
   
   "orientations" : [
     {
-      "image" : "mapscreen.png:<color>.<frame>",
-      "imagePosition" : [-16, 0],
+      "image" : "madtulip_mapscreen.png:<color>.<frame>",
+      "imagePosition" : [-16, -16],
       "frames" : 16,
       "animationCycle" : 1.6,
 
@@ -36,8 +37,8 @@
   
   "engineOnOrientations" : [
     {
-      "image" : "/objects/generic/mapscreen/mapscreenjump.png:<color>.<frame>",
-      "imagePosition" : [-16, 0],
+      "image" : "/ship parts/generic/mapscreen/madtulip_mapscreenjump.png:<color>.<frame>",
+      "imagePosition" : [-16, -16],
       "frames" : 5,
       "animationCycle" : 0.4,
 
