@@ -166,6 +166,9 @@ function activate()
 	tech.setVisible(true)
 	tech.setParentAppearance("sit")
 	tech.setToolUsageSuppressed(true)
+	
+	tech.setParticleEmitterActive("Static_Light", true)
+
 	data.active = true
 end
 

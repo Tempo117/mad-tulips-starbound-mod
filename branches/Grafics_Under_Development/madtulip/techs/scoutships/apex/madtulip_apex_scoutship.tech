@@ -6,7 +6,7 @@
 	"animationParts" : {
 		"body" : "madtulip_apex_scoutship.png"
 	},
-
+	
 	// standing needs to be the same as crouching.
 	// this marks the collision boundary polygone (line defined by points
 	// its in blocks and relative to the center of the crafts image + the crafts image offset in the animation file

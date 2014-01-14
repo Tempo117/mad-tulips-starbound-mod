@@ -239,6 +239,30 @@
 				}
 			],
 			"flip" : true
+		},
+		"Static_Light" : {
+			"emissionRate" : 10,
+			"particles" : [{
+					"particle" : {
+						"type" : "ember",
+						"size" : "0",
+						"color" : [2, 139, 218, 255],
+						"light" : [255, 255, 255],
+						"fade" : 0,
+						"position" : [0, 0],
+						"initialVelocity" : [0, 0],
+						"finalVelocity" : [0, 0],
+						"approach" : [0, 0],
+						"timeToLive" : 0.4,
+						"layer" : "middle",
+						"variance" : {
+							"position" : [0, 0],
+							"timeToLive" : 0
+						}
+					}
+				}
+			],
+			"flip" : true
 		}
 	}
 }

@@ -134,25 +134,25 @@
 						"idle" : {
 							"properties" : {
 								"image" : "madtulip_avian_scoutship_engine_bottom.png:off.<frame>",
-								"offset" : [2.75, -3.25]
+								"offset" : [0.75, -3.25]
 							}
 						},
 						"move_LR" : {
 							"properties" : {
 								"image" : "madtulip_avian_scoutship_engine_bottom.png:off.<frame>",
-								"offset" : [2.75, -3.25]
+								"offset" : [0.75, -3.25]
 							}
 						},
 						"move_UD" : {
 							"properties" : {
 								"image" : "madtulip_avian_scoutship_engine_bottom.png:on.<frame>",
-								"offset" : [2.75, -3.25]
+								"offset" : [0.75, -3.25]
 							}
 						},
 						"move_LRUD" : {
 							"properties" : {
 								"image" : "madtulip_avian_scoutship_engine_bottom.png:on.<frame>",
-								"offset" : [2.75, -3.25]
+								"offset" : [0.75, -3.25]
 							}
 						}
 					}
@@ -201,10 +201,10 @@
 						"color" : [2, 139, 218, 255],
 						"light" : [94, 182, 236],
 						"fade" : 0.9,
-						"position" : [-1, -4],
+						"position" : [-2.5, -4],
 						"initialVelocity" : [0, -10.0],
 						"finalVelocity" : [0.0, 0.0],
-						"approach" : [-1, -4],
+						"approach" : [-2.5, -4],
 						"timeToLive" : 0.3,
 						"layer" : "middle",
 						"variance" : {
@@ -225,15 +225,39 @@
 						"color" : [2, 139, 218, 255],
 						"light" : [94, 182, 236],
 						"fade" : 0.9,
-						"position" : [7, -4],
+						"position" : [4, -4],
 						"initialVelocity" : [0, -10.0],
 						"finalVelocity" : [0.0, 0.0],
-						"approach" : [7, -4],
+						"approach" : [4, -4],
 						"timeToLive" : 0.3,
 						"layer" : "middle",
 						"variance" : {
 							"position" : [2, -1],
 							"timeToLive" : 0.2
+						}
+					}
+				}
+			],
+			"flip" : true
+		},
+		"Static_Light" : {
+			"emissionRate" : 10,
+			"particles" : [{
+					"particle" : {
+						"type" : "ember",
+						"size" : "0",
+						"color" : [2, 139, 218, 255],
+						"light" : [255, 255, 255],
+						"fade" : 0,
+						"position" : [0, 0],
+						"initialVelocity" : [0, 0],
+						"finalVelocity" : [0, 0],
+						"approach" : [0, 0],
+						"timeToLive" : 0.4,
+						"layer" : "middle",
+						"variance" : {
+							"position" : [0, 0],
+							"timeToLive" : 0
 						}
 					}
 				}
