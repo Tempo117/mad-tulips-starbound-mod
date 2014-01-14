@@ -1,0 +1,9 @@
+{
+  "itemName" : "madtulip_floran_tileset",
+  "rarity" : "Common",
+  "inventoryIcon" : "madtulip_floran_tileset_icon.png",
+  "dropCollision" : [-2.5, -2.0, 2.5, 2.0],
+  "description" : "Floran Spaceship Hull Tileset",
+  "shortdescription" : "Floran Spaceship Hull Tileset",
+  "materialId" : 21052
+}
