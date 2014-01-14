@@ -31,37 +31,40 @@
 						  [-3.125, 5.35],
 						  [-5.625, 4.1],
 						  [-10,    2.975]],
-		"mass" : 5.0,
+		"mass" : 50.0,
 
-		"normalGroundFriction" : 20.0,
-		"ambulatingGroundFriction" : 6.0,
-		"skiddingGroundFriction" : 10.0,
+		"normalGroundFriction" : 50.0,
+		"ambulatingGroundFriction" : 10.0,
+		"skiddingGroundFriction" : 20.0,
 
-		"groundForce" : 160.0,
-		"airForce" : 50.0,
+		"groundForce" : 25.0,
+		"airForce" : 2000.0,
 		"liquidForce" : 70.0,
 
-		"walkSpeed" : 10.0,
-		"runSpeed" : 40.0,
+		"walkSpeed" : 0.0,
+		"runSpeed" : 0.0,
 
 		"airJumpProfile" : {
-			"jumpSpeed" : 10,
-			"jumpControlForce" : 700.0,
-			"jumpInitialPercentage" : 0.75,
+			"jumpSpeed" : 0,
+			"jumpControlForce" : 0.0,
+			"jumpInitialPercentage" : 0.0,
 			"jumpHoldTime" : 0.15
 		},
 
 		"liquidJumpProfile" : {
-			"jumpSpeed" : 10,
-			"jumpControlForce" : 300.0,
-			"jumpInitialPercentage" : 0.75,
+			"jumpSpeed" : 0,
+			"jumpControlForce" : 0.0,
+			"jumpInitialPercentage" : 0.0,
 			"jumpHoldTime" : 0.1
 		}
 	},
 	
-	"mechJumpCost" : 1,
-	"mechJumpSpeed": 10,
-	"mechJumpForce": 700,
+	"Hold_at_level_Force": 10000,
+	
+	"Left_Right_Speed": 25,
+	"Left_Right_Force": 5000,
+	"Up_Down_Speed": 25,
+	"Up_Down_Force": 5000,
 
 	"parentOffset" : [4.6, 1.2], // set player position only here
 	"mechTransformPositionChange" : [0.0, 0.0],
