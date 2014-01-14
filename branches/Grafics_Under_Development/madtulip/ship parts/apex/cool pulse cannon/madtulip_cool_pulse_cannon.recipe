@@ -1,8 +1,8 @@
 {
   "input" : [
     { "item" : "madtulip_polymer", "count" : 5 },
-    { "item" : "ironbar", "count" : 10 },
-	{ "item" : "money", "count" : 150 }
+    { "item" : "titaniumbar", "count" : 10 },
+	{ "item" : "money", "count" : 300 }
   ],
   "output" : {
     "item" : "madtulip_cool_pulse_cannon",

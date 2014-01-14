@@ -1,17 +1,12 @@
 {
 	"input": [
-		{
-			"item": "humanMechTech-chip",
-			"count": 1
-		},
-		{
-			"item": "Violiumbar",
-			"count": 50
-		}
+		{"item": "humanMechTech-chip","count": 1},
+		{"item": "aegisaltbar","count": 50},
+		{"item": "uraniumrod","count": 10}
 	],
 	"output": {
 		"item": "madtulip_glitch_scoutship-chip",
 		"count": 1
 	},
-	"groups": [ "roboticcraftingtable", "all", "other" ]
+	"groups" : [ "madtulip_shipstation", "all", "systems" ]
 }
