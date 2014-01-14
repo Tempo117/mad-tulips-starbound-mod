@@ -3,7 +3,7 @@
 	"rarity": "Legendary",
 	"inventoryIcon": "/techs/scoutships/scoutship_icon.png",
 	"description": "Spawn a human scoutship and have fun.",
-	"shortdescription": "Human Scoutship",
+	"shortdescription": "human Scoutship",
 	"inspectionKind": "tech",
 
 	"techModule": "madtulip_human_scoutship.tech"
