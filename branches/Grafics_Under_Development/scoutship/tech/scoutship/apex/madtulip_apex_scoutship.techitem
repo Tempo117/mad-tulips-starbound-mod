@@ -1,7 +1,7 @@
 {
 	"itemName": "madtulip_apex_scoutship",
 	"rarity": "Legendary",
-	"inventoryIcon": "/tech/scoutship/scoutship_icon.png",
+	"inventoryIcon": "/techs/scoutships/scoutship_icon.png",
 	"description": "Spawn a apex scoutship and have fun.",
 	"shortdescription": "apex Scoutship",
 	"inspectionKind": "tech",

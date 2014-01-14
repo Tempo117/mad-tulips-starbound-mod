@@ -1,10 +1,10 @@
 {
 	"script" : "/techs/scoutships/scoutship.lua",
 	"actions" : ["mechActivate", "mechDeactivate", "mechMove", "mechJump"],
-	"animator" : "madtulip_apex_scoutship.animation",
+	"animator" : "madtulip_floran_scoutship.animation",
 
 	"animationParts" : {
-		"body" : "madtulip_apex_scoutship.png"
+		"body" : "madtulip_floran_scoutship.png"
 	},
 
 	// standing needs to be the same as crouching.

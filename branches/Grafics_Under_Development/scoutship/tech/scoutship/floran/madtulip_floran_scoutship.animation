@@ -43,13 +43,13 @@
 					"movement" : {
 						"idle" : {
 							"properties" : {
-								"image" : "madtulip_apex_scoutship.png:idle.<frame>",
+								"image" : "madtulip_floran_scoutship.png:idle.<frame>",
 								"offset" : [0, 1.1] // this X coordinate marks the middle point for the flip and has to stay at 0!
 							}
 						},
 						"move" : {
 							"properties" : {
-								"image" : "madtulip_apex_scoutship.png:idle.<frame>",
+								"image" : "madtulip_floran_scoutship.png:idle.<frame>",
 								"offset" : [0, 1.1] // this X coordinate marks the middle point for the flip and has to stay at 0!
 							}
 						}
@@ -67,12 +67,12 @@
 					"movement" : {
 						"idle" : {
 							"properties" : {
-								"image" : "madtulip_apex_scoutship_engine.png:off"
+								"image" : "madtulip_floran_scoutship_engine.png:off"
 							}
 						},
 						"move" : {
 							"properties" : {
-								"image" : "madtulip_apex_scoutship_engine.png:on.<frame>",
+								"image" : "madtulip_floran_scoutship_engine.png:on.<frame>",
 								"offset" : [-10.5, 0.7]
 							}
 						}

@@ -1,0 +1,17 @@
+{
+	"input": [
+		{
+			"item": "humanMechTech-chip",
+			"count": 1
+		},
+		{
+			"item": "Violiumbar",
+			"count": 50
+		}
+	],
+	"output": {
+		"item": "madtulip_floran_scoutship-chip",
+		"count": 1
+	},
+	"groups": [ "roboticcraftingtable", "all", "other" ]
+}
