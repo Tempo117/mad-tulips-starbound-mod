@@ -239,7 +239,7 @@
 				}
 			],
 			"flip" : true
-		},,
+		},
 		"Static_Light" : {
 			"emissionRate" : 10,
 			"particles" : [{
