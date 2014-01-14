@@ -1,8 +1,12 @@
 {
 	"input": [
 		{"item": "humanMechTech-chip","count": 1},
-		{"item": "aegisaltbar","count": 50},
-		{"item": "uraniumrod","count": 10}
+		{"item": "madtulip_avian_ftl_thruster","count": 1},
+		{"item": "madtulip_avian_stabilization_thruster","count": 2},
+		{"item": "madtulip_avian_gyro_stabilizer","count": 1},
+		{"item": "madtulip_avian_tileset","count": 25},
+		{"item": "aegisaltbar","count": 15},
+		{"item": "uraniumrod","count": 5}
 	],
 	"output": {
 		"item": "madtulip_avian_scoutship-chip",
