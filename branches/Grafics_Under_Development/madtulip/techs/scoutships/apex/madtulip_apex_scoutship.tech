@@ -61,10 +61,14 @@
 	
 	"Hold_at_level_Force": 10000,
 	
-	"Left_Right_Speed": 25,
+	"Left_Right_Speed": 24,
 	"Left_Right_Force": 5000,
-	"Up_Down_Speed": 25,
-	"Up_Down_Force": 5000,
+	"Reverse_Speed": 6,
+	"Reverse_Force": 1250,
+	"Up_Speed": 24,
+	"Up_Force": 5000,
+	"Down_Speed": 12,
+	"Down_Force": 2500,
 
 	"parentOffset" : [4.6, 1.2], // set player position only here
 	"mechTransformPositionChange" : [0.0, 0.0],

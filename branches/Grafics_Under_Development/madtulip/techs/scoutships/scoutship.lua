@@ -52,8 +52,12 @@ function update(args)
 	data.Hold_at_level_Force			= tech.parameter("Hold_at_level_Force")
 	data.Left_Right_Speed				= tech.parameter("Left_Right_Speed")
 	data.Left_Right_Force				= tech.parameter("Left_Right_Force")
-	data.Up_Down_Speed					= tech.parameter("Up_Down_Speed")
-	data.Up_Down_Force					= tech.parameter("Up_Down_Force")
+	data.Reverse_Speed					= tech.parameter("Reverse_Speed")
+	data.Reverse_Force					= tech.parameter("Reverse_Force")
+	data.Up_Speed	    				= tech.parameter("Up_Speed")
+	data.Up_Force   					= tech.parameter("Up_Force")
+	data.Down_Speed	    				= tech.parameter("Down_Speed")
+	data.Down_Force   					= tech.parameter("Down_Force")
 		
 	if not data.active and args.actions["mechActivate"] then
 		-- Calculate new position
@@ -84,6 +88,161 @@ function update(args)
 		local aimAngle = math.atan2(diff[2], diff[1])
 		local flip = aimAngle > math.pi / 2 or aimAngle < -math.pi / 2		
 		
+		if (        data.holdingUp
+		    and not data.holdingDown
+			and not data.holdingLeft
+			and not data.holdingRight
+			) then
+			-- moving up
+				tech.setParticleEmitterActive("move_FTL_Particles", false)
+				tech.setParticleEmitterActive("move_REV_Particles", false)
+				tech.setParticleEmitterActive("move_D_Particles", false)
+				tech.setParticleEmitterActive("move_U_Particles_L", true)
+				tech.setParticleEmitterActive("move_U_Particles_R", true)
+				tech.setAnimationState("movement", "move_U")
+		elseif (    data.holdingUp
+		    and not data.holdingDown
+			and not data.holdingLeft
+			and     data.holdingRight
+			) then
+			-- moving up right
+			if not flip then
+				-- forward
+				tech.setParticleEmitterActive("move_FTL_Particles", true)
+				tech.setParticleEmitterActive("move_REV_Particles", false)
+				tech.setAnimationState("movement", "move_URF")
+			else
+				-- backward
+				tech.setParticleEmitterActive("move_FTL_Particles", false)
+				tech.setParticleEmitterActive("move_REV_Particles", true)
+				tech.setAnimationState("movement", "move_URB")
+			end
+			tech.setParticleEmitterActive("move_D_Particles", false)
+			tech.setParticleEmitterActive("move_U_Particles_L", true)
+			tech.setParticleEmitterActive("move_U_Particles_R", true)
+		elseif (not data.holdingUp
+		    and not data.holdingDown
+			and not data.holdingLeft
+			and     data.holdingRight
+			) then
+			-- moving right
+			if not flip then
+				-- forward
+				tech.setParticleEmitterActive("move_FTL_Particles", true)
+				tech.setParticleEmitterActive("move_REV_Particles", false)
+				tech.setAnimationState("movement", "move_RF")
+			else
+				-- backward
+				tech.setParticleEmitterActive("move_FTL_Particles", false)
+				tech.setParticleEmitterActive("move_REV_Particles", true)
+				tech.setAnimationState("movement", "move_RB")
+			end
+			tech.setParticleEmitterActive("move_D_Particles", false)
+			tech.setParticleEmitterActive("move_U_Particles_L", false)
+			tech.setParticleEmitterActive("move_U_Particles_R", false)
+		elseif (not data.holdingUp
+		    and     data.holdingDown
+			and not data.holdingLeft
+			and     data.holdingRight
+			) then
+			-- moving down right
+			if not flip then
+				-- forward
+				tech.setParticleEmitterActive("move_FTL_Particles", true)
+				tech.setParticleEmitterActive("move_REV_Particles", false)
+				tech.setAnimationState("movement", "move_DRF")
+			else
+				-- backward
+				tech.setParticleEmitterActive("move_FTL_Particles", false)
+				tech.setParticleEmitterActive("move_REV_Particles", true)
+				tech.setAnimationState("movement", "move_DRB")
+			end
+			tech.setParticleEmitterActive("move_D_Particles", true)
+			tech.setParticleEmitterActive("move_U_Particles_L", false)
+			tech.setParticleEmitterActive("move_U_Particles_R", false)
+		elseif (not data.holdingUp
+		    and     data.holdingDown
+			and not data.holdingLeft
+			and not data.holdingRight
+			) then
+			-- moving down
+			tech.setParticleEmitterActive("move_FTL_Particles", false)
+			tech.setParticleEmitterActive("move_REV_Particles", false)
+			tech.setParticleEmitterActive("move_D_Particles", true)
+			tech.setParticleEmitterActive("move_U_Particles_L", false)
+			tech.setParticleEmitterActive("move_U_Particles_R", false)
+			tech.setAnimationState("movement", "move_D")
+		elseif (not data.holdingUp
+		    and     data.holdingDown
+			and     data.holdingLeft
+			and not data.holdingRight
+			) then
+			-- moving down left
+			if flip then
+				-- forward
+				tech.setParticleEmitterActive("move_FTL_Particles", true)
+				tech.setParticleEmitterActive("move_REV_Particles", false)
+				tech.setAnimationState("movement", "move_DLF")
+			else
+				-- backward
+				tech.setParticleEmitterActive("move_FTL_Particles", false)
+				tech.setParticleEmitterActive("move_REV_Particles", true)
+				tech.setAnimationState("movement", "move_DLB")
+			end
+			tech.setParticleEmitterActive("move_D_Particles", true)
+			tech.setParticleEmitterActive("move_U_Particles_L", false)
+			tech.setParticleEmitterActive("move_U_Particles_R", false)
+		elseif (not data.holdingUp
+		    and not data.holdingDown
+			and     data.holdingLeft
+			and not data.holdingRight
+			) then
+			-- moving left
+			if flip then
+				-- forward
+				tech.setParticleEmitterActive("move_FTL_Particles", true)
+				tech.setParticleEmitterActive("move_REV_Particles", false)
+				tech.setAnimationState("movement", "move_LF")
+			else
+				-- backward
+				tech.setParticleEmitterActive("move_FTL_Particles", false)
+				tech.setParticleEmitterActive("move_REV_Particles", true)
+				tech.setAnimationState("movement", "move_LB")
+			end
+			tech.setParticleEmitterActive("move_D_Particles", false)
+			tech.setParticleEmitterActive("move_U_Particles_L", false)
+			tech.setParticleEmitterActive("move_U_Particles_R", false)
+		elseif (    data.holdingUp
+		    and not data.holdingDown
+			and     data.holdingLeft
+			and not data.holdingRight
+			) then
+			-- moving up left
+			if flip then
+				-- forward
+				tech.setParticleEmitterActive("move_FTL_Particles", true)
+				tech.setParticleEmitterActive("move_REV_Particles", false)
+				tech.setAnimationState("movement", "move_ULF")
+			else
+				-- backward
+				tech.setParticleEmitterActive("move_FTL_Particles", false)
+				tech.setParticleEmitterActive("move_REV_Particles", true)
+				tech.setAnimationState("movement", "move_ULB")
+			end
+			tech.setParticleEmitterActive("move_D_Particles", false)
+			tech.setParticleEmitterActive("move_U_Particles_L", true)
+			tech.setParticleEmitterActive("move_U_Particles_R", true)
+		else
+			-- no movement
+			tech.setParticleEmitterActive("move_FTL_Particles", false)
+			tech.setParticleEmitterActive("move_REV_Particles", false)
+			tech.setParticleEmitterActive("move_D_Particles", false)
+			tech.setParticleEmitterActive("move_U_Particles_L", false)
+			tech.setParticleEmitterActive("move_U_Particles_R", false)
+			tech.setAnimationState("movement", "idle")
+		end
+		
+--[[
 		if    (data.holdingLeft and flip)
 		   or (data.holdingRight and not flip) then
 			if (data.holdingUp or data.holdingDown) then
@@ -115,7 +274,7 @@ function update(args)
 				tech.setAnimationState("movement", "idle")
 			end
 		end
-
+]]
 		-- Apply movement physics parameters
 		tech.applyMovementParameters(data.mechCustomMovementParameters)
 
@@ -136,18 +295,30 @@ function update(args)
 		local v_x = 0; local v_y = 0; local a_x = 0; local a_y = 0;
 		-- Add keypress
 		if data.holdingUp then
-			v_y = data.Up_Down_Speed;
+			v_y = data.Up_Speed;
+			a_y = data.Up_Force;
 		end
 		if data.holdingDown then
-			v_y = -data.Up_Down_Speed;
+			v_y = -data.Down_Speed;
+			a_y = -data.Down_Force;
 		end
-		if data.holdingLeft and flip then
-			v_x = -data.Left_Right_Speed;
-			a_x = data.Up_Down_Force;
+		if data.holdingLeft then
+			if flip then
+				v_x = -data.Left_Right_Speed;
+				a_x = data.Left_Right_Force;
+			else
+				v_x = -data.Reverse_Speed;
+				a_x = data.Reverse_Force;
+			end
 		end
-		if data.holdingRight and not flip then
-			v_x = data.Left_Right_Speed;
-			a_x = data.Up_Down_Force;
+		if data.holdingRight then
+			if not flip  then
+				v_x = data.Left_Right_Speed;
+				a_x = data.Left_Right_Force;
+			else
+				v_x = data.Reverse_Speed;
+				a_x = data.Reverse_Force;
+			end
 		end
 		-- execute movement vector
 		tech.xControl(v_x, a_x, false);

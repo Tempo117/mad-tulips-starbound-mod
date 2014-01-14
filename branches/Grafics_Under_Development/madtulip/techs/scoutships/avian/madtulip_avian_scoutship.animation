@@ -16,7 +16,7 @@
 							"stateNudge" : [[0, 0], [0, -0.1], [0, -0.2], [0, -0.1], [0, 0], [0, 0.1], [0, 0.2], [0, 0.1]]
 						}
 					},
-					"move_LR" : {
+					"move_U" : {
 						"frames" : 8,
 						"cycle" : 1.0,
 						"mode" : "loop",
@@ -27,7 +27,7 @@
 							"stateNudge" : [[0, 0],[0, -0.05],[0, -0.1],[0, -0.05],[0, 0],[0, 0.05],[0, 0.1],[0, 0.05]]
 						}
 					},
-					"move_UD" : {
+					"move_URF" : {
 						"frames" : 8,
 						"cycle" : 1.0,
 						"mode" : "loop",
@@ -38,7 +38,128 @@
 							"stateNudge" : [[0, 0],[0, -0.05],[0, -0.1],[0, -0.05],[0, 0],[0, 0.05],[0, 0.1],[0, 0.05]]
 						}
 					},
-					"move_LRUD" : {
+					"move_URB" : {
+						"frames" : 8,
+						"cycle" : 1.0,
+						"mode" : "loop",
+						"properties" : {
+							"persistentSound" : "/sfx/tech/tech_jetpack.wav"
+						},
+						"frameProperties" : {
+							"stateNudge" : [[0, 0],[0, -0.05],[0, -0.1],[0, -0.05],[0, 0],[0, 0.05],[0, 0.1],[0, 0.05]]
+						}
+					},
+					"move_RF" : {
+						"frames" : 8,
+						"cycle" : 1.0,
+						"mode" : "loop",
+						"properties" : {
+							"persistentSound" : "/sfx/tech/tech_jetpack.wav"
+						},
+						"frameProperties" : {
+							"stateNudge" : [[0, 0],[0, -0.05],[0, -0.1],[0, -0.05],[0, 0],[0, 0.05],[0, 0.1],[0, 0.05]]
+						}
+					},
+					"move_RB" : {
+						"frames" : 8,
+						"cycle" : 1.0,
+						"mode" : "loop",
+						"properties" : {
+							"persistentSound" : "/sfx/tech/tech_jetpack.wav"
+						},
+						"frameProperties" : {
+							"stateNudge" : [[0, 0],[0, -0.05],[0, -0.1],[0, -0.05],[0, 0],[0, 0.05],[0, 0.1],[0, 0.05]]
+						}
+					},
+					"move_DRF" : {
+						"frames" : 8,
+						"cycle" : 1.0,
+						"mode" : "loop",
+						"properties" : {
+							"persistentSound" : "/sfx/tech/tech_jetpack.wav"
+						},
+						"frameProperties" : {
+							"stateNudge" : [[0, 0],[0, -0.05],[0, -0.1],[0, -0.05],[0, 0],[0, 0.05],[0, 0.1],[0, 0.05]]
+						}
+					},
+					"move_DRB" : {
+						"frames" : 8,
+						"cycle" : 1.0,
+						"mode" : "loop",
+						"properties" : {
+							"persistentSound" : "/sfx/tech/tech_jetpack.wav"
+						},
+						"frameProperties" : {
+							"stateNudge" : [[0, 0],[0, -0.05],[0, -0.1],[0, -0.05],[0, 0],[0, 0.05],[0, 0.1],[0, 0.05]]
+						}
+					},
+					"move_D" : {
+						"frames" : 8,
+						"cycle" : 1.0,
+						"mode" : "loop",
+						"properties" : {
+							"persistentSound" : "/sfx/tech/tech_jetpack.wav"
+						},
+						"frameProperties" : {
+							"stateNudge" : [[0, 0],[0, -0.05],[0, -0.1],[0, -0.05],[0, 0],[0, 0.05],[0, 0.1],[0, 0.05]]
+						}
+					},
+					"move_DLF" : {
+						"frames" : 8,
+						"cycle" : 1.0,
+						"mode" : "loop",
+						"properties" : {
+							"persistentSound" : "/sfx/tech/tech_jetpack.wav"
+						},
+						"frameProperties" : {
+							"stateNudge" : [[0, 0],[0, -0.05],[0, -0.1],[0, -0.05],[0, 0],[0, 0.05],[0, 0.1],[0, 0.05]]
+						}
+					},
+					"move_DLB" : {
+						"frames" : 8,
+						"cycle" : 1.0,
+						"mode" : "loop",
+						"properties" : {
+							"persistentSound" : "/sfx/tech/tech_jetpack.wav"
+						},
+						"frameProperties" : {
+							"stateNudge" : [[0, 0],[0, -0.05],[0, -0.1],[0, -0.05],[0, 0],[0, 0.05],[0, 0.1],[0, 0.05]]
+						}
+					},
+					"move_LF" : {
+						"frames" : 8,
+						"cycle" : 1.0,
+						"mode" : "loop",
+						"properties" : {
+							"persistentSound" : "/sfx/tech/tech_jetpack.wav"
+						},
+						"frameProperties" : {
+							"stateNudge" : [[0, 0],[0, -0.05],[0, -0.1],[0, -0.05],[0, 0],[0, 0.05],[0, 0.1],[0, 0.05]]
+						}
+					},
+					"move_LB" : {
+						"frames" : 8,
+						"cycle" : 1.0,
+						"mode" : "loop",
+						"properties" : {
+							"persistentSound" : "/sfx/tech/tech_jetpack.wav"
+						},
+						"frameProperties" : {
+							"stateNudge" : [[0, 0],[0, -0.05],[0, -0.1],[0, -0.05],[0, 0],[0, 0.05],[0, 0.1],[0, 0.05]]
+						}
+					},
+					"move_ULF" : {
+						"frames" : 8,
+						"cycle" : 1.0,
+						"mode" : "loop",
+						"properties" : {
+							"persistentSound" : "/sfx/tech/tech_jetpack.wav"
+						},
+						"frameProperties" : {
+							"stateNudge" : [[0, 0],[0, -0.05],[0, -0.1],[0, -0.05],[0, 0],[0, 0.05],[0, 0.1],[0, 0.05]]
+						}
+					},
+					"move_ULB" : {
 						"frames" : 8,
 						"cycle" : 1.0,
 						"mode" : "loop",
@@ -69,19 +190,85 @@
 								"offset" : [0, 1.1] // this X coordinate marks the middle point for the flip and has to stay at 0!
 							}
 						},
-						"move_LR" : {
+						"move_U" : {
 							"properties" : {
 								"image" : "madtulip_avian_scoutship.png:idle.<frame>",
 								"offset" : [0, 1.1] // this X coordinate marks the middle point for the flip and has to stay at 0!
 							}
 						},
-						"move_UD" : {
+						"move_URF" : {
 							"properties" : {
 								"image" : "madtulip_avian_scoutship.png:idle.<frame>",
 								"offset" : [0, 1.1] // this X coordinate marks the middle point for the flip and has to stay at 0!
 							}
 						},
-						"move_LRUD" : {
+						"move_URB" : {
+							"properties" : {
+								"image" : "madtulip_avian_scoutship.png:idle.<frame>",
+								"offset" : [0, 1.1] // this X coordinate marks the middle point for the flip and has to stay at 0!
+							}
+						},
+						"move_RF" : {
+							"properties" : {
+								"image" : "madtulip_avian_scoutship.png:idle.<frame>",
+								"offset" : [0, 1.1] // this X coordinate marks the middle point for the flip and has to stay at 0!
+							}
+						},
+						"move_RB" : {
+							"properties" : {
+								"image" : "madtulip_avian_scoutship.png:idle.<frame>",
+								"offset" : [0, 1.1] // this X coordinate marks the middle point for the flip and has to stay at 0!
+							}
+						},
+						"move_DRF" : {
+							"properties" : {
+								"image" : "madtulip_avian_scoutship.png:idle.<frame>",
+								"offset" : [0, 1.1] // this X coordinate marks the middle point for the flip and has to stay at 0!
+							}
+						},
+						"move_DRB" : {
+							"properties" : {
+								"image" : "madtulip_avian_scoutship.png:idle.<frame>",
+								"offset" : [0, 1.1] // this X coordinate marks the middle point for the flip and has to stay at 0!
+							}
+						},
+						"move_D" : {
+							"properties" : {
+								"image" : "madtulip_avian_scoutship.png:idle.<frame>",
+								"offset" : [0, 1.1] // this X coordinate marks the middle point for the flip and has to stay at 0!
+							}
+						},
+						"move_DLF" : {
+							"properties" : {
+								"image" : "madtulip_avian_scoutship.png:idle.<frame>",
+								"offset" : [0, 1.1] // this X coordinate marks the middle point for the flip and has to stay at 0!
+							}
+						},
+						"move_DLB" : {
+							"properties" : {
+								"image" : "madtulip_avian_scoutship.png:idle.<frame>",
+								"offset" : [0, 1.1] // this X coordinate marks the middle point for the flip and has to stay at 0!
+							}
+						},
+						"move_LF" : {
+							"properties" : {
+								"image" : "madtulip_avian_scoutship.png:idle.<frame>",
+								"offset" : [0, 1.1] // this X coordinate marks the middle point for the flip and has to stay at 0!
+							}
+						},
+						"move_LB" : {
+							"properties" : {
+								"image" : "madtulip_avian_scoutship.png:idle.<frame>",
+								"offset" : [0, 1.1] // this X coordinate marks the middle point for the flip and has to stay at 0!
+							}
+						},
+						"move_ULF" : {
+							"properties" : {
+								"image" : "madtulip_avian_scoutship.png:idle.<frame>",
+								"offset" : [0, 1.1] // this X coordinate marks the middle point for the flip and has to stay at 0!
+							}
+						},
+						"move_ULB" : {
 							"properties" : {
 								"image" : "madtulip_avian_scoutship.png:idle.<frame>",
 								"offset" : [0, 1.1] // this X coordinate marks the middle point for the flip and has to stay at 0!
@@ -103,21 +290,80 @@
 								"image" : "madtulip_avian_scoutship_engine.png:off"
 							}
 						},
-						"move_LR" : {
-							"properties" : {
-								"image" : "madtulip_avian_scoutship_engine.png:on.<frame>",
-								"offset" : [-10.5, 0.7]
-							}
-						},
-						"move_UD" : {
+						"move_U" : {
 							"properties" : {
 								"image" : "madtulip_avian_scoutship_engine.png:off"
 							}
 						},
-						"move_LRUD" : {
+						"move_URF" : {
 							"properties" : {
 								"image" : "madtulip_avian_scoutship_engine.png:on.<frame>",
 								"offset" : [-10.5, 0.7]
+							}
+						},
+						"move_URB" : {
+							"properties" : {
+								"image" : "madtulip_avian_scoutship_engine.png:off"
+							}
+						},
+						"move_RF" : {
+							"properties" : {
+								"image" : "madtulip_avian_scoutship_engine.png:on.<frame>",
+								"offset" : [-10.5, 0.7]
+							}
+						},
+						"move_RB" : {
+							"properties" : {
+								"image" : "madtulip_avian_scoutship_engine.png:off"
+							}
+						},
+						"move_DRF" : {
+							"properties" : {
+								"image" : "madtulip_avian_scoutship_engine.png:on.<frame>",
+								"offset" : [-10.5, 0.7]
+							}
+						},
+						"move_DRB" : {
+							"properties" : {
+								"image" : "madtulip_avian_scoutship_engine.png:off"
+							}
+						},
+						"move_D" : {
+							"properties" : {
+								"image" : "madtulip_avian_scoutship_engine.png:off"
+							}
+						},
+						"move_DLF" : {
+							"properties" : {
+								"image" : "madtulip_avian_scoutship_engine.png:on.<frame>",
+								"offset" : [-10.5, 0.7]
+							}
+						},
+						"move_DLB" : {
+							"properties" : {
+								"image" : "madtulip_avian_scoutship_engine.png:off"
+							}
+						},
+						"move_LF" : {
+							"properties" : {
+								"image" : "madtulip_avian_scoutship_engine.png:on.<frame>",
+								"offset" : [-10.5, 0.7]
+							}
+						},
+						"move_LB" : {
+							"properties" : {
+								"image" : "madtulip_avian_scoutship_engine.png:off"
+							}
+						},
+						"move_ULF" : {
+							"properties" : {
+								"image" : "madtulip_avian_scoutship_engine.png:on.<frame>",
+								"offset" : [-10.5, 0.7]
+							}
+						},
+						"move_ULB" : {
+							"properties" : {
+								"image" : "madtulip_avian_scoutship_engine.png:off"
 							}
 						}
 					}
@@ -134,25 +380,295 @@
 						"idle" : {
 							"properties" : {
 								"image" : "madtulip_avian_scoutship_engine_bottom.png:off.<frame>",
-								"offset" : [0.75, -3.25]
+								"offset" : [2.75, -3.25]
 							}
 						},
-						"move_LR" : {
+						"move_U" : {
+							"properties" : {
+								"image" : "madtulip_avian_scoutship_engine_bottom.png:on.<frame>",
+								"offset" : [2.75, -3.25]
+							}
+						},
+						"move_URF" : {
+							"properties" : {
+								"image" : "madtulip_avian_scoutship_engine_bottom.png:on.<frame>",
+								"offset" : [2.75, -3.25]
+							}
+						},
+						"move_URB" : {
+							"properties" : {
+								"image" : "madtulip_avian_scoutship_engine_bottom.png:on.<frame>",
+								"offset" : [2.75, -3.25]
+							}
+						},
+						"move_RF" : {
 							"properties" : {
 								"image" : "madtulip_avian_scoutship_engine_bottom.png:off.<frame>",
-								"offset" : [0.75, -3.25]
+								"offset" : [2.75, -3.25]
 							}
 						},
-						"move_UD" : {
+						"move_RB" : {
 							"properties" : {
-								"image" : "madtulip_avian_scoutship_engine_bottom.png:on.<frame>",
-								"offset" : [0.75, -3.25]
+								"image" : "madtulip_avian_scoutship_engine_bottom.png:off.<frame>",
+								"offset" : [2.75, -3.25]
 							}
 						},
-						"move_LRUD" : {
+						"move_DRF" : {
+							"properties" : {
+								"image" : "madtulip_avian_scoutship_engine_bottom.png:off.<frame>",
+								"offset" : [2.75, -3.25]
+							}
+						},
+						"move_DRB" : {
+							"properties" : {
+								"image" : "madtulip_avian_scoutship_engine_bottom.png:off.<frame>",
+								"offset" : [2.75, -3.25]
+							}
+						},
+						"move_D" : {
+							"properties" : {
+								"image" : "madtulip_avian_scoutship_engine_bottom.png:off.<frame>",
+								"offset" : [2.75, -3.25]
+							}
+						},
+						"move_DLF" : {
+							"properties" : {
+								"image" : "madtulip_avian_scoutship_engine_bottom.png:off.<frame>",
+								"offset" : [2.75, -3.25]
+							}
+						},
+						"move_DLB" : {
+							"properties" : {
+								"image" : "madtulip_avian_scoutship_engine_bottom.png:off.<frame>",
+								"offset" : [2.75, -3.25]
+							}
+						},
+						"move_LF" : {
+							"properties" : {
+								"image" : "madtulip_avian_scoutship_engine_bottom.png:off.<frame>",
+								"offset" : [2.75, -3.25]
+							}
+						},
+						"move_LB" : {
+							"properties" : {
+								"image" : "madtulip_avian_scoutship_engine_bottom.png:off.<frame>",
+								"offset" : [2.75, -3.25]
+							}
+						},
+						"move_ULF" : {
 							"properties" : {
 								"image" : "madtulip_avian_scoutship_engine_bottom.png:on.<frame>",
-								"offset" : [0.75, -3.25]
+								"offset" : [2.75, -3.25]
+							}
+						},
+						"move_ULB" : {
+							"properties" : {
+								"image" : "madtulip_avian_scoutship_engine_bottom.png:on.<frame>",
+								"offset" : [2.75, -3.25]
+							}
+						}
+					}
+				}
+			},
+			"engine_top" : {
+// TODO
+				"properties" : {
+					"centered" : true,
+					"zLevel" : 0
+				},
+
+				"partStates" : {
+					"movement" : {
+						"idle" : {
+							"properties" : {
+								"image" : "madtulip_avian_scoutship_engine_bottom.png:off.<frame>",
+								"offset" : [2.75, 0]
+							}
+						},
+						"move_U" : {
+							"properties" : {
+								"image" : "madtulip_avian_scoutship_engine_bottom.png:off.<frame>",
+								"offset" : [2.75, 0]
+							}
+						},
+						"move_URF" : {
+							"properties" : {
+								"image" : "madtulip_avian_scoutship_engine_bottom.png:off.<frame>",
+								"offset" : [2.75, 0]
+							}
+						},
+						"move_URB" : {
+							"properties" : {
+								"image" : "madtulip_avian_scoutship_engine_bottom.png:off.<frame>",
+								"offset" : [2.75, 0]
+							}
+						},
+						"move_RF" : {
+							"properties" : {
+								"image" : "madtulip_avian_scoutship_engine_bottom.png:off.<frame>",
+								"offset" : [2.75, 0]
+							}
+						},
+						"move_RB" : {
+							"properties" : {
+								"image" : "madtulip_avian_scoutship_engine_bottom.png:off.<frame>",
+								"offset" : [2.75, 0]
+							}
+						},
+						"move_DRF" : {
+							"properties" : {
+								"image" : "madtulip_avian_scoutship_engine_bottom.png:on.<frame>",
+								"offset" : [2.75, 0]
+							}
+						},
+						"move_DRB" : {
+							"properties" : {
+								"image" : "madtulip_avian_scoutship_engine_bottom.png:on.<frame>",
+								"offset" : [2.75, 0]
+							}
+						},
+						"move_D" : {
+							"properties" : {
+								"image" : "madtulip_avian_scoutship_engine_bottom.png:on.<frame>",
+								"offset" : [2.75, 0]
+							}
+						},
+						"move_DLF" : {
+							"properties" : {
+								"image" : "madtulip_avian_scoutship_engine_bottom.png:on.<frame>",
+								"offset" : [2.75, 0]
+							}
+						},
+						"move_DLB" : {
+							"properties" : {
+								"image" : "madtulip_avian_scoutship_engine_bottom.png:on.<frame>",
+								"offset" : [2.75, 0]
+							}
+						},
+						"move_LF" : {
+							"properties" : {
+								"image" : "madtulip_avian_scoutship_engine_bottom.png:off.<frame>",
+								"offset" : [2.75, 0]
+							}
+						},
+						"move_LB" : {
+							"properties" : {
+								"image" : "madtulip_avian_scoutship_engine_bottom.png:off.<frame>",
+								"offset" : [2.75, 0]
+							}
+						},
+						"move_ULF" : {
+							"properties" : {
+								"image" : "madtulip_avian_scoutship_engine_bottom.png:off.<frame>",
+								"offset" : [2.75, 0]
+							}
+						},
+						"move_ULB" : {
+							"properties" : {
+								"image" : "madtulip_avian_scoutship_engine_bottom.png:off.<frame>",
+								"offset" : [2.75, 0]
+							}
+						}
+					}
+				}
+			},
+// TODO
+			"engine_reverse" : {
+				"properties" : {
+					"centered" : true,
+					"zLevel" : 0
+				},
+
+				"partStates" : {
+					"movement" : {
+						"idle" : {
+							"properties" : {
+								"image" : "madtulip_avian_scoutship_engine_bottom.png:off.<frame>",
+								"offset" : [2.75, 4]
+							}
+						},
+						"move_U" : {
+							"properties" : {
+								"image" : "madtulip_avian_scoutship_engine_bottom.png:off.<frame>",
+								"offset" : [2.75, 4]
+							}
+						},
+						"move_URF" : {
+							"properties" : {
+								"image" : "madtulip_avian_scoutship_engine_bottom.png:off.<frame>",
+								"offset" : [2.75, 4]
+							}
+						},
+						"move_URB" : {
+							"properties" : {
+								"image" : "madtulip_avian_scoutship_engine_bottom.png:on.<frame>",
+								"offset" : [2.75, 4]
+							}
+						},
+						"move_RF" : {
+							"properties" : {
+								"image" : "madtulip_avian_scoutship_engine_bottom.png:off.<frame>",
+								"offset" : [2.75, 4]
+							}
+						},
+						"move_RB" : {
+							"properties" : {
+								"image" : "madtulip_avian_scoutship_engine_bottom.png:on.<frame>",
+								"offset" : [2.75, 4]
+							}
+						},
+						"move_DRF" : {
+							"properties" : {
+								"image" : "madtulip_avian_scoutship_engine_bottom.png:off.<frame>",
+								"offset" : [2.75, 4]
+							}
+						},
+						"move_DRB" : {
+							"properties" : {
+								"image" : "madtulip_avian_scoutship_engine_bottom.png:on.<frame>",
+								"offset" : [2.75, 4]
+							}
+						},
+						"move_D" : {
+							"properties" : {
+								"image" : "madtulip_avian_scoutship_engine_bottom.png:off.<frame>",
+								"offset" : [2.75, 4]
+							}
+						},
+						"move_DLF" : {
+							"properties" : {
+								"image" : "madtulip_avian_scoutship_engine_bottom.png:off.<frame>",
+								"offset" : [2.75, 4]
+							}
+						},
+						"move_DLB" : {
+							"properties" : {
+								"image" : "madtulip_avian_scoutship_engine_bottom.png:on.<frame>",
+								"offset" : [2.75, 4]
+							}
+						},
+						"move_LF" : {
+							"properties" : {
+								"image" : "madtulip_avian_scoutship_engine_bottom.png:off.<frame>",
+								"offset" : [2.75, 4]
+							}
+						},
+						"move_LB" : {
+							"properties" : {
+								"image" : "madtulip_avian_scoutship_engine_bottom.png:on.<frame>",
+								"offset" : [2.75, 4]
+							}
+						},
+						"move_ULF" : {
+							"properties" : {
+								"image" : "madtulip_avian_scoutship_engine_bottom.png:off.<frame>",
+								"offset" : [2.75, 4]
+							}
+						},
+						"move_ULB" : {
+							"properties" : {
+								"image" : "madtulip_avian_scoutship_engine_bottom.png:on.<frame>",
+								"offset" : [2.75, 4]
 							}
 						}
 					}
@@ -168,7 +684,15 @@
 		"mechDeactivateParticles" : {
 			"particles" : []
 		},
-		"move_LR_Particles" : {
+		"move_REV_Particles" : {
+			"particles" : []
+// TODO
+		},
+		"move_D_Particles" : {
+			"particles" : []
+// TODO
+		},
+		"move_FTL_Particles" : {
 			"emissionRate" : 16,
 			"particles" : [{
 					"particle" : {
@@ -184,7 +708,7 @@
 						"timeToLive" : 0.3,
 						"layer" : "middle",
 						"variance" : {
-							"position" : [-5, 3],
+							"position" : [-5, 0.7],
 							"timeToLive" : 0.2
 						}
 					}
@@ -192,7 +716,7 @@
 			],
 			"flip" : true
 		},
-		"move_UD_Particles_L" : {
+		"move_U_Particles_L" : {
 			"emissionRate" : 16,
 			"particles" : [{
 					"particle" : {
@@ -201,10 +725,10 @@
 						"color" : [2, 139, 218, 255],
 						"light" : [94, 182, 236],
 						"fade" : 0.9,
-						"position" : [-2.5, -4],
+						"position" : [-1, -4],
 						"initialVelocity" : [0, -10.0],
 						"finalVelocity" : [0.0, 0.0],
-						"approach" : [-2.5, -4],
+						"approach" : [-1, -4],
 						"timeToLive" : 0.3,
 						"layer" : "middle",
 						"variance" : {
@@ -216,7 +740,7 @@
 			],
 			"flip" : true
 		},
-		"move_UD_Particles_R" : {
+		"move_U_Particles_R" : {
 			"emissionRate" : 16,
 			"particles" : [{
 					"particle" : {
@@ -225,10 +749,10 @@
 						"color" : [2, 139, 218, 255],
 						"light" : [94, 182, 236],
 						"fade" : 0.9,
-						"position" : [4, -4],
+						"position" : [7, -4],
 						"initialVelocity" : [0, -10.0],
 						"finalVelocity" : [0.0, 0.0],
-						"approach" : [4, -4],
+						"approach" : [7, -4],
 						"timeToLive" : 0.3,
 						"layer" : "middle",
 						"variance" : {
