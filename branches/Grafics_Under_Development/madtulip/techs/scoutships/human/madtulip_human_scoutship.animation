@@ -481,92 +481,92 @@
 					"movement" : {
 						"idle" : {
 							"properties" : {
-								"image" : "madtulip_human_scoutship_engine_bottom.png:off.<frame>",
-								"offset" : [2.75, 0]
+								"image" : "madtulip_human_scoutship_engine_top.png:off.<frame>",
+								"offset" : [-1, 6]
 							}
 						},
 						"move_U" : {
 							"properties" : {
-								"image" : "madtulip_human_scoutship_engine_bottom.png:off.<frame>",
-								"offset" : [2.75, 0]
+								"image" : "madtulip_human_scoutship_engine_top.png:off.<frame>",
+								"offset" : [-1, 6]
 							}
 						},
 						"move_URF" : {
 							"properties" : {
-								"image" : "madtulip_human_scoutship_engine_bottom.png:off.<frame>",
-								"offset" : [2.75, 0]
+								"image" : "madtulip_human_scoutship_engine_top.png:off.<frame>",
+								"offset" : [-1, 6]
 							}
 						},
 						"move_URB" : {
 							"properties" : {
-								"image" : "madtulip_human_scoutship_engine_bottom.png:off.<frame>",
-								"offset" : [2.75, 0]
+								"image" : "madtulip_human_scoutship_engine_top.png:off.<frame>",
+								"offset" : [-1, 6]
 							}
 						},
 						"move_RF" : {
 							"properties" : {
-								"image" : "madtulip_human_scoutship_engine_bottom.png:off.<frame>",
-								"offset" : [2.75, 0]
+								"image" : "madtulip_human_scoutship_engine_top.png:off.<frame>",
+								"offset" : [-1, 6]
 							}
 						},
 						"move_RB" : {
 							"properties" : {
-								"image" : "madtulip_human_scoutship_engine_bottom.png:off.<frame>",
-								"offset" : [2.75, 0]
+								"image" : "madtulip_human_scoutship_engine_top.png:off.<frame>",
+								"offset" : [-1, 6]
 							}
 						},
 						"move_DRF" : {
 							"properties" : {
-								"image" : "madtulip_human_scoutship_engine_bottom.png:on.<frame>",
-								"offset" : [2.75, 0]
+								"image" : "madtulip_human_scoutship_engine_top.png:on.<frame>",
+								"offset" : [-1, 6]
 							}
 						},
 						"move_DRB" : {
 							"properties" : {
-								"image" : "madtulip_human_scoutship_engine_bottom.png:on.<frame>",
-								"offset" : [2.75, 0]
+								"image" : "madtulip_human_scoutship_engine_top.png:on.<frame>",
+								"offset" : [-1, 6]
 							}
 						},
 						"move_D" : {
 							"properties" : {
-								"image" : "madtulip_human_scoutship_engine_bottom.png:on.<frame>",
-								"offset" : [2.75, 0]
+								"image" : "madtulip_human_scoutship_engine_top.png:on.<frame>",
+								"offset" : [-1, 6]
 							}
 						},
 						"move_DLF" : {
 							"properties" : {
-								"image" : "madtulip_human_scoutship_engine_bottom.png:on.<frame>",
-								"offset" : [2.75, 0]
+								"image" : "madtulip_human_scoutship_engine_top.png:on.<frame>",
+								"offset" : [-1, 6]
 							}
 						},
 						"move_DLB" : {
 							"properties" : {
-								"image" : "madtulip_human_scoutship_engine_bottom.png:on.<frame>",
-								"offset" : [2.75, 0]
+								"image" : "madtulip_human_scoutship_engine_top.png:on.<frame>",
+								"offset" : [-1, 6]
 							}
 						},
 						"move_LF" : {
 							"properties" : {
-								"image" : "madtulip_human_scoutship_engine_bottom.png:off.<frame>",
-								"offset" : [2.75, 0]
+								"image" : "madtulip_human_scoutship_engine_top.png:off.<frame>",
+								"offset" : [-1, 6]
 							}
 						},
 						"move_LB" : {
 							"properties" : {
-								"image" : "madtulip_human_scoutship_engine_bottom.png:off.<frame>",
-								"offset" : [2.75, 0]
+								"image" : "madtulip_human_scoutship_engine_top.png:off.<frame>",
+								"offset" : [-1, 6]
 							}
 						},
 						"move_ULF" : {
 							"properties" : {
-								"image" : "madtulip_human_scoutship_engine_bottom.png:off.<frame>",
-								"offset" : [2.75, 0]
+								"image" : "madtulip_human_scoutship_engine_top.png:off.<frame>",
+								"offset" : [-1, 6]
 							}
 						},
 						"move_ULB" : {
 							"properties" : {
-								"image" : "madtulip_human_scoutship_engine_bottom.png:off.<frame>",
-								"offset" : [2.75, 0]
+								"image" : "madtulip_human_scoutship_engine_top.png:off.<frame>",
+								"offset" : [-1, 6]
 							}
 						}
 					}
@@ -583,92 +583,92 @@
 					"movement" : {
 						"idle" : {
 							"properties" : {
-								"image" : "madtulip_human_scoutship_engine_bottom.png:off.<frame>",
-								"offset" : [2.75, 4]
+								"image" : "madtulip_human_scoutship_engine_front.png:off.<frame>",
+								"offset" : [5, 4]
 							}
 						},
 						"move_U" : {
 							"properties" : {
-								"image" : "madtulip_human_scoutship_engine_bottom.png:off.<frame>",
-								"offset" : [2.75, 4]
+								"image" : "madtulip_human_scoutship_engine_front.png:off.<frame>",
+								"offset" : [5, 4]
 							}
 						},
 						"move_URF" : {
 							"properties" : {
-								"image" : "madtulip_human_scoutship_engine_bottom.png:off.<frame>",
-								"offset" : [2.75, 4]
+								"image" : "madtulip_human_scoutship_engine_front.png:off.<frame>",
+								"offset" : [5, 4]
 							}
 						},
 						"move_URB" : {
 							"properties" : {
-								"image" : "madtulip_human_scoutship_engine_bottom.png:on.<frame>",
-								"offset" : [2.75, 4]
+								"image" : "madtulip_human_scoutship_engine_front.png:on.<frame>",
+								"offset" : [5, 4]
 							}
 						},
 						"move_RF" : {
 							"properties" : {
-								"image" : "madtulip_human_scoutship_engine_bottom.png:off.<frame>",
-								"offset" : [2.75, 4]
+								"image" : "madtulip_human_scoutship_engine_front.png:off.<frame>",
+								"offset" : [5, 4]
 							}
 						},
 						"move_RB" : {
 							"properties" : {
-								"image" : "madtulip_human_scoutship_engine_bottom.png:on.<frame>",
-								"offset" : [2.75, 4]
+								"image" : "madtulip_human_scoutship_engine_front.png:on.<frame>",
+								"offset" : [5, 4]
 							}
 						},
 						"move_DRF" : {
 							"properties" : {
-								"image" : "madtulip_human_scoutship_engine_bottom.png:off.<frame>",
-								"offset" : [2.75, 4]
+								"image" : "madtulip_human_scoutship_engine_front.png:off.<frame>",
+								"offset" : [5, 4]
 							}
 						},
 						"move_DRB" : {
 							"properties" : {
-								"image" : "madtulip_human_scoutship_engine_bottom.png:on.<frame>",
-								"offset" : [2.75, 4]
+								"image" : "madtulip_human_scoutship_engine_front.png:on.<frame>",
+								"offset" : [5, 4]
 							}
 						},
 						"move_D" : {
 							"properties" : {
-								"image" : "madtulip_human_scoutship_engine_bottom.png:off.<frame>",
-								"offset" : [2.75, 4]
+								"image" : "madtulip_human_scoutship_engine_front.png:off.<frame>",
+								"offset" : [5, 4]
 							}
 						},
 						"move_DLF" : {
 							"properties" : {
-								"image" : "madtulip_human_scoutship_engine_bottom.png:off.<frame>",
-								"offset" : [2.75, 4]
+								"image" : "madtulip_human_scoutship_engine_front.png:off.<frame>",
+								"offset" : [5, 4]
 							}
 						},
 						"move_DLB" : {
 							"properties" : {
-								"image" : "madtulip_human_scoutship_engine_bottom.png:on.<frame>",
-								"offset" : [2.75, 4]
+								"image" : "madtulip_human_scoutship_engine_front.png:on.<frame>",
+								"offset" : [5, 4]
 							}
 						},
 						"move_LF" : {
 							"properties" : {
-								"image" : "madtulip_human_scoutship_engine_bottom.png:off.<frame>",
-								"offset" : [2.75, 4]
+								"image" : "madtulip_human_scoutship_engine_front.png:off.<frame>",
+								"offset" : [5, 4]
 							}
 						},
 						"move_LB" : {
 							"properties" : {
-								"image" : "madtulip_human_scoutship_engine_bottom.png:on.<frame>",
-								"offset" : [2.75, 4]
+								"image" : "madtulip_human_scoutship_engine_front.png:on.<frame>",
+								"offset" : [5, 4]
 							}
 						},
 						"move_ULF" : {
 							"properties" : {
-								"image" : "madtulip_human_scoutship_engine_bottom.png:off.<frame>",
-								"offset" : [2.75, 4]
+								"image" : "madtulip_human_scoutship_engine_front.png:off.<frame>",
+								"offset" : [5, 4]
 							}
 						},
 						"move_ULB" : {
 							"properties" : {
-								"image" : "madtulip_human_scoutship_engine_bottom.png:on.<frame>",
-								"offset" : [2.75, 4]
+								"image" : "madtulip_human_scoutship_engine_front.png:on.<frame>",
+								"offset" : [5, 4]
 							}
 						}
 					}

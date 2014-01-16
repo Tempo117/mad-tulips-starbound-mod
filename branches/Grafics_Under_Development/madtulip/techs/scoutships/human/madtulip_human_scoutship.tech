@@ -33,14 +33,13 @@
 						  [-10,    2.975]],
 		"mass" : 50.0,
 
-		"normalGroundFriction" : 50.0,
-		"ambulatingGroundFriction" : 10.0,
-		"skiddingGroundFriction" : 20.0,
+		"normalGroundFriction" : 200.0,
+		"ambulatingGroundFriction" : 40.0,
+		"skiddingGroundFriction" : 80.0,
 
-		"groundForce" : 25.0,
-		"airForce" : 2000.0,
-		"liquidForce" : 70.0,
-
+		"groundForce" : 250.0,
+		"airForce" : 200.0,
+		"liquidForce" : 700.0,
 		"walkSpeed" : 0.0,
 		"runSpeed" : 0.0,
 
@@ -69,6 +68,7 @@
 	"Up_Force": 5000,
 	"Down_Speed": 12,
 	"Down_Force": 2500,
+	"Air_resistance_parameter": 1.5,
 
 	"parentOffset" : [4.6, 1.2], // set player position only here
 	"mechTransformPositionChange" : [0.0, 0.0],

@@ -58,6 +58,10 @@ function update(args)
 	data.Up_Force   					= tech.parameter("Up_Force")
 	data.Down_Speed	    				= tech.parameter("Down_Speed")
 	data.Down_Force   					= tech.parameter("Down_Force")
+	
+	data.Air_resistance_parameter		= tech.parameter("Air_resistance_parameter")
+	
+	data.m                              = data.mechCustomMovementParameters.mass;
 		
 	if not data.active and args.actions["mechActivate"] then
 		-- Calculate new position
@@ -292,37 +296,95 @@ function update(args)
 		end
 		
 		-- Setup movement vector
-		local v_x = 0; local v_y = 0; local a_x = 0; local a_y = 0;
+		--local v_x = 0; local v_y = 0;
+		local a_x = 0; local a_y = 0; local f_x = 0; local f_y = 0
 		-- Add keypress
 		if data.holdingUp then
-			v_y = data.Up_Speed;
-			a_y = data.Up_Force;
+			--v_y = data.Up_Speed;
+			f_y = data.Up_Force
+			a_y = f_y/data.m;
 		end
 		if data.holdingDown then
-			v_y = -data.Down_Speed;
-			a_y = -data.Down_Force;
+			--v_y = -data.Down_Speed;
+			f_y = -data.Down_Force
+			a_y = f_y/data.m;
 		end
 		if data.holdingLeft then
 			if flip then
-				v_x = -data.Left_Right_Speed;
-				a_x = data.Left_Right_Force;
+				-- forward
+				--v_x = -data.Left_Right_Speed;
+				f_x = -data.Left_Right_Force
+				a_x = f_x/data.m;
 			else
-				v_x = -data.Reverse_Speed;
-				a_x = data.Reverse_Force;
+				-- backward
+				--v_x = -data.Reverse_Speed;
+				f_x = -data.Reverse_Force
+				a_x = f_x/data.m;
 			end
 		end
 		if data.holdingRight then
 			if not flip  then
-				v_x = data.Left_Right_Speed;
-				a_x = data.Left_Right_Force;
+				-- forward
+				--v_x = data.Left_Right_Speed;
+				f_x = data.Left_Right_Force
+				a_x = f_x/data.m;
 			else
-				v_x = data.Reverse_Speed;
-				a_x = data.Reverse_Force;
+				-- backward
+				--v_x = data.Reverse_Speed;
+				f_x = data.Reverse_Force
+				a_x = f_x/data.m;
 			end
 		end
+		
+		-- adjust current velocity vector
+		data.v_x = data.v_x + a_x*args.dt;
+		data.v_y = data.v_y + a_y*args.dt;
+		
+		-- air friction
+		F_AF_x = data.Air_resistance_parameter*data.v_x*data.v_x
+		if (data.v_x > 0.5) then
+			data.v_x = data.v_x - ((F_AF_x/data.m)*args.dt)
+			f_x = f_x - F_AF_x
+		elseif (data.v_x < 0.5) then
+			data.v_x = data.v_x + ((F_AF_x/data.m)*args.dt)
+			f_x = f_x + F_AF_x
+		else
+			data.v_x = 0
+			f_x = 0
+		end
+		F_AF_y = data.Air_resistance_parameter*data.v_y*data.v_y
+		if (data.v_y > 0.5) then
+			data.v_y = data.v_y - ((F_AF_y/data.m)*args.dt)
+			f_y = f_y - F_AF_y
+		elseif (data.v_y < 0.5) then
+			data.v_y = data.v_y + ((F_AF_y/data.m)*args.dt)
+			f_y = f_y + F_AF_y
+		else
+			data.v_y = 0
+			f_y = 0
+		end
+		
+--[[
+		-- limit speed
+		if (data.v_y < data.Down_Speed_max) then
+			data.v_y = data.Down_Speed_max
+		end
+		if (data.v_y > data.Up_Speed_max) then
+			data.v_y = data.Up_Speed_max
+		end
+		if (data.v_x < data.Left_Right_Speed_max) then
+			data.v_x = data.Left_Right_Speed_max
+		end
+		if (data.v_x > data.Left_Right_Speed_max) then
+			data.v_x = data.Left_Right_Speed_max
+		end
+]]
+		
 		-- execute movement vector
-		tech.xControl(v_x, a_x, false);
-		tech.yControl(v_y, data.Hold_at_level_Force+a_y, false);
+		--tech.xControl(v_x, a_x, false);
+		--tech.yControl(v_y, data.Hold_at_level_Force+a_y, false);
+		tech.xControl(data.v_x, math.abs(f_x), false); -- why is a_x to be used absolute???
+		tech.yControl(data.v_y, data.Hold_at_level_Force +f_y, false);		
 	end
 
   return 0
@@ -331,6 +393,10 @@ end
 -- Activate mech
 function activate()
 	local mechTransformPositionChange = tech.parameter("mechTransformPositionChange")
+
+	-- initial velocity
+	data.v_x = 0;
+	data.v_y = 0;
 	
 	tech.burstParticleEmitter("mechActivateParticles")
 	tech.translate(mechTransformPositionChange)
