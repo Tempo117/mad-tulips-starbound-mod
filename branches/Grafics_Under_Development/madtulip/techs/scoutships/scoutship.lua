@@ -50,16 +50,17 @@ function update(args)
 	data.parentOffset					= tech.parameter("parentOffset")
 	data.mechCollisionTest				= tech.parameter("mechTransformCollisionTest")
 	data.Hold_at_level_Force			= tech.parameter("Hold_at_level_Force")
-	data.Left_Right_Speed				= tech.parameter("Left_Right_Speed")
-	data.Left_Right_Force				= tech.parameter("Left_Right_Force")
-	data.Reverse_Speed					= tech.parameter("Reverse_Speed")
+	--data.Left_Right_Speed				= tech.parameter("Left_Right_Speed")
+	data.Forward_Force				= tech.parameter("Forward_Force")
+	--data.Reverse_Speed					= tech.parameter("Reverse_Speed")
 	data.Reverse_Force					= tech.parameter("Reverse_Force")
-	data.Up_Speed	    				= tech.parameter("Up_Speed")
+	--data.Up_Speed	    				= tech.parameter("Up_Speed")
 	data.Up_Force   					= tech.parameter("Up_Force")
-	data.Down_Speed	    				= tech.parameter("Down_Speed")
+	--data.Down_Speed	    				= tech.parameter("Down_Speed")
 	data.Down_Force   					= tech.parameter("Down_Force")
 	
-	data.Air_resistance_parameter		= tech.parameter("Air_resistance_parameter")
+	data.Air_resistance_parameter_LR	= tech.parameter("Air_resistance_parameter_LR")
+	data.Air_resistance_parameter_TB	= tech.parameter("Air_resistance_parameter_TB")
 	
 	data.m                              = data.mechCustomMovementParameters.mass;
 		
@@ -245,40 +246,7 @@ function update(args)
 			tech.setParticleEmitterActive("move_U_Particles_R", false)
 			tech.setAnimationState("movement", "idle")
 		end
-		
---[[
-		if    (data.holdingLeft and flip)
-		   or (data.holdingRight and not flip) then
-			if (data.holdingUp or data.holdingDown) then
-				-- doing left right and up down movement
-				tech.setParticleEmitterActive("move_LR_Particles", true)
-				tech.setParticleEmitterActive("move_UD_Particles_L", true)
-				tech.setParticleEmitterActive("move_UD_Particles_R", true)
-				tech.setAnimationState("movement", "move_LRUD")
-			else
-				-- doing left right movement only
-				tech.setParticleEmitterActive("move_LR_Particles", true)
-				tech.setParticleEmitterActive("move_UD_Particles_L", false)
-				tech.setParticleEmitterActive("move_UD_Particles_R", false)
-				tech.setAnimationState("movement", "move_LR")
-			end
 
-		else
-			if (data.holdingUp or data.holdingDown) then
-				-- doing up down movement only
-				tech.setParticleEmitterActive("move_LR_Particles", false)
-				tech.setParticleEmitterActive("move_UD_Particles_L", true)
-				tech.setParticleEmitterActive("move_UD_Particles_R", true)
-				tech.setAnimationState("movement", "move_UD")
-			else
-				-- Idle movement
-				tech.setParticleEmitterActive("move_LR_Particles", false)
-				tech.setParticleEmitterActive("move_UD_Particles_L", false)
-				tech.setParticleEmitterActive("move_UD_Particles_R", false)
-				tech.setAnimationState("movement", "idle")
-			end
-		end
-]]
 		-- Apply movement physics parameters
 		tech.applyMovementParameters(data.mechCustomMovementParameters)
 
@@ -313,7 +281,7 @@ function update(args)
 			if flip then
 				-- forward
 				--v_x = -data.Left_Right_Speed;
-				f_x = -data.Left_Right_Force
+				f_x = -data.Forward_Force
 				a_x = f_x/data.m;
 			else
 				-- backward
@@ -326,7 +294,7 @@ function update(args)
 			if not flip  then
 				-- forward
 				--v_x = data.Left_Right_Speed;
-				f_x = data.Left_Right_Force
+				f_x = data.Forward_Force
 				a_x = f_x/data.m;
 			else
 				-- backward
@@ -341,7 +309,7 @@ function update(args)
 		data.v_y = data.v_y + a_y*args.dt;
 		
 		-- air friction
-		F_AF_x = data.Air_resistance_parameter*data.v_x*data.v_x
+		F_AF_x = data.Air_resistance_parameter_LR*data.v_x*data.v_x
 		if (data.v_x > 0.5) then
 			data.v_x = data.v_x - ((F_AF_x/data.m)*args.dt)
 			f_x = f_x - F_AF_x
@@ -352,7 +320,7 @@ function update(args)
 			data.v_x = 0
 			f_x = 0
 		end
-		F_AF_y = data.Air_resistance_parameter*data.v_y*data.v_y
+		F_AF_y = data.Air_resistance_parameter_TB*data.v_y*data.v_y
 		if (data.v_y > 0.5) then
 			data.v_y = data.v_y - ((F_AF_y/data.m)*args.dt)
 			f_y = f_y - F_AF_y
