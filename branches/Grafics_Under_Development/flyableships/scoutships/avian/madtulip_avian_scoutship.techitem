@@ -1,0 +1,10 @@
+{
+	"itemName": "madtulip_avian_scoutship",
+	"rarity": "Legendary",
+	"inventoryIcon": "/techs/scoutships/scoutship_icon.png",
+	"description": "Spawn a avian scoutship and have fun.",
+	"shortdescription": "avian Scoutship",
+	"inspectionKind": "tech",
+
+	"techModule": "madtulip_avian_scoutship.tech"
+}

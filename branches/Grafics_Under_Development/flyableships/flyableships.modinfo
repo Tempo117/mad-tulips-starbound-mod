@@ -1,0 +1,10 @@
+{
+  "name" : "flyableships",
+  "version" : "Beta v. Angry Koala",
+  "path" : ".",
+  "metadata": {
+    "author" : "MadTulip and TooManySecrets",
+    "description" : "Fly ships in space or on a planet",
+	"support_url" : ""
+  }
+}
