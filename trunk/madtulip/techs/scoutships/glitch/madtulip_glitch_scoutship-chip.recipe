@@ -1,0 +1,15 @@
+{
+	"input": [
+		{"item": "madtulip_glitch_ftl_thruster","count": 1},
+		{"item": "madtulip_glitch_stabilization_thruster","count": 2},
+		{"item": "madtulip_glitch_gyro_stabilizer","count": 1},
+		{"item": "madtulip_glitch_tileset","count": 25},
+		{"item": "aegisaltbar","count": 15},
+		{"item": "uraniumrod","count": 5}
+	],
+	"output": {
+		"item": "madtulip_glitch_scoutship-chip",
+		"count": 1
+	},
+	"groups" : [ "madtulip_shipstation", "all", "systems" ]
+}

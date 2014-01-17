@@ -1,0 +1,11 @@
+{
+  "input" : [
+	{ "item" : "ironbar", "count" : 3 },
+	{ "item" : "money", "count" : 50 }
+  ],
+  "output" : {
+    "item" : "madtulip_floran_flux_compensator",
+    "count" : 1
+  },
+  "groups" : [ "madtulip_shipstation", "all", "objects" ]
+}
