@@ -5,7 +5,7 @@
 	{ "item" : "money", "count" : 150 }
   ],
   "output" : {
-    "item" : "madtulip_shipdoor",
+    "item" : "madtulip_forcefield_door",
     "count" : 1
   },
   "groups" : [ "madtulip_shipstation", "all", "objects" ]

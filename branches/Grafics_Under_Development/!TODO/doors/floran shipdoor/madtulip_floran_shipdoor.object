@@ -33,7 +33,7 @@
 
   "animation" : "/objects/wired/door/door.animation",
   "animationParts" : {
-    "door" : "madtulip_shipdoor.png"
+    "door" : "madtulip_avian_shipdoor.png"
   },
   "animationPosition" : [-20, 0],
 
