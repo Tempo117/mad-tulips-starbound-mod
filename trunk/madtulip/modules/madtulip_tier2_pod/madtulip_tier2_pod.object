@@ -40,18 +40,18 @@
 		38, 13
 	],
 	"blocksTable" : {
-		"madtulip_glass_LR" : 12,
+		"madtulip_glass_lr" : 12,
 		"miab_scaffold" : 1,
 		"apexshipwall" : 4,
-		"madtulip_glass_TB" : 7,
-		"madtulip_glass_TL" : 9,
+		"madtulip_glass_tb" : 7,
+		"madtulip_glass_tl" : 9,
 		"modernplatform" : 2,
 		"glass" : 6,
-		"madtulip_glass_TR" : 10,
-		"madtulip_glass_BR" : 8,
+		"madtulip_glass_tr" : 10,
+		"madtulip_glass_br" : 8,
 		"apexshipsupport" : 5,
 		"smoothmetal" : 3,
-		"madtulip_glass_BL" : 11
+		"madtulip_glass_bl" : 11
 	},
 	"nextBlockId" : 13,
 	"layoutTableBackground" : {

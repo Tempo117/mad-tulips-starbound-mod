@@ -1,0 +1,9 @@
+{
+  "itemName" : "madtulip_avian_tileset",
+  "rarity" : "Common",
+  "inventoryIcon" : "madtulip_avian_tileset_icon.png",
+  "dropCollision" : [-2.5, -2.0, 2.5, 2.0],
+  "description" : "Avian Spaceship Hull Tileset",
+  "shortdescription" : "Avian Spaceship Hull Tileset",
+  "materialId" : 21032
+}
