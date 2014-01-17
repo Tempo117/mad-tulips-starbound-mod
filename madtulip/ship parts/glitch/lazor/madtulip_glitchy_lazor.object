@@ -1,0 +1,39 @@
+{
+	"objectName" : "madtulip_glitchy_lazor",
+	"rarity" : "Common",
+	"objectType" : "wire",
+	"description" : "A glitchy laZor!",
+	"shortdescription" : "Lazor",
+	"race" : "generic",
+	"category" : "decorative",
+	"price" : "10",
+	"printable" : false,
+
+	"inventoryIcon" : "madtulip_glitchy_lazor_icon.png",
+	"orientations" : [
+		{
+			"dualImage" : "madtulip_glitchy_lazor_ON.png:<color>.<frame>",
+			"imagePosition" : [-91,-8],
+			"frames" : 1,
+			"animationCycle" : 1,
+			"spaceScan" : 0.1,
+			"anchors" : [ "bottom" ]
+		}
+	],
+	
+	"animation" : "madtulip_glitchy_lazor.animation",
+	"animationParts" : {
+		"ON_PNG" : "madtulip_glitchy_lazor_ON.png",
+		"OFF_PNG" : "madtulip_glitchy_lazor_OFF.png"
+	},
+	"animationPosition" : [-91, -8],
+
+	"scripts" : [ "madtulip_glitchy_lazor.lua" ],
+	"scriptDelta" : 5,
+	
+	"inboundNodes" : [ [-4, -2] ],
+	"outboundNodes" : [ ],
+
+	"gates" : 1,
+	"truthtable" : [ false, true ]
+}
