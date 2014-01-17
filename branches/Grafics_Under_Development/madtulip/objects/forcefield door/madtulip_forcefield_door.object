@@ -40,6 +40,6 @@
   "inboundNodes" : [ [-1, 4] ],
   "outboundNodes" : [ [1, 0] ],
 
-  "openSounds" : [ "/sfx/objects/apexcooldoor_open.wav" ],
-  "closeSounds" : [ "/sfx/objects/apexcooldoor_close.wav" ]
+  "openSounds" : [ "/sfx/objects/tesla_shock_kill.wav" ],
+  "closeSounds" : [ "/sfx/objects/tesla_shock_kill.wav" ]
 }
