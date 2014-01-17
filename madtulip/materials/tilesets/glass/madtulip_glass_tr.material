@@ -1,0 +1,14 @@
+{
+  "materialId" : 21129,
+  "materialName" : "madtulip_glass_tr",
+  "frames" : "madtulip_glass_tr.png",
+  "transparent" : true,
+  "particleColor" : [110, 110, 110, 255],
+  "variants" : 1,
+  "itemDrop" : "madtulip_glass_tileset",
+  "description" : "Glass Tileset",
+  "shortdescription" : "Glass Tileset",
+  "multicolored" : false,
+  "footstepSound" : "/sfx/blocks/footstep_composite.wav",
+  "health" : 1
+}

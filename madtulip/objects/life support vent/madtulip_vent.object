@@ -27,9 +27,24 @@
 
       "spaceScan" : 0.1,
       "anchors" : [ "background" ]
-
     }
   ],
+  
+  // Settings that effect CPU performance as well as appearance
+  // intervall in [s] in which the room breach scan is performed. smaller number reacts faster to new breach but drags more CPU load.
+  "madtulip_scan_intervall_time" : 1, //[s]
+  // intervall in [s] in which the warning sound should occure
+  "madtulip_beep_intervall_time" : 1, //[s]
+  // intervall in [s] after which new particles are spawned
+  "madtulip_spawn_projectile_intervall_time" : 1, //[s]  
+  // maximum numbre of particles to spawn each madtulip_spawn_projectile_intervall_time
+  "madtulip_maximum_particle_fountains_per_spawn" : 20, //#
+  // number of blocks in all directions to test for breach or enclosed room
+  // [1]: in the 1st run (small but fast)
+  // [2]: in the 2nd run (if 1st run didnt find breach or fully closed room (large room possible, but slow)
+  "madtulip_scan_stage_ranges" : [50,250],
+  
+  "Breach_Warning_Sound" : [ "/objects/life support vent/Breach_Warning_Sound.wav" ],
   
   "animation" : "/objects/life support vent/madtulip_vent.animation",
   "animationParts" : {
@@ -45,5 +60,4 @@
   "outboundNodes" : [ [1, -1] ],
 
   "soundEffect" : "/sfx/objects/bunkervent.wav"
-
 }

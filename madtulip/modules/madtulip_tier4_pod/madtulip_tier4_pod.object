@@ -40,17 +40,17 @@
 		73, 35
 	],
 	"blocksTable" : {
-		"madtulip_glass_BL" : 13,
+		"madtulip_glass_bl" : 13,
 		"smoothmetal" : 2,
-		"madtulip_glass_TB" : 9,
+		"madtulip_glass_tb" : 9,
 		"glass" : 5,
-		"madtulip_glass_TR" : 12,
+		"madtulip_glass_tr" : 12,
 		"pressurizedsteel" : 4,
-		"madtulip_glass_LR" : 6,
-		"madtulip_glass_BLT" : 11,
+		"madtulip_glass_lr" : 6,
+		"madtulip_glass_blt" : 11,
 		"modernplatform" : 8,
 		"apexshipsupport" : 10,
-		"madtulip_glass_TL" : 7,
+		"madtulip_glass_tl" : 7,
 		"apexshipdetails" : 3,
 		"miab_scaffold" : 1
 	},
