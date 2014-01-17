@@ -65,8 +65,8 @@
 	"Reverse_Force": 1250,
 	"Up_Force": 5000,
 	"Down_Force": 2500,
-	"Air_resistance_parameter_LR": 1.25,
-	"Air_resistance_parameter_TB": 1.25,
+	"Air_resistance_parameter_LR": 4,
+	"Air_resistance_parameter_TB": 4,
 
 	"parentOffset" : [4.6, 1.2], // set player position only here
 	"mechTransformPositionChange" : [0.0, 0.0],

@@ -50,13 +50,9 @@ function update(args)
 	data.parentOffset					= tech.parameter("parentOffset")
 	data.mechCollisionTest				= tech.parameter("mechTransformCollisionTest")
 	data.Hold_at_level_Force			= tech.parameter("Hold_at_level_Force")
-	--data.Left_Right_Speed				= tech.parameter("Left_Right_Speed")
 	data.Forward_Force				= tech.parameter("Forward_Force")
-	--data.Reverse_Speed					= tech.parameter("Reverse_Speed")
 	data.Reverse_Force					= tech.parameter("Reverse_Force")
-	--data.Up_Speed	    				= tech.parameter("Up_Speed")
 	data.Up_Force   					= tech.parameter("Up_Force")
-	--data.Down_Speed	    				= tech.parameter("Down_Speed")
 	data.Down_Force   					= tech.parameter("Down_Force")
 	
 	data.Air_resistance_parameter_LR	= tech.parameter("Air_resistance_parameter_LR")
@@ -264,11 +260,9 @@ function update(args)
 		end
 		
 		-- Setup movement vector
-		--local v_x = 0; local v_y = 0;
 		local a_x = 0; local a_y = 0; local f_x = 0; local f_y = 0
 		-- Add keypress
 		if data.holdingUp then
-			--v_y = data.Up_Speed;
 			f_y = data.Up_Force
 			a_y = f_y/data.m;
 		end
@@ -280,12 +274,10 @@ function update(args)
 		if data.holdingLeft then
 			if flip then
 				-- forward
-				--v_x = -data.Left_Right_Speed;
 				f_x = -data.Forward_Force
 				a_x = f_x/data.m;
 			else
 				-- backward
-				--v_x = -data.Reverse_Speed;
 				f_x = -data.Reverse_Force
 				a_x = f_x/data.m;
 			end
@@ -293,12 +285,10 @@ function update(args)
 		if data.holdingRight then
 			if not flip  then
 				-- forward
-				--v_x = data.Left_Right_Speed;
 				f_x = data.Forward_Force
 				a_x = f_x/data.m;
 			else
 				-- backward
-				--v_x = data.Reverse_Speed;
 				f_x = data.Reverse_Force
 				a_x = f_x/data.m;
 			end
@@ -332,25 +322,7 @@ function update(args)
 			f_y = 0
 		end
 		
---[[
-		-- limit speed
-		if (data.v_y < data.Down_Speed_max) then
-			data.v_y = data.Down_Speed_max
-		end
-		if (data.v_y > data.Up_Speed_max) then
-			data.v_y = data.Up_Speed_max
-		end
-		if (data.v_x < data.Left_Right_Speed_max) then
-			data.v_x = data.Left_Right_Speed_max
-		end
-		if (data.v_x > data.Left_Right_Speed_max) then
-			data.v_x = data.Left_Right_Speed_max
-		end
-]]
-		
 		-- execute movement vector
-		--tech.xControl(v_x, a_x, false);
-		--tech.yControl(v_y, data.Hold_at_level_Force+a_y, false);
 		tech.xControl(data.v_x, math.abs(f_x), false); -- why is a_x to be used absolute???
 		tech.yControl(data.v_y, data.Hold_at_level_Force +f_y, false);		
 	end

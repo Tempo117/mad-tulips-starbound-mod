@@ -1,6 +1,5 @@
 {
 	"input": [
-		{"item": "humanMechTech-chip","count": 1},
 		{"item": "madtulip_hylotl_ftl_thruster","count": 1},
 		{"item": "madtulip_hylotl_stabilization_thruster","count": 2},
 		{"item": "madtulip_hylotl_gyro_stabilizer","count": 1},

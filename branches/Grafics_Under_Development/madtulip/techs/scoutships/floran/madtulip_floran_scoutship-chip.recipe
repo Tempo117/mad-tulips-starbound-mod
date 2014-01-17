@@ -1,6 +1,5 @@
 {
 	"input": [
-		{"item": "humanMechTech-chip","count": 1},
 		{"item": "madtulip_floran_ftl_thruster","count": 1},
 		{"item": "madtulip_floran_stabilization_thruster","count": 2},
 		{"item": "madtulip_floran_gyro_stabilizer","count": 1},
