@@ -9,5 +9,5 @@
     "item" : "madtulip_glitch_ship_comms",
     "count" : 1
   },
-  "groups" : [ "madtulip_shipstation", "all", "objects" ]
+  "groups" : [ "madtulip_shipstation", "all", "objects" ,"glitch"]
 }

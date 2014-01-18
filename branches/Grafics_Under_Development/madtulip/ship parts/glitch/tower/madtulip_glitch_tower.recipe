@@ -8,5 +8,5 @@
     "item" : "madtulip_glitch_tower",
     "count" : 1
   },
-  "groups" : [ "madtulip_shipstation", "all", "objects" ]
+  "groups" : [ "madtulip_shipstation", "all", "objects" ,"glitch"]
 }

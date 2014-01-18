@@ -10,5 +10,5 @@
     "item" : "madtulip_human_ftl_thruster",
     "count" : 1
   },
-  "groups" : [ "madtulip_shipstation", "all", "objects" ]
+  "groups" : [ "madtulip_shipstation", "all", "objects" ,"human"]
 }

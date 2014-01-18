@@ -1,0 +1,4 @@
+- icon in top left corner when openen ship station
+- icons for the filters - that wooded chair just doesnt fit
+- gravity tech chip doesnt unlock with tier1 as buildable
+- replace all button icons in shipstation folder with something usefull

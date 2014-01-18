@@ -8,5 +8,5 @@
     "item" : "madtulip_status_monitor",
     "count" : 1
   },
-  "groups" : [ "madtulip_shipstation", "all", "systems" ]
+  "groups" : [ "madtulip_shipstation", "all" ,"generic"]
 }

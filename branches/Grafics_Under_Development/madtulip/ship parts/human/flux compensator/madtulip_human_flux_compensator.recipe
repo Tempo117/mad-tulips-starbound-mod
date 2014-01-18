@@ -7,5 +7,5 @@
     "item" : "madtulip_human_flux_compensator",
     "count" : 1
   },
-  "groups" : [ "madtulip_shipstation", "all", "objects" ]
+  "groups" : [ "madtulip_shipstation", "all", "objects" ,"human"]
 }

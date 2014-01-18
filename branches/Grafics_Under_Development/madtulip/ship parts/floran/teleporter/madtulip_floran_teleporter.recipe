@@ -9,5 +9,5 @@
     "item" : "madtulip_floran_teleporter",
     "count" : 1
   },
-  "groups" : [ "madtulip_shipstation", "all", "systems" ]
+  "groups" : [ "madtulip_shipstation", "all", "systems", "floran" ]
 }

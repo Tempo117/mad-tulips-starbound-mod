@@ -10,5 +10,5 @@
     "item" : "madtulip_human_engine_core",
     "count" : 1
   },
-  "groups" : [ "madtulip_shipstation", "all", "objects" ]
+  "groups" : [ "madtulip_shipstation", "all", "objects" ,"generic"]
 }

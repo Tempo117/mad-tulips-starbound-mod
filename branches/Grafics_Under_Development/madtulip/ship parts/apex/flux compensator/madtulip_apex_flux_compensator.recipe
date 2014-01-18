@@ -7,5 +7,5 @@
     "item" : "madtulip_apex_flux_compensator",
     "count" : 1
   },
-  "groups" : [ "madtulip_shipstation", "all", "objects" ]
+  "groups" : [ "madtulip_shipstation", "all", "objects","apex" ]
 }

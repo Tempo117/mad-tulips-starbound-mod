@@ -8,5 +8,5 @@
     "item" : "madtulip_floran_blossoming_cannon",
     "count" : 1
   },
-  "groups" : [ "madtulip_shipstation", "all", "objects" ]
+  "groups" : [ "madtulip_shipstation", "all", "objects","floran" ]
 }
