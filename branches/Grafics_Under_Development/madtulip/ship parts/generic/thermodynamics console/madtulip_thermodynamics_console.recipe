@@ -1,11 +1,11 @@
 {
   "input" : [
     { "item" : "madtulip_polymer", "count" : 2 },
-    { "item" : "steelbar", "count" : 3 },
-	{ "item" : "money", "count" : 150 }
+    { "item" : "titaniumbar", "count" : 2 },
+	{ "item" : "money", "count" : 100 }
   ],
   "output" : {
-    "item" : "madtulip_floran_shipdoor",
+    "item" : "madtulip_thermodynamics_console",
     "count" : 1
   },
   "groups" : [ "madtulip_shipstation", "all", "objects" ]
