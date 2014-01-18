@@ -6,5 +6,5 @@
     "item" : "madtulip_glass_tileset",
     "count" : 2
   },
-  "groups" : [ "madtulip_shipstation", "all", "materials" ]
+  "groups" : [ "madtulip_shipstation", "all", "hull" ]
 }
