@@ -3,7 +3,7 @@
 	"rarity": "Legendary",
 	"inventoryIcon": "/techs/scoutships/scoutship_icon.png",
 	"description": "Spawn a floran scoutship and have fun.",
-	"shortdescription": "floran Scoutship",
+	"shortdescription": "Floran Scoutship",
 	"inspectionKind": "tech",
 
 	"techModule": "madtulip_floran_scoutship.tech"
