@@ -3,7 +3,7 @@
 	"rarity" : "Common",
 	"objectType" : "wire",
 	"description" : "This one goes PEW PEW!",
-	"shortdescription" : "Missile Launcher",
+	"shortdescription" : "Human Missile Launcher",
 	"race" : "generic",
 	"category" : "decorative",
 	"price" : "10",

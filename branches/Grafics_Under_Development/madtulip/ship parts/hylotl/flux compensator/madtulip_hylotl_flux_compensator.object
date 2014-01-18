@@ -2,7 +2,7 @@
   "objectName" : "madtulip_hylotl_flux_compensator",
   "rarity" : "Common",
   "description" : "Compensates for, well .. flux.",
-  "shortdescription" : "Flux Compensator",
+  "shortdescription" : "Hylotl Flux Compensator",
   "race" : "generic",
   "category" : "decorative",
   "price" : "10",

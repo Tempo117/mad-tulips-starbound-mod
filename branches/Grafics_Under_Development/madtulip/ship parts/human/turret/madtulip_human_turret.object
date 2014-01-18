@@ -3,7 +3,7 @@
 	"rarity" : "Common",
 	"objectType" : "wire",
 	"description" : "This one goes DAKKA DAKKA!",
-	"shortdescription" : "Support Gun Turret",
+	"shortdescription" : "Human Support Gun Turret",
 	"race" : "generic",
 	"category" : "decorative",
 	"price" : "10",

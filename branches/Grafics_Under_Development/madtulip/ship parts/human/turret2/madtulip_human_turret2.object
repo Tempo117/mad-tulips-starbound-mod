@@ -3,7 +3,7 @@
 	"rarity" : "Common",
 	"objectType" : "wire",
 	"description" : "This one goes DAKKA DAKKA!",
-	"shortdescription" : "Main Gun Turret",
+	"shortdescription" : "Human Main Gun Turret",
 	"race" : "generic",
 	"category" : "decorative",
 	"price" : "10",
