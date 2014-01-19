@@ -4,7 +4,7 @@
   "path" : ".",
   "dependencies" : ["Modules in a Box"],
   "metadata": {
-    "displayName" : "MadTulips Spaceship Mod",
+    "displayName" : "MadTulip`s Spaceship Mod",
     "author" : "HuggableCreep, MadTulip and TooManySecrets",
     "description" : "Spaceship block by block, objects like fins, space mechanics, tilesets, landable ships, flyable scout ships",
 	"MatIDs_used" : "21000 till 21200",

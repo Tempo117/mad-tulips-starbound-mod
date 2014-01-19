@@ -4,3 +4,16 @@
 - replace all button icons in shipstation folder with something usefull
 - debirs pixels over the thermodynamicsor the captains console to be removed
 - icons for the thermodynamics and captainsconsole are just dummies - replace please
+
+- Metal press
+-- the foot of it beeing diagonal doesnt realy look well on the ground. so this needs adjustment
+-- when it loops the ore just apears and the plate just vanishes
+--- there should be a ore displenser box on the left side and a plate containment on the right side.
+    the ore should fall out of the dispenser and the plate vanish in the containment so that no such
+    apearing or disappearing of ore and plate happens and it looks more liek a continious projess.
+    the whole press can wenn be 3 tims as broad for that as long as it looks smooth imo.
+
+- costs for all platings need to be adjusted
+- maybe not all variants of the platings will be needed for now we can just uncomment the recipes.
+  i thought better have them all in for now so we can decide that later.
+- all other objects like fins recipes need to be adjusted to use those plates.
