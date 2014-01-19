@@ -20,7 +20,7 @@
     {
       "dualImage" : "madtulip_metal_press.png:<color>.<frame>",
       "imagePosition" : [-16, -24],
-      "frames" : 51,
+      "frames" : 56,
       "animationCycle" : 2,
 
       "spaceScan" : 0.1,
