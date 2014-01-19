@@ -1,0 +1,10 @@
+{
+  "input" : [
+	{ "item" : "Violiumbar", "count" : 2 }
+  ],
+  "output" : {
+    "item" : "madtulip_tier_violium_plating_2",
+    "count" : 1
+  },
+  "groups" : ["madtulip_metal_press", "all", "tier_plating" ]
+}

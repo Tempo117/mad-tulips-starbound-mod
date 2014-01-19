@@ -1,0 +1,10 @@
+{
+  "input" : [
+	{ "item" : "Feroziumbar", "count" : 2 }
+  ],
+  "output" : {
+    "item" : "madtulip_tier_ferozium_plating_3",
+    "count" : 1
+  },
+  "groups" : ["madtulip_metal_press", "all", "tier_plating" ]
+}

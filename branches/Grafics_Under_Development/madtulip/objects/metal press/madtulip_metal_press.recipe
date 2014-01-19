@@ -1,0 +1,12 @@
+{
+  "input" : [
+    { "item" : "madtulip_polymer", "count" : 5 },
+    { "item" : "titaniumbar", "count" : 5 },
+	{ "item" : "money", "count" : 500 }
+  ],
+  "output" : {
+    "item" : "madtulip_metal_press",
+    "count" : 1
+  },
+  "groups" : [ "madtulip_shipstation_press", "all", "systems" ]
+}
