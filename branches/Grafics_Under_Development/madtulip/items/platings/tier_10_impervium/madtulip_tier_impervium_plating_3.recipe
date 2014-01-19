@@ -1,6 +1,8 @@
 {
   "input" : [
-	{ "item" : "imperviumbar", "count" : 2 }
+	{ "item" : "madtulip_tier_impervium_plating_1", "count" : 1 },
+	{ "item" : "madtulip_tier_impervium_plating_2", "count" : 1 },
+	{ "item" : "solariumore", "count" : 1 }
   ],
   "output" : {
     "item" : "madtulip_tier_impervium_plating_3",

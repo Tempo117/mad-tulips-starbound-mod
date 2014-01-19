@@ -1,6 +1,8 @@
 {
   "input" : [
-	{ "item" : "steelbar", "count" : 2 }
+	{ "item" : "madtulip_tier_steel_plating_1", "count" : 1 },
+	{ "item" : "madtulip_tier_steel_plating_2", "count" : 1 },
+	{ "item" : "coalore", "count" : 1 }
   ],
   "output" : {
     "item" : "madtulip_tier_steel_plating_3",

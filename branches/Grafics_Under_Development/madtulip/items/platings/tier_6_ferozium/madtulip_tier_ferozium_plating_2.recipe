@@ -1,6 +1,7 @@
 {
   "input" : [
-	{ "item" : "Feroziumbar", "count" : 2 }
+	{ "item" : "madtulip_tier_ferozium_plating_1", "count" : 2 },
+	{ "item" : "madtulip_polymer", "count" : 1 }
   ],
   "output" : {
     "item" : "madtulip_tier_ferozium_plating_2",
