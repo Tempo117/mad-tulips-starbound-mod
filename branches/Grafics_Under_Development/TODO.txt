@@ -1,29 +1,36 @@
-- icon in top left corner when openen ship station
-- icons for the filters - that wooded chair just doesnt fit
-- gravity tech chip doesnt unlock with tier1 as buildable
-- replace the remaining button icons in shipstation folder with something usefull
-- icons for the thermodynamics and captainsconsole are just dummies - replace please
+General
 
-- Metal press
+- gravity tech chip doesn’t unlock with tier1 as buildable
 
--- upper left corner crafting menue icon needs to be created
+Ship Station
+- icon in top left corner when opening ship station
+- icons for the filters ( one or two left )
+- replace the remaining button icons in shipstation folder with something useful
 
-*WIP* (could be better)
-crafting menue icons for race or tiered platings may need to be changed eventually
-
-*Wip* (looks like we may need convayor belt) (thinking about using pixel compressor texture variant)
-there should be a ore displenser box on the left side and a plate containment on the right side.
-the ore should fall out of the dispenser and the plate vanish in the containment so that no such
-apearing or disappearing of ore and plate happens and it looks more liek a continious projess.
-the whole press can wenn be 3 tims as broad for that as long as it looks smooth imo.
+Metal press
+-- upper left corner crafting menu icon needs to be created
 
 - cost for all platings need to be thought about
+~ instead of the coal in the heavy steel plating and the heavy durrasteel plating silver and gold ore should be used.
+
 - maybe not all variants of the platings will be needed for now we can just uncomment the recipes.
   i thought better have them all in for now so we can decide that later.
+
 - all other objects like fins recipes need to be adjusted to use those plates.
 
 ~ plates based off alloy's may bring up the question "will you make shipparts/ hull variants for them"
-We may be able to get lazy for the tilesets but for the ship parts that may take much longer if we decide to make completly new ones.
+We may be able to get lazy for the tilesets but for the ship parts that may take much longer if we decide to make completely new ones.
+
+*WIP* Pretty much done with crafting menu icons for metal press (may need to be changed eventually)
+
+*WIP* Metal press good for now ( later I will add conveyor belt based off pixel compressor)
+
+Mod Support
+
+~ after we get the new materials and teiring finished I’d like to support this mod : http://community.playstarbound.com/index.php?resources/novakid.983/
+
+~ the nova kids race actually is suppoded to be added in by chuckle fish eventually but, better create th content before chuckle fish goes and makes then in vannilla
+
 
 
 
