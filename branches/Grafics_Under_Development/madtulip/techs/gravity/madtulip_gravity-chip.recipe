@@ -3,7 +3,7 @@
 		{ "item" : "money", "count" : 10 }
 	],
 	"output": {
-		"item" : "madtulip_gravitytech-chip",
+		"item" : "madtulip_gravity-chip",
 		"count": 1
 	},
 	"groups" : [ "madtulip_shipstation", "all", "tech" ]

@@ -1,7 +1,7 @@
 {
   "input" : [ ],
   "output" : {
-    "item" : "madtulip_gravitytech",
+    "item" : "madtulip_gravity",
     "count" : 1
   },
   "groups" : [ "tech" ]

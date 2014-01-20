@@ -1,9 +1,9 @@
 {
-  "itemName" : "madtulip_gravitytech",
+  "itemName" : "madtulip_gravity",
   "rarity" : "Legendary",
-  "inventoryIcon" : "madtulip_gravity_tech_icon.png",
-  "description" : "Unlocked the Ship Tech.",
-  "shortdescription" : "Ship Tech",
+  "inventoryIcon" : "madtulip_gravity_icon.png",
+  "description" : "Unlockes the ZERO-Gravity tech.",
+  "shortdescription" : "ZERO-Gravity Tech",
   "inspectionKind" : "tech",
 
   "techModule" : "madtulip_gravity.tech"
