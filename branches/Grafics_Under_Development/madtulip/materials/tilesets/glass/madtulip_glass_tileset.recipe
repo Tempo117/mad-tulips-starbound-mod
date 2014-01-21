@@ -4,7 +4,7 @@
   ],
   "output" : {
     "item" : "madtulip_glass_tileset",
-    "count" : 5
+    "count" : 4
   },
-  "groups" : [ "madtulip_shipstation", "all", "hull" ]
+  "groups" : [ "madtulip_metal_press", "all", "tileset" ]
 }
