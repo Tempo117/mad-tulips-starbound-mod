@@ -3055,3 +3055,1349 @@
 [10:44:51 281] Completed loading part madtulip_dropshipblocks.png
 [10:44:51 281] Completed parsing C:\Users\malte\Desktop\!mods\Grafics_Under_Development\toolset\Ships\human ship\madtulip_dropship.structure
 [10:45:04 151] Saving settings.json
+[23:18:26 280] Saving settings.json
+[23:18:44 176] Parsing D:\Program Files (x86)\Steam\steamapps\common\Starbound\mods\madtulip\ships\hylotl\madtulip_hylotl_ship.structure
+[23:18:44 208]   Parsing 173 brushes
+[23:18:44 209] Populating asset list with assets from D:\Program Files (x86)\Steam\steamapps\common\Starbound\assets
+[23:18:44 618] Populating asset list with assets from D:\Program Files (x86)\Steam\steamapps\common\Starbound\mods
+[23:18:44 643] Loading asset apexshipwall of type front
+[23:18:44 651]   Image loaded at D:\Program Files (x86)\Steam\steamapps\common\Starbound\assets\tiles\materials\apexshipwall.png
+[23:18:44 651] Loading asset steelplatform of type front
+[23:18:44 658]   Image loaded at D:\Program Files (x86)\Steam\steamapps\common\Starbound\assets\tiles\platforms\steelplatform.png
+[23:18:44 658] Loading asset apexshipdetails of type front
+[23:18:44 660]   Image loaded at D:\Program Files (x86)\Steam\steamapps\common\Starbound\assets\tiles\materials\apexshipdetails.png
+[23:18:44 660] Loading asset apexshipsupport of type front
+[23:18:44 662]   Image loaded at D:\Program Files (x86)\Steam\steamapps\common\Starbound\assets\tiles\materials\apexshipsupport.png
+[23:18:44 662] Loading asset glass of type front
+[23:18:44 664]   Image loaded at D:\Program Files (x86)\Steam\steamapps\common\Starbound\assets\tiles\materials\glass.png
+[23:18:44 664] Loading asset madtulip_apex_ftl_thruster of type object
+[23:18:44 687]   Image loaded at D:\Program Files (x86)\Steam\steamapps\common\Starbound\mods\madtulip\ship parts\apex\ftl thruster\madtulip_apex_ftl_thruster.png
+[23:18:44 687] Loading asset madtulip_avian_ftl_thruster of type object
+[23:18:44 691]   Image loaded at D:\Program Files (x86)\Steam\steamapps\common\Starbound\mods\madtulip\ship parts\avian\ftl thruster\madtulip_avian_ftl_thruster.png
+[23:18:44 691] Loading asset madtulip_floran_ftl_thruster of type object
+[23:18:44 696]   Image loaded at D:\Program Files (x86)\Steam\steamapps\common\Starbound\mods\madtulip\ship parts\floran\ftl thruster\madtulip_floran_ftl_thruster.png
+[23:18:44 696] Loading asset madtulip_glitch_ftl_thruster of type object
+[23:18:44 700]   Image loaded at D:\Program Files (x86)\Steam\steamapps\common\Starbound\mods\madtulip\ship parts\glitch\ftl thruster\madtulip_glitch_ftl_thruster.png
+[23:18:44 700] Loading asset madtulip_human_ftl_thruster of type object
+[23:18:44 707]   Image loaded at D:\Program Files (x86)\Steam\steamapps\common\Starbound\mods\madtulip\ship parts\human\ftl thruster\madtulip_human_ftl_thruster.png
+[23:18:44 707] Loading asset madtulip_hylotl_ftl_thruster of type object
+[23:18:44 712]   Image loaded at D:\Program Files (x86)\Steam\steamapps\common\Starbound\mods\madtulip\ship parts\hylotl\ftl thruster\madtulip_hylotl_ftl_thruster.png
+[23:18:44 712] Loading asset madtulip_apex_stabilization_thruster of type object
+[23:18:44 716]   Image loaded at D:\Program Files (x86)\Steam\steamapps\common\Starbound\mods\madtulip\ship parts\apex\stabilization thruster\madtulip_apex_bottom_stabilization_thruster.png
+[23:18:44 716] Loading asset madtulip_avian_stabilization_thruster of type object
+[23:18:44 720]   Image loaded at D:\Program Files (x86)\Steam\steamapps\common\Starbound\mods\madtulip\ship parts\avian\stabilization_thruster\madtulip_avian_bottom_stabilization_thruster.png
+[23:18:44 721] Loading asset madtulip_floran_stabilization_thruster of type object
+[23:18:44 724]   Image loaded at D:\Program Files (x86)\Steam\steamapps\common\Starbound\mods\madtulip\ship parts\floran\stabilization thruster\madtulip_floran_stabilization_thruster.png
+[23:18:44 724] Loading asset madtulip_glitch_stabilization_thruster of type object
+[23:18:44 728]   Image loaded at D:\Program Files (x86)\Steam\steamapps\common\Starbound\mods\madtulip\ship parts\glitch\stabilization thruster\madtulip_glitch_stabilization_thruster.png
+[23:18:44 728] Loading asset madtulip_human_stabilization_thruster of type object
+[23:18:44 732]   Image loaded at D:\Program Files (x86)\Steam\steamapps\common\Starbound\mods\madtulip\ship parts\human\stabilization thruster\madtulip_human_bottom_stabilization_thruster.png
+[23:18:44 732] Loading asset madtulip_hylotl_stabilization_thruster of type object
+[23:18:44 735]   Image loaded at D:\Program Files (x86)\Steam\steamapps\common\Starbound\mods\madtulip\ship parts\hylotl\stabilization thruster\madtulip_hylotl_stabilization_thruster.png
+[23:18:44 735] Loading asset madtulip_apex_gyro_stabilizer of type object
+[23:18:44 739]   Image loaded at D:\Program Files (x86)\Steam\steamapps\common\Starbound\mods\madtulip\ship parts\apex\gyro stabilizer\madtulip_apex_top_gyro_stabilizer.png
+[23:18:44 741]   Image loaded at D:\Program Files (x86)\Steam\steamapps\common\Starbound\mods\madtulip\ship parts\apex\gyro stabilizer\madtulip_apex_bottom_gyro_stabilizer.png
+[23:18:44 741] Loading asset madtulip_avian_gyro_stabilizer of type object
+[23:18:44 744]   Image loaded at D:\Program Files (x86)\Steam\steamapps\common\Starbound\mods\madtulip\ship parts\avian\gyro stabilizer\madtulip_avian_top_gyro_stabilizer.png
+[23:18:44 747]   Image loaded at D:\Program Files (x86)\Steam\steamapps\common\Starbound\mods\madtulip\ship parts\avian\gyro stabilizer\madtulip_avian_bottom_gyro_stabilizer.png
+[23:18:44 747] Loading asset madtulip_floran_gyro_stabilizer of type object
+[23:18:44 750]   Image loaded at D:\Program Files (x86)\Steam\steamapps\common\Starbound\mods\madtulip\ship parts\floran\gyro stabilizer\madtulip_floran_top_gyro_stabilizer.png
+[23:18:44 752]   Image loaded at D:\Program Files (x86)\Steam\steamapps\common\Starbound\mods\madtulip\ship parts\floran\gyro stabilizer\madtulip_floran_bottom_gyro_stabilizer.png
+[23:18:44 752] Loading asset madtulip_glitch_gyro_stabilizer of type object
+[23:18:44 756]   Image loaded at D:\Program Files (x86)\Steam\steamapps\common\Starbound\mods\madtulip\ship parts\glitch\gyro_stabilizer\madtulip_glitch_top_gyro_stabilizer.png
+[23:18:44 759]   Image loaded at D:\Program Files (x86)\Steam\steamapps\common\Starbound\mods\madtulip\ship parts\glitch\gyro_stabilizer\madtulip_glitch_bottom_gyro_stabilizer.png
+[23:18:44 759] Loading asset madtulip_human_gyro_stabilizer of type object
+[23:18:44 762]   Image loaded at D:\Program Files (x86)\Steam\steamapps\common\Starbound\mods\madtulip\ship parts\human\gyro stabilizer\madtulip_human_top_gyro_stabilizer.png
+[23:18:44 764]   Image loaded at D:\Program Files (x86)\Steam\steamapps\common\Starbound\mods\madtulip\ship parts\human\gyro stabilizer\madtulip_human_bottom_gyro_stabilizer.png
+[23:18:44 764] Loading asset madtulip_hylotl_gyro_stabilizer of type object
+[23:18:44 768]   Image loaded at D:\Program Files (x86)\Steam\steamapps\common\Starbound\mods\madtulip\ship parts\hylotl\gyro stabilizer\madtulip_hylotl_top_gyro_stabilizer.png
+[23:18:44 770]   Image loaded at D:\Program Files (x86)\Steam\steamapps\common\Starbound\mods\madtulip\ship parts\hylotl\gyro stabilizer\madtulip_hylotl_bottom_gyro_stabilizer.png
+[23:18:44 770] Loading asset madtulip_apex_large_fin of type object
+[23:18:44 773]   Image loaded at D:\Program Files (x86)\Steam\steamapps\common\Starbound\mods\madtulip\ship parts\apex\large fin\madtulip_apex_top_large_fin.png
+[23:18:44 775]   Image loaded at D:\Program Files (x86)\Steam\steamapps\common\Starbound\mods\madtulip\ship parts\apex\large fin\madtulip_apex_bottom_large_fin.png
+[23:18:44 775] Loading asset madtulip_avian_large_fin of type object
+[23:18:44 779]   Image loaded at D:\Program Files (x86)\Steam\steamapps\common\Starbound\mods\madtulip\ship parts\avian\large fin\madtulip_avian_top_large_fin.png
+[23:18:44 781]   Image loaded at D:\Program Files (x86)\Steam\steamapps\common\Starbound\mods\madtulip\ship parts\avian\large fin\madtulip_avian_bottom_large_fin.png
+[23:18:44 781] Loading asset madtulip_human_large_fin of type object
+[23:18:44 786]   Image loaded at D:\Program Files (x86)\Steam\steamapps\common\Starbound\mods\madtulip\ship parts\human\large fin\madtulip_human_top_large_fin.png
+[23:18:44 790]   Image loaded at D:\Program Files (x86)\Steam\steamapps\common\Starbound\mods\madtulip\ship parts\human\large fin\madtulip_human_bottom_large_fin.png
+[23:18:44 790] Loading asset madtulip_hylotl_large_fin of type object
+[23:18:44 794]   Image loaded at D:\Program Files (x86)\Steam\steamapps\common\Starbound\mods\madtulip\ship parts\hylotl\large fin\madtulip_hylotl_top_large_fin.png
+[23:18:44 796]   Image loaded at D:\Program Files (x86)\Steam\steamapps\common\Starbound\mods\madtulip\ship parts\hylotl\large fin\madtulip_hylotl_bottom_large_fin.png
+[23:18:44 796] Loading asset madtulip_shipdoor of type object
+[23:18:44 800]   Image loaded at D:\Program Files (x86)\Steam\steamapps\common\Starbound\mods\madtulip\ship parts\generic\shipdoor\madtulip_shipdoor.png
+[23:18:44 800] Loading asset madtulip_avian_shipdoor of type object
+[23:18:44 803]   Image loaded at D:\Program Files (x86)\Steam\steamapps\common\Starbound\mods\madtulip\ship parts\avian\avian shipdoor\madtulip_avian_shipdoor.png
+[23:18:44 803] Loading asset madtulip_floran_shipdoor of type object
+[23:18:44 807]   Image loaded at D:\Program Files (x86)\Steam\steamapps\common\Starbound\mods\madtulip\ship parts\floran\floran shipdoor\madtulip_floran_shipdoor.png
+[23:18:44 807] Loading asset madtulip_hylotl_shipdoor of type object
+[23:18:44 810]   Image loaded at D:\Program Files (x86)\Steam\steamapps\common\Starbound\mods\madtulip\ship parts\hylotl\hylotl shipdoor\madtulip_hylotl_shipdoor.png
+[23:18:44 810] Loading asset madtulip_shiplocker of type object
+[23:18:44 813]   Image loaded at D:\Program Files (x86)\Steam\steamapps\common\Starbound\mods\madtulip\objects\shiplocker\madtulip_shiplocker.png
+[23:18:44 813] Loading asset madtulip_captainschair of type object
+[23:18:44 816]   Image loaded at D:\Program Files (x86)\Steam\steamapps\common\Starbound\mods\madtulip\objects\captainschair\madtulip_captainschair.png
+[23:18:44 816] Loading asset madtulip_techstation of type object
+[23:18:44 819]   Image loaded at D:\Program Files (x86)\Steam\steamapps\common\Starbound\mods\madtulip\objects\techstation\madtulip_techstation.png
+[23:18:44 819] Loading asset madtulip_shipstation of type object
+[23:18:44 823]   Image loaded at D:\Program Files (x86)\Steam\steamapps\common\Starbound\mods\madtulip\objects\ship station\madtulip_shipstation.png
+[23:18:44 823] Loading asset madtulip_shipnavigationconsole of type object
+[23:18:44 826]   Image loaded at D:\Program Files (x86)\Steam\steamapps\common\Starbound\mods\madtulip\ship parts\generic\ship navigation console\madtulip_shipnavigationconsole.png
+[23:18:44 826] Loading asset madtulip_vent of type object
+[23:18:44 829]   Image loaded at D:\Program Files (x86)\Steam\steamapps\common\Starbound\mods\madtulip\objects\life support vent\madtulip_vent_green.png
+[23:18:44 829] Loading asset madtulip_fuelhatch of type object
+[23:18:44 832]   Image loaded at D:\Program Files (x86)\Steam\steamapps\common\Starbound\mods\madtulip\objects\fuelhatch\madtulip_fuelhatch.png
+[23:18:44 832] Loading asset madtulip_shiplight of type object
+[23:18:44 835]   Image loaded at D:\Program Files (x86)\Steam\steamapps\common\Starbound\mods\madtulip\ship parts\generic\shiplight\madtulip_shiplight.png
+[23:18:44 835] Loading asset shipengine of type object
+[23:18:44 836] Loading asset madtulip_teleporter of type object
+[23:18:44 839]   Image loaded at D:\Program Files (x86)\Steam\steamapps\common\Starbound\mods\madtulip\ship parts\generic\teleporter\madtulip_teleporter.png
+[23:18:44 839] Loading asset madtulip_apex_bl of type back
+[23:18:44 841]   Image loaded at D:\Program Files (x86)\Steam\steamapps\common\Starbound\mods\madtulip\materials\tilesets\apex\madtulip_apex_bl.png
+[23:18:44 841] Loading asset madtulip_apex_blt of type back
+[23:18:44 842]   Image loaded at D:\Program Files (x86)\Steam\steamapps\common\Starbound\mods\madtulip\materials\tilesets\apex\madtulip_apex_blt.png
+[23:18:44 842] Loading asset madtulip_apex_br of type back
+[23:18:44 843]   Image loaded at D:\Program Files (x86)\Steam\steamapps\common\Starbound\mods\madtulip\materials\tilesets\apex\madtulip_apex_br.png
+[23:18:44 843] Loading asset madtulip_apex_default of type back
+[23:18:44 844]   Image loaded at D:\Program Files (x86)\Steam\steamapps\common\Starbound\mods\madtulip\materials\tilesets\apex\madtulip_apex_default.png
+[23:18:44 844] Loading asset madtulip_apex_lr of type back
+[23:18:44 846]   Image loaded at D:\Program Files (x86)\Steam\steamapps\common\Starbound\mods\madtulip\materials\tilesets\apex\madtulip_apex_lr.png
+[23:18:44 846] Loading asset madtulip_apex_ltr of type back
+[23:18:44 847]   Image loaded at D:\Program Files (x86)\Steam\steamapps\common\Starbound\mods\madtulip\materials\tilesets\apex\madtulip_apex_ltr.png
+[23:18:44 847] Loading asset madtulip_apex_rbl of type back
+[23:18:44 848]   Image loaded at D:\Program Files (x86)\Steam\steamapps\common\Starbound\mods\madtulip\materials\tilesets\apex\madtulip_apex_rbl.png
+[23:18:44 848] Loading asset madtulip_apex_tb of type back
+[23:18:44 850]   Image loaded at D:\Program Files (x86)\Steam\steamapps\common\Starbound\mods\madtulip\materials\tilesets\apex\madtulip_apex_tb.png
+[23:18:44 850] Loading asset madtulip_apex_tl of type back
+[23:18:44 851]   Image loaded at D:\Program Files (x86)\Steam\steamapps\common\Starbound\mods\madtulip\materials\tilesets\apex\madtulip_apex_tl.png
+[23:18:44 851] Loading asset madtulip_apex_tr of type back
+[23:18:44 852]   Image loaded at D:\Program Files (x86)\Steam\steamapps\common\Starbound\mods\madtulip\materials\tilesets\apex\madtulip_apex_tr.png
+[23:18:44 852] Loading asset madtulip_apex_trb of type back
+[23:18:44 854]   Image loaded at D:\Program Files (x86)\Steam\steamapps\common\Starbound\mods\madtulip\materials\tilesets\apex\madtulip_apex_trb.png
+[23:18:44 854] Loading asset madtulip_apex_trbl of type back
+[23:18:44 855]   Image loaded at D:\Program Files (x86)\Steam\steamapps\common\Starbound\mods\madtulip\materials\tilesets\apex\madtulip_apex_trbl.png
+[23:18:44 855] Loading asset madtulip_avian_bl of type back
+[23:18:44 857]   Image loaded at D:\Program Files (x86)\Steam\steamapps\common\Starbound\mods\madtulip\materials\tilesets\avian\madtulip_avian_bl.png
+[23:18:44 857] Loading asset madtulip_avian_blt of type back
+[23:18:44 858]   Image loaded at D:\Program Files (x86)\Steam\steamapps\common\Starbound\mods\madtulip\materials\tilesets\avian\madtulip_avian_blt.png
+[23:18:44 858] Loading asset madtulip_avian_br of type back
+[23:18:44 859]   Image loaded at D:\Program Files (x86)\Steam\steamapps\common\Starbound\mods\madtulip\materials\tilesets\avian\madtulip_avian_br.png
+[23:18:44 859] Loading asset madtulip_avian_default of type back
+[23:18:44 861]   Image loaded at D:\Program Files (x86)\Steam\steamapps\common\Starbound\mods\madtulip\materials\tilesets\avian\madtulip_avian_default.png
+[23:18:44 861] Loading asset madtulip_avian_lr of type back
+[23:18:44 862]   Image loaded at D:\Program Files (x86)\Steam\steamapps\common\Starbound\mods\madtulip\materials\tilesets\avian\madtulip_avian_lr.png
+[23:18:44 862] Loading asset madtulip_avian_ltr of type back
+[23:18:44 863]   Image loaded at D:\Program Files (x86)\Steam\steamapps\common\Starbound\mods\madtulip\materials\tilesets\avian\madtulip_avian_ltr.png
+[23:18:44 863] Loading asset madtulip_avian_rbl of type back
+[23:18:44 865]   Image loaded at D:\Program Files (x86)\Steam\steamapps\common\Starbound\mods\madtulip\materials\tilesets\avian\madtulip_avian_rbl.png
+[23:18:44 865] Loading asset madtulip_avian_tb of type back
+[23:18:44 866]   Image loaded at D:\Program Files (x86)\Steam\steamapps\common\Starbound\mods\madtulip\materials\tilesets\avian\madtulip_avian_tb.png
+[23:18:44 866] Loading asset madtulip_avian_tl of type back
+[23:18:44 867]   Image loaded at D:\Program Files (x86)\Steam\steamapps\common\Starbound\mods\madtulip\materials\tilesets\avian\madtulip_avian_tl.png
+[23:18:44 867] Loading asset madtulip_avian_tr of type back
+[23:18:44 869]   Image loaded at D:\Program Files (x86)\Steam\steamapps\common\Starbound\mods\madtulip\materials\tilesets\avian\madtulip_avian_tr.png
+[23:18:44 869] Loading asset madtulip_avian_trb of type back
+[23:18:44 870]   Image loaded at D:\Program Files (x86)\Steam\steamapps\common\Starbound\mods\madtulip\materials\tilesets\avian\madtulip_avian_trb.png
+[23:18:44 870] Loading asset madtulip_avian_trbl of type back
+[23:18:44 871]   Image loaded at D:\Program Files (x86)\Steam\steamapps\common\Starbound\mods\madtulip\materials\tilesets\avian\madtulip_avian_trbl.png
+[23:18:44 871] Loading asset madtulip_floran_bl of type back
+[23:18:44 872]   Image loaded at D:\Program Files (x86)\Steam\steamapps\common\Starbound\mods\madtulip\materials\tilesets\floran\madtulip_floran_bl.png
+[23:18:44 872] Loading asset madtulip_floran_blt of type back
+[23:18:44 873]   Image loaded at D:\Program Files (x86)\Steam\steamapps\common\Starbound\mods\madtulip\materials\tilesets\floran\madtulip_floran_blt.png
+[23:18:44 874] Loading asset madtulip_floran_br of type back
+[23:18:44 875]   Image loaded at D:\Program Files (x86)\Steam\steamapps\common\Starbound\mods\madtulip\materials\tilesets\floran\madtulip_floran_br.png
+[23:18:44 875] Loading asset madtulip_floran_default of type back
+[23:18:44 876]   Image loaded at D:\Program Files (x86)\Steam\steamapps\common\Starbound\mods\madtulip\materials\tilesets\floran\madtulip_floran_default.png
+[23:18:44 876] Loading asset madtulip_floran_lr of type back
+[23:18:44 878]   Image loaded at D:\Program Files (x86)\Steam\steamapps\common\Starbound\mods\madtulip\materials\tilesets\floran\madtulip_floran_lr.png
+[23:18:44 878] Loading asset madtulip_floran_ltr of type back
+[23:18:44 879]   Image loaded at D:\Program Files (x86)\Steam\steamapps\common\Starbound\mods\madtulip\materials\tilesets\floran\madtulip_floran_ltr.png
+[23:18:44 879] Loading asset madtulip_floran_rbl of type back
+[23:18:44 881]   Image loaded at D:\Program Files (x86)\Steam\steamapps\common\Starbound\mods\madtulip\materials\tilesets\floran\madtulip_floran_rbl.png
+[23:18:44 881] Loading asset madtulip_floran_tb of type back
+[23:18:44 882]   Image loaded at D:\Program Files (x86)\Steam\steamapps\common\Starbound\mods\madtulip\materials\tilesets\floran\madtulip_floran_tb.png
+[23:18:44 882] Loading asset madtulip_floran_tl of type back
+[23:18:44 883]   Image loaded at D:\Program Files (x86)\Steam\steamapps\common\Starbound\mods\madtulip\materials\tilesets\floran\madtulip_floran_tl.png
+[23:18:44 883] Loading asset madtulip_floran_tr of type back
+[23:18:44 884]   Image loaded at D:\Program Files (x86)\Steam\steamapps\common\Starbound\mods\madtulip\materials\tilesets\floran\madtulip_floran_tr.png
+[23:18:44 884] Loading asset madtulip_floran_trb of type back
+[23:18:44 886]   Image loaded at D:\Program Files (x86)\Steam\steamapps\common\Starbound\mods\madtulip\materials\tilesets\floran\madtulip_floran_trb.png
+[23:18:44 886] Loading asset madtulip_floran_trbl of type back
+[23:18:44 887]   Image loaded at D:\Program Files (x86)\Steam\steamapps\common\Starbound\mods\madtulip\materials\tilesets\floran\madtulip_floran_trbl.png
+[23:18:44 887] Loading asset madtulip_glitch_bl of type back
+[23:18:44 888]   Image loaded at D:\Program Files (x86)\Steam\steamapps\common\Starbound\mods\madtulip\materials\tilesets\glitch\madtulip_glitch_bl.png
+[23:18:44 888] Loading asset madtulip_glitch_blt of type back
+[23:18:44 890]   Image loaded at D:\Program Files (x86)\Steam\steamapps\common\Starbound\mods\madtulip\materials\tilesets\glitch\madtulip_glitch_blt.png
+[23:18:44 890] Loading asset madtulip_glitch_br of type back
+[23:18:44 891]   Image loaded at D:\Program Files (x86)\Steam\steamapps\common\Starbound\mods\madtulip\materials\tilesets\glitch\madtulip_glitch_br.png
+[23:18:44 891] Loading asset madtulip_glitch_default of type back
+[23:18:44 893]   Image loaded at D:\Program Files (x86)\Steam\steamapps\common\Starbound\mods\madtulip\materials\tilesets\glitch\madtulip_glitch_default.png
+[23:18:44 893] Loading asset madtulip_glitch_lr of type back
+[23:18:44 894]   Image loaded at D:\Program Files (x86)\Steam\steamapps\common\Starbound\mods\madtulip\materials\tilesets\glitch\madtulip_glitch_lr.png
+[23:18:44 894] Loading asset madtulip_glitch_ltr of type back
+[23:18:44 896]   Image loaded at D:\Program Files (x86)\Steam\steamapps\common\Starbound\mods\madtulip\materials\tilesets\glitch\madtulip_glitch_ltr.png
+[23:18:44 896] Loading asset madtulip_glitch_rbl of type back
+[23:18:44 897]   Image loaded at D:\Program Files (x86)\Steam\steamapps\common\Starbound\mods\madtulip\materials\tilesets\glitch\madtulip_glitch_rbl.png
+[23:18:44 897] Loading asset madtulip_glitch_tb of type back
+[23:18:44 898]   Image loaded at D:\Program Files (x86)\Steam\steamapps\common\Starbound\mods\madtulip\materials\tilesets\glitch\madtulip_glitch_tb.png
+[23:18:44 898] Loading asset madtulip_glitch_tl of type back
+[23:18:44 899]   Image loaded at D:\Program Files (x86)\Steam\steamapps\common\Starbound\mods\madtulip\materials\tilesets\glitch\madtulip_glitch_tl.png
+[23:18:44 899] Loading asset madtulip_glitch_tr of type back
+[23:18:44 901]   Image loaded at D:\Program Files (x86)\Steam\steamapps\common\Starbound\mods\madtulip\materials\tilesets\glitch\madtulip_glitch_tr.png
+[23:18:44 901] Loading asset madtulip_glitch_trb of type back
+[23:18:44 902]   Image loaded at D:\Program Files (x86)\Steam\steamapps\common\Starbound\mods\madtulip\materials\tilesets\glitch\madtulip_glitch_trb.png
+[23:18:44 902] Loading asset madtulip_glitch_trbl of type back
+[23:18:44 903]   Image loaded at D:\Program Files (x86)\Steam\steamapps\common\Starbound\mods\madtulip\materials\tilesets\glitch\madtulip_glitch_trbl.png
+[23:18:44 903] Loading asset madtulip_human_bl of type back
+[23:18:44 905]   Image loaded at D:\Program Files (x86)\Steam\steamapps\common\Starbound\mods\madtulip\materials\tilesets\human\madtulip_human_bl.png
+[23:18:44 905] Loading asset madtulip_human_blt of type back
+[23:18:44 906]   Image loaded at D:\Program Files (x86)\Steam\steamapps\common\Starbound\mods\madtulip\materials\tilesets\human\madtulip_human_blt.png
+[23:18:44 906] Loading asset madtulip_human_br of type back
+[23:18:44 907]   Image loaded at D:\Program Files (x86)\Steam\steamapps\common\Starbound\mods\madtulip\materials\tilesets\human\madtulip_human_br.png
+[23:18:44 907] Loading asset madtulip_human_default of type back
+[23:18:44 908]   Image loaded at D:\Program Files (x86)\Steam\steamapps\common\Starbound\mods\madtulip\materials\tilesets\human\madtulip_human_default.png
+[23:18:44 908] Loading asset madtulip_human_lr of type back
+[23:18:44 910]   Image loaded at D:\Program Files (x86)\Steam\steamapps\common\Starbound\mods\madtulip\materials\tilesets\human\madtulip_human_lr.png
+[23:18:44 910] Loading asset madtulip_human_ltr of type back
+[23:18:44 911]   Image loaded at D:\Program Files (x86)\Steam\steamapps\common\Starbound\mods\madtulip\materials\tilesets\human\madtulip_human_ltr.png
+[23:18:44 911] Loading asset madtulip_human_rbl of type back
+[23:18:44 913]   Image loaded at D:\Program Files (x86)\Steam\steamapps\common\Starbound\mods\madtulip\materials\tilesets\human\madtulip_human_rbl.png
+[23:18:44 913] Loading asset madtulip_human_tb of type back
+[23:18:44 914]   Image loaded at D:\Program Files (x86)\Steam\steamapps\common\Starbound\mods\madtulip\materials\tilesets\human\madtulip_human_tb.png
+[23:18:44 914] Loading asset madtulip_human_tl of type back
+[23:18:44 916]   Image loaded at D:\Program Files (x86)\Steam\steamapps\common\Starbound\mods\madtulip\materials\tilesets\human\madtulip_human_tl.png
+[23:18:44 916] Loading asset madtulip_human_tr of type back
+[23:18:44 917]   Image loaded at D:\Program Files (x86)\Steam\steamapps\common\Starbound\mods\madtulip\materials\tilesets\human\madtulip_human_tr.png
+[23:18:44 917] Loading asset madtulip_human_trb of type back
+[23:18:44 918]   Image loaded at D:\Program Files (x86)\Steam\steamapps\common\Starbound\mods\madtulip\materials\tilesets\human\madtulip_human_trb.png
+[23:18:44 918] Loading asset madtulip_human_trbl of type back
+[23:18:44 919]   Image loaded at D:\Program Files (x86)\Steam\steamapps\common\Starbound\mods\madtulip\materials\tilesets\human\madtulip_human_trbl.png
+[23:18:44 919] Loading asset madtulip_hylotl_bl of type back
+[23:18:44 921]   Image loaded at D:\Program Files (x86)\Steam\steamapps\common\Starbound\mods\madtulip\materials\tilesets\hylotl\madtulip_hylotl_bl.png
+[23:18:44 921] Loading asset madtulip_hylotl_blt of type back
+[23:18:44 922]   Image loaded at D:\Program Files (x86)\Steam\steamapps\common\Starbound\mods\madtulip\materials\tilesets\hylotl\madtulip_hylotl_blt.png
+[23:18:44 922] Loading asset madtulip_hylotl_br of type back
+[23:18:44 923]   Image loaded at D:\Program Files (x86)\Steam\steamapps\common\Starbound\mods\madtulip\materials\tilesets\hylotl\madtulip_hylotl_br.png
+[23:18:44 923] Loading asset madtulip_hylotl_default of type back
+[23:18:44 924]   Image loaded at D:\Program Files (x86)\Steam\steamapps\common\Starbound\mods\madtulip\materials\tilesets\hylotl\madtulip_hylotl_default.png
+[23:18:44 924] Loading asset madtulip_hylotl_lr of type back
+[23:18:44 926]   Image loaded at D:\Program Files (x86)\Steam\steamapps\common\Starbound\mods\madtulip\materials\tilesets\hylotl\madtulip_hylotl_lr.png
+[23:18:44 926] Loading asset madtulip_hylotl_ltr of type back
+[23:18:44 927]   Image loaded at D:\Program Files (x86)\Steam\steamapps\common\Starbound\mods\madtulip\materials\tilesets\hylotl\madtulip_hylotl_ltr.png
+[23:18:44 927] Loading asset madtulip_hylotl_rbl of type back
+[23:18:44 929]   Image loaded at D:\Program Files (x86)\Steam\steamapps\common\Starbound\mods\madtulip\materials\tilesets\hylotl\madtulip_hylotl_rbl.png
+[23:18:44 929] Loading asset madtulip_hylotl_tb of type back
+[23:18:44 930]   Image loaded at D:\Program Files (x86)\Steam\steamapps\common\Starbound\mods\madtulip\materials\tilesets\hylotl\madtulip_hylotl_tb.png
+[23:18:44 930] Loading asset madtulip_hylotl_tl of type back
+[23:18:44 931]   Image loaded at D:\Program Files (x86)\Steam\steamapps\common\Starbound\mods\madtulip\materials\tilesets\hylotl\madtulip_hylotl_tl.png
+[23:18:44 931] Loading asset madtulip_hylotl_tr of type back
+[23:18:44 933]   Image loaded at D:\Program Files (x86)\Steam\steamapps\common\Starbound\mods\madtulip\materials\tilesets\hylotl\madtulip_hylotl_tr.png
+[23:18:44 933] Loading asset madtulip_hylotl_trb of type back
+[23:18:44 934]   Image loaded at D:\Program Files (x86)\Steam\steamapps\common\Starbound\mods\madtulip\materials\tilesets\hylotl\madtulip_hylotl_trb.png
+[23:18:44 934] Loading asset madtulip_hylotl_trbl of type back
+[23:18:44 935]   Image loaded at D:\Program Files (x86)\Steam\steamapps\common\Starbound\mods\madtulip\materials\tilesets\hylotl\madtulip_hylotl_trbl.png
+[23:18:44 935] Loading asset madtulip_glass_bl of type back
+[23:18:44 936]   Image loaded at D:\Program Files (x86)\Steam\steamapps\common\Starbound\mods\madtulip\materials\tilesets\glass\madtulip_glass_bl.png
+[23:18:44 936] Loading asset madtulip_glass_blt of type back
+[23:18:44 938]   Image loaded at D:\Program Files (x86)\Steam\steamapps\common\Starbound\mods\madtulip\materials\tilesets\glass\madtulip_glass_blt.png
+[23:18:44 938] Loading asset madtulip_glass_br of type back
+[23:18:44 939]   Image loaded at D:\Program Files (x86)\Steam\steamapps\common\Starbound\mods\madtulip\materials\tilesets\glass\madtulip_glass_br.png
+[23:18:44 939] Loading asset madtulip_glass_default of type back
+[23:18:44 941]   Image loaded at D:\Program Files (x86)\Steam\steamapps\common\Starbound\mods\madtulip\materials\tilesets\glass\madtulip_glass_default.png
+[23:18:44 941] Loading asset madtulip_glass_lr of type back
+[23:18:44 943]   Image loaded at D:\Program Files (x86)\Steam\steamapps\common\Starbound\mods\madtulip\materials\tilesets\glass\madtulip_glass_lr.png
+[23:18:44 943] Loading asset madtulip_glass_ltr of type back
+[23:18:44 944]   Image loaded at D:\Program Files (x86)\Steam\steamapps\common\Starbound\mods\madtulip\materials\tilesets\glass\madtulip_glass_ltr.png
+[23:18:44 944] Loading asset madtulip_glass_rbl of type back
+[23:18:44 945]   Image loaded at D:\Program Files (x86)\Steam\steamapps\common\Starbound\mods\madtulip\materials\tilesets\glass\madtulip_glass_rbl.png
+[23:18:44 945] Loading asset madtulip_glass_tb of type back
+[23:18:44 947]   Image loaded at D:\Program Files (x86)\Steam\steamapps\common\Starbound\mods\madtulip\materials\tilesets\glass\madtulip_glass_tb.png
+[23:18:44 947] Loading asset madtulip_glass_tl of type back
+[23:18:44 948]   Image loaded at D:\Program Files (x86)\Steam\steamapps\common\Starbound\mods\madtulip\materials\tilesets\glass\madtulip_glass_tl.png
+[23:18:44 948] Loading asset madtulip_glass_tr of type back
+[23:18:44 949]   Image loaded at D:\Program Files (x86)\Steam\steamapps\common\Starbound\mods\madtulip\materials\tilesets\glass\madtulip_glass_tr.png
+[23:18:44 949] Loading asset madtulip_glass_trb of type back
+[23:18:44 951]   Image loaded at D:\Program Files (x86)\Steam\steamapps\common\Starbound\mods\madtulip\materials\tilesets\glass\madtulip_glass_trb.png
+[23:18:44 951] Loading asset madtulip_glass_trbl of type back
+[23:18:44 952]   Image loaded at D:\Program Files (x86)\Steam\steamapps\common\Starbound\mods\madtulip\materials\tilesets\glass\madtulip_glass_trbl.png
+[23:18:44 953] Loading part madtulip_hylotl_ship_blocks.png
+[23:18:45 556]   Loading background overlay dummy.png
+[23:18:45 556]   Completed loading background overlay dummy.png
+[23:18:45 556] Completed loading part madtulip_hylotl_ship_blocks.png
+[23:18:45 556] Completed parsing D:\Program Files (x86)\Steam\steamapps\common\Starbound\mods\madtulip\ships\hylotl\madtulip_hylotl_ship.structure
+[23:23:52 610] Parsing D:\Program Files (x86)\Steam\steamapps\common\Starbound\mods\madtulip\ships\glitch\madtulip_glitch_ship.structure
+[23:23:52 612]   Parsing 173 brushes
+[23:23:52 612] Populating asset list with assets from D:\Program Files (x86)\Steam\steamapps\common\Starbound\assets
+[23:23:53 021] Populating asset list with assets from D:\Program Files (x86)\Steam\steamapps\common\Starbound\mods
+[23:23:53 039] Loading asset apexshipwall of type front
+[23:23:53 042]   Image loaded at D:\Program Files (x86)\Steam\steamapps\common\Starbound\assets\tiles\materials\apexshipwall.png
+[23:23:53 042] Loading asset steelplatform of type front
+[23:23:53 043]   Image loaded at D:\Program Files (x86)\Steam\steamapps\common\Starbound\assets\tiles\platforms\steelplatform.png
+[23:23:53 043] Loading asset apexshipdetails of type front
+[23:23:53 044]   Image loaded at D:\Program Files (x86)\Steam\steamapps\common\Starbound\assets\tiles\materials\apexshipdetails.png
+[23:23:53 044] Loading asset apexshipsupport of type front
+[23:23:53 046]   Image loaded at D:\Program Files (x86)\Steam\steamapps\common\Starbound\assets\tiles\materials\apexshipsupport.png
+[23:23:53 046] Loading asset glass of type front
+[23:23:53 047]   Image loaded at D:\Program Files (x86)\Steam\steamapps\common\Starbound\assets\tiles\materials\glass.png
+[23:23:53 047] Loading asset madtulip_apex_ftl_thruster of type object
+[23:23:53 051]   Image loaded at D:\Program Files (x86)\Steam\steamapps\common\Starbound\mods\madtulip\ship parts\apex\ftl thruster\madtulip_apex_ftl_thruster.png
+[23:23:53 051] Loading asset madtulip_avian_ftl_thruster of type object
+[23:23:53 056]   Image loaded at D:\Program Files (x86)\Steam\steamapps\common\Starbound\mods\madtulip\ship parts\avian\ftl thruster\madtulip_avian_ftl_thruster.png
+[23:23:53 056] Loading asset madtulip_floran_ftl_thruster of type object
+[23:23:53 060]   Image loaded at D:\Program Files (x86)\Steam\steamapps\common\Starbound\mods\madtulip\ship parts\floran\ftl thruster\madtulip_floran_ftl_thruster.png
+[23:23:53 060] Loading asset madtulip_glitch_ftl_thruster of type object
+[23:23:53 064]   Image loaded at D:\Program Files (x86)\Steam\steamapps\common\Starbound\mods\madtulip\ship parts\glitch\ftl thruster\madtulip_glitch_ftl_thruster.png
+[23:23:53 064] Loading asset madtulip_human_ftl_thruster of type object
+[23:23:53 069]   Image loaded at D:\Program Files (x86)\Steam\steamapps\common\Starbound\mods\madtulip\ship parts\human\ftl thruster\madtulip_human_ftl_thruster.png
+[23:23:53 069] Loading asset madtulip_hylotl_ftl_thruster of type object
+[23:23:53 074]   Image loaded at D:\Program Files (x86)\Steam\steamapps\common\Starbound\mods\madtulip\ship parts\hylotl\ftl thruster\madtulip_hylotl_ftl_thruster.png
+[23:23:53 074] Loading asset madtulip_apex_stabilization_thruster of type object
+[23:23:53 078]   Image loaded at D:\Program Files (x86)\Steam\steamapps\common\Starbound\mods\madtulip\ship parts\apex\stabilization thruster\madtulip_apex_bottom_stabilization_thruster.png
+[23:23:53 078] Loading asset madtulip_avian_stabilization_thruster of type object
+[23:23:53 082]   Image loaded at D:\Program Files (x86)\Steam\steamapps\common\Starbound\mods\madtulip\ship parts\avian\stabilization_thruster\madtulip_avian_bottom_stabilization_thruster.png
+[23:23:53 082] Loading asset madtulip_floran_stabilization_thruster of type object
+[23:23:53 086]   Image loaded at D:\Program Files (x86)\Steam\steamapps\common\Starbound\mods\madtulip\ship parts\floran\stabilization thruster\madtulip_floran_stabilization_thruster.png
+[23:23:53 086] Loading asset madtulip_glitch_stabilization_thruster of type object
+[23:23:53 090]   Image loaded at D:\Program Files (x86)\Steam\steamapps\common\Starbound\mods\madtulip\ship parts\glitch\stabilization thruster\madtulip_glitch_stabilization_thruster.png
+[23:23:53 090] Loading asset madtulip_human_stabilization_thruster of type object
+[23:23:53 094]   Image loaded at D:\Program Files (x86)\Steam\steamapps\common\Starbound\mods\madtulip\ship parts\human\stabilization thruster\madtulip_human_bottom_stabilization_thruster.png
+[23:23:53 094] Loading asset madtulip_hylotl_stabilization_thruster of type object
+[23:23:53 098]   Image loaded at D:\Program Files (x86)\Steam\steamapps\common\Starbound\mods\madtulip\ship parts\hylotl\stabilization thruster\madtulip_hylotl_stabilization_thruster.png
+[23:23:53 098] Loading asset madtulip_apex_gyro_stabilizer of type object
+[23:23:53 101]   Image loaded at D:\Program Files (x86)\Steam\steamapps\common\Starbound\mods\madtulip\ship parts\apex\gyro stabilizer\madtulip_apex_top_gyro_stabilizer.png
+[23:23:53 103]   Image loaded at D:\Program Files (x86)\Steam\steamapps\common\Starbound\mods\madtulip\ship parts\apex\gyro stabilizer\madtulip_apex_bottom_gyro_stabilizer.png
+[23:23:53 103] Loading asset madtulip_avian_gyro_stabilizer of type object
+[23:23:53 106]   Image loaded at D:\Program Files (x86)\Steam\steamapps\common\Starbound\mods\madtulip\ship parts\avian\gyro stabilizer\madtulip_avian_top_gyro_stabilizer.png
+[23:23:53 109]   Image loaded at D:\Program Files (x86)\Steam\steamapps\common\Starbound\mods\madtulip\ship parts\avian\gyro stabilizer\madtulip_avian_bottom_gyro_stabilizer.png
+[23:23:53 109] Loading asset madtulip_floran_gyro_stabilizer of type object
+[23:23:53 112]   Image loaded at D:\Program Files (x86)\Steam\steamapps\common\Starbound\mods\madtulip\ship parts\floran\gyro stabilizer\madtulip_floran_top_gyro_stabilizer.png
+[23:23:53 114]   Image loaded at D:\Program Files (x86)\Steam\steamapps\common\Starbound\mods\madtulip\ship parts\floran\gyro stabilizer\madtulip_floran_bottom_gyro_stabilizer.png
+[23:23:53 114] Loading asset madtulip_glitch_gyro_stabilizer of type object
+[23:23:53 118]   Image loaded at D:\Program Files (x86)\Steam\steamapps\common\Starbound\mods\madtulip\ship parts\glitch\gyro_stabilizer\madtulip_glitch_top_gyro_stabilizer.png
+[23:23:53 121]   Image loaded at D:\Program Files (x86)\Steam\steamapps\common\Starbound\mods\madtulip\ship parts\glitch\gyro_stabilizer\madtulip_glitch_bottom_gyro_stabilizer.png
+[23:23:53 121] Loading asset madtulip_human_gyro_stabilizer of type object
+[23:23:53 124]   Image loaded at D:\Program Files (x86)\Steam\steamapps\common\Starbound\mods\madtulip\ship parts\human\gyro stabilizer\madtulip_human_top_gyro_stabilizer.png
+[23:23:53 126]   Image loaded at D:\Program Files (x86)\Steam\steamapps\common\Starbound\mods\madtulip\ship parts\human\gyro stabilizer\madtulip_human_bottom_gyro_stabilizer.png
+[23:23:53 126] Loading asset madtulip_hylotl_gyro_stabilizer of type object
+[23:23:53 130]   Image loaded at D:\Program Files (x86)\Steam\steamapps\common\Starbound\mods\madtulip\ship parts\hylotl\gyro stabilizer\madtulip_hylotl_top_gyro_stabilizer.png
+[23:23:53 132]   Image loaded at D:\Program Files (x86)\Steam\steamapps\common\Starbound\mods\madtulip\ship parts\hylotl\gyro stabilizer\madtulip_hylotl_bottom_gyro_stabilizer.png
+[23:23:53 132] Loading asset madtulip_apex_large_fin of type object
+[23:23:53 136]   Image loaded at D:\Program Files (x86)\Steam\steamapps\common\Starbound\mods\madtulip\ship parts\apex\large fin\madtulip_apex_top_large_fin.png
+[23:23:53 138]   Image loaded at D:\Program Files (x86)\Steam\steamapps\common\Starbound\mods\madtulip\ship parts\apex\large fin\madtulip_apex_bottom_large_fin.png
+[23:23:53 138] Loading asset madtulip_avian_large_fin of type object
+[23:23:53 141]   Image loaded at D:\Program Files (x86)\Steam\steamapps\common\Starbound\mods\madtulip\ship parts\avian\large fin\madtulip_avian_top_large_fin.png
+[23:23:53 143]   Image loaded at D:\Program Files (x86)\Steam\steamapps\common\Starbound\mods\madtulip\ship parts\avian\large fin\madtulip_avian_bottom_large_fin.png
+[23:23:53 143] Loading asset madtulip_human_large_fin of type object
+[23:23:53 149]   Image loaded at D:\Program Files (x86)\Steam\steamapps\common\Starbound\mods\madtulip\ship parts\human\large fin\madtulip_human_top_large_fin.png
+[23:23:53 153]   Image loaded at D:\Program Files (x86)\Steam\steamapps\common\Starbound\mods\madtulip\ship parts\human\large fin\madtulip_human_bottom_large_fin.png
+[23:23:53 153] Loading asset madtulip_hylotl_large_fin of type object
+[23:23:53 157]   Image loaded at D:\Program Files (x86)\Steam\steamapps\common\Starbound\mods\madtulip\ship parts\hylotl\large fin\madtulip_hylotl_top_large_fin.png
+[23:23:53 159]   Image loaded at D:\Program Files (x86)\Steam\steamapps\common\Starbound\mods\madtulip\ship parts\hylotl\large fin\madtulip_hylotl_bottom_large_fin.png
+[23:23:53 159] Loading asset madtulip_shipdoor of type object
+[23:23:53 163]   Image loaded at D:\Program Files (x86)\Steam\steamapps\common\Starbound\mods\madtulip\ship parts\generic\shipdoor\madtulip_shipdoor.png
+[23:23:53 163] Loading asset madtulip_avian_shipdoor of type object
+[23:23:53 166]   Image loaded at D:\Program Files (x86)\Steam\steamapps\common\Starbound\mods\madtulip\ship parts\avian\avian shipdoor\madtulip_avian_shipdoor.png
+[23:23:53 166] Loading asset madtulip_floran_shipdoor of type object
+[23:23:53 169]   Image loaded at D:\Program Files (x86)\Steam\steamapps\common\Starbound\mods\madtulip\ship parts\floran\floran shipdoor\madtulip_floran_shipdoor.png
+[23:23:53 268] Loading asset madtulip_hylotl_shipdoor of type object
+[23:23:53 278]   Image loaded at D:\Program Files (x86)\Steam\steamapps\common\Starbound\mods\madtulip\ship parts\hylotl\hylotl shipdoor\madtulip_hylotl_shipdoor.png
+[23:23:53 278] Loading asset madtulip_shiplocker of type object
+[23:23:53 286]   Image loaded at D:\Program Files (x86)\Steam\steamapps\common\Starbound\mods\madtulip\objects\shiplocker\madtulip_shiplocker.png
+[23:23:53 286] Loading asset madtulip_captainschair of type object
+[23:23:53 293]   Image loaded at D:\Program Files (x86)\Steam\steamapps\common\Starbound\mods\madtulip\objects\captainschair\madtulip_captainschair.png
+[23:23:53 293] Loading asset madtulip_techstation of type object
+[23:23:53 299]   Image loaded at D:\Program Files (x86)\Steam\steamapps\common\Starbound\mods\madtulip\objects\techstation\madtulip_techstation.png
+[23:23:53 299] Loading asset madtulip_shipstation of type object
+[23:23:53 302]   Image loaded at D:\Program Files (x86)\Steam\steamapps\common\Starbound\mods\madtulip\objects\ship station\madtulip_shipstation.png
+[23:23:53 302] Loading asset madtulip_shipnavigationconsole of type object
+[23:23:53 305]   Image loaded at D:\Program Files (x86)\Steam\steamapps\common\Starbound\mods\madtulip\ship parts\generic\ship navigation console\madtulip_shipnavigationconsole.png
+[23:23:53 305] Loading asset madtulip_vent of type object
+[23:23:53 308]   Image loaded at D:\Program Files (x86)\Steam\steamapps\common\Starbound\mods\madtulip\objects\life support vent\madtulip_vent_green.png
+[23:23:53 308] Loading asset madtulip_fuelhatch of type object
+[23:23:53 311]   Image loaded at D:\Program Files (x86)\Steam\steamapps\common\Starbound\mods\madtulip\objects\fuelhatch\madtulip_fuelhatch.png
+[23:23:53 311] Loading asset madtulip_shiplight of type object
+[23:23:53 314]   Image loaded at D:\Program Files (x86)\Steam\steamapps\common\Starbound\mods\madtulip\ship parts\generic\shiplight\madtulip_shiplight.png
+[23:23:53 314] Loading asset shipengine of type object
+[23:23:53 315] Loading asset madtulip_teleporter of type object
+[23:23:53 318]   Image loaded at D:\Program Files (x86)\Steam\steamapps\common\Starbound\mods\madtulip\ship parts\generic\teleporter\madtulip_teleporter.png
+[23:23:53 318] Loading asset madtulip_apex_bl of type back
+[23:23:53 319]   Image loaded at D:\Program Files (x86)\Steam\steamapps\common\Starbound\mods\madtulip\materials\tilesets\apex\madtulip_apex_bl.png
+[23:23:53 319] Loading asset madtulip_apex_blt of type back
+[23:23:53 321]   Image loaded at D:\Program Files (x86)\Steam\steamapps\common\Starbound\mods\madtulip\materials\tilesets\apex\madtulip_apex_blt.png
+[23:23:53 321] Loading asset madtulip_apex_br of type back
+[23:23:53 322]   Image loaded at D:\Program Files (x86)\Steam\steamapps\common\Starbound\mods\madtulip\materials\tilesets\apex\madtulip_apex_br.png
+[23:23:53 322] Loading asset madtulip_apex_default of type back
+[23:23:53 323]   Image loaded at D:\Program Files (x86)\Steam\steamapps\common\Starbound\mods\madtulip\materials\tilesets\apex\madtulip_apex_default.png
+[23:23:53 323] Loading asset madtulip_apex_lr of type back
+[23:23:53 324]   Image loaded at D:\Program Files (x86)\Steam\steamapps\common\Starbound\mods\madtulip\materials\tilesets\apex\madtulip_apex_lr.png
+[23:23:53 324] Loading asset madtulip_apex_ltr of type back
+[23:23:53 326]   Image loaded at D:\Program Files (x86)\Steam\steamapps\common\Starbound\mods\madtulip\materials\tilesets\apex\madtulip_apex_ltr.png
+[23:23:53 326] Loading asset madtulip_apex_rbl of type back
+[23:23:53 327]   Image loaded at D:\Program Files (x86)\Steam\steamapps\common\Starbound\mods\madtulip\materials\tilesets\apex\madtulip_apex_rbl.png
+[23:23:53 327] Loading asset madtulip_apex_tb of type back
+[23:23:53 328]   Image loaded at D:\Program Files (x86)\Steam\steamapps\common\Starbound\mods\madtulip\materials\tilesets\apex\madtulip_apex_tb.png
+[23:23:53 328] Loading asset madtulip_apex_tl of type back
+[23:23:53 329]   Image loaded at D:\Program Files (x86)\Steam\steamapps\common\Starbound\mods\madtulip\materials\tilesets\apex\madtulip_apex_tl.png
+[23:23:53 329] Loading asset madtulip_apex_tr of type back
+[23:23:53 331]   Image loaded at D:\Program Files (x86)\Steam\steamapps\common\Starbound\mods\madtulip\materials\tilesets\apex\madtulip_apex_tr.png
+[23:23:53 331] Loading asset madtulip_apex_trb of type back
+[23:23:53 332]   Image loaded at D:\Program Files (x86)\Steam\steamapps\common\Starbound\mods\madtulip\materials\tilesets\apex\madtulip_apex_trb.png
+[23:23:53 332] Loading asset madtulip_apex_trbl of type back
+[23:23:53 333]   Image loaded at D:\Program Files (x86)\Steam\steamapps\common\Starbound\mods\madtulip\materials\tilesets\apex\madtulip_apex_trbl.png
+[23:23:53 333] Loading asset madtulip_avian_bl of type back
+[23:23:53 335]   Image loaded at D:\Program Files (x86)\Steam\steamapps\common\Starbound\mods\madtulip\materials\tilesets\avian\madtulip_avian_bl.png
+[23:23:53 335] Loading asset madtulip_avian_blt of type back
+[23:23:53 336]   Image loaded at D:\Program Files (x86)\Steam\steamapps\common\Starbound\mods\madtulip\materials\tilesets\avian\madtulip_avian_blt.png
+[23:23:53 336] Loading asset madtulip_avian_br of type back
+[23:23:53 337]   Image loaded at D:\Program Files (x86)\Steam\steamapps\common\Starbound\mods\madtulip\materials\tilesets\avian\madtulip_avian_br.png
+[23:23:53 337] Loading asset madtulip_avian_default of type back
+[23:23:53 339]   Image loaded at D:\Program Files (x86)\Steam\steamapps\common\Starbound\mods\madtulip\materials\tilesets\avian\madtulip_avian_default.png
+[23:23:53 339] Loading asset madtulip_avian_lr of type back
+[23:23:53 340]   Image loaded at D:\Program Files (x86)\Steam\steamapps\common\Starbound\mods\madtulip\materials\tilesets\avian\madtulip_avian_lr.png
+[23:23:53 340] Loading asset madtulip_avian_ltr of type back
+[23:23:53 341]   Image loaded at D:\Program Files (x86)\Steam\steamapps\common\Starbound\mods\madtulip\materials\tilesets\avian\madtulip_avian_ltr.png
+[23:23:53 341] Loading asset madtulip_avian_rbl of type back
+[23:23:53 342]   Image loaded at D:\Program Files (x86)\Steam\steamapps\common\Starbound\mods\madtulip\materials\tilesets\avian\madtulip_avian_rbl.png
+[23:23:53 342] Loading asset madtulip_avian_tb of type back
+[23:23:53 344]   Image loaded at D:\Program Files (x86)\Steam\steamapps\common\Starbound\mods\madtulip\materials\tilesets\avian\madtulip_avian_tb.png
+[23:23:53 344] Loading asset madtulip_avian_tl of type back
+[23:23:53 345]   Image loaded at D:\Program Files (x86)\Steam\steamapps\common\Starbound\mods\madtulip\materials\tilesets\avian\madtulip_avian_tl.png
+[23:23:53 345] Loading asset madtulip_avian_tr of type back
+[23:23:53 346]   Image loaded at D:\Program Files (x86)\Steam\steamapps\common\Starbound\mods\madtulip\materials\tilesets\avian\madtulip_avian_tr.png
+[23:23:53 346] Loading asset madtulip_avian_trb of type back
+[23:23:53 348]   Image loaded at D:\Program Files (x86)\Steam\steamapps\common\Starbound\mods\madtulip\materials\tilesets\avian\madtulip_avian_trb.png
+[23:23:53 348] Loading asset madtulip_avian_trbl of type back
+[23:23:53 349]   Image loaded at D:\Program Files (x86)\Steam\steamapps\common\Starbound\mods\madtulip\materials\tilesets\avian\madtulip_avian_trbl.png
+[23:23:53 349] Loading asset madtulip_floran_bl of type back
+[23:23:53 350]   Image loaded at D:\Program Files (x86)\Steam\steamapps\common\Starbound\mods\madtulip\materials\tilesets\floran\madtulip_floran_bl.png
+[23:23:53 350] Loading asset madtulip_floran_blt of type back
+[23:23:53 352]   Image loaded at D:\Program Files (x86)\Steam\steamapps\common\Starbound\mods\madtulip\materials\tilesets\floran\madtulip_floran_blt.png
+[23:23:53 352] Loading asset madtulip_floran_br of type back
+[23:23:53 353]   Image loaded at D:\Program Files (x86)\Steam\steamapps\common\Starbound\mods\madtulip\materials\tilesets\floran\madtulip_floran_br.png
+[23:23:53 353] Loading asset madtulip_floran_default of type back
+[23:23:53 354]   Image loaded at D:\Program Files (x86)\Steam\steamapps\common\Starbound\mods\madtulip\materials\tilesets\floran\madtulip_floran_default.png
+[23:23:53 354] Loading asset madtulip_floran_lr of type back
+[23:23:53 356]   Image loaded at D:\Program Files (x86)\Steam\steamapps\common\Starbound\mods\madtulip\materials\tilesets\floran\madtulip_floran_lr.png
+[23:23:53 356] Loading asset madtulip_floran_ltr of type back
+[23:23:53 357]   Image loaded at D:\Program Files (x86)\Steam\steamapps\common\Starbound\mods\madtulip\materials\tilesets\floran\madtulip_floran_ltr.png
+[23:23:53 357] Loading asset madtulip_floran_rbl of type back
+[23:23:53 358]   Image loaded at D:\Program Files (x86)\Steam\steamapps\common\Starbound\mods\madtulip\materials\tilesets\floran\madtulip_floran_rbl.png
+[23:23:53 358] Loading asset madtulip_floran_tb of type back
+[23:23:53 360]   Image loaded at D:\Program Files (x86)\Steam\steamapps\common\Starbound\mods\madtulip\materials\tilesets\floran\madtulip_floran_tb.png
+[23:23:53 360] Loading asset madtulip_floran_tl of type back
+[23:23:53 361]   Image loaded at D:\Program Files (x86)\Steam\steamapps\common\Starbound\mods\madtulip\materials\tilesets\floran\madtulip_floran_tl.png
+[23:23:53 361] Loading asset madtulip_floran_tr of type back
+[23:23:53 362]   Image loaded at D:\Program Files (x86)\Steam\steamapps\common\Starbound\mods\madtulip\materials\tilesets\floran\madtulip_floran_tr.png
+[23:23:53 362] Loading asset madtulip_floran_trb of type back
+[23:23:53 363]   Image loaded at D:\Program Files (x86)\Steam\steamapps\common\Starbound\mods\madtulip\materials\tilesets\floran\madtulip_floran_trb.png
+[23:23:53 363] Loading asset madtulip_floran_trbl of type back
+[23:23:53 365]   Image loaded at D:\Program Files (x86)\Steam\steamapps\common\Starbound\mods\madtulip\materials\tilesets\floran\madtulip_floran_trbl.png
+[23:23:53 365] Loading asset madtulip_glitch_bl of type back
+[23:23:53 366]   Image loaded at D:\Program Files (x86)\Steam\steamapps\common\Starbound\mods\madtulip\materials\tilesets\glitch\madtulip_glitch_bl.png
+[23:23:53 366] Loading asset madtulip_glitch_blt of type back
+[23:23:53 367]   Image loaded at D:\Program Files (x86)\Steam\steamapps\common\Starbound\mods\madtulip\materials\tilesets\glitch\madtulip_glitch_blt.png
+[23:23:53 367] Loading asset madtulip_glitch_br of type back
+[23:23:53 369]   Image loaded at D:\Program Files (x86)\Steam\steamapps\common\Starbound\mods\madtulip\materials\tilesets\glitch\madtulip_glitch_br.png
+[23:23:53 369] Loading asset madtulip_glitch_default of type back
+[23:23:53 370]   Image loaded at D:\Program Files (x86)\Steam\steamapps\common\Starbound\mods\madtulip\materials\tilesets\glitch\madtulip_glitch_default.png
+[23:23:53 370] Loading asset madtulip_glitch_lr of type back
+[23:23:53 371]   Image loaded at D:\Program Files (x86)\Steam\steamapps\common\Starbound\mods\madtulip\materials\tilesets\glitch\madtulip_glitch_lr.png
+[23:23:53 371] Loading asset madtulip_glitch_ltr of type back
+[23:23:53 372]   Image loaded at D:\Program Files (x86)\Steam\steamapps\common\Starbound\mods\madtulip\materials\tilesets\glitch\madtulip_glitch_ltr.png
+[23:23:53 372] Loading asset madtulip_glitch_rbl of type back
+[23:23:53 374]   Image loaded at D:\Program Files (x86)\Steam\steamapps\common\Starbound\mods\madtulip\materials\tilesets\glitch\madtulip_glitch_rbl.png
+[23:23:53 374] Loading asset madtulip_glitch_tb of type back
+[23:23:53 375]   Image loaded at D:\Program Files (x86)\Steam\steamapps\common\Starbound\mods\madtulip\materials\tilesets\glitch\madtulip_glitch_tb.png
+[23:23:53 375] Loading asset madtulip_glitch_tl of type back
+[23:23:53 376]   Image loaded at D:\Program Files (x86)\Steam\steamapps\common\Starbound\mods\madtulip\materials\tilesets\glitch\madtulip_glitch_tl.png
+[23:23:53 376] Loading asset madtulip_glitch_tr of type back
+[23:23:53 377]   Image loaded at D:\Program Files (x86)\Steam\steamapps\common\Starbound\mods\madtulip\materials\tilesets\glitch\madtulip_glitch_tr.png
+[23:23:53 377] Loading asset madtulip_glitch_trb of type back
+[23:23:53 379]   Image loaded at D:\Program Files (x86)\Steam\steamapps\common\Starbound\mods\madtulip\materials\tilesets\glitch\madtulip_glitch_trb.png
+[23:23:53 379] Loading asset madtulip_glitch_trbl of type back
+[23:23:53 380]   Image loaded at D:\Program Files (x86)\Steam\steamapps\common\Starbound\mods\madtulip\materials\tilesets\glitch\madtulip_glitch_trbl.png
+[23:23:53 380] Loading asset madtulip_human_bl of type back
+[23:23:53 382]   Image loaded at D:\Program Files (x86)\Steam\steamapps\common\Starbound\mods\madtulip\materials\tilesets\human\madtulip_human_bl.png
+[23:23:53 382] Loading asset madtulip_human_blt of type back
+[23:23:53 383]   Image loaded at D:\Program Files (x86)\Steam\steamapps\common\Starbound\mods\madtulip\materials\tilesets\human\madtulip_human_blt.png
+[23:23:53 383] Loading asset madtulip_human_br of type back
+[23:23:53 384]   Image loaded at D:\Program Files (x86)\Steam\steamapps\common\Starbound\mods\madtulip\materials\tilesets\human\madtulip_human_br.png
+[23:23:53 384] Loading asset madtulip_human_default of type back
+[23:23:53 385]   Image loaded at D:\Program Files (x86)\Steam\steamapps\common\Starbound\mods\madtulip\materials\tilesets\human\madtulip_human_default.png
+[23:23:53 385] Loading asset madtulip_human_lr of type back
+[23:23:53 387]   Image loaded at D:\Program Files (x86)\Steam\steamapps\common\Starbound\mods\madtulip\materials\tilesets\human\madtulip_human_lr.png
+[23:23:53 387] Loading asset madtulip_human_ltr of type back
+[23:23:53 388]   Image loaded at D:\Program Files (x86)\Steam\steamapps\common\Starbound\mods\madtulip\materials\tilesets\human\madtulip_human_ltr.png
+[23:23:53 388] Loading asset madtulip_human_rbl of type back
+[23:23:53 390]   Image loaded at D:\Program Files (x86)\Steam\steamapps\common\Starbound\mods\madtulip\materials\tilesets\human\madtulip_human_rbl.png
+[23:23:53 390] Loading asset madtulip_human_tb of type back
+[23:23:53 391]   Image loaded at D:\Program Files (x86)\Steam\steamapps\common\Starbound\mods\madtulip\materials\tilesets\human\madtulip_human_tb.png
+[23:23:53 391] Loading asset madtulip_human_tl of type back
+[23:23:53 392]   Image loaded at D:\Program Files (x86)\Steam\steamapps\common\Starbound\mods\madtulip\materials\tilesets\human\madtulip_human_tl.png
+[23:23:53 392] Loading asset madtulip_human_tr of type back
+[23:23:53 394]   Image loaded at D:\Program Files (x86)\Steam\steamapps\common\Starbound\mods\madtulip\materials\tilesets\human\madtulip_human_tr.png
+[23:23:53 394] Loading asset madtulip_human_trb of type back
+[23:23:53 395]   Image loaded at D:\Program Files (x86)\Steam\steamapps\common\Starbound\mods\madtulip\materials\tilesets\human\madtulip_human_trb.png
+[23:23:53 395] Loading asset madtulip_human_trbl of type back
+[23:23:53 397]   Image loaded at D:\Program Files (x86)\Steam\steamapps\common\Starbound\mods\madtulip\materials\tilesets\human\madtulip_human_trbl.png
+[23:23:53 397] Loading asset madtulip_hylotl_bl of type back
+[23:23:53 398]   Image loaded at D:\Program Files (x86)\Steam\steamapps\common\Starbound\mods\madtulip\materials\tilesets\hylotl\madtulip_hylotl_bl.png
+[23:23:53 398] Loading asset madtulip_hylotl_blt of type back
+[23:23:53 400]   Image loaded at D:\Program Files (x86)\Steam\steamapps\common\Starbound\mods\madtulip\materials\tilesets\hylotl\madtulip_hylotl_blt.png
+[23:23:53 400] Loading asset madtulip_hylotl_br of type back
+[23:23:53 401]   Image loaded at D:\Program Files (x86)\Steam\steamapps\common\Starbound\mods\madtulip\materials\tilesets\hylotl\madtulip_hylotl_br.png
+[23:23:53 401] Loading asset madtulip_hylotl_default of type back
+[23:23:53 402]   Image loaded at D:\Program Files (x86)\Steam\steamapps\common\Starbound\mods\madtulip\materials\tilesets\hylotl\madtulip_hylotl_default.png
+[23:23:53 402] Loading asset madtulip_hylotl_lr of type back
+[23:23:53 404]   Image loaded at D:\Program Files (x86)\Steam\steamapps\common\Starbound\mods\madtulip\materials\tilesets\hylotl\madtulip_hylotl_lr.png
+[23:23:53 404] Loading asset madtulip_hylotl_ltr of type back
+[23:23:53 405]   Image loaded at D:\Program Files (x86)\Steam\steamapps\common\Starbound\mods\madtulip\materials\tilesets\hylotl\madtulip_hylotl_ltr.png
+[23:23:53 405] Loading asset madtulip_hylotl_rbl of type back
+[23:23:53 406]   Image loaded at D:\Program Files (x86)\Steam\steamapps\common\Starbound\mods\madtulip\materials\tilesets\hylotl\madtulip_hylotl_rbl.png
+[23:23:53 406] Loading asset madtulip_hylotl_tb of type back
+[23:23:53 408]   Image loaded at D:\Program Files (x86)\Steam\steamapps\common\Starbound\mods\madtulip\materials\tilesets\hylotl\madtulip_hylotl_tb.png
+[23:23:53 408] Loading asset madtulip_hylotl_tl of type back
+[23:23:53 409]   Image loaded at D:\Program Files (x86)\Steam\steamapps\common\Starbound\mods\madtulip\materials\tilesets\hylotl\madtulip_hylotl_tl.png
+[23:23:53 409] Loading asset madtulip_hylotl_tr of type back
+[23:23:53 410]   Image loaded at D:\Program Files (x86)\Steam\steamapps\common\Starbound\mods\madtulip\materials\tilesets\hylotl\madtulip_hylotl_tr.png
+[23:23:53 410] Loading asset madtulip_hylotl_trb of type back
+[23:23:53 412]   Image loaded at D:\Program Files (x86)\Steam\steamapps\common\Starbound\mods\madtulip\materials\tilesets\hylotl\madtulip_hylotl_trb.png
+[23:23:53 412] Loading asset madtulip_hylotl_trbl of type back
+[23:23:53 413]   Image loaded at D:\Program Files (x86)\Steam\steamapps\common\Starbound\mods\madtulip\materials\tilesets\hylotl\madtulip_hylotl_trbl.png
+[23:23:53 413] Loading asset madtulip_glass_bl of type back
+[23:23:53 414]   Image loaded at D:\Program Files (x86)\Steam\steamapps\common\Starbound\mods\madtulip\materials\tilesets\glass\madtulip_glass_bl.png
+[23:23:53 414] Loading asset madtulip_glass_blt of type back
+[23:23:53 415]   Image loaded at D:\Program Files (x86)\Steam\steamapps\common\Starbound\mods\madtulip\materials\tilesets\glass\madtulip_glass_blt.png
+[23:23:53 415] Loading asset madtulip_glass_br of type back
+[23:23:53 417]   Image loaded at D:\Program Files (x86)\Steam\steamapps\common\Starbound\mods\madtulip\materials\tilesets\glass\madtulip_glass_br.png
+[23:23:53 417] Loading asset madtulip_glass_default of type back
+[23:23:53 418]   Image loaded at D:\Program Files (x86)\Steam\steamapps\common\Starbound\mods\madtulip\materials\tilesets\glass\madtulip_glass_default.png
+[23:23:53 418] Loading asset madtulip_glass_lr of type back
+[23:23:53 420]   Image loaded at D:\Program Files (x86)\Steam\steamapps\common\Starbound\mods\madtulip\materials\tilesets\glass\madtulip_glass_lr.png
+[23:23:53 420] Loading asset madtulip_glass_ltr of type back
+[23:23:53 421]   Image loaded at D:\Program Files (x86)\Steam\steamapps\common\Starbound\mods\madtulip\materials\tilesets\glass\madtulip_glass_ltr.png
+[23:23:53 421] Loading asset madtulip_glass_rbl of type back
+[23:23:53 422]   Image loaded at D:\Program Files (x86)\Steam\steamapps\common\Starbound\mods\madtulip\materials\tilesets\glass\madtulip_glass_rbl.png
+[23:23:53 422] Loading asset madtulip_glass_tb of type back
+[23:23:53 424]   Image loaded at D:\Program Files (x86)\Steam\steamapps\common\Starbound\mods\madtulip\materials\tilesets\glass\madtulip_glass_tb.png
+[23:23:53 424] Loading asset madtulip_glass_tl of type back
+[23:23:53 425]   Image loaded at D:\Program Files (x86)\Steam\steamapps\common\Starbound\mods\madtulip\materials\tilesets\glass\madtulip_glass_tl.png
+[23:23:53 425] Loading asset madtulip_glass_tr of type back
+[23:23:53 426]   Image loaded at D:\Program Files (x86)\Steam\steamapps\common\Starbound\mods\madtulip\materials\tilesets\glass\madtulip_glass_tr.png
+[23:23:53 426] Loading asset madtulip_glass_trb of type back
+[23:23:53 427]   Image loaded at D:\Program Files (x86)\Steam\steamapps\common\Starbound\mods\madtulip\materials\tilesets\glass\madtulip_glass_trb.png
+[23:23:53 427] Loading asset madtulip_glass_trbl of type back
+[23:23:53 429]   Image loaded at D:\Program Files (x86)\Steam\steamapps\common\Starbound\mods\madtulip\materials\tilesets\glass\madtulip_glass_trbl.png
+[23:23:53 429] Loading part madtulip_glitch_ship_blocks.png
+[23:23:53 999]   Loading background overlay dummy.png
+[23:23:53 999]   Completed loading background overlay dummy.png
+[23:23:53 999] Completed loading part madtulip_glitch_ship_blocks.png
+[23:23:53 999] Completed parsing D:\Program Files (x86)\Steam\steamapps\common\Starbound\mods\madtulip\ships\glitch\madtulip_glitch_ship.structure
+[23:27:22 042] Parsing D:\Program Files (x86)\Steam\steamapps\common\Starbound\mods\madtulip\ships\floran\madtulip_floran_ship.structure
+[23:27:22 045]   Parsing 173 brushes
+[23:27:22 045] Populating asset list with assets from D:\Program Files (x86)\Steam\steamapps\common\Starbound\assets
+[23:27:22 448] Populating asset list with assets from D:\Program Files (x86)\Steam\steamapps\common\Starbound\mods
+[23:27:22 467] Loading asset apexshipwall of type front
+[23:27:22 468]   Image loaded at D:\Program Files (x86)\Steam\steamapps\common\Starbound\assets\tiles\materials\apexshipwall.png
+[23:27:22 468] Loading asset steelplatform of type front
+[23:27:22 470]   Image loaded at D:\Program Files (x86)\Steam\steamapps\common\Starbound\assets\tiles\platforms\steelplatform.png
+[23:27:22 470] Loading asset apexshipdetails of type front
+[23:27:22 471]   Image loaded at D:\Program Files (x86)\Steam\steamapps\common\Starbound\assets\tiles\materials\apexshipdetails.png
+[23:27:22 471] Loading asset apexshipsupport of type front
+[23:27:22 472]   Image loaded at D:\Program Files (x86)\Steam\steamapps\common\Starbound\assets\tiles\materials\apexshipsupport.png
+[23:27:22 472] Loading asset glass of type front
+[23:27:22 474]   Image loaded at D:\Program Files (x86)\Steam\steamapps\common\Starbound\assets\tiles\materials\glass.png
+[23:27:22 474] Loading asset madtulip_apex_ftl_thruster of type object
+[23:27:22 479]   Image loaded at D:\Program Files (x86)\Steam\steamapps\common\Starbound\mods\madtulip\ship parts\apex\ftl thruster\madtulip_apex_ftl_thruster.png
+[23:27:22 479] Loading asset madtulip_avian_ftl_thruster of type object
+[23:27:22 483]   Image loaded at D:\Program Files (x86)\Steam\steamapps\common\Starbound\mods\madtulip\ship parts\avian\ftl thruster\madtulip_avian_ftl_thruster.png
+[23:27:22 483] Loading asset madtulip_floran_ftl_thruster of type object
+[23:27:22 487]   Image loaded at D:\Program Files (x86)\Steam\steamapps\common\Starbound\mods\madtulip\ship parts\floran\ftl thruster\madtulip_floran_ftl_thruster.png
+[23:27:22 487] Loading asset madtulip_glitch_ftl_thruster of type object
+[23:27:22 491]   Image loaded at D:\Program Files (x86)\Steam\steamapps\common\Starbound\mods\madtulip\ship parts\glitch\ftl thruster\madtulip_glitch_ftl_thruster.png
+[23:27:22 491] Loading asset madtulip_human_ftl_thruster of type object
+[23:27:22 495]   Image loaded at D:\Program Files (x86)\Steam\steamapps\common\Starbound\mods\madtulip\ship parts\human\ftl thruster\madtulip_human_ftl_thruster.png
+[23:27:22 495] Loading asset madtulip_hylotl_ftl_thruster of type object
+[23:27:22 500]   Image loaded at D:\Program Files (x86)\Steam\steamapps\common\Starbound\mods\madtulip\ship parts\hylotl\ftl thruster\madtulip_hylotl_ftl_thruster.png
+[23:27:22 500] Loading asset madtulip_apex_stabilization_thruster of type object
+[23:27:22 504]   Image loaded at D:\Program Files (x86)\Steam\steamapps\common\Starbound\mods\madtulip\ship parts\apex\stabilization thruster\madtulip_apex_bottom_stabilization_thruster.png
+[23:27:22 504] Loading asset madtulip_avian_stabilization_thruster of type object
+[23:27:22 507]   Image loaded at D:\Program Files (x86)\Steam\steamapps\common\Starbound\mods\madtulip\ship parts\avian\stabilization_thruster\madtulip_avian_bottom_stabilization_thruster.png
+[23:27:22 507] Loading asset madtulip_floran_stabilization_thruster of type object
+[23:27:22 511]   Image loaded at D:\Program Files (x86)\Steam\steamapps\common\Starbound\mods\madtulip\ship parts\floran\stabilization thruster\madtulip_floran_stabilization_thruster.png
+[23:27:22 511] Loading asset madtulip_glitch_stabilization_thruster of type object
+[23:27:22 515]   Image loaded at D:\Program Files (x86)\Steam\steamapps\common\Starbound\mods\madtulip\ship parts\glitch\stabilization thruster\madtulip_glitch_stabilization_thruster.png
+[23:27:22 515] Loading asset madtulip_human_stabilization_thruster of type object
+[23:27:22 519]   Image loaded at D:\Program Files (x86)\Steam\steamapps\common\Starbound\mods\madtulip\ship parts\human\stabilization thruster\madtulip_human_bottom_stabilization_thruster.png
+[23:27:22 519] Loading asset madtulip_hylotl_stabilization_thruster of type object
+[23:27:22 522]   Image loaded at D:\Program Files (x86)\Steam\steamapps\common\Starbound\mods\madtulip\ship parts\hylotl\stabilization thruster\madtulip_hylotl_stabilization_thruster.png
+[23:27:22 522] Loading asset madtulip_apex_gyro_stabilizer of type object
+[23:27:22 525]   Image loaded at D:\Program Files (x86)\Steam\steamapps\common\Starbound\mods\madtulip\ship parts\apex\gyro stabilizer\madtulip_apex_top_gyro_stabilizer.png
+[23:27:22 527]   Image loaded at D:\Program Files (x86)\Steam\steamapps\common\Starbound\mods\madtulip\ship parts\apex\gyro stabilizer\madtulip_apex_bottom_gyro_stabilizer.png
+[23:27:22 527] Loading asset madtulip_avian_gyro_stabilizer of type object
+[23:27:22 531]   Image loaded at D:\Program Files (x86)\Steam\steamapps\common\Starbound\mods\madtulip\ship parts\avian\gyro stabilizer\madtulip_avian_top_gyro_stabilizer.png
+[23:27:22 533]   Image loaded at D:\Program Files (x86)\Steam\steamapps\common\Starbound\mods\madtulip\ship parts\avian\gyro stabilizer\madtulip_avian_bottom_gyro_stabilizer.png
+[23:27:22 533] Loading asset madtulip_floran_gyro_stabilizer of type object
+[23:27:22 536]   Image loaded at D:\Program Files (x86)\Steam\steamapps\common\Starbound\mods\madtulip\ship parts\floran\gyro stabilizer\madtulip_floran_top_gyro_stabilizer.png
+[23:27:22 538]   Image loaded at D:\Program Files (x86)\Steam\steamapps\common\Starbound\mods\madtulip\ship parts\floran\gyro stabilizer\madtulip_floran_bottom_gyro_stabilizer.png
+[23:27:22 538] Loading asset madtulip_glitch_gyro_stabilizer of type object
+[23:27:22 542]   Image loaded at D:\Program Files (x86)\Steam\steamapps\common\Starbound\mods\madtulip\ship parts\glitch\gyro_stabilizer\madtulip_glitch_top_gyro_stabilizer.png
+[23:27:22 544]   Image loaded at D:\Program Files (x86)\Steam\steamapps\common\Starbound\mods\madtulip\ship parts\glitch\gyro_stabilizer\madtulip_glitch_bottom_gyro_stabilizer.png
+[23:27:22 544] Loading asset madtulip_human_gyro_stabilizer of type object
+[23:27:22 548]   Image loaded at D:\Program Files (x86)\Steam\steamapps\common\Starbound\mods\madtulip\ship parts\human\gyro stabilizer\madtulip_human_top_gyro_stabilizer.png
+[23:27:22 550]   Image loaded at D:\Program Files (x86)\Steam\steamapps\common\Starbound\mods\madtulip\ship parts\human\gyro stabilizer\madtulip_human_bottom_gyro_stabilizer.png
+[23:27:22 550] Loading asset madtulip_hylotl_gyro_stabilizer of type object
+[23:27:22 553]   Image loaded at D:\Program Files (x86)\Steam\steamapps\common\Starbound\mods\madtulip\ship parts\hylotl\gyro stabilizer\madtulip_hylotl_top_gyro_stabilizer.png
+[23:27:22 555]   Image loaded at D:\Program Files (x86)\Steam\steamapps\common\Starbound\mods\madtulip\ship parts\hylotl\gyro stabilizer\madtulip_hylotl_bottom_gyro_stabilizer.png
+[23:27:22 555] Loading asset madtulip_apex_large_fin of type object
+[23:27:22 559]   Image loaded at D:\Program Files (x86)\Steam\steamapps\common\Starbound\mods\madtulip\ship parts\apex\large fin\madtulip_apex_top_large_fin.png
+[23:27:22 561]   Image loaded at D:\Program Files (x86)\Steam\steamapps\common\Starbound\mods\madtulip\ship parts\apex\large fin\madtulip_apex_bottom_large_fin.png
+[23:27:22 561] Loading asset madtulip_avian_large_fin of type object
+[23:27:22 564]   Image loaded at D:\Program Files (x86)\Steam\steamapps\common\Starbound\mods\madtulip\ship parts\avian\large fin\madtulip_avian_top_large_fin.png
+[23:27:22 566]   Image loaded at D:\Program Files (x86)\Steam\steamapps\common\Starbound\mods\madtulip\ship parts\avian\large fin\madtulip_avian_bottom_large_fin.png
+[23:27:22 566] Loading asset madtulip_human_large_fin of type object
+[23:27:22 571]   Image loaded at D:\Program Files (x86)\Steam\steamapps\common\Starbound\mods\madtulip\ship parts\human\large fin\madtulip_human_top_large_fin.png
+[23:27:22 575]   Image loaded at D:\Program Files (x86)\Steam\steamapps\common\Starbound\mods\madtulip\ship parts\human\large fin\madtulip_human_bottom_large_fin.png
+[23:27:22 575] Loading asset madtulip_hylotl_large_fin of type object
+[23:27:22 579]   Image loaded at D:\Program Files (x86)\Steam\steamapps\common\Starbound\mods\madtulip\ship parts\hylotl\large fin\madtulip_hylotl_top_large_fin.png
+[23:27:22 581]   Image loaded at D:\Program Files (x86)\Steam\steamapps\common\Starbound\mods\madtulip\ship parts\hylotl\large fin\madtulip_hylotl_bottom_large_fin.png
+[23:27:22 581] Loading asset madtulip_shipdoor of type object
+[23:27:22 584]   Image loaded at D:\Program Files (x86)\Steam\steamapps\common\Starbound\mods\madtulip\ship parts\generic\shipdoor\madtulip_shipdoor.png
+[23:27:22 584] Loading asset madtulip_avian_shipdoor of type object
+[23:27:22 587]   Image loaded at D:\Program Files (x86)\Steam\steamapps\common\Starbound\mods\madtulip\ship parts\avian\avian shipdoor\madtulip_avian_shipdoor.png
+[23:27:22 587] Loading asset madtulip_floran_shipdoor of type object
+[23:27:22 590]   Image loaded at D:\Program Files (x86)\Steam\steamapps\common\Starbound\mods\madtulip\ship parts\floran\floran shipdoor\madtulip_floran_shipdoor.png
+[23:27:22 590] Loading asset madtulip_hylotl_shipdoor of type object
+[23:27:22 594]   Image loaded at D:\Program Files (x86)\Steam\steamapps\common\Starbound\mods\madtulip\ship parts\hylotl\hylotl shipdoor\madtulip_hylotl_shipdoor.png
+[23:27:22 594] Loading asset madtulip_shiplocker of type object
+[23:27:22 597]   Image loaded at D:\Program Files (x86)\Steam\steamapps\common\Starbound\mods\madtulip\objects\shiplocker\madtulip_shiplocker.png
+[23:27:22 597] Loading asset madtulip_captainschair of type object
+[23:27:22 600]   Image loaded at D:\Program Files (x86)\Steam\steamapps\common\Starbound\mods\madtulip\objects\captainschair\madtulip_captainschair.png
+[23:27:22 600] Loading asset madtulip_techstation of type object
+[23:27:22 603]   Image loaded at D:\Program Files (x86)\Steam\steamapps\common\Starbound\mods\madtulip\objects\techstation\madtulip_techstation.png
+[23:27:22 603] Loading asset madtulip_shipstation of type object
+[23:27:22 606]   Image loaded at D:\Program Files (x86)\Steam\steamapps\common\Starbound\mods\madtulip\objects\ship station\madtulip_shipstation.png
+[23:27:22 606] Loading asset madtulip_shipnavigationconsole of type object
+[23:27:22 609]   Image loaded at D:\Program Files (x86)\Steam\steamapps\common\Starbound\mods\madtulip\ship parts\generic\ship navigation console\madtulip_shipnavigationconsole.png
+[23:27:22 609] Loading asset madtulip_vent of type object
+[23:27:22 612]   Image loaded at D:\Program Files (x86)\Steam\steamapps\common\Starbound\mods\madtulip\objects\life support vent\madtulip_vent_green.png
+[23:27:22 612] Loading asset madtulip_fuelhatch of type object
+[23:27:22 615]   Image loaded at D:\Program Files (x86)\Steam\steamapps\common\Starbound\mods\madtulip\objects\fuelhatch\madtulip_fuelhatch.png
+[23:27:22 615] Loading asset madtulip_shiplight of type object
+[23:27:22 618]   Image loaded at D:\Program Files (x86)\Steam\steamapps\common\Starbound\mods\madtulip\ship parts\generic\shiplight\madtulip_shiplight.png
+[23:27:22 618] Loading asset shipengine of type object
+[23:27:22 619] Loading asset madtulip_teleporter of type object
+[23:27:22 622]   Image loaded at D:\Program Files (x86)\Steam\steamapps\common\Starbound\mods\madtulip\ship parts\generic\teleporter\madtulip_teleporter.png
+[23:27:22 622] Loading asset madtulip_apex_bl of type back
+[23:27:22 623]   Image loaded at D:\Program Files (x86)\Steam\steamapps\common\Starbound\mods\madtulip\materials\tilesets\apex\madtulip_apex_bl.png
+[23:27:22 623] Loading asset madtulip_apex_blt of type back
+[23:27:22 624]   Image loaded at D:\Program Files (x86)\Steam\steamapps\common\Starbound\mods\madtulip\materials\tilesets\apex\madtulip_apex_blt.png
+[23:27:22 624] Loading asset madtulip_apex_br of type back
+[23:27:22 626]   Image loaded at D:\Program Files (x86)\Steam\steamapps\common\Starbound\mods\madtulip\materials\tilesets\apex\madtulip_apex_br.png
+[23:27:22 626] Loading asset madtulip_apex_default of type back
+[23:27:22 627]   Image loaded at D:\Program Files (x86)\Steam\steamapps\common\Starbound\mods\madtulip\materials\tilesets\apex\madtulip_apex_default.png
+[23:27:22 627] Loading asset madtulip_apex_lr of type back
+[23:27:22 628]   Image loaded at D:\Program Files (x86)\Steam\steamapps\common\Starbound\mods\madtulip\materials\tilesets\apex\madtulip_apex_lr.png
+[23:27:22 628] Loading asset madtulip_apex_ltr of type back
+[23:27:22 630]   Image loaded at D:\Program Files (x86)\Steam\steamapps\common\Starbound\mods\madtulip\materials\tilesets\apex\madtulip_apex_ltr.png
+[23:27:22 630] Loading asset madtulip_apex_rbl of type back
+[23:27:22 631]   Image loaded at D:\Program Files (x86)\Steam\steamapps\common\Starbound\mods\madtulip\materials\tilesets\apex\madtulip_apex_rbl.png
+[23:27:22 631] Loading asset madtulip_apex_tb of type back
+[23:27:22 632]   Image loaded at D:\Program Files (x86)\Steam\steamapps\common\Starbound\mods\madtulip\materials\tilesets\apex\madtulip_apex_tb.png
+[23:27:22 632] Loading asset madtulip_apex_tl of type back
+[23:27:22 633]   Image loaded at D:\Program Files (x86)\Steam\steamapps\common\Starbound\mods\madtulip\materials\tilesets\apex\madtulip_apex_tl.png
+[23:27:22 633] Loading asset madtulip_apex_tr of type back
+[23:27:22 634]   Image loaded at D:\Program Files (x86)\Steam\steamapps\common\Starbound\mods\madtulip\materials\tilesets\apex\madtulip_apex_tr.png
+[23:27:22 634] Loading asset madtulip_apex_trb of type back
+[23:27:22 636]   Image loaded at D:\Program Files (x86)\Steam\steamapps\common\Starbound\mods\madtulip\materials\tilesets\apex\madtulip_apex_trb.png
+[23:27:22 636] Loading asset madtulip_apex_trbl of type back
+[23:27:22 637]   Image loaded at D:\Program Files (x86)\Steam\steamapps\common\Starbound\mods\madtulip\materials\tilesets\apex\madtulip_apex_trbl.png
+[23:27:22 637] Loading asset madtulip_avian_bl of type back
+[23:27:22 638]   Image loaded at D:\Program Files (x86)\Steam\steamapps\common\Starbound\mods\madtulip\materials\tilesets\avian\madtulip_avian_bl.png
+[23:27:22 638] Loading asset madtulip_avian_blt of type back
+[23:27:22 640]   Image loaded at D:\Program Files (x86)\Steam\steamapps\common\Starbound\mods\madtulip\materials\tilesets\avian\madtulip_avian_blt.png
+[23:27:22 640] Loading asset madtulip_avian_br of type back
+[23:27:22 641]   Image loaded at D:\Program Files (x86)\Steam\steamapps\common\Starbound\mods\madtulip\materials\tilesets\avian\madtulip_avian_br.png
+[23:27:22 641] Loading asset madtulip_avian_default of type back
+[23:27:22 643]   Image loaded at D:\Program Files (x86)\Steam\steamapps\common\Starbound\mods\madtulip\materials\tilesets\avian\madtulip_avian_default.png
+[23:27:22 643] Loading asset madtulip_avian_lr of type back
+[23:27:22 644]   Image loaded at D:\Program Files (x86)\Steam\steamapps\common\Starbound\mods\madtulip\materials\tilesets\avian\madtulip_avian_lr.png
+[23:27:22 644] Loading asset madtulip_avian_ltr of type back
+[23:27:22 645]   Image loaded at D:\Program Files (x86)\Steam\steamapps\common\Starbound\mods\madtulip\materials\tilesets\avian\madtulip_avian_ltr.png
+[23:27:22 645] Loading asset madtulip_avian_rbl of type back
+[23:27:22 646]   Image loaded at D:\Program Files (x86)\Steam\steamapps\common\Starbound\mods\madtulip\materials\tilesets\avian\madtulip_avian_rbl.png
+[23:27:22 646] Loading asset madtulip_avian_tb of type back
+[23:27:22 648]   Image loaded at D:\Program Files (x86)\Steam\steamapps\common\Starbound\mods\madtulip\materials\tilesets\avian\madtulip_avian_tb.png
+[23:27:22 648] Loading asset madtulip_avian_tl of type back
+[23:27:22 649]   Image loaded at D:\Program Files (x86)\Steam\steamapps\common\Starbound\mods\madtulip\materials\tilesets\avian\madtulip_avian_tl.png
+[23:27:22 649] Loading asset madtulip_avian_tr of type back
+[23:27:22 650]   Image loaded at D:\Program Files (x86)\Steam\steamapps\common\Starbound\mods\madtulip\materials\tilesets\avian\madtulip_avian_tr.png
+[23:27:22 650] Loading asset madtulip_avian_trb of type back
+[23:27:22 651]   Image loaded at D:\Program Files (x86)\Steam\steamapps\common\Starbound\mods\madtulip\materials\tilesets\avian\madtulip_avian_trb.png
+[23:27:22 651] Loading asset madtulip_avian_trbl of type back
+[23:27:22 652]   Image loaded at D:\Program Files (x86)\Steam\steamapps\common\Starbound\mods\madtulip\materials\tilesets\avian\madtulip_avian_trbl.png
+[23:27:22 652] Loading asset madtulip_floran_bl of type back
+[23:27:22 654]   Image loaded at D:\Program Files (x86)\Steam\steamapps\common\Starbound\mods\madtulip\materials\tilesets\floran\madtulip_floran_bl.png
+[23:27:22 654] Loading asset madtulip_floran_blt of type back
+[23:27:22 655]   Image loaded at D:\Program Files (x86)\Steam\steamapps\common\Starbound\mods\madtulip\materials\tilesets\floran\madtulip_floran_blt.png
+[23:27:22 655] Loading asset madtulip_floran_br of type back
+[23:27:22 656]   Image loaded at D:\Program Files (x86)\Steam\steamapps\common\Starbound\mods\madtulip\materials\tilesets\floran\madtulip_floran_br.png
+[23:27:22 656] Loading asset madtulip_floran_default of type back
+[23:27:22 658]   Image loaded at D:\Program Files (x86)\Steam\steamapps\common\Starbound\mods\madtulip\materials\tilesets\floran\madtulip_floran_default.png
+[23:27:22 658] Loading asset madtulip_floran_lr of type back
+[23:27:22 659]   Image loaded at D:\Program Files (x86)\Steam\steamapps\common\Starbound\mods\madtulip\materials\tilesets\floran\madtulip_floran_lr.png
+[23:27:22 659] Loading asset madtulip_floran_ltr of type back
+[23:27:22 660]   Image loaded at D:\Program Files (x86)\Steam\steamapps\common\Starbound\mods\madtulip\materials\tilesets\floran\madtulip_floran_ltr.png
+[23:27:22 660] Loading asset madtulip_floran_rbl of type back
+[23:27:22 661]   Image loaded at D:\Program Files (x86)\Steam\steamapps\common\Starbound\mods\madtulip\materials\tilesets\floran\madtulip_floran_rbl.png
+[23:27:22 661] Loading asset madtulip_floran_tb of type back
+[23:27:22 663]   Image loaded at D:\Program Files (x86)\Steam\steamapps\common\Starbound\mods\madtulip\materials\tilesets\floran\madtulip_floran_tb.png
+[23:27:22 663] Loading asset madtulip_floran_tl of type back
+[23:27:22 664]   Image loaded at D:\Program Files (x86)\Steam\steamapps\common\Starbound\mods\madtulip\materials\tilesets\floran\madtulip_floran_tl.png
+[23:27:22 664] Loading asset madtulip_floran_tr of type back
+[23:27:22 665]   Image loaded at D:\Program Files (x86)\Steam\steamapps\common\Starbound\mods\madtulip\materials\tilesets\floran\madtulip_floran_tr.png
+[23:27:22 665] Loading asset madtulip_floran_trb of type back
+[23:27:22 666]   Image loaded at D:\Program Files (x86)\Steam\steamapps\common\Starbound\mods\madtulip\materials\tilesets\floran\madtulip_floran_trb.png
+[23:27:22 667] Loading asset madtulip_floran_trbl of type back
+[23:27:22 668]   Image loaded at D:\Program Files (x86)\Steam\steamapps\common\Starbound\mods\madtulip\materials\tilesets\floran\madtulip_floran_trbl.png
+[23:27:22 668] Loading asset madtulip_glitch_bl of type back
+[23:27:22 669]   Image loaded at D:\Program Files (x86)\Steam\steamapps\common\Starbound\mods\madtulip\materials\tilesets\glitch\madtulip_glitch_bl.png
+[23:27:22 669] Loading asset madtulip_glitch_blt of type back
+[23:27:22 670]   Image loaded at D:\Program Files (x86)\Steam\steamapps\common\Starbound\mods\madtulip\materials\tilesets\glitch\madtulip_glitch_blt.png
+[23:27:22 670] Loading asset madtulip_glitch_br of type back
+[23:27:22 671]   Image loaded at D:\Program Files (x86)\Steam\steamapps\common\Starbound\mods\madtulip\materials\tilesets\glitch\madtulip_glitch_br.png
+[23:27:22 671] Loading asset madtulip_glitch_default of type back
+[23:27:22 673]   Image loaded at D:\Program Files (x86)\Steam\steamapps\common\Starbound\mods\madtulip\materials\tilesets\glitch\madtulip_glitch_default.png
+[23:27:22 673] Loading asset madtulip_glitch_lr of type back
+[23:27:22 674]   Image loaded at D:\Program Files (x86)\Steam\steamapps\common\Starbound\mods\madtulip\materials\tilesets\glitch\madtulip_glitch_lr.png
+[23:27:22 674] Loading asset madtulip_glitch_ltr of type back
+[23:27:22 675]   Image loaded at D:\Program Files (x86)\Steam\steamapps\common\Starbound\mods\madtulip\materials\tilesets\glitch\madtulip_glitch_ltr.png
+[23:27:22 675] Loading asset madtulip_glitch_rbl of type back
+[23:27:22 677]   Image loaded at D:\Program Files (x86)\Steam\steamapps\common\Starbound\mods\madtulip\materials\tilesets\glitch\madtulip_glitch_rbl.png
+[23:27:22 677] Loading asset madtulip_glitch_tb of type back
+[23:27:22 678]   Image loaded at D:\Program Files (x86)\Steam\steamapps\common\Starbound\mods\madtulip\materials\tilesets\glitch\madtulip_glitch_tb.png
+[23:27:22 678] Loading asset madtulip_glitch_tl of type back
+[23:27:22 679]   Image loaded at D:\Program Files (x86)\Steam\steamapps\common\Starbound\mods\madtulip\materials\tilesets\glitch\madtulip_glitch_tl.png
+[23:27:22 679] Loading asset madtulip_glitch_tr of type back
+[23:27:22 680]   Image loaded at D:\Program Files (x86)\Steam\steamapps\common\Starbound\mods\madtulip\materials\tilesets\glitch\madtulip_glitch_tr.png
+[23:27:22 680] Loading asset madtulip_glitch_trb of type back
+[23:27:22 682]   Image loaded at D:\Program Files (x86)\Steam\steamapps\common\Starbound\mods\madtulip\materials\tilesets\glitch\madtulip_glitch_trb.png
+[23:27:22 682] Loading asset madtulip_glitch_trbl of type back
+[23:27:22 683]   Image loaded at D:\Program Files (x86)\Steam\steamapps\common\Starbound\mods\madtulip\materials\tilesets\glitch\madtulip_glitch_trbl.png
+[23:27:22 683] Loading asset madtulip_human_bl of type back
+[23:27:22 684]   Image loaded at D:\Program Files (x86)\Steam\steamapps\common\Starbound\mods\madtulip\materials\tilesets\human\madtulip_human_bl.png
+[23:27:22 684] Loading asset madtulip_human_blt of type back
+[23:27:22 685]   Image loaded at D:\Program Files (x86)\Steam\steamapps\common\Starbound\mods\madtulip\materials\tilesets\human\madtulip_human_blt.png
+[23:27:22 685] Loading asset madtulip_human_br of type back
+[23:27:22 687]   Image loaded at D:\Program Files (x86)\Steam\steamapps\common\Starbound\mods\madtulip\materials\tilesets\human\madtulip_human_br.png
+[23:27:22 687] Loading asset madtulip_human_default of type back
+[23:27:22 688]   Image loaded at D:\Program Files (x86)\Steam\steamapps\common\Starbound\mods\madtulip\materials\tilesets\human\madtulip_human_default.png
+[23:27:22 688] Loading asset madtulip_human_lr of type back
+[23:27:22 689]   Image loaded at D:\Program Files (x86)\Steam\steamapps\common\Starbound\mods\madtulip\materials\tilesets\human\madtulip_human_lr.png
+[23:27:22 689] Loading asset madtulip_human_ltr of type back
+[23:27:22 691]   Image loaded at D:\Program Files (x86)\Steam\steamapps\common\Starbound\mods\madtulip\materials\tilesets\human\madtulip_human_ltr.png
+[23:27:22 691] Loading asset madtulip_human_rbl of type back
+[23:27:22 692]   Image loaded at D:\Program Files (x86)\Steam\steamapps\common\Starbound\mods\madtulip\materials\tilesets\human\madtulip_human_rbl.png
+[23:27:22 692] Loading asset madtulip_human_tb of type back
+[23:27:22 694]   Image loaded at D:\Program Files (x86)\Steam\steamapps\common\Starbound\mods\madtulip\materials\tilesets\human\madtulip_human_tb.png
+[23:27:22 694] Loading asset madtulip_human_tl of type back
+[23:27:22 695]   Image loaded at D:\Program Files (x86)\Steam\steamapps\common\Starbound\mods\madtulip\materials\tilesets\human\madtulip_human_tl.png
+[23:27:22 695] Loading asset madtulip_human_tr of type back
+[23:27:22 696]   Image loaded at D:\Program Files (x86)\Steam\steamapps\common\Starbound\mods\madtulip\materials\tilesets\human\madtulip_human_tr.png
+[23:27:22 696] Loading asset madtulip_human_trb of type back
+[23:27:22 697]   Image loaded at D:\Program Files (x86)\Steam\steamapps\common\Starbound\mods\madtulip\materials\tilesets\human\madtulip_human_trb.png
+[23:27:22 697] Loading asset madtulip_human_trbl of type back
+[23:27:22 698]   Image loaded at D:\Program Files (x86)\Steam\steamapps\common\Starbound\mods\madtulip\materials\tilesets\human\madtulip_human_trbl.png
+[23:27:22 698] Loading asset madtulip_hylotl_bl of type back
+[23:27:22 700]   Image loaded at D:\Program Files (x86)\Steam\steamapps\common\Starbound\mods\madtulip\materials\tilesets\hylotl\madtulip_hylotl_bl.png
+[23:27:22 700] Loading asset madtulip_hylotl_blt of type back
+[23:27:22 701]   Image loaded at D:\Program Files (x86)\Steam\steamapps\common\Starbound\mods\madtulip\materials\tilesets\hylotl\madtulip_hylotl_blt.png
+[23:27:22 701] Loading asset madtulip_hylotl_br of type back
+[23:27:22 702]   Image loaded at D:\Program Files (x86)\Steam\steamapps\common\Starbound\mods\madtulip\materials\tilesets\hylotl\madtulip_hylotl_br.png
+[23:27:22 702] Loading asset madtulip_hylotl_default of type back
+[23:27:22 704]   Image loaded at D:\Program Files (x86)\Steam\steamapps\common\Starbound\mods\madtulip\materials\tilesets\hylotl\madtulip_hylotl_default.png
+[23:27:22 704] Loading asset madtulip_hylotl_lr of type back
+[23:27:22 705]   Image loaded at D:\Program Files (x86)\Steam\steamapps\common\Starbound\mods\madtulip\materials\tilesets\hylotl\madtulip_hylotl_lr.png
+[23:27:22 705] Loading asset madtulip_hylotl_ltr of type back
+[23:27:22 707]   Image loaded at D:\Program Files (x86)\Steam\steamapps\common\Starbound\mods\madtulip\materials\tilesets\hylotl\madtulip_hylotl_ltr.png
+[23:27:22 707] Loading asset madtulip_hylotl_rbl of type back
+[23:27:22 708]   Image loaded at D:\Program Files (x86)\Steam\steamapps\common\Starbound\mods\madtulip\materials\tilesets\hylotl\madtulip_hylotl_rbl.png
+[23:27:22 708] Loading asset madtulip_hylotl_tb of type back
+[23:27:22 709]   Image loaded at D:\Program Files (x86)\Steam\steamapps\common\Starbound\mods\madtulip\materials\tilesets\hylotl\madtulip_hylotl_tb.png
+[23:27:22 709] Loading asset madtulip_hylotl_tl of type back
+[23:27:22 710]   Image loaded at D:\Program Files (x86)\Steam\steamapps\common\Starbound\mods\madtulip\materials\tilesets\hylotl\madtulip_hylotl_tl.png
+[23:27:22 710] Loading asset madtulip_hylotl_tr of type back
+[23:27:22 712]   Image loaded at D:\Program Files (x86)\Steam\steamapps\common\Starbound\mods\madtulip\materials\tilesets\hylotl\madtulip_hylotl_tr.png
+[23:27:22 712] Loading asset madtulip_hylotl_trb of type back
+[23:27:22 713]   Image loaded at D:\Program Files (x86)\Steam\steamapps\common\Starbound\mods\madtulip\materials\tilesets\hylotl\madtulip_hylotl_trb.png
+[23:27:22 713] Loading asset madtulip_hylotl_trbl of type back
+[23:27:22 714]   Image loaded at D:\Program Files (x86)\Steam\steamapps\common\Starbound\mods\madtulip\materials\tilesets\hylotl\madtulip_hylotl_trbl.png
+[23:27:22 714] Loading asset madtulip_glass_bl of type back
+[23:27:22 716]   Image loaded at D:\Program Files (x86)\Steam\steamapps\common\Starbound\mods\madtulip\materials\tilesets\glass\madtulip_glass_bl.png
+[23:27:22 716] Loading asset madtulip_glass_blt of type back
+[23:27:22 717]   Image loaded at D:\Program Files (x86)\Steam\steamapps\common\Starbound\mods\madtulip\materials\tilesets\glass\madtulip_glass_blt.png
+[23:27:22 717] Loading asset madtulip_glass_br of type back
+[23:27:22 718]   Image loaded at D:\Program Files (x86)\Steam\steamapps\common\Starbound\mods\madtulip\materials\tilesets\glass\madtulip_glass_br.png
+[23:27:22 718] Loading asset madtulip_glass_default of type back
+[23:27:22 719]   Image loaded at D:\Program Files (x86)\Steam\steamapps\common\Starbound\mods\madtulip\materials\tilesets\glass\madtulip_glass_default.png
+[23:27:22 719] Loading asset madtulip_glass_lr of type back
+[23:27:22 721]   Image loaded at D:\Program Files (x86)\Steam\steamapps\common\Starbound\mods\madtulip\materials\tilesets\glass\madtulip_glass_lr.png
+[23:27:22 721] Loading asset madtulip_glass_ltr of type back
+[23:27:22 722]   Image loaded at D:\Program Files (x86)\Steam\steamapps\common\Starbound\mods\madtulip\materials\tilesets\glass\madtulip_glass_ltr.png
+[23:27:22 722] Loading asset madtulip_glass_rbl of type back
+[23:27:22 723]   Image loaded at D:\Program Files (x86)\Steam\steamapps\common\Starbound\mods\madtulip\materials\tilesets\glass\madtulip_glass_rbl.png
+[23:27:22 723] Loading asset madtulip_glass_tb of type back
+[23:27:22 725]   Image loaded at D:\Program Files (x86)\Steam\steamapps\common\Starbound\mods\madtulip\materials\tilesets\glass\madtulip_glass_tb.png
+[23:27:22 725] Loading asset madtulip_glass_tl of type back
+[23:27:22 726]   Image loaded at D:\Program Files (x86)\Steam\steamapps\common\Starbound\mods\madtulip\materials\tilesets\glass\madtulip_glass_tl.png
+[23:27:22 726] Loading asset madtulip_glass_tr of type back
+[23:27:22 727]   Image loaded at D:\Program Files (x86)\Steam\steamapps\common\Starbound\mods\madtulip\materials\tilesets\glass\madtulip_glass_tr.png
+[23:27:22 727] Loading asset madtulip_glass_trb of type back
+[23:27:22 728]   Image loaded at D:\Program Files (x86)\Steam\steamapps\common\Starbound\mods\madtulip\materials\tilesets\glass\madtulip_glass_trb.png
+[23:27:22 729] Loading asset madtulip_glass_trbl of type back
+[23:27:22 730]   Image loaded at D:\Program Files (x86)\Steam\steamapps\common\Starbound\mods\madtulip\materials\tilesets\glass\madtulip_glass_trbl.png
+[23:27:22 730] Loading part madtulip_floran_ship_blocks.png
+[23:27:23 296]   Loading background overlay dummy.png
+[23:27:23 296]   Completed loading background overlay dummy.png
+[23:27:23 296] Completed loading part madtulip_floran_ship_blocks.png
+[23:27:23 296] Completed parsing D:\Program Files (x86)\Steam\steamapps\common\Starbound\mods\madtulip\ships\floran\madtulip_floran_ship.structure
+[23:29:57 794] Saving settings.json
+[23:32:20 411] Saving settings.json
+[23:32:47 801] Parsing D:\Program Files (x86)\Steam\steamapps\common\Starbound\mods\madtulip\ships\hylotl\madtulip_hylotl_ship.structure
+[23:32:47 836]   Parsing 173 brushes
+[23:32:47 837] Populating asset list with assets from D:\Program Files (x86)\Steam\steamapps\common\Starbound\assets
+[23:32:48 240] Populating asset list with assets from D:\Program Files (x86)\Steam\steamapps\common\Starbound\mods
+[23:32:48 265] Loading asset apexshipwall of type front
+[23:32:48 272]   Image loaded at D:\Program Files (x86)\Steam\steamapps\common\Starbound\assets\tiles\materials\apexshipwall.png
+[23:32:48 273] Loading asset steelplatform of type front
+[23:32:48 275]   Image loaded at D:\Program Files (x86)\Steam\steamapps\common\Starbound\assets\tiles\platforms\steelplatform.png
+[23:32:48 275] Loading asset apexshipdetails of type front
+[23:32:48 277]   Image loaded at D:\Program Files (x86)\Steam\steamapps\common\Starbound\assets\tiles\materials\apexshipdetails.png
+[23:32:48 277] Loading asset apexshipsupport of type front
+[23:32:48 278]   Image loaded at D:\Program Files (x86)\Steam\steamapps\common\Starbound\assets\tiles\materials\apexshipsupport.png
+[23:32:48 278] Loading asset glass of type front
+[23:32:48 280]   Image loaded at D:\Program Files (x86)\Steam\steamapps\common\Starbound\assets\tiles\materials\glass.png
+[23:32:48 280] Loading asset madtulip_apex_ftl_thruster of type object
+[23:32:48 303]   Image loaded at D:\Program Files (x86)\Steam\steamapps\common\Starbound\mods\madtulip\ship parts\apex\ftl thruster\madtulip_apex_ftl_thruster.png
+[23:32:48 303] Loading asset madtulip_avian_ftl_thruster of type object
+[23:32:48 307]   Image loaded at D:\Program Files (x86)\Steam\steamapps\common\Starbound\mods\madtulip\ship parts\avian\ftl thruster\madtulip_avian_ftl_thruster.png
+[23:32:48 307] Loading asset madtulip_floran_ftl_thruster of type object
+[23:32:48 311]   Image loaded at D:\Program Files (x86)\Steam\steamapps\common\Starbound\mods\madtulip\ship parts\floran\ftl thruster\madtulip_floran_ftl_thruster.png
+[23:32:48 311] Loading asset madtulip_glitch_ftl_thruster of type object
+[23:32:48 315]   Image loaded at D:\Program Files (x86)\Steam\steamapps\common\Starbound\mods\madtulip\ship parts\glitch\ftl thruster\madtulip_glitch_ftl_thruster.png
+[23:32:48 315] Loading asset madtulip_human_ftl_thruster of type object
+[23:32:48 323]   Image loaded at D:\Program Files (x86)\Steam\steamapps\common\Starbound\mods\madtulip\ship parts\human\ftl thruster\madtulip_human_ftl_thruster.png
+[23:32:48 323] Loading asset madtulip_hylotl_ftl_thruster of type object
+[23:32:48 327]   Image loaded at D:\Program Files (x86)\Steam\steamapps\common\Starbound\mods\madtulip\ship parts\hylotl\ftl thruster\madtulip_hylotl_ftl_thruster.png
+[23:32:48 327] Loading asset madtulip_apex_stabilization_thruster of type object
+[23:32:48 331]   Image loaded at D:\Program Files (x86)\Steam\steamapps\common\Starbound\mods\madtulip\ship parts\apex\stabilization thruster\madtulip_apex_bottom_stabilization_thruster.png
+[23:32:48 331] Loading asset madtulip_avian_stabilization_thruster of type object
+[23:32:48 336]   Image loaded at D:\Program Files (x86)\Steam\steamapps\common\Starbound\mods\madtulip\ship parts\avian\stabilization_thruster\madtulip_avian_bottom_stabilization_thruster.png
+[23:32:48 336] Loading asset madtulip_floran_stabilization_thruster of type object
+[23:32:48 340]   Image loaded at D:\Program Files (x86)\Steam\steamapps\common\Starbound\mods\madtulip\ship parts\floran\stabilization thruster\madtulip_floran_stabilization_thruster.png
+[23:32:48 340] Loading asset madtulip_glitch_stabilization_thruster of type object
+[23:32:48 344]   Image loaded at D:\Program Files (x86)\Steam\steamapps\common\Starbound\mods\madtulip\ship parts\glitch\stabilization thruster\madtulip_glitch_stabilization_thruster.png
+[23:32:48 344] Loading asset madtulip_human_stabilization_thruster of type object
+[23:32:48 347]   Image loaded at D:\Program Files (x86)\Steam\steamapps\common\Starbound\mods\madtulip\ship parts\human\stabilization thruster\madtulip_human_bottom_stabilization_thruster.png
+[23:32:48 347] Loading asset madtulip_hylotl_stabilization_thruster of type object
+[23:32:48 351]   Image loaded at D:\Program Files (x86)\Steam\steamapps\common\Starbound\mods\madtulip\ship parts\hylotl\stabilization thruster\madtulip_hylotl_stabilization_thruster.png
+[23:32:48 351] Loading asset madtulip_apex_gyro_stabilizer of type object
+[23:32:48 355]   Image loaded at D:\Program Files (x86)\Steam\steamapps\common\Starbound\mods\madtulip\ship parts\apex\gyro stabilizer\madtulip_apex_top_gyro_stabilizer.png
+[23:32:48 357]   Image loaded at D:\Program Files (x86)\Steam\steamapps\common\Starbound\mods\madtulip\ship parts\apex\gyro stabilizer\madtulip_apex_bottom_gyro_stabilizer.png
+[23:32:48 357] Loading asset madtulip_avian_gyro_stabilizer of type object
+[23:32:48 361]   Image loaded at D:\Program Files (x86)\Steam\steamapps\common\Starbound\mods\madtulip\ship parts\avian\gyro stabilizer\madtulip_avian_top_gyro_stabilizer.png
+[23:32:48 363]   Image loaded at D:\Program Files (x86)\Steam\steamapps\common\Starbound\mods\madtulip\ship parts\avian\gyro stabilizer\madtulip_avian_bottom_gyro_stabilizer.png
+[23:32:48 363] Loading asset madtulip_floran_gyro_stabilizer of type object
+[23:32:48 366]   Image loaded at D:\Program Files (x86)\Steam\steamapps\common\Starbound\mods\madtulip\ship parts\floran\gyro stabilizer\madtulip_floran_top_gyro_stabilizer.png
+[23:32:48 368]   Image loaded at D:\Program Files (x86)\Steam\steamapps\common\Starbound\mods\madtulip\ship parts\floran\gyro stabilizer\madtulip_floran_bottom_gyro_stabilizer.png
+[23:32:48 368] Loading asset madtulip_glitch_gyro_stabilizer of type object
+[23:32:48 372]   Image loaded at D:\Program Files (x86)\Steam\steamapps\common\Starbound\mods\madtulip\ship parts\glitch\gyro_stabilizer\madtulip_glitch_top_gyro_stabilizer.png
+[23:32:48 375]   Image loaded at D:\Program Files (x86)\Steam\steamapps\common\Starbound\mods\madtulip\ship parts\glitch\gyro_stabilizer\madtulip_glitch_bottom_gyro_stabilizer.png
+[23:32:48 375] Loading asset madtulip_human_gyro_stabilizer of type object
+[23:32:48 378]   Image loaded at D:\Program Files (x86)\Steam\steamapps\common\Starbound\mods\madtulip\ship parts\human\gyro stabilizer\madtulip_human_top_gyro_stabilizer.png
+[23:32:48 380]   Image loaded at D:\Program Files (x86)\Steam\steamapps\common\Starbound\mods\madtulip\ship parts\human\gyro stabilizer\madtulip_human_bottom_gyro_stabilizer.png
+[23:32:48 381] Loading asset madtulip_hylotl_gyro_stabilizer of type object
+[23:32:48 384]   Image loaded at D:\Program Files (x86)\Steam\steamapps\common\Starbound\mods\madtulip\ship parts\hylotl\gyro stabilizer\madtulip_hylotl_top_gyro_stabilizer.png
+[23:32:48 387]   Image loaded at D:\Program Files (x86)\Steam\steamapps\common\Starbound\mods\madtulip\ship parts\hylotl\gyro stabilizer\madtulip_hylotl_bottom_gyro_stabilizer.png
+[23:32:48 387] Loading asset madtulip_apex_large_fin of type object
+[23:32:48 390]   Image loaded at D:\Program Files (x86)\Steam\steamapps\common\Starbound\mods\madtulip\ship parts\apex\large fin\madtulip_apex_top_large_fin.png
+[23:32:48 392]   Image loaded at D:\Program Files (x86)\Steam\steamapps\common\Starbound\mods\madtulip\ship parts\apex\large fin\madtulip_apex_bottom_large_fin.png
+[23:32:48 392] Loading asset madtulip_avian_large_fin of type object
+[23:32:48 395]   Image loaded at D:\Program Files (x86)\Steam\steamapps\common\Starbound\mods\madtulip\ship parts\avian\large fin\madtulip_avian_top_large_fin.png
+[23:32:48 397]   Image loaded at D:\Program Files (x86)\Steam\steamapps\common\Starbound\mods\madtulip\ship parts\avian\large fin\madtulip_avian_bottom_large_fin.png
+[23:32:48 397] Loading asset madtulip_human_large_fin of type object
+[23:32:48 403]   Image loaded at D:\Program Files (x86)\Steam\steamapps\common\Starbound\mods\madtulip\ship parts\human\large fin\madtulip_human_top_large_fin.png
+[23:32:48 407]   Image loaded at D:\Program Files (x86)\Steam\steamapps\common\Starbound\mods\madtulip\ship parts\human\large fin\madtulip_human_bottom_large_fin.png
+[23:32:48 407] Loading asset madtulip_hylotl_large_fin of type object
+[23:32:48 411]   Image loaded at D:\Program Files (x86)\Steam\steamapps\common\Starbound\mods\madtulip\ship parts\hylotl\large fin\madtulip_hylotl_top_large_fin.png
+[23:32:48 413]   Image loaded at D:\Program Files (x86)\Steam\steamapps\common\Starbound\mods\madtulip\ship parts\hylotl\large fin\madtulip_hylotl_bottom_large_fin.png
+[23:32:48 413] Loading asset madtulip_shipdoor of type object
+[23:32:48 416]   Image loaded at D:\Program Files (x86)\Steam\steamapps\common\Starbound\mods\madtulip\ship parts\generic\shipdoor\madtulip_shipdoor.png
+[23:32:48 416] Loading asset madtulip_avian_shipdoor of type object
+[23:32:48 419]   Image loaded at D:\Program Files (x86)\Steam\steamapps\common\Starbound\mods\madtulip\ship parts\avian\avian shipdoor\madtulip_avian_shipdoor.png
+[23:32:48 419] Loading asset madtulip_floran_shipdoor of type object
+[23:32:48 423]   Image loaded at D:\Program Files (x86)\Steam\steamapps\common\Starbound\mods\madtulip\ship parts\floran\floran shipdoor\madtulip_floran_shipdoor.png
+[23:32:48 423] Loading asset madtulip_hylotl_shipdoor of type object
+[23:32:48 426]   Image loaded at D:\Program Files (x86)\Steam\steamapps\common\Starbound\mods\madtulip\ship parts\hylotl\hylotl shipdoor\madtulip_hylotl_shipdoor.png
+[23:32:48 426] Loading asset madtulip_shiplocker of type object
+[23:32:48 429]   Image loaded at D:\Program Files (x86)\Steam\steamapps\common\Starbound\mods\madtulip\objects\shiplocker\madtulip_shiplocker.png
+[23:32:48 429] Loading asset madtulip_captainschair of type object
+[23:32:48 432]   Image loaded at D:\Program Files (x86)\Steam\steamapps\common\Starbound\mods\madtulip\objects\captainschair\madtulip_captainschair.png
+[23:32:48 432] Loading asset madtulip_techstation of type object
+[23:32:48 435]   Image loaded at D:\Program Files (x86)\Steam\steamapps\common\Starbound\mods\madtulip\objects\techstation\madtulip_techstation.png
+[23:32:48 435] Loading asset madtulip_shipstation of type object
+[23:32:48 438]   Image loaded at D:\Program Files (x86)\Steam\steamapps\common\Starbound\mods\madtulip\objects\ship station\madtulip_shipstation.png
+[23:32:48 438] Loading asset madtulip_shipnavigationconsole of type object
+[23:32:48 441]   Image loaded at D:\Program Files (x86)\Steam\steamapps\common\Starbound\mods\madtulip\ship parts\generic\ship navigation console\madtulip_shipnavigationconsole.png
+[23:32:48 441] Loading asset madtulip_vent of type object
+[23:32:48 444]   Image loaded at D:\Program Files (x86)\Steam\steamapps\common\Starbound\mods\madtulip\objects\life support vent\madtulip_vent_green.png
+[23:32:48 444] Loading asset madtulip_fuelhatch of type object
+[23:32:48 447]   Image loaded at D:\Program Files (x86)\Steam\steamapps\common\Starbound\mods\madtulip\objects\fuelhatch\madtulip_fuelhatch.png
+[23:32:48 447] Loading asset madtulip_shiplight of type object
+[23:32:48 450]   Image loaded at D:\Program Files (x86)\Steam\steamapps\common\Starbound\mods\madtulip\ship parts\generic\shiplight\madtulip_shiplight.png
+[23:32:48 450] Loading asset shipengine of type object
+[23:32:48 451] Loading asset madtulip_teleporter of type object
+[23:32:48 454]   Image loaded at D:\Program Files (x86)\Steam\steamapps\common\Starbound\mods\madtulip\ship parts\generic\teleporter\madtulip_teleporter.png
+[23:32:48 454] Loading asset madtulip_apex_bl of type back
+[23:32:48 456]   Image loaded at D:\Program Files (x86)\Steam\steamapps\common\Starbound\mods\madtulip\materials\tilesets\apex\madtulip_apex_bl.png
+[23:32:48 456] Loading asset madtulip_apex_blt of type back
+[23:32:48 458]   Image loaded at D:\Program Files (x86)\Steam\steamapps\common\Starbound\mods\madtulip\materials\tilesets\apex\madtulip_apex_blt.png
+[23:32:48 458] Loading asset madtulip_apex_br of type back
+[23:32:48 460]   Image loaded at D:\Program Files (x86)\Steam\steamapps\common\Starbound\mods\madtulip\materials\tilesets\apex\madtulip_apex_br.png
+[23:32:48 460] Loading asset madtulip_apex_default of type back
+[23:32:48 461]   Image loaded at D:\Program Files (x86)\Steam\steamapps\common\Starbound\mods\madtulip\materials\tilesets\apex\madtulip_apex_default.png
+[23:32:48 461] Loading asset madtulip_apex_lr of type back
+[23:32:48 463]   Image loaded at D:\Program Files (x86)\Steam\steamapps\common\Starbound\mods\madtulip\materials\tilesets\apex\madtulip_apex_lr.png
+[23:32:48 463] Loading asset madtulip_apex_ltr of type back
+[23:32:48 464]   Image loaded at D:\Program Files (x86)\Steam\steamapps\common\Starbound\mods\madtulip\materials\tilesets\apex\madtulip_apex_ltr.png
+[23:32:48 464] Loading asset madtulip_apex_rbl of type back
+[23:32:48 466]   Image loaded at D:\Program Files (x86)\Steam\steamapps\common\Starbound\mods\madtulip\materials\tilesets\apex\madtulip_apex_rbl.png
+[23:32:48 466] Loading asset madtulip_apex_tb of type back
+[23:32:48 468]   Image loaded at D:\Program Files (x86)\Steam\steamapps\common\Starbound\mods\madtulip\materials\tilesets\apex\madtulip_apex_tb.png
+[23:32:48 468] Loading asset madtulip_apex_tl of type back
+[23:32:48 470]   Image loaded at D:\Program Files (x86)\Steam\steamapps\common\Starbound\mods\madtulip\materials\tilesets\apex\madtulip_apex_tl.png
+[23:32:48 470] Loading asset madtulip_apex_tr of type back
+[23:32:48 471]   Image loaded at D:\Program Files (x86)\Steam\steamapps\common\Starbound\mods\madtulip\materials\tilesets\apex\madtulip_apex_tr.png
+[23:32:48 471] Loading asset madtulip_apex_trb of type back
+[23:32:48 473]   Image loaded at D:\Program Files (x86)\Steam\steamapps\common\Starbound\mods\madtulip\materials\tilesets\apex\madtulip_apex_trb.png
+[23:32:48 473] Loading asset madtulip_apex_trbl of type back
+[23:32:48 474]   Image loaded at D:\Program Files (x86)\Steam\steamapps\common\Starbound\mods\madtulip\materials\tilesets\apex\madtulip_apex_trbl.png
+[23:32:48 474] Loading asset madtulip_avian_bl of type back
+[23:32:48 476]   Image loaded at D:\Program Files (x86)\Steam\steamapps\common\Starbound\mods\madtulip\materials\tilesets\avian\madtulip_avian_bl.png
+[23:32:48 476] Loading asset madtulip_avian_blt of type back
+[23:32:48 477]   Image loaded at D:\Program Files (x86)\Steam\steamapps\common\Starbound\mods\madtulip\materials\tilesets\avian\madtulip_avian_blt.png
+[23:32:48 477] Loading asset madtulip_avian_br of type back
+[23:32:48 479]   Image loaded at D:\Program Files (x86)\Steam\steamapps\common\Starbound\mods\madtulip\materials\tilesets\avian\madtulip_avian_br.png
+[23:32:48 479] Loading asset madtulip_avian_default of type back
+[23:32:48 480]   Image loaded at D:\Program Files (x86)\Steam\steamapps\common\Starbound\mods\madtulip\materials\tilesets\avian\madtulip_avian_default.png
+[23:32:48 480] Loading asset madtulip_avian_lr of type back
+[23:32:48 482]   Image loaded at D:\Program Files (x86)\Steam\steamapps\common\Starbound\mods\madtulip\materials\tilesets\avian\madtulip_avian_lr.png
+[23:32:48 482] Loading asset madtulip_avian_ltr of type back
+[23:32:48 483]   Image loaded at D:\Program Files (x86)\Steam\steamapps\common\Starbound\mods\madtulip\materials\tilesets\avian\madtulip_avian_ltr.png
+[23:32:48 483] Loading asset madtulip_avian_rbl of type back
+[23:32:48 485]   Image loaded at D:\Program Files (x86)\Steam\steamapps\common\Starbound\mods\madtulip\materials\tilesets\avian\madtulip_avian_rbl.png
+[23:32:48 485] Loading asset madtulip_avian_tb of type back
+[23:32:48 487]   Image loaded at D:\Program Files (x86)\Steam\steamapps\common\Starbound\mods\madtulip\materials\tilesets\avian\madtulip_avian_tb.png
+[23:32:48 487] Loading asset madtulip_avian_tl of type back
+[23:32:48 488]   Image loaded at D:\Program Files (x86)\Steam\steamapps\common\Starbound\mods\madtulip\materials\tilesets\avian\madtulip_avian_tl.png
+[23:32:48 488] Loading asset madtulip_avian_tr of type back
+[23:32:48 490]   Image loaded at D:\Program Files (x86)\Steam\steamapps\common\Starbound\mods\madtulip\materials\tilesets\avian\madtulip_avian_tr.png
+[23:32:48 490] Loading asset madtulip_avian_trb of type back
+[23:32:48 491]   Image loaded at D:\Program Files (x86)\Steam\steamapps\common\Starbound\mods\madtulip\materials\tilesets\avian\madtulip_avian_trb.png
+[23:32:48 491] Loading asset madtulip_avian_trbl of type back
+[23:32:48 493]   Image loaded at D:\Program Files (x86)\Steam\steamapps\common\Starbound\mods\madtulip\materials\tilesets\avian\madtulip_avian_trbl.png
+[23:32:48 493] Loading asset madtulip_floran_bl of type back
+[23:32:48 495]   Image loaded at D:\Program Files (x86)\Steam\steamapps\common\Starbound\mods\madtulip\materials\tilesets\floran\madtulip_floran_bl.png
+[23:32:48 495] Loading asset madtulip_floran_blt of type back
+[23:32:48 496]   Image loaded at D:\Program Files (x86)\Steam\steamapps\common\Starbound\mods\madtulip\materials\tilesets\floran\madtulip_floran_blt.png
+[23:32:48 496] Loading asset madtulip_floran_br of type back
+[23:32:48 498]   Image loaded at D:\Program Files (x86)\Steam\steamapps\common\Starbound\mods\madtulip\materials\tilesets\floran\madtulip_floran_br.png
+[23:32:48 498] Loading asset madtulip_floran_default of type back
+[23:32:48 499]   Image loaded at D:\Program Files (x86)\Steam\steamapps\common\Starbound\mods\madtulip\materials\tilesets\floran\madtulip_floran_default.png
+[23:32:48 499] Loading asset madtulip_floran_lr of type back
+[23:32:48 501]   Image loaded at D:\Program Files (x86)\Steam\steamapps\common\Starbound\mods\madtulip\materials\tilesets\floran\madtulip_floran_lr.png
+[23:32:48 501] Loading asset madtulip_floran_ltr of type back
+[23:32:48 503]   Image loaded at D:\Program Files (x86)\Steam\steamapps\common\Starbound\mods\madtulip\materials\tilesets\floran\madtulip_floran_ltr.png
+[23:32:48 503] Loading asset madtulip_floran_rbl of type back
+[23:32:48 504]   Image loaded at D:\Program Files (x86)\Steam\steamapps\common\Starbound\mods\madtulip\materials\tilesets\floran\madtulip_floran_rbl.png
+[23:32:48 504] Loading asset madtulip_floran_tb of type back
+[23:32:48 505]   Image loaded at D:\Program Files (x86)\Steam\steamapps\common\Starbound\mods\madtulip\materials\tilesets\floran\madtulip_floran_tb.png
+[23:32:48 505] Loading asset madtulip_floran_tl of type back
+[23:32:48 507]   Image loaded at D:\Program Files (x86)\Steam\steamapps\common\Starbound\mods\madtulip\materials\tilesets\floran\madtulip_floran_tl.png
+[23:32:48 507] Loading asset madtulip_floran_tr of type back
+[23:32:48 508]   Image loaded at D:\Program Files (x86)\Steam\steamapps\common\Starbound\mods\madtulip\materials\tilesets\floran\madtulip_floran_tr.png
+[23:32:48 508] Loading asset madtulip_floran_trb of type back
+[23:32:48 509]   Image loaded at D:\Program Files (x86)\Steam\steamapps\common\Starbound\mods\madtulip\materials\tilesets\floran\madtulip_floran_trb.png
+[23:32:48 509] Loading asset madtulip_floran_trbl of type back
+[23:32:48 511]   Image loaded at D:\Program Files (x86)\Steam\steamapps\common\Starbound\mods\madtulip\materials\tilesets\floran\madtulip_floran_trbl.png
+[23:32:48 511] Loading asset madtulip_glitch_bl of type back
+[23:32:48 512]   Image loaded at D:\Program Files (x86)\Steam\steamapps\common\Starbound\mods\madtulip\materials\tilesets\glitch\madtulip_glitch_bl.png
+[23:32:48 512] Loading asset madtulip_glitch_blt of type back
+[23:32:48 514]   Image loaded at D:\Program Files (x86)\Steam\steamapps\common\Starbound\mods\madtulip\materials\tilesets\glitch\madtulip_glitch_blt.png
+[23:32:48 514] Loading asset madtulip_glitch_br of type back
+[23:32:48 515]   Image loaded at D:\Program Files (x86)\Steam\steamapps\common\Starbound\mods\madtulip\materials\tilesets\glitch\madtulip_glitch_br.png
+[23:32:48 515] Loading asset madtulip_glitch_default of type back
+[23:32:48 517]   Image loaded at D:\Program Files (x86)\Steam\steamapps\common\Starbound\mods\madtulip\materials\tilesets\glitch\madtulip_glitch_default.png
+[23:32:48 517] Loading asset madtulip_glitch_lr of type back
+[23:32:48 518]   Image loaded at D:\Program Files (x86)\Steam\steamapps\common\Starbound\mods\madtulip\materials\tilesets\glitch\madtulip_glitch_lr.png
+[23:32:48 518] Loading asset madtulip_glitch_ltr of type back
+[23:32:48 519]   Image loaded at D:\Program Files (x86)\Steam\steamapps\common\Starbound\mods\madtulip\materials\tilesets\glitch\madtulip_glitch_ltr.png
+[23:32:48 519] Loading asset madtulip_glitch_rbl of type back
+[23:32:48 521]   Image loaded at D:\Program Files (x86)\Steam\steamapps\common\Starbound\mods\madtulip\materials\tilesets\glitch\madtulip_glitch_rbl.png
+[23:32:48 521] Loading asset madtulip_glitch_tb of type back
+[23:32:48 522]   Image loaded at D:\Program Files (x86)\Steam\steamapps\common\Starbound\mods\madtulip\materials\tilesets\glitch\madtulip_glitch_tb.png
+[23:32:48 522] Loading asset madtulip_glitch_tl of type back
+[23:32:48 523]   Image loaded at D:\Program Files (x86)\Steam\steamapps\common\Starbound\mods\madtulip\materials\tilesets\glitch\madtulip_glitch_tl.png
+[23:32:48 523] Loading asset madtulip_glitch_tr of type back
+[23:32:48 524]   Image loaded at D:\Program Files (x86)\Steam\steamapps\common\Starbound\mods\madtulip\materials\tilesets\glitch\madtulip_glitch_tr.png
+[23:32:48 524] Loading asset madtulip_glitch_trb of type back
+[23:32:48 526]   Image loaded at D:\Program Files (x86)\Steam\steamapps\common\Starbound\mods\madtulip\materials\tilesets\glitch\madtulip_glitch_trb.png
+[23:32:48 526] Loading asset madtulip_glitch_trbl of type back
+[23:32:48 527]   Image loaded at D:\Program Files (x86)\Steam\steamapps\common\Starbound\mods\madtulip\materials\tilesets\glitch\madtulip_glitch_trbl.png
+[23:32:48 527] Loading asset madtulip_human_bl of type back
+[23:32:48 528]   Image loaded at D:\Program Files (x86)\Steam\steamapps\common\Starbound\mods\madtulip\materials\tilesets\human\madtulip_human_bl.png
+[23:32:48 528] Loading asset madtulip_human_blt of type back
+[23:32:48 530]   Image loaded at D:\Program Files (x86)\Steam\steamapps\common\Starbound\mods\madtulip\materials\tilesets\human\madtulip_human_blt.png
+[23:32:48 530] Loading asset madtulip_human_br of type back
+[23:32:48 531]   Image loaded at D:\Program Files (x86)\Steam\steamapps\common\Starbound\mods\madtulip\materials\tilesets\human\madtulip_human_br.png
+[23:32:48 531] Loading asset madtulip_human_default of type back
+[23:32:48 532]   Image loaded at D:\Program Files (x86)\Steam\steamapps\common\Starbound\mods\madtulip\materials\tilesets\human\madtulip_human_default.png
+[23:32:48 532] Loading asset madtulip_human_lr of type back
+[23:32:48 533]   Image loaded at D:\Program Files (x86)\Steam\steamapps\common\Starbound\mods\madtulip\materials\tilesets\human\madtulip_human_lr.png
+[23:32:48 533] Loading asset madtulip_human_ltr of type back
+[23:32:48 535]   Image loaded at D:\Program Files (x86)\Steam\steamapps\common\Starbound\mods\madtulip\materials\tilesets\human\madtulip_human_ltr.png
+[23:32:48 535] Loading asset madtulip_human_rbl of type back
+[23:32:48 536]   Image loaded at D:\Program Files (x86)\Steam\steamapps\common\Starbound\mods\madtulip\materials\tilesets\human\madtulip_human_rbl.png
+[23:32:48 536] Loading asset madtulip_human_tb of type back
+[23:32:48 538]   Image loaded at D:\Program Files (x86)\Steam\steamapps\common\Starbound\mods\madtulip\materials\tilesets\human\madtulip_human_tb.png
+[23:32:48 538] Loading asset madtulip_human_tl of type back
+[23:32:48 539]   Image loaded at D:\Program Files (x86)\Steam\steamapps\common\Starbound\mods\madtulip\materials\tilesets\human\madtulip_human_tl.png
+[23:32:48 539] Loading asset madtulip_human_tr of type back
+[23:32:48 540]   Image loaded at D:\Program Files (x86)\Steam\steamapps\common\Starbound\mods\madtulip\materials\tilesets\human\madtulip_human_tr.png
+[23:32:48 540] Loading asset madtulip_human_trb of type back
+[23:32:48 542]   Image loaded at D:\Program Files (x86)\Steam\steamapps\common\Starbound\mods\madtulip\materials\tilesets\human\madtulip_human_trb.png
+[23:32:48 542] Loading asset madtulip_human_trbl of type back
+[23:32:48 543]   Image loaded at D:\Program Files (x86)\Steam\steamapps\common\Starbound\mods\madtulip\materials\tilesets\human\madtulip_human_trbl.png
+[23:32:48 543] Loading asset madtulip_hylotl_bl of type back
+[23:32:48 544]   Image loaded at D:\Program Files (x86)\Steam\steamapps\common\Starbound\mods\madtulip\materials\tilesets\hylotl\madtulip_hylotl_bl.png
+[23:32:48 544] Loading asset madtulip_hylotl_blt of type back
+[23:32:48 546]   Image loaded at D:\Program Files (x86)\Steam\steamapps\common\Starbound\mods\madtulip\materials\tilesets\hylotl\madtulip_hylotl_blt.png
+[23:32:48 546] Loading asset madtulip_hylotl_br of type back
+[23:32:48 547]   Image loaded at D:\Program Files (x86)\Steam\steamapps\common\Starbound\mods\madtulip\materials\tilesets\hylotl\madtulip_hylotl_br.png
+[23:32:48 547] Loading asset madtulip_hylotl_default of type back
+[23:32:48 548]   Image loaded at D:\Program Files (x86)\Steam\steamapps\common\Starbound\mods\madtulip\materials\tilesets\hylotl\madtulip_hylotl_default.png
+[23:32:48 548] Loading asset madtulip_hylotl_lr of type back
+[23:32:48 549]   Image loaded at D:\Program Files (x86)\Steam\steamapps\common\Starbound\mods\madtulip\materials\tilesets\hylotl\madtulip_hylotl_lr.png
+[23:32:48 549] Loading asset madtulip_hylotl_ltr of type back
+[23:32:48 551]   Image loaded at D:\Program Files (x86)\Steam\steamapps\common\Starbound\mods\madtulip\materials\tilesets\hylotl\madtulip_hylotl_ltr.png
+[23:32:48 551] Loading asset madtulip_hylotl_rbl of type back
+[23:32:48 552]   Image loaded at D:\Program Files (x86)\Steam\steamapps\common\Starbound\mods\madtulip\materials\tilesets\hylotl\madtulip_hylotl_rbl.png
+[23:32:48 552] Loading asset madtulip_hylotl_tb of type back
+[23:32:48 553]   Image loaded at D:\Program Files (x86)\Steam\steamapps\common\Starbound\mods\madtulip\materials\tilesets\hylotl\madtulip_hylotl_tb.png
+[23:32:48 553] Loading asset madtulip_hylotl_tl of type back
+[23:32:48 555]   Image loaded at D:\Program Files (x86)\Steam\steamapps\common\Starbound\mods\madtulip\materials\tilesets\hylotl\madtulip_hylotl_tl.png
+[23:32:48 555] Loading asset madtulip_hylotl_tr of type back
+[23:32:48 556]   Image loaded at D:\Program Files (x86)\Steam\steamapps\common\Starbound\mods\madtulip\materials\tilesets\hylotl\madtulip_hylotl_tr.png
+[23:32:48 556] Loading asset madtulip_hylotl_trb of type back
+[23:32:48 557]   Image loaded at D:\Program Files (x86)\Steam\steamapps\common\Starbound\mods\madtulip\materials\tilesets\hylotl\madtulip_hylotl_trb.png
+[23:32:48 557] Loading asset madtulip_hylotl_trbl of type back
+[23:32:48 558]   Image loaded at D:\Program Files (x86)\Steam\steamapps\common\Starbound\mods\madtulip\materials\tilesets\hylotl\madtulip_hylotl_trbl.png
+[23:32:48 558] Loading asset madtulip_glass_bl of type back
+[23:32:48 560]   Image loaded at D:\Program Files (x86)\Steam\steamapps\common\Starbound\mods\madtulip\materials\tilesets\glass\madtulip_glass_bl.png
+[23:32:48 560] Loading asset madtulip_glass_blt of type back
+[23:32:48 561]   Image loaded at D:\Program Files (x86)\Steam\steamapps\common\Starbound\mods\madtulip\materials\tilesets\glass\madtulip_glass_blt.png
+[23:32:48 561] Loading asset madtulip_glass_br of type back
+[23:32:48 563]   Image loaded at D:\Program Files (x86)\Steam\steamapps\common\Starbound\mods\madtulip\materials\tilesets\glass\madtulip_glass_br.png
+[23:32:48 563] Loading asset madtulip_glass_default of type back
+[23:32:48 565]   Image loaded at D:\Program Files (x86)\Steam\steamapps\common\Starbound\mods\madtulip\materials\tilesets\glass\madtulip_glass_default.png
+[23:32:48 565] Loading asset madtulip_glass_lr of type back
+[23:32:48 566]   Image loaded at D:\Program Files (x86)\Steam\steamapps\common\Starbound\mods\madtulip\materials\tilesets\glass\madtulip_glass_lr.png
+[23:32:48 566] Loading asset madtulip_glass_ltr of type back
+[23:32:48 568]   Image loaded at D:\Program Files (x86)\Steam\steamapps\common\Starbound\mods\madtulip\materials\tilesets\glass\madtulip_glass_ltr.png
+[23:32:48 568] Loading asset madtulip_glass_rbl of type back
+[23:32:48 569]   Image loaded at D:\Program Files (x86)\Steam\steamapps\common\Starbound\mods\madtulip\materials\tilesets\glass\madtulip_glass_rbl.png
+[23:32:48 569] Loading asset madtulip_glass_tb of type back
+[23:32:48 570]   Image loaded at D:\Program Files (x86)\Steam\steamapps\common\Starbound\mods\madtulip\materials\tilesets\glass\madtulip_glass_tb.png
+[23:32:48 570] Loading asset madtulip_glass_tl of type back
+[23:32:48 572]   Image loaded at D:\Program Files (x86)\Steam\steamapps\common\Starbound\mods\madtulip\materials\tilesets\glass\madtulip_glass_tl.png
+[23:32:48 572] Loading asset madtulip_glass_tr of type back
+[23:32:48 573]   Image loaded at D:\Program Files (x86)\Steam\steamapps\common\Starbound\mods\madtulip\materials\tilesets\glass\madtulip_glass_tr.png
+[23:32:48 573] Loading asset madtulip_glass_trb of type back
+[23:32:48 574]   Image loaded at D:\Program Files (x86)\Steam\steamapps\common\Starbound\mods\madtulip\materials\tilesets\glass\madtulip_glass_trb.png
+[23:32:48 574] Loading asset madtulip_glass_trbl of type back
+[23:32:48 575]   Image loaded at D:\Program Files (x86)\Steam\steamapps\common\Starbound\mods\madtulip\materials\tilesets\glass\madtulip_glass_trbl.png
+[23:32:48 576] Loading part madtulip_hylotl_ship_blocks.png
+[23:32:49 218]   Loading background overlay dummy.png
+[23:32:49 219]   Completed loading background overlay dummy.png
+[23:32:49 219] Completed loading part madtulip_hylotl_ship_blocks.png
+[23:32:49 219] Completed parsing D:\Program Files (x86)\Steam\steamapps\common\Starbound\mods\madtulip\ships\hylotl\madtulip_hylotl_ship.structure
+[23:33:18 513] Saving settings.json
+[23:35:24 036] Saving settings.json
+[23:35:47 675] Parsing D:\Program Files (x86)\Steam\steamapps\common\Starbound\mods\madtulip\ships\hylotl\madtulip_hylotl_ship.structure
+[23:35:47 714]   Parsing 173 brushes
+[23:35:47 715] Populating asset list with assets from D:\Program Files (x86)\Steam\steamapps\common\Starbound\assets
+[23:35:48 117] Populating asset list with assets from D:\Program Files (x86)\Steam\steamapps\common\Starbound\mods
+[23:35:48 142] Loading asset apexshipwall of type front
+[23:35:48 149]   Image loaded at D:\Program Files (x86)\Steam\steamapps\common\Starbound\assets\tiles\materials\apexshipwall.png
+[23:35:48 150] Loading asset steelplatform of type front
+[23:35:48 152]   Image loaded at D:\Program Files (x86)\Steam\steamapps\common\Starbound\assets\tiles\platforms\steelplatform.png
+[23:35:48 152] Loading asset apexshipdetails of type front
+[23:35:48 154]   Image loaded at D:\Program Files (x86)\Steam\steamapps\common\Starbound\assets\tiles\materials\apexshipdetails.png
+[23:35:48 154] Loading asset apexshipsupport of type front
+[23:35:48 155]   Image loaded at D:\Program Files (x86)\Steam\steamapps\common\Starbound\assets\tiles\materials\apexshipsupport.png
+[23:35:48 155] Loading asset glass of type front
+[23:35:48 157]   Image loaded at D:\Program Files (x86)\Steam\steamapps\common\Starbound\assets\tiles\materials\glass.png
+[23:35:48 157] Loading asset madtulip_apex_ftl_thruster of type object
+[23:35:48 180]   Image loaded at D:\Program Files (x86)\Steam\steamapps\common\Starbound\mods\madtulip\ship parts\apex\ftl thruster\madtulip_apex_ftl_thruster.png
+[23:35:48 180] Loading asset madtulip_avian_ftl_thruster of type object
+[23:35:48 184]   Image loaded at D:\Program Files (x86)\Steam\steamapps\common\Starbound\mods\madtulip\ship parts\avian\ftl thruster\madtulip_avian_ftl_thruster.png
+[23:35:48 184] Loading asset madtulip_floran_ftl_thruster of type object
+[23:35:48 188]   Image loaded at D:\Program Files (x86)\Steam\steamapps\common\Starbound\mods\madtulip\ship parts\floran\ftl thruster\madtulip_floran_ftl_thruster.png
+[23:35:48 189] Loading asset madtulip_glitch_ftl_thruster of type object
+[23:35:48 192]   Image loaded at D:\Program Files (x86)\Steam\steamapps\common\Starbound\mods\madtulip\ship parts\glitch\ftl thruster\madtulip_glitch_ftl_thruster.png
+[23:35:48 192] Loading asset madtulip_human_ftl_thruster of type object
+[23:35:48 200]   Image loaded at D:\Program Files (x86)\Steam\steamapps\common\Starbound\mods\madtulip\ship parts\human\ftl thruster\madtulip_human_ftl_thruster.png
+[23:35:48 200] Loading asset madtulip_hylotl_ftl_thruster of type object
+[23:35:48 204]   Image loaded at D:\Program Files (x86)\Steam\steamapps\common\Starbound\mods\madtulip\ship parts\hylotl\ftl thruster\madtulip_hylotl_ftl_thruster.png
+[23:35:48 204] Loading asset madtulip_apex_stabilization_thruster of type object
+[23:35:48 208]   Image loaded at D:\Program Files (x86)\Steam\steamapps\common\Starbound\mods\madtulip\ship parts\apex\stabilization thruster\madtulip_apex_bottom_stabilization_thruster.png
+[23:35:48 208] Loading asset madtulip_avian_stabilization_thruster of type object
+[23:35:48 212]   Image loaded at D:\Program Files (x86)\Steam\steamapps\common\Starbound\mods\madtulip\ship parts\avian\stabilization_thruster\madtulip_avian_bottom_stabilization_thruster.png
+[23:35:48 213] Loading asset madtulip_floran_stabilization_thruster of type object
+[23:35:48 216]   Image loaded at D:\Program Files (x86)\Steam\steamapps\common\Starbound\mods\madtulip\ship parts\floran\stabilization thruster\madtulip_floran_stabilization_thruster.png
+[23:35:48 216] Loading asset madtulip_glitch_stabilization_thruster of type object
+[23:35:48 220]   Image loaded at D:\Program Files (x86)\Steam\steamapps\common\Starbound\mods\madtulip\ship parts\glitch\stabilization thruster\madtulip_glitch_stabilization_thruster.png
+[23:35:48 220] Loading asset madtulip_human_stabilization_thruster of type object
+[23:35:48 224]   Image loaded at D:\Program Files (x86)\Steam\steamapps\common\Starbound\mods\madtulip\ship parts\human\stabilization thruster\madtulip_human_bottom_stabilization_thruster.png
+[23:35:48 224] Loading asset madtulip_hylotl_stabilization_thruster of type object
+[23:35:48 228]   Image loaded at D:\Program Files (x86)\Steam\steamapps\common\Starbound\mods\madtulip\ship parts\hylotl\stabilization thruster\madtulip_hylotl_stabilization_thruster.png
+[23:35:48 228] Loading asset madtulip_apex_gyro_stabilizer of type object
+[23:35:48 231]   Image loaded at D:\Program Files (x86)\Steam\steamapps\common\Starbound\mods\madtulip\ship parts\apex\gyro stabilizer\madtulip_apex_top_gyro_stabilizer.png
+[23:35:48 234]   Image loaded at D:\Program Files (x86)\Steam\steamapps\common\Starbound\mods\madtulip\ship parts\apex\gyro stabilizer\madtulip_apex_bottom_gyro_stabilizer.png
+[23:35:48 234] Loading asset madtulip_avian_gyro_stabilizer of type object
+[23:35:48 237]   Image loaded at D:\Program Files (x86)\Steam\steamapps\common\Starbound\mods\madtulip\ship parts\avian\gyro stabilizer\madtulip_avian_top_gyro_stabilizer.png
+[23:35:48 239]   Image loaded at D:\Program Files (x86)\Steam\steamapps\common\Starbound\mods\madtulip\ship parts\avian\gyro stabilizer\madtulip_avian_bottom_gyro_stabilizer.png
+[23:35:48 239] Loading asset madtulip_floran_gyro_stabilizer of type object
+[23:35:48 243]   Image loaded at D:\Program Files (x86)\Steam\steamapps\common\Starbound\mods\madtulip\ship parts\floran\gyro stabilizer\madtulip_floran_top_gyro_stabilizer.png
+[23:35:48 245]   Image loaded at D:\Program Files (x86)\Steam\steamapps\common\Starbound\mods\madtulip\ship parts\floran\gyro stabilizer\madtulip_floran_bottom_gyro_stabilizer.png
+[23:35:48 245] Loading asset madtulip_glitch_gyro_stabilizer of type object
+[23:35:48 248]   Image loaded at D:\Program Files (x86)\Steam\steamapps\common\Starbound\mods\madtulip\ship parts\glitch\gyro_stabilizer\madtulip_glitch_top_gyro_stabilizer.png
+[23:35:48 251]   Image loaded at D:\Program Files (x86)\Steam\steamapps\common\Starbound\mods\madtulip\ship parts\glitch\gyro_stabilizer\madtulip_glitch_bottom_gyro_stabilizer.png
+[23:35:48 251] Loading asset madtulip_human_gyro_stabilizer of type object
+[23:35:48 255]   Image loaded at D:\Program Files (x86)\Steam\steamapps\common\Starbound\mods\madtulip\ship parts\human\gyro stabilizer\madtulip_human_top_gyro_stabilizer.png
+[23:35:48 257]   Image loaded at D:\Program Files (x86)\Steam\steamapps\common\Starbound\mods\madtulip\ship parts\human\gyro stabilizer\madtulip_human_bottom_gyro_stabilizer.png
+[23:35:48 257] Loading asset madtulip_hylotl_gyro_stabilizer of type object
+[23:35:48 261]   Image loaded at D:\Program Files (x86)\Steam\steamapps\common\Starbound\mods\madtulip\ship parts\hylotl\gyro stabilizer\madtulip_hylotl_top_gyro_stabilizer.png
+[23:35:48 263]   Image loaded at D:\Program Files (x86)\Steam\steamapps\common\Starbound\mods\madtulip\ship parts\hylotl\gyro stabilizer\madtulip_hylotl_bottom_gyro_stabilizer.png
+[23:35:48 263] Loading asset madtulip_apex_large_fin of type object
+[23:35:48 266]   Image loaded at D:\Program Files (x86)\Steam\steamapps\common\Starbound\mods\madtulip\ship parts\apex\large fin\madtulip_apex_top_large_fin.png
+[23:35:48 268]   Image loaded at D:\Program Files (x86)\Steam\steamapps\common\Starbound\mods\madtulip\ship parts\apex\large fin\madtulip_apex_bottom_large_fin.png
+[23:35:48 268] Loading asset madtulip_avian_large_fin of type object
+[23:35:48 272]   Image loaded at D:\Program Files (x86)\Steam\steamapps\common\Starbound\mods\madtulip\ship parts\avian\large fin\madtulip_avian_top_large_fin.png
+[23:35:48 274]   Image loaded at D:\Program Files (x86)\Steam\steamapps\common\Starbound\mods\madtulip\ship parts\avian\large fin\madtulip_avian_bottom_large_fin.png
+[23:35:48 274] Loading asset madtulip_human_large_fin of type object
+[23:35:48 279]   Image loaded at D:\Program Files (x86)\Steam\steamapps\common\Starbound\mods\madtulip\ship parts\human\large fin\madtulip_human_top_large_fin.png
+[23:35:48 283]   Image loaded at D:\Program Files (x86)\Steam\steamapps\common\Starbound\mods\madtulip\ship parts\human\large fin\madtulip_human_bottom_large_fin.png
+[23:35:48 283] Loading asset madtulip_hylotl_large_fin of type object
+[23:35:48 287]   Image loaded at D:\Program Files (x86)\Steam\steamapps\common\Starbound\mods\madtulip\ship parts\hylotl\large fin\madtulip_hylotl_top_large_fin.png
+[23:35:48 289]   Image loaded at D:\Program Files (x86)\Steam\steamapps\common\Starbound\mods\madtulip\ship parts\hylotl\large fin\madtulip_hylotl_bottom_large_fin.png
+[23:35:48 289] Loading asset madtulip_shipdoor of type object
+[23:35:48 292]   Image loaded at D:\Program Files (x86)\Steam\steamapps\common\Starbound\mods\madtulip\ship parts\generic\shipdoor\madtulip_shipdoor.png
+[23:35:48 292] Loading asset madtulip_avian_shipdoor of type object
+[23:35:48 295]   Image loaded at D:\Program Files (x86)\Steam\steamapps\common\Starbound\mods\madtulip\ship parts\avian\avian shipdoor\madtulip_avian_shipdoor.png
+[23:35:48 295] Loading asset madtulip_floran_shipdoor of type object
+[23:35:48 299]   Image loaded at D:\Program Files (x86)\Steam\steamapps\common\Starbound\mods\madtulip\ship parts\floran\floran shipdoor\madtulip_floran_shipdoor.png
+[23:35:48 299] Loading asset madtulip_hylotl_shipdoor of type object
+[23:35:48 302]   Image loaded at D:\Program Files (x86)\Steam\steamapps\common\Starbound\mods\madtulip\ship parts\hylotl\hylotl shipdoor\madtulip_hylotl_shipdoor.png
+[23:35:48 302] Loading asset madtulip_shiplocker of type object
+[23:35:48 305]   Image loaded at D:\Program Files (x86)\Steam\steamapps\common\Starbound\mods\madtulip\objects\shiplocker\madtulip_shiplocker.png
+[23:35:48 305] Loading asset madtulip_captainschair of type object
+[23:35:48 308]   Image loaded at D:\Program Files (x86)\Steam\steamapps\common\Starbound\mods\madtulip\objects\captainschair\madtulip_captainschair.png
+[23:35:48 308] Loading asset madtulip_techstation of type object
+[23:35:48 311]   Image loaded at D:\Program Files (x86)\Steam\steamapps\common\Starbound\mods\madtulip\objects\techstation\madtulip_techstation.png
+[23:35:48 311] Loading asset madtulip_shipstation of type object
+[23:35:48 314]   Image loaded at D:\Program Files (x86)\Steam\steamapps\common\Starbound\mods\madtulip\objects\ship station\madtulip_shipstation.png
+[23:35:48 314] Loading asset madtulip_shipnavigationconsole of type object
+[23:35:48 317]   Image loaded at D:\Program Files (x86)\Steam\steamapps\common\Starbound\mods\madtulip\ship parts\generic\ship navigation console\madtulip_shipnavigationconsole.png
+[23:35:48 317] Loading asset madtulip_vent of type object
+[23:35:48 320]   Image loaded at D:\Program Files (x86)\Steam\steamapps\common\Starbound\mods\madtulip\objects\life support vent\madtulip_vent_green.png
+[23:35:48 320] Loading asset madtulip_fuelhatch of type object
+[23:35:48 323]   Image loaded at D:\Program Files (x86)\Steam\steamapps\common\Starbound\mods\madtulip\objects\fuelhatch\madtulip_fuelhatch.png
+[23:35:48 323] Loading asset madtulip_shiplight of type object
+[23:35:48 326]   Image loaded at D:\Program Files (x86)\Steam\steamapps\common\Starbound\mods\madtulip\ship parts\generic\shiplight\madtulip_shiplight.png
+[23:35:48 326] Loading asset shipengine of type object
+[23:35:48 327] Loading asset madtulip_teleporter of type object
+[23:35:48 331]   Image loaded at D:\Program Files (x86)\Steam\steamapps\common\Starbound\mods\madtulip\ship parts\generic\teleporter\madtulip_teleporter.png
+[23:35:48 331] Loading asset madtulip_apex_bl of type back
+[23:35:48 332]   Image loaded at D:\Program Files (x86)\Steam\steamapps\common\Starbound\mods\madtulip\materials\tilesets\apex\madtulip_apex_bl.png
+[23:35:48 332] Loading asset madtulip_apex_blt of type back
+[23:35:48 334]   Image loaded at D:\Program Files (x86)\Steam\steamapps\common\Starbound\mods\madtulip\materials\tilesets\apex\madtulip_apex_blt.png
+[23:35:48 334] Loading asset madtulip_apex_br of type back
+[23:35:48 336]   Image loaded at D:\Program Files (x86)\Steam\steamapps\common\Starbound\mods\madtulip\materials\tilesets\apex\madtulip_apex_br.png
+[23:35:48 336] Loading asset madtulip_apex_default of type back
+[23:35:48 337]   Image loaded at D:\Program Files (x86)\Steam\steamapps\common\Starbound\mods\madtulip\materials\tilesets\apex\madtulip_apex_default.png
+[23:35:48 337] Loading asset madtulip_apex_lr of type back
+[23:35:48 339]   Image loaded at D:\Program Files (x86)\Steam\steamapps\common\Starbound\mods\madtulip\materials\tilesets\apex\madtulip_apex_lr.png
+[23:35:48 339] Loading asset madtulip_apex_ltr of type back
+[23:35:48 340]   Image loaded at D:\Program Files (x86)\Steam\steamapps\common\Starbound\mods\madtulip\materials\tilesets\apex\madtulip_apex_ltr.png
+[23:35:48 340] Loading asset madtulip_apex_rbl of type back
+[23:35:48 342]   Image loaded at D:\Program Files (x86)\Steam\steamapps\common\Starbound\mods\madtulip\materials\tilesets\apex\madtulip_apex_rbl.png
+[23:35:48 342] Loading asset madtulip_apex_tb of type back
+[23:35:48 344]   Image loaded at D:\Program Files (x86)\Steam\steamapps\common\Starbound\mods\madtulip\materials\tilesets\apex\madtulip_apex_tb.png
+[23:35:48 344] Loading asset madtulip_apex_tl of type back
+[23:35:48 345]   Image loaded at D:\Program Files (x86)\Steam\steamapps\common\Starbound\mods\madtulip\materials\tilesets\apex\madtulip_apex_tl.png
+[23:35:48 345] Loading asset madtulip_apex_tr of type back
+[23:35:48 347]   Image loaded at D:\Program Files (x86)\Steam\steamapps\common\Starbound\mods\madtulip\materials\tilesets\apex\madtulip_apex_tr.png
+[23:35:48 347] Loading asset madtulip_apex_trb of type back
+[23:35:48 349]   Image loaded at D:\Program Files (x86)\Steam\steamapps\common\Starbound\mods\madtulip\materials\tilesets\apex\madtulip_apex_trb.png
+[23:35:48 349] Loading asset madtulip_apex_trbl of type back
+[23:35:48 350]   Image loaded at D:\Program Files (x86)\Steam\steamapps\common\Starbound\mods\madtulip\materials\tilesets\apex\madtulip_apex_trbl.png
+[23:35:48 350] Loading asset madtulip_avian_bl of type back
+[23:35:48 352]   Image loaded at D:\Program Files (x86)\Steam\steamapps\common\Starbound\mods\madtulip\materials\tilesets\avian\madtulip_avian_bl.png
+[23:35:48 352] Loading asset madtulip_avian_blt of type back
+[23:35:48 353]   Image loaded at D:\Program Files (x86)\Steam\steamapps\common\Starbound\mods\madtulip\materials\tilesets\avian\madtulip_avian_blt.png
+[23:35:48 353] Loading asset madtulip_avian_br of type back
+[23:35:48 355]   Image loaded at D:\Program Files (x86)\Steam\steamapps\common\Starbound\mods\madtulip\materials\tilesets\avian\madtulip_avian_br.png
+[23:35:48 355] Loading asset madtulip_avian_default of type back
+[23:35:48 356]   Image loaded at D:\Program Files (x86)\Steam\steamapps\common\Starbound\mods\madtulip\materials\tilesets\avian\madtulip_avian_default.png
+[23:35:48 356] Loading asset madtulip_avian_lr of type back
+[23:35:48 358]   Image loaded at D:\Program Files (x86)\Steam\steamapps\common\Starbound\mods\madtulip\materials\tilesets\avian\madtulip_avian_lr.png
+[23:35:48 358] Loading asset madtulip_avian_ltr of type back
+[23:35:48 359]   Image loaded at D:\Program Files (x86)\Steam\steamapps\common\Starbound\mods\madtulip\materials\tilesets\avian\madtulip_avian_ltr.png
+[23:35:48 359] Loading asset madtulip_avian_rbl of type back
+[23:35:48 361]   Image loaded at D:\Program Files (x86)\Steam\steamapps\common\Starbound\mods\madtulip\materials\tilesets\avian\madtulip_avian_rbl.png
+[23:35:48 361] Loading asset madtulip_avian_tb of type back
+[23:35:48 362]   Image loaded at D:\Program Files (x86)\Steam\steamapps\common\Starbound\mods\madtulip\materials\tilesets\avian\madtulip_avian_tb.png
+[23:35:48 362] Loading asset madtulip_avian_tl of type back
+[23:35:48 364]   Image loaded at D:\Program Files (x86)\Steam\steamapps\common\Starbound\mods\madtulip\materials\tilesets\avian\madtulip_avian_tl.png
+[23:35:48 364] Loading asset madtulip_avian_tr of type back
+[23:35:48 365]   Image loaded at D:\Program Files (x86)\Steam\steamapps\common\Starbound\mods\madtulip\materials\tilesets\avian\madtulip_avian_tr.png
+[23:35:48 365] Loading asset madtulip_avian_trb of type back
+[23:35:48 367]   Image loaded at D:\Program Files (x86)\Steam\steamapps\common\Starbound\mods\madtulip\materials\tilesets\avian\madtulip_avian_trb.png
+[23:35:48 367] Loading asset madtulip_avian_trbl of type back
+[23:35:48 369]   Image loaded at D:\Program Files (x86)\Steam\steamapps\common\Starbound\mods\madtulip\materials\tilesets\avian\madtulip_avian_trbl.png
+[23:35:48 369] Loading asset madtulip_floran_bl of type back
+[23:35:48 370]   Image loaded at D:\Program Files (x86)\Steam\steamapps\common\Starbound\mods\madtulip\materials\tilesets\floran\madtulip_floran_bl.png
+[23:35:48 370] Loading asset madtulip_floran_blt of type back
+[23:35:48 372]   Image loaded at D:\Program Files (x86)\Steam\steamapps\common\Starbound\mods\madtulip\materials\tilesets\floran\madtulip_floran_blt.png
+[23:35:48 372] Loading asset madtulip_floran_br of type back
+[23:35:48 373]   Image loaded at D:\Program Files (x86)\Steam\steamapps\common\Starbound\mods\madtulip\materials\tilesets\floran\madtulip_floran_br.png
+[23:35:48 373] Loading asset madtulip_floran_default of type back
+[23:35:48 375]   Image loaded at D:\Program Files (x86)\Steam\steamapps\common\Starbound\mods\madtulip\materials\tilesets\floran\madtulip_floran_default.png
+[23:35:48 375] Loading asset madtulip_floran_lr of type back
+[23:35:48 377]   Image loaded at D:\Program Files (x86)\Steam\steamapps\common\Starbound\mods\madtulip\materials\tilesets\floran\madtulip_floran_lr.png
+[23:35:48 377] Loading asset madtulip_floran_ltr of type back
+[23:35:48 378]   Image loaded at D:\Program Files (x86)\Steam\steamapps\common\Starbound\mods\madtulip\materials\tilesets\floran\madtulip_floran_ltr.png
+[23:35:48 378] Loading asset madtulip_floran_rbl of type back
+[23:35:48 379]   Image loaded at D:\Program Files (x86)\Steam\steamapps\common\Starbound\mods\madtulip\materials\tilesets\floran\madtulip_floran_rbl.png
+[23:35:48 379] Loading asset madtulip_floran_tb of type back
+[23:35:48 381]   Image loaded at D:\Program Files (x86)\Steam\steamapps\common\Starbound\mods\madtulip\materials\tilesets\floran\madtulip_floran_tb.png
+[23:35:48 381] Loading asset madtulip_floran_tl of type back
+[23:35:48 382]   Image loaded at D:\Program Files (x86)\Steam\steamapps\common\Starbound\mods\madtulip\materials\tilesets\floran\madtulip_floran_tl.png
+[23:35:48 382] Loading asset madtulip_floran_tr of type back
+[23:35:48 384]   Image loaded at D:\Program Files (x86)\Steam\steamapps\common\Starbound\mods\madtulip\materials\tilesets\floran\madtulip_floran_tr.png
+[23:35:48 384] Loading asset madtulip_floran_trb of type back
+[23:35:48 385]   Image loaded at D:\Program Files (x86)\Steam\steamapps\common\Starbound\mods\madtulip\materials\tilesets\floran\madtulip_floran_trb.png
+[23:35:48 385] Loading asset madtulip_floran_trbl of type back
+[23:35:48 387]   Image loaded at D:\Program Files (x86)\Steam\steamapps\common\Starbound\mods\madtulip\materials\tilesets\floran\madtulip_floran_trbl.png
+[23:35:48 387] Loading asset madtulip_glitch_bl of type back
+[23:35:48 388]   Image loaded at D:\Program Files (x86)\Steam\steamapps\common\Starbound\mods\madtulip\materials\tilesets\glitch\madtulip_glitch_bl.png
+[23:35:48 388] Loading asset madtulip_glitch_blt of type back
+[23:35:48 390]   Image loaded at D:\Program Files (x86)\Steam\steamapps\common\Starbound\mods\madtulip\materials\tilesets\glitch\madtulip_glitch_blt.png
+[23:35:48 390] Loading asset madtulip_glitch_br of type back
+[23:35:48 391]   Image loaded at D:\Program Files (x86)\Steam\steamapps\common\Starbound\mods\madtulip\materials\tilesets\glitch\madtulip_glitch_br.png
+[23:35:48 391] Loading asset madtulip_glitch_default of type back
+[23:35:48 392]   Image loaded at D:\Program Files (x86)\Steam\steamapps\common\Starbound\mods\madtulip\materials\tilesets\glitch\madtulip_glitch_default.png
+[23:35:48 392] Loading asset madtulip_glitch_lr of type back
+[23:35:48 394]   Image loaded at D:\Program Files (x86)\Steam\steamapps\common\Starbound\mods\madtulip\materials\tilesets\glitch\madtulip_glitch_lr.png
+[23:35:48 394] Loading asset madtulip_glitch_ltr of type back
+[23:35:48 395]   Image loaded at D:\Program Files (x86)\Steam\steamapps\common\Starbound\mods\madtulip\materials\tilesets\glitch\madtulip_glitch_ltr.png
+[23:35:48 395] Loading asset madtulip_glitch_rbl of type back
+[23:35:48 396]   Image loaded at D:\Program Files (x86)\Steam\steamapps\common\Starbound\mods\madtulip\materials\tilesets\glitch\madtulip_glitch_rbl.png
+[23:35:48 396] Loading asset madtulip_glitch_tb of type back
+[23:35:48 397]   Image loaded at D:\Program Files (x86)\Steam\steamapps\common\Starbound\mods\madtulip\materials\tilesets\glitch\madtulip_glitch_tb.png
+[23:35:48 397] Loading asset madtulip_glitch_tl of type back
+[23:35:48 399]   Image loaded at D:\Program Files (x86)\Steam\steamapps\common\Starbound\mods\madtulip\materials\tilesets\glitch\madtulip_glitch_tl.png
+[23:35:48 399] Loading asset madtulip_glitch_tr of type back
+[23:35:48 400]   Image loaded at D:\Program Files (x86)\Steam\steamapps\common\Starbound\mods\madtulip\materials\tilesets\glitch\madtulip_glitch_tr.png
+[23:35:48 400] Loading asset madtulip_glitch_trb of type back
+[23:35:48 401]   Image loaded at D:\Program Files (x86)\Steam\steamapps\common\Starbound\mods\madtulip\materials\tilesets\glitch\madtulip_glitch_trb.png
+[23:35:48 401] Loading asset madtulip_glitch_trbl of type back
+[23:35:48 403]   Image loaded at D:\Program Files (x86)\Steam\steamapps\common\Starbound\mods\madtulip\materials\tilesets\glitch\madtulip_glitch_trbl.png
+[23:35:48 403] Loading asset madtulip_human_bl of type back
+[23:35:48 404]   Image loaded at D:\Program Files (x86)\Steam\steamapps\common\Starbound\mods\madtulip\materials\tilesets\human\madtulip_human_bl.png
+[23:35:48 404] Loading asset madtulip_human_blt of type back
+[23:35:48 405]   Image loaded at D:\Program Files (x86)\Steam\steamapps\common\Starbound\mods\madtulip\materials\tilesets\human\madtulip_human_blt.png
+[23:35:48 405] Loading asset madtulip_human_br of type back
+[23:35:48 407]   Image loaded at D:\Program Files (x86)\Steam\steamapps\common\Starbound\mods\madtulip\materials\tilesets\human\madtulip_human_br.png
+[23:35:48 407] Loading asset madtulip_human_default of type back
+[23:35:48 408]   Image loaded at D:\Program Files (x86)\Steam\steamapps\common\Starbound\mods\madtulip\materials\tilesets\human\madtulip_human_default.png
+[23:35:48 408] Loading asset madtulip_human_lr of type back
+[23:35:48 409]   Image loaded at D:\Program Files (x86)\Steam\steamapps\common\Starbound\mods\madtulip\materials\tilesets\human\madtulip_human_lr.png
+[23:35:48 409] Loading asset madtulip_human_ltr of type back
+[23:35:48 410]   Image loaded at D:\Program Files (x86)\Steam\steamapps\common\Starbound\mods\madtulip\materials\tilesets\human\madtulip_human_ltr.png
+[23:35:48 410] Loading asset madtulip_human_rbl of type back
+[23:35:48 412]   Image loaded at D:\Program Files (x86)\Steam\steamapps\common\Starbound\mods\madtulip\materials\tilesets\human\madtulip_human_rbl.png
+[23:35:48 412] Loading asset madtulip_human_tb of type back
+[23:35:48 414]   Image loaded at D:\Program Files (x86)\Steam\steamapps\common\Starbound\mods\madtulip\materials\tilesets\human\madtulip_human_tb.png
+[23:35:48 414] Loading asset madtulip_human_tl of type back
+[23:35:48 415]   Image loaded at D:\Program Files (x86)\Steam\steamapps\common\Starbound\mods\madtulip\materials\tilesets\human\madtulip_human_tl.png
+[23:35:48 415] Loading asset madtulip_human_tr of type back
+[23:35:48 416]   Image loaded at D:\Program Files (x86)\Steam\steamapps\common\Starbound\mods\madtulip\materials\tilesets\human\madtulip_human_tr.png
+[23:35:48 416] Loading asset madtulip_human_trb of type back
+[23:35:48 417]   Image loaded at D:\Program Files (x86)\Steam\steamapps\common\Starbound\mods\madtulip\materials\tilesets\human\madtulip_human_trb.png
+[23:35:48 417] Loading asset madtulip_human_trbl of type back
+[23:35:48 419]   Image loaded at D:\Program Files (x86)\Steam\steamapps\common\Starbound\mods\madtulip\materials\tilesets\human\madtulip_human_trbl.png
+[23:35:48 419] Loading asset madtulip_hylotl_bl of type back
+[23:35:48 420]   Image loaded at D:\Program Files (x86)\Steam\steamapps\common\Starbound\mods\madtulip\materials\tilesets\hylotl\madtulip_hylotl_bl.png
+[23:35:48 420] Loading asset madtulip_hylotl_blt of type back
+[23:35:48 421]   Image loaded at D:\Program Files (x86)\Steam\steamapps\common\Starbound\mods\madtulip\materials\tilesets\hylotl\madtulip_hylotl_blt.png
+[23:35:48 421] Loading asset madtulip_hylotl_br of type back
+[23:35:48 422]   Image loaded at D:\Program Files (x86)\Steam\steamapps\common\Starbound\mods\madtulip\materials\tilesets\hylotl\madtulip_hylotl_br.png
+[23:35:48 422] Loading asset madtulip_hylotl_default of type back
+[23:35:48 424]   Image loaded at D:\Program Files (x86)\Steam\steamapps\common\Starbound\mods\madtulip\materials\tilesets\hylotl\madtulip_hylotl_default.png
+[23:35:48 424] Loading asset madtulip_hylotl_lr of type back
+[23:35:48 425]   Image loaded at D:\Program Files (x86)\Steam\steamapps\common\Starbound\mods\madtulip\materials\tilesets\hylotl\madtulip_hylotl_lr.png
+[23:35:48 425] Loading asset madtulip_hylotl_ltr of type back
+[23:35:48 426]   Image loaded at D:\Program Files (x86)\Steam\steamapps\common\Starbound\mods\madtulip\materials\tilesets\hylotl\madtulip_hylotl_ltr.png
+[23:35:48 426] Loading asset madtulip_hylotl_rbl of type back
+[23:35:48 428]   Image loaded at D:\Program Files (x86)\Steam\steamapps\common\Starbound\mods\madtulip\materials\tilesets\hylotl\madtulip_hylotl_rbl.png
+[23:35:48 428] Loading asset madtulip_hylotl_tb of type back
+[23:35:48 429]   Image loaded at D:\Program Files (x86)\Steam\steamapps\common\Starbound\mods\madtulip\materials\tilesets\hylotl\madtulip_hylotl_tb.png
+[23:35:48 429] Loading asset madtulip_hylotl_tl of type back
+[23:35:48 430]   Image loaded at D:\Program Files (x86)\Steam\steamapps\common\Starbound\mods\madtulip\materials\tilesets\hylotl\madtulip_hylotl_tl.png
+[23:35:48 430] Loading asset madtulip_hylotl_tr of type back
+[23:35:48 431]   Image loaded at D:\Program Files (x86)\Steam\steamapps\common\Starbound\mods\madtulip\materials\tilesets\hylotl\madtulip_hylotl_tr.png
+[23:35:48 431] Loading asset madtulip_hylotl_trb of type back
+[23:35:48 433]   Image loaded at D:\Program Files (x86)\Steam\steamapps\common\Starbound\mods\madtulip\materials\tilesets\hylotl\madtulip_hylotl_trb.png
+[23:35:48 433] Loading asset madtulip_hylotl_trbl of type back
+[23:35:48 434]   Image loaded at D:\Program Files (x86)\Steam\steamapps\common\Starbound\mods\madtulip\materials\tilesets\hylotl\madtulip_hylotl_trbl.png
+[23:35:48 434] Loading asset madtulip_glass_bl of type back
+[23:35:48 435]   Image loaded at D:\Program Files (x86)\Steam\steamapps\common\Starbound\mods\madtulip\materials\tilesets\glass\madtulip_glass_bl.png
+[23:35:48 435] Loading asset madtulip_glass_blt of type back
+[23:35:48 437]   Image loaded at D:\Program Files (x86)\Steam\steamapps\common\Starbound\mods\madtulip\materials\tilesets\glass\madtulip_glass_blt.png
+[23:35:48 437] Loading asset madtulip_glass_br of type back
+[23:35:48 438]   Image loaded at D:\Program Files (x86)\Steam\steamapps\common\Starbound\mods\madtulip\materials\tilesets\glass\madtulip_glass_br.png
+[23:35:48 438] Loading asset madtulip_glass_default of type back
+[23:35:48 440]   Image loaded at D:\Program Files (x86)\Steam\steamapps\common\Starbound\mods\madtulip\materials\tilesets\glass\madtulip_glass_default.png
+[23:35:48 440] Loading asset madtulip_glass_lr of type back
+[23:35:48 442]   Image loaded at D:\Program Files (x86)\Steam\steamapps\common\Starbound\mods\madtulip\materials\tilesets\glass\madtulip_glass_lr.png
+[23:35:48 442] Loading asset madtulip_glass_ltr of type back
+[23:35:48 443]   Image loaded at D:\Program Files (x86)\Steam\steamapps\common\Starbound\mods\madtulip\materials\tilesets\glass\madtulip_glass_ltr.png
+[23:35:48 443] Loading asset madtulip_glass_rbl of type back
+[23:35:48 444]   Image loaded at D:\Program Files (x86)\Steam\steamapps\common\Starbound\mods\madtulip\materials\tilesets\glass\madtulip_glass_rbl.png
+[23:35:48 444] Loading asset madtulip_glass_tb of type back
+[23:35:48 446]   Image loaded at D:\Program Files (x86)\Steam\steamapps\common\Starbound\mods\madtulip\materials\tilesets\glass\madtulip_glass_tb.png
+[23:35:48 446] Loading asset madtulip_glass_tl of type back
+[23:35:48 447]   Image loaded at D:\Program Files (x86)\Steam\steamapps\common\Starbound\mods\madtulip\materials\tilesets\glass\madtulip_glass_tl.png
+[23:35:48 447] Loading asset madtulip_glass_tr of type back
+[23:35:48 448]   Image loaded at D:\Program Files (x86)\Steam\steamapps\common\Starbound\mods\madtulip\materials\tilesets\glass\madtulip_glass_tr.png
+[23:35:48 448] Loading asset madtulip_glass_trb of type back
+[23:35:48 449]   Image loaded at D:\Program Files (x86)\Steam\steamapps\common\Starbound\mods\madtulip\materials\tilesets\glass\madtulip_glass_trb.png
+[23:35:48 449] Loading asset madtulip_glass_trbl of type back
+[23:35:48 451]   Image loaded at D:\Program Files (x86)\Steam\steamapps\common\Starbound\mods\madtulip\materials\tilesets\glass\madtulip_glass_trbl.png
+[23:35:48 451] Loading part madtulip_hylotl_ship_blocks.png
+[23:35:49 092]   Loading background overlay dummy.png
+[23:35:49 093]   Completed loading background overlay dummy.png
+[23:35:49 093] Completed loading part madtulip_hylotl_ship_blocks.png
+[23:35:49 093] Completed parsing D:\Program Files (x86)\Steam\steamapps\common\Starbound\mods\madtulip\ships\hylotl\madtulip_hylotl_ship.structure
+[23:38:45 799] Saving settings.json
