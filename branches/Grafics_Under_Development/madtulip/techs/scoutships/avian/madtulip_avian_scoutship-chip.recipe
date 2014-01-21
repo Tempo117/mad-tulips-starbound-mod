@@ -11,5 +11,5 @@
 		"item": "madtulip_avian_scoutship-chip",
 		"count": 1
 	},
-	"groups" : [ "madtulip_shipstation", "all", "tech" ]
+	"groups" : [ "madtulip_shipstation", "all", "madtulip_tech" ]
 }

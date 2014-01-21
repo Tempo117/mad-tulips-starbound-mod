@@ -6,5 +6,5 @@
 		"item" : "madtulip_gravity-chip",
 		"count": 1
 	},
-	"groups" : [ "madtulip_shipstation", "all", "tech" ]
+	"groups" : [ "madtulip_shipstation", "all", "madtulip_tech" ]
 }

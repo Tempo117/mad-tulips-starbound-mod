@@ -24,7 +24,7 @@ function onInteraction(args)
 	--Scan_Objects();
 	
     local Origin = entity.toAbsolutePosition({ 0.0, 0.0 });
-	local Range = 1500;
+	local Range = 50;
 	-- gather data about blocks at those locations
 	local Data = {};
 	Data = Scan_Area_for_Dead_Content(Origin, Range);
@@ -120,7 +120,7 @@ function Scan_Area_for_Dead_Content(Origin, Range)
 		Data.Object.size         = 0;
 		Data.Object.Position     = {};
 		Data.Object.Name         = {};
-
+--[[
 	-- loop over square area
 	for cur_X = -Range, Range, 1 do
 		for cur_Y = -Range, Range, 1 do
@@ -140,7 +140,7 @@ function Scan_Area_for_Dead_Content(Origin, Range)
 			end
 		end	
 	end
-
+]]
 	world.logInfo ("----------START Object Scan---------");
 	local ObjectIds = world.entityQuery (entity.toAbsolutePosition({ 0.0, 0.0 }), Range);
 	for _, ObjectId in pairs(ObjectIds) do
@@ -149,8 +149,17 @@ function Scan_Area_for_Dead_Content(Origin, Range)
 		Data.Object.Position[Data.Object.size] = world.entityPosition(ObjectId);
 		
 		world.logInfo (Data.Object.size);
-		world.logInfo (Data.Object.Name[Data.Object.size]);
-		world.logInfo (Data.Object.Position[Data.Object.size]);
+		if (Data.Object.Name[Data.Object.size] ~= nil) then
+			world.logInfo (Data.Object.Name[Data.Object.size]);
+		else
+			--world.logInfo ("Name nil.");
+		end
+		
+		if (Data.Object.Position[Data.Object.size] ~= nil) then
+			world.logInfo (Data.Object.Position[Data.Object.size]);
+		else
+			--world.logInfo ("Position nil.");
+		end
 	end
 	world.logInfo ("----------END Object Scan---------");
 	
