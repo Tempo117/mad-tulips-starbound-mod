@@ -1,0 +1,80 @@
+{
+  "objectName" : "madtulip_floran_defense_turret",
+  "rarity" : "Common",
+  "objectType" : "wire",
+
+  "category" : "wire",
+  "price" : "2000",
+  "description" : "The finest automated security the Apex labs have to offer.",
+  "shortdescription" : "Apex Defense Turret",
+  "race" : "apex",
+
+  "apexDescription" : "Always watchful.",
+  "avianDescription" : "Must move like the wind to remain unseen.",
+  "floranDescription" : "Sssuch bright lasersss.",
+  "glitchDescription" : "Care. Must not disrupt my brother in his vigilance.",
+  "humanDescription" : "An automated security camera.",
+  "hylotlDescription" : "A mere laser could not penetrate depths of the ocean.",
+
+  "inventoryIcon" : "madtulip_floran_defense_turret_icon.png",
+  "orientations" : [
+    {
+      "imageLayers" : [ { "image" : "madtulip_floran_defense_turret.png:idle" }, { "image" : "madtulip_floran_defense_turret.png:bracket" } ],
+      "spaces" : [
+        [0, 0], [1, 0], [2, 0], [3, 0],
+        [0, 1], [1, 1], [2, 1], [3, 1],
+        [0, 2], [1, 2]
+      ],
+      "anchors" : [ "left" ],
+      "direction" : "right",
+      "imagePosition" : [-12, 0]
+    },
+    {
+      "imageLayers" : [ { "image" : "madtulip_floran_defense_turret.png:idle" }, { "image" : "madtulip_floran_defense_turret.png:bracket" } ],
+      "flipImages" : true,
+      "spaces" : [
+        [0, 0], [1, 0], [2, 0], [3, 0],
+        [0, 1], [1, 1], [2, 1], [3, 1],
+        [0, 2], [1, 2]
+      ],
+      "anchors" : [ "right" ],
+      "direction" : "left",
+      "imagePosition" : [-12, 0]
+    }
+  ],
+
+  "scripts" : [
+    "turret.lua",
+    "/scripts/stateMachine.lua",
+    "/scripts/util.lua",
+    "/scripts/vec2.lua"
+  ],
+  "animation" : "madtulip_floran_defense_turret.animation",
+  "animationParts" : {
+    "gun" : "madtulip_floran_defense_turret.png",
+    "bracket" : "madtulip_floran_defense_turret.png",
+    "beam" : "madtulip_floran_defense_turret_beam.png"
+  },
+
+  "damageTeam" : {
+    "type" : "passive"
+  },
+
+  "scriptDelta" : 5,
+
+  "outboundNodes" : [ [0, 0] ],
+
+  "rotationTime" : 2.5,
+  "rotationRange" : [0, 60],
+  "rotationPauseTime" : 0.5,
+
+  "maxLaserLength" : 20,
+
+  "baseOffset" : [1.625, 0.9375],
+  "tipOffset" : [3.375, 0.875],
+
+  "fireCooldown" : 0.10,
+  "fireOffsets" : [-0.25, -0.125, 0, 0.125, 0.25, 0.125, 0, -0.125],
+  "targetHoldTime" : 2
+
+}
