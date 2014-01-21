@@ -3,6 +3,13 @@
     "fuelMax" : 1000
   },
 
+  "backgroundOverlays" : [
+    {
+      "image" : "shipship.png",
+      "position" : [7, 11]
+    }
+  ],
+  
   "blockKey" : [
     {
       "value" : [255, 255, 255, 255],
@@ -21,6 +28,7 @@
       "foregroundBlock" : true,
       "backgroundBlock" : true
     },
+
 
     {
       "value" : [0, 100, 140, 255],
@@ -242,669 +250,667 @@
     },
 	
     {
-      "value" : [0, 255, 100, 100],
+      "value" : [0, 1, 101, 100],
       "foregroundBlock" : true,
 	  "backgroundBlock" : true,
       "backgroundMat" : "madtulip_apex_bl",
-	  "foregroundMat" : "madtulip_apex_bl",
-      "objectParameters" : {
-        "unbreakable" : false
-      }
+	  "foregroundMat" : "madtulip_apex_bl"
     },
 	
 	{
-      "value" : [0, 255, 101, 100],
+      "value" : [0, 2, 101, 100],
       "foregroundBlock" : true,
 	  "backgroundBlock" : true,
       "foregroundMat" : "madtulip_avian_bl",
-	  "backgroundMat" : "madtulip_avian_bl",
+	  "backgroundMat" : "madtulip_avian_bl"
     },
 	
 	{
-      "value" : [0, 255, 102, 100],
+      "value" : [0, 3, 101, 100],
       "foregroundBlock" : true,
 	  "backgroundBlock" : true,
       "backgroundMat" : "madtulip_floran_bl",
-	  "foregroundMat" : "madtulip_floran_bl",
+	  "foregroundMat" : "madtulip_floran_bl"
     },
 	
 	    {
-      "value" : [0, 255, 103, 100],
+      "value" : [0, 4, 101, 100],
       "foregroundBlock" : true,
 	  "backgroundBlock" : true,
       "foregroundMat" : "madtulip_glitch_bl",
-	  "backgroundMat" : "madtulip_glitch_bl",
+	  "backgroundMat" : "madtulip_glitch_bl"
     },
 	
 	{
-      "value" : [0, 255, 104, 100],
+      "value" : [0, 5, 101, 100],
       "foregroundBlock" : true,
 	  "backgroundBlock" : true,
       "foregroundMat" : "madtulip_human_bl",
-	  "backgroundMat" : "madtulip_human_bl",
+	  "backgroundMat" : "madtulip_human_bl"
     },
 	
 	{
-      "value" : [0, 255, 105, 100],
+      "value" : [0, 6, 101, 100],
       "foregroundBlock" : true,
 	  "backgroundBlock" : true,
       "foregroundMat" : "madtulip_hylotl_bl",
-	  "backgroundMat" : "madtulip_floran_bl",
+	  "backgroundMat" : "madtulip_hylotl_bl"
     },
 	
 	{
-      "value" : [0, 255, 110, 100],
-      "foregroundBlock" : true,
-	  "backgroundBlock" : true,
-      "foregroundMat" : "madtulip_apex_blt",
-	  "backgroundMat" : "madtulip_apex_blt",
-    },
-	
-	{
-      "value" : [0, 255, 111, 100],
-      "foregroundBlock" : true,
-	  "backgroundBlock" : true,
-      "foregroundMat" : "madtulip_avian_blt",
-	  "backgroundMat" : "madtulip_avian_blt",
-    },
-	
-	{
-      "value" : [0, 255, 112, 100],
-      "foregroundBlock" : true,
-	  "backgroundBlock" : true,
-      "foregroundMat" : "madtulip_floran_blt",
-	  "backgroundMat" : "madtulip_floran_blt",
-    },
-	
-	{
-      "value" : [0, 255, 113, 100],
-      "foregroundBlock" : true,
-	  "backgroundBlock" : true,
-      "foregroundMat" : "madtulip_floran_blt",
-	  "backgroundMat" : "madtulip_floran_blt",
-    },
-	
-	{
-      "value" : [0, 255, 114, 100],
-      "foregroundBlock" : true,
-	  "backgroundBlock" : true,
-      "foregroundMat" : "madtulip_human_blt",
-	  "backgroundMat" : "madtulip_human_blt",
-    },
-	
-	{
-      "value" : [0, 255, 115, 100],
-      "foregroundBlock" : true,
-	  "backgroundBlock" : true,
-      "foregroundMat" : "madtulip_hylotl_blt",
-	  "backgroundMat" : "madtulip_hylotl_blt",
-    },
-	
-	{
-      "value" : [0, 255, 121, 100],
-      "foregroundBlock" : true,
-	  "backgroundBlock" : true,
-      "foregroundMat" : "madtulip_apex_br",
-	  "backgroundMat" : "madtulip_apex_br",
-    },
-	
-	{
-      "value" : [0, 255, 121, 100],
-      "foregroundBlock" : true,
-	  "backgroundBlock" : true,
-      "foregroundMat" : "madtulip_avian_br",
-	  "backgroundMat" : "madtulip_avian_br",
-    },
-	
-	{
-      "value" : [0, 255, 122, 100],
-      "foregroundBlock" : true,
-	  "backgroundBlock" : true,
-      "foregroundMat" : "madtulip_floran_br",
-	  "backgroundMat" : "madtulip_floran_br",
-    },
-	
-	{
-      "value" : [0, 255, 123, 100],
-      "foregroundBlock" : true,
-	  "backgroundBlock" : true,
-      "foregroundMat" : "madtulip_glitch_br",
-	  "backgroundMat" : "madtulip_glitch_br",
-    },
-	
-	{
-      "value" : [0, 255, 124, 100],
-      "foregroundBlock" : true,
-	  "backgroundBlock" : true,
-      "foregroundMat" : "madtulip_human_br",
-	  "backgroundMat" : "madtulip_human_br",
-    },
-	
-	{
-      "value" : [0, 255, 125, 100],
-      "foregroundBlock" : true,
-	  "backgroundBlock" : true,
-      "foregroundMat" : "madtulip_hylotl_br",
-	  "backgroundMat" : "madtulip_hylotl_br",
-    },
-	
-	{
-      "value" : [0, 255, 111, 100],
-      "foregroundBlock" : true,
-	  "backgroundBlock" : true,
-      "foregroundMat" : "madtulip_apex_default",
-	  "backgroundMat" : "madtulip_apex_default",
-    },
-	
-	{
-      "value" : [0, 255, 111, 100],
-      "foregroundBlock" : true,
-	  "backgroundBlock" : true,
-      "foregroundMat" : "madtulip_avian_default",
-	  "backgroundMat" : "madtulip_avian_default",
-    },
-	
-	{
-      "value" : [0, 255, 111, 100],
-      "foregroundBlock" : true,
-	  "backgroundBlock" : true,
-      "foregroundMat" : "madtulip_floran_default",
-	  "backgroundMat" : "madtulip_floran default",
-    },
-	
-	{
-      "value" : [0, 255, 111, 100],
-      "foregroundBlock" : true,
-	  "backgroundBlock" : true,
-      "foregroundMat" : "madtulip_glitch_default",
-	  "backgroundMat" : "madtulip_glitch_default",
-    },
-	
-	{
-      "value" : [0, 255, 111, 100],
-      "foregroundBlock" : true,
-	  "backgroundBlock" : true,
-      "foregroundMat" : "madtulip_human_default",
-	  "backgroundMat" : "madtulip_human_defualt",
-    },
-	
-	{
-      "value" : [0, 255, 111, 100],
-      "foregroundBlock" : true,
-	  "backgroundBlock" : true,
-      "foregroundMat" : "madtulip_hylotl_default",
-	  "backgroundMat" : "madtulip_hylotl_default",
-    },
-	{
-      "value" : [0, 255, 111, 100],
-      "foregroundBlock" : true,
-	  "backgroundBlock" : true,
-      "foregroundMat" : "madtulip_apex_lr",
-	  "backgroundMat" : "madtulip_apex_lr",
-    },
-	
-	{
-      "value" : [0, 255, 111, 100],
-      "foregroundBlock" : true,
-	  "backgroundBlock" : true,
-      "foregroundMat" : "madtulip_avian_lr",
-	  "backgroundMat" : "madtulip_avian_lr",
-    },
-	
-	{
-      "value" : [0, 255, 111, 100],
-      "foregroundBlock" : true,
-	  "backgroundBlock" : true,
-      "foregroundMat" : "madtulip_floran_lr",
-	  "backgroundMat" : "madtulip_floran_lr",
-    },
-	
-	{
-      "value" : [0, 255, 111, 100],
-      "foregroundBlock" : true,
-	  "backgroundBlock" : true,
-      "foregroundMat" : "madtulip_glitch_lr",
-	  "backgroundMat" : "madtulip_glitch_lr",
-    },
-	
-	{
-      "value" : [0, 255, 111, 100],
-      "foregroundBlock" : true,
-	  "backgroundBlock" : true,
-      "foregroundMat" : "madtulip_human_lr",
-	  "backgroundMat" : "madtulip_human_lr",
-    },
-	
-	{
-      "value" : [0, 255, 111, 100],
-      "foregroundBlock" : true,
-	  "backgroundBlock" : true,
-      "foregroundMat" : "madtulip_hylotl_lr",
-	  "backgroundMat" : "madtulip_hylotl_lr",
-    },
-	
-	{
-      "value" : [0, 255, 111, 100],
-      "foregroundBlock" : true,
-	  "backgroundBlock" : true,
-      "foregroundMat" : "madtulip_apex_ltr",
-	  "backgroundMat" : "madtulip_apex_ltr",
-    },
-	
-	{
-      "value" : [0, 255, 111, 100],
-      "foregroundBlock" : true,
-	  "backgroundBlock" : true,
-      "foregroundMat" : "madtulip_avian_ltr",
-	  "backgroundMat" : "madtulip_avian_ltr",
-    },
-	
-	{
-      "value" : [0, 255, 111, 100],
-      "foregroundBlock" : true,
-	  "backgroundBlock" : true,
-      "foregroundMat" : "madtulip_floran_ltr",
-	  "backgroundMat" : "madtulip_floran_ltr",
-    },
-	
-	{
-      "value" : [0, 255, 111, 100],
-      "foregroundBlock" : true,
-	  "backgroundBlock" : true,
-      "foregroundMat" : "madtulip_glitch_ltr",
-	  "backgroundMat" : "madtulip_glitch_ltr",
-    },
-	
-	{
-      "value" : [0, 255, 111, 100],
-      "foregroundBlock" : true,
-	  "backgroundBlock" : true,
-      "foregroundMat" : "madtulip_human_ltr",
-	  "backgroundMat" : "madtulip_human_ltr",
-    },
-	
-	{
-      "value" : [0, 255, 111, 100],
-      "foregroundBlock" : true,
-	  "backgroundBlock" : true,
-      "foregroundMat" : "madtulip_hylotl_ltr",
-	  "backgroundMat" : "madtulip_hylotl_ltr",
-    },
-	
-	{
-      "value" : [0, 255, 111, 100],
-      "foregroundBlock" : true,
-	  "backgroundBlock" : true,
-      "foregroundMat" : "madtulip_apex_rbl",
-	  "backgroundMat" : "madtulip_apex_rbl",
-    },
-	
-	{
-      "value" : [0, 255, 111, 100],
-      "foregroundBlock" : true,
-	  "backgroundBlock" : true,
-      "foregroundMat" : "madtulip_avian_rbl",
-	  "backgroundMat" : "madtulip_avian_rbl",
-    },
-	
-	{
-      "value" : [0, 255, 111, 100],
-      "foregroundBlock" : true,
-	  "backgroundBlock" : true,
-      "foregroundMat" : "madtulip_floran_rbl",
-	  "backgroundMat" : "madtulip_floran_rbl",
-    },
-	
-	{
-      "value" : [0, 255, 111, 100],
-      "foregroundBlock" : true,
-	  "backgroundBlock" : true,
-      "foregroundMat" : "madtulip_glitch_rbl",
-	  "backgroundMat" : "madtulip_glitch_rbl",
-    },
-	
-	{
-      "value" : [0, 255, 111, 100],
-      "foregroundBlock" : true,
-	  "backgroundBlock" : true,
-      "foregroundMat" : "madtulip_human_rbl",
-	  "backgroundMat" : "madtulip_human_rbl",
-    },
-	
-	{
-      "value" : [0, 255, 111, 100],
-      "foregroundBlock" : true,
-	  "backgroundBlock" : true,
-      "foregroundMat" : "madtulip_hylotl_rbl",
-	  "backgroundMat" : "madtulip_hylotl_rbl",
-    },
-	
-	{
-      "value" : [0, 255, 111, 100],
-      "foregroundBlock" : true,
-	  "backgroundBlock" : true,
-      "foregroundMat" : "madtulip_apex_tb",
-	  "backgroundMat" : "madtulip_apex_tb",
-    },
-	
-	{
-      "value" : [0, 255, 111, 100],
-      "foregroundBlock" : true,
-	  "backgroundBlock" : true,
-      "foregroundMat" : "madtulip_avian_tb",
-	  "backgroundMat" : "madtulip_avian_tb",
-    },
-	
-	{
-      "value" : [0, 255, 111, 100],
-      "foregroundBlock" : true,
-	  "backgroundBlock" : true,
-      "foregroundMat" : "madtulip_floran_tb",
-	  "backgroundMat" : "madtulip_floran_tb",
-    },
-	
-	{
-      "value" : [0, 255, 111, 100],
-      "foregroundBlock" : true,
-	  "backgroundBlock" : true,
-      "foregroundMat" : "madtulip_glitch_tb",
-	  "backgroundMat" : "madtulip_glitch_tb",
-    },
-	
-	{
-      "value" : [0, 255, 111, 100],
-      "foregroundBlock" : true,
-	  "backgroundBlock" : true,
-      "foregroundMat" : "madtulip_human_tb",
-	  "backgroundMat" : "madtulip_human_tb",
-    },
-	
-	{
-      "value" : [0, 255, 111, 100],
-      "foregroundBlock" : true,
-	  "backgroundBlock" : true,
-      "foregroundMat" : "madtulip_hylotl_tb",
-	  "backgroundMat" : "madtulip_hylotl_tb",
-    },
-	
-	{
-      "value" : [0, 255, 111, 100],
-      "foregroundBlock" : true,
-	  "backgroundBlock" : true,
-      "foregroundMat" : "madtulip_apex_tl",
-	  "backgroundMat" : "madtulip_apex_tl",
-    },
-	
-	{
-      "value" : [0, 255, 111, 100],
-      "foregroundBlock" : true,
-	  "backgroundBlock" : true,
-      "foregroundMat" : "madtulip_avian_tl",
-	  "backgroundMat" : "madtulip_avian_tl",
-    },
-	
-	{
-      "value" : [0, 255, 111, 100],
-      "foregroundBlock" : true,
-	  "backgroundBlock" : true,
-      "foregroundMat" : "madtulip_floran_trl",
-	  "backgroundMat" : "madtulip_floran_trl",
-    },
-	
-	{
-      "value" : [0, 255, 111, 100],
-      "foregroundBlock" : true,
-	  "backgroundBlock" : true,
-      "foregroundMat" : "madtulip_glitch_tl",
-	  "backgroundMat" : "madtulip_glitch_tl",
-    },
-	
-	{
-      "value" : [0, 255, 111, 100],
-      "foregroundBlock" : true,
-	  "backgroundBlock" : true,
-      "foregroundMat" : "madtulip_human_tl",
-	  "backgroundMat" : "madtulip_human_tl",
-    },
-	
-	{
-      "value" : [0, 255, 111, 100],
-      "foregroundBlock" : true,
-	  "backgroundBlock" : true,
-      "foregroundMat" : "madtulip_hylotl_tl",
-	  "backgroundMat" : "madtulip_hylotl_tl",
-    },
-	
-	{
-      "value" : [0, 255, 111, 100],
-      "foregroundBlock" : true,
-	  "backgroundBlock" : true,
-      "foregroundMat" : "madtulip_apex_tr",
-	  "backgroundMat" : "madtulip_apex_tr",
-    },
-	
-	{
-      "value" : [0, 255, 111, 100],
-      "foregroundBlock" : true,
-	  "backgroundBlock" : true,
-      "foregroundMat" : "madtulip_avian_tr",
-	  "backgroundMat" : "madtulip_avian_tr",
-    },
-	
-	{
-      "value" : [0, 255, 111, 100],
-      "foregroundBlock" : true,
-	  "backgroundBlock" : true,
-      "foregroundMat" : "madtulip_floran_tr",
-	  "backgroundMat" : "madtulip_floran_tr",
-    },
-	
-	{
-      "value" : [0, 255, 111, 100],
-      "foregroundBlock" : true,
-	  "backgroundBlock" : true,
-      "foregroundMat" : "madtulip_glitch_tr",
-	  "backgroundMat" : "madtulip_glitch_tr",
-    },
-	
-	{
-      "value" : [0, 255, 111, 100],
-      "foregroundBlock" : true,
-	  "backgroundBlock" : true,
-      "foregroundMat" : "madtulip_human_tr",
-	  "backgroundMat" : "madtulip_human_tr",
-    },
-	
-	{
-      "value" : [0, 255, 111, 100],
-      "foregroundBlock" : true,
-	  "backgroundBlock" : true,
-      "foregroundMat" : "madtulip_hylotl_tr",
-	  "backgroundMat" : "madtulip_hylotl_tr",
-    },
-	
-	{
-      "value" : [0, 255, 111, 100],
-      "foregroundBlock" : true,
-	  "backgroundBlock" : true,
-      "foregroundMat" : "madtulip_apex_trb",
-	  "backgroundMat" : "madtulip_apex_trb",
-    },
-	
-	{
-      "value" : [0, 255, 111, 100],
-      "foregroundBlock" : true,
-	  "backgroundBlock" : true,
-      "foregroundMat" : "madtulip_avian_trb",
-	  "backgroundMat" : "madtulip_avian_trb",
-    },
-	
-	{
-      "value" : [0, 255, 111, 100],
-      "foregroundBlock" : true,
-	  "backgroundBlock" : true,
-      "foregroundMat" : "madtulip_floran_trb",
-	  "backgroundMat" : "madtulip_floran_trb",
-    },
-	
-	{
-      "value" : [0, 255, 111, 100],
-      "foregroundBlock" : true,
-	  "backgroundBlock" : true,
-      "foregroundMat" : "madtulip_glitch_trb",
-	  "backgroundMat" : "madtulip_glitch_trb",
-    },
-	
-	{
-      "value" : [0, 255, 111, 100],
-      "foregroundBlock" : true,
-	  "backgroundBlock" : true,
-      "foregroundMat" : "madtulip_human_trb",
-	  "backgroundMat" : "madtulip_human_trb",
-    },
-	
-	{
-      "value" : [0, 255, 111, 100],
-      "foregroundBlock" : true,
-	  "backgroundBlock" : true,
-      "foregroundMat" : "madtulip_hylotl_trb",
-	  "backgroundMat" : "madtulip_hylotl_trb",
-    },
-	
-	{
-      "value" : [0, 255, 111, 100],
-      "foregroundBlock" : true,
-	  "backgroundBlock" : true,
-      "foregroundMat" : "madtulip_apex_trbl",
-	  "backgroundMat" : "madtulip_apex_trbl",
-    },
-	
-	{
-      "value" : [0, 255, 111, 100],
-      "foregroundBlock" : true,
-	  "backgroundBlock" : true,
-      "foregroundMat" : "madtulip_avian_trbl",
-	  "backgroundMat" : "madtulip_avian_trbl",
-    },
-	
-	{
-      "value" : [0, 255, 111, 100],
-      "foregroundBlock" : true,
-	  "backgroundBlock" : true,
-      "foregroundMat" : "madtulip_floran_trbl",
-	  "backgroundMat" : "madtulip_floran_trbl",
-    },
-	
-	{
-      "value" : [0, 255, 111, 100],
-      "foregroundBlock" : true,
-	  "backgroundBlock" : true,
-      "foregroundMat" : "madtulip_glitch_trbl",
-	  "backgroundMat" : "madtulip_glitch_trbl",
-    },
-	
-	{
-      "value" : [0, 255, 111, 100],
-      "foregroundBlock" : true,
-	  "backgroundBlock" : true,
-      "foregroundMat" : "madtulip_human_trbl",
-	  "backgroundMat" : "madtulip_human_trbl",
-    },
-	
-	{
-      "value" : [0, 255, 111, 100],
-      "foregroundBlock" : true,
-	  "backgroundBlock" : true,
-      "foregroundMat" : "madtulip_hylotl_trbl",
-	  "backgroundMat" : "madtulip_hylotl_trbl",
-    },
-	
-	{
-      "value" : [0, 255, 111, 100],
+      "value" : [0, 7, 101, 100],
       "foregroundBlock" : true,
 	  "backgroundBlock" : true,
       "foregroundMat" : "madtulip_glass_bl",
-	  "backgroundMat" : "madtulip_glass_bl",
+	  "backgroundMat" : "madtulip_glass_bl"
     },
 	
 	{
-      "value" : [0, 255, 111, 100],
+      "value" : [0, 1, 102, 100],
+      "foregroundBlock" : true,
+	  "backgroundBlock" : true,
+      "foregroundMat" : "madtulip_apex_blt",
+	  "backgroundMat" : "madtulip_apex_blt"
+    },
+	
+	{
+      "value" : [0, 2, 102, 100],
+      "foregroundBlock" : true,
+	  "backgroundBlock" : true,
+      "foregroundMat" : "madtulip_avian_blt",
+	  "backgroundMat" : "madtulip_avian_blt"
+    },
+	
+	{
+      "value" : [0, 3, 102, 100],
+      "foregroundBlock" : true,
+	  "backgroundBlock" : true,
+      "foregroundMat" : "madtulip_floran_blt",
+	  "backgroundMat" : "madtulip_floran_blt"
+    },
+	
+	{
+      "value" : [0, 4, 102, 100],
+      "foregroundBlock" : true,
+	  "backgroundBlock" : true,
+      "foregroundMat" : "madtulip_floran_blt",
+	  "backgroundMat" : "madtulip_floran_blt"
+    },
+	
+	{
+      "value" : [0, 5, 102, 100],
+      "foregroundBlock" : true,
+	  "backgroundBlock" : true,
+      "foregroundMat" : "madtulip_human_blt",
+	  "backgroundMat" : "madtulip_human_blt"
+    },
+	
+	{
+      "value" : [0, 6, 102, 100],
+      "foregroundBlock" : true,
+	  "backgroundBlock" : true,
+      "foregroundMat" : "madtulip_hylotl_blt",
+	  "backgroundMat" : "madtulip_hylotl_blt"
+    },
+	
+	{
+      "value" : [0, 1, 103, 100],
+      "foregroundBlock" : true,
+	  "backgroundBlock" : true,
+      "foregroundMat" : "madtulip_apex_br",
+	  "backgroundMat" : "madtulip_apex_br"
+    },
+	
+	{
+      "value" : [0, 2, 103, 100],
+      "foregroundBlock" : true,
+	  "backgroundBlock" : true,
+      "foregroundMat" : "madtulip_avian_br",
+	  "backgroundMat" : "madtulip_avian_br"
+    },
+	
+	{
+      "value" : [0, 3, 103, 100],
+      "foregroundBlock" : true,
+	  "backgroundBlock" : true,
+      "foregroundMat" : "madtulip_floran_br",
+	  "backgroundMat" : "madtulip_floran_br"
+    },
+	
+	{
+      "value" : [0, 4, 103, 100],
+      "foregroundBlock" : true,
+	  "backgroundBlock" : true,
+      "foregroundMat" : "madtulip_glitch_br",
+	  "backgroundMat" : "madtulip_glitch_br"
+    },
+	
+	{
+      "value" : [0, 5, 103, 100],
+      "foregroundBlock" : true,
+	  "backgroundBlock" : true,
+      "foregroundMat" : "madtulip_human_br",
+	  "backgroundMat" : "madtulip_human_br"
+    },
+	
+	{
+      "value" : [0, 6, 103, 100],
+      "foregroundBlock" : true,
+	  "backgroundBlock" : true,
+      "foregroundMat" : "madtulip_hylotl_br",
+	  "backgroundMat" : "madtulip_hylotl_br"
+    },
+	
+	{
+      "value" : [0, 7, 103, 100],
       "foregroundBlock" : true,
 	  "backgroundBlock" : true,
       "foregroundMat" : "madtulip_glass_br",
-	  "backgroundMat" : "madtulip_glass_br",
+	  "backgroundMat" : "madtulip_glass_br"
     },
 	
 	{
-      "value" : [0, 255, 111, 100],
+      "value" : [0, 1, 104, 100],
+      "foregroundBlock" : true,
+	  "backgroundBlock" : true,
+      "foregroundMat" : "madtulip_apex_default",
+	  "backgroundMat" : "madtulip_apex_default"
+    },
+	
+	{
+      "value" : [0, 2, 104, 100],
+      "foregroundBlock" : true,
+	  "backgroundBlock" : true,
+      "foregroundMat" : "madtulip_avian_default",
+	  "backgroundMat" : "madtulip_avian_default"
+    },
+	
+	{
+      "value" : [0, 3, 104, 100],
+      "foregroundBlock" : true,
+	  "backgroundBlock" : true,
+      "foregroundMat" : "madtulip_floran_default",
+	  "backgroundMat" : "madtulip_floran default"
+    },
+	
+	{
+      "value" : [0, 4, 104, 100],
+      "foregroundBlock" : true,
+	  "backgroundBlock" : true,
+      "foregroundMat" : "madtulip_glitch_default",
+	  "backgroundMat" : "madtulip_glitch_default"
+    },
+	
+	{
+      "value" : [0, 5, 104, 100],
+      "foregroundBlock" : true,
+	  "backgroundBlock" : true,
+      "foregroundMat" : "madtulip_human_default",
+	  "backgroundMat" : "madtulip_human_defualt"
+    },
+	
+	{
+      "value" : [0, 6, 104, 100],
+      "foregroundBlock" : true,
+	  "backgroundBlock" : true,
+      "foregroundMat" : "madtulip_hylotl_default",
+	  "backgroundMat" : "madtulip_hylotl_default"
+    },
+
+	{
+      "value" : [0, 7, 104, 100],
       "foregroundBlock" : true,
 	  "backgroundBlock" : true,
       "foregroundMat" : "madtulip_glass_defualt",
-	  "backgroundMat" : "madtulip_glass_defualt",
+	  "backgroundMat" : "madtulip_glass_defualt"
+    },
+		
+	{
+      "value" : [0, 1, 105, 100],
+      "foregroundBlock" : true,
+	  "backgroundBlock" : true,
+      "foregroundMat" : "madtulip_apex_lr",
+	  "backgroundMat" : "madtulip_apex_lr"
     },
 	
 	{
-      "value" : [0, 255, 111, 100],
+      "value" : [0, 2, 105, 100],
+      "foregroundBlock" : true,
+	  "backgroundBlock" : true,
+      "foregroundMat" : "madtulip_avian_lr",
+	  "backgroundMat" : "madtulip_avian_lr"
+    },
+	
+	{
+      "value" : [0, 3, 105, 100],
+      "foregroundBlock" : true,
+	  "backgroundBlock" : true,
+      "foregroundMat" : "madtulip_floran_lr",
+	  "backgroundMat" : "madtulip_floran_lr"
+    },
+	
+	{
+      "value" : [0, 4, 105, 100],
+      "foregroundBlock" : true,
+	  "backgroundBlock" : true,
+      "foregroundMat" : "madtulip_glitch_lr",
+	  "backgroundMat" : "madtulip_glitch_lr"
+    },
+	
+	{
+      "value" : [0, 5, 105, 100],
+      "foregroundBlock" : true,
+	  "backgroundBlock" : true,
+      "foregroundMat" : "madtulip_human_lr",
+	  "backgroundMat" : "madtulip_human_lr"
+    },
+	
+	{
+      "value" : [0, 6, 105, 100],
+      "foregroundBlock" : true,
+	  "backgroundBlock" : true,
+      "foregroundMat" : "madtulip_hylotl_lr",
+	  "backgroundMat" : "madtulip_hylotl_lr"
+    },
+	
+	{
+      "value" : [0, 7, 105, 100],
       "foregroundBlock" : true,
 	  "backgroundBlock" : true,
       "foregroundMat" : "madtulip_glass_lr",
-	  "backgroundMat" : "madtulip_glass_lr",
+	  "backgroundMat" : "madtulip_glass_lr"
     },
 	
 	{
-      "value" : [0, 255, 111, 100],
+      "value" : [0, 1, 106, 100],
+      "foregroundBlock" : true,
+	  "backgroundBlock" : true,
+      "foregroundMat" : "madtulip_apex_ltr",
+	  "backgroundMat" : "madtulip_apex_ltr"
+    },
+	
+	{
+      "value" : [0, 2, 106, 100],
+      "foregroundBlock" : true,
+	  "backgroundBlock" : true,
+      "foregroundMat" : "madtulip_avian_ltr",
+	  "backgroundMat" : "madtulip_avian_ltr"
+    },
+	
+	{
+      "value" : [0, 3, 106, 100],
+      "foregroundBlock" : true,
+	  "backgroundBlock" : true,
+      "foregroundMat" : "madtulip_floran_ltr",
+	  "backgroundMat" : "madtulip_floran_ltr"
+    },
+	
+	{
+      "value" : [0, 4, 106, 100],
+      "foregroundBlock" : true,
+	  "backgroundBlock" : true,
+      "foregroundMat" : "madtulip_glitch_ltr",
+	  "backgroundMat" : "madtulip_glitch_ltr"
+    },
+	
+	{
+      "value" : [0, 5, 106, 100],
+      "foregroundBlock" : true,
+	  "backgroundBlock" : true,
+      "foregroundMat" : "madtulip_human_ltr",
+	  "backgroundMat" : "madtulip_human_ltr"
+    },
+	
+	{
+      "value" : [0, 6, 106, 100],
+      "foregroundBlock" : true,
+	  "backgroundBlock" : true,
+      "foregroundMat" : "madtulip_hylotl_ltr",
+	  "backgroundMat" : "madtulip_hylotl_ltr"
+    },
+	
+	{
+      "value" : [0, 7, 106, 100],
       "foregroundBlock" : true,
 	  "backgroundBlock" : true,
       "foregroundMat" : "madtulip_glass_ltr",
-	  "backgroundMat" : "madtulip_glass_ltr",
+	  "backgroundMat" : "madtulip_glass_ltr"
     },
 	
 	{
-      "value" : [0, 255, 111, 100],
+      "value" : [0, 1, 107, 100],
+      "foregroundBlock" : true,
+	  "backgroundBlock" : true,
+      "foregroundMat" : "madtulip_apex_rbl",
+	  "backgroundMat" : "madtulip_apex_rbl"
+    },
+	
+	{
+      "value" : [0, 2, 107, 100],
+      "foregroundBlock" : true,
+	  "backgroundBlock" : true,
+      "foregroundMat" : "madtulip_avian_rbl",
+	  "backgroundMat" : "madtulip_avian_rbl"
+    },
+	
+	{
+      "value" : [0, 3, 107, 100],
+      "foregroundBlock" : true,
+	  "backgroundBlock" : true,
+      "foregroundMat" : "madtulip_floran_rbl",
+	  "backgroundMat" : "madtulip_floran_rbl"
+    },
+	
+	{
+      "value" : [0, 4, 107, 100],
+      "foregroundBlock" : true,
+	  "backgroundBlock" : true,
+      "foregroundMat" : "madtulip_glitch_rbl",
+	  "backgroundMat" : "madtulip_glitch_rbl"
+    },
+	
+	{
+      "value" : [0, 5, 107, 100],
+      "foregroundBlock" : true,
+	  "backgroundBlock" : true,
+      "foregroundMat" : "madtulip_human_rbl",
+	  "backgroundMat" : "madtulip_human_rbl"
+    },
+	
+	{
+      "value" : [0, 6, 107, 100],
+      "foregroundBlock" : true,
+	  "backgroundBlock" : true,
+      "foregroundMat" : "madtulip_hylotl_rbl",
+	  "backgroundMat" : "madtulip_hylotl_rbl"
+    },
+	
+	{
+      "value" : [0, 7, 107, 100],
       "foregroundBlock" : true,
 	  "backgroundBlock" : true,
       "foregroundMat" : "madtulip_glass_rbl",
-	  "backgroundMat" : "madtulip_glass_rbl",
+	  "backgroundMat" : "madtulip_glass_rbl"
+    },	
+	
+	{
+      "value" : [0, 1, 108, 100],
+      "foregroundBlock" : true,
+	  "backgroundBlock" : true,
+      "foregroundMat" : "madtulip_apex_tb",
+	  "backgroundMat" : "madtulip_apex_tb"
     },
 	
 	{
-      "value" : [0, 255, 111, 100],
+      "value" : [0, 2, 108, 100],
+      "foregroundBlock" : true,
+	  "backgroundBlock" : true,
+      "foregroundMat" : "madtulip_avian_tb",
+	  "backgroundMat" : "madtulip_avian_tb"
+    },
+	
+	{
+      "value" : [0, 3, 108, 100],
+      "foregroundBlock" : true,
+	  "backgroundBlock" : true,
+      "foregroundMat" : "madtulip_floran_tb",
+	  "backgroundMat" : "madtulip_floran_tb"
+    },
+	
+	{
+      "value" : [0, 4, 108, 100],
+      "foregroundBlock" : true,
+	  "backgroundBlock" : true,
+      "foregroundMat" : "madtulip_glitch_tb",
+	  "backgroundMat" : "madtulip_glitch_tb"
+    },
+	
+	{
+      "value" : [0, 5, 108, 100],
+      "foregroundBlock" : true,
+	  "backgroundBlock" : true,
+      "foregroundMat" : "madtulip_human_tb",
+	  "backgroundMat" : "madtulip_human_tb"
+    },
+	
+	{
+      "value" : [0, 6, 108, 100],
+      "foregroundBlock" : true,
+	  "backgroundBlock" : true,
+      "foregroundMat" : "madtulip_hylotl_tb",
+	  "backgroundMat" : "madtulip_hylotl_tb"
+    },
+	
+	{
+      "value" : [0, 7, 108, 100],
       "foregroundBlock" : true,
 	  "backgroundBlock" : true,
       "foregroundMat" : "madtulip_glass_tb",
-	  "backgroundMat" : "madtulip_glass_tb",
+	  "backgroundMat" : "madtulip_glass_tb"
+    },	
+	
+	{
+      "value" : [0, 1, 109, 100],
+      "foregroundBlock" : true,
+	  "backgroundBlock" : true,
+      "foregroundMat" : "madtulip_apex_tl",
+	  "backgroundMat" : "madtulip_apex_tl"
     },
 	
 	{
-      "value" : [0, 255, 111, 100],
+      "value" : [0, 2, 109, 100],
+      "foregroundBlock" : true,
+	  "backgroundBlock" : true,
+      "foregroundMat" : "madtulip_avian_tl",
+	  "backgroundMat" : "madtulip_avian_tl"
+    },
+	
+	{
+      "value" : [0, 3, 109, 100],
+      "foregroundBlock" : true,
+	  "backgroundBlock" : true,
+      "foregroundMat" : "madtulip_floran_tl",
+	  "backgroundMat" : "madtulip_floran_tl"
+    },
+	
+	{
+      "value" : [0, 4, 109, 100],
+      "foregroundBlock" : true,
+	  "backgroundBlock" : true,
+      "foregroundMat" : "madtulip_glitch_tl",
+	  "backgroundMat" : "madtulip_glitch_tl"
+    },
+	
+	{
+      "value" : [0, 5, 109, 100],
+      "foregroundBlock" : true,
+	  "backgroundBlock" : true,
+      "foregroundMat" : "madtulip_human_tl",
+	  "backgroundMat" : "madtulip_human_tl"
+    },
+	
+	{
+      "value" : [0, 6, 109, 100],
+      "foregroundBlock" : true,
+	  "backgroundBlock" : true,
+      "foregroundMat" : "madtulip_hylotl_tl",
+	  "backgroundMat" : "madtulip_hylotl_tl"
+    },
+
+	{
+      "value" : [0, 7, 109, 100],
       "foregroundBlock" : true,
 	  "backgroundBlock" : true,
       "foregroundMat" : "madtulip_glass_tl",
-	  "backgroundMat" : "madtulip_glass_tl",
+	  "backgroundMat" : "madtulip_glass_tl"
     },
 	
 	{
-      "value" : [0, 255, 111, 100],
+      "value" : [0, 1, 110, 100],
+      "foregroundBlock" : true,
+	  "backgroundBlock" : true,
+      "foregroundMat" : "madtulip_apex_tr",
+	  "backgroundMat" : "madtulip_apex_tr"
+    },
+	
+	{
+      "value" : [0, 2, 110, 100],
+      "foregroundBlock" : true,
+	  "backgroundBlock" : true,
+      "foregroundMat" : "madtulip_avian_tr",
+	  "backgroundMat" : "madtulip_avian_tr"
+    },
+	
+	{
+      "value" : [0, 3, 110, 100],
+      "foregroundBlock" : true,
+	  "backgroundBlock" : true,
+      "foregroundMat" : "madtulip_floran_tr",
+	  "backgroundMat" : "madtulip_floran_tr"
+    },
+	
+	{
+      "value" : [0, 4, 110, 100],
+      "foregroundBlock" : true,
+	  "backgroundBlock" : true,
+      "foregroundMat" : "madtulip_glitch_tr",
+	  "backgroundMat" : "madtulip_glitch_tr"
+    },
+	
+	{
+      "value" : [0, 5, 110, 100],
+      "foregroundBlock" : true,
+	  "backgroundBlock" : true,
+      "foregroundMat" : "madtulip_human_tr",
+	  "backgroundMat" : "madtulip_human_tr"
+    },
+	
+	{
+      "value" : [0, 6, 110, 100],
+      "foregroundBlock" : true,
+	  "backgroundBlock" : true,
+      "foregroundMat" : "madtulip_hylotl_tr",
+	  "backgroundMat" : "madtulip_hylotl_tr"
+    },
+	
+	{
+      "value" : [0, 7, 110, 100],
       "foregroundBlock" : true,
 	  "backgroundBlock" : true,
       "foregroundMat" : "madtulip_glass_tr",
-	  "backgroundMat" : "madtulip_glass_tr",
+	  "backgroundMat" : "madtulip_glass_tr"
+    },	
+	
+	{
+      "value" : [0, 1, 111, 100],
+      "foregroundBlock" : true,
+	  "backgroundBlock" : true,
+      "foregroundMat" : "madtulip_apex_trb",
+	  "backgroundMat" : "madtulip_apex_trb"
     },
 	
 	{
-      "value" : [0, 255, 111, 100],
+      "value" : [0, 2, 111, 100],
+      "foregroundBlock" : true,
+	  "backgroundBlock" : true,
+      "foregroundMat" : "madtulip_avian_trb",
+	  "backgroundMat" : "madtulip_avian_trb"
+    },
+	
+	{
+      "value" : [0, 3, 111, 100],
+      "foregroundBlock" : true,
+	  "backgroundBlock" : true,
+      "foregroundMat" : "madtulip_floran_trb",
+	  "backgroundMat" : "madtulip_floran_trb"
+    },
+	
+	{
+      "value" : [0, 4, 111, 100],
+      "foregroundBlock" : true,
+	  "backgroundBlock" : true,
+      "foregroundMat" : "madtulip_glitch_trb",
+	  "backgroundMat" : "madtulip_glitch_trb"
+    },
+	
+	{
+      "value" : [0, 5, 111, 100],
+      "foregroundBlock" : true,
+	  "backgroundBlock" : true,
+      "foregroundMat" : "madtulip_human_trb",
+	  "backgroundMat" : "madtulip_human_trb"
+    },
+	
+	{
+      "value" : [0, 6, 111, 100],
+      "foregroundBlock" : true,
+	  "backgroundBlock" : true,
+      "foregroundMat" : "madtulip_hylotl_trb",
+	  "backgroundMat" : "madtulip_hylotl_trb"
+    },
+
+	{
+      "value" : [0, 7, 111, 100],
       "foregroundBlock" : true,
 	  "backgroundBlock" : true,
       "foregroundMat" : "madtulip_glass_trb",
-	  "backgroundMat" : "madtulip_glass_trb",
+	  "backgroundMat" : "madtulip_glass_trb"
     },
 	
 	{
-      "value" : [0, 255, 111, 100],
+      "value" : [0, 1, 112, 100],
+      "foregroundBlock" : true,
+	  "backgroundBlock" : true,
+      "foregroundMat" : "madtulip_apex_trbl",
+	  "backgroundMat" : "madtulip_apex_trbl"
+    },
+	
+	{
+      "value" : [0, 2, 112, 100],
+      "foregroundBlock" : true,
+	  "backgroundBlock" : true,
+      "foregroundMat" : "madtulip_avian_trbl",
+	  "backgroundMat" : "madtulip_avian_trbl"
+    },
+	
+	{
+      "value" : [0, 3, 112, 100],
+      "foregroundBlock" : true,
+	  "backgroundBlock" : true,
+      "foregroundMat" : "madtulip_floran_trbl",
+	  "backgroundMat" : "madtulip_floran_trbl"
+    },
+	
+	{
+      "value" : [0, 4, 112, 100],
+      "foregroundBlock" : true,
+	  "backgroundBlock" : true,
+      "foregroundMat" : "madtulip_glitch_trbl",
+	  "backgroundMat" : "madtulip_glitch_trbl"
+    },
+	
+	{
+      "value" : [0, 5, 112, 100],
+      "foregroundBlock" : true,
+	  "backgroundBlock" : true,
+      "foregroundMat" : "madtulip_human_trbl",
+	  "backgroundMat" : "madtulip_human_trbl"
+    },
+	
+	{
+      "value" : [0, 6, 112, 100],
+      "foregroundBlock" : true,
+	  "backgroundBlock" : true,
+      "foregroundMat" : "madtulip_hylotl_trbl",
+	  "backgroundMat" : "madtulip_hylotl_trbl"
+    },
+	
+	{
+      "value" : [0, 7, 112, 100],
       "foregroundBlock" : true,
 	  "backgroundBlock" : true,
       "foregroundMat" : "madtulip_glass_trbl",
-	  "backgroundMat" : "madtulip_glass_trbl",
+	  "backgroundMat" : "madtulip_glass_trbl"
     },
 	
 	{
@@ -938,6 +944,41 @@
       "object" : "madtulip_hylotl_shipdoor",
 	  "backgroundMat" : "apexshipdetails"
     },
+
+
+    {
+      "value" : [0, 255, 255, 255],
+      "foregroundBlock" : false,
+      "backgroundBlock" : true,
+	  "backgroundMat" : "apexshipwall",
+      "object" : "madtulip_captainschair",
+      "objectDirection" : "left",
+      "objectParameters" : {
+        "unbreakable" : false
+      }
+    },
+
+    {
+      "value" : [255, 255, 144],
+      "foregroundBlock" : false,
+      "backgroundBlock" : true,
+      "backgroundMat" : "apexshipwall"
+    },
+
+    {
+      "value" : [255, 117, 144],
+      "foregroundBlock" : false,
+      "backgroundBlock" : true,
+      "backgroundMat" : "apexshipdetails"
+    },
+
+    {
+      "value" : [255, 117, 255],
+      "foregroundBlock" : false,
+      "backgroundBlock" : true,
+      "backgroundMat" : "apexshipsupport"
+    },
+
 	
     {
       "value" : [0, 255, 0, 255],
@@ -1042,46 +1083,13 @@
         "unbreakable" : true
       }
     },
-
-    {
-      "value" : [0, 255, 255, 255],
-      "foregroundBlock" : false,
-      "backgroundBlock" : true,
-	  "backgroundMat" : "apexshipwall",
-      "object" : "madtulip_captainschair",
-      "objectDirection" : "left",
-      "objectParameters" : {
-        "unbreakable" : false
-      }
-    },
-
-    {
-      "value" : [255, 255, 144],
-      "foregroundBlock" : false,
-      "backgroundBlock" : true,
-      "backgroundMat" : "apexshipwall"
-    },
-
-    {
-      "value" : [255, 117, 144],
-      "foregroundBlock" : false,
-      "backgroundBlock" : true,
-      "backgroundMat" : "apexshipdetails"
-    },
-
-    {
-      "value" : [255, 117, 255],
-      "foregroundBlock" : false,
-      "backgroundBlock" : true,
-      "backgroundMat" : "apexshipsupport"
-    },
 	
     {
       "value" : [0, 142, 200],
       "foregroundBlock" : false,
       "backgroundBlock" : true,
 	  "backgroundMat" : "glass"
-    },	
+    }
 
   ],
 

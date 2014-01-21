@@ -1,5 +1,5 @@
 {
-  "dir": "C:\\Program Files (x86)\\Steam\\steamapps\\common\\Starbound\\assets",
+  "dir": "D:\\Program Files (x86)\\Steam\\steamapps\\common\\Starbound\\assets",
   "graphicalDisplay": true,
   "surfaceBackTile": "dirt",
   "surfaceFrontTile": "dirt",
@@ -7,9 +7,12 @@
   "windowHeight": 987,
   "windowState": 0,
   "windowWidth": 1897,
-  "windowx": 25,
-  "windowy": 1,
+  "windowx": 10,
+  "windowy": 18,
   "recentFiles": [
+    "C:\\Users\\malte\\Desktop\\!mods\\Grafics_Under_Development\\toolset\\Ships\\human ship\\madtulip_dropship.structure",
+    "C:\\Users\\malte\\Desktop\\!mods\\Grafics_Under_Development\\toolset\\Ships\\avian original\\dropship.structure",
+    "C:\\Users\\malte\\Desktop\\!mods\\Grafics_Under_Development\\toolset\\Ships\\human original\\dropship.structure",
     "C:\\Users\\Joshua\\Desktop\\toolset\\Ships\\Template V2\\madtulip_dropship.structure",
     "C:\\Users\\Joshua\\Desktop\\toolset\\Ships\\template\\madtulip_dropship.structure",
     "C:\\Users\\Joshua\\Desktop\\madtulip_dropship_WIP.structure",
