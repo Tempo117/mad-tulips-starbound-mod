@@ -5,1093 +5,800 @@
 
   "backgroundOverlays" : [
     {
-      "image" : "shipship.png",
-      "position" : [7, 11]
+      "image" : "dummy.png",
+      "position" : [1, 1]
     }
   ],
   
   "blockKey" : [
+// MATERIALS
+// -- generic
     {
       "value" : [255, 255, 255, 255],
-      "foregroundBlock" : false,
-      "backgroundBlock" : false
+      "foregroundBlock" : false,"backgroundBlock" : false
     },
-
     {
       "value" : [0, 0, 255, 255],
-      "foregroundBlock" : false,
-      "backgroundBlock" : true
+      "foregroundBlock" : false,"backgroundBlock" : true
     },
-
     {
       "value" : [255, 0, 0, 255],
-      "foregroundBlock" : true,
-      "backgroundBlock" : true
+      "foregroundBlock" : true,"backgroundBlock" : true
     },
-
-
+// -- real materials [2,x,y]
+	// -- real materials foreground only[2,0,y]
+	// -- real materials background only[2,1,y]
+	// -- real materials background and foreground[2,2,y]
     {
-      "value" : [0, 100, 140, 255],
-      "foregroundBlock" : false,
-      "backgroundBlock" : false,
-      "object" : "madtulip_apex_ftl_thruster",
-      "objectParameters" : {
-        "unbreakable" : false
-      }
+      "value" : [2, 0, 1],
+      "foregroundBlock" : true,"backgroundBlock" : false,
+      "foregroundMat" : "apexshipwall"
     },
-	
-	{
-      "value" : [0, 100, 141, 255],
-      "foregroundBlock" : false,
-      "backgroundBlock" : false,
-      "object" : "madtulip_avian_ftl_thruster",
-      "objectParameters" : {
-        "unbreakable" : false
-      }
-    },
-	
-	{
-      "value" : [0, 100, 142, 255],
-      "foregroundBlock" : false,
-      "backgroundBlock" : false,
-      "object" : "madtulip_floran_ftl_thruster",
-      "objectParameters" : {
-        "unbreakable" : false
-      }
-    },
-	
-	{
-      "value" : [0, 100, 143, 255],
-      "foregroundBlock" : false,
-      "backgroundBlock" : false,
-      "object" : "madtulip_glitch_ftl_thruster",
-      "objectParameters" : {
-        "unbreakable" : false
-      }
-    },
-	{
-      "value" : [0, 100, 144, 255],
-      "foregroundBlock" : false,
-      "backgroundBlock" : false,
-      "object" : "madtulip_human_ftl_thruster",
-      "objectParameters" : {
-        "unbreakable" : false
-      }
-    },
-	
-	{
-      "value" : [0, 100, 145, 255],
-      "foregroundBlock" : false,
-      "backgroundBlock" : false,
-      "object" : "madtulip_hylotl_ftl_thruster",
-      "objectParameters" : {
-        "unbreakable" : false
-      }
-    },
-	
     {
-      "value" : [0, 100, 150, 255],
-      "foregroundBlock" : false,
-      "backgroundBlock" : false,
-      "object" : "madtulip_apex_stabilization_thruster",
-      "objectParameters" : {
-        "unbreakable" : false
-      }
+      "value" : [2, 1, 1],
+      "foregroundBlock" : false,"backgroundBlock" : true,
+      "backgroundMat" : "apexshipwall"
     },
-
-{
-      "value" : [0, 100, 151, 255],
-      "foregroundBlock" : false,
-      "backgroundBlock" : false,
-      "object" : "madtulip_avian_stabilization_thruster",
-      "objectParameters" : {
-        "unbreakable" : false
-      }
-    },
-
-{
-      "value" : [0, 100, 152, 255],
-      "foregroundBlock" : false,
-      "backgroundBlock" : false,
-      "object" : "madtulip_floran_stabilization_thruster",
-      "objectParameters" : {
-        "unbreakable" : false
-      }
-    },
-
-{
-      "value" : [0, 100, 153, 255],
-      "foregroundBlock" : false,
-      "backgroundBlock" : false,
-      "object" : "madtulip_glitch_stabilization_thruster",
-      "objectParameters" : {
-        "unbreakable" : false
-      }
-    },
-
-{
-      "value" : [0, 100, 154, 255],
-      "foregroundBlock" : false,
-      "backgroundBlock" : false,
-      "object" : "madtulip_human_stabilization_thruster",
-      "objectParameters" : {
-        "unbreakable" : false
-      }
-    },
-
     {
-      "value" : [0, 100, 155, 255],
-      "foregroundBlock" : false,
-      "backgroundBlock" : false,
-      "object" : "madtulip_hylotl_stabilization_thruster",
-      "objectParameters" : {
-        "unbreakable" : false
-      }
+      "value" : [2, 2, 1],
+      "foregroundBlock" : true,"backgroundBlock" : true,
+      "foregroundMat" : "apexshipwall",
+	  "backgroundMat" : "apexshipwall"
     },
-	
-	{
-      "value" : [0, 100, 160, 255],
-      "foregroundBlock" : false,
-      "backgroundBlock" : false,
-      "object" : "madtulip_apex_gyro_stabilizer",
-      "objectParameters" : {
-        "unbreakable" : false
-      }
-    },
-	
-		{
-      "value" : [0, 100, 161, 255],
-      "foregroundBlock" : false,
-      "backgroundBlock" : false,
-      "object" : "madtulip_avian_gyro_stabilizer",
-      "objectParameters" : {
-        "unbreakable" : false
-      }
-    },
-	
-		{
-      "value" : [0, 100, 162, 255],
-      "foregroundBlock" : false,
-      "backgroundBlock" : false,
-      "object" : "madtulip_floran_gyro_stabilizer",
-      "objectParameters" : {
-        "unbreakable" : false
-      }
-    },
-	
-		{
-      "value" : [0, 100, 163, 255],
-      "foregroundBlock" : false,
-      "backgroundBlock" : false,
-      "object" : "madtulip_glitch_gyro_stabilizer",
-      "objectParameters" : {
-        "unbreakable" : false
-      }
-    },
-	
-		{
-      "value" : [0, 100, 164, 255],
-      "foregroundBlock" : false,
-      "backgroundBlock" : false,
-      "object" : "madtulip_human_gyro_stabilizer",
-      "objectParameters" : {
-        "unbreakable" : false
-      }
-    },
-	
-		{
-      "value" : [0, 100, 165, 255],
-      "foregroundBlock" : false,
-      "backgroundBlock" : false,
-      "object" : "madtulip_hylotl_gyro_stabilizer",
-      "objectParameters" : {
-        "unbreakable" : false
-      }
-    },
-	
     {
-      "value" : [0, 100, 170, 255],
-      "foregroundBlock" : false,
-	  "backgroundBlock" : false,
-      "object" : "madtulip_apex_large_fin",
-      "objectParameters" : {
-        "unbreakable" : false
-      }
+      "value" : [2, 0, 2],
+      "foregroundBlock" : true,"backgroundBlock" : false,
+      "foregroundMat" : "apexshipdetails"
     },
-	
-	{
-      "value" : [0, 100, 171, 255],
-      "foregroundBlock" : false,
-	  "backgroundBlock" : false,
-      "object" : "madtulip_avian_large_fin",
-      "objectParameters" : {
-        "unbreakable" : false
-      }
-    },
-
-	{
-      "value" : [0, 100, 174, 255],
-      "foregroundBlock" : false,
-	  "backgroundBlock" : false,
-      "object" : "madtulip_human_large_fin",
-      "objectParameters" : {
-        "unbreakable" : false
-      }
-    },
-	
-	{
-      "value" : [0, 100, 175, 255],
-      "foregroundBlock" : false,
-	  "backgroundBlock" : false,
-      "object" : "madtulip_hylotl_large_fin",
-      "objectParameters" : {
-        "unbreakable" : false
-      }
-    },
-	
     {
-      "value" : [0, 1, 101, 100],
-      "foregroundBlock" : true,
-	  "backgroundBlock" : true,
-      "backgroundMat" : "madtulip_apex_bl",
-	  "foregroundMat" : "madtulip_apex_bl"
+      "value" : [2, 1, 2],
+      "foregroundBlock" : false,"backgroundBlock" : true,
+      "backgroundMat" : "apexshipdetails"
     },
-	
-	{
-      "value" : [0, 2, 101, 100],
-      "foregroundBlock" : true,
-	  "backgroundBlock" : true,
-      "foregroundMat" : "madtulip_avian_bl",
-	  "backgroundMat" : "madtulip_avian_bl"
+    {
+      "value" : [2, 2, 2],
+      "foregroundBlock" : true,"backgroundBlock" : true,
+	  "foregroundMat" : "apexshipdetails",
+      "backgroundMat" : "apexshipdetails"
     },
-	
-	{
-      "value" : [0, 3, 101, 100],
-      "foregroundBlock" : true,
-	  "backgroundBlock" : true,
-      "backgroundMat" : "madtulip_floran_bl",
-	  "foregroundMat" : "madtulip_floran_bl"
+    {
+      "value" : [2, 0, 3],
+      "foregroundBlock" : true,"backgroundBlock" : false,
+      "foregroundMat" : "apexshipsupport"
     },
-	
+    {
+      "value" : [2, 1, 3],
+      "foregroundBlock" : false,"backgroundBlock" : true,
+      "backgroundMat" : "apexshipsupport"
+    },
 	    {
-      "value" : [0, 4, 101, 100],
-      "foregroundBlock" : true,
-	  "backgroundBlock" : true,
-      "foregroundMat" : "madtulip_glitch_bl",
-	  "backgroundMat" : "madtulip_glitch_bl"
+      "value" : [2, 2, 3],
+      "foregroundBlock" : true,"backgroundBlock" : true,
+	  "foregroundMat" : "apexshipsupport",
+      "backgroundMat" : "apexshipsupport"
     },
-	
-	{
-      "value" : [0, 5, 101, 100],
-      "foregroundBlock" : true,
-	  "backgroundBlock" : true,
-      "foregroundMat" : "madtulip_human_bl",
-	  "backgroundMat" : "madtulip_human_bl"
+    {
+      "value" : [2, 0, 4],
+      "foregroundBlock" : true,"backgroundBlock" : false,
+	  "foregroundMat" : "glass"
     },
-	
-	{
-      "value" : [0, 6, 101, 100],
-      "foregroundBlock" : true,
-	  "backgroundBlock" : true,
-      "foregroundMat" : "madtulip_hylotl_bl",
-	  "backgroundMat" : "madtulip_hylotl_bl"
+    {
+      "value" : [2, 1, 4],
+      "foregroundBlock" : false,"backgroundBlock" : true,
+	  "backgroundMat" : "glass"
     },
-	
-	{
-      "value" : [0, 7, 101, 100],
-      "foregroundBlock" : true,
-	  "backgroundBlock" : true,
-      "foregroundMat" : "madtulip_glass_bl",
-	  "backgroundMat" : "madtulip_glass_bl"
-    },
-	
-	{
-      "value" : [0, 1, 102, 100],
-      "foregroundBlock" : true,
-	  "backgroundBlock" : true,
-      "foregroundMat" : "madtulip_apex_blt",
-	  "backgroundMat" : "madtulip_apex_blt"
-    },
-	
-	{
-      "value" : [0, 2, 102, 100],
-      "foregroundBlock" : true,
-	  "backgroundBlock" : true,
-      "foregroundMat" : "madtulip_avian_blt",
-	  "backgroundMat" : "madtulip_avian_blt"
-    },
-	
-	{
-      "value" : [0, 3, 102, 100],
-      "foregroundBlock" : true,
-	  "backgroundBlock" : true,
-      "foregroundMat" : "madtulip_floran_blt",
-	  "backgroundMat" : "madtulip_floran_blt"
-    },
-	
-	{
-      "value" : [0, 4, 102, 100],
-      "foregroundBlock" : true,
-	  "backgroundBlock" : true,
-      "foregroundMat" : "madtulip_floran_blt",
-	  "backgroundMat" : "madtulip_floran_blt"
-    },
-	
-	{
-      "value" : [0, 5, 102, 100],
-      "foregroundBlock" : true,
-	  "backgroundBlock" : true,
-      "foregroundMat" : "madtulip_human_blt",
-	  "backgroundMat" : "madtulip_human_blt"
-    },
-	
-	{
-      "value" : [0, 6, 102, 100],
-      "foregroundBlock" : true,
-	  "backgroundBlock" : true,
-      "foregroundMat" : "madtulip_hylotl_blt",
-	  "backgroundMat" : "madtulip_hylotl_blt"
-    },
-	
-	{
-      "value" : [0, 1, 103, 100],
-      "foregroundBlock" : true,
-	  "backgroundBlock" : true,
-      "foregroundMat" : "madtulip_apex_br",
-	  "backgroundMat" : "madtulip_apex_br"
-    },
-	
-	{
-      "value" : [0, 2, 103, 100],
-      "foregroundBlock" : true,
-	  "backgroundBlock" : true,
-      "foregroundMat" : "madtulip_avian_br",
-	  "backgroundMat" : "madtulip_avian_br"
-    },
-	
-	{
-      "value" : [0, 3, 103, 100],
-      "foregroundBlock" : true,
-	  "backgroundBlock" : true,
-      "foregroundMat" : "madtulip_floran_br",
-	  "backgroundMat" : "madtulip_floran_br"
-    },
-	
-	{
-      "value" : [0, 4, 103, 100],
-      "foregroundBlock" : true,
-	  "backgroundBlock" : true,
-      "foregroundMat" : "madtulip_glitch_br",
-	  "backgroundMat" : "madtulip_glitch_br"
-    },
-	
-	{
-      "value" : [0, 5, 103, 100],
-      "foregroundBlock" : true,
-	  "backgroundBlock" : true,
-      "foregroundMat" : "madtulip_human_br",
-	  "backgroundMat" : "madtulip_human_br"
-    },
-	
-	{
-      "value" : [0, 6, 103, 100],
-      "foregroundBlock" : true,
-	  "backgroundBlock" : true,
-      "foregroundMat" : "madtulip_hylotl_br",
-	  "backgroundMat" : "madtulip_hylotl_br"
-    },
-	
-	{
-      "value" : [0, 7, 103, 100],
-      "foregroundBlock" : true,
-	  "backgroundBlock" : true,
-      "foregroundMat" : "madtulip_glass_br",
-	  "backgroundMat" : "madtulip_glass_br"
-    },
-	
-	{
-      "value" : [0, 1, 104, 100],
-      "foregroundBlock" : true,
-	  "backgroundBlock" : true,
-      "foregroundMat" : "madtulip_apex_default",
-	  "backgroundMat" : "madtulip_apex_default"
-    },
-	
-	{
-      "value" : [0, 2, 104, 100],
-      "foregroundBlock" : true,
-	  "backgroundBlock" : true,
-      "foregroundMat" : "madtulip_avian_default",
-	  "backgroundMat" : "madtulip_avian_default"
-    },
-	
-	{
-      "value" : [0, 3, 104, 100],
-      "foregroundBlock" : true,
-	  "backgroundBlock" : true,
-      "foregroundMat" : "madtulip_floran_default",
-	  "backgroundMat" : "madtulip_floran default"
-    },
-	
-	{
-      "value" : [0, 4, 104, 100],
-      "foregroundBlock" : true,
-	  "backgroundBlock" : true,
-      "foregroundMat" : "madtulip_glitch_default",
-	  "backgroundMat" : "madtulip_glitch_default"
-    },
-	
-	{
-      "value" : [0, 5, 104, 100],
-      "foregroundBlock" : true,
-	  "backgroundBlock" : true,
-      "foregroundMat" : "madtulip_human_default",
-	  "backgroundMat" : "madtulip_human_defualt"
-    },
-	
-	{
-      "value" : [0, 6, 104, 100],
-      "foregroundBlock" : true,
-	  "backgroundBlock" : true,
-      "foregroundMat" : "madtulip_hylotl_default",
-	  "backgroundMat" : "madtulip_hylotl_default"
+    {
+      "value" : [2, 2, 4],
+      "foregroundBlock" : false,"backgroundBlock" : true,
+	  "foregroundMat" : "glass",
+	  "backgroundMat" : "glass"
     },
 
-	{
-      "value" : [0, 7, 104, 100],
-      "foregroundBlock" : true,
-	  "backgroundBlock" : true,
-      "foregroundMat" : "madtulip_glass_defualt",
-	  "backgroundMat" : "madtulip_glass_defualt"
+// FTL Thrusters [1,race,1]
+    {
+		"value" : [1, 1, 1, 255],
+		"object" : "madtulip_apex_ftl_thruster",
+		"foregroundBlock" : false,"backgroundBlock" : false,"objectParameters" : {"unbreakable" : false}
     },
-		
 	{
-      "value" : [0, 1, 105, 100],
-      "foregroundBlock" : true,
-	  "backgroundBlock" : true,
-      "foregroundMat" : "madtulip_apex_lr",
-	  "backgroundMat" : "madtulip_apex_lr"
+		"value" : [1, 2, 1, 255],
+		"object" : "madtulip_avian_ftl_thruster",
+		"foregroundBlock" : false,"backgroundBlock" : false,"objectParameters" : {"unbreakable" : false}
     },
-	
 	{
-      "value" : [0, 2, 105, 100],
-      "foregroundBlock" : true,
-	  "backgroundBlock" : true,
-      "foregroundMat" : "madtulip_avian_lr",
-	  "backgroundMat" : "madtulip_avian_lr"
+		"value" : [1, 3, 1, 255],
+		"object" : "madtulip_floran_ftl_thruster",
+		"foregroundBlock" : false,"backgroundBlock" : false,"objectParameters" : {"unbreakable" : false}
     },
-	
 	{
-      "value" : [0, 3, 105, 100],
-      "foregroundBlock" : true,
-	  "backgroundBlock" : true,
-      "foregroundMat" : "madtulip_floran_lr",
-	  "backgroundMat" : "madtulip_floran_lr"
+		"value" : [1, 4, 1, 255],
+		"object" : "madtulip_glitch_ftl_thruster",
+		"foregroundBlock" : false,"backgroundBlock" : false,"objectParameters" : {"unbreakable" : false}
     },
-	
 	{
-      "value" : [0, 4, 105, 100],
-      "foregroundBlock" : true,
-	  "backgroundBlock" : true,
-      "foregroundMat" : "madtulip_glitch_lr",
-	  "backgroundMat" : "madtulip_glitch_lr"
+		"value" : [1, 5, 1, 255],
+		"object" : "madtulip_human_ftl_thruster",
+		"foregroundBlock" : false,"backgroundBlock" : false,"objectParameters" : {"unbreakable" : false}
     },
-	
 	{
-      "value" : [0, 5, 105, 100],
-      "foregroundBlock" : true,
-	  "backgroundBlock" : true,
-      "foregroundMat" : "madtulip_human_lr",
-	  "backgroundMat" : "madtulip_human_lr"
+		"value" : [1, 6, 1, 255],
+		"object" : "madtulip_hylotl_ftl_thruster",
+		"foregroundBlock" : false,"backgroundBlock" : false,"objectParameters" : {"unbreakable" : false}
     },
-	
-	{
-      "value" : [0, 6, 105, 100],
-      "foregroundBlock" : true,
-	  "backgroundBlock" : true,
-      "foregroundMat" : "madtulip_hylotl_lr",
-	  "backgroundMat" : "madtulip_hylotl_lr"
+// Stabilization thrusters [1,race,2]
+    {
+		"value" : [1, 1, 2, 255],
+		"object" : "madtulip_apex_stabilization_thruster",
+		"foregroundBlock" : false,"backgroundBlock" : false,"objectParameters" : {"unbreakable" : false}
     },
-	
 	{
-      "value" : [0, 7, 105, 100],
-      "foregroundBlock" : true,
-	  "backgroundBlock" : true,
-      "foregroundMat" : "madtulip_glass_lr",
-	  "backgroundMat" : "madtulip_glass_lr"
+		"value" : [1, 2, 2, 255],
+		"object" : "madtulip_avian_stabilization_thruster",
+		"foregroundBlock" : false,"backgroundBlock" : false,"objectParameters" : {"unbreakable" : false}
     },
-	
 	{
-      "value" : [0, 1, 106, 100],
-      "foregroundBlock" : true,
-	  "backgroundBlock" : true,
-      "foregroundMat" : "madtulip_apex_ltr",
-	  "backgroundMat" : "madtulip_apex_ltr"
+		"value" : [1, 3, 2, 255],
+		"object" : "madtulip_floran_stabilization_thruster",
+		"foregroundBlock" : false,"backgroundBlock" : false,"objectParameters" : {"unbreakable" : false}
     },
-	
 	{
-      "value" : [0, 2, 106, 100],
-      "foregroundBlock" : true,
-	  "backgroundBlock" : true,
-      "foregroundMat" : "madtulip_avian_ltr",
-	  "backgroundMat" : "madtulip_avian_ltr"
+		"value" : [1, 4, 2, 255],
+		"object" : "madtulip_glitch_stabilization_thruster",
+		"foregroundBlock" : false,"backgroundBlock" : false,"objectParameters" : {"unbreakable" : false}
     },
-	
 	{
-      "value" : [0, 3, 106, 100],
-      "foregroundBlock" : true,
-	  "backgroundBlock" : true,
-      "foregroundMat" : "madtulip_floran_ltr",
-	  "backgroundMat" : "madtulip_floran_ltr"
+		"value" : [1, 5, 2, 255],
+		"object" : "madtulip_human_stabilization_thruster",
+		"foregroundBlock" : false,"backgroundBlock" : false,"objectParameters" : {"unbreakable" : false}
     },
-	
-	{
-      "value" : [0, 4, 106, 100],
-      "foregroundBlock" : true,
-	  "backgroundBlock" : true,
-      "foregroundMat" : "madtulip_glitch_ltr",
-	  "backgroundMat" : "madtulip_glitch_ltr"
+    {
+		"value" : [1, 6, 2, 255],
+		"object" : "madtulip_hylotl_stabilization_thruster",
+		"foregroundBlock" : false,"backgroundBlock" : false,"objectParameters" : {"unbreakable" : false}
     },
-	
+// Gyro stabilizers [1,race,3]
 	{
-      "value" : [0, 5, 106, 100],
-      "foregroundBlock" : true,
-	  "backgroundBlock" : true,
-      "foregroundMat" : "madtulip_human_ltr",
-	  "backgroundMat" : "madtulip_human_ltr"
+		"value" : [1, 1, 3, 255],
+		"object" : "madtulip_apex_gyro_stabilizer",
+		"foregroundBlock" : false,"backgroundBlock" : false,"objectParameters" : {"unbreakable" : false}
     },
-	
 	{
-      "value" : [0, 6, 106, 100],
-      "foregroundBlock" : true,
-	  "backgroundBlock" : true,
-      "foregroundMat" : "madtulip_hylotl_ltr",
-	  "backgroundMat" : "madtulip_hylotl_ltr"
+		"value" : [1, 2, 3, 255],
+		"object" : "madtulip_avian_gyro_stabilizer",
+		"foregroundBlock" : false,"backgroundBlock" : false,"objectParameters" : {"unbreakable" : false}
     },
-	
 	{
-      "value" : [0, 7, 106, 100],
-      "foregroundBlock" : true,
-	  "backgroundBlock" : true,
-      "foregroundMat" : "madtulip_glass_ltr",
-	  "backgroundMat" : "madtulip_glass_ltr"
+		"value" : [1, 3, 3, 255],
+		"object" : "madtulip_floran_gyro_stabilizer",
+		"foregroundBlock" : false,"backgroundBlock" : false,"objectParameters" : {"unbreakable" : false}
     },
-	
 	{
-      "value" : [0, 1, 107, 100],
-      "foregroundBlock" : true,
-	  "backgroundBlock" : true,
-      "foregroundMat" : "madtulip_apex_rbl",
-	  "backgroundMat" : "madtulip_apex_rbl"
+		"value" : [1, 4, 3, 255],
+		"object" : "madtulip_glitch_gyro_stabilizer",
+		"foregroundBlock" : false,"backgroundBlock" : false,"objectParameters" : {"unbreakable" : false}
     },
-	
 	{
-      "value" : [0, 2, 107, 100],
-      "foregroundBlock" : true,
-	  "backgroundBlock" : true,
-      "foregroundMat" : "madtulip_avian_rbl",
-	  "backgroundMat" : "madtulip_avian_rbl"
+		"value" : [1, 5, 3, 255],
+		"object" : "madtulip_human_gyro_stabilizer",
+		"foregroundBlock" : false,"backgroundBlock" : false,"objectParameters" : {"unbreakable" : false}
+	},
+	{
+		"value" : [1, 6, 3, 255],
+		"object" : "madtulip_hylotl_gyro_stabilizer",
+		"foregroundBlock" : false,"backgroundBlock" : false,"objectParameters" : {"unbreakable" : false}
     },
-	
-	{
-      "value" : [0, 3, 107, 100],
-      "foregroundBlock" : true,
-	  "backgroundBlock" : true,
-      "foregroundMat" : "madtulip_floran_rbl",
-	  "backgroundMat" : "madtulip_floran_rbl"
+// Large Fins [1,race,4]
+    {
+		"value" : [1, 1, 4, 255],
+		"object" : "madtulip_apex_large_fin",
+		"foregroundBlock" : false,"backgroundBlock" : false,"objectParameters" : {"unbreakable" : false}
     },
-	
 	{
-      "value" : [0, 4, 107, 100],
-      "foregroundBlock" : true,
-	  "backgroundBlock" : true,
-      "foregroundMat" : "madtulip_glitch_rbl",
-	  "backgroundMat" : "madtulip_glitch_rbl"
+		"value" : [1, 2, 4, 255],
+		"object" : "madtulip_avian_large_fin",
+		"foregroundBlock" : false,"backgroundBlock" : false,"objectParameters" : {"unbreakable" : false}
     },
-	
+	// floran missing
+	// glitch missing
 	{
-      "value" : [0, 5, 107, 100],
-      "foregroundBlock" : true,
-	  "backgroundBlock" : true,
-      "foregroundMat" : "madtulip_human_rbl",
-	  "backgroundMat" : "madtulip_human_rbl"
+		"value" : [1, 5, 4, 255],
+		"object" : "madtulip_human_large_fin",
+		"foregroundBlock" : false,"backgroundBlock" : false,"objectParameters" : {"unbreakable" : false}
     },
-	
 	{
-      "value" : [0, 6, 107, 100],
-      "foregroundBlock" : true,
-	  "backgroundBlock" : true,
-      "foregroundMat" : "madtulip_hylotl_rbl",
-	  "backgroundMat" : "madtulip_hylotl_rbl"
+		"value" : [1, 6, 4, 255],
+		"object" : "madtulip_hylotl_large_fin",
+		"foregroundBlock" : false,"backgroundBlock" : false,"objectParameters" : {"unbreakable" : false}
     },
-	
+// Doors, apexshipdetails [1,race,5]
 	{
-      "value" : [0, 7, 107, 100],
-      "foregroundBlock" : true,
-	  "backgroundBlock" : true,
-      "foregroundMat" : "madtulip_glass_rbl",
-	  "backgroundMat" : "madtulip_glass_rbl"
-    },	
-	
-	{
-      "value" : [0, 1, 108, 100],
-      "foregroundBlock" : true,
-	  "backgroundBlock" : true,
-      "foregroundMat" : "madtulip_apex_tb",
-	  "backgroundMat" : "madtulip_apex_tb"
-    },
-	
-	{
-      "value" : [0, 2, 108, 100],
-      "foregroundBlock" : true,
-	  "backgroundBlock" : true,
-      "foregroundMat" : "madtulip_avian_tb",
-	  "backgroundMat" : "madtulip_avian_tb"
-    },
-	
-	{
-      "value" : [0, 3, 108, 100],
-      "foregroundBlock" : true,
-	  "backgroundBlock" : true,
-      "foregroundMat" : "madtulip_floran_tb",
-	  "backgroundMat" : "madtulip_floran_tb"
-    },
-	
-	{
-      "value" : [0, 4, 108, 100],
-      "foregroundBlock" : true,
-	  "backgroundBlock" : true,
-      "foregroundMat" : "madtulip_glitch_tb",
-	  "backgroundMat" : "madtulip_glitch_tb"
-    },
-	
-	{
-      "value" : [0, 5, 108, 100],
-      "foregroundBlock" : true,
-	  "backgroundBlock" : true,
-      "foregroundMat" : "madtulip_human_tb",
-	  "backgroundMat" : "madtulip_human_tb"
-    },
-	
-	{
-      "value" : [0, 6, 108, 100],
-      "foregroundBlock" : true,
-	  "backgroundBlock" : true,
-      "foregroundMat" : "madtulip_hylotl_tb",
-	  "backgroundMat" : "madtulip_hylotl_tb"
-    },
-	
-	{
-      "value" : [0, 7, 108, 100],
-      "foregroundBlock" : true,
-	  "backgroundBlock" : true,
-      "foregroundMat" : "madtulip_glass_tb",
-	  "backgroundMat" : "madtulip_glass_tb"
-    },	
-	
-	{
-      "value" : [0, 1, 109, 100],
-      "foregroundBlock" : true,
-	  "backgroundBlock" : true,
-      "foregroundMat" : "madtulip_apex_tl",
-	  "backgroundMat" : "madtulip_apex_tl"
-    },
-	
-	{
-      "value" : [0, 2, 109, 100],
-      "foregroundBlock" : true,
-	  "backgroundBlock" : true,
-      "foregroundMat" : "madtulip_avian_tl",
-	  "backgroundMat" : "madtulip_avian_tl"
-    },
-	
-	{
-      "value" : [0, 3, 109, 100],
-      "foregroundBlock" : true,
-	  "backgroundBlock" : true,
-      "foregroundMat" : "madtulip_floran_tl",
-	  "backgroundMat" : "madtulip_floran_tl"
-    },
-	
-	{
-      "value" : [0, 4, 109, 100],
-      "foregroundBlock" : true,
-	  "backgroundBlock" : true,
-      "foregroundMat" : "madtulip_glitch_tl",
-	  "backgroundMat" : "madtulip_glitch_tl"
-    },
-	
-	{
-      "value" : [0, 5, 109, 100],
-      "foregroundBlock" : true,
-	  "backgroundBlock" : true,
-      "foregroundMat" : "madtulip_human_tl",
-	  "backgroundMat" : "madtulip_human_tl"
-    },
-	
-	{
-      "value" : [0, 6, 109, 100],
-      "foregroundBlock" : true,
-	  "backgroundBlock" : true,
-      "foregroundMat" : "madtulip_hylotl_tl",
-	  "backgroundMat" : "madtulip_hylotl_tl"
-    },
-
-	{
-      "value" : [0, 7, 109, 100],
-      "foregroundBlock" : true,
-	  "backgroundBlock" : true,
-      "foregroundMat" : "madtulip_glass_tl",
-	  "backgroundMat" : "madtulip_glass_tl"
-    },
-	
-	{
-      "value" : [0, 1, 110, 100],
-      "foregroundBlock" : true,
-	  "backgroundBlock" : true,
-      "foregroundMat" : "madtulip_apex_tr",
-	  "backgroundMat" : "madtulip_apex_tr"
-    },
-	
-	{
-      "value" : [0, 2, 110, 100],
-      "foregroundBlock" : true,
-	  "backgroundBlock" : true,
-      "foregroundMat" : "madtulip_avian_tr",
-	  "backgroundMat" : "madtulip_avian_tr"
-    },
-	
-	{
-      "value" : [0, 3, 110, 100],
-      "foregroundBlock" : true,
-	  "backgroundBlock" : true,
-      "foregroundMat" : "madtulip_floran_tr",
-	  "backgroundMat" : "madtulip_floran_tr"
-    },
-	
-	{
-      "value" : [0, 4, 110, 100],
-      "foregroundBlock" : true,
-	  "backgroundBlock" : true,
-      "foregroundMat" : "madtulip_glitch_tr",
-	  "backgroundMat" : "madtulip_glitch_tr"
-    },
-	
-	{
-      "value" : [0, 5, 110, 100],
-      "foregroundBlock" : true,
-	  "backgroundBlock" : true,
-      "foregroundMat" : "madtulip_human_tr",
-	  "backgroundMat" : "madtulip_human_tr"
-    },
-	
-	{
-      "value" : [0, 6, 110, 100],
-      "foregroundBlock" : true,
-	  "backgroundBlock" : true,
-      "foregroundMat" : "madtulip_hylotl_tr",
-	  "backgroundMat" : "madtulip_hylotl_tr"
-    },
-	
-	{
-      "value" : [0, 7, 110, 100],
-      "foregroundBlock" : true,
-	  "backgroundBlock" : true,
-      "foregroundMat" : "madtulip_glass_tr",
-	  "backgroundMat" : "madtulip_glass_tr"
-    },	
-	
-	{
-      "value" : [0, 1, 111, 100],
-      "foregroundBlock" : true,
-	  "backgroundBlock" : true,
-      "foregroundMat" : "madtulip_apex_trb",
-	  "backgroundMat" : "madtulip_apex_trb"
-    },
-	
-	{
-      "value" : [0, 2, 111, 100],
-      "foregroundBlock" : true,
-	  "backgroundBlock" : true,
-      "foregroundMat" : "madtulip_avian_trb",
-	  "backgroundMat" : "madtulip_avian_trb"
-    },
-	
-	{
-      "value" : [0, 3, 111, 100],
-      "foregroundBlock" : true,
-	  "backgroundBlock" : true,
-      "foregroundMat" : "madtulip_floran_trb",
-	  "backgroundMat" : "madtulip_floran_trb"
-    },
-	
-	{
-      "value" : [0, 4, 111, 100],
-      "foregroundBlock" : true,
-	  "backgroundBlock" : true,
-      "foregroundMat" : "madtulip_glitch_trb",
-	  "backgroundMat" : "madtulip_glitch_trb"
-    },
-	
-	{
-      "value" : [0, 5, 111, 100],
-      "foregroundBlock" : true,
-	  "backgroundBlock" : true,
-      "foregroundMat" : "madtulip_human_trb",
-	  "backgroundMat" : "madtulip_human_trb"
-    },
-	
-	{
-      "value" : [0, 6, 111, 100],
-      "foregroundBlock" : true,
-	  "backgroundBlock" : true,
-      "foregroundMat" : "madtulip_hylotl_trb",
-	  "backgroundMat" : "madtulip_hylotl_trb"
-    },
-
-	{
-      "value" : [0, 7, 111, 100],
-      "foregroundBlock" : true,
-	  "backgroundBlock" : true,
-      "foregroundMat" : "madtulip_glass_trb",
-	  "backgroundMat" : "madtulip_glass_trb"
-    },
-	
-	{
-      "value" : [0, 1, 112, 100],
-      "foregroundBlock" : true,
-	  "backgroundBlock" : true,
-      "foregroundMat" : "madtulip_apex_trbl",
-	  "backgroundMat" : "madtulip_apex_trbl"
-    },
-	
-	{
-      "value" : [0, 2, 112, 100],
-      "foregroundBlock" : true,
-	  "backgroundBlock" : true,
-      "foregroundMat" : "madtulip_avian_trbl",
-	  "backgroundMat" : "madtulip_avian_trbl"
-    },
-	
-	{
-      "value" : [0, 3, 112, 100],
-      "foregroundBlock" : true,
-	  "backgroundBlock" : true,
-      "foregroundMat" : "madtulip_floran_trbl",
-	  "backgroundMat" : "madtulip_floran_trbl"
-    },
-	
-	{
-      "value" : [0, 4, 112, 100],
-      "foregroundBlock" : true,
-	  "backgroundBlock" : true,
-      "foregroundMat" : "madtulip_glitch_trbl",
-	  "backgroundMat" : "madtulip_glitch_trbl"
-    },
-	
-	{
-      "value" : [0, 5, 112, 100],
-      "foregroundBlock" : true,
-	  "backgroundBlock" : true,
-      "foregroundMat" : "madtulip_human_trbl",
-	  "backgroundMat" : "madtulip_human_trbl"
-    },
-	
-	{
-      "value" : [0, 6, 112, 100],
-      "foregroundBlock" : true,
-	  "backgroundBlock" : true,
-      "foregroundMat" : "madtulip_hylotl_trbl",
-	  "backgroundMat" : "madtulip_hylotl_trbl"
-    },
-	
-	{
-      "value" : [0, 7, 112, 100],
-      "foregroundBlock" : true,
-	  "backgroundBlock" : true,
-      "foregroundMat" : "madtulip_glass_trbl",
-	  "backgroundMat" : "madtulip_glass_trbl"
-    },
-	
-	{
-      "value" : [255, 102, 0, 255],
-      "foregroundBlock" : false,
-      "backgroundBlock" : true,
+      "value" : [1, 1, 5, 255],
+      "foregroundBlock" : false,"backgroundBlock" : true,
       "object" : "madtulip_shipdoor",
 	  "backgroundMat" : "apexshipdetails"
     },
-	
 	{
-      "value" : [255, 103, 0, 255],
-      "foregroundBlock" : false,
-      "backgroundBlock" : true,
+      "value" : [1, 2, 5, 255],
+      "foregroundBlock" : false,"backgroundBlock" : true,
       "object" : "madtulip_avian_shipdoor",
 	  "backgroundMat" : "apexshipdetails"
     },
-	
 	{
-      "value" : [255, 104, 0, 255],
-      "foregroundBlock" : false,
-      "backgroundBlock" : true,
+      "value" : [1, 3, 5, 255],
+      "foregroundBlock" : false,"backgroundBlock" : true,
       "object" : "madtulip_floran_shipdoor",
 	  "backgroundMat" : "apexshipdetails"
     },
-	
+	// glitch missing
+	// human missing
 	{
-      "value" : [255, 105, 0, 255],
-      "foregroundBlock" : false,
-      "backgroundBlock" : true,
+      "value" : [1, 6, 5, 255],
+      "foregroundBlock" : false,"backgroundBlock" : true,
       "object" : "madtulip_hylotl_shipdoor",
 	  "backgroundMat" : "apexshipdetails"
     },
-
-
+// Race specific ship lockers [1,race,6]
     {
-      "value" : [0, 255, 255, 255],
-      "foregroundBlock" : false,
-      "backgroundBlock" : true,
-	  "backgroundMat" : "apexshipwall",
-      "object" : "madtulip_captainschair",
-      "objectDirection" : "left",
-      "objectParameters" : {
-        "unbreakable" : false
-      }
-    },
-
-    {
-      "value" : [255, 255, 144],
-      "foregroundBlock" : false,
-      "backgroundBlock" : true,
-      "backgroundMat" : "apexshipwall"
-    },
-
-    {
-      "value" : [255, 117, 144],
-      "foregroundBlock" : false,
-      "backgroundBlock" : true,
-      "backgroundMat" : "apexshipdetails"
-    },
-
-    {
-      "value" : [255, 117, 255],
-      "foregroundBlock" : false,
-      "backgroundBlock" : true,
-      "backgroundMat" : "apexshipsupport"
-    },
-
-	
-    {
-      "value" : [0, 255, 0, 255],
-      "foregroundBlock" : false,
-      "backgroundBlock" : true,
+      "value" : [1, 1, 6, 255],
+      "foregroundBlock" : false,"backgroundBlock" : true,
       "backgroundMat" : "apexshipwall",
       "object" : "madtulip_shiplocker",
-      "objectParameters" : {
-        "treasurePools" : [ "madtulip_humanShipStarterTreasure" ],
-        "level" : 1,
-        "unbreakable" : false
-      }
+      "objectParameters" : {"treasurePools" : [ "madtulip_apexShipStarterTreasure" ],"level" : 1,"unbreakable" : false}
     },
-
     {
-      "value" : [142, 255, 142, 255],
-      "foregroundBlock" : false,
-      "backgroundBlock" : true,
+      "value" : [1, 2, 6, 255],
+      "foregroundBlock" : false,"backgroundBlock" : true,
+      "backgroundMat" : "apexshipwall",
+      "object" : "madtulip_shiplocker",
+      "objectParameters" : {"treasurePools" : [ "madtulip_avianShipStarterTreasure" ],"level" : 1,"unbreakable" : false}
+    },
+    {
+      "value" : [1, 3, 6, 255],
+      "foregroundBlock" : false,"backgroundBlock" : true,
+      "backgroundMat" : "apexshipwall",
+      "object" : "madtulip_shiplocker",
+      "objectParameters" : {"treasurePools" : [ "madtulip_floranShipStarterTreasure" ],"level" : 1,"unbreakable" : false}
+    },
+    {
+      "value" : [1, 4, 6, 255],
+      "foregroundBlock" : false,"backgroundBlock" : true,
+      "backgroundMat" : "apexshipwall",
+      "object" : "madtulip_shiplocker",
+      "objectParameters" : {"treasurePools" : [ "madtulip_glitchShipStarterTreasure" ],"level" : 1,"unbreakable" : false}
+    },
+    {
+      "value" : [1, 5, 6, 255],
+      "foregroundBlock" : false,"backgroundBlock" : true,
+      "backgroundMat" : "apexshipwall",
+      "object" : "madtulip_shiplocker",
+      "objectParameters" : {"treasurePools" : [ "madtulip_humanShipStarterTreasure" ],"level" : 1,"unbreakable" : false}
+    },
+    {
+      "value" : [1, 6, 6, 255],
+      "foregroundBlock" : false,"backgroundBlock" : true,
+      "backgroundMat" : "apexshipwall",
+      "object" : "madtulip_shiplocker",
+      "objectParameters" : {"treasurePools" : [ "madtulip_hylotlShipStarterTreasure" ],"level" : 1,"unbreakable" : false}
+    },
+// Other Objects [3,0,x]
+    {
+      "value" : [3, 0, 1, 255],
+      "foregroundBlock" : false,"backgroundBlock" : true,
+	  "backgroundMat" : "apexshipwall",
+      "object" : "madtulip_captainschair",
+      "objectDirection" : "left","objectParameters" : {"unbreakable" : false}
+    },
+    {
+      "value" : [3, 0, 2, 255],
+      "foregroundBlock" : false,"backgroundBlock" : true,
       "backgroundMat" : "apexshipwall",
       "object" : "madtulip_techstation",
-      "objectParameters" : {
-        "unbreakable" : false
-      }
+      "objectParameters" : {"unbreakable" : false}
     },
 	
     {
-      "value" : [143, 255, 143, 255],
-      "foregroundBlock" : false,
-      "backgroundBlock" : true,
+      "value" : [3, 0, 3, 255],
+      "foregroundBlock" : false,"backgroundBlock" : true,
       "backgroundMat" : "apexshipwall",
       "object" : "madtulip_shipstation",
-      "objectParameters" : {
-        "unbreakable" : false
-      }
+      "objectParameters" : {"unbreakable" : false}
     },
 	
     {
-      "value" : [144, 255, 144, 255],
-      "foregroundBlock" : false,
-      "backgroundBlock" : true,
+      "value" : [3, 0, 4, 255],
+      "foregroundBlock" : false,"backgroundBlock" : true,
 	  "backgroundMat" : "glass",
       "object" : "madtulip_shipnavigationconsole",
-      "objectParameters" : {
-        "unbreakable" : false
-      }
+      "objectParameters" : {"unbreakable" : false}
     },
     {
-      "value" : [147, 255, 147, 255],
-      "foregroundBlock" : false,
-      "backgroundBlock" : true,
+      "value" : [3, 0, 5, 255],
+      "foregroundBlock" : false,"backgroundBlock" : true,
 	  "backgroundMat" : "apexshipwall",
       "object" : "madtulip_vent",
-      "objectParameters" : {
-        "unbreakable" : false
-      }
+      "objectParameters" : {"unbreakable" : false}
     },
     {
-      "value" : [255, 87, 81, 255],
-      "foregroundBlock" : false,
-      "backgroundBlock" : true,
+      "value" : [3, 0, 6, 255],
+      "foregroundBlock" : false,"backgroundBlock" : true,
 	  "backgroundMat" : "apexshipwall",
       "object" : "madtulip_fuelhatch",
-      "objectParameters" : {
-        "unbreakable" : false
-      }
+      "objectParameters" : {"unbreakable" : false}
     },
-
-    {
-      "value" : [255, 255, 0, 255],
-      "foregroundBlock" : false,
-      "backgroundBlock" : true,
+	{
+      "value" : [3, 0, 7, 255],
+      "foregroundBlock" : false,"backgroundBlock" : true,
       "backgroundMat" : "apexshipdetails",
       "object" : "madtulip_shiplight"
     },
-	
     {
-      "value" : [255, 255, 130, 255],
-      "foregroundBlock" : false,
-      "backgroundBlock" : true,
+      "value" : [3, 0, 8, 255],
+      "foregroundBlock" : false,"backgroundBlock" : true,
       "backgroundMat" : "glass",
       "object" : "madtulip_shiplight"
     },
-	
     {
-      "value" : [174, 137, 81, 255],
-      "foregroundBlock" : false,
-      "backgroundBlock" : true,
+      "value" : [3, 0, 9, 255],
+      "foregroundBlock" : false,"backgroundBlock" : true,
       "object" : "shipengine",
-      "objectParameters" : {
-        "unbreakable" : true
-      }
+      "objectParameters" : {"unbreakable" : false}
     },
-
     {
-      "value" : [156, 0, 255, 255],
-      "foregroundBlock" : false,
-      "backgroundBlock" : true,
+      "value" : [3, 0, 10, 255],
+      "foregroundBlock" : false,"backgroundBlock" : true,
       "backgroundMat" : "apexshipdetails",
       "object" : "madtulip_teleporter",
       "flags" : [ "playerSpawn" ],
-      "objectParameters" : {
-        "unbreakable" : true
-      }
+      "objectParameters" : {"unbreakable" : true}
     },
-	
+// Tilesets APEX
     {
-      "value" : [0, 142, 200],
-      "foregroundBlock" : false,
-      "backgroundBlock" : true,
-	  "backgroundMat" : "glass"
+      "value" : [0, 1, 101, 100],
+      "foregroundBlock" : true,"backgroundBlock" : true,
+      "backgroundMat" : "madtulip_apex_bl","foregroundMat" : "madtulip_apex_bl"
+    },
+	{
+      "value" : [0, 1, 102, 100],
+      "foregroundBlock" : true,"backgroundBlock" : true,
+      "foregroundMat" : "madtulip_apex_blt","backgroundMat" : "madtulip_apex_blt"
+    },
+	{
+      "value" : [0, 1, 103, 100],
+      "foregroundBlock" : true,"backgroundBlock" : true,
+      "foregroundMat" : "madtulip_apex_br","backgroundMat" : "madtulip_apex_br"
+    },
+	{
+      "value" : [0, 1, 104, 100],
+      "foregroundBlock" : true,"backgroundBlock" : true,
+      "foregroundMat" : "madtulip_apex_default","backgroundMat" : "madtulip_apex_default"
+    },
+	{
+      "value" : [0, 1, 105, 100],
+      "foregroundBlock" : true,"backgroundBlock" : true,
+      "foregroundMat" : "madtulip_apex_lr","backgroundMat" : "madtulip_apex_lr"
+    },
+	{
+      "value" : [0, 1, 106, 100],
+      "foregroundBlock" : true,"backgroundBlock" : true,
+      "foregroundMat" : "madtulip_apex_ltr","backgroundMat" : "madtulip_apex_ltr"
+    },
+	{
+      "value" : [0, 1, 107, 100],
+      "foregroundBlock" : true,"backgroundBlock" : true,
+      "foregroundMat" : "madtulip_apex_rbl","backgroundMat" : "madtulip_apex_rbl"
+    },
+	{
+      "value" : [0, 1, 108, 100],
+      "foregroundBlock" : true,"backgroundBlock" : true,
+      "foregroundMat" : "madtulip_apex_tb","backgroundMat" : "madtulip_apex_tb"
+    },
+	{
+      "value" : [0, 1, 109, 100],
+      "foregroundBlock" : true,"backgroundBlock" : true,
+      "foregroundMat" : "madtulip_apex_tl","backgroundMat" : "madtulip_apex_tl"
+    },
+	{
+      "value" : [0, 1, 110, 100],
+      "foregroundBlock" : true,"backgroundBlock" : true,
+      "foregroundMat" : "madtulip_apex_tr","backgroundMat" : "madtulip_apex_tr"
+    },
+	{
+      "value" : [0, 1, 111, 100],
+      "foregroundBlock" : true,"backgroundBlock" : true,
+      "foregroundMat" : "madtulip_apex_trb","backgroundMat" : "madtulip_apex_trb"
+    },	
+	{
+      "value" : [0, 1, 112, 100],
+      "foregroundBlock" : true,"backgroundBlock" : true,
+      "foregroundMat" : "madtulip_apex_trbl","backgroundMat" : "madtulip_apex_trbl"
+    },
+// Tilesets AVIAN	
+    {
+      "value" : [0, 2, 101, 100],
+      "foregroundBlock" : true,"backgroundBlock" : true,
+      "backgroundMat" : "madtulip_avian_bl","foregroundMat" : "madtulip_avian_bl"
+    },
+	{
+      "value" : [0, 2, 102, 100],
+      "foregroundBlock" : true,"backgroundBlock" : true,
+      "foregroundMat" : "madtulip_avian_blt","backgroundMat" : "madtulip_avian_blt"
+    },
+	{
+      "value" : [0, 2, 103, 100],
+      "foregroundBlock" : true,"backgroundBlock" : true,
+      "foregroundMat" : "madtulip_avian_br","backgroundMat" : "madtulip_avian_br"
+    },
+	{
+      "value" : [0, 2, 104, 100],
+      "foregroundBlock" : true,"backgroundBlock" : true,
+      "foregroundMat" : "madtulip_avian_default","backgroundMat" : "madtulip_avian_default"
+    },
+	{
+      "value" : [0, 2, 105, 100],
+      "foregroundBlock" : true,"backgroundBlock" : true,
+      "foregroundMat" : "madtulip_avian_lr","backgroundMat" : "madtulip_avian_lr"
+    },
+	{
+      "value" : [0, 2, 106, 100],
+      "foregroundBlock" : true,"backgroundBlock" : true,
+      "foregroundMat" : "madtulip_avian_ltr","backgroundMat" : "madtulip_avian_ltr"
+    },
+	{
+      "value" : [0, 2, 107, 100],
+      "foregroundBlock" : true,"backgroundBlock" : true,
+      "foregroundMat" : "madtulip_avian_rbl","backgroundMat" : "madtulip_avian_rbl"
+    },
+	{
+      "value" : [0, 2, 108, 100],
+      "foregroundBlock" : true,"backgroundBlock" : true,
+      "foregroundMat" : "madtulip_avian_tb","backgroundMat" : "madtulip_avian_tb"
+    },
+	{
+      "value" : [0, 2, 109, 100],
+      "foregroundBlock" : true,"backgroundBlock" : true,
+      "foregroundMat" : "madtulip_avian_tl","backgroundMat" : "madtulip_avian_tl"
+    },
+	{
+      "value" : [0, 2, 110, 100],
+      "foregroundBlock" : true,"backgroundBlock" : true,
+      "foregroundMat" : "madtulip_avian_tr","backgroundMat" : "madtulip_avian_tr"
+    },
+	{
+      "value" : [0, 2, 111, 100],
+      "foregroundBlock" : true,"backgroundBlock" : true,
+      "foregroundMat" : "madtulip_avian_trb","backgroundMat" : "madtulip_avian_trb"
+    },	
+	{
+      "value" : [0, 2, 112, 100],
+      "foregroundBlock" : true,"backgroundBlock" : true,
+      "foregroundMat" : "madtulip_avian_trbl","backgroundMat" : "madtulip_avian_trbl"
+    },	
+// Tilesets FLORAN
+    {
+      "value" : [0, 3, 101, 100],
+      "foregroundBlock" : true,"backgroundBlock" : true,
+      "backgroundMat" : "madtulip_floran_bl","foregroundMat" : "madtulip_floran_bl"
+    },
+	{
+      "value" : [0, 3, 102, 100],
+      "foregroundBlock" : true,"backgroundBlock" : true,
+      "foregroundMat" : "madtulip_floran_blt","backgroundMat" : "madtulip_floran_blt"
+    },
+	{
+      "value" : [0, 3, 103, 100],
+      "foregroundBlock" : true,"backgroundBlock" : true,
+      "foregroundMat" : "madtulip_floran_br","backgroundMat" : "madtulip_floran_br"
+    },
+	{
+      "value" : [0, 3, 104, 100],
+      "foregroundBlock" : true,"backgroundBlock" : true,
+      "foregroundMat" : "madtulip_floran_default","backgroundMat" : "madtulip_floran_default"
+    },
+	{
+      "value" : [0, 3, 105, 100],
+      "foregroundBlock" : true,"backgroundBlock" : true,
+      "foregroundMat" : "madtulip_floran_lr","backgroundMat" : "madtulip_floran_lr"
+    },
+	{
+      "value" : [0, 3, 106, 100],
+      "foregroundBlock" : true,"backgroundBlock" : true,
+      "foregroundMat" : "madtulip_floran_ltr","backgroundMat" : "madtulip_floran_ltr"
+    },
+	{
+      "value" : [0, 3, 107, 100],
+      "foregroundBlock" : true,"backgroundBlock" : true,
+      "foregroundMat" : "madtulip_floran_rbl","backgroundMat" : "madtulip_floran_rbl"
+    },
+	{
+      "value" : [0, 3, 108, 100],
+      "foregroundBlock" : true,"backgroundBlock" : true,
+      "foregroundMat" : "madtulip_floran_tb","backgroundMat" : "madtulip_floran_tb"
+    },
+	{
+      "value" : [0, 3, 109, 100],
+      "foregroundBlock" : true,"backgroundBlock" : true,
+      "foregroundMat" : "madtulip_floran_tl","backgroundMat" : "madtulip_floran_tl"
+    },
+	{
+      "value" : [0, 3, 110, 100],
+      "foregroundBlock" : true,"backgroundBlock" : true,
+      "foregroundMat" : "madtulip_floran_tr","backgroundMat" : "madtulip_floran_tr"
+    },
+	{
+      "value" : [0, 3, 111, 100],
+      "foregroundBlock" : true,"backgroundBlock" : true,
+      "foregroundMat" : "madtulip_floran_trb","backgroundMat" : "madtulip_floran_trb"
+    },	
+	{
+      "value" : [0, 3, 112, 100],
+      "foregroundBlock" : true,"backgroundBlock" : true,
+      "foregroundMat" : "madtulip_floran_trbl","backgroundMat" : "madtulip_floran_trbl"
+    },	
+// Tilesets GLITCH
+    {
+      "value" : [0, 4, 101, 100],
+      "foregroundBlock" : true,"backgroundBlock" : true,
+      "backgroundMat" : "madtulip_glitch_bl","foregroundMat" : "madtulip_glitch_bl"
+    },
+	{
+      "value" : [0, 4, 102, 100],
+      "foregroundBlock" : true,"backgroundBlock" : true,
+      "foregroundMat" : "madtulip_glitch_blt","backgroundMat" : "madtulip_glitch_blt"
+    },
+	{
+      "value" : [0, 4, 103, 100],
+      "foregroundBlock" : true,"backgroundBlock" : true,
+      "foregroundMat" : "madtulip_glitch_br","backgroundMat" : "madtulip_glitch_br"
+    },
+	{
+      "value" : [0, 4, 104, 100],
+      "foregroundBlock" : true,"backgroundBlock" : true,
+      "foregroundMat" : "madtulip_glitch_default","backgroundMat" : "madtulip_glitch_default"
+    },
+	{
+      "value" : [0, 4, 105, 100],
+      "foregroundBlock" : true,"backgroundBlock" : true,
+      "foregroundMat" : "madtulip_glitch_lr","backgroundMat" : "madtulip_glitch_lr"
+    },
+	{
+      "value" : [0, 4, 106, 100],
+      "foregroundBlock" : true,"backgroundBlock" : true,
+      "foregroundMat" : "madtulip_glitch_ltr","backgroundMat" : "madtulip_glitch_ltr"
+    },
+	{
+      "value" : [0, 4, 107, 100],
+      "foregroundBlock" : true,"backgroundBlock" : true,
+      "foregroundMat" : "madtulip_glitch_rbl","backgroundMat" : "madtulip_glitch_rbl"
+    },
+	{
+      "value" : [0, 4, 108, 100],
+      "foregroundBlock" : true,"backgroundBlock" : true,
+      "foregroundMat" : "madtulip_glitch_tb","backgroundMat" : "madtulip_glitch_tb"
+    },
+	{
+      "value" : [0, 4, 109, 100],
+      "foregroundBlock" : true,"backgroundBlock" : true,
+      "foregroundMat" : "madtulip_glitch_tl","backgroundMat" : "madtulip_glitch_tl"
+    },
+	{
+      "value" : [0, 4, 110, 100],
+      "foregroundBlock" : true,"backgroundBlock" : true,
+      "foregroundMat" : "madtulip_glitch_tr","backgroundMat" : "madtulip_glitch_tr"
+    },
+	{
+      "value" : [0, 4, 111, 100],
+      "foregroundBlock" : true,"backgroundBlock" : true,
+      "foregroundMat" : "madtulip_glitch_trb","backgroundMat" : "madtulip_glitch_trb"
+    },	
+	{
+      "value" : [0, 4, 112, 100],
+      "foregroundBlock" : true,"backgroundBlock" : true,
+      "foregroundMat" : "madtulip_glitch_trbl","backgroundMat" : "madtulip_glitch_trbl"
+    },	
+// Tilesets HUMAN
+    {
+      "value" : [0, 5, 101, 100],
+      "foregroundBlock" : true,"backgroundBlock" : true,
+      "backgroundMat" : "madtulip_human_bl","foregroundMat" : "madtulip_human_bl"
+    },
+	{
+      "value" : [0, 5, 102, 100],
+      "foregroundBlock" : true,"backgroundBlock" : true,
+      "foregroundMat" : "madtulip_human_blt","backgroundMat" : "madtulip_human_blt"
+    },
+	{
+      "value" : [0, 5, 103, 100],
+      "foregroundBlock" : true,"backgroundBlock" : true,
+      "foregroundMat" : "madtulip_human_br","backgroundMat" : "madtulip_human_br"
+    },
+	{
+      "value" : [0, 5, 104, 100],
+      "foregroundBlock" : true,"backgroundBlock" : true,
+      "foregroundMat" : "madtulip_human_default","backgroundMat" : "madtulip_human_default"
+    },
+	{
+      "value" : [0, 5, 105, 100],
+      "foregroundBlock" : true,"backgroundBlock" : true,
+      "foregroundMat" : "madtulip_human_lr","backgroundMat" : "madtulip_human_lr"
+    },
+	{
+      "value" : [0, 5, 106, 100],
+      "foregroundBlock" : true,"backgroundBlock" : true,
+      "foregroundMat" : "madtulip_human_ltr","backgroundMat" : "madtulip_human_ltr"
+    },
+	{
+      "value" : [0, 5, 107, 100],
+      "foregroundBlock" : true,"backgroundBlock" : true,
+      "foregroundMat" : "madtulip_human_rbl","backgroundMat" : "madtulip_human_rbl"
+    },
+	{
+      "value" : [0, 5, 108, 100],
+      "foregroundBlock" : true,"backgroundBlock" : true,
+      "foregroundMat" : "madtulip_human_tb","backgroundMat" : "madtulip_human_tb"
+    },
+	{
+      "value" : [0, 5, 109, 100],
+      "foregroundBlock" : true,"backgroundBlock" : true,
+      "foregroundMat" : "madtulip_human_tl","backgroundMat" : "madtulip_human_tl"
+    },
+	{
+      "value" : [0, 5, 110, 100],
+      "foregroundBlock" : true,"backgroundBlock" : true,
+      "foregroundMat" : "madtulip_human_tr","backgroundMat" : "madtulip_human_tr"
+    },
+	{
+      "value" : [0, 5, 111, 100],
+      "foregroundBlock" : true,"backgroundBlock" : true,
+      "foregroundMat" : "madtulip_human_trb","backgroundMat" : "madtulip_human_trb"
+    },	
+	{
+      "value" : [0, 5, 112, 100],
+      "foregroundBlock" : true,"backgroundBlock" : true,
+      "foregroundMat" : "madtulip_human_trbl","backgroundMat" : "madtulip_human_trbl"
+    },	
+// Tilesets HYLOTL
+    {
+      "value" : [0, 6, 101, 100],
+      "foregroundBlock" : true,"backgroundBlock" : true,
+      "backgroundMat" : "madtulip_hylotl_bl","foregroundMat" : "madtulip_hylotl_bl"
+    },
+	{
+      "value" : [0, 6, 102, 100],
+      "foregroundBlock" : true,"backgroundBlock" : true,
+      "foregroundMat" : "madtulip_hylotl_blt","backgroundMat" : "madtulip_hylotl_blt"
+    },
+	{
+      "value" : [0, 6, 103, 100],
+      "foregroundBlock" : true,"backgroundBlock" : true,
+      "foregroundMat" : "madtulip_hylotl_br","backgroundMat" : "madtulip_hylotl_br"
+    },
+	{
+      "value" : [0, 6, 104, 100],
+      "foregroundBlock" : true,"backgroundBlock" : true,
+      "foregroundMat" : "madtulip_hylotl_default","backgroundMat" : "madtulip_hylotl_default"
+    },
+	{
+      "value" : [0, 6, 105, 100],
+      "foregroundBlock" : true,"backgroundBlock" : true,
+      "foregroundMat" : "madtulip_hylotl_lr","backgroundMat" : "madtulip_hylotl_lr"
+    },
+	{
+      "value" : [0, 6, 106, 100],
+      "foregroundBlock" : true,"backgroundBlock" : true,
+      "foregroundMat" : "madtulip_hylotl_ltr","backgroundMat" : "madtulip_hylotl_ltr"
+    },
+	{
+      "value" : [0, 6, 107, 100],
+      "foregroundBlock" : true,"backgroundBlock" : true,
+      "foregroundMat" : "madtulip_hylotl_rbl","backgroundMat" : "madtulip_hylotl_rbl"
+    },
+	{
+      "value" : [0, 6, 108, 100],
+      "foregroundBlock" : true,"backgroundBlock" : true,
+      "foregroundMat" : "madtulip_hylotl_tb","backgroundMat" : "madtulip_hylotl_tb"
+    },
+	{
+      "value" : [0, 6, 109, 100],
+      "foregroundBlock" : true,"backgroundBlock" : true,
+      "foregroundMat" : "madtulip_hylotl_tl","backgroundMat" : "madtulip_hylotl_tl"
+    },
+	{
+      "value" : [0, 6, 110, 100],
+      "foregroundBlock" : true,"backgroundBlock" : true,
+      "foregroundMat" : "madtulip_hylotl_tr","backgroundMat" : "madtulip_hylotl_tr"
+    },
+	{
+      "value" : [0, 6, 111, 100],
+      "foregroundBlock" : true,"backgroundBlock" : true,
+      "foregroundMat" : "madtulip_hylotl_trb","backgroundMat" : "madtulip_hylotl_trb"
+    },	
+	{
+      "value" : [0, 6, 112, 100],
+      "foregroundBlock" : true,"backgroundBlock" : true,
+      "foregroundMat" : "madtulip_hylotl_trbl","backgroundMat" : "madtulip_hylotl_trbl"
+    },	
+// Tilesets GLASS
+    {
+      "value" : [0, 7, 101, 100],
+      "foregroundBlock" : true,"backgroundBlock" : true,
+      "backgroundMat" : "madtulip_glass_bl","foregroundMat" : "madtulip_glass_bl"
+    },
+	{
+      "value" : [0, 7, 102, 100],
+      "foregroundBlock" : true,"backgroundBlock" : true,
+      "foregroundMat" : "madtulip_glass_blt","backgroundMat" : "madtulip_glass_blt"
+    },
+	{
+      "value" : [0, 7, 103, 100],
+      "foregroundBlock" : true,"backgroundBlock" : true,
+      "foregroundMat" : "madtulip_glass_br","backgroundMat" : "madtulip_glass_br"
+    },
+	{
+      "value" : [0, 7, 104, 100],
+      "foregroundBlock" : true,"backgroundBlock" : true,
+      "foregroundMat" : "madtulip_glass_default","backgroundMat" : "madtulip_glass_default"
+    },
+	{
+      "value" : [0, 7, 105, 100],
+      "foregroundBlock" : true,"backgroundBlock" : true,
+      "foregroundMat" : "madtulip_glass_lr","backgroundMat" : "madtulip_glass_lr"
+    },
+	{
+      "value" : [0, 7, 106, 100],
+      "foregroundBlock" : true,"backgroundBlock" : true,
+      "foregroundMat" : "madtulip_glass_ltr","backgroundMat" : "madtulip_glass_ltr"
+    },
+	{
+      "value" : [0, 7, 107, 100],
+      "foregroundBlock" : true,"backgroundBlock" : true,
+      "foregroundMat" : "madtulip_glass_rbl","backgroundMat" : "madtulip_glass_rbl"
+    },
+	{
+      "value" : [0, 7, 108, 100],
+      "foregroundBlock" : true,"backgroundBlock" : true,
+      "foregroundMat" : "madtulip_glass_tb","backgroundMat" : "madtulip_glass_tb"
+    },
+	{
+      "value" : [0, 7, 109, 100],
+      "foregroundBlock" : true,"backgroundBlock" : true,
+      "foregroundMat" : "madtulip_glass_tl","backgroundMat" : "madtulip_glass_tl"
+    },
+	{
+      "value" : [0, 7, 110, 100],
+      "foregroundBlock" : true,"backgroundBlock" : true,
+      "foregroundMat" : "madtulip_glass_tr","backgroundMat" : "madtulip_glass_tr"
+    },
+	{
+      "value" : [0, 7, 111, 100],
+      "foregroundBlock" : true,"backgroundBlock" : true,
+      "foregroundMat" : "madtulip_glass_trb","backgroundMat" : "madtulip_glass_trb"
+    },	
+	{
+      "value" : [0, 7, 112, 100],
+      "foregroundBlock" : true,"backgroundBlock" : true,
+      "foregroundMat" : "madtulip_glass_trbl","backgroundMat" : "madtulip_glass_trbl"
+    },
+// TILESETS + something in the background
+	// tileset glass with normal glass in background
+    {
+      "value" : [0, 7, 113, 100],
+      "foregroundBlock" : true,"backgroundBlock" : true,
+      "backgroundMat" : "glass","foregroundMat" : "madtulip_glass_bl"
+    },
+	{
+      "value" : [0, 7, 114, 100],
+      "foregroundBlock" : true,"backgroundBlock" : true,
+      "foregroundMat" : "glass","backgroundMat" : "madtulip_glass_br"
+    },	{
+      "value" : [0, 7, 115, 100],
+      "foregroundBlock" : true,"backgroundBlock" : true,
+      "foregroundMat" : "glass","backgroundMat" : "madtulip_glass_tl"
+    },
+	{
+      "value" : [0, 7, 116, 100],
+      "foregroundBlock" : true,"backgroundBlock" : true,
+      "foregroundMat" : "glass","backgroundMat" : "madtulip_glass_tr"
     }
-
   ],
-
   "blockImage" : "madtulip_dropshipblocks.png"
 }
