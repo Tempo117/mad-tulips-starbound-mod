@@ -1,11 +1,12 @@
 {
   "input" : [
-    { "item" : "circuitboard", "count" : 1 },
-    { "item" : "madtulip_silicium", "count" : 8 },
-	{ "item" : "goldbar", "count" : 4 },
-	{ "item" : "madtulip_polymer", "count" : 8 },
-    { "item" : "titaniumbar", "count" : 10 },
-	{ "item" : "money", "count" : 500 }
+	{ "item" : "circuitboard", "count" : 2 },
+	{ "item" : "madtulip_silicium", "count" : 10 },
+	{ "item" : "goldbar", "count" : 5 },
+    { "item" : "madtulip_polymer", "count" : 3 },
+	{ "item" : "madtulip_avian_plating", "count" : 2 },
+	{ "item" : "madtulip_tier_durasteel_plating_2", "count" : 2 },
+	{ "item" : "money", "count" : 400 }
   ],
   "output" : {
     "item" : "madtulip_avian_crystal_energy_core",

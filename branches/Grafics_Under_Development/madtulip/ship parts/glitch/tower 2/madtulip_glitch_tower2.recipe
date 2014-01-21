@@ -1,7 +1,9 @@
 {
   "input" : [
     { "item" : "madtulip_polymer", "count" : 5 },
-    { "item" : "steelbar", "count" : 10 },
+	{ "item" : "madtulip_glitch_plating", "count" : 2 },
+	{ "item" : "madtulip_tier_durasteel_plating_1", "count" : 2 },
+	{ "item" : "madtulip_tier_durasteel_plating_2", "count" : 2 },
 	{ "item" : "money", "count" : 300 }
   ],
   "output" : {

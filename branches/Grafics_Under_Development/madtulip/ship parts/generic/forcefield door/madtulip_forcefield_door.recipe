@@ -1,9 +1,9 @@
 {
   "input" : [
 	{ "item" : "circuitboard", "count" : 2 },
-    { "item" : "madtulip_polymer", "count" : 4 },
-    { "item" : "titaniumbar", "count" : 3 },
-	{ "item" : "money", "count" : 250 }
+	{ "item" : "madtulip_ic_logic", "count" : 2 },
+	{ "item" : "madtulip_tier_durasteel_plating_2", "count" : 2 },
+	{ "item" : "money", "count" : 150 }
   ],
   "output" : {
     "item" : "madtulip_forcefield_door",

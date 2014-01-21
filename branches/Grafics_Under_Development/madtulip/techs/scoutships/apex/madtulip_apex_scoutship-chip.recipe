@@ -3,9 +3,11 @@
 		{"item": "madtulip_apex_ftl_thruster","count": 1},
 		{"item": "madtulip_apex_stabilization_thruster","count": 2},
 		{"item": "madtulip_apex_gyro_stabilizer","count": 1},
-		{"item": "madtulip_apex_tileset","count": 25},
-		{"item": "aegisaltbar","count": 15},
-		{"item": "uraniumrod","count": 5}
+		{ "item" : "madtulip_apex_plating", "count" : 20 },
+		{"item": "madtulip_apex_tileset","count": 20},
+		{ "item" : "madtulip_tier_durasteel_plating_3", "count" : 4 },
+		{"item": "uraniumrod","count": 5},
+		{ "item" : "money", "count" : 500}
 	],
 	"output": {
 		"item": "madtulip_apex_scoutship-chip",

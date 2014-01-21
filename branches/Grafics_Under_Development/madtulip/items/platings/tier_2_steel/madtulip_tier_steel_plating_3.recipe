@@ -2,7 +2,7 @@
   "input" : [
 	{ "item" : "madtulip_tier_steel_plating_1", "count" : 1 },
 	{ "item" : "madtulip_tier_steel_plating_2", "count" : 1 },
-	{ "item" : "silverore", "count" : 1 }
+	{ "item" : "titaniumbar", "count" : 3 }
   ],
   "output" : {
     "item" : "madtulip_tier_steel_plating_3",
