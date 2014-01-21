@@ -45,6 +45,12 @@
       "foregroundMat" : "apexshipwall",
 	  "backgroundMat" : "apexshipwall"
     },
+	{
+      "value" : [2, 3, 1],
+      "foregroundBlock" : true,"backgroundBlock" : true,
+      "foregroundMat" : "steelplatform",
+	  "backgroundMat" : "apexshipwall"
+    },
     {
       "value" : [2, 0, 2],
       "foregroundBlock" : true,"backgroundBlock" : false,
@@ -61,6 +67,12 @@
 	  "foregroundMat" : "apexshipdetails",
       "backgroundMat" : "apexshipdetails"
     },
+	{
+      "value" : [2, 3, 2],
+      "foregroundBlock" : true,"backgroundBlock" : true,
+	  "foregroundMat" : "steelplatform",
+      "backgroundMat" : "apexshipdetails"
+    },
     {
       "value" : [2, 0, 3],
       "foregroundBlock" : true,"backgroundBlock" : false,
@@ -71,10 +83,16 @@
       "foregroundBlock" : false,"backgroundBlock" : true,
       "backgroundMat" : "apexshipsupport"
     },
-	    {
+	{
       "value" : [2, 2, 3],
       "foregroundBlock" : true,"backgroundBlock" : true,
 	  "foregroundMat" : "apexshipsupport",
+      "backgroundMat" : "apexshipsupport"
+    },
+	{
+      "value" : [2, 3, 3],
+      "foregroundBlock" : true,"backgroundBlock" : true,
+	  "foregroundMat" : "steelplatform",
       "backgroundMat" : "apexshipsupport"
     },
     {
@@ -91,6 +109,12 @@
       "value" : [2, 2, 4],
       "foregroundBlock" : false,"backgroundBlock" : true,
 	  "foregroundMat" : "glass",
+	  "backgroundMat" : "glass"
+    },
+	{
+      "value" : [2, 3, 4],
+      "foregroundBlock" : false,"backgroundBlock" : true,
+	  "foregroundMat" : "steelplatform",
 	  "backgroundMat" : "glass"
     },
 
@@ -284,7 +308,7 @@
     {
       "value" : [3, 0, 1, 255],
       "foregroundBlock" : false,"backgroundBlock" : true,
-	  "backgroundMat" : "apexshipwall",
+	  "backgroundMat" : "apexshipdetails",
       "object" : "madtulip_captainschair",
       "objectDirection" : "left","objectParameters" : {"unbreakable" : false}
     },
@@ -309,7 +333,7 @@
       "foregroundBlock" : false,"backgroundBlock" : true,
 	  "backgroundMat" : "glass",
       "object" : "madtulip_shipnavigationconsole",
-      "objectParameters" : {"unbreakable" : false}
+      "objectDirection" : "right","objectParameters" : {"unbreakable" : false}
     },
     {
       "value" : [3, 0, 5, 255],
@@ -412,6 +436,26 @@
       "foregroundBlock" : true,"backgroundBlock" : true,
       "foregroundMat" : "madtulip_apex_trbl","backgroundMat" : "madtulip_apex_trbl"
     },
+	{
+      "value" : [0, 1, 113, 100],
+      "foregroundBlock" : true,"backgroundBlock" : true,
+      "foregroundMat" : "madtulip_apex_bl","backgroundMat" : "apexshipdetails"
+    },
+	{
+      "value" : [0, 1, 114, 100],
+      "foregroundBlock" : true,"backgroundBlock" : true,
+      "foregroundMat" : "madtulip_apex_br","backgroundMat" : "apexshipdetails"
+    },
+	{
+      "value" : [0, 1, 115, 100],
+      "foregroundBlock" : true,"backgroundBlock" : true,
+      "foregroundMat" : "madtulip_apex_tl","backgroundMat" : "apexshipdetails"
+    },
+	{
+      "value" : [0, 1, 116, 100],
+      "foregroundBlock" : true,"backgroundBlock" : true,
+      "foregroundMat" : "madtulip_apex_tr","backgroundMat" : "apexshipdetails"
+    },
 // Tilesets AVIAN	
     {
       "value" : [0, 2, 101, 100],
@@ -472,6 +516,26 @@
       "value" : [0, 2, 112, 100],
       "foregroundBlock" : true,"backgroundBlock" : true,
       "foregroundMat" : "madtulip_avian_trbl","backgroundMat" : "madtulip_avian_trbl"
+    },
+	{
+      "value" : [0, 2, 113, 100],
+      "foregroundBlock" : true,"backgroundBlock" : true,
+      "foregroundMat" : "madtulip_avian_bl","backgroundMat" : "apexshipdetails"
+    },
+	{
+      "value" : [0, 2, 114, 100],
+      "foregroundBlock" : true,"backgroundBlock" : true,
+      "foregroundMat" : "madtulip_avian_br","backgroundMat" : "apexshipdetails"
+    },
+	{
+      "value" : [0, 2, 115, 100],
+      "foregroundBlock" : true,"backgroundBlock" : true,
+      "foregroundMat" : "madtulip_avian_tl","backgroundMat" : "apexshipdetails"
+    },
+	{
+      "value" : [0, 2, 116, 100],
+      "foregroundBlock" : true,"backgroundBlock" : true,
+      "foregroundMat" : "madtulip_avian_tr","backgroundMat" : "apexshipdetails"
     },	
 // Tilesets FLORAN
     {
@@ -533,6 +597,26 @@
       "value" : [0, 3, 112, 100],
       "foregroundBlock" : true,"backgroundBlock" : true,
       "foregroundMat" : "madtulip_floran_trbl","backgroundMat" : "madtulip_floran_trbl"
+    },
+	{
+      "value" : [0, 3, 113, 100],
+      "foregroundBlock" : true,"backgroundBlock" : true,
+      "foregroundMat" : "madtulip_floran_bl","backgroundMat" : "apexshipdetails"
+    },
+	{
+      "value" : [0, 3, 114, 100],
+      "foregroundBlock" : true,"backgroundBlock" : true,
+      "foregroundMat" : "madtulip_floran_br","backgroundMat" : "apexshipdetails"
+    },
+	{
+      "value" : [0, 3, 115, 100],
+      "foregroundBlock" : true,"backgroundBlock" : true,
+      "foregroundMat" : "madtulip_floran_tl","backgroundMat" : "apexshipdetails"
+    },
+	{
+      "value" : [0, 3, 116, 100],
+      "foregroundBlock" : true,"backgroundBlock" : true,
+      "foregroundMat" : "madtulip_floran_tr","backgroundMat" : "apexshipdetails"
     },	
 // Tilesets GLITCH
     {
@@ -594,6 +678,26 @@
       "value" : [0, 4, 112, 100],
       "foregroundBlock" : true,"backgroundBlock" : true,
       "foregroundMat" : "madtulip_glitch_trbl","backgroundMat" : "madtulip_glitch_trbl"
+    },
+	{
+      "value" : [0, 4, 113, 100],
+      "foregroundBlock" : true,"backgroundBlock" : true,
+      "foregroundMat" : "madtulip_glitch_bl","backgroundMat" : "apexshipdetails"
+    },
+	{
+      "value" : [0, 4, 114, 100],
+      "foregroundBlock" : true,"backgroundBlock" : true,
+      "foregroundMat" : "madtulip_glitch_br","backgroundMat" : "apexshipdetails"
+    },
+	{
+      "value" : [0, 4, 115, 100],
+      "foregroundBlock" : true,"backgroundBlock" : true,
+      "foregroundMat" : "madtulip_glitch_tl","backgroundMat" : "apexshipdetails"
+    },
+	{
+      "value" : [0, 4, 116, 100],
+      "foregroundBlock" : true,"backgroundBlock" : true,
+      "foregroundMat" : "madtulip_glitch_tr","backgroundMat" : "apexshipdetails"
     },	
 // Tilesets HUMAN
     {
@@ -655,6 +759,26 @@
       "value" : [0, 5, 112, 100],
       "foregroundBlock" : true,"backgroundBlock" : true,
       "foregroundMat" : "madtulip_human_trbl","backgroundMat" : "madtulip_human_trbl"
+    },
+	{
+      "value" : [0, 5, 113, 100],
+      "foregroundBlock" : true,"backgroundBlock" : true,
+      "foregroundMat" : "madtulip_human_bl","backgroundMat" : "apexshipdetails"
+    },
+	{
+      "value" : [0, 5, 114, 100],
+      "foregroundBlock" : true,"backgroundBlock" : true,
+      "foregroundMat" : "madtulip_human_br","backgroundMat" : "apexshipdetails"
+    },
+	{
+      "value" : [0, 5, 115, 100],
+      "foregroundBlock" : true,"backgroundBlock" : true,
+      "foregroundMat" : "madtulip_human_tl","backgroundMat" : "apexshipdetails"
+    },
+	{
+      "value" : [0, 5, 116, 100],
+      "foregroundBlock" : true,"backgroundBlock" : true,
+      "foregroundMat" : "madtulip_human_tr","backgroundMat" : "apexshipdetails"
     },	
 // Tilesets HYLOTL
     {
@@ -716,6 +840,26 @@
       "value" : [0, 6, 112, 100],
       "foregroundBlock" : true,"backgroundBlock" : true,
       "foregroundMat" : "madtulip_hylotl_trbl","backgroundMat" : "madtulip_hylotl_trbl"
+    },
+	{
+      "value" : [0, 6, 113, 100],
+      "foregroundBlock" : true,"backgroundBlock" : true,
+      "foregroundMat" : "madtulip_hylotl_bl","backgroundMat" : "apexshipdetails"
+    },
+	{
+      "value" : [0, 6, 114, 100],
+      "foregroundBlock" : true,"backgroundBlock" : true,
+      "foregroundMat" : "madtulip_hylotl_br","backgroundMat" : "apexshipdetails"
+    },
+	{
+      "value" : [0, 6, 115, 100],
+      "foregroundBlock" : true,"backgroundBlock" : true,
+      "foregroundMat" : "madtulip_hylotl_tl","backgroundMat" : "apexshipdetails"
+    },
+	{
+      "value" : [0, 6, 116, 100],
+      "foregroundBlock" : true,"backgroundBlock" : true,
+      "foregroundMat" : "madtulip_hylotl_tr","backgroundMat" : "apexshipdetails"
     },	
 // Tilesets GLASS
     {
@@ -788,16 +932,16 @@
 	{
       "value" : [0, 7, 114, 100],
       "foregroundBlock" : true,"backgroundBlock" : true,
-      "foregroundMat" : "glass","backgroundMat" : "madtulip_glass_br"
+      "foregroundMat" : "madtulip_glass_br","backgroundMat" : "glass"
     },	{
       "value" : [0, 7, 115, 100],
       "foregroundBlock" : true,"backgroundBlock" : true,
-      "foregroundMat" : "glass","backgroundMat" : "madtulip_glass_tl"
+      "foregroundMat" : "madtulip_glass_tl","backgroundMat" : "glass"
     },
 	{
       "value" : [0, 7, 116, 100],
       "foregroundBlock" : true,"backgroundBlock" : true,
-      "foregroundMat" : "glass","backgroundMat" : "madtulip_glass_tr"
+      "foregroundMat" : "madtulip_glass_tr","backgroundMat" : "glass"
     }
   ],
   "blockImage" : "madtulip_floran_ship_blocks.png"
