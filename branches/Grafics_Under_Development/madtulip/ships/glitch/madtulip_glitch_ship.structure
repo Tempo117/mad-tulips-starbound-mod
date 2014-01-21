@@ -304,6 +304,61 @@
       "object" : "madtulip_shiplocker",
       "objectParameters" : {"treasurePools" : [ "madtulip_hylotlShipStarterTreasure" ],"level" : 1,"unbreakable" : false}
     },
+// Medium Fins [1,race,7]
+    {
+		"value" : [1, 1, 7, 255],
+		"object" : "madtulip_apex_medium_fin",
+		"foregroundBlock" : false,"backgroundBlock" : false,"objectParameters" : {"unbreakable" : false}
+    },
+	{
+		"value" : [1, 2, 7, 255],
+		"object" : "madtulip_avian_medium_fin",
+		"foregroundBlock" : false,"backgroundBlock" : false,"objectParameters" : {"unbreakable" : false}
+    },
+	// floran missing
+	{
+		"value" : [1, 4, 7, 255],
+		"object" : "madtulip_glitch_medium_fin",
+		"foregroundBlock" : false,"backgroundBlock" : false,"objectParameters" : {"unbreakable" : false}
+    },
+	{
+		"value" : [1, 5, 7, 255],
+		"object" : "madtulip_human_medium_fin",
+		"foregroundBlock" : false,"backgroundBlock" : false,"objectParameters" : {"unbreakable" : false}
+    },
+	{
+		"value" : [1, 6, 7, 255],
+		"object" : "madtulip_hylotl_medium_fin",
+		"foregroundBlock" : false,"backgroundBlock" : false,"objectParameters" : {"unbreakable" : false}
+    },
+// Small Fins [1,race,8]
+    {
+		"value" : [1, 1, 8, 255],
+		"object" : "madtulip_apex_small_fin",
+		"foregroundBlock" : false,"backgroundBlock" : false,"objectParameters" : {"unbreakable" : false}
+    },
+	{
+		"value" : [1, 2, 8, 255],
+		"object" : "madtulip_avian_small_fin",
+		"foregroundBlock" : false,"backgroundBlock" : false,"objectParameters" : {"unbreakable" : false}
+    },
+	// floran missing
+	{
+		"value" : [1, 4, 8, 255],
+		"object" : "madtulip_glitch_small_fin",
+		"foregroundBlock" : false,"backgroundBlock" : false,"objectParameters" : {"unbreakable" : false},
+		"objectDirection" : "right"
+    },
+	{
+		"value" : [1, 5, 8, 255],
+		"object" : "madtulip_human_small_fin",
+		"foregroundBlock" : false,"backgroundBlock" : false,"objectParameters" : {"unbreakable" : false}
+    },
+	{
+		"value" : [1, 6, 8, 255],
+		"object" : "madtulip_hylotl_small_fin",
+		"foregroundBlock" : false,"backgroundBlock" : false,"objectParameters" : {"unbreakable" : false}
+    },
 // Other Objects [3,0,x]
     {
       "value" : [3, 0, 1, 255],
