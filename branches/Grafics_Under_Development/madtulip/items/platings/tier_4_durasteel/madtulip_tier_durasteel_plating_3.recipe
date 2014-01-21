@@ -2,7 +2,7 @@
   "input" : [
 	{ "item" : "madtulip_tier_durasteel_plating_1", "count" : 1 },
 	{ "item" : "madtulip_tier_durasteel_plating_2", "count" : 1 },
-	{ "item" : "coalore", "count" : 1 }
+	{ "item" : "goldore", "count" : 1 }
   ],
   "output" : {
     "item" : "madtulip_tier_durasteel_plating_3",

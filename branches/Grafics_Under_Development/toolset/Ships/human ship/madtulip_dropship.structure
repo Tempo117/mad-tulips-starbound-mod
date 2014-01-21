@@ -1,0 +1,1089 @@
+{
+  "config" : {
+    "fuelMax" : 1000
+  },
+
+  "blockKey" : [
+    {
+      "value" : [255, 255, 255, 255],
+      "foregroundBlock" : false,
+      "backgroundBlock" : false
+    },
+
+    {
+      "value" : [0, 0, 255, 255],
+      "foregroundBlock" : false,
+      "backgroundBlock" : true
+    },
+
+    {
+      "value" : [255, 0, 0, 255],
+      "foregroundBlock" : true,
+      "backgroundBlock" : true
+    },
+
+    {
+      "value" : [0, 100, 140, 255],
+      "foregroundBlock" : false,
+      "backgroundBlock" : false,
+      "object" : "madtulip_apex_ftl_thruster",
+      "objectParameters" : {
+        "unbreakable" : false
+      }
+    },
+	
+	{
+      "value" : [0, 100, 141, 255],
+      "foregroundBlock" : false,
+      "backgroundBlock" : false,
+      "object" : "madtulip_avian_ftl_thruster",
+      "objectParameters" : {
+        "unbreakable" : false
+      }
+    },
+	
+	{
+      "value" : [0, 100, 142, 255],
+      "foregroundBlock" : false,
+      "backgroundBlock" : false,
+      "object" : "madtulip_floran_ftl_thruster",
+      "objectParameters" : {
+        "unbreakable" : false
+      }
+    },
+	
+	{
+      "value" : [0, 100, 143, 255],
+      "foregroundBlock" : false,
+      "backgroundBlock" : false,
+      "object" : "madtulip_glitch_ftl_thruster",
+      "objectParameters" : {
+        "unbreakable" : false
+      }
+    },
+	{
+      "value" : [0, 100, 144, 255],
+      "foregroundBlock" : false,
+      "backgroundBlock" : false,
+      "object" : "madtulip_human_ftl_thruster",
+      "objectParameters" : {
+        "unbreakable" : false
+      }
+    },
+	
+	{
+      "value" : [0, 100, 145, 255],
+      "foregroundBlock" : false,
+      "backgroundBlock" : false,
+      "object" : "madtulip_hylotl_ftl_thruster",
+      "objectParameters" : {
+        "unbreakable" : false
+      }
+    },
+	
+    {
+      "value" : [0, 100, 150, 255],
+      "foregroundBlock" : false,
+      "backgroundBlock" : false,
+      "object" : "madtulip_apex_stabilization_thruster",
+      "objectParameters" : {
+        "unbreakable" : false
+      }
+    },
+
+{
+      "value" : [0, 100, 151, 255],
+      "foregroundBlock" : false,
+      "backgroundBlock" : false,
+      "object" : "madtulip_avian_stabilization_thruster",
+      "objectParameters" : {
+        "unbreakable" : false
+      }
+    },
+
+{
+      "value" : [0, 100, 152, 255],
+      "foregroundBlock" : false,
+      "backgroundBlock" : false,
+      "object" : "madtulip_floran_stabilization_thruster",
+      "objectParameters" : {
+        "unbreakable" : false
+      }
+    },
+
+{
+      "value" : [0, 100, 153, 255],
+      "foregroundBlock" : false,
+      "backgroundBlock" : false,
+      "object" : "madtulip_glitch_stabilization_thruster",
+      "objectParameters" : {
+        "unbreakable" : false
+      }
+    },
+
+{
+      "value" : [0, 100, 154, 255],
+      "foregroundBlock" : false,
+      "backgroundBlock" : false,
+      "object" : "madtulip_human_stabilization_thruster",
+      "objectParameters" : {
+        "unbreakable" : false
+      }
+    },
+
+    {
+      "value" : [0, 100, 155, 255],
+      "foregroundBlock" : false,
+      "backgroundBlock" : false,
+      "object" : "madtulip_hylotl_stabilization_thruster",
+      "objectParameters" : {
+        "unbreakable" : false
+      }
+    },
+	
+	{
+      "value" : [0, 100, 160, 255],
+      "foregroundBlock" : false,
+      "backgroundBlock" : false,
+      "object" : "madtulip_apex_gyro_stabilizer",
+      "objectParameters" : {
+        "unbreakable" : false
+      }
+    },
+	
+		{
+      "value" : [0, 100, 161, 255],
+      "foregroundBlock" : false,
+      "backgroundBlock" : false,
+      "object" : "madtulip_avian_gyro_stabilizer",
+      "objectParameters" : {
+        "unbreakable" : false
+      }
+    },
+	
+		{
+      "value" : [0, 100, 162, 255],
+      "foregroundBlock" : false,
+      "backgroundBlock" : false,
+      "object" : "madtulip_floran_gyro_stabilizer",
+      "objectParameters" : {
+        "unbreakable" : false
+      }
+    },
+	
+		{
+      "value" : [0, 100, 163, 255],
+      "foregroundBlock" : false,
+      "backgroundBlock" : false,
+      "object" : "madtulip_glitch_gyro_stabilizer",
+      "objectParameters" : {
+        "unbreakable" : false
+      }
+    },
+	
+		{
+      "value" : [0, 100, 164, 255],
+      "foregroundBlock" : false,
+      "backgroundBlock" : false,
+      "object" : "madtulip_human_gyro_stabilizer",
+      "objectParameters" : {
+        "unbreakable" : false
+      }
+    },
+	
+		{
+      "value" : [0, 100, 165, 255],
+      "foregroundBlock" : false,
+      "backgroundBlock" : false,
+      "object" : "madtulip_hylotl_gyro_stabilizer",
+      "objectParameters" : {
+        "unbreakable" : false
+      }
+    },
+	
+    {
+      "value" : [0, 100, 170, 255],
+      "foregroundBlock" : false,
+	  "backgroundBlock" : false,
+      "object" : "madtulip_apex_large_fin",
+      "objectParameters" : {
+        "unbreakable" : false
+      }
+    },
+	
+	{
+      "value" : [0, 100, 171, 255],
+      "foregroundBlock" : false,
+	  "backgroundBlock" : false,
+      "object" : "madtulip_avian_large_fin",
+      "objectParameters" : {
+        "unbreakable" : false
+      }
+    },
+
+	{
+      "value" : [0, 100, 174, 255],
+      "foregroundBlock" : false,
+	  "backgroundBlock" : false,
+      "object" : "madtulip_human_large_fin",
+      "objectParameters" : {
+        "unbreakable" : false
+      }
+    },
+	
+	{
+      "value" : [0, 100, 175, 255],
+      "foregroundBlock" : false,
+	  "backgroundBlock" : false,
+      "object" : "madtulip_hylotl_large_fin",
+      "objectParameters" : {
+        "unbreakable" : false
+      }
+    },
+	
+    {
+      "value" : [0, 255, 100, 100],
+      "foregroundBlock" : true,
+	  "backgroundBlock" : true,
+      "backgroundMat" : "madtulip_apex_bl",
+	  "foregroundMat" : "madtulip_apex_bl",
+      "objectParameters" : {
+        "unbreakable" : false
+      }
+    },
+	
+	{
+      "value" : [0, 255, 101, 100],
+      "foregroundBlock" : true,
+	  "backgroundBlock" : true,
+      "foregroundMat" : "madtulip_avian_bl",
+	  "backgroundMat" : "madtulip_avian_bl",
+    },
+	
+	{
+      "value" : [0, 255, 102, 100],
+      "foregroundBlock" : true,
+	  "backgroundBlock" : true,
+      "backgroundMat" : "madtulip_floran_bl",
+	  "foregroundMat" : "madtulip_floran_bl",
+    },
+	
+	    {
+      "value" : [0, 255, 103, 100],
+      "foregroundBlock" : true,
+	  "backgroundBlock" : true,
+      "foregroundMat" : "madtulip_glitch_bl",
+	  "backgroundMat" : "madtulip_glitch_bl",
+    },
+	
+	{
+      "value" : [0, 255, 104, 100],
+      "foregroundBlock" : true,
+	  "backgroundBlock" : true,
+      "foregroundMat" : "madtulip_human_bl",
+	  "backgroundMat" : "madtulip_human_bl",
+    },
+	
+	{
+      "value" : [0, 255, 105, 100],
+      "foregroundBlock" : true,
+	  "backgroundBlock" : true,
+      "foregroundMat" : "madtulip_hylotl_bl",
+	  "backgroundMat" : "madtulip_floran_bl",
+    },
+	
+	{
+      "value" : [0, 255, 110, 100],
+      "foregroundBlock" : true,
+	  "backgroundBlock" : true,
+      "foregroundMat" : "madtulip_apex_blt",
+	  "backgroundMat" : "madtulip_apex_blt",
+    },
+	
+	{
+      "value" : [0, 255, 111, 100],
+      "foregroundBlock" : true,
+	  "backgroundBlock" : true,
+      "foregroundMat" : "madtulip_avian_blt",
+	  "backgroundMat" : "madtulip_avian_blt",
+    },
+	
+	{
+      "value" : [0, 255, 112, 100],
+      "foregroundBlock" : true,
+	  "backgroundBlock" : true,
+      "foregroundMat" : "madtulip_floran_blt",
+	  "backgroundMat" : "madtulip_floran_blt",
+    },
+	
+	{
+      "value" : [0, 255, 113, 100],
+      "foregroundBlock" : true,
+	  "backgroundBlock" : true,
+      "foregroundMat" : "madtulip_floran_blt",
+	  "backgroundMat" : "madtulip_floran_blt",
+    },
+	
+	{
+      "value" : [0, 255, 114, 100],
+      "foregroundBlock" : true,
+	  "backgroundBlock" : true,
+      "foregroundMat" : "madtulip_human_blt",
+	  "backgroundMat" : "madtulip_human_blt",
+    },
+	
+	{
+      "value" : [0, 255, 115, 100],
+      "foregroundBlock" : true,
+	  "backgroundBlock" : true,
+      "foregroundMat" : "madtulip_hylotl_blt",
+	  "backgroundMat" : "madtulip_hylotl_blt",
+    },
+	
+	{
+      "value" : [0, 255, 121, 100],
+      "foregroundBlock" : true,
+	  "backgroundBlock" : true,
+      "foregroundMat" : "madtulip_apex_br",
+	  "backgroundMat" : "madtulip_apex_br",
+    },
+	
+	{
+      "value" : [0, 255, 121, 100],
+      "foregroundBlock" : true,
+	  "backgroundBlock" : true,
+      "foregroundMat" : "madtulip_avian_br",
+	  "backgroundMat" : "madtulip_avian_br",
+    },
+	
+	{
+      "value" : [0, 255, 122, 100],
+      "foregroundBlock" : true,
+	  "backgroundBlock" : true,
+      "foregroundMat" : "madtulip_floran_br",
+	  "backgroundMat" : "madtulip_floran_br",
+    },
+	
+	{
+      "value" : [0, 255, 123, 100],
+      "foregroundBlock" : true,
+	  "backgroundBlock" : true,
+      "foregroundMat" : "madtulip_glitch_br",
+	  "backgroundMat" : "madtulip_glitch_br",
+    },
+	
+	{
+      "value" : [0, 255, 124, 100],
+      "foregroundBlock" : true,
+	  "backgroundBlock" : true,
+      "foregroundMat" : "madtulip_human_br",
+	  "backgroundMat" : "madtulip_human_br",
+    },
+	
+	{
+      "value" : [0, 255, 125, 100],
+      "foregroundBlock" : true,
+	  "backgroundBlock" : true,
+      "foregroundMat" : "madtulip_hylotl_br",
+	  "backgroundMat" : "madtulip_hylotl_br",
+    },
+	
+	{
+      "value" : [0, 255, 111, 100],
+      "foregroundBlock" : true,
+	  "backgroundBlock" : true,
+      "foregroundMat" : "madtulip_apex_default",
+	  "backgroundMat" : "madtulip_apex_default",
+    },
+	
+	{
+      "value" : [0, 255, 111, 100],
+      "foregroundBlock" : true,
+	  "backgroundBlock" : true,
+      "foregroundMat" : "madtulip_avian_default",
+	  "backgroundMat" : "madtulip_avian_default",
+    },
+	
+	{
+      "value" : [0, 255, 111, 100],
+      "foregroundBlock" : true,
+	  "backgroundBlock" : true,
+      "foregroundMat" : "madtulip_floran_default",
+	  "backgroundMat" : "madtulip_floran default",
+    },
+	
+	{
+      "value" : [0, 255, 111, 100],
+      "foregroundBlock" : true,
+	  "backgroundBlock" : true,
+      "foregroundMat" : "madtulip_glitch_default",
+	  "backgroundMat" : "madtulip_glitch_default",
+    },
+	
+	{
+      "value" : [0, 255, 111, 100],
+      "foregroundBlock" : true,
+	  "backgroundBlock" : true,
+      "foregroundMat" : "madtulip_human_default",
+	  "backgroundMat" : "madtulip_human_defualt",
+    },
+	
+	{
+      "value" : [0, 255, 111, 100],
+      "foregroundBlock" : true,
+	  "backgroundBlock" : true,
+      "foregroundMat" : "madtulip_hylotl_default",
+	  "backgroundMat" : "madtulip_hylotl_default",
+    },
+	{
+      "value" : [0, 255, 111, 100],
+      "foregroundBlock" : true,
+	  "backgroundBlock" : true,
+      "foregroundMat" : "madtulip_apex_lr",
+	  "backgroundMat" : "madtulip_apex_lr",
+    },
+	
+	{
+      "value" : [0, 255, 111, 100],
+      "foregroundBlock" : true,
+	  "backgroundBlock" : true,
+      "foregroundMat" : "madtulip_avian_lr",
+	  "backgroundMat" : "madtulip_avian_lr",
+    },
+	
+	{
+      "value" : [0, 255, 111, 100],
+      "foregroundBlock" : true,
+	  "backgroundBlock" : true,
+      "foregroundMat" : "madtulip_floran_lr",
+	  "backgroundMat" : "madtulip_floran_lr",
+    },
+	
+	{
+      "value" : [0, 255, 111, 100],
+      "foregroundBlock" : true,
+	  "backgroundBlock" : true,
+      "foregroundMat" : "madtulip_glitch_lr",
+	  "backgroundMat" : "madtulip_glitch_lr",
+    },
+	
+	{
+      "value" : [0, 255, 111, 100],
+      "foregroundBlock" : true,
+	  "backgroundBlock" : true,
+      "foregroundMat" : "madtulip_human_lr",
+	  "backgroundMat" : "madtulip_human_lr",
+    },
+	
+	{
+      "value" : [0, 255, 111, 100],
+      "foregroundBlock" : true,
+	  "backgroundBlock" : true,
+      "foregroundMat" : "madtulip_hylotl_lr",
+	  "backgroundMat" : "madtulip_hylotl_lr",
+    },
+	
+	{
+      "value" : [0, 255, 111, 100],
+      "foregroundBlock" : true,
+	  "backgroundBlock" : true,
+      "foregroundMat" : "madtulip_apex_ltr",
+	  "backgroundMat" : "madtulip_apex_ltr",
+    },
+	
+	{
+      "value" : [0, 255, 111, 100],
+      "foregroundBlock" : true,
+	  "backgroundBlock" : true,
+      "foregroundMat" : "madtulip_avian_ltr",
+	  "backgroundMat" : "madtulip_avian_ltr",
+    },
+	
+	{
+      "value" : [0, 255, 111, 100],
+      "foregroundBlock" : true,
+	  "backgroundBlock" : true,
+      "foregroundMat" : "madtulip_floran_ltr",
+	  "backgroundMat" : "madtulip_floran_ltr",
+    },
+	
+	{
+      "value" : [0, 255, 111, 100],
+      "foregroundBlock" : true,
+	  "backgroundBlock" : true,
+      "foregroundMat" : "madtulip_glitch_ltr",
+	  "backgroundMat" : "madtulip_glitch_ltr",
+    },
+	
+	{
+      "value" : [0, 255, 111, 100],
+      "foregroundBlock" : true,
+	  "backgroundBlock" : true,
+      "foregroundMat" : "madtulip_human_ltr",
+	  "backgroundMat" : "madtulip_human_ltr",
+    },
+	
+	{
+      "value" : [0, 255, 111, 100],
+      "foregroundBlock" : true,
+	  "backgroundBlock" : true,
+      "foregroundMat" : "madtulip_hylotl_ltr",
+	  "backgroundMat" : "madtulip_hylotl_ltr",
+    },
+	
+	{
+      "value" : [0, 255, 111, 100],
+      "foregroundBlock" : true,
+	  "backgroundBlock" : true,
+      "foregroundMat" : "madtulip_apex_rbl",
+	  "backgroundMat" : "madtulip_apex_rbl",
+    },
+	
+	{
+      "value" : [0, 255, 111, 100],
+      "foregroundBlock" : true,
+	  "backgroundBlock" : true,
+      "foregroundMat" : "madtulip_avian_rbl",
+	  "backgroundMat" : "madtulip_avian_rbl",
+    },
+	
+	{
+      "value" : [0, 255, 111, 100],
+      "foregroundBlock" : true,
+	  "backgroundBlock" : true,
+      "foregroundMat" : "madtulip_floran_rbl",
+	  "backgroundMat" : "madtulip_floran_rbl",
+    },
+	
+	{
+      "value" : [0, 255, 111, 100],
+      "foregroundBlock" : true,
+	  "backgroundBlock" : true,
+      "foregroundMat" : "madtulip_glitch_rbl",
+	  "backgroundMat" : "madtulip_glitch_rbl",
+    },
+	
+	{
+      "value" : [0, 255, 111, 100],
+      "foregroundBlock" : true,
+	  "backgroundBlock" : true,
+      "foregroundMat" : "madtulip_human_rbl",
+	  "backgroundMat" : "madtulip_human_rbl",
+    },
+	
+	{
+      "value" : [0, 255, 111, 100],
+      "foregroundBlock" : true,
+	  "backgroundBlock" : true,
+      "foregroundMat" : "madtulip_hylotl_rbl",
+	  "backgroundMat" : "madtulip_hylotl_rbl",
+    },
+	
+	{
+      "value" : [0, 255, 111, 100],
+      "foregroundBlock" : true,
+	  "backgroundBlock" : true,
+      "foregroundMat" : "madtulip_apex_tb",
+	  "backgroundMat" : "madtulip_apex_tb",
+    },
+	
+	{
+      "value" : [0, 255, 111, 100],
+      "foregroundBlock" : true,
+	  "backgroundBlock" : true,
+      "foregroundMat" : "madtulip_avian_tb",
+	  "backgroundMat" : "madtulip_avian_tb",
+    },
+	
+	{
+      "value" : [0, 255, 111, 100],
+      "foregroundBlock" : true,
+	  "backgroundBlock" : true,
+      "foregroundMat" : "madtulip_floran_tb",
+	  "backgroundMat" : "madtulip_floran_tb",
+    },
+	
+	{
+      "value" : [0, 255, 111, 100],
+      "foregroundBlock" : true,
+	  "backgroundBlock" : true,
+      "foregroundMat" : "madtulip_glitch_tb",
+	  "backgroundMat" : "madtulip_glitch_tb",
+    },
+	
+	{
+      "value" : [0, 255, 111, 100],
+      "foregroundBlock" : true,
+	  "backgroundBlock" : true,
+      "foregroundMat" : "madtulip_human_tb",
+	  "backgroundMat" : "madtulip_human_tb",
+    },
+	
+	{
+      "value" : [0, 255, 111, 100],
+      "foregroundBlock" : true,
+	  "backgroundBlock" : true,
+      "foregroundMat" : "madtulip_hylotl_tb",
+	  "backgroundMat" : "madtulip_hylotl_tb",
+    },
+	
+	{
+      "value" : [0, 255, 111, 100],
+      "foregroundBlock" : true,
+	  "backgroundBlock" : true,
+      "foregroundMat" : "madtulip_apex_tl",
+	  "backgroundMat" : "madtulip_apex_tl",
+    },
+	
+	{
+      "value" : [0, 255, 111, 100],
+      "foregroundBlock" : true,
+	  "backgroundBlock" : true,
+      "foregroundMat" : "madtulip_avian_tl",
+	  "backgroundMat" : "madtulip_avian_tl",
+    },
+	
+	{
+      "value" : [0, 255, 111, 100],
+      "foregroundBlock" : true,
+	  "backgroundBlock" : true,
+      "foregroundMat" : "madtulip_floran_trl",
+	  "backgroundMat" : "madtulip_floran_trl",
+    },
+	
+	{
+      "value" : [0, 255, 111, 100],
+      "foregroundBlock" : true,
+	  "backgroundBlock" : true,
+      "foregroundMat" : "madtulip_glitch_tl",
+	  "backgroundMat" : "madtulip_glitch_tl",
+    },
+	
+	{
+      "value" : [0, 255, 111, 100],
+      "foregroundBlock" : true,
+	  "backgroundBlock" : true,
+      "foregroundMat" : "madtulip_human_tl",
+	  "backgroundMat" : "madtulip_human_tl",
+    },
+	
+	{
+      "value" : [0, 255, 111, 100],
+      "foregroundBlock" : true,
+	  "backgroundBlock" : true,
+      "foregroundMat" : "madtulip_hylotl_tl",
+	  "backgroundMat" : "madtulip_hylotl_tl",
+    },
+	
+	{
+      "value" : [0, 255, 111, 100],
+      "foregroundBlock" : true,
+	  "backgroundBlock" : true,
+      "foregroundMat" : "madtulip_apex_tr",
+	  "backgroundMat" : "madtulip_apex_tr",
+    },
+	
+	{
+      "value" : [0, 255, 111, 100],
+      "foregroundBlock" : true,
+	  "backgroundBlock" : true,
+      "foregroundMat" : "madtulip_avian_tr",
+	  "backgroundMat" : "madtulip_avian_tr",
+    },
+	
+	{
+      "value" : [0, 255, 111, 100],
+      "foregroundBlock" : true,
+	  "backgroundBlock" : true,
+      "foregroundMat" : "madtulip_floran_tr",
+	  "backgroundMat" : "madtulip_floran_tr",
+    },
+	
+	{
+      "value" : [0, 255, 111, 100],
+      "foregroundBlock" : true,
+	  "backgroundBlock" : true,
+      "foregroundMat" : "madtulip_glitch_tr",
+	  "backgroundMat" : "madtulip_glitch_tr",
+    },
+	
+	{
+      "value" : [0, 255, 111, 100],
+      "foregroundBlock" : true,
+	  "backgroundBlock" : true,
+      "foregroundMat" : "madtulip_human_tr",
+	  "backgroundMat" : "madtulip_human_tr",
+    },
+	
+	{
+      "value" : [0, 255, 111, 100],
+      "foregroundBlock" : true,
+	  "backgroundBlock" : true,
+      "foregroundMat" : "madtulip_hylotl_tr",
+	  "backgroundMat" : "madtulip_hylotl_tr",
+    },
+	
+	{
+      "value" : [0, 255, 111, 100],
+      "foregroundBlock" : true,
+	  "backgroundBlock" : true,
+      "foregroundMat" : "madtulip_apex_trb",
+	  "backgroundMat" : "madtulip_apex_trb",
+    },
+	
+	{
+      "value" : [0, 255, 111, 100],
+      "foregroundBlock" : true,
+	  "backgroundBlock" : true,
+      "foregroundMat" : "madtulip_avian_trb",
+	  "backgroundMat" : "madtulip_avian_trb",
+    },
+	
+	{
+      "value" : [0, 255, 111, 100],
+      "foregroundBlock" : true,
+	  "backgroundBlock" : true,
+      "foregroundMat" : "madtulip_floran_trb",
+	  "backgroundMat" : "madtulip_floran_trb",
+    },
+	
+	{
+      "value" : [0, 255, 111, 100],
+      "foregroundBlock" : true,
+	  "backgroundBlock" : true,
+      "foregroundMat" : "madtulip_glitch_trb",
+	  "backgroundMat" : "madtulip_glitch_trb",
+    },
+	
+	{
+      "value" : [0, 255, 111, 100],
+      "foregroundBlock" : true,
+	  "backgroundBlock" : true,
+      "foregroundMat" : "madtulip_human_trb",
+	  "backgroundMat" : "madtulip_human_trb",
+    },
+	
+	{
+      "value" : [0, 255, 111, 100],
+      "foregroundBlock" : true,
+	  "backgroundBlock" : true,
+      "foregroundMat" : "madtulip_hylotl_trb",
+	  "backgroundMat" : "madtulip_hylotl_trb",
+    },
+	
+	{
+      "value" : [0, 255, 111, 100],
+      "foregroundBlock" : true,
+	  "backgroundBlock" : true,
+      "foregroundMat" : "madtulip_apex_trbl",
+	  "backgroundMat" : "madtulip_apex_trbl",
+    },
+	
+	{
+      "value" : [0, 255, 111, 100],
+      "foregroundBlock" : true,
+	  "backgroundBlock" : true,
+      "foregroundMat" : "madtulip_avian_trbl",
+	  "backgroundMat" : "madtulip_avian_trbl",
+    },
+	
+	{
+      "value" : [0, 255, 111, 100],
+      "foregroundBlock" : true,
+	  "backgroundBlock" : true,
+      "foregroundMat" : "madtulip_floran_trbl",
+	  "backgroundMat" : "madtulip_floran_trbl",
+    },
+	
+	{
+      "value" : [0, 255, 111, 100],
+      "foregroundBlock" : true,
+	  "backgroundBlock" : true,
+      "foregroundMat" : "madtulip_glitch_trbl",
+	  "backgroundMat" : "madtulip_glitch_trbl",
+    },
+	
+	{
+      "value" : [0, 255, 111, 100],
+      "foregroundBlock" : true,
+	  "backgroundBlock" : true,
+      "foregroundMat" : "madtulip_human_trbl",
+	  "backgroundMat" : "madtulip_human_trbl",
+    },
+	
+	{
+      "value" : [0, 255, 111, 100],
+      "foregroundBlock" : true,
+	  "backgroundBlock" : true,
+      "foregroundMat" : "madtulip_hylotl_trbl",
+	  "backgroundMat" : "madtulip_hylotl_trbl",
+    },
+	
+	{
+      "value" : [0, 255, 111, 100],
+      "foregroundBlock" : true,
+	  "backgroundBlock" : true,
+      "foregroundMat" : "madtulip_glass_bl",
+	  "backgroundMat" : "madtulip_glass_bl",
+    },
+	
+	{
+      "value" : [0, 255, 111, 100],
+      "foregroundBlock" : true,
+	  "backgroundBlock" : true,
+      "foregroundMat" : "madtulip_glass_br",
+	  "backgroundMat" : "madtulip_glass_br",
+    },
+	
+	{
+      "value" : [0, 255, 111, 100],
+      "foregroundBlock" : true,
+	  "backgroundBlock" : true,
+      "foregroundMat" : "madtulip_glass_defualt",
+	  "backgroundMat" : "madtulip_glass_defualt",
+    },
+	
+	{
+      "value" : [0, 255, 111, 100],
+      "foregroundBlock" : true,
+	  "backgroundBlock" : true,
+      "foregroundMat" : "madtulip_glass_lr",
+	  "backgroundMat" : "madtulip_glass_lr",
+    },
+	
+	{
+      "value" : [0, 255, 111, 100],
+      "foregroundBlock" : true,
+	  "backgroundBlock" : true,
+      "foregroundMat" : "madtulip_glass_ltr",
+	  "backgroundMat" : "madtulip_glass_ltr",
+    },
+	
+	{
+      "value" : [0, 255, 111, 100],
+      "foregroundBlock" : true,
+	  "backgroundBlock" : true,
+      "foregroundMat" : "madtulip_glass_rbl",
+	  "backgroundMat" : "madtulip_glass_rbl",
+    },
+	
+	{
+      "value" : [0, 255, 111, 100],
+      "foregroundBlock" : true,
+	  "backgroundBlock" : true,
+      "foregroundMat" : "madtulip_glass_tb",
+	  "backgroundMat" : "madtulip_glass_tb",
+    },
+	
+	{
+      "value" : [0, 255, 111, 100],
+      "foregroundBlock" : true,
+	  "backgroundBlock" : true,
+      "foregroundMat" : "madtulip_glass_tl",
+	  "backgroundMat" : "madtulip_glass_tl",
+    },
+	
+	{
+      "value" : [0, 255, 111, 100],
+      "foregroundBlock" : true,
+	  "backgroundBlock" : true,
+      "foregroundMat" : "madtulip_glass_tr",
+	  "backgroundMat" : "madtulip_glass_tr",
+    },
+	
+	{
+      "value" : [0, 255, 111, 100],
+      "foregroundBlock" : true,
+	  "backgroundBlock" : true,
+      "foregroundMat" : "madtulip_glass_trb",
+	  "backgroundMat" : "madtulip_glass_trb",
+    },
+	
+	{
+      "value" : [0, 255, 111, 100],
+      "foregroundBlock" : true,
+	  "backgroundBlock" : true,
+      "foregroundMat" : "madtulip_glass_trbl",
+	  "backgroundMat" : "madtulip_glass_trbl",
+    },
+	
+	{
+      "value" : [255, 102, 0, 255],
+      "foregroundBlock" : false,
+      "backgroundBlock" : true,
+      "object" : "madtulip_shipdoor",
+	  "backgroundMat" : "apexshipdetails"
+    },
+	
+	{
+      "value" : [255, 103, 0, 255],
+      "foregroundBlock" : false,
+      "backgroundBlock" : true,
+      "object" : "madtulip_avian_shipdoor",
+	  "backgroundMat" : "apexshipdetails"
+    },
+	
+	{
+      "value" : [255, 104, 0, 255],
+      "foregroundBlock" : false,
+      "backgroundBlock" : true,
+      "object" : "madtulip_floran_shipdoor",
+	  "backgroundMat" : "apexshipdetails"
+    },
+	
+	{
+      "value" : [255, 105, 0, 255],
+      "foregroundBlock" : false,
+      "backgroundBlock" : true,
+      "object" : "madtulip_hylotl_shipdoor",
+	  "backgroundMat" : "apexshipdetails"
+    },
+	
+    {
+      "value" : [0, 255, 0, 255],
+      "foregroundBlock" : false,
+      "backgroundBlock" : true,
+      "backgroundMat" : "apexshipwall",
+      "object" : "madtulip_shiplocker",
+      "objectParameters" : {
+        "treasurePools" : [ "madtulip_humanShipStarterTreasure" ],
+        "level" : 1,
+        "unbreakable" : false
+      }
+    },
+
+    {
+      "value" : [142, 255, 142, 255],
+      "foregroundBlock" : false,
+      "backgroundBlock" : true,
+      "backgroundMat" : "apexshipwall",
+      "object" : "madtulip_techstation",
+      "objectParameters" : {
+        "unbreakable" : false
+      }
+    },
+	
+    {
+      "value" : [143, 255, 143, 255],
+      "foregroundBlock" : false,
+      "backgroundBlock" : true,
+      "backgroundMat" : "apexshipwall",
+      "object" : "madtulip_shipstation",
+      "objectParameters" : {
+        "unbreakable" : false
+      }
+    },
+	
+    {
+      "value" : [144, 255, 144, 255],
+      "foregroundBlock" : false,
+      "backgroundBlock" : true,
+	  "backgroundMat" : "glass",
+      "object" : "madtulip_shipnavigationconsole",
+      "objectParameters" : {
+        "unbreakable" : false
+      }
+    },
+    {
+      "value" : [147, 255, 147, 255],
+      "foregroundBlock" : false,
+      "backgroundBlock" : true,
+	  "backgroundMat" : "apexshipwall",
+      "object" : "madtulip_vent",
+      "objectParameters" : {
+        "unbreakable" : false
+      }
+    },
+    {
+      "value" : [255, 87, 81, 255],
+      "foregroundBlock" : false,
+      "backgroundBlock" : true,
+	  "backgroundMat" : "apexshipwall",
+      "object" : "madtulip_fuelhatch",
+      "objectParameters" : {
+        "unbreakable" : false
+      }
+    },
+
+    {
+      "value" : [255, 255, 0, 255],
+      "foregroundBlock" : false,
+      "backgroundBlock" : true,
+      "backgroundMat" : "apexshipdetails",
+      "object" : "madtulip_shiplight"
+    },
+	
+    {
+      "value" : [255, 255, 130, 255],
+      "foregroundBlock" : false,
+      "backgroundBlock" : true,
+      "backgroundMat" : "glass",
+      "object" : "madtulip_shiplight"
+    },
+	
+    {
+      "value" : [174, 137, 81, 255],
+      "foregroundBlock" : false,
+      "backgroundBlock" : true,
+      "object" : "shipengine",
+      "objectParameters" : {
+        "unbreakable" : true
+      }
+    },
+
+    {
+      "value" : [156, 0, 255, 255],
+      "foregroundBlock" : false,
+      "backgroundBlock" : true,
+      "backgroundMat" : "apexshipdetails",
+      "object" : "madtulip_teleporter",
+      "flags" : [ "playerSpawn" ],
+      "objectParameters" : {
+        "unbreakable" : true
+      }
+    },
+
+    {
+      "value" : [0, 255, 255, 255],
+      "foregroundBlock" : false,
+      "backgroundBlock" : true,
+	  "backgroundMat" : "apexshipwall",
+      "object" : "madtulip_captainschair",
+      "objectDirection" : "left",
+      "objectParameters" : {
+        "unbreakable" : false
+      }
+    },
+
+    {
+      "value" : [255, 255, 144],
+      "foregroundBlock" : false,
+      "backgroundBlock" : true,
+      "backgroundMat" : "apexshipwall"
+    },
+
+    {
+      "value" : [255, 117, 144],
+      "foregroundBlock" : false,
+      "backgroundBlock" : true,
+      "backgroundMat" : "apexshipdetails"
+    },
+
+    {
+      "value" : [255, 117, 255],
+      "foregroundBlock" : false,
+      "backgroundBlock" : true,
+      "backgroundMat" : "apexshipsupport"
+    },
+	
+    {
+      "value" : [0, 142, 200],
+      "foregroundBlock" : false,
+      "backgroundBlock" : true,
+	  "backgroundMat" : "glass"
+    },	
+
+  ],
+
+  "blockImage" : "madtulip_dropshipblocks.png"
+}

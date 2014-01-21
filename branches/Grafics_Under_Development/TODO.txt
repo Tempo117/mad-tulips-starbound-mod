@@ -1,6 +1,13 @@
 General
 
-- gravity tech chip doesn’t unlock with tier1 as buildable
+~ yeah gave up on the ships for now because I can't seem to get my head around writing the .structure files
+I commited the unfinished that I made, I was planning on the structure file having everything we needed to make all the ships
+however startructor gave gave me an error when I saved my work and when the files were loaded into starbound it didn't let me load the new charecter
+
+Grafics_Under_Development\toolset\Ships\human ship
+
+I probably just fucked up somewhere in that file, and i didn't bother setting the rbg thing before uploading it (changed it soooo many fucking times)
+and i'll tell you one thing starstuctor makes making the ships a hell ton easier and it even shows colision boxes
 
 Ship Station
 - icon in top left corner when opening ship station
