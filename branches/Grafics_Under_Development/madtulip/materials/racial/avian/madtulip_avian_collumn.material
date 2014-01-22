@@ -1,0 +1,14 @@
+{
+  "materialId" : 21169,
+  "materialName" : "madtulip_avian_collumn",
+  "frames" : "madtulip_avian_collumn.png",
+  "transparent" : true,
+  "particleColor" : [110, 110, 110, 255],
+  "variants" : 1,
+  "itemDrop" : "madtulip_avian_collumn",
+  "description" : "Avian Spaceship Collumn",
+  "shortdescription" : "Avian Spaceship Collumn",
+  "multicolored" : false,
+  "footstepSound" : "/sfx/blocks/footstep_composite.wav",
+  "health" : 10
+}
