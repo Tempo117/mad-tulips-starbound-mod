@@ -26,9 +26,9 @@
   "orientations" : [
     {
       "dualImage" : "madtulip_shipstation.png:<color>.<frame>",
-      "imagePosition" : [-25, -8],
-      "frames" : 20,
-      "animationCycle" : 1.5,
+      "imagePosition" : [-24, -16],
+      "frames" : 69,
+      "animationCycle" : 4,
 
       "spaceScan" : 0.1,
       "anchors" : [ "background" ]
