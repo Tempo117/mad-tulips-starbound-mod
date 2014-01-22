@@ -1,0 +1,9 @@
+{
+  "itemName" : "madtulip_glitch_Collumn",
+  "rarity" : "Common",
+  "inventoryIcon" : "madtulip_glitch_Collumn_icon.png",
+  "dropCollision" : [-2.5, -2.0, 2.5, 2.0],
+  "description" : "Glitch Spaceship Collumn",
+  "shortdescription" : "Glitch Spaceship Collumn",
+  "materialId" : 21161
+}

@@ -1,0 +1,9 @@
+{
+  "itemName" : "madtulip_human_Collumn",
+  "rarity" : "Common",
+  "inventoryIcon" : "madtulip_human_Collumn_icon.png",
+  "dropCollision" : [-2.5, -2.0, 2.5, 2.0],
+  "description" : "Human Spaceship Collumn",
+  "shortdescription" : "Human Spaceship Collumn",
+  "materialId" : 21157
+}

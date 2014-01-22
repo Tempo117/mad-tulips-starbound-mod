@@ -1,0 +1,9 @@
+{
+  "itemName" : "madtulip_floran_Collumn",
+  "rarity" : "Common",
+  "inventoryIcon" : "madtulip_floran_Collumn_icon.png",
+  "dropCollision" : [-2.5, -2.0, 2.5, 2.0],
+  "description" : "Floran Spaceship Collumn",
+  "shortdescription" : "Floran Spaceship Collumn",
+  "materialId" : 21165
+}

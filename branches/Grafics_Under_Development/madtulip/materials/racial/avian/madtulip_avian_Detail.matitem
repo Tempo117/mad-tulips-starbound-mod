@@ -1,0 +1,9 @@
+{
+  "itemName" : "madtulip_avian_Detail",
+  "rarity" : "Common",
+  "inventoryIcon" : "madtulip_avian_Detail_icon.png",
+  "dropCollision" : [-2.5, -2.0, 2.5, 2.0],
+  "description" : "Avian Spaceship Detail",
+  "shortdescription" : "Avian Spaceship Detail",
+  "materialId" : 21167
+}

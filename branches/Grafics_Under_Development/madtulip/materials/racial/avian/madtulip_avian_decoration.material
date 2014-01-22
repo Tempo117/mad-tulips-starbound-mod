@@ -1,0 +1,14 @@
+{
+  "materialId" : 21168,
+  "materialName" : "madtulip_avian_decoration",
+  "frames" : "madtulip_avian_decoration.png",
+  "transparent" : true,
+  "particleColor" : [110, 110, 110, 255],
+  "variants" : 1,
+  "itemDrop" : "madtulip_avian_decoration",
+  "description" : "Avian Spaceship Decoration",
+  "shortdescription" : "Avian Spaceship Decoration",
+  "multicolored" : false,
+  "footstepSound" : "/sfx/blocks/footstep_composite.wav",
+  "health" : 10
+}
