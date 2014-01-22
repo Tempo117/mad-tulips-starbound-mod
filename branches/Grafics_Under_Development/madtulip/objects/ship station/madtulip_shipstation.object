@@ -27,7 +27,7 @@
     {
       "dualImage" : "madtulip_shipstation.png:<color>.<frame>",
       "imagePosition" : [-24, -16],
-      "frames" : 69,
+      "frames" : 95,
       "animationCycle" : 4,
 
       "spaceScan" : 0.1,
