@@ -1,9 +1,0 @@
-{
-  "itemName" : "madtulip_hylotl_Detail",
-  "rarity" : "Common",
-  "inventoryIcon" : "madtulip_hylotl_Detail_icon.png",
-  "dropCollision" : [-2.5, -2.0, 2.5, 2.0],
-  "description" : "Hylotl Spaceship Detail",
-  "shortdescription" : "Hylotl Spaceship Detail",
-  "materialId" : 21152
-}

@@ -1,9 +1,0 @@
-{
-  "itemName" : "madtulip_glitch_Detail",
-  "rarity" : "Common",
-  "inventoryIcon" : "madtulip_glitch_Detail_icon.png",
-  "dropCollision" : [-2.5, -2.0, 2.5, 2.0],
-  "description" : "Glitch Spaceship Detail",
-  "shortdescription" : "Glitch Spaceship Detail",
-  "materialId" : 21159
-}

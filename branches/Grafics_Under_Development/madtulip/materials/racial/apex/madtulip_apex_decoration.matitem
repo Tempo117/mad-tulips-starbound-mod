@@ -1,9 +1,0 @@
-{
-  "itemName" : "madtulip_apex_decoration",
-  "rarity" : "Common",
-  "inventoryIcon" : "madtulip_apex_decoration_icon.png",
-  "dropCollision" : [-2.5, -2.0, 2.5, 2.0],
-  "description" : "Apex Spaceship Decoration",
-  "shortdescription" : "Apex Spaceship Decoration",
-  "materialId" : 21172
-}

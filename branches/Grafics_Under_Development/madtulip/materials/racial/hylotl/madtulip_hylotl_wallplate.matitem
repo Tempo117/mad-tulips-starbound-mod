@@ -1,9 +1,0 @@
-{
-  "itemName" : "madtulip_hylotl_wallplate",
-  "rarity" : "Common",
-  "inventoryIcon" : "madtulip_hylotl_wallplate_icon.png",
-  "dropCollision" : [-2.5, -2.0, 2.5, 2.0],
-  "description" : "Hylotl Spaceship Wallplate",
-  "shortdescription" : "Hylotl Spaceship Wallplate",
-  "materialId" : 21153
-}

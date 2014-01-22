@@ -1,9 +1,0 @@
-{
-  "itemName" : "madtulip_apex_Detail",
-  "rarity" : "Common",
-  "inventoryIcon" : "madtulip_apex_Detail_icon.png",
-  "dropCollision" : [-2.5, -2.0, 2.5, 2.0],
-  "description" : "Apex Spaceship Detail",
-  "shortdescription" : "Apex Spaceship Detail",
-  "materialId" : 21171
-}
