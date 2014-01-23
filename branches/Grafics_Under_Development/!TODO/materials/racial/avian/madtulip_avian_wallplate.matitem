@@ -1,0 +1,9 @@
+{
+  "itemName" : "madtulip_avian_wallplate",
+  "rarity" : "Common",
+  "inventoryIcon" : "madtulip_avian_wallplate_icon.png",
+  "dropCollision" : [-2.5, -2.0, 2.5, 2.0],
+  "description" : "Avian Spaceship Wallplate",
+  "shortdescription" : "Avian Spaceship Wallplate",
+  "materialId" : 21166
+}

@@ -1,0 +1,14 @@
+{
+  "materialId" : 21153,
+  "materialName" : "madtulip_hylotl_wallplate",
+  "frames" : "madtulip_hylotl_wallplate.png",
+  "transparent" : true,
+  "particleColor" : [110, 110, 110, 255],
+  "variants" : 1,
+  "itemDrop" : "madtulip_hylotl_wallplate",
+  "description" : "Hylotl Spaceship Wallplate",
+  "shortdescription" : "Hylotl Spaceship Wallplate",
+  "multicolored" : false,
+  "footstepSound" : "/sfx/blocks/footstep_composite.wav",
+  "health" : 10
+}

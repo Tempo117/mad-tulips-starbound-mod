@@ -1,0 +1,9 @@
+{
+  "itemName" : "madtulip_floran_decoration",
+  "rarity" : "Common",
+  "inventoryIcon" : "madtulip_floran_decoration_icon.png",
+  "dropCollision" : [-2.5, -2.0, 2.5, 2.0],
+  "description" : "Floran Spaceship Decoration",
+  "shortdescription" : "Floran Spaceship Decoration",
+  "materialId" : 21164
+}

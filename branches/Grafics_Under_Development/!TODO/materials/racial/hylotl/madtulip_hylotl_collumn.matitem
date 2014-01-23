@@ -1,0 +1,9 @@
+{
+  "itemName" : "madtulip_hylotl_collumn",
+  "rarity" : "Common",
+  "inventoryIcon" : "madtulip_hylotl_collumn_icon.png",
+  "dropCollision" : [-2.5, -2.0, 2.5, 2.0],
+  "description" : "Hylotl Spaceship Collumn",
+  "shortdescription" : "Hylotl Spaceship Collumn",
+  "materialId" : 21150
+}

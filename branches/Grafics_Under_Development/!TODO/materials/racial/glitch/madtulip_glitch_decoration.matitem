@@ -1,0 +1,9 @@
+{
+  "itemName" : "madtulip_glitch_decoration",
+  "rarity" : "Common",
+  "inventoryIcon" : "madtulip_glitch_decoration_icon.png",
+  "dropCollision" : [-2.5, -2.0, 2.5, 2.0],
+  "description" : "Glitch Spaceship Decoration",
+  "shortdescription" : "Glitch Spaceship Decoration",
+  "materialId" : 21160
+}
