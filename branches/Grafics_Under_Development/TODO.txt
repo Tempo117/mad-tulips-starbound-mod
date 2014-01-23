@@ -9,19 +9,11 @@ Metal press
 -- upper left corner crafting menu icon needs to be created
 
 - cost for all platings need to be thought about
-~ instead of the coal in the heavy steel plating and the heavy durrasteel plating silver and gold ore should be used.
 
 - maybe not all variants of the platings will be needed for now we can just uncomment the recipes.
   i thought better have them all in for now so we can decide that later.
 
 - all other objects like fins recipes need to be adjusted to use those plates.
-
-~ plates based off alloy's may bring up the question "will you make shipparts/ hull variants for them"
-We may be able to get lazy for the tilesets but for the ship parts that may take much longer if we decide to make completely new ones.
-
-*WIP* Pretty much done with crafting menu icons for metal press (may need to be changed eventually)
-
-*WIP* Metal press good for now ( later I will add conveyor belt based off pixel compressor)
 
 Mod Support
 
