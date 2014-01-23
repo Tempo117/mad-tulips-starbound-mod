@@ -237,6 +237,26 @@
       "foregroundBlock" : false,"backgroundBlock" : true,
 	  "backgroundMat" : "madtulip_hylotl_wallplate"
     },
+    {
+      "value" : [2, 1, 29],
+      "foregroundBlock" : false,"backgroundBlock" : true,
+	  "backgroundMat" : "madtulip_bottom_decoration"
+    },
+    {
+      "value" : [2, 1, 30],
+      "foregroundBlock" : false,"backgroundBlock" : true,
+	  "backgroundMat" : "madtulip_detail"
+    },
+    {
+      "value" : [2, 1, 31],
+      "foregroundBlock" : false,"backgroundBlock" : true,
+	  "backgroundMat" : "madtulip_top_decoration"
+    },
+    {
+      "value" : [2, 1, 32],
+      "foregroundBlock" : false,"backgroundBlock" : true,
+	  "backgroundMat" : "madtulip_wallplate"
+    },
 // FTL Thrusters [1,race,1]
     {
 		"value" : [1, 1, 1, 255],
