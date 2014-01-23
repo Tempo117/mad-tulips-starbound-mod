@@ -1,9 +1,0 @@
-{
-  "itemName" : "madtulip_hylotl_decoration",
-  "rarity" : "Common",
-  "inventoryIcon" : "madtulip_hylotl_decoration_icon.png",
-  "dropCollision" : [-2.5, -2.0, 2.5, 2.0],
-  "description" : "Hylotl Spaceship Decoration",
-  "shortdescription" : "Hylotl Spaceship Decoration",
-  "materialId" : 21151
-}

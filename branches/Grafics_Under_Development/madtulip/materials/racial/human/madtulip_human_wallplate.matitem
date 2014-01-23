@@ -1,9 +1,0 @@
-{
-  "itemName" : "madtulip_human_wallplate",
-  "rarity" : "Common",
-  "inventoryIcon" : "madtulip_human_wallplate_icon.png",
-  "dropCollision" : [-2.5, -2.0, 2.5, 2.0],
-  "description" : "Human Spaceship Wallplate",
-  "shortdescription" : "Human Spaceship Wallplate",
-  "materialId" : 21154
-}

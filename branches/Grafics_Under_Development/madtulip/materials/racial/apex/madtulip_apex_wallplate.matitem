@@ -1,9 +1,0 @@
-{
-  "itemName" : "madtulip_apex_wallplate",
-  "rarity" : "Common",
-  "inventoryIcon" : "madtulip_apex_wallplate_icon.png",
-  "dropCollision" : [-2.5, -2.0, 2.5, 2.0],
-  "description" : "Apex Spaceship Wallplate",
-  "shortdescription" : "Apex Spaceship Wallplate",
-  "materialId" : 21170
-}

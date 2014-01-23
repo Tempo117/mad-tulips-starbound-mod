@@ -1,9 +1,0 @@
-{
-  "itemName" : "madtulip_floran_wallplate",
-  "rarity" : "Common",
-  "inventoryIcon" : "madtulip_floran_wallplate_icon.png",
-  "dropCollision" : [-2.5, -2.0, 2.5, 2.0],
-  "description" : "Floran Spaceship Wallplate",
-  "shortdescription" : "Floran Spaceship Wallplate",
-  "materialId" : 21162
-}
