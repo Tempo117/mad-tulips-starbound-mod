@@ -420,9 +420,13 @@ function execute_mining_action(args)
 			-- drop a bomb maybe ?
 		elseif data.holdingLMB then
 			world.damageTiles(mining_target, "foreground", tech.position(), "blockish", data.mining_damage)
+			tech.setAnimationState("drilling", "drill_on")
 		elseif data.holdingRMB then
 			world.damageTiles(mining_target, "background", tech.position(), "blockish", data.mining_damage)
+			tech.setAnimationState("drilling", "drill_on")
 		end
+	else
+		tech.setAnimationState("drilling", "idle")
 	end
 	
 	return 0
@@ -454,6 +458,7 @@ function deactivate()
 	local mechTransformPositionChange = tech.parameter("mechTransformPositionChange")
 	
 	tech.setAnimationState("movement", "off")
+	tech.setAnimationState("drilling", "idle")
 	tech.burstParticleEmitter("mechDeactivateParticles")
 	
 	tech.translate({-mechTransformPositionChange[1], -mechTransformPositionChange[2]})

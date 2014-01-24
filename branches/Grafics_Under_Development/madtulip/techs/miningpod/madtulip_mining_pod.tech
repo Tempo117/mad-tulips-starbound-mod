@@ -8,22 +8,22 @@
 	},
 	  
 	"mechCustomMovementParameters" : {
- 		"standingPoly" : [[-4.5,   -0.5],
-						  [-1.375, -3.5],
-						  [1.125,  -3.5],
-						  [4.5,    -0.5],
-						  [4.5,    1.5],
-						  [1.75,   4.0],
-						  [-1.875, 4.0],
-						  [-4.5,   1.5]],
-		"crouchingPoly" : [[-4.5,   -0.5],
-						  [-1.375, -3.5],
-						  [1.125,  -3.5],
-						  [4.5,    -0.5],
-						  [4.5,    1.5],
-						  [1.75,   4.0],
-						  [-1.875, 4.0],
-						  [-4.5,   1.5]],
+ 		"standingPoly" : [[-4.375,  -0.5],
+						  [-1.375,  -3.5],
+						  [1.125,   -3.5],
+						  [4.375,   -0.5],
+						  [4.375,   2.25],
+						  [1.75,    4.75],
+						  [-1.875,  4.75],
+						  [-4.375,  2.25]],
+ 		"crouchingPoly" :[[-4.375,  -0.5],
+						  [-1.375,  -3.5],
+						  [1.125,   -3.5],
+						  [4.375,   -0.5],
+						  [4.375,   2.0],
+						  [1.75,    4.5],
+						  [-1.875,  4.5],
+						  [-4.375,  2.0]],
 		"mass" : 50.0,
 
 		"normalGroundFriction" : 100.0,
@@ -61,11 +61,11 @@
 	"Air_resistance_parameter_LR": 10,
 	"Air_resistance_parameter_TB": 10,
 	
-	"mining_damage": 3.7,
+	"mining_damage": 3.25,
 	"mining_timer_max": 0.3,
 	"mining_cost": 0,
 
 	"parentOffset" : [0.25, 2.125],
 	"mechTransformPositionChange" : [0.0, 0.0],
-	"mechTransformCollisionTest" : [-4.5, 0.7, 4.5, 4]
+	"mechTransformCollisionTest" : [-5.25, -1.0, 4.375, 4]
 }
