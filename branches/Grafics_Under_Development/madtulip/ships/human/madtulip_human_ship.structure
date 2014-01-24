@@ -30,50 +30,6 @@
 	// -- real materials background only[2,1,y]
 	// -- real materials background and foreground[2,2,y]
     {
-      "value" : [2, 0, 1],
-      "foregroundBlock" : true,"backgroundBlock" : false,
-      "foregroundMat" : "apexshipwall"
-    },
-    {
-      "value" : [2, 1, 1],
-      "foregroundBlock" : false,"backgroundBlock" : true,
-      "backgroundMat" : "apexshipwall"
-    },
-    {
-      "value" : [2, 2, 1],
-      "foregroundBlock" : true,"backgroundBlock" : true,
-      "foregroundMat" : "apexshipwall",
-	  "backgroundMat" : "apexshipwall"
-    },
-	{
-      "value" : [2, 3, 1],
-      "foregroundBlock" : true,"backgroundBlock" : true,
-      "foregroundMat" : "steelplatform",
-	  "backgroundMat" : "apexshipwall"
-    },
-    {
-      "value" : [2, 0, 2],
-      "foregroundBlock" : true,"backgroundBlock" : false,
-      "foregroundMat" : "apexshipdetails"
-    },
-    {
-      "value" : [2, 1, 2],
-      "foregroundBlock" : false,"backgroundBlock" : true,
-      "backgroundMat" : "apexshipdetails"
-    },
-    {
-      "value" : [2, 2, 2],
-      "foregroundBlock" : true,"backgroundBlock" : true,
-	  "foregroundMat" : "apexshipdetails",
-      "backgroundMat" : "apexshipdetails"
-    },
-	{
-      "value" : [2, 3, 2],
-      "foregroundBlock" : true,"backgroundBlock" : true,
-	  "foregroundMat" : "steelplatform",
-      "backgroundMat" : "apexshipdetails"
-    },
-    {
       "value" : [2, 0, 3],
       "foregroundBlock" : true,"backgroundBlock" : false,
       "foregroundMat" : "apexshipsupport"
@@ -107,7 +63,7 @@
     },
     {
       "value" : [2, 2, 4],
-      "foregroundBlock" : false,"backgroundBlock" : true,
+      "foregroundBlock" : true,"backgroundBlock" : true,
 	  "foregroundMat" : "glass",
 	  "backgroundMat" : "glass"
     },
@@ -117,24 +73,68 @@
 	  "foregroundMat" : "steelplatform",
 	  "backgroundMat" : "glass"
     },
+	{
+      "value" : [2, 0, 29],
+      "foregroundBlock" : true,"backgroundBlock" : false,
+	  "foregroundMat" : "madtulip_bottom_decoration"
+    },
     {
       "value" : [2, 1, 29],
       "foregroundBlock" : false,"backgroundBlock" : true,
 	  "backgroundMat" : "madtulip_bottom_decoration"
+    },
+	{
+      "value" : [2, 2, 29],
+      "foregroundBlock" : true,"backgroundBlock" : true,
+	  "foregroundMat" : "madtulip_bottom_decoration",
+	  "backgroundMat" : "madtulip_bottom_decoration"
+    },
+	{
+      "value" : [2, 0, 30],
+      "foregroundBlock" : true,"backgroundBlock" : false,
+	  "foregroundMat" : "madtulip_detail"
     },
     {
       "value" : [2, 1, 30],
       "foregroundBlock" : false,"backgroundBlock" : true,
 	  "backgroundMat" : "madtulip_detail"
     },
+	{
+      "value" : [2, 2, 30],
+      "foregroundBlock" : true,"backgroundBlock" : true,
+	  "foregroundMat" : "madtulip_detail",
+	  "backgroundMat" : "madtulip_detail"
+    },
+	{
+      "value" : [2, 0, 31],
+      "foregroundBlock" : true,"backgroundBlock" : false,
+	  "foregroundMat" : "madtulip_top_decoration"
+    },
     {
       "value" : [2, 1, 31],
       "foregroundBlock" : false,"backgroundBlock" : true,
 	  "backgroundMat" : "madtulip_top_decoration"
     },
+	{
+      "value" : [2, 2, 31],
+      "foregroundBlock" : true,"backgroundBlock" : true,
+	  "foregroundMat" : "madtulip_top_decoration",
+	  "backgroundMat" : "madtulip_top_decoration"
+    },
+	{
+      "value" : [2, 0, 32],
+      "foregroundBlock" : true,"backgroundBlock" : false,
+	  "backgroundMat" : "madtulip_wallplate"
+    },
     {
       "value" : [2, 1, 32],
       "foregroundBlock" : false,"backgroundBlock" : true,
+	  "backgroundMat" : "madtulip_wallplate"
+    },
+	{
+      "value" : [2, 2, 32],
+      "foregroundBlock" : true,"backgroundBlock" : true,
+	  "foregroundMat" : "madtulip_wallplate",
 	  "backgroundMat" : "madtulip_wallplate"
     },
 // FTL Thrusters [1,race,1]
@@ -253,24 +253,24 @@
 		"object" : "madtulip_hylotl_large_fin",
 		"foregroundBlock" : false,"backgroundBlock" : false,"objectParameters" : {"unbreakable" : false}
     },
-// Doors, apexshipdetails [1,race,5]
+// Doors, madtulip_bottom_decoration [1,race,5]
 	{
       "value" : [1, 1, 5, 255],
       "foregroundBlock" : false,"backgroundBlock" : true,
       "object" : "madtulip_shipdoor",
-	  "backgroundMat" : "apexshipdetails"
+	  "backgroundMat" : "madtulip_bottom_decoration"
     },
 	{
       "value" : [1, 2, 5, 255],
       "foregroundBlock" : false,"backgroundBlock" : true,
       "object" : "madtulip_avian_shipdoor",
-	  "backgroundMat" : "apexshipdetails"
+	  "backgroundMat" : "madtulip_bottom_decoration"
     },
 	{
       "value" : [1, 3, 5, 255],
       "foregroundBlock" : false,"backgroundBlock" : true,
       "object" : "madtulip_floran_shipdoor",
-	  "backgroundMat" : "apexshipdetails"
+	  "backgroundMat" : "madtulip_bottom_decoration"
     },
 	// glitch missing
 	// human missing
@@ -278,7 +278,7 @@
       "value" : [1, 6, 5, 255],
       "foregroundBlock" : false,"backgroundBlock" : true,
       "object" : "madtulip_hylotl_shipdoor",
-	  "backgroundMat" : "apexshipdetails"
+	  "backgroundMat" : "madtulip_bottom_decoration"
     },
 // Race specific ship lockers [1,race,6]
     {
@@ -319,7 +319,7 @@
     {
       "value" : [3, 0, 1, 255],
       "foregroundBlock" : false,"backgroundBlock" : true,
-	  "backgroundMat" : "apexshipdetails",
+	  "backgroundMat" : "madtulip_bottom_decoration",
       "object" : "madtulip_captainschair",
       "objectDirection" : "left","objectParameters" : {"unbreakable" : false}
     },
@@ -363,7 +363,7 @@
 	{
       "value" : [3, 0, 7, 255],
       "foregroundBlock" : false,"backgroundBlock" : true,
-      "backgroundMat" : "apexshipdetails",
+      "backgroundMat" : "madtulip_top_decoration",
       "object" : "madtulip_shiplight"
     },
     {
@@ -381,7 +381,7 @@
     {
       "value" : [3, 0, 10, 255],
       "foregroundBlock" : false,"backgroundBlock" : true,
-      "backgroundMat" : "apexshipdetails",
+      "backgroundMat" : "madtulip_bottom_decoration",
       "object" : "madtulip_teleporter",
       "flags" : [ "playerSpawn" ],
       "objectParameters" : {"unbreakable" : true}
@@ -450,22 +450,22 @@
 	{
       "value" : [0, 1, 113, 100],
       "foregroundBlock" : true,"backgroundBlock" : true,
-      "foregroundMat" : "madtulip_apex_bl","backgroundMat" : "apexshipdetails"
+      "foregroundMat" : "madtulip_apex_bl","backgroundMat" : "madtulip_bottom_decoration"
     },
 	{
       "value" : [0, 1, 114, 100],
       "foregroundBlock" : true,"backgroundBlock" : true,
-      "foregroundMat" : "madtulip_apex_br","backgroundMat" : "apexshipdetails"
+      "foregroundMat" : "madtulip_apex_br","backgroundMat" : "madtulip_bottom_decoration"
     },
 	{
       "value" : [0, 1, 115, 100],
       "foregroundBlock" : true,"backgroundBlock" : true,
-      "foregroundMat" : "madtulip_apex_tl","backgroundMat" : "apexshipdetails"
+      "foregroundMat" : "madtulip_apex_tl","backgroundMat" : "madtulip_top_decoration"
     },
 	{
       "value" : [0, 1, 116, 100],
       "foregroundBlock" : true,"backgroundBlock" : true,
-      "foregroundMat" : "madtulip_apex_tr","backgroundMat" : "apexshipdetails"
+      "foregroundMat" : "madtulip_apex_tr","backgroundMat" : "madtulip_top_decoration"
     },
 // Tilesets AVIAN	
     {
@@ -774,22 +774,22 @@
 	{
       "value" : [0, 5, 113, 100],
       "foregroundBlock" : true,"backgroundBlock" : true,
-      "foregroundMat" : "madtulip_human_bl","backgroundMat" : "apexshipdetails"
+      "foregroundMat" : "madtulip_human_bl","backgroundMat" : "madtulip_bottom_decoration"
     },
 	{
       "value" : [0, 5, 114, 100],
       "foregroundBlock" : true,"backgroundBlock" : true,
-      "foregroundMat" : "madtulip_human_br","backgroundMat" : "apexshipdetails"
+      "foregroundMat" : "madtulip_human_br","backgroundMat" : "madtulip_bottom_decoration"
     },
 	{
       "value" : [0, 5, 115, 100],
       "foregroundBlock" : true,"backgroundBlock" : true,
-      "foregroundMat" : "madtulip_human_tl","backgroundMat" : "apexshipdetails"
+      "foregroundMat" : "madtulip_human_tl","backgroundMat" : "madtulip_top_decoration"
     },
 	{
       "value" : [0, 5, 116, 100],
       "foregroundBlock" : true,"backgroundBlock" : true,
-      "foregroundMat" : "madtulip_human_tr","backgroundMat" : "apexshipdetails"
+      "foregroundMat" : "madtulip_human_tr","backgroundMat" : "madtulip_top_decoration"
     },	
 // Tilesets HYLOTL
     {
