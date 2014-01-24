@@ -378,6 +378,7 @@ function execute_mining_action(args)
 		y = pos[2];
 		y = y-2
 		local mining_target = {};
+		table.insert(mining_target,{x-5,y});
 		table.insert(mining_target,{x-4,y});
 		table.insert(mining_target,{x-3,y});
 		table.insert(mining_target,{x-2,y});
@@ -387,7 +388,9 @@ function execute_mining_action(args)
 		table.insert(mining_target,{x+2,y});
 		table.insert(mining_target,{x+3,y});
 		table.insert(mining_target,{x+4,y});
+		table.insert(mining_target,{x+5,y});
 		
+		table.insert(mining_target,{x-5,y-1});
 		table.insert(mining_target,{x-4,y-1});
 		table.insert(mining_target,{x-3,y-1});
 		table.insert(mining_target,{x-2,y-1});
@@ -397,7 +400,9 @@ function execute_mining_action(args)
 		table.insert(mining_target,{x+2,y-1});
 		table.insert(mining_target,{x+3,y-1});
 		table.insert(mining_target,{x+4,y-1});
+		table.insert(mining_target,{x+5,y-1});
 		
+		table.insert(mining_target,{x-5,y-2});
 		table.insert(mining_target,{x-4,y-2});
 		table.insert(mining_target,{x-3,y-2});
 		table.insert(mining_target,{x-2,y-2});
@@ -407,6 +412,7 @@ function execute_mining_action(args)
 		table.insert(mining_target,{x+2,y-2});
 		table.insert(mining_target,{x+3,y-2});
 		table.insert(mining_target,{x+4,y-2});
+		table.insert(mining_target,{x+5,y-2});
 
 		table.insert(mining_target,{x-2,y-3});
 		table.insert(mining_target,{x-1,y-3});
