@@ -21,14 +21,34 @@ function onInteraction(args)
 	self.timeoutcounter = 0
 	self.boxsize = 100;
 	self.pos = entity.toAbsolutePosition({ 0.0, 0.0 });
+	
+	-- to check for tiles
 	self.BB = {}
 	self.BB[1] = self.pos[1]-self.boxsize;
 	self.BB[2] = self.pos[2]-self.boxsize;
 	self.BB[3] = self.pos[1]+self.boxsize;
 	self.BB[4] = self.pos[2]+self.boxsize;
-				
-			-- X coordinate where to get data
+
+	-- prevent tile setter from killing itself
+	self.anchor = {}
+	self.anchor[1] = self.pos[1]-2;
+	self.anchor[2] = self.pos[2]-2;
+	self.anchor[3] = self.pos[1]+0;
+	self.anchor[4] = self.pos[2]+0;
+	local cur_mat = nil;
 	local cur_Pos = {};
+	for X = self.anchor[1],self.anchor[3],1 do
+		for Y = self.anchor[2],self.anchor[4],1 do
+			cur_Pos[1] = X;
+			cur_Pos[2] = Y;
+			cur_mat = world.material(cur_Pos, "background")
+			if (get_tileset_mat_type(cur_mat) ~= nil) then
+				-- one of my backgrounds is a tile. stop the process.
+				return { "ShowPopup", { message =  "Cant execute! The Tilesetter is anchored on tiles itself!"}};
+			end
+		end
+	end
+	
 	local cur_Neigh_Pos = {};
 	local cur_F_mat = nil;
 	local f_tileset_mat_type = nil -- nil,human,glitch ...
