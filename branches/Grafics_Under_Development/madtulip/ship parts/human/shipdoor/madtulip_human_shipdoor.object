@@ -1,11 +1,11 @@
 {
-  "objectName" : "madtulip_floran_shipdoor",
+  "objectName" : "madtulip_human_shipdoor",
   "rarity" : "Common",
   "objectType" : "wire",
 
   "category" : "door",
   "description" : "A door. Possibly suitable for a spaceship.",
-  "shortdescription" : "floran Ship Door",
+  "shortdescription" : "Human Ship Door",
   "race" : "generic",
   "printable" : false,
   "price" : "2000",
@@ -17,10 +17,10 @@
   "humanDescription" : "Cool door.",
   "hylotlDescription" : "A basic door.",
 
-  "inventoryIcon" : "madtulip_floran_shipdoor_icon.png",
+  "inventoryIcon" : "madtulip_human_shipdoor_icon.png",
   "orientations" : [
     {
-      "dualImage" : "madtulip_floran_shipdoor.png:default",
+      "dualImage" : "madtulip_human_shipdoor.png:default",
       "imagePosition" : [-20, 0],
 
       "spaceScan" : 0.1,
@@ -33,7 +33,7 @@
 
   "animation" : "/objects/wired/door/door.animation",
   "animationParts" : {
-    "door" : "madtulip_floran_shipdoor.png"
+    "door" : "madtulip_human_shipdoor.png"
   },
   "animationPosition" : [-20, 0],
 
