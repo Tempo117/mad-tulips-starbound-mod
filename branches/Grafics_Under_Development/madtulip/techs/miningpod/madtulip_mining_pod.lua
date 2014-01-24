@@ -2,6 +2,8 @@ function init()
 	data.active = false
 	data.ranOut = false
 	tech.setVisible(false)
+	
+	data.mining_timer = 0
 end
 
 function uninit()
@@ -18,6 +20,9 @@ function input(args)
 	data.holdingRight = false;
 	data.holdingUp = false;
 	data.holdingDown = false;
+	
+	data.holdingLMB = false;
+	data.holdingRMB = false;
 	
 	-- Action check
 	if args.moves["special"] == 1 then
@@ -39,6 +44,11 @@ function input(args)
 	--move down
 	if args.moves["down"] then data.holdingDown = true end
 
+	-- LMB pressed
+	if args.moves["primaryFire"] then data.holdingLMB = true end
+	-- RMB pressed
+	if args.moves["altFire"] then data.holdingRMB = true end
+	
 	return nil
 end
 
@@ -48,7 +58,7 @@ function update(args)
 	data.parentOffset					= tech.parameter("parentOffset")
 	data.mechCollisionTest				= tech.parameter("mechTransformCollisionTest")
 	data.Hold_at_level_Force			= tech.parameter("Hold_at_level_Force")
-	data.Forward_Force				= tech.parameter("Forward_Force")
+	data.Forward_Force					= tech.parameter("Forward_Force")
 	data.Reverse_Force					= tech.parameter("Reverse_Force")
 	data.Up_Force   					= tech.parameter("Up_Force")
 	data.Down_Force   					= tech.parameter("Down_Force")
@@ -57,7 +67,13 @@ function update(args)
 	data.Air_resistance_parameter_TB	= tech.parameter("Air_resistance_parameter_TB")
 	
 	data.m                              = data.mechCustomMovementParameters.mass;
-		
+	
+	data.mining_damage                  = tech.parameter("mining_damage");
+	data.mining_cost                    = tech.parameter("mining_cost");
+	data.mining_timer_max               = tech.parameter("mining_timer_max");
+	
+	data.cost 							= 0
+	
 	if not data.active and args.actions["mechActivate"] then
 		-- Calculate new position
 		tech.setAnimationState("movement", "idle")
@@ -323,8 +339,93 @@ function update(args)
 		-- execute movement vector
 		tech.xControl(data.v_x, math.abs(f_x), false); -- why is a_x to be used absolute???
 		tech.yControl(data.v_y, data.Hold_at_level_Force +f_y, false);		
+		
+		----- Mining -----
+		execute_mining_action(args)
 	end
-  return 0
+	--return 0
+	return data.cost
+end
+
+function execute_mining_action(args)
+	-- return if no ready yet
+	data.mining_timer = data.mining_timer + args.dt
+	if (data.mining_timer < data.mining_timer_max) then
+		return 0
+	else
+		data.mining_timer = 0;
+	end
+	
+	if data.holdingLMB or data.holdingRMB then
+		-- return if no energy
+		if (args.availableEnergy < data.cost + data.mining_cost) then
+			return 0
+		end
+		
+		-- command accepted
+		-- apply cost
+		data.cost = data.cost + data.mining_cost;
+		
+		-- define target
+		-- _________
+		-- XXXXXXXXX
+		-- XXXXXXXXX
+		-- XXXXXXXXX
+		--   XXXXX
+		--     X
+		local pos = tech.position();
+		x = pos[1];
+		y = pos[2];
+		y = y-2
+		local mining_target = {};
+		table.insert(mining_target,{x-4,y});
+		table.insert(mining_target,{x-3,y});
+		table.insert(mining_target,{x-2,y});
+		table.insert(mining_target,{x-1,y});
+		table.insert(mining_target,{x  ,y});
+		table.insert(mining_target,{x+1,y});
+		table.insert(mining_target,{x+2,y});
+		table.insert(mining_target,{x+3,y});
+		table.insert(mining_target,{x+4,y});
+		
+		table.insert(mining_target,{x-4,y-1});
+		table.insert(mining_target,{x-3,y-1});
+		table.insert(mining_target,{x-2,y-1});
+		table.insert(mining_target,{x-1,y-1});
+		table.insert(mining_target,{x  ,y-1});
+		table.insert(mining_target,{x+1,y-1});
+		table.insert(mining_target,{x+2,y-1});
+		table.insert(mining_target,{x+3,y-1});
+		table.insert(mining_target,{x+4,y-1});
+		
+		table.insert(mining_target,{x-4,y-2});
+		table.insert(mining_target,{x-3,y-2});
+		table.insert(mining_target,{x-2,y-2});
+		table.insert(mining_target,{x-1,y-2});
+		table.insert(mining_target,{x  ,y-2});
+		table.insert(mining_target,{x+1,y-2});
+		table.insert(mining_target,{x+2,y-2});
+		table.insert(mining_target,{x+3,y-2});
+		table.insert(mining_target,{x+4,y-2});
+
+		table.insert(mining_target,{x-2,y-3});
+		table.insert(mining_target,{x-1,y-3});
+		table.insert(mining_target,{x  ,y-3});
+		table.insert(mining_target,{x+1,y-3});
+		table.insert(mining_target,{x+2,y-3});
+		
+		table.insert(mining_target,{x  ,y-4});
+		
+		if data.holdingLMB and data.holdingRMB then
+			-- drop a bomb maybe ?
+		elseif data.holdingLMB then
+			world.damageTiles(mining_target, "foreground", tech.position(), "blockish", data.mining_damage)
+		elseif data.holdingRMB then
+			world.damageTiles(mining_target, "background", tech.position(), "blockish", data.mining_damage)
+		end
+	end
+	
+	return 0
 end
 
 -- Activate mech
@@ -334,6 +435,8 @@ function activate()
 	-- initial velocity
 	data.v_x = 0;
 	data.v_y = 0;
+	
+	data.mining_timer = 0
 	
 	tech.burstParticleEmitter("mechActivateParticles")
 	tech.translate(mechTransformPositionChange)

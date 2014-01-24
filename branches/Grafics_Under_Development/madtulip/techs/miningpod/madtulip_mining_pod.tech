@@ -60,6 +60,10 @@
 	"Down_Force": 1000,
 	"Air_resistance_parameter_LR": 10,
 	"Air_resistance_parameter_TB": 10,
+	
+	"mining_damage": 3.7,
+	"mining_timer_max": 0.3,
+	"mining_cost": 0,
 
 	"parentOffset" : [0.25, 2.125],
 	"mechTransformPositionChange" : [0.0, 0.0],
