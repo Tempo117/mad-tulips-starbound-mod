@@ -1,9 +1,5 @@
 General
 
-the 4 new materials/wallplatings/blocks
-- finish grafics please
-- finish icons please
-
 Comms an the like
 - finish up the whole set for all races
 
@@ -18,3 +14,5 @@ Mining pod
 - bottom thruster 2 times bigger
 - icon for the chip
 - bottom left window still displays some debris pixels in the glass
+
+
