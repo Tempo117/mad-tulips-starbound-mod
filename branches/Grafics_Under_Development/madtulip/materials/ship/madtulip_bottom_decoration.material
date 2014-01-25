@@ -8,7 +8,7 @@
   "itemDrop" : "madtulip_bottom_decoration",
   "description" : "Spaceship Bottom Decoration",
   "shortdescription" : "Spaceship Bottom Decoration",
-  "multicolored" : false,
+  "multicolored" : true,
   "footstepSound" : "/sfx/blocks/footstep_composite.wav",
   "health" : 10
 }
