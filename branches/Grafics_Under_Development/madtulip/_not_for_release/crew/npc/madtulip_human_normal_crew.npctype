@@ -12,7 +12,8 @@
   "scripts" : [
 	"/npcs/main.lua",
 	"/_not_for_release/crew/scripts/madtulip_npc_Data.lua",
-	"/_not_for_release/crew/scripts/madtulip_crew_main.lua",
+	"/_not_for_release/crew/scripts/madtulip_crew_interact.lua",
+	"/_not_for_release/crew/scripts/madtulip_crew_occupation.lua",
 	
 	"/_not_for_release/crew/scripts/madtulipcommandState.lua",
 	
@@ -63,8 +64,8 @@
   "items" : {
 	"default" : [
       [0, [{
-            "chest" : [{"name" : "madtulip_glitch_engineer_chest", "data" : { "colorIndex" : 1 }}],
-            "legs" : [{"name" : "madtulip_glitch_engineer_pants", "data" : { "colorIndex" : 1 }}]
+            "chest" : [{"name" : "madtulip_glitch_deckhand_chest", "data" : { "colorIndex" : 1 }}],
+            "legs" : [{"name" : "madtulip_glitch_deckhand_pants", "data" : { "colorIndex" : 1 }}]
           }]
 	  ]
     ]

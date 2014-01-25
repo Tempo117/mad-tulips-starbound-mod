@@ -33,13 +33,13 @@ interact = function(args)
 			Command       = "Set_Occupation",
 			Occupation    = "Marine"
 		 })
-	elseif world.entityHandItem(args.sourceId, "primary") == "TODO!!!!!" then
-		-- Set None occupation
+	elseif world.entityHandItem(args.sourceId, "primary") == "madtulip_deckhand_demotion" then
+		-- Set Deckhand occupation (basic guy)
 		self.state.pickState({
 			sourceId      = args.sourceId,
 			Issue_Command = true,
 			Command       = "Set_Occupation",
-			Occupation    = "None"
+			Occupation    = "Deckhand"
 		 })
 	else
 		-- no known item

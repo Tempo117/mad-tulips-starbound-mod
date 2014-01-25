@@ -13,5 +13,7 @@ Mining pod
 - drill lua
 - bottom left window still displays some debris pixels in the glass CANT FIND IT
 
-
-
+Crew
+- uniform marine is just a copy of another
+- uniform deckhand is just a copy of another
+- item to demote to deckhand (currently just a copy of another)
