@@ -118,67 +118,28 @@
 	  "backgroundMat" : "glass"
     },
     {
-      "value" : [2, 0, 29],
-      "foregroundBlock" : true,"backgroundBlock" : false,
-	  "foregroundMat" : "madtulip_bottom_decoration"
+      "value" : [2, 1, 28],
+      "foregroundBlock" : false,"backgroundBlock" : true,
+	  "backgroundMat" : "madtulip_wallplate"
     },
     {
       "value" : [2, 1, 29],
       "foregroundBlock" : false,"backgroundBlock" : true,
 	  "backgroundMat" : "madtulip_bottom_decoration"
     },
-	{
-      "value" : [2, 2, 29],
-      "foregroundBlock" : true,"backgroundBlock" : true,
-	  "foregroundMat" : "madtulip_bottom_decoration",
-	  "backgroundMat" : "madtulip_bottom_decoration"
-    },
-	{
-      "value" : [2, 0, 30],
-      "foregroundBlock" : true,"backgroundBlock" : false,
-	  "foregroundMat" : "madtulip_detail"
-    },
     {
       "value" : [2, 1, 30],
       "foregroundBlock" : false,"backgroundBlock" : true,
 	  "backgroundMat" : "madtulip_detail"
-    },
-	{
-      "value" : [2, 2, 30],
-      "foregroundBlock" : true,"backgroundBlock" : true,
-	  "foregroundMat" : "madtulip_detail",
-	  "backgroundMat" : "madtulip_detail"
-    },
-	{
-      "value" : [2, 0, 31],
-      "foregroundBlock" : true,"backgroundBlock" : false,
-	  "foregroundMat" : "madtulip_top_decoration"
     },
     {
       "value" : [2, 1, 31],
       "foregroundBlock" : false,"backgroundBlock" : true,
 	  "backgroundMat" : "madtulip_top_decoration"
     },
-	{
-      "value" : [2, 2, 31],
-      "foregroundBlock" : true,"backgroundBlock" : true,
-	  "foregroundMat" : "madtulip_top_decoration",
-	  "backgroundMat" : "madtulip_top_decoration"
-    },
-	{
-      "value" : [2, 0, 32],
-      "foregroundBlock" : true,"backgroundBlock" : false,
-	  "backgroundMat" : "madtulip_wallplate"
-    },
     {
       "value" : [2, 1, 32],
       "foregroundBlock" : false,"backgroundBlock" : true,
-	  "backgroundMat" : "madtulip_wallplate"
-    },
-	{
-      "value" : [2, 2, 32],
-      "foregroundBlock" : true,"backgroundBlock" : true,
-	  "foregroundMat" : "madtulip_wallplate",
 	  "backgroundMat" : "madtulip_wallplate"
     },
 // FTL Thrusters [1,race,1]
@@ -302,27 +263,27 @@
       "value" : [1, 1, 5, 255],
       "foregroundBlock" : false,"backgroundBlock" : true,
       "object" : "madtulip_shipdoor",
-	  "backgroundMat" : "madtulip_bottom_decoration"
+	  "backgroundMat" : "apexshipdetails"
     },
 	{
       "value" : [1, 2, 5, 255],
       "foregroundBlock" : false,"backgroundBlock" : true,
       "object" : "madtulip_avian_shipdoor",
-	  "backgroundMat" : "madtulip_bottom_decoration"
+	  "backgroundMat" : "apexshipdetails"
     },
 	{
       "value" : [1, 3, 5, 255],
       "foregroundBlock" : false,"backgroundBlock" : true,
       "object" : "madtulip_floran_shipdoor",
-	  "backgroundMat" : "madtulip_bottom_decoration"
+	  "backgroundMat" : "apexshipdetails"
     },
-	// glitch missing mad, I Finished it a while ago whered it go?
+	// glitch missing
 	// human missing
 	{
       "value" : [1, 6, 5, 255],
       "foregroundBlock" : false,"backgroundBlock" : true,
       "object" : "madtulip_hylotl_shipdoor",
-	  "backgroundMat" : "madtulip_bottom_decoration"
+	  "backgroundMat" : "apexshipdetails"
     },
 // Race specific ship lockers [1,race,6]
     {
@@ -435,7 +396,7 @@
 	{
       "value" : [3, 0, 7, 255],
       "foregroundBlock" : false,"backgroundBlock" : true,
-      "backgroundMat" : "madtulip_top_decoration",
+      "backgroundMat" : "apexshipdetails",
       "object" : "madtulip_shiplight"
     },
     {
@@ -453,7 +414,7 @@
     {
       "value" : [3, 0, 10, 255],
       "foregroundBlock" : false,"backgroundBlock" : true,
-      "backgroundMat" : "madtulip_bottom_decoration",
+      "backgroundMat" : "apexshipdetails",
       "object" : "madtulip_teleporter",
       "flags" : [ "playerSpawn" ],
       "objectParameters" : {"unbreakable" : true}
@@ -522,22 +483,22 @@
 	{
       "value" : [0, 1, 113, 100],
       "foregroundBlock" : true,"backgroundBlock" : true,
-      "foregroundMat" : "madtulip_apex_bl","backgroundMat" : "madtulip_bottom_decoration"
+      "foregroundMat" : "madtulip_apex_bl","backgroundMat" : "apexshipdetails"
     },
 	{
       "value" : [0, 1, 114, 100],
       "foregroundBlock" : true,"backgroundBlock" : true,
-      "foregroundMat" : "madtulip_apex_br","backgroundMat" : "madtulip_bottom_decoration"
+      "foregroundMat" : "madtulip_apex_br","backgroundMat" : "apexshipdetails"
     },
 	{
       "value" : [0, 1, 115, 100],
       "foregroundBlock" : true,"backgroundBlock" : true,
-      "foregroundMat" : "madtulip_apex_tl","backgroundMat" : "madtulip_top_decoration"
+      "foregroundMat" : "madtulip_apex_tl","backgroundMat" : "apexshipdetails"
     },
 	{
       "value" : [0, 1, 116, 100],
       "foregroundBlock" : true,"backgroundBlock" : true,
-      "foregroundMat" : "madtulip_apex_tr","backgroundMat" : "madtulip_top_decoration"
+      "foregroundMat" : "madtulip_apex_tr","backgroundMat" : "apexshipdetails"
     },
 // Tilesets AVIAN	
     {
@@ -765,22 +726,22 @@
 	{
       "value" : [0, 4, 113, 100],
       "foregroundBlock" : true,"backgroundBlock" : true,
-      "foregroundMat" : "madtulip_glitch_bl","backgroundMat" : "madtulip_bottom_decoration"
+      "foregroundMat" : "madtulip_glitch_bl","backgroundMat" : "apexshipdetails"
     },
 	{
       "value" : [0, 4, 114, 100],
       "foregroundBlock" : true,"backgroundBlock" : true,
-      "foregroundMat" : "madtulip_glitch_br","backgroundMat" : "madtulip_bottom_decoration"
+      "foregroundMat" : "madtulip_glitch_br","backgroundMat" : "apexshipdetails"
     },
 	{
       "value" : [0, 4, 115, 100],
       "foregroundBlock" : true,"backgroundBlock" : true,
-      "foregroundMat" : "madtulip_glitch_tl","backgroundMat" : "madtulip_top_decoration"
+      "foregroundMat" : "madtulip_glitch_tl","backgroundMat" : "apexshipdetails"
     },
 	{
       "value" : [0, 4, 116, 100],
       "foregroundBlock" : true,"backgroundBlock" : true,
-      "foregroundMat" : "madtulip_glitch_tr","backgroundMat" : "madtulip_top_decoration"
+      "foregroundMat" : "madtulip_glitch_tr","backgroundMat" : "apexshipdetails"
     },	
 // Tilesets HUMAN
     {

@@ -59,64 +59,11 @@
 
   "items" : {
 	"default" : [
-      [0, [
-          {
-            "chest" : [
-              { "name" : "noblechest", "data" : { "colorIndex" : 1 } }, { "name" : "peasantchest", "data" : { "colorIndex" : 1 } }
-            ],
-            "legs" : [
-              { "name" : "noblelegs", "data" : { "colorIndex" : 1 } }, { "name" : "peasantlegs", "data" : { "colorIndex" : 1 } }
-            ]
-          },
-          {
-            "chest" : [
-              { "name" : "noblechest", "data" : { "colorIndex" : 4 } }, { "name" : "peasantchest", "data" : { "colorIndex" : 4 } }
-            ],
-            "legs" : [
-              { "name" : "noblelegs", "data" : { "colorIndex" : 4 } }, { "name" : "peasantlegs", "data" : { "colorIndex" : 4 } }
-            ]
-          },
-          {
-            "chest" : [
-              { "name" : "noblechest", "data" : { "colorIndex" : 5 } }, { "name" : "peasantchest", "data" : { "colorIndex" : 5 } }
-            ],
-            "legs" : [
-              { "name" : "noblelegs", "data" : { "colorIndex" : 5 } }, { "name" : "peasantlegs", "data" : { "colorIndex" : 5 } }
-            ]
-          },
-          {
-            "chest" : [
-              { "name" : "noblechest", "data" : { "colorIndex" : 6 } }, { "name" : "peasantchest", "data" : { "colorIndex" : 6 } }
-            ],
-            "legs" : [
-              { "name" : "noblelegs", "data" : { "colorIndex" : 6 } }, { "name" : "peasantlegs", "data" : { "colorIndex" : 6 } }
-            ]
-          },
-          {
-            "chest" : [
-              { "name" : "noblechest", "data" : { "colorIndex" : 7 } }, { "name" : "peasantchest", "data" : { "colorIndex" : 7 } }
-            ],
-            "legs" : [
-              { "name" : "noblelegs", "data" : { "colorIndex" : 7 } }, { "name" : "peasantlegs", "data" : { "colorIndex" : 7 } }
-            ]
-          },
-          {
-            "chest" : [
-              { "name" : "noblechest", "data" : { "colorIndex" : 8 } }, { "name" : "peasantchest", "data" : { "colorIndex" : 8 } }
-            ],
-            "legs" : [
-              { "name" : "noblelegs", "data" : { "colorIndex" : 8 } }, { "name" : "peasantlegs", "data" : { "colorIndex" : 8 } }
-            ]
-          },
-          {
-            "chest" : [
-              { "name" : "noblechest", "data" : { "colorIndex" : 9 } }, { "name" : "peasantchest", "data" : { "colorIndex" : 9 } }
-            ],
-            "legs" : [
-              { "name" : "noblelegs", "data" : { "colorIndex" : 9 } }, { "name" : "peasantlegs", "data" : { "colorIndex" : 9 } }
-            ]
-          }
-        ] ]
+      [0, [{
+            "chest" : [{"name" : "madtulip_glitch_engineer_chest", "data" : { "colorIndex" : 1 }}],
+            "legs" : [{"name" : "madtulip_glitch_engineer_pants", "data" : { "colorIndex" : 1 }}]
+          }]
+	  ]
     ]
   },
 
