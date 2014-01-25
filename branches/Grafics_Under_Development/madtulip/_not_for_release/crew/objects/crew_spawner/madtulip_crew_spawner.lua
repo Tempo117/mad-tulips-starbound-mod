@@ -1,12 +1,18 @@
 function init(virtual)
 	if not virtual then
 		entity.setInteractive(true);
+		
+		-- why doesnt this work ?
+		--Data.race = world.entitySpecies(entity.id());
 	end
 end
 
 function onInteraction(args)
 	local player_ID   = args["sourceId"]
 	local player_race = world.entitySpecies(player_ID);
+	
+	-- TODO: place this elsewhere in init
+	--Data.race = player_race;
 	
 	-- spawn NPC of users race
 	world.spawnNpc(entity.toAbsolutePosition({ 0.0, 2.0 }),

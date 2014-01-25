@@ -14,7 +14,7 @@
 	"/_not_for_release/crew/scripts/madtulip_npc_Data.lua",
 	"/_not_for_release/crew/scripts/madtulip_crew_main.lua",
 	
-	"/_not_for_release/crew/scripts/madtulip_npc_commandState.lua",
+	"/_not_for_release/crew/scripts/madtulipcommandState.lua",
 	
     "/npcs/wanderState.lua",	
     "/npcs/sitState.lua",
@@ -52,7 +52,6 @@
       "cooldown" : 60,
       "timeRange" : [10, 20]
     },
-
     "converse" : {
       "waitTime" : 4.0,
       "dialog" : {
