@@ -11,8 +11,7 @@ Metal press
 
 Mining pod
 - drill lua
-- bottom thruster 2 times bigger
-- icon for the chip
-- bottom left window still displays some debris pixels in the glass
+- bottom left window still displays some debris pixels in the glass CANT FIND IT
+
 
 
