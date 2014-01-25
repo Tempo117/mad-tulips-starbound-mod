@@ -1,5 +1,5 @@
 {
-  "type" : "madtulip_normal_crew",
+  "type" : "madtulip_human_normal_crew",
   "damageTeam": 0,
   "disableWornArmor" : false,
   "inateStatusEffects" : [
@@ -10,8 +10,11 @@
   ],
 
   "scripts" : [
+	"/_not_for_release/crew/scripts/madtulip_crew_main.lua",
+	"/_not_for_release/crew/scripts/madtulip_npc_commandState.lua",
+	"/_not_for_release/crew/scripts/madtulip_npc_Data.lua",
+  
     "/npcs/main.lua",
-	
     "/npcs/wanderState.lua",	
     "/npcs/sitState.lua",
     "/npcs/sleepState.lua",
