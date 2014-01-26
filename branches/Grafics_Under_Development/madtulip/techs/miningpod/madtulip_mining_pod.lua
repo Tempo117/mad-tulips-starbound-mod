@@ -344,7 +344,7 @@ function update(args)
 		execute_mining_action(args)
 	end
 	--return 0
-	return data.cost
+	--return data.cost
 end
 
 function execute_mining_action(args)

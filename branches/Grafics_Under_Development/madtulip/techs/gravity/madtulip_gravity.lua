@@ -4,7 +4,6 @@ function init()
 end
 
 function input(args)
-
 	-- default
 	data.holdingJump = false;
 	data.holdingLeft = false;
@@ -23,7 +22,7 @@ function input(args)
 	--move down
 	if args.moves["down"] then data.holdingDown = true end
 
-	return 0;
+	--return 0;
 end
 
 function update(args)
@@ -46,8 +45,7 @@ function update(args)
 			use_ZERO_gravity_movement();
 		end
 	end
-	
-	return 0;
+	--return 0;
 end
 
 function determine_if_ZERO_gravity_should_end(Range)
@@ -89,17 +87,6 @@ function determine_if_ZERO_gravity(Range)
 		-- on planet, ZERO gravity is not active
 		return false;
 	end
-	
---[[
-	-- check if we are in space
-	local on_shipworld = world.info();
-	if  on_shipworld ~= nil then
-		-- on planet, ZERO gravity is not active
-		--world.logInfo("GRAVITY" .. {on_shipworld.handle})
-		return false;
-	end
-	--world.logInfo("GRAVITY ON")
-]]
 	
 	-- we assume Zero gravity unless we find blocks in the vicinity
 	local Zero_gravity = true;

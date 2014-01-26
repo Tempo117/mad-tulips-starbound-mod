@@ -368,7 +368,7 @@
 	{
       "value" : [3, 0, 7, 255],
       "foregroundBlock" : false,"backgroundBlock" : true,
-      "backgroundMat" : "apexshipdetails",
+      "backgroundMat" : "madtulip_top_decoration",
       "object" : "madtulip_shiplight"
     },
     {

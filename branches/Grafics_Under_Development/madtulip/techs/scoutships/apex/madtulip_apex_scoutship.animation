@@ -689,7 +689,7 @@
 			"particles" : [{
 					"particle" : {
 						"type" : "ember",
-						"size" : "1.0",
+						"size" : 1.0,
 						"color" : [2, 139, 218, 255],
 						"light" : [94, 182, 236],
 						"fade" : 0.9,
@@ -713,7 +713,7 @@
 			"particles" : [{
 					"particle" : {
 						"type" : "ember",
-						"size" : "1.0",
+						"size" : 1.0,
 						"color" : [2, 139, 218, 255],
 						"light" : [94, 182, 236],
 						"fade" : 0.9,
@@ -737,7 +737,7 @@
 			"particles" : [{
 					"particle" : {
 						"type" : "ember",
-						"size" : "1.0",
+						"size" : 1.0,
 						"color" : [2, 139, 218, 255],
 						"light" : [94, 182, 236],
 						"fade" : 0.9,
@@ -761,7 +761,7 @@
 			"particles" : [{
 					"particle" : {
 						"type" : "ember",
-						"size" : "1.0",
+						"size" : 1.0,
 						"color" : [2, 139, 218, 255],
 						"light" : [94, 182, 236],
 						"fade" : 0.9,
@@ -785,7 +785,7 @@
 			"particles" : [{
 					"particle" : {
 						"type" : "ember",
-						"size" : "1.0",
+						"size" : 1.0,
 						"color" : [2, 139, 218, 255],
 						"light" : [94, 182, 236],
 						"fade" : 0.9,
@@ -809,7 +809,7 @@
 			"particles" : [{
 					"particle" : {
 						"type" : "ember",
-						"size" : "0",
+						"size" : 0,
 						"color" : [2, 139, 218, 255],
 						"light" : [255, 255, 255],
 						"fade" : 0,
