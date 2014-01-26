@@ -2,7 +2,7 @@
   "objectName" : "madtulip_starprojector",
   "rarity" : "Common",
   "category" : "decorative",
-  "price" : "200",
+  "price" : 200,
   "printable" : false,
   "lightColor" : [200, 200, 255],
   "flickerDistance" : 0.4,

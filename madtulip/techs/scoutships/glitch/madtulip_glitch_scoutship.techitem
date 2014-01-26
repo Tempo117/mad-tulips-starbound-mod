@@ -3,7 +3,7 @@
 	"rarity": "Legendary",
 	"inventoryIcon": "/techs/scoutships/scoutship_icon.png",
 	"description": "Spawn a glitch scoutship and have fun.",
-	"shortdescription": "glitch Scoutship",
+	"shortdescription": "Glitch Scoutship",
 	"inspectionKind": "tech",
 
 	"techModule": "madtulip_glitch_scoutship.tech"

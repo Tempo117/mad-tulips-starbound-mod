@@ -1,12 +1,14 @@
 {
   "name" : "madtulip",
-  "version" : "Beta v. Angry Koala",
+  "version" : "Beta v. Furious Koala",
   "path" : ".",
   "dependencies" : ["Modules in a Box"],
   "metadata": {
-    "author" : "MadTulip and TooManySecrets",
-    "description" : "Spaceship block by block and object customizeability plus some space mechanics like ZERO gravity",
+    "displayName" : "MadTulip`s Spaceship Mod",
+    "author" : "HuggableCreep, MadTulip and TooManySecrets",
+    "description" : "Spaceship block by block, objects like fins, space mechanics, tilesets, landable ships, flyable scout ships",
 	"MatIDs_used" : "21000 till 21200",
-    "support_url" : "http://community.playstarbound.com/index.php?resources/madtulips-ship-mod.59/"
+    "support_url" : "http://community.playstarbound.com/index.php?resources/madtulips-ship-mod.59/",
+	"version" : "Rev. 306"
   }
 }

@@ -3,8 +3,8 @@
   "rarity" : "Common",
   "objectType" : "wire",
   "category" : "decorative",
-  "printable" : "false",
-  "price" : "300",
+  "printable" : false,
+  "price" : 300,
 
   "description" : "A Tilesetter. It bends space!",
   "shortdescription" : "Tilesetter",

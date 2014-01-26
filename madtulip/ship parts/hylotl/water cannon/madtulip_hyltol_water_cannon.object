@@ -2,10 +2,10 @@
   "objectName" : "madtulip_hyltol_water_cannon",
   "rarity" : "Common",
   "description" : "A hylotl water cannon",
-  "shortdescription" : "Water Cannon",
+  "shortdescription" : "Hylotl Water Cannon",
   "race" : "generic",
   "category" : "decorative",
-  "price" : "10",
+  "price" : 10,
   "printable" : false,
 
   "inventoryIcon" : "madtulip_hyltol_water_cannon_icon.png",

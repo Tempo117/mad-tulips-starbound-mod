@@ -2,10 +2,10 @@
   "objectName" : "madtulip_glitch_tower2",
   "rarity" : "Common",
   "description" : "An impressive tower!",
-  "shortdescription" : "Tower",
+  "shortdescription" : "Glitch Tower Beta",
   "race" : "generic",
   "category" : "decorative",
-  "price" : "10",
+  "price" : 10,
   "printable" : false,
   
   "inventoryIcon" : "madtulip_glitch_tower2_icon.png",

@@ -2,7 +2,7 @@
   "kind" : "madtulip_dust",
   "definition" : {
     "type" : "ember",
-    "size" : "1.0",
+    "size" : 1.0,
 	"position" : [0, 0],
     "color" : [230, 230, 230, 180],
     "fade" : 3,
@@ -16,7 +16,7 @@
     "variance" : {
       "initialVelocity" : [65, 65],
 	  "finalVelocity" : [85, 85],
-      "size" : "2",
+      "size" : 2,
       "position" : [2, 2]
     }
   }
