@@ -6,7 +6,7 @@
 	"shortdescription" : "Glitch Lazor",
 	"race" : "generic",
 	"category" : "decorative",
-	"price" : "10",
+	"price" : 10,
 	"printable" : false,
 
 	"inventoryIcon" : "madtulip_glitchy_lazor_icon.png",

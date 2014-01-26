@@ -5,7 +5,7 @@
   "shortdescription" : "Avian Flux Compensator",
   "race" : "generic",
   "category" : "decorative",
-  "price" : "10",
+  "price" : 10,
   "printable" : false,
 
   "inventoryIcon" : "madtulip_avian_flux_compensator_icon.png",

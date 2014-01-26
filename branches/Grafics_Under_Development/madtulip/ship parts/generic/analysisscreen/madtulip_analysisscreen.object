@@ -3,7 +3,7 @@
   "rarity" : "Common",
   "objectType" : "engine",
   "category" : "decorative",
-  "price" : "200",
+  "price" : 200,
   "printable" : false,
   "lightColor" : [106, 125, 142],
   "flickerDistance" : 0.2,

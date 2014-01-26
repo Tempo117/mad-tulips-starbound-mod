@@ -13,7 +13,7 @@
   "race" : "generic",
   "category" : "crafting",
   "printable" : false,
-  "price" : "200",
+  "price" : 200,
 
   "apexDescription" : "A ship station. Useful.",
   "avianDescription" : "I can use this ship station to make things.",

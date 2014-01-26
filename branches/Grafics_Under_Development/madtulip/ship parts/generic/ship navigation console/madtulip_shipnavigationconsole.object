@@ -6,7 +6,7 @@
   "race" : "generic",
   "category" : "decorative",
   "printable" : false,
-  "price" : "200",
+  "price" : 200,
 
   "inventoryIcon" : "madtulip_shipnavigationconsole_inv.png",
   "orientations" : [

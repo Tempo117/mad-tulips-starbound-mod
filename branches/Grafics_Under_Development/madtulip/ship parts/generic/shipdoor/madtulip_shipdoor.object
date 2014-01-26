@@ -8,7 +8,7 @@
   "shortdescription" : "Ship Door",
   "race" : "generic",
   "printable" : false,
-  "price" : "2000",
+  "price" : 2000,
 
   "apexDescription" : "We use these doors on our ships.",
   "avianDescription" : "A door.",

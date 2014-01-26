@@ -7,7 +7,7 @@
   "race" : "generic",
   "category" : "furniture",
   "printable" : false,
-  "price" : "200",
+  "price" : 200,
 
   "apexDescription" : "Ahh freedom...",
   "avianDescription" : "Bless my beak, such a comfortable captain's chair.",

@@ -4,7 +4,7 @@
   "objectType" : "wire",
 
   "category" : "wire",
-  "price" : "2000",
+  "price" : 2000,
   "description" : "The finest automated security the Human labs have to offer.",
   "shortdescription" : "Human Defense Turret",
   "race" : "apex",

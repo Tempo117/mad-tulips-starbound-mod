@@ -6,7 +6,7 @@
 	"shortdescription" : "Human Support Gun Turret",
 	"race" : "generic",
 	"category" : "decorative",
-	"price" : "10",
+	"price" : 10,
 	"printable" : false,
 
 	"inventoryIcon" : "madtulip_human_turret_icon.png",

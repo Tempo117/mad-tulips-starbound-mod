@@ -10,7 +10,7 @@
   "description" : "A light.",
   "shortdescription" : "Ship Light",
   "race" : "generic",
-  "price" : "500",
+  "price" : 500,
   "printable" : false,  
 
   "apexDescription" : "These lights are commonly used on ships.",

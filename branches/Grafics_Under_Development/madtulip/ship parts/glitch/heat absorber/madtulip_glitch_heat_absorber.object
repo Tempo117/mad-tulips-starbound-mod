@@ -5,7 +5,7 @@
   "shortdescription" : "Glitch Heat Absorber",
   "race" : "generic",
   "category" : "decorative",
-  "price" : "10",
+  "price" : 10,
   "printable" : false,
   
   "inventoryIcon" : "madtulip_glitch_heat_absorber_icon.png",
