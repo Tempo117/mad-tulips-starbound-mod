@@ -41,6 +41,15 @@ interact = function(args)
 			Command       = "Set_Occupation",
 			Occupation    = "Deckhand"
 		 })
+	elseif world.entityHandItem(args.sourceId, "primary") == "madtulip_crew_info" then
+		-- Show Crew information
+		world.logInfo("Show information for ID:" .. entity.id())
+		world.logInfo("Species: " .. entity.species())
+		return {"ShowPopup",{message =
+				"^green;Name: ^white;" .. world.entityName(entity.id()) .. "\n" ..
+				"^green;Species : ^white;" .. entity.species() .. "\n" ..
+				"^green;Occupation: ^white;" .. Data.Occupation
+				}}
 	else
 		-- no known item
 	end

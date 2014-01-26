@@ -64,8 +64,8 @@
   "items" : {
 	"default" : [
       [0, [{
-            "chest" : [{"name" : "madtulip_glitch_deckhand_chest", "data" : { "colorIndex" : 0 }}],
-            "legs" : [{"name" : "madtulip_glitch_deckhand_pants", "data" : { "colorIndex" : 0 }}]
+            "chest" : [{"name" : "madtulip_glitch_deckhand_chest", "data" : { "colorIndex" : 1 }}],
+            "legs" : [{"name" : "madtulip_glitch_deckhand_pants", "data" : { "colorIndex" : 1 }}]
           }]
 	  ]
     ]
