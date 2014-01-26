@@ -1,0 +1,45 @@
+{
+  "objectName" : "madtulip_forcefield_door",
+  "rarity" : "Common",
+  "objectType" : "wire",
+
+  "category" : "door",
+  "description" : "A door. Possibly suitable for a spaceship.",
+  "shortdescription" : "Forcefield Ship Door",
+  "race" : "generic",
+  "printable" : false,
+  "price" : 2000,
+
+  "apexDescription" : "We use these doors on our ships.",
+  "avianDescription" : "A door.",
+  "floranDescription" : "Door!",
+  "glitchDescription" : "Statement. A door.",
+  "humanDescription" : "Cool door.",
+  "hylotlDescription" : "A basic door.",
+
+  "inventoryIcon" : "madtulip_forcefield_door_icon.png",
+  "orientations" : [
+    {
+      "dualImage" : "madtulip_forcefield_door.png:default",
+      "imagePosition" : [-20, 0],
+
+      "spaceScan" : 0.1,
+      "anchors" : [ "bottom", "top" ]
+    }
+  ],
+
+  "scripts" : [ "/objects/wired/door/door.lua" ],
+  "scriptDelta" : 5,
+
+  "animation" : "/objects/wired/door/door.animation",
+  "animationParts" : {
+    "door" : "madtulip_forcefield_door.png"
+  },
+  "animationPosition" : [-20, 0],
+
+  "inboundNodes" : [ [-1, 4] ],
+  "outboundNodes" : [ [1, 0] ],
+
+  "openSounds" : [ "/sfx/objects/tesla_shock_kill.wav" ],
+  "closeSounds" : [ "/sfx/objects/tesla_shock_kill.wav" ]
+}

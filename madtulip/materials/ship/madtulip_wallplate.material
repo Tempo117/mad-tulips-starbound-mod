@@ -1,0 +1,14 @@
+{
+  "materialId" : 21183,
+  "materialName" : "madtulip_wallplate",
+  "frames" : "madtulip_wallplate.png",
+  "transparent" : true,
+  "particleColor" : [110, 110, 110, 255],
+  "variants" : 1,
+  "itemDrop" : "madtulip_wallplate",
+  "description" : "Spaceship Wallplate",
+  "shortdescription" : "Spaceship Wallplate",
+  "multicolored" : true,
+  "footstepSound" : "/sfx/blocks/footstep_composite.wav",
+  "health" : 10
+}

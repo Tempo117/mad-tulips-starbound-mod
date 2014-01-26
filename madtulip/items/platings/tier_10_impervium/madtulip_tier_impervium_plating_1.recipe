@@ -1,0 +1,10 @@
+{
+  "input" : [
+	{ "item" : "imperviumbar", "count" : 2 }
+  ],
+  "output" : {
+    "item" : "madtulip_tier_impervium_plating_1",
+    "count" : 1
+  },
+  "groups" : ["madtulip_metal_press", "all", "tier_plating" ]
+}

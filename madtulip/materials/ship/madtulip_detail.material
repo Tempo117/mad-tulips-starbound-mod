@@ -1,0 +1,14 @@
+{
+  "materialId" : 21181,
+  "materialName" : "madtulip_detail",
+  "frames" : "madtulip_detail.png",
+  "transparent" : true,
+  "particleColor" : [110, 110, 110, 255],
+  "variants" : 1,
+  "itemDrop" : "madtulip_detail",
+  "description" : "Spaceship Details",
+  "shortdescription" : "Spaceship Details",
+  "multicolored" : true,
+  "footstepSound" : "/sfx/blocks/footstep_composite.wav",
+  "health" : 10
+}

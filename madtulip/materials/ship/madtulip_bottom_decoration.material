@@ -1,0 +1,14 @@
+{
+  "materialId" : 21180,
+  "materialName" : "madtulip_bottom_decoration",
+  "frames" : "madtulip_bottom_decoration.png",
+  "transparent" : true,
+  "particleColor" : [110, 110, 110, 255],
+  "variants" : 1,
+  "itemDrop" : "madtulip_bottom_decoration",
+  "description" : "Spaceship Bottom Decoration",
+  "shortdescription" : "Spaceship Bottom Decoration",
+  "multicolored" : true,
+  "footstepSound" : "/sfx/blocks/footstep_composite.wav",
+  "health" : 10
+}

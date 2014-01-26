@@ -1,0 +1,13 @@
+{
+	"input": [
+		{"item": "diamonddrill","count": 3},
+		{ "item" : "madtulip_tier_durasteel_plating_3", "count" : 8 },
+		{"item": "uraniumrod","count": 5},
+		{ "item" : "money", "count" : 500}
+	],
+	"output": {
+		"item": "madtulip_mining_pod-chip",
+		"count": 1
+	},
+	"groups" : [ "madtulip_shipstation", "all", "madtulip_tech" ]
+}
