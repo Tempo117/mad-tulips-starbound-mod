@@ -3,10 +3,10 @@
 	"rarity" : "Common",
 	"objectType" : "wire",
 	"description" : "Fires rapid pulses of Bose-Einstein condensate",
-	"shortdescription" : "Cool Pulse Cannon",
+	"shortdescription" : "Apex Cool Pulse Cannon",
 	"race" : "generic",
 	"category" : "decorative",
-	"price" : "10",
+	"price" : 10,
 	"printable" : false,
 
 	"inventoryIcon" : "madtulip_cool_pulse_cannon_icon.png",

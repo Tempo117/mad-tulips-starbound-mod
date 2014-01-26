@@ -2,10 +2,10 @@
   "objectName" : "madtulip_apex_flux_compensator",
   "rarity" : "Common",
   "description" : "Compensates for, well .. flux.",
-  "shortdescription" : "Flux Compensator",
+  "shortdescription" : "Apex Flux Compensator",
   "race" : "generic",
   "category" : "decorative",
-  "price" : "10",
+  "price" : 10,
   "printable" : false,
 
   "inventoryIcon" : "madtulip_apex_flux_compensator_icon.png",

@@ -6,8 +6,8 @@
 	"shortdescription" : "Status Monitor",
 	"race" : "generic",
 	"category" : "tools",
-	"printable" : "false",
-	"price" : "200",
+	"printable" : false,
+	"price" : 200,
 
 	"inventoryIcon" : "madtulip_status_monitor_icon.png",
 	"orientations" : [

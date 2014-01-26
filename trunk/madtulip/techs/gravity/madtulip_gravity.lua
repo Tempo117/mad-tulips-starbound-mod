@@ -4,7 +4,6 @@ function init()
 end
 
 function input(args)
-
 	-- default
 	data.holdingJump = false;
 	data.holdingLeft = false;
@@ -23,7 +22,7 @@ function input(args)
 	--move down
 	if args.moves["down"] then data.holdingDown = true end
 
-	return 0;
+	--return 0;
 end
 
 function update(args)
@@ -46,8 +45,7 @@ function update(args)
 			use_ZERO_gravity_movement();
 		end
 	end
-	
-	return 0;
+	--return 0;
 end
 
 function determine_if_ZERO_gravity_should_end(Range)
@@ -78,7 +76,7 @@ function determine_if_ZERO_gravity(Range)
 	-- this is the case for the fixed teleporter in the ship.
 	-- i didn't know any other way to degine the ship world.
 	local Teleporter_found = false;
-	local TeleporterIds = world.entityQuery ({1026,1016}, 1);
+	local TeleporterIds = world.entityQuery ({1000,1000}, 1);
 	-- loop over one object, brilliant
 	for _, TeleporterId in pairs(TeleporterIds) do
 		if (world.entityName(TeleporterId) == "madtulip_teleporter") then
@@ -89,7 +87,6 @@ function determine_if_ZERO_gravity(Range)
 		-- on planet, ZERO gravity is not active
 		return false;
 	end
-	
 	
 	-- we assume Zero gravity unless we find blocks in the vicinity
 	local Zero_gravity = true;

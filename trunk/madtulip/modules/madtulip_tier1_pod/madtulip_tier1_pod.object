@@ -6,7 +6,7 @@
 	"shortdescription" : "BP - Tier 1 Landing Pod",
 	"race" : "generic",
 	"category" : "tool",
-	"price" : "1",
+	"price" : 1,
 	"printable" : false,
 	
 	"inventoryIcon" : "/objects/basestorage/miab_basestore_printer/miab_basestore_printer_icon.png",

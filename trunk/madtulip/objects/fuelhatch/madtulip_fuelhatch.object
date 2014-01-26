@@ -6,7 +6,7 @@
   "shortdescription" : "Fuel Hatch",
   "category" : "wired",
   "race" : "generic",
-  "price" : "500",
+  "price" : 500,
   "printable" : false,  
 
   "apexDescription" : "Converts fuel into freedom.",
