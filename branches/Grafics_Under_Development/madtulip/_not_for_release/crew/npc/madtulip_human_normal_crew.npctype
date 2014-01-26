@@ -16,8 +16,8 @@
 	"/_not_for_release/crew/scripts/madtulip_crew_occupation.lua",
 	
 	"/_not_for_release/crew/scripts/madtulipcommandState.lua",
+	"/_not_for_release/crew/scripts/madtulipwanderState.lua",
 	
-    "/npcs/wanderState.lua",	
     "/npcs/sitState.lua",
     "/npcs/sleepState.lua",
 	
@@ -42,6 +42,7 @@
       "indoorTimeOfDayRanges" : [ [0.0, 0.2], [0.5, 1.0] ],
       "indoorSearchRadius" : 60,
       "indoorLookaheadDistance" : 4,
+	  "AtWorkTimeOfDayRanges" : [ [0.0, 1.0] ],
       "moveToTargetTime" : 10.0,
       "changeDirectionCooldown" : 2,
       "dropDownChance" : 5,
