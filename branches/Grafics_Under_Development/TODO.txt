@@ -12,6 +12,7 @@ Metal press
 Mining pod
 - drill lua
 - bottom left window still displays some debris pixels in the glass CANT FIND IT
+- Drill is animated so pls add the animation
 
 Crew
 
