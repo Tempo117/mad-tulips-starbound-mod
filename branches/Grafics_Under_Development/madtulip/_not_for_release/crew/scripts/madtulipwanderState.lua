@@ -24,7 +24,7 @@ function wanderState.update(dt, stateData)
   end
 
   local position = entity.position()
-  local inside = wanderState.isAtHome(position)
+  local inside = wanderState.isAtBarracks(position)
 
   if stateData.targetPosition ~= nil then
     local toTarget = world.distance(stateData.targetPosition, position)
@@ -52,7 +52,7 @@ function wanderState.update(dt, stateData)
 		-- if its time to work we go there
 		wanderState.try_to_go_to_work();
 	elseif (shouldBeAtHome) then
-		wanderState.try_to_go_home();
+		wanderState.try_to_go_to_barracks();
 	else
 		-- default case - wander around
 		wanderState.try_to_wander_arround();
@@ -108,17 +108,46 @@ function wanderState.update(dt, stateData)
   return false
 end
 
-function wanderState.try_to_go_to_work(shouldBeAtWork)
+function wanderState.try_to_go_to_barracks()
 	local position = entity.position()
-	local AtWork = isAtWork(position)
-
-	if AtWork then
-		-- Stay at Work
+  
+	if wanderState.isAtBarracks(position) then
+		-- Stay at barracks
 		local lookaheadPosition = vec2.add({ stateData.direction * entity.configParameter("wander.indoorLookaheadDistance"), 0 }, position)
-		if not isAtWork(lookaheadPosition) then
+		if not wanderState.isAtBarracks(lookaheadPosition) then
+			-- no barracks ahead of me
 			wanderState.changeDirection(stateData)
 
-			-- Close any doors to the outside
+			-- get doors infront of me
+			local doorIds = world.objectLineQuery(position, lookaheadPosition, { callScript = "hasCapability", callScriptArgs = { "door" } })
+			-- close them all
+			for _, doorId in pairs(doorIds) do
+				world.callScriptedEntity(doorId, "closeDoor")
+			end
+		end
+	else
+		  -- Go to barracks
+		stateData.targetPosition = wanderState.findBarracksPosition(position)
+		if stateData.targetPosition ~= nil then
+			return false
+		else
+			stateData.timer = entity.configParameter("wander.moveToTargetTime", stateData.timer)
+		end
+	end
+end
+
+function wanderState.try_to_go_to_work(shouldBeAtWork)
+	local position = entity.position()
+
+	if wanderState.isAtWork(position) then
+		-- Stay at Work
+		-- look ahead if thats also at work
+		local lookaheadPosition = vec2.add({ stateData.direction * entity.configParameter("wander.indoorLookaheadDistance"), 0 }, position)
+		if not wanderState.isAtWork(lookaheadPosition) then
+			-- look ahead is not at work
+			wanderState.changeDirection(stateData)
+
+			-- close any doors in that direction
 			local doorIds = world.objectLineQuery(position, lookaheadPosition, { callScript = "hasCapability", callScriptArgs = { "door" } })
 			for _, doorId in pairs(doorIds) do
 				world.callScriptedEntity(doorId, "closeDoor")
@@ -135,69 +164,46 @@ function wanderState.try_to_go_to_work(shouldBeAtWork)
 	end
 end
 
+function wanderState.try_to_wander_arround()
+	local position = entity.position()
+  
+	if wanderState.isAtBarracks(position) then
+		-- Leave Barracks
+		stateData.targetPosition = wanderState.findChilledPosition(position, maxDistanceFromSpawnPoint)
+		if stateData.targetPosition ~= nil then
+			return false
+		else
+			stateData.timer = entity.configParameter("wander.moveToTargetTime", stateData.timer)
+		end
+	elseif wanderState.isAtWork(position) then
+		-- Leave Work
+		stateData.targetPosition = wanderState.findChilledPosition(position, maxDistanceFromSpawnPoint)
+		if stateData.targetPosition ~= nil then
+			return false
+		else
+			stateData.timer = entity.configParameter("wander.moveToTargetTime", stateData.timer)
+		end
+	else
+		-- Stay outside
+		local lookaheadPosition = vec2.add({ stateData.direction * entity.configParameter("wander.indoorLookaheadDistance"), 0 }, position)
+		-- don`t go to work
+		if wanderState.isAtBarracks(lookaheadPosition) then
+			wanderState.changeDirection(stateData)
+		end
+	end
+end
+
+function wanderState.isAtBarracks()
+end
+
 function wanderState.isAtWork()
 end
 
-function wanderState.findAtWorkPosition()
-end
-
-function wanderState.try_to_go_home()
-  local position = entity.position()
-  local at_home = wanderState.isAtHome(position)
-  
-	if at_home then
-		-- Stay at home
-		local lookaheadPosition = vec2.add({ stateData.direction * entity.configParameter("wander.indoorLookaheadDistance"), 0 }, position)
-		if not wanderState.isAtHome(lookaheadPosition) then
-			wanderState.changeDirection(stateData)
-
-			-- Close any doors to the outside
-			local doorIds = world.objectLineQuery(position, lookaheadPosition, { callScript = "hasCapability", callScriptArgs = { "door" } })
-			for _, doorId in pairs(doorIds) do
-				world.callScriptedEntity(doorId, "closeDoor")
-			end
-		end
-	else
-		  -- Go home
-		  stateData.targetPosition = wanderState.findInsidePosition(position)
-		  if stateData.targetPosition ~= nil then
-				return false
-		  else
-				stateData.timer = entity.configParameter("wander.moveToTargetTime", stateData.timer)
-		  end
-	end
-
-end
-
-function wanderState.isAtHome()
-end
-
-function wanderState.try_to_wander_arround()
-	local position = entity.position()
-	local inside = wanderState.isAtHome(position)
-  
-	if inside then
-		  -- Go outside
-		  stateData.targetPosition = wanderState.findOutsidePosition(position, maxDistanceFromSpawnPoint)
-		  if stateData.targetPosition ~= nil then
-				return false
-		  else
-				stateData.timer = entity.configParameter("wander.moveToTargetTime", stateData.timer)
-		  end
-	else
-			-- Stay outside
-		  local lookaheadPosition = vec2.add({ stateData.direction * entity.configParameter("wander.indoorLookaheadDistance"), 0 }, position)
-		  if wanderState.isAtHome(lookaheadPosition) then
-				wanderState.changeDirection(stateData)
-		  end
-	end
-end
-
-function wanderState.findInsidePosition(position)
+function wanderState.findBarracksPosition(position)
   local basePosition = position
 
   -- Prefer the original spawn position (i.e. the npc's home)
-  if wanderState.isAtHome(storage.spawnPosition) then
+  if wanderState.isAtBarracks(storage.spawnPosition) then
     basePosition = storage.spawnPosition
   end
 
@@ -206,10 +212,32 @@ function wanderState.findInsidePosition(position)
     local doorPosition = world.entityPosition(doorId)
 
     local rightSide = vec2.add({ 3, 1.5 }, doorPosition)
-    if wanderState.isAtHome(rightSide) then return rightSide end
+    if wanderState.isAtBarracks(rightSide) then return rightSide end
 
     local leftSide = vec2.add({ -3, 1.5 }, doorPosition)
-    if wanderState.isAtHome(leftSide) then return leftSide end
+    if wanderState.isAtBarracks(leftSide) then return leftSide end
+  end
+
+  return nil
+end
+
+function wanderState.findAtWorkPosition()
+end
+
+function wanderState.findChilledPosition(position, maxDistanceFromSpawnPoint)
+  local entityIds = world.objectQuery(position, entity.configParameter("wander.indoorSearchRadius"), { callScript = "hasCapability", callScriptArgs = { "door" }, order = "nearest" })
+  for _, entityId in pairs(entityIds) do
+    local doorPosition = world.entityPosition(entityId)
+
+    local rightSide = vec2.add({ 3, 1.5 }, doorPosition)
+    if not wanderState.isAtBarracks(rightSide) and (maxDistanceFromSpawnPoint == nil or world.magnitude(position, rightSide) < maxDistanceFromSpawnPoint) then
+      return rightSide
+    end
+
+    local leftSide = vec2.add({ -3, 1.5 }, doorPosition)
+    if not wanderState.isAtBarracks(leftSide) and (maxDistanceFromSpawnPoint == nil or world.magnitude(position, leftSide) < maxDistanceFromSpawnPoint) then
+      return leftSide
+    end
   end
 
   return nil
@@ -219,26 +247,7 @@ function wanderState.isDoorToOutside(doorId)
   local doorPosition = world.entityPosition(doorId)
   local rightSide = vec2.add({ 3, 1.5 }, doorPosition)
   local leftSide = vec2.add({ -3, 1.5 }, doorPosition)
-  return wanderState.isAtHome(rightSide) ~= wanderState.isAtHome(leftSide)
-end
-
-function wanderState.findOutsidePosition(position, maxDistanceFromSpawnPoint)
-  local entityIds = world.objectQuery(position, entity.configParameter("wander.indoorSearchRadius"), { callScript = "hasCapability", callScriptArgs = { "door" }, order = "nearest" })
-  for _, entityId in pairs(entityIds) do
-    local doorPosition = world.entityPosition(entityId)
-
-    local rightSide = vec2.add({ 3, 1.5 }, doorPosition)
-    if not wanderState.isAtHome(rightSide) and (maxDistanceFromSpawnPoint == nil or world.magnitude(position, rightSide) < maxDistanceFromSpawnPoint) then
-      return rightSide
-    end
-
-    local leftSide = vec2.add({ -3, 1.5 }, doorPosition)
-    if not wanderState.isAtHome(leftSide) and (maxDistanceFromSpawnPoint == nil or world.magnitude(position, leftSide) < maxDistanceFromSpawnPoint) then
-      return leftSide
-    end
-  end
-
-  return nil
+  return wanderState.isAtBarracks(rightSide) ~= wanderState.isAtBarracks(leftSide)
 end
 
 function wanderState.changeDirection(stateData)
