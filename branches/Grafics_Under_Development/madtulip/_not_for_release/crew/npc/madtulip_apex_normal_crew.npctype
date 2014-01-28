@@ -48,7 +48,11 @@
       "dropDownChance" : 5,
       "cooldown" : 10,
 	  
-	  "attractorSearchRadius" : 60,
+	  "madtulipwanderState.moveToTargetMinDistance" : 0,
+	  "madtulipwanderState.moveToTargetMinX" : 1,
+	  
+	  "Work_Attractor_Search_Radius" : 60,
+	  "Is_At_Work_Radius" : 0,
 	  "deckhand_attractors" : [
 		"madtulip_crew_deckhand_attractor"
 	  ],

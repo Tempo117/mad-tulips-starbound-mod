@@ -47,10 +47,7 @@ function madtulipwanderState.update(dt, stateData)
 	local is_going_to_work = true
 
 	if (is_going_to_work) then
-		-- in this mode we try to go:
-		--- indoor while "indoorTimeOfDayRanges"
-		--- outdoor else
-		-- its the default free wandering.
+		-- in this mode we try to go to work
 		local update_return
 		
 		update_return = madtulipwanderState.head_for_work_targets(stateData)
@@ -70,10 +67,9 @@ function madtulipwanderState.update(dt, stateData)
 				-- Don't open doors to the outside if we're staying inside
 				-- return true -> open doors while moving
 				-- return false -> do not open doors while moving
-				return true
+				return not madtulipwanderState.isDoorToOutside_of_Work(doorId);
 			end}
 			)
-
 		-- react of move results
 		if not moved then
 			if reason == "ledge" then
@@ -149,8 +145,7 @@ function madtulipwanderState.head_for_work_targets (stateData)
 		stateData.targetPosition = madtulipwanderState.find_At_Work_Position(position)
 		if stateData.targetPosition ~= nil then
 			-- stop update function so we can start walking next call
--- TODO: this nerver happens as no close by attractor can be found
-			entity.say (stateData.targetPosition[1] .. "," .. stateData.targetPosition[2])
+			entity.say ("Am at X:" .. position[1] .. "Y:" .. position[2] .. "Going to work at X:" .. stateData.targetPosition[1] .. ",Y:" .. stateData.targetPosition[2])
 			return false
 		else
 			stateData.timer = entity.configParameter("wander.moveToTargetTime", stateData.timer)
@@ -165,23 +160,46 @@ function madtulipwanderState.is_At_Work(position)
 	-- get list of interesting objects for this crew members occupation
 	local attractors = get_Attrators()
 	
--- TODO: check 5x5 or something area around entity.position() for presence of any attractor
--- return true if found, false else
-
-	return true
+	-- find instances of those attractors in the vicinity
+	local Nr_Attractors_found = 0
+	local All_IDs_of_Attractors_found = {}
+	local ObjectIds = {}
+	--world.logInfo("for attractors")
+	for AttractorName_Nr, AttractorName in pairs(attractors) do
+		--world.logInfo("Attractor_Nr: " .. tostring(AttractorName_Nr))
+		--world.logInfo("AttractorName: " .. AttractorName)
+		ObjectIds = world.objectQuery (position, entity.configParameter("wander.Is_At_Work_Radius", nil),{name = AttractorName})
+		for ObjectId_Nr, ObjectId in pairs(ObjectIds) do
+			--world.logInfo("ObjectId_Nr: " .. tostring(ObjectId_Nr))
+			--world.logInfo("ObjectId: " .. tostring(ObjectId))
+			Nr_Attractors_found = Nr_Attractors_found + 1;
+			All_IDs_of_Attractors_found[Nr_Attractors_found] = ObjectId;
+		end
+	end	
+	if (Nr_Attractors_found < 1) then
+		return false
+	else
+		return true
+	end
 end
 
 function madtulipwanderState.find_At_Work_Position(position)
 	-- get list of interesting objects for this crew members occupation
+	--world.logInfo("get_Attrators()")
 	local attractors = get_Attrators()
 	
 	-- find instances of those attractors in the vicinity
 	local Nr_Attractors_found = 0
 	local All_IDs_of_Attractors_found = {}
 	local ObjectIds = {}
-	for _, AttractorName in pairs(attractors) do
-		ObjectIds = world.objectQuery (position, entity.configParameter("wander.attractorSearchRadius", nil),{name = AttractorName})
-		for _, ObjectId in pairs(ObjectIds) do
+	--world.logInfo("for attractors")
+	for AttractorName_Nr, AttractorName in pairs(attractors) do
+		--world.logInfo("Attractor_Nr: " .. tostring(AttractorName_Nr))
+		--world.logInfo("AttractorName: " .. AttractorName)
+		ObjectIds = world.objectQuery (position, entity.configParameter("wander.Work_Attractor_Search_Radius", nil),{name = AttractorName})
+		for ObjectId_Nr, ObjectId in pairs(ObjectIds) do
+			--world.logInfo("ObjectId_Nr: " .. tostring(ObjectId_Nr))
+			--world.logInfo("ObjectId: " .. tostring(ObjectId))
 			Nr_Attractors_found = Nr_Attractors_found + 1;
 			All_IDs_of_Attractors_found[Nr_Attractors_found] = ObjectId;
 		end
@@ -189,11 +207,9 @@ function madtulipwanderState.find_At_Work_Position(position)
 	if (Nr_Attractors_found < 1) then return nil end
 	
 	-- for now just take the first best one.
-	-- TODO: sort or randomize or something
-	return world.entityPosition(All_IDs_of_Attractors_found[1])
-	
-	--local At_Work_Position = {1000,1000}
-	--return At_Work_Position
+	-- TODO: sort or randomize among the available attractors.
+	--return vec2.add({ math.random(5)-3 , 2.5 }, world.entityPosition(All_IDs_of_Attractors_found[1]))
+	return vec2.add({ 0 , 2.5 }, world.entityPosition(All_IDs_of_Attractors_found[1]))
 end
 
 function get_Attrators()
@@ -286,6 +302,13 @@ function madtulipwanderState.findInsidePosition(position)
   end
 
   return nil
+end
+
+function madtulipwanderState.isDoorToOutside_of_Work(doorId)
+  local doorPosition = world.entityPosition(doorId)
+  local rightSide = vec2.add({ 3, 1.5 }, doorPosition)
+  local leftSide = vec2.add({ -3, 1.5 }, doorPosition)
+  return madtulipwanderState.is_At_Work(rightSide) ~= madtulipwanderState.is_At_Work(leftSide)
 end
 
 function madtulipwanderState.isDoorToOutside(doorId)
