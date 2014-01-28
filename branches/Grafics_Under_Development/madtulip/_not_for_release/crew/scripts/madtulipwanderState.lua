@@ -1,209 +1,276 @@
-wanderState = {
+madtulipwanderState = {
   moveToTargetMinDistance = 3,
   moveToTargetMinX = 1
 }
 
-function wanderState.enter()
+function madtulipwanderState.enter()
   return {
     timer = entity.randomizeParameterRange("wander.timeRange"),
     direction = util.toDirection(math.random(100) - 50)
   }
 end
 
-function wanderState.update(dt, stateData)
-  stateData.timer = stateData.timer - dt
-  if stateData.timer < 0 then
-    return true, entity.configParameter("wander.cooldown", nil)
-  end
-
-  if stateData.changeDirectionTimer ~= nil then
-    stateData.changeDirectionTimer = stateData.changeDirectionTimer - dt
-    if stateData.changeDirectionTimer < 0 then
-      stateData.changeDirectionTimer = nil
-    end
-  end
-
-  local position = entity.position()
-  local inside = wanderState.isAtBarracks(position)
-
-  if stateData.targetPosition ~= nil then
-    local toTarget = world.distance(stateData.targetPosition, position)
-    if world.magnitude(toTarget) < wanderState.moveToTargetMinDistance and
-       math.abs(toTarget[1]) < wanderState.moveToTargetMinX then
-      stateData.targetPosition = nil
-    else
-      moveTo(stateData.targetPosition, dt)
-      return false
-    end
-  end
-
-  -- Optionally, try not to get too far from spawn point
-  local maxDistanceFromSpawnPoint = entity.configParameter("wander.maxDistanceFromSpawnPoint", nil)
-  if maxDistanceFromSpawnPoint ~= nil and world.magnitude(position, storage.spawnPosition) > maxDistanceFromSpawnPoint then
-    stateData.targetPosition = storage.spawnPosition
-    return false
-  end
-
-  -- select where to go now
-  local shouldBeAtHome = isTimeFor("wander.indoorTimeOfDayRanges")
-  local shouldBeAtWork = isTimeFor("wander.AtWorkTimeOfDayRanges")
-  
-	if (shouldBeAtWork) then
-		-- if its time to work we go there
-		wanderState.try_to_go_to_work();
-	elseif (shouldBeAtHome) then
-		wanderState.try_to_go_to_barracks();
-	else
-		-- default case - wander around
-		wanderState.try_to_wander_arround();
+function madtulipwanderState.update(dt, stateData)
+	-- return if wander is on cooldown
+	stateData.timer = stateData.timer - dt
+	if stateData.timer < 0 then
+		return true, entity.configParameter("wander.cooldown", nil)
 	end
 
-  -- Chat with other npcs in the way
-  if chatState ~= nil then
-    local chatDistance = entity.configParameter("wander.chatDistance", nil)
-    if chatDistance ~= nil then
-      if chatState.initiateChat(position, vec2.add({ chatDistance * stateData.direction, 0 }, position)) then
-        return true
-      end
-    end
-  end
+	madtulipwanderState.update_timers(stateData,dt)
+	
+	-- if we have a target, set moveTo
+	if stateData.targetPosition ~= nil then
+		local toTarget = world.distance(stateData.targetPosition, entity.position())
+		if world.magnitude(toTarget) < madtulipwanderState.moveToTargetMinDistance and
+			-- target reached
+			math.abs(toTarget[1]) < madtulipwanderState.moveToTargetMinX then
+			stateData.targetPosition = nil
+		else
+			-- still moving
+			moveTo(stateData.targetPosition, dt)
+			return false
+		end
+	end
 
-  -- Turn around if blocked by something over hip height
-  local region = {
-    math.floor(position[1] + 0.5) - 1 + stateData.direction, math.floor(position[2] + 0.5),
-    math.floor(position[1] + 0.5) + 1 + stateData.direction, math.floor(position[2] + 0.5) + 1,
-  }
-  if world.rectCollision(region, true) then
-    wanderState.changeDirection(stateData)
-  end
+	-- Try not to get too far from spawn point
+	-- Disabled if maxDistanceFromSpawnPoint is not defined
+	local maxDistanceFromSpawnPoint = entity.configParameter("wander.maxDistanceFromSpawnPoint", nil)
+	if maxDistanceFromSpawnPoint ~= nil and world.magnitude(entity.position(), storage.spawnPosition) > maxDistanceFromSpawnPoint then
+		stateData.targetPosition = storage.spawnPosition
+		return false
+	end
 
-  -- Generally we don't want to spend a lot of time wandering up stairs, getting
-  -- higher and higher in a building, so let's fall through platforms once in
-  -- a while
-  if math.random(100) < entity.configParameter("wander.dropDownChance", 100) then
-    local groundSupportRegion = {
-      region[1], region[2] - 4,
-      region[3], region[2] - 3
-    }
-    if entity.onGround() and not world.rectCollision(groundSupportRegion, true) then
-      entity.moveDown()
-    end
-  end
+	-- find a new stateData.targetPosition to walk to
+	local is_wandering_around = false
+	local is_going_to_barracks = false
+	local is_going_to_work = true
 
-  local moved, reason = move({ stateData.direction, 0 }, dt, {
-    openDoorCallback = function(doorId)
-      -- Don't open doors to the outside if we're staying inside
-      return not inside or not shouldBeInside or not wanderState.isDoorToOutside(doorId)
-    end
-  })
-  if not moved then
-    if reason == "ledge" then
-      -- Stop and admire the view for a bit
-      return true
-    else
-      wanderState.changeDirection(stateData)
-    end
-  end
+	if (is_going_to_work) then
+		-- in this mode we try to go:
+		--- indoor while "indoorTimeOfDayRanges"
+		--- outdoor else
+		-- its the default free wandering.
+		local update_return
+		
+		update_return = madtulipwanderState.head_for_work_targets(stateData)
+		if (update_return ~= nil) then return update_return end
+		
+		update_return = madtulipwanderState.start_chats_on_the_way()
+		if (update_return ~= nil) then return update_return end
+		
+		madtulipwanderState.turn_if_blocks_over_hip_hight_on_the_way (stateData)
+		
+		madtulipwanderState.occasionaly_moveDown(stateData)
 
-  return false
+		-- execute movement		
+		local moved, reason = move(
+			{ stateData.direction, 0 }, dt,
+			{openDoorCallback = function(doorId)
+				-- Don't open doors to the outside if we're staying inside
+				-- return true -> open doors while moving
+				-- return false -> do not open doors while moving
+				return true
+			end}
+			)
+
+		-- react of move results
+		if not moved then
+			if reason == "ledge" then
+				-- Stop and admire the view for a bit
+				return true
+			else
+				madtulipwanderState.changeDirection(stateData)
+			end
+		end
+	end
+	
+	if (is_wandering_around) then
+		-- in this mode we try to go:
+		--- indoor while "indoorTimeOfDayRanges"
+		--- outdoor else
+		-- its the default free wandering.
+		local update_return
+
+		update_return = madtulipwanderState.head_for_wandering_targets(stateData)
+		if (update_return ~= nil) then return update_return end
+
+		update_return = madtulipwanderState.start_chats_on_the_way()
+		if (update_return ~= nil) then return update_return end
+
+		madtulipwanderState.turn_if_blocks_over_hip_hight_on_the_way (stateData)
+
+		madtulipwanderState.occasionaly_moveDown(stateData)
+
+		-- execute movement		
+		local moved, reason = move(
+			{ stateData.direction, 0 }, dt,
+			{openDoorCallback = function(doorId)
+				-- Don't open doors to the outside if we're staying inside
+				-- return true -> open doors while moving
+				-- return false -> do not open doors while moving
+				return not isInside(entity.position())
+		            or not isTimeFor("wander.indoorTimeOfDayRanges")
+					or not madtulipwanderState.isDoorToOutside(doorId);
+			end}
+			)
+			
+		-- react on move results
+		if not moved then
+			if reason == "ledge" then
+				-- Stop and admire the view for a bit
+				return true
+			else
+				madtulipwanderState.changeDirection(stateData)
+			end
+		end
+	end
+	-- default return : we are not done
+	return false
 end
 
-function wanderState.try_to_go_to_barracks()
+function madtulipwanderState.head_for_work_targets (stateData)	
 	local position = entity.position()
-  
-	if wanderState.isAtBarracks(position) then
-		-- Stay at barracks
+	local At_Work = madtulipwanderState.is_At_Work(position)
+	if At_Work then
+		-- Stay At_Work
 		local lookaheadPosition = vec2.add({ stateData.direction * entity.configParameter("wander.indoorLookaheadDistance"), 0 }, position)
-		if not wanderState.isAtBarracks(lookaheadPosition) then
-			-- no barracks ahead of me
-			wanderState.changeDirection(stateData)
+		if not madtulipwanderState.is_At_Work(lookaheadPosition) then
+			madtulipwanderState.changeDirection(stateData)
 
-			-- get doors infront of me
+			-- Close any doors to out of work areas
 			local doorIds = world.objectLineQuery(position, lookaheadPosition, { callScript = "hasCapability", callScriptArgs = { "door" } })
-			-- close them all
 			for _, doorId in pairs(doorIds) do
 				world.callScriptedEntity(doorId, "closeDoor")
 			end
 		end
 	else
-		  -- Go to barracks
-		stateData.targetPosition = wanderState.findBarracksPosition(position)
+		-- Go to At_Work
+		stateData.targetPosition = madtulipwanderState.find_At_Work_Position(position)
 		if stateData.targetPosition ~= nil then
+			-- stop update function so we can start walking next call
+-- TODO: this nerver happens as no close by attractor can be found
+			entity.say (stateData.targetPosition[1] .. "," .. stateData.targetPosition[2])
 			return false
 		else
 			stateData.timer = entity.configParameter("wander.moveToTargetTime", stateData.timer)
 		end
 	end
+
+	-- continue update function
+	return nil
 end
 
-function wanderState.try_to_go_to_work(shouldBeAtWork)
-	local position = entity.position()
+function madtulipwanderState.is_At_Work(position)
+	-- get list of interesting objects for this crew members occupation
+	local attractors = get_Attrators()
+	
+-- TODO: check 5x5 or something area around entity.position() for presence of any attractor
+-- return true if found, false else
 
-	if wanderState.isAtWork(position) then
-		-- Stay at Work
-		-- look ahead if thats also at work
-		local lookaheadPosition = vec2.add({ stateData.direction * entity.configParameter("wander.indoorLookaheadDistance"), 0 }, position)
-		if not wanderState.isAtWork(lookaheadPosition) then
-			-- look ahead is not at work
-			wanderState.changeDirection(stateData)
+	return true
+end
 
-			-- close any doors in that direction
-			local doorIds = world.objectLineQuery(position, lookaheadPosition, { callScript = "hasCapability", callScriptArgs = { "door" } })
-			for _, doorId in pairs(doorIds) do
-				world.callScriptedEntity(doorId, "closeDoor")
-			end
+function madtulipwanderState.find_At_Work_Position(position)
+	-- get list of interesting objects for this crew members occupation
+	local attractors = get_Attrators()
+	
+	-- find instances of those attractors in the vicinity
+	local Nr_Attractors_found = 0
+	local All_IDs_of_Attractors_found = {}
+	local ObjectIds = {}
+	for _, AttractorName in pairs(attractors) do
+		ObjectIds = world.objectQuery (position, entity.configParameter("wander.attractorSearchRadius", nil),{name = AttractorName})
+		for _, ObjectId in pairs(ObjectIds) do
+			Nr_Attractors_found = Nr_Attractors_found + 1;
+			All_IDs_of_Attractors_found[Nr_Attractors_found] = ObjectId;
 		end
+	end	
+	if (Nr_Attractors_found < 1) then return nil end
+	
+	-- for now just take the first best one.
+	-- TODO: sort or randomize or something
+	return world.entityPosition(All_IDs_of_Attractors_found[1])
+	
+	--local At_Work_Position = {1000,1000}
+	--return At_Work_Position
+end
+
+function get_Attrators()
+	-- get list of interesting objects for this occupation
+	local attractors = {}
+	if Data.Occupation == "Deckhand" then
+		attractors =  entity.configParameter("wander.deckhand_attractors", nil)
+	elseif Data.Occupation == "Engineer" then
+		attractors =  entity.configParameter("wander.engineer_attractors", nil)
+	elseif Data.Occupation == "Marine" then
+		attractors =  entity.configParameter("wander.marine_attractors", nil)
+	elseif Data.Occupation == "Medic" then
+		attractors =  entity.configParameter("wander.medic_attractors", nil)
+	elseif Data.Occupation == "Scientist" then
+		attractors =  entity.configParameter("wander.scientist_attractors", nil)
 	else
-		  -- Go to Work
-		  stateData.targetPosition = wanderState.findAtWorkPosition(position)
-		  if stateData.targetPosition ~= nil then
+		-- coundt find
+		return nil
+	end
+
+	return attractors
+end
+
+function madtulipwanderState.head_for_wandering_targets (stateData)	
+	local position = entity.position()
+	local inside = isInside(position)
+	local shouldStayInsideAnyRoom = isTimeFor("wander.indoorTimeOfDayRanges")
+	if shouldStayInsideAnyRoom then
+		if inside then
+			-- Stay inside
+			local lookaheadPosition = vec2.add({ stateData.direction * entity.configParameter("wander.indoorLookaheadDistance"), 0 }, position)
+			if not isInside(lookaheadPosition) then
+				madtulipwanderState.changeDirection(stateData)
+
+				-- Close any doors to the outside
+				local doorIds = world.objectLineQuery(position, lookaheadPosition, { callScript = "hasCapability", callScriptArgs = { "door" } })
+				for _, doorId in pairs(doorIds) do
+					world.callScriptedEntity(doorId, "closeDoor")
+				end
+			end
+		else
+			-- Go inside
+			stateData.targetPosition = madtulipwanderState.findInsidePosition(position)
+			if stateData.targetPosition ~= nil then
+				-- stop update function
 				return false
-		  else
+			else
 				stateData.timer = entity.configParameter("wander.moveToTargetTime", stateData.timer)
-		  end
-	end
-end
-
-function wanderState.try_to_wander_arround()
-	local position = entity.position()
-  
-	if wanderState.isAtBarracks(position) then
-		-- Leave Barracks
-		stateData.targetPosition = wanderState.findChilledPosition(position, maxDistanceFromSpawnPoint)
-		if stateData.targetPosition ~= nil then
-			return false
-		else
-			stateData.timer = entity.configParameter("wander.moveToTargetTime", stateData.timer)
-		end
-	elseif wanderState.isAtWork(position) then
-		-- Leave Work
-		stateData.targetPosition = wanderState.findChilledPosition(position, maxDistanceFromSpawnPoint)
-		if stateData.targetPosition ~= nil then
-			return false
-		else
-			stateData.timer = entity.configParameter("wander.moveToTargetTime", stateData.timer)
+			end
 		end
 	else
-		-- Stay outside
-		local lookaheadPosition = vec2.add({ stateData.direction * entity.configParameter("wander.indoorLookaheadDistance"), 0 }, position)
-		-- don`t go to work
-		if wanderState.isAtBarracks(lookaheadPosition) then
-			wanderState.changeDirection(stateData)
+		if inside then
+			-- Go outside
+			stateData.targetPosition = madtulipwanderState.findOutsidePosition(position, maxDistanceFromSpawnPoint)
+			if stateData.targetPosition ~= nil then
+				-- stop update function
+				return false
+			else
+				stateData.timer = entity.configParameter("wander.moveToTargetTime", stateData.timer)
+			end
+		else
+			-- Stay outside
+			local lookaheadPosition = vec2.add({ stateData.direction * entity.configParameter("wander.indoorLookaheadDistance"), 0 }, position)
+			if isInside(lookaheadPosition) then
+				madtulipwanderState.changeDirection(stateData)
+			end
 		end
 	end
+	-- continue update function
+	return nil
 end
 
-function wanderState.isAtBarracks()
-end
-
-function wanderState.isAtWork()
-end
-
-function wanderState.findBarracksPosition(position)
+function madtulipwanderState.findInsidePosition(position)
   local basePosition = position
 
   -- Prefer the original spawn position (i.e. the npc's home)
-  if wanderState.isAtBarracks(storage.spawnPosition) then
+  if isInside(storage.spawnPosition) then
     basePosition = storage.spawnPosition
   end
 
@@ -212,30 +279,34 @@ function wanderState.findBarracksPosition(position)
     local doorPosition = world.entityPosition(doorId)
 
     local rightSide = vec2.add({ 3, 1.5 }, doorPosition)
-    if wanderState.isAtBarracks(rightSide) then return rightSide end
+    if isInside(rightSide) then return rightSide end
 
     local leftSide = vec2.add({ -3, 1.5 }, doorPosition)
-    if wanderState.isAtBarracks(leftSide) then return leftSide end
+    if isInside(leftSide) then return leftSide end
   end
 
   return nil
 end
 
-function wanderState.findAtWorkPosition()
+function madtulipwanderState.isDoorToOutside(doorId)
+  local doorPosition = world.entityPosition(doorId)
+  local rightSide = vec2.add({ 3, 1.5 }, doorPosition)
+  local leftSide = vec2.add({ -3, 1.5 }, doorPosition)
+  return isInside(rightSide) ~= isInside(leftSide)
 end
 
-function wanderState.findChilledPosition(position, maxDistanceFromSpawnPoint)
+function madtulipwanderState.findOutsidePosition(position, maxDistanceFromSpawnPoint)
   local entityIds = world.objectQuery(position, entity.configParameter("wander.indoorSearchRadius"), { callScript = "hasCapability", callScriptArgs = { "door" }, order = "nearest" })
   for _, entityId in pairs(entityIds) do
     local doorPosition = world.entityPosition(entityId)
 
     local rightSide = vec2.add({ 3, 1.5 }, doorPosition)
-    if not wanderState.isAtBarracks(rightSide) and (maxDistanceFromSpawnPoint == nil or world.magnitude(position, rightSide) < maxDistanceFromSpawnPoint) then
+    if not isInside(rightSide) and (maxDistanceFromSpawnPoint == nil or world.magnitude(position, rightSide) < maxDistanceFromSpawnPoint) then
       return rightSide
     end
 
     local leftSide = vec2.add({ -3, 1.5 }, doorPosition)
-    if not wanderState.isAtBarracks(leftSide) and (maxDistanceFromSpawnPoint == nil or world.magnitude(position, leftSide) < maxDistanceFromSpawnPoint) then
+    if not isInside(leftSide) and (maxDistanceFromSpawnPoint == nil or world.magnitude(position, leftSide) < maxDistanceFromSpawnPoint) then
       return leftSide
     end
   end
@@ -243,14 +314,8 @@ function wanderState.findChilledPosition(position, maxDistanceFromSpawnPoint)
   return nil
 end
 
-function wanderState.isDoorToOutside(doorId)
-  local doorPosition = world.entityPosition(doorId)
-  local rightSide = vec2.add({ 3, 1.5 }, doorPosition)
-  local leftSide = vec2.add({ -3, 1.5 }, doorPosition)
-  return wanderState.isAtBarracks(rightSide) ~= wanderState.isAtBarracks(leftSide)
-end
+function madtulipwanderState.changeDirection(stateData)
 
-function wanderState.changeDirection(stateData)
   if stateData.changeDirectionTimer == nil then
     stateData.direction = -stateData.direction
     stateData.changeDirectionTimer = entity.configParameter("wander.changeDirectionCooldown", nil)
@@ -258,4 +323,53 @@ function wanderState.changeDirection(stateData)
   else
     return false
   end
+end
+
+function madtulipwanderState.start_chats_on_the_way ()
+	-- Chat with other NPCs in the way
+	if chatState ~= nil then
+		local chatDistance = entity.configParameter("wander.chatDistance", nil)
+		if chatDistance ~= nil then
+			if chatState.initiateChat(position, vec2.add({ chatDistance * stateData.direction, 0 }, position)) then
+				return true
+			end
+		end
+	end
+end
+
+function madtulipwanderState.occasionaly_moveDown(stateData)
+	-- Generally we don't want to spend a lot of time wandering up stairs, getting
+	-- higher and higher in a building, so let's fall through platforms once in
+	-- a while
+	local position = entity.position()
+	local region = {math.floor(position[1] + 0.5) - 1 + stateData.direction, math.floor(position[2] + 0.5),
+					math.floor(position[1] + 0.5) + 1 + stateData.direction, math.floor(position[2] + 0.5) + 1,} -- <- BUG ? comma	
+	
+	if math.random(100) < entity.configParameter("wander.dropDownChance", 100) then
+		local groundSupportRegion = {region[1], region[2] - 4,
+									 region[3], region[2] - 3}
+		if entity.onGround() and not world.rectCollision(groundSupportRegion, true) then
+			entity.moveDown()
+		end
+	end
+end
+
+function madtulipwanderState.turn_if_blocks_over_hip_hight_on_the_way (stateData)
+	local position = entity.position()
+	-- Turn around if blocked by something over hip height
+	local region = {math.floor(position[1] + 0.5) - 1 + stateData.direction, math.floor(position[2] + 0.5),
+					math.floor(position[1] + 0.5) + 1 + stateData.direction, math.floor(position[2] + 0.5) + 1,} -- <- BUG ? comma
+	if world.rectCollision(region, true) then
+		madtulipwanderState.changeDirection(stateData)
+	end
+end
+
+function madtulipwanderState.update_timers(stateData,dt)
+	-- update change direction timer
+	if stateData.changeDirectionTimer ~= nil then
+		stateData.changeDirectionTimer = stateData.changeDirectionTimer - dt
+		if stateData.changeDirectionTimer < 0 then
+			stateData.changeDirectionTimer = nil
+		end
+	end
 end

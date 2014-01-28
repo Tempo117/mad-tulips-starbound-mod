@@ -16,9 +16,9 @@
 	"/_not_for_release/crew/scripts/madtulip_crew_occupation.lua",
 	
 	"/_not_for_release/crew/scripts/madtulipcommandState.lua",
-//"/_not_for_release/crew/scripts/madtulipwanderState.lua",
+	"/_not_for_release/crew/scripts/madtulipwanderState.lua",
 	
-	"/npcs/wanderState.lua",
+//"/npcs/wanderState.lua",
     "/npcs/sitState.lua",
     "/npcs/sleepState.lua",
 	
@@ -46,7 +46,24 @@
       "moveToTargetTime" : 10.0,
       "changeDirectionCooldown" : 2,
       "dropDownChance" : 5,
-      "cooldown" : 10
+      "cooldown" : 10,
+	  
+	  "attractorSearchRadius" : 60,
+	  "deckhand_attractors" : [
+		"madtulip_crew_deckhand_attractor"
+	  ],
+	  "engineer_attractors" : [
+		"madtulip_crew_engineer_attractor"
+	  ],
+	  "marine_attractors" : [
+		"madtulip_crew_marine_attractor"
+	  ],
+	  "medic_attractors" : [
+		"madtulip_crew_medic_attractor"
+	  ],
+	  "scientist_attractors" : [
+		"madtulip_crew_scientist_attractor"
+	  ]
     },
     "sit" : {
       "moveTimeLimit" : 10,

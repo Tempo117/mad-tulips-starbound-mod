@@ -24,12 +24,12 @@
 
 	"animation" : "madtulip_crew_engineer_attractor.animation",
 	"animationParts" : {
-		"normal_operation_image" : "/_not_for_release/crew/objects/crew_spawner/madtulip_crew_engineer_attractor.png"
+		"normal_operation_image" : "/_not_for_release/crew/objects/attractors/engineer/madtulip_crew_engineer_attractor.png"
 	},
 	"animationPosition" : [1, 0],
 
 	"scripts" : [
-		"/_not_for_release/crew/objects/crew_spawner/madtulip_crew_engineer_attractor.lua"
+		"/_not_for_release/crew/objects/attractors/engineer/madtulip_crew_engineer_attractor.lua"
 	],
 	"scriptDelta" : 5,
 

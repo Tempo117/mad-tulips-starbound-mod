@@ -23,6 +23,14 @@ function onInteraction(args)
 	entity.smash()
 end
 
+function hasCapability(capability)
+  if capability == 'barracks_atractor' then
+    return true
+  else
+    return false
+  end
+end
+
 function onNodeConnectionChange(args)
 
 end
