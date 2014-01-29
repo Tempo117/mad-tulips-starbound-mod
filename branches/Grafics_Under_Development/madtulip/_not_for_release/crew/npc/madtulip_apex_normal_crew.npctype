@@ -16,7 +16,7 @@
 	"/_not_for_release/crew/scripts/madtulip_crew_occupation.lua",
 	
 	"/_not_for_release/crew/scripts/madtulipcommandState.lua",
-	"/_not_for_release/crew/scripts/madtulipwanderState.lua",
+	"/_not_for_release/crew/scripts/madtulipWorkState.lua",
 	
 //"/npcs/wanderState.lua",
     "/npcs/sitState.lua",
