@@ -48,11 +48,10 @@
       "dropDownChance" : 5,
       "cooldown" : 10,
 	  
-	  "madtulipwanderState.moveToTargetMinDistance" : 0,
-	  "madtulipwanderState.moveToTargetMinX" : 1,
+	  "Work_Attractor_Search_Radius" : 60,  // Radius around NPC to search for new ROI anchor
+	  "Work_ROI_BB_X_size" : [-3,3],        // X Interval which defines ROI around Anchor Object
+	  "Move_Inside_ROI_Time" : [ 1.0, 3.0], // how long to pause after each target in ROI
 	  
-	  "Work_Attractor_Search_Radius" : 60,
-	  "Is_At_Work_Radius" : 0,
 	  "deckhand_attractors" : [
 		"madtulip_crew_deckhand_attractor"
 	  ],
