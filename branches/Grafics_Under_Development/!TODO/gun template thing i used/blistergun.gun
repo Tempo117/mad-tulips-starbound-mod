@@ -1,0 +1,27 @@
+{
+  "itemName" : "blistergun",
+  "inventoryIcon" : "blistergun.png",
+  "dropCollision" : [-8.0, -3.0, 8.0, 3.0],
+  "maxStack" : 1,
+  "level" : 7,
+  "rarity" : "Common",
+  "description" : "A gene-spliced living weapon.",
+  "shortdescription" : "Blister Gun",
+  "image" : "blistergun.png",
+  "handPosition" : [-7, -1],
+  "firePosition" : [20, 1.5],
+  "inspectionKind" : "gun",
+  "weaponType" : "Bio-Agent",
+  "recoilTime" : 0.1,
+  "classMultiplier" : 0.1,
+  "spread" : 1,
+  "fireTime" : 1.30,
+  "twoHanded" : true,
+
+  "projectileType" : "blistergunshot",
+  "projectile" : { "speed" : 50, "power" : 1000 , "color" : [150, 90, 150] },
+  "muzzleEffect" : {
+       "animation" :  "/animations/coldbreath/coldbreath.animation" ,
+       "fireSound" : [ { "file" : "/sfx/gun/grenadeblast2.wav" } ]
+	   }
+}

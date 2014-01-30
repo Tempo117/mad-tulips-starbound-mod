@@ -1,0 +1,42 @@
+{
+  "projectileName" : "blistergunshot",
+  "frames" : "blistergunshot.png",
+  "animationCycle" : 0.5,
+  "level" : 3,
+  "frameNumber" : 2,
+  "damageKindImage" : "icon.png",
+  "physics" : "floatystickybomb",
+  "pointLight" : false,
+  "timeToLive" : 5,
+  "bounces" : 1,
+  "lightColor" : [255, 80, 255],
+  
+  "actionOnReap" : [
+    {
+      "action" : "projectile",
+      "type" : "glowgas",
+      "inheritDamageFactor" : 1,
+      "angle" : 5
+    },
+    {
+      "action" : "sound",
+      "options" : [ "/sfx/projectiles/goocluster_pop.wav" ]
+    }
+  ],
+  
+  "statusEffects" : [
+    {
+      "kind" : "glowinitiator",
+      "amount" : 0.6,
+      "duration" : 5
+    }
+   ],
+    
+  "power" : 300,
+  "damageType" : "ignoresdef",
+  "damageKind" : "acid"
+}
+
+
+
+
