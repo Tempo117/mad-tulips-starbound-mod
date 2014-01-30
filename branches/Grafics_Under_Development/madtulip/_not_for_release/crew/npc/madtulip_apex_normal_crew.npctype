@@ -14,6 +14,7 @@
 	"/_not_for_release/crew/scripts/madtulip_npc_Data.lua",
 	"/_not_for_release/crew/scripts/madtulip_crew_interact.lua",
 	"/_not_for_release/crew/scripts/madtulip_crew_occupation.lua",
+	"/_not_for_release/crew/scripts/madtulipLocation.lua",
 	
 	"/_not_for_release/crew/scripts/madtulipcommandState.lua",
 	"/_not_for_release/crew/scripts/madtulipWorkState.lua",
@@ -49,7 +50,7 @@
       "cooldown" : 10,
 	  
 	  "Work_Attractor_Search_Radius" : 60,  // Radius around NPC to search for new ROI anchor
-	  "Work_ROI_BB_X_size" : [-3,3],        // X Interval which defines ROI around Anchor Object
+	  "Work_ROI_BB" : [-3,0,3,3],           // X1,Y1,X2,Y2 Interval which defines ROI around Work Anchor Position
 	  "Move_Inside_ROI_Time" : [ 1.0, 3.0], // how long to pause after each target in ROI
 	  
 	  "deckhand_attractors" : [
