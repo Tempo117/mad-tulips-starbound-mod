@@ -10,13 +10,13 @@
 	"price" : 1,
 	"printable" : false,
 	
-	"inventoryIcon" : "madtulip_crew_scientist_attractor.png",
+	"inventoryIcon" : "madtulip_crew_scientist_attractor_icon.png",
 	"orientations" : [
 		{
 			"dualImage" : "madtulip_crew_scientist_attractor.png:<color>.<frame>",
 			"imagePosition" : [1,0],
 			"frames" : 6,
-			"animationCycle" : 1.0,
+			"animationCycle" : 0.5,
 			"spaceScan" : 0.1,
 			"anchors" : [ "bottom" ]
 		}

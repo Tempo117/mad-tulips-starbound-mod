@@ -48,7 +48,7 @@ interact = function(args)
 		return {"ShowPopup",{message =
 				"^green;Name: ^white;" .. world.entityName(entity.id()) .. "\n" ..
 				"^green;Species : ^white;" .. entity.species() .. "\n" ..
-				"^green;Occupation: ^white;" .. Data.Occupation
+				"^green;Occupation: ^white;" .. storage.Occupation
 				}}
 	else
 		-- no known item

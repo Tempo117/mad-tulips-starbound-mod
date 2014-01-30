@@ -12,9 +12,11 @@ function madtulipWorkState.enter()
 	madtulipWorkState.Movement.Min_XY_Dist_required_to_reach_target = 3 -- radius
 	madtulipWorkState.Movement.Min_X_Dist_required_to_reach_target  = 1 -- X Axis only
 	
+	-- equip work clothing
+	Set_Occupation_Cloth()
+	
   return {
-    timer = entity.randomizeParameterRange("wander.timeRange"),
-    direction = util.toDirection(math.random(100) - 50)
+    timer = entity.randomizeParameterRange("madtulipWork.timeRange")
   }
 end
 
@@ -22,7 +24,7 @@ function madtulipWorkState.update(dt, stateData)
 	-- return if wander is on cooldown
 	stateData.timer = stateData.timer - dt
 	if stateData.timer < 0 then
-		return true, entity.configParameter("wander.cooldown", nil)
+		return true, entity.configParameter("madtulipWork.cooldown", nil)
 	end
 
 	madtulipWorkState.update_timers(stateData,dt)
@@ -33,14 +35,14 @@ function madtulipWorkState.update(dt, stateData)
 		local Work_ROI_Anchor_Position = madtulipWorkState.set_Work_Anchor_around(entity.position())
 		if (Work_ROI_Anchor_Position == nil) then return nil end
 		
-		world.logInfo("get_ROI")
+		--world.logInfo("get_ROI")
 		-- create a ROI around the anchor
 		-- Boundary Box defining the ROI around the anchor
-		local BB = entity.configParameter("wander.Work_ROI_BB",nil)
+		local BB = entity.configParameter("madtulipWork.Work_ROI_BB",nil)
 		local ROI = madtulipLocation.create_ROI_from_anchor(Work_ROI_Anchor_Position,BB)
 		if (ROI ~= nil) then madtulipWorkState.ROI = ROI end
 		
-		world.logInfo("get_Target")
+		--world.logInfo("get_Target")
 		-- pick one target inside the ROI (all are passable) as next target to move towards
 		local Target = madtulipLocation.get_next_target_inside_ROI(madtulipWorkState.ROI)
 		if (Target ~= nil) then madtulipWorkState.Movement.Target = Target end
@@ -53,7 +55,7 @@ function madtulipWorkState.update(dt, stateData)
 				-- pick one target inside the ROI (all are passable) as next target to move towards
 				local Target = madtulipLocation.get_next_target_inside_ROI(madtulipWorkState.ROI)
 				if (Target ~= nil) then madtulipWorkState.Movement.Target = Target end
-				madtulipWorkState.Movement.Switch_Target_Inside_ROI_Timer = entity.randomizeParameterRange("wander.Move_Inside_ROI_Time")
+				madtulipWorkState.Movement.Switch_Target_Inside_ROI_Timer = entity.randomizeParameterRange("madtulipWork.Move_Inside_ROI_Time")
 			end
 		else
 			-- move
@@ -76,7 +78,7 @@ end
 
 function madtulipWorkState.set_Work_Anchor_around(position)
 	-- find all close by job attractors
-	local AttractorID_Data = madtulipLocation.Work_AttratorQuerry(position,entity.configParameter("wander.Work_Attractor_Search_Radius", nil),Data.Occupation)
+	local AttractorID_Data = madtulipLocation.Work_AttratorQuerry(position,entity.configParameter("madtulipWork.Work_Attractor_Search_Radius", nil),storage.Occupation)
 	--world.logInfo("AttractorID_Data.size=" .. tostring(AttractorID_Data.size))
 	if (AttractorID_Data.size == 0) then return nil end
 	local target_nr = math.random (AttractorID_Data.size)
@@ -89,7 +91,7 @@ end
 function madtulipWorkState.start_chats_on_the_way ()
 	-- Chat with other NPCs in the way
 	if chatState ~= nil then
-		local chatDistance = entity.configParameter("wander.chatDistance", nil)
+		local chatDistance = entity.configParameter("madtulipWork.chatDistance", nil)
 		if chatDistance ~= nil then
 			if chatState.initiateChat(position, vec2.add({ chatDistance * stateData.direction, 0 }, position)) then
 				return true

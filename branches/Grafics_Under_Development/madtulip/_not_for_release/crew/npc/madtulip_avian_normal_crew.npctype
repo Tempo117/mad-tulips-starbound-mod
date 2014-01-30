@@ -11,9 +11,10 @@
 
   "scripts" : [
 	"/npcs/main.lua",
-	"/_not_for_release/crew/scripts/madtulip_npc_Data.lua",
+	"/_not_for_release/crew/scripts/madtulip_npc_Main.lua",
 	"/_not_for_release/crew/scripts/madtulip_crew_interact.lua",
 	"/_not_for_release/crew/scripts/madtulip_crew_occupation.lua",
+	"/_not_for_release/crew/scripts/madtulipLocation.lua",
 	
 	"/_not_for_release/crew/scripts/madtulipcommandState.lua",
 	"/_not_for_release/crew/scripts/madtulipWorkState.lua",
@@ -37,19 +38,13 @@
     "gapFarSideSensors" : [ [3.0, -4.5], [4.0, -4.5], [5.0, -4.5], [6.0, -4.5], [7.0, -4.5], [8.0, -4.5] ],
     "gapJumpHoldTime" : 0.4,
 
-    "wander" : {
-      "timeRange" : [2.0, 10.0],
-      "chatDistance" : 4,
-      "indoorTimeOfDayRanges" : [ [0.0, 0.2], [0.5, 1.0] ],
-      "indoorSearchRadius" : 60,
-      "indoorLookaheadDistance" : 4,
-      "moveToTargetTime" : 10.0,
-      "changeDirectionCooldown" : 2,
-      "dropDownChance" : 5,
-      "cooldown" : 10,
-	  
+    "madtulipWork" : {
+      "cooldown" : 10,						// cooldown of this state
+	  "timeRange" : [2.0, 10.0],			// time range for which to perform this state
+	  "chatDistance" : 4,					// currently not implemented
+
 	  "Work_Attractor_Search_Radius" : 60,  // Radius around NPC to search for new ROI anchor
-	  "Work_ROI_BB_X_size" : [-3,3],        // X Interval which defines ROI around Anchor Object
+	  "Work_ROI_BB" : [-3,0,3,3],           // X1,Y1,X2,Y2 Interval which defines ROI around Work Anchor Position
 	  "Move_Inside_ROI_Time" : [ 1.0, 3.0], // how long to pause after each target in ROI
 	  
 	  "deckhand_attractors" : [
@@ -84,10 +79,7 @@
 
   "items" : {
 	"default" : [
-      [0, [{
-            "chest" : [{"name" : "madtulip_avian_deckhand_chest", "data" : { "colorIndex" : 1 }}],
-            "legs" : [{"name" : "madtulip_avian_deckhand_pants", "data" : { "colorIndex" : 1 }}]
-          }]
+      [0, [{}]
 	  ]
     ]
   },

@@ -5,8 +5,8 @@
         "default" : "normal_operation",
         "states" : {
           "normal_operation" : {
-            "frames" : 1,
-            "cycle" : 1,
+            "frames" : 6,
+            "cycle" : 0.5,
 			"mode" : "loop",
 			"direction" : "left"
           }

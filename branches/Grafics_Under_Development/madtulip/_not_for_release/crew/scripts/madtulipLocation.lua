@@ -50,7 +50,7 @@ function madtulipLocation.create_ROI_from_anchor(ROI_anchor_position,BB)
 	-- they also need to have a floor directly under them
 	local Pathable_Above_Floor_Positions_Data = madtulipLocation.Find_Pathable_Above_Floor_Positions_in_BB(tmp_BB)
 	if (Pathable_Above_Floor_Positions_Data.size < 1) then return nil end
-	world.logInfo("Find_Pathable_Above_Floor_Positions_in_BB(tmp_BB) successful")
+	--world.logInfo("Find_Pathable_Above_Floor_Positions_in_BB(tmp_BB) successful")
 	-- now the player doesnt want to target the floor where he can stand, but an offset in hip hight instead,
 	-- so we shift them all up a bit to make them "moveable"
 	local Pathable_Moveable_Standable_Positions = {}
@@ -260,15 +260,15 @@ function madtulipLocation.Work_AttratorQuerry(Position,Radius,Occupation)
 	
 	-- get list of interesting object names for this occupation
 	if Occupation == "Deckhand" then
-		AttractorNames =  entity.configParameter("wander.deckhand_attractors", nil)
+		AttractorNames =  entity.configParameter("madtulipWork.deckhand_attractors", nil)
 	elseif Occupation == "Engineer" then
-		AttractorNames =  entity.configParameter("wander.engineer_attractors", nil)
+		AttractorNames =  entity.configParameter("madtulipWork.engineer_attractors", nil)
 	elseif Occupation == "Marine" then
-		AttractorNames =  entity.configParameter("wander.marine_attractors", nil)
+		AttractorNames =  entity.configParameter("madtulipWork.marine_attractors", nil)
 	elseif Occupation == "Medic" then
-		AttractorNames =  entity.configParameter("wander.medic_attractors", nil)
+		AttractorNames =  entity.configParameter("madtulipWork.medic_attractors", nil)
 	elseif Occupation == "Scientist" then
-		AttractorNames =  entity.configParameter("wander.scientist_attractors", nil)
+		AttractorNames =  entity.configParameter("madtulipWork.scientist_attractors", nil)
 	end
 	
 	-- find instances of those attractors in the vicinity
