@@ -50,7 +50,7 @@ function madtulipLocation.create_ROI_from_anchor(ROI_anchor_position,BB)
 	-- they also need to have a floor directly under them
 	local Pathable_Above_Floor_Positions_Data = madtulipLocation.Find_Pathable_Above_Floor_Positions_in_BB(tmp_BB)
 	if (Pathable_Above_Floor_Positions_Data.size < 1) then return nil end
-	--world.logInfo("Find_Pathable_Above_Floor_Positions_in_BB(tmp_BB) successful")
+	world.logInfo("Find_Pathable_Above_Floor_Positions_in_BB(tmp_BB) successful")
 	-- now the player doesnt want to target the floor where he can stand, but an offset in hip hight instead,
 	-- so we shift them all up a bit to make them "moveable"
 	local Pathable_Moveable_Standable_Positions = {}
@@ -77,7 +77,7 @@ function madtulipLocation.create_ROI_from_anchor(ROI_anchor_position,BB)
 	ROI.Pathable_Moveable_Standable_Positions      = Pathable_Moveable_Standable_Positions
 	ROI.Pathable_Moveable_Standable_Positions_size = Pathable_Moveable_Standable_Positions_size
 	
-	world.logInfo("ROI.Anchor X: " .. ROI.anchor_pos[1] .. " Y: " .. ROI.anchor_pos[2])
+	--world.logInfo("ROI.Anchor X: " .. ROI.anchor_pos[1] .. " Y: " .. ROI.anchor_pos[2])
 	
 	return ROI
 end
@@ -176,8 +176,8 @@ function madtulipLocation.Find_Pathable_Above_Floor_Positions_in_BB(BB)
 	local Pathable_Above_Floor_Positions = {}
 	local Pathable_Above_Floor_Positions_size = 0
 	local cur_position = {};
-	local cur_mat = nil
 	local cur_pos = {}
+	local cur_mat = nil
 	for idx_cur_pos = 1, size, 1 do
 	--world.logInfo("----")	
 		cur_position[1] = Positions_with_Floor_under_them[idx_cur_pos][1]
@@ -187,10 +187,10 @@ function madtulipLocation.Find_Pathable_Above_Floor_Positions_in_BB(BB)
 		-- check clearance boundary box
 		for X = madtulipLocation.Standable.BB[1], madtulipLocation.Standable.BB[3], 1 do
 			for Y = madtulipLocation.Standable.BB[2], madtulipLocation.Standable.BB[4], 1 do
-				--world.logInfo("X:" .. X .. "Y:" .. Y)
 				-- check for foreground at this position
 				cur_pos[1] = cur_position[1] + X
 				cur_pos[2] = cur_position[2] + Y
+				--world.logInfo("X:" .. cur_pos[1] .. "Y:" .. cur_pos[2])
 				cur_mat = world.material(cur_pos,"foreground")
 				if (cur_mat ~= nil) then
 					--world.logInfo("BLOCKED: " .. cur_mat)
@@ -222,20 +222,26 @@ function madtulipLocation.Find_Block_above_floor(position,max_distance)
 	--world.logInfo("Find_Block_above_floor(position[" .. position[1] .. "," .. position[2] .. "],max_distance[" .. max_distance .. "])")
 	local offset = {0,0}
 	local below_offset = {0,0}
+	local pos_mat_at_offset = {}
 	local mat_at_offset = nil
+	local pos_mat_at_belowoffset = {}
 	local mat_at_belowoffset = nil
-	for cur_y_offset = 0,max_distance,1 do
-		offset[2] = -cur_y_offset
+	local return_position = {}
+	for Y = 0,max_distance,1 do
+		offset[2]       = -Y
 		below_offset[2] = offset[2] -1
-		--world.logInfo("-cur_y_offset:" .. cur_y_offset .. " offset[" .. offset[1] .. "," .. offset[2] .. "]")
-		--mat_at_offset      = world.material((vec2.add(position,offset)),"foreground")
-		--mat_at_belowoffset = world.material((vec2.add(position,below_offset)),"foreground")
+		--world.logInfo("-Y:" .. Y .. " offset[" .. offset[1] .. "," .. offset[2] .. "]")
+		pos_mat_at_offset[1]      = position[1] + offset[1]
+		pos_mat_at_offset[2]      = position[2] + offset[2]
+		pos_mat_at_belowoffset[1] = position[1] + below_offset[1]
+		pos_mat_at_belowoffset[2] = position[2] + below_offset[2]
+		mat_at_offset      = world.material(pos_mat_at_offset     ,"foreground")
+		mat_at_belowoffset = world.material(pos_mat_at_belowoffset,"foreground")
 		--if (mat_at_offset ~= nil) then      world.logInfo("-mat_at_offset" .. mat_at_offset) end
 		--if (mat_at_belowoffset ~= nil) then world.logInfo("-mat_at_belowoffset" .. mat_at_belowoffset) end
 		if mat_at_offset == nil and mat_at_belowoffset ~= nil then
 			-- we have found a block above floor
 			-- return its coordinates
-			local return_position = {}
 			return_position[1] = position[1] + offset[1]
 			return_position[2] = position[2] + offset[2]
 			return return_position

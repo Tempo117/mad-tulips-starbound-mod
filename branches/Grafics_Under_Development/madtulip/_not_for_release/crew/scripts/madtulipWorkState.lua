@@ -33,14 +33,14 @@ function madtulipWorkState.update(dt, stateData)
 		local Work_ROI_Anchor_Position = madtulipWorkState.set_Work_Anchor_around(entity.position())
 		if (Work_ROI_Anchor_Position == nil) then return nil end
 		
-		--world.logInfo("get_ROI")
+		world.logInfo("get_ROI")
 		-- create a ROI around the anchor
 		-- Boundary Box defining the ROI around the anchor
 		local BB = entity.configParameter("wander.Work_ROI_BB",nil)
 		local ROI = madtulipLocation.create_ROI_from_anchor(Work_ROI_Anchor_Position,BB)
 		if (ROI ~= nil) then madtulipWorkState.ROI = ROI end
 		
-		--world.logInfo("get_Target")
+		world.logInfo("get_Target")
 		-- pick one target inside the ROI (all are passable) as next target to move towards
 		local Target = madtulipLocation.get_next_target_inside_ROI(madtulipWorkState.ROI)
 		if (Target ~= nil) then madtulipWorkState.Movement.Target = Target end
@@ -51,7 +51,7 @@ function madtulipWorkState.update(dt, stateData)
 			if not madtulipWorkState.Movement.Switch_Target_Inside_ROI_Timer then
 				-- its time to go somewhere else inside this ROI
 				-- pick one target inside the ROI (all are passable) as next target to move towards
-				local Target = madtulipLocation.get_next_target_inside_ROI()
+				local Target = madtulipLocation.get_next_target_inside_ROI(madtulipWorkState.ROI)
 				if (Target ~= nil) then madtulipWorkState.Movement.Target = Target end
 				madtulipWorkState.Movement.Switch_Target_Inside_ROI_Timer = entity.randomizeParameterRange("wander.Move_Inside_ROI_Time")
 			end
