@@ -18,8 +18,10 @@
 	
 	"/_not_for_release/crew/scripts/madtulipcommandState.lua",
 	"/_not_for_release/crew/scripts/madtulipWorkState.lua",
+	"/_not_for_release/crew/scripts/chatstate.lua",	// just added for testing, is still vanilla
 	
 //"/npcs/wanderState.lua",
+//"/npcs/chatstate.lua",
     "/npcs/sitState.lua",
     "/npcs/sleepState.lua",
 	
@@ -42,7 +44,11 @@
       "cooldown" : 10,						// cooldown of this state
 	  "timeRange" : [2.0, 10.0],			// time range for which to perform this state
 	  "chatDistance" : 4,					// currently not implemented
-
+	  
+	  "close_doors_behind_range" : [3.0, 4.0], // range behind the NPC in which to close doors while walking
+	  "Close_doors_behind_you_Timer" : 1.0,   // timeout for closing doors after closing one
+	  
+	  "Switch_Target_Inside_ROI_Time" : 1.0,   // timeout for closing doors after closing one
 	  "Work_Attractor_Search_Radius" : 60,  // Radius around NPC to search for new ROI anchor
 	  "Work_ROI_BB" : [-3,0,3,3],           // X1,Y1,X2,Y2 Interval which defines ROI around Work Anchor Position
 	  "Move_Inside_ROI_Time" : [ 1.0, 3.0], // how long to pause after each target in ROI
@@ -69,10 +75,35 @@
       "cooldown" : 60,
       "timeRange" : [10, 20]
     },
+    "chat" : {
+      "distanceRange" : [2.0, 4.0],
+      "conversations" : [
+        [
+          [2, "blabbering", "idle" ],
+          [1, "idle", "laugh" ],
+          [2, "idle", "blabbering" ],
+          [1, "sad", "idle" ]
+        ],
+        [
+          [2, "idle", "blabbering" ],
+          [2, "blabbering", "happy" ],
+          [1, "wink", "laugh" ],
+          [2, "happy", "happy" ]
+        ],
+        [
+          [2, "idle", "blabbering" ],
+          [2, "blabbering", "blabbering" ],
+          [2, "blabbering", "annoyed" ],
+          [3, "shouting", "shouting" ],
+          [2, "annoyed", "annoyed" ]
+        ]
+      ],
+      "cooldown" : 10
+    },
     "converse" : {
-      "waitTime" : 4.0,
+      "waitTime" : 0.5,
       "dialog" : {
-        "default" : [ "Hello..." ]
+        "default" : [ "Hello ..." ]
       }
     }
   },
