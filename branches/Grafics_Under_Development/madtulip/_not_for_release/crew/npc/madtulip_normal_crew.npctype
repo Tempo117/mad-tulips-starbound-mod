@@ -17,11 +17,11 @@
 	"/_not_for_release/crew/scripts/madtulipLocation.lua",
 	
 	"/_not_for_release/crew/scripts/madtulipcommandState.lua",
+	"/_not_for_release/crew/scripts/madtulipROIState.lua",
 	"/_not_for_release/crew/scripts/chatState.lua",		// same as vanilla, just filename changed
 	"/_not_for_release/crew/scripts/converseState.lua",	// same as vanilla, just filename changed
 	"/_not_for_release/crew/scripts/sitState.lua",		// same as vanilla, just filename changed
 	"/_not_for_release/crew/scripts/sleepState.lua",	// same as vanilla, just filename changed
-	"/_not_for_release/crew/scripts/madtulipWorkState.lua",
 
 //"/npcs/wanderState.lua",
     "/npcs/timers.lua",
@@ -39,84 +39,126 @@
     "gapFarSideSensors" : [ [3.0, -4.5], [4.0, -4.5], [5.0, -4.5], [6.0, -4.5], [7.0, -4.5], [8.0, -4.5] ],
     "gapJumpHoldTime" : 0.4,
 
-    "madtulipWork" : {
-      "cooldown" : 15,							// cooldown of this state
-	  "timeOfDayRanges" : [ [0.0, 1.0]],		// time of day when to perform this
-	  "timeRange" : [2.0, 10.0],				// time range for which to perform this state
-	  "chatDistance" : 4,						// currently not implemented
-	  
-	  "close_doors_behind_range" : [2.0, 3.0], 	// range behind the NPC in which to close doors while walking
-	  "close_doors_behind_offset" : [1.0, 0.0],	// range behind the NPC in which to close doors while walking
-	  "Close_doors_behind_you_Timer" : 1.0,		// timeout for closing doors after closing one
-	  
-	  "Switch_Target_Inside_ROI_Time" : 1.0,	// timeout for closing doors after closing one
-	  "Work_Attractor_Search_Radius" : 60,		// Radius around NPC to search for new ROI anchor
-	  "Work_ROI_BB" : [-3,0,3,3],           	// X1,Y1,X2,Y2 Interval which defines ROI around Work Anchor Position
-	  "Move_Inside_ROI_Time" : [ 1.0, 3.0], 	// how long to pause after each target in ROI
-	  
-	  "deckhand_attractors" : [
-		"madtulip_crew_deckhand_attractor"
-	  ],
-	  "engineer_attractors" : [
-		"madtulip_crew_engineer_attractor"
-	  ],
-	  "marine_attractors" : [
-		"madtulip_crew_marine_attractor"
-	  ],
-	  "medic_attractors" : [
-		"madtulip_crew_medic_attractor"
-	  ],
-	  "scientist_attractors" : [
-		"madtulip_crew_scientist_attractor"
-	  ]
+    "madtulipROI" : {
+		// Debug switches
+		//"timeOfDayRangeWork" : [[0.0, 1.0]],				// time of day when to perform this in general
+		//"timeOfDayRangeRest" : [[0.0, 1.0]],				// time of day when to perform this in general
+		//"timeOfDayRangeWork" : [[0.0, 0.0]],				// time of day when to perform this in general
+		//"timeOfDayRangeRest" : [[0.0, 0.0]],				// time of day when to perform this in general
+
+		"cooldown" : 10,								// cooldown of this state
+		"timeOfDayRanges" : [[0.0, 1.0]],				// time of day when to perform this in general
+		"timeOfDayRangeWork" : [[0.2,0.8]],				// time of day when to perform work
+		"timeOfDayRangeRest" : [[0.8,1.0],[0.0,0.2]],	// time of day when to perform rest
+		"timeRange" : [3.0, 10.0],						// duration for which to perform this state each time its called
+
+		// ROI
+		"Work_Attractor_Search_Radius" : 60,			// Radius around NPC to search for new ROI anchor
+		"Rest_Attractor_Search_Radius" : 100,			// Radius around NPC to search for new ROI anchor
+		"Switch_Target_Inside_ROI_Time" : 1.0,			// timeout for closing doors after closing one
+		"Work_ROI_BB" : [-3,0,3,3],           			// X1,Y1,X2,Y2 Interval which defines ROI around Work Anchor Position
+		"Move_Inside_ROI_Time" : [ 1.0, 3.0], 			// how long to pause after each target in ROI
+
+		"chatDistance" : 4,								// currently not implemented
+
+		// Doors
+		"close_doors_behind_range" : [2.0, 3.0], 		// range behind the NPC in which to close doors while walking
+		"close_doors_behind_offset" : [1.0, 0.0],		// range behind the NPC in which to close doors while walking
+		"Close_doors_behind_you_Timer" : 1.0,			// timeout for closing doors after closing one
+
+		// Attractors used for the individual classes when at work time
+		"deckhand_attractors" : [
+			"madtulip_crew_deckhand_attractor"
+		],
+		"engineer_attractors" : [
+			"madtulip_crew_engineer_attractor"
+		],
+		"marine_attractors" : [
+			"madtulip_crew_marine_attractor"
+		],
+		"medic_attractors" : [
+			"madtulip_crew_medic_attractor"
+		],
+		"scientist_attractors" : [
+			"madtulip_crew_scientist_attractor"
+		],
+		
+		// Attractors used when in resting time
+		"rest_attractors" : [
+			"madtulip_shipstation"
+		]
     },
     "sit" : {
-      //"timeOfDayRanges" : [ [0.6, 1.0], [0.0, 0.2] ],
-	  "timeOfDayRanges" : [ [0.0, 1.0]],
-      "moveTimeLimit" : 8,
-      "searchRadius" : 5,
-      "sitRadius" : 3,
-      "cooldown" : 60,
-      "timeRange" : [15, 240]
+		"timeOfDayRanges" : [ [0.0, 1.0]],
+		//"timeOfDayRanges" : [ [0.6, 1.0], [0.0, 0.2] ],
+		"moveTimeLimit" : 8,
+		"searchRadius" : 10,
+		"sitRadius" : 3,
+		"cooldown" : 60,
+		"timeRange" : [15, 240]
     },
     "sleep" : {
-      "searchRadius" : 5,
-      "lieDownRadius" : 3,
-      "moveToBedTimeLimit" : 10.0,
-      //"timeOfDayRanges" : [ [ [0.7, 0.75], [0.95, 1.0] ] ],
-	  "timeOfDayRanges" : [ [0.0, 1.0]],
-      "cooldown" : 30
+		//"timeOfDayRanges" : [ [0.0, 1.0]],
+		"timeOfDayRanges" : [ [ [0.0, 0.05], [0.85, 0.9] ] ],
+		"searchRadius" : 10,
+		"lieDownRadius" : 3,
+		"moveToBedTimeLimit" : 10.0,
+		"cooldown" : 30
     },
     "chat" : {
-      "distanceRange" : [2.0, 4.0],
-	  "cooldown" : 10,
-      "conversations" : [
-        [
-          [2, "blabbering", "idle" ],
-          [1, "idle", "laugh" ],
-          [2, "idle", "blabbering" ],
-          [1, "sad", "idle" ]
-        ],
-        [
-          [2, "idle", "blabbering" ],
-          [2, "blabbering", "happy" ],
-          [1, "wink", "laugh" ],
-          [2, "happy", "happy" ]
-        ],
-        [
-          [2, "idle", "blabbering" ],
-          [2, "blabbering", "blabbering" ],
-          [2, "blabbering", "annoyed" ],
-          [3, "shouting", "shouting" ],
-          [2, "annoyed", "annoyed" ]
-        ]
-      ]
+		"distanceRange" : [2.0, 4.0],
+		"cooldown" : 10,
+		"conversations" : [
+			[
+				[2, "blabbering", "idle" ],
+				[1, "idle", "laugh" ],
+				[2, "idle", "blabbering" ],
+				[1, "sad", "idle" ]
+			],
+			[
+				[2, "idle", "blabbering" ],
+				[2, "blabbering", "happy" ],
+				[1, "wink", "laugh" ],
+				[2, "happy", "happy" ]
+			],
+			[
+				[2, "idle", "blabbering" ],
+				[2, "blabbering", "blabbering" ],
+				[2, "blabbering", "annoyed" ],
+				[3, "shouting", "shouting" ],
+				[2, "annoyed", "annoyed" ]
+			]
+		]
     },
     "converse" : {
-      "waitTime" : 0.5,
-      "dialog" : {
-        "default" : [ "Hello ..." ]
-      }
+		"waitTime" : 2,
+		"WorkDialog" : {
+			"Engineer" : [
+				"Im telling you Engineer things ...",
+				"Im telling you Engineer things 2 ...",
+				"Im telling you Engineer things 3 ..."
+			],
+			"Medic" : [
+				"Im telling you Medic things ...",
+				"Im telling you Medic things 2 ...",
+				"Im telling you Medic things 3 ..."
+			],
+			"Scientist" : [
+				"Im telling you Scientist things ...",
+				"Im telling you Scientist things 2 ...",
+				"Im telling you Scientist things 3 ..."
+			],
+			"Marine" : [
+				"Im telling you Marine things ...",
+				"Im telling you Marine things 2 ...",
+				"Im telling you Marine things 3 ..."
+			],
+			"Deckhand" : [
+				"Im telling you Deckhand things ...",
+				"Im telling you Deckhand things 2 ...",
+				"Im telling you Deckhand things 3 ..."
+			]
+		}
     }
   },
 
