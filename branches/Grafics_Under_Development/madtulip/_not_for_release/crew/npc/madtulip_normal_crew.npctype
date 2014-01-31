@@ -50,14 +50,13 @@
 		"timeOfDayRanges" : [[0.0, 1.0]],				// time of day when to perform this in general
 		"timeOfDayRangeWork" : [[0.2,0.8]],				// time of day when to perform work
 		"timeOfDayRangeRest" : [[0.8,1.0],[0.0,0.2]],	// time of day when to perform rest
-		"timeRange" : [3.0, 10.0],						// duration for which to perform this state each time its called
+		"timeRange" : [3.0, 15.0],						// duration for which to perform this state each time its called
 
 		// ROI
 		"Work_Attractor_Search_Radius" : 60,			// Radius around NPC to search for new ROI anchor
 		"Rest_Attractor_Search_Radius" : 100,			// Radius around NPC to search for new ROI anchor
-		"Switch_Target_Inside_ROI_Time" : 1.0,			// timeout for closing doors after closing one
 		"Work_ROI_BB" : [-3,0,3,3],           			// X1,Y1,X2,Y2 Interval which defines ROI around Work Anchor Position
-		"Move_Inside_ROI_Time" : [ 1.0, 3.0], 			// how long to pause after each target in ROI
+		"Switch_Target_Inside_ROI_Time" : [ 2.0, 5.0], 	// how long to pause after each target in ROI
 
 		"chatDistance" : 4,								// currently not implemented
 
@@ -146,7 +145,7 @@
 			],
 			"Medic" : [
 				"I have taken the solemn oath, therefore these hands are not meant to take life, but to give",
-				“Health is the state about which medicine has nothing to say.”,
+				"Health is the state about which medicine has nothing to say.",
 				"He's the best physician that knows the worthlessness of the most medicines.",
 				".... Soap and water and common sense are the best disinfectants.",
 				"A doctor must work eighteen hours a day and seven days a week.  If you cannot console yourself to this, get out of the profession.",
@@ -154,7 +153,7 @@
 				"Sick minds must be healed as well as sick bodies.",
 				"Body and soul cannot be separated for purposes of treatment, for they are one and indivisible.",
 				"When religion was strong and science weak, men mistook magic for medicine; now,when science is strong and religion weak, men mistake medicine for magic.",
-				“The art of medicine consists of amusing the patient while nature cures the disease.”
+				"The art of medicine consists of amusing the patient while nature cures the disease."
 			],
 			"Scientist" : [
 				"Only two things are infinite, the universe and human stupidity, and I'm not sure about the former.",
@@ -165,20 +164,20 @@
 				"Science never solves a problem without creating ten more.",
 				"Science is a way of thinking much more than it is a body of knowledge.",
 				"Your theory is crazy, but it's not crazy enough to be true.",
-				"Science is the father of knowledge, but opinion breeds ignorance."
+				"Science is the father of knowledge, but opinion breeds ignorance.",
 				"I am not a scientist. I am, rather, an impresario of scientists."
 			],
 			"Marine" : [
 				"We must put an end to war before war puts an end to us.",
 				"In wartime, truth is so precious that she should always be attended by a bodyguard of lies.",
-				"Killing does not determine who is right - only who is left."
-				"The best weapon against an enemy is another enemy."
-				"Patriots always talk of dying for their planet and never of killing for their planet."
-				"We are going to have galactic peace even if we have to fight for it."
-				"In my dreams I can still hear the mournful mutter of the battlefield."
-				"I have not yet begun to fight!"
-				"If it's natural to kill, how come men have to go into training to learn how?"
-				"A new planet conquered, we may possibly survive this yet."
+				"Killing does not determine who is right - only who is left.",
+				"The best weapon against an enemy is another enemy.",
+				"Patriots always talk of dying for their planet and never of killing for their planet.",
+				"We are going to have galactic peace even if we have to fight for it.",
+				"In my dreams I can still hear the mournful mutter of the battlefield.",
+				"I have not yet begun to fight!",
+				"If it's natural to kill, how come men have to go into training to learn how?",
+				"A new planet conquered, we may possibly survive this yet.",
 				"Some of the rest of my team has been a little trigger happy."
 			],
 			"Deckhand" : [
