@@ -47,7 +47,7 @@ function madtulipROIState.update(dt, stateData)
 		--world.logInfo("get_ROI")
 		-- create a ROI around the anchor
 		-- Boundary Box defining the ROI around the anchor
-		local BB = entity.configParameter("madtulipROI.Work_ROI_BB",nil)
+		local BB = entity.configParameter("madtulipROI.ROI_BB",nil)
 		local ROI = madtulipLocation.create_ROI_from_anchor(Work_ROI_Anchor_Position,BB)
 		if (ROI ~= nil) then madtulipROIState.ROI = ROI end
 		
@@ -178,6 +178,15 @@ function madtulipROIState.Rest_AttratorQuerry(Position,Radius)
 			AttractorIDs[size] = ObjectId;
 		end
 	end	
+	
+	-- add unoccupied beds
+	local BedIds = world.loungeableQuery(Position, Radius, { orientation = "lay", order = "nearest" })
+		for _, BedId in pairs(BedIds) do
+		if not world.loungeableOccupied(BedId) then
+			size = size + 1;
+			AttractorIDs[size] = BedId;
+		end
+	end
 	
 	return {
 		AttractorIDs = AttractorIDs,

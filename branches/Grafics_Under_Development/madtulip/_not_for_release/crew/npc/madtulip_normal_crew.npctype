@@ -50,15 +50,15 @@
 		"timeOfDayRanges" : [[0.0, 1.0]],				// time of day when to perform this in general
 		"timeOfDayRangeWork" : [[0.2,0.8]],				// time of day when to perform work
 		"timeOfDayRangeRest" : [[0.8,1.0],[0.0,0.2]],	// time of day when to perform rest
-		"timeRange" : [3.0, 15.0],						// duration for which to perform this state each time its called
+		"timeRange" : [3.0, 10.0],						// duration for which to perform this state each time its called
 
 		// ROI
 		"Work_Attractor_Search_Radius" : 60,			// Radius around NPC to search for new ROI anchor
 		"Rest_Attractor_Search_Radius" : 100,			// Radius around NPC to search for new ROI anchor
-		"Work_ROI_BB" : [-3,0,3,3],           			// X1,Y1,X2,Y2 Interval which defines ROI around Work Anchor Position
+		"ROI_BB" : [-3,0,3,3],           			// X1,Y1,X2,Y2 Interval which defines ROI around Work Anchor Position
 		"Switch_Target_Inside_ROI_Time" : [ 2.0, 5.0], 	// how long to pause after each target in ROI
 
-		"chatDistance" : 4,								// currently not implemented
+		"chatDistance" : 4,								// max distance infront of NPC to initiate chat
 
 		// Doors
 		"close_doors_behind_range" : [2.0, 3.0], 		// range behind the NPC in which to close doors while walking
@@ -83,6 +83,7 @@
 		],
 		
 		// Attractors used when in resting time
+		// Beds dont need to be added here, they are in automatically
 		"rest_attractors" : [
 			"madtulip_shipstation"
 		]
@@ -98,7 +99,7 @@
     },
     "sleep" : {
 		//"timeOfDayRanges" : [ [0.0, 1.0]],
-		"timeOfDayRanges" : [ [ [0.0, 0.05], [0.85, 0.9] ] ],
+		"timeOfDayRanges" : [ [ [0.0, 0.1], [0.85, 0.95] ] ],
 		"searchRadius" : 10,
 		"lieDownRadius" : 3,
 		"moveToBedTimeLimit" : 10.0,
