@@ -134,24 +134,52 @@
 		"waitTime" : 2,
 		"WorkDialog" : {
 			"Engineer" : [
-				"Im telling you Engineer things ...",
-				"Im telling you Engineer things 2 ...",
-				"Im telling you Engineer things 3 ..."
+				"Sorry I'm a bit busy, there's always something keeping me busy around here",
+				"Need to repair the ship, just give me a minute I'll go whip something up at the metal press",
+				"I think of myself as an engineer, not as a visionary or 'big thinker.' I don't have any lofty goals.",
+				"My family has been in engineering for nearly 20XX generations.",
+				"This here ship is one fine piece of work, glad I'm here to stop it from falling to scrap.",
+				"I'm an engineer, solving all your practical problems.",
+				"My grandfather was an engineer who invented the automatic pilot for airplanes.",
+				"I am an engineer, but what I find important and necessary is that you just learn things as you go along.",
+				"As an engineer I'm constantly spotting problems and plotting how to solve them."
 			],
 			"Medic" : [
-				"Im telling you Medic things ...",
-				"Im telling you Medic things 2 ...",
-				"Im telling you Medic things 3 ..."
+				"I have taken the solemn oath, therefore these hands are not meant to take life, but to give",
+				“Health is the state about which medicine has nothing to say.”,
+				"He's the best physician that knows the worthlessness of the most medicines.",
+				".... Soap and water and common sense are the best disinfectants.",
+				"A doctor must work eighteen hours a day and seven days a week.  If you cannot console yourself to this, get out of the profession.",
+				"One doctor makes work for another.",
+				"Sick minds must be healed as well as sick bodies.",
+				"Body and soul cannot be separated for purposes of treatment, for they are one and indivisible.",
+				"When religion was strong and science weak, men mistook magic for medicine; now,when science is strong and religion weak, men mistake medicine for magic.",
+				“The art of medicine consists of amusing the patient while nature cures the disease.”
 			],
 			"Scientist" : [
-				"Im telling you Scientist things ...",
-				"Im telling you Scientist things 2 ...",
-				"Im telling you Scientist things 3 ..."
+				"Only two things are infinite, the universe and human stupidity, and I'm not sure about the former.",
+				"Mix hydrazine and nitrogen tetroxide, and something Hot happens",
+				"To other Scientists A drug is that substance which, will produce a scientific report.",
+				"No amount of experimentation can ever prove me right; a single experiment can prove me wrong.",
+				"We all love to wonder, and that is the seed of science.",
+				"Science never solves a problem without creating ten more.",
+				"Science is a way of thinking much more than it is a body of knowledge.",
+				"Your theory is crazy, but it's not crazy enough to be true.",
+				"Science is the father of knowledge, but opinion breeds ignorance."
+				"I am not a scientist. I am, rather, an impresario of scientists."
 			],
 			"Marine" : [
-				"Im telling you Marine things ...",
-				"Im telling you Marine things 2 ...",
-				"Im telling you Marine things 3 ..."
+				"We must put an end to war before war puts an end to us.",
+				"In wartime, truth is so precious that she should always be attended by a bodyguard of lies.",
+				"Killing does not determine who is right - only who is left."
+				"The best weapon against an enemy is another enemy."
+				"Patriots always talk of dying for their planet and never of killing for their planet."
+				"We are going to have galactic peace even if we have to fight for it."
+				"In my dreams I can still hear the mournful mutter of the battlefield."
+				"I have not yet begun to fight!"
+				"If it's natural to kill, how come men have to go into training to learn how?"
+				"A new planet conquered, we may possibly survive this yet."
+				"Some of the rest of my team has been a little trigger happy."
 			],
 			"Deckhand" : [
 				"Im telling you Deckhand things ...",
