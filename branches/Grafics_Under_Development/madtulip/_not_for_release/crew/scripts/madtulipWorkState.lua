@@ -1,6 +1,9 @@
 madtulipWorkState = {}
 
 function madtulipWorkState.enter()
+	if not isTimeFor("madtulipWork.timeOfDayRanges") then
+		return nil, entity.configParameter("madtulipWork.cooldown")
+	end
 	-- declare variables
 	madtulipWorkState.ROI = madtulipLocation.get_empty_ROI()
 	
@@ -17,7 +20,8 @@ function madtulipWorkState.enter()
 	Set_Occupation_Cloth()
 	
 	return {
-		timer = entity.randomizeParameterRange("madtulipWork.timeRange")
+		timer = entity.randomizeParameterRange("madtulipWork.timeRange"),
+		direction = util.toDirection(math.random(100) - 50)
 	}
 end
 
@@ -25,6 +29,7 @@ function madtulipWorkState.update(dt, stateData)
 	-- return if wander is on cooldown
 	stateData.timer = stateData.timer - dt
 	if stateData.timer < 0 then
+		--world.logInfo("COOLDOWN")
 		return true, entity.configParameter("madtulipWork.cooldown", nil)
 	end
 
@@ -65,6 +70,7 @@ function madtulipWorkState.update(dt, stateData)
 			   math.abs(toTarget[1]) < madtulipWorkState.Movement.Min_X_Dist_required_to_reach_target then
 					-- target reached -> clear movement target
 					madtulipWorkState.Movement.Target = nil
+					--return true
 			else
 				-- still moving
 				moveTo(madtulipWorkState.Movement.Target, dt)
@@ -115,6 +121,7 @@ end
 function madtulipWorkState.close_doors_behind_you()
 	-- Chat with other NPCs in the way
 	local close_doors_behind_range = entity.configParameter("madtulipWork.close_doors_behind_range", nil)
+	local close_doors_behind_offset = entity.configParameter("madtulipWork.close_doors_behind_offset", nil)
 	if close_doors_behind_range ~= nil then
 		if madtulipWorkState.Movement.Target ~= nil then
 			-- determine if we walk right or left
@@ -125,10 +132,10 @@ function madtulipWorkState.close_doors_behind_you()
 			-- determine range behind us to search for doors to close
 			local ray = {}
 			local position = entity.position();
-			ray [1] = close_doors_behind_range[1] * direction + position[1]
-			ray [2] = position[2]
-			ray [3] = close_doors_behind_range[2] * direction + position[1]
-			ray [4] = position[2]
+			ray [1] = close_doors_behind_range[1] * direction + position[1] + close_doors_behind_offset[1]
+			ray [2] = position[2] + close_doors_behind_offset[2]
+			ray [3] = close_doors_behind_range[2] * direction + position[1] + close_doors_behind_offset[1]
+			ray [4] = position[2] + close_doors_behind_offset[2]
 			
 			-- try to close doors
 			--world.logInfo("Triing to close doors ray[1,2] X:" .. ray[1] .. " Y:" .. ray[2] .. " ray X:" .. ray[1] .. " Y:" .. ray[2])

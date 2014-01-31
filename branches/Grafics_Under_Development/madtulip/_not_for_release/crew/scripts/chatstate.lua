@@ -2,31 +2,23 @@
 chatState = {}
 
 function chatState.initiateChat(startPoint, endPoint)
---world.logInfo("Chat init")
   local chatTargetIds = world.npcLineQuery(startPoint, endPoint)
   if #chatTargetIds > 1 then
---world.logInfo("A1")
     local selfId = entity.id()
     local targetId
     if chatTargetIds[1] == selfId then
---world.logInfo("A2")
       targetId = chatTargetIds[2]
     else
---world.logInfo("A3")
       targetId = chatTargetIds[1]
     end
 
     local conversation = entity.randomizeParameter("chat.conversations")
 
     local distance = world.magnitude(world.distance(startPoint, endPoint))
---world.logInfo("targetId: " .. targetId)
---world.logInfo("distance: " .. distance)
     if sendNotification("chat", { targetId = targetId, conversation = conversation }, distance) then
---world.logInfo("A4")
       self.state.pickState({ chatPartnerId = targetId, chatConversation = conversation })
       return true
     end
---world.logInfo("A5")
   end
 end
 
