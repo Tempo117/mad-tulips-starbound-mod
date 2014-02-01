@@ -21,7 +21,7 @@ function madtulipLocation.create_ROI_from_anchor(ROI_anchor_position,BB)
 	--world.logInfo("initial ROI anchor valid")
 	
 	-- shift the anchor down to walkable floor in case the attractor objects anchor is above floor
-	local max_distance = 10; -- maximum depth under anchor to search for walkable floor
+	local max_distance = 15; -- maximum depth under anchor to search for walkable floor
 	ROI_anchor_position = madtulipLocation.Find_Block_above_floor(ROI_anchor_position,max_distance)
 	-- check if floor could be found, else return
 	if (ROI_anchor_position == nil) then return nil end

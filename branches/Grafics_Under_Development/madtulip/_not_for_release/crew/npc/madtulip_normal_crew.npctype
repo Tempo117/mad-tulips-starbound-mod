@@ -63,14 +63,21 @@
 		// Doors
 		"close_doors_behind_range" : [2.0, 3.0], 		// range behind the NPC in which to close doors while walking
 		"close_doors_behind_offset" : [1.0, 0.0],		// range behind the NPC in which to close doors while walking
-		"Close_doors_behind_you_Timer" : 1.0,			// timeout for closing doors after closing one
+		"Close_doors_behind_you_Timer" : 1.0,			// cooldown for closing doors after closing one
 
 		// Attractors used for the individual classes when at work time
 		"deckhand_attractors" : [
 			"madtulip_crew_deckhand_attractor"
 		],
 		"engineer_attractors" : [
-			"madtulip_crew_engineer_attractor"
+			"madtulip_crew_engineer_attractor",
+			"madtulip_shipstation",
+			"madtulip_fuelhatch",
+			"madtulip_human_engine_core",
+			"madtulip_tile_setter",
+			"madtulip_teleporter",
+			"madtulip_metal_press",
+			"madtulip_vent"
 		],
 		"marine_attractors" : [
 			"madtulip_crew_marine_attractor"
@@ -79,14 +86,24 @@
 			"madtulip_crew_medic_attractor"
 		],
 		"scientist_attractors" : [
-			"madtulip_crew_scientist_attractor"
+			"madtulip_crew_scientist_attractor",
+			"madtulip_techstation",
+			"madtulip_shipnavigationconsole",
+			"madtulip_analysisscreen",
+			"madtulip_barscreen",
+			"madtulip_captains_console",
+			"madtulip_mapscreen",
+			"madtulip_starprojector",
+			"madtulip_textscreen",
+			"madtulip_status_monitor",
+			"madtulip_thermodynamics_console"
 		],
 		
 		// Attractors used when in resting time
 		// Beds dont need to be added here, they are in automatically
 		"rest_attractors" : [
-			"madtulip_shipstation"
-		]
+			"madtulip_teleporter"
+			]
     },
     "sit" : {
 		"timeOfDayRanges" : [ [0.0, 1.0]],

@@ -4,6 +4,8 @@ function sleepState.enter()
   if not isTimeFor("sleep.timeOfDayRanges") then
     return nil
   end
+	-- randomize the order the states are beeing executed in
+	self.state.shuffleStates()
 
   local bedId = sleepState.findUnoccupiedBed()
   if bedId == nil then
