@@ -1,0 +1,5 @@
+- nerfed Mining Pod damage from 3.25 down to 2.0 as we got feedback it was overpowered
+- reduced Plating costt to approx 66% resulting in overall cost reduction as we got feedback the things where to costly
+- reduced ammount of alien meat required for plastics as we got feedback that hunting that was tidious
+- life support system workd only on shipworld for now (as there is atmosphere on (most) planets
+- initial teleporter is breakable now (need to start a new ship for that)

@@ -298,7 +298,7 @@
       "backgroundMat" : "madtulip_bottom_decoration",
       "object" : "madtulip_teleporter",
       "flags" : [ "playerSpawn" ],
-      "objectParameters" : {"unbreakable" : true}
+      "objectParameters" : {"unbreakable" : false}
     },
 // Tilesets GLITCH
     {

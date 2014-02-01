@@ -72,6 +72,9 @@ end
 
 function main_threaded()
 
+	-- only works on ship, not on planet
+	if not is_shipworld() then return false end
+
 	-- grafic update
 	if(os.time() >= madtulip.spawn_projectile_time_last_execution + madtulip.spawn_projectile_intervall_time) then
 		-- check for system beeing offline
@@ -421,16 +424,5 @@ function set_flood_data_matrix_content (X,Y,Content)
 end
 
 function is_shipworld()
-	-- dirty dirty workaround: This searches if a teleporter is at that very location
-	-- this is the case for the fixed teleporter in the ship.
-	-- i didn't know any other way to degine the ship world.
-	local Teleporter_found = false;
-	local TeleporterIds = world.entityQuery ({1026,1016}, 1);
-	-- loop over one object, brilliant
-	for _, TeleporterId in pairs(TeleporterIds) do
-		if (world.entityName(TeleporterId) == "madtulip_teleporter") then
-			Teleporter_found = true;
-		end
-	end
-	return Teleporter_found;
+	if (world.info() == nil) then return true else return false end
 end

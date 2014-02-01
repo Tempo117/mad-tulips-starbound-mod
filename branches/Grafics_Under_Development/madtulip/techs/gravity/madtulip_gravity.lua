@@ -71,7 +71,7 @@ function determine_if_ZERO_gravity_should_end(Range)
 end
 
 function determine_if_ZERO_gravity(Range)
-
+--[[
 	-- dirty dirty workaround: This searches if a teleporter is at that very location
 	-- this is the case for the fixed teleporter in the ship.
 	-- i didn't know any other way to degine the ship world.
@@ -87,6 +87,9 @@ function determine_if_ZERO_gravity(Range)
 		-- on planet, ZERO gravity is not active
 		return false;
 	end
+]]
+	-- return if we are on a planet
+	if (world.info() ~= nil) then return false end
 	
 	-- we assume Zero gravity unless we find blocks in the vicinity
 	local Zero_gravity = true;

@@ -10,9 +10,29 @@ Metal press
 -- upper left corner crafting menu icon needs to be created
 
 Mining pod
-- drill lua
 - bottom left window still displays some debris pixels in the glass CANT FIND IT
-- Drill is animated so pls add the animation
+- animated png for the drill itself
 
 Crew
+- medical objects like surgery desk and monitors for a clinical themed room
+- marine objects (rifle racks for the wall, lockers, guardpost things) to make a marine styles room
+- resting state objects (so far we have all beds registered as rest objects) there could be other chill things
+- a gun that looks like a fire extinguisher which is equipable and fire white smoke on left mouse buttong doing to damage
+- a wallmount for the fire extinguisher
+- a 8x8 pixels animated fire object which can be anchored on the background. longer animation cycle prefered so we can put many next to eachother without them looking the same
+- the promotions as well as all other crew related "items" which can be equiped in the mainhand should show on the character (holding it in his hand)
+- a handheld item that can be used on crew in order to beam them to the planet (convert them in an item, which can then be deployed again on the planet, else i dont get the guys down)
+- a handheld item that can be used to kill the creq (little knife or something?)
 
+Older about ship parts (we got some of those alreadym, no?)
+- heat absorber: apex,floran,human
+- small fin: floran
+- medium fin: floran
+- large fin: floran, glitch
+- comms: hylotl,floran,apex
+- 1st weapon: avian
+- 2nd weapon: avian, floran,hylotl
+- apex turret animation
+
+MIAB
+- implement object smash instead of break to remove hoovering stage
