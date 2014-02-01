@@ -4,8 +4,10 @@ function sitState.enter()
   if not isTimeFor("sit.timeOfDayRanges") then
     return nil, entity.configParameter("sit.cooldown")
   end
+  -- onyl change by madtulip in this vanilla file:
   -- randomize the order the states are beeing executed in
   self.state.shuffleStates()
+  -- onyl change by madtulip in this vanilla file END
 
   local chairId = sitState.findChair()
   if chairId == nil then
