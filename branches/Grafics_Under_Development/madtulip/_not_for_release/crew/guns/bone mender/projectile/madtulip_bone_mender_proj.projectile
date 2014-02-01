@@ -13,7 +13,7 @@
   "piercing" : true,
   "statusEffects" : [
     {
-      "kind" : "healthinitiator",
+      "kind" : "madtulip_bone_mender",
       "amount" : 0.5
     }
   ],

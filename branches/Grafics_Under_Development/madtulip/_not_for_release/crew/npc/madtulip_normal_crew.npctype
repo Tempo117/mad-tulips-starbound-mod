@@ -15,6 +15,7 @@
 	"/_not_for_release/crew/scripts/madtulip_crew_interact.lua",
 	"/_not_for_release/crew/scripts/madtulip_crew_occupation.lua",
 	"/_not_for_release/crew/scripts/madtulipLocation.lua",
+	"/_not_for_release/crew/scripts/madtulip_TS.lua",
 	
 	"/_not_for_release/crew/scripts/madtulipcommandState.lua",
 	"/_not_for_release/crew/scripts/madtulipROIState.lua",

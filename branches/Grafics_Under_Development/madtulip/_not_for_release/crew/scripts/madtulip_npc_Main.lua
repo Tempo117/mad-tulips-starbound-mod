@@ -6,6 +6,18 @@ function Init_Crew_Data()
 	Set_Occupation_Cloth()
 end
 
+main = function ()
+  noticePlayers()
+  
+  -- NPC checks his surrounding for tasks (like someone bleeding or a fire)
+  madtulip_TS.update_Task_Scheduler()
+
+  local dt = entity.dt()
+
+  self.state.update(dt)
+  self.timers.tick(dt)
+end
+
 init = function (args)
   -- madtulip:
   Init_Crew_Data()
