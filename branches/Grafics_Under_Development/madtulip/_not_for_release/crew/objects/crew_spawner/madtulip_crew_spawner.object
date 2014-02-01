@@ -31,7 +31,5 @@
 	"scripts" : [
 		"/_not_for_release/crew/objects/crew_spawner/madtulip_crew_spawner.lua"
 	],
-	"scriptDelta" : 5,
-
-	"inboundNodes" : [ [0, 0] ]
+	"scriptDelta" : 5
 }

@@ -5,6 +5,8 @@ function init(virtual)
 end
 
 function onInteraction(args)
+	if not is_shipworld() then return end
+
 	local player_ID   = args["sourceId"]
 	local player_race = world.entitySpecies(player_ID);
 
@@ -17,10 +19,6 @@ function onInteraction(args)
 	entity.smash()
 end
 
-function onNodeConnectionChange(args)
-
-end
-
-function onInboundNodeChange(args)
-
+function is_shipworld()
+	if (world.info() == nil) then return true else return false end
 end

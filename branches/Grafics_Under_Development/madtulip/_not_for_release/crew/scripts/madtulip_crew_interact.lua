@@ -50,6 +50,28 @@ interact = function(args)
 				"^green;Species : ^white;" .. entity.species() .. "\n" ..
 				"^green;Occupation: ^white;" .. storage.Occupation
 				}}
+	elseif world.entityHandItem(args.sourceId, "primary") == "madtulip_crew_dismiss" then
+		-- Dismiss Crew
+		--world.logInfo("Setting should Die")
+		--entity.smash()
+	elseif world.entityHandItem(args.sourceId, "primary") == "madtulip_crew_beam" then
+		-- Beams crew up (spawns a Crew beam beacon that will unpack into the crew)
+	elseif world.entityHandItem(args.sourceId, "primary") == "madtulip_crew_debug_menue_1" then
+		-- Open some Debug menue for testing
+		--[[
+		-- merchantstate.lua
+		  --if self.state.pickState({ interactArgs = args }) then
+		    if self.tradingConfig == nil then
+				self.tradingConfig = merchantState.buildTradingConfig()
+			end
+			if self.tradingConfig ~= nil and self.state.stateDesc() == "merchantState" then
+			  return { "OpenNpcCraftingInterface", self.tradingConfig }
+			end
+		  --end
+		  ]]
+	elseif world.entityHandItem(args.sourceId, "primary") == "madtulip_crew_debug_menue_2" then
+		-- Open some Debug menue for testing
+		--return {"OpenNpcInterface"}
 	else
 		-- Default is just chat
 -- TODO: explicit call chat state here

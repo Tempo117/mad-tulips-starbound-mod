@@ -1,6 +1,7 @@
 function Init_Crew_Data()
 	if storage.Occupation == nil then storage.Occupation = "Deckhand" end
 	if storage.colorIndex == nil then storage.colorIndex = 1 end
+	--if storage.shouldDie == nil then storage.shouldDie = false end
 	
 	Set_Occupation_Cloth()
 end
