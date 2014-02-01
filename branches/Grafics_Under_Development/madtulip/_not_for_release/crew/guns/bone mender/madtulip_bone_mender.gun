@@ -1,25 +1,25 @@
 {
-  "itemName" : "madtulip_fire_extinguisher",
-  "inventoryIcon" : "madtulip_fire_extinguisher_icon.png",
+  "itemName" : "madtulip_bone_mender",
+  "inventoryIcon" : "madtulip_bone_mender_icon.png",
   "dropCollision" : [-8.0, -3.0, 8.0, 3.0],
   "rarity" : "Common",
-  "description" : "Fights fire!",
-  "shortdescription" : "Fire Extinguisher",
-  "image" : "madtulip_fire_extinguisher.png",
+  "description" : "Regenerates biological Tissue",
+  "shortdescription" : "Bone Mender",
+  "image" : "madtulip_bone_mender.png",
   "handPosition" : [-7, -1],
   "firePosition" : [20, 1.5],
   "inspectionKind" : "gun",
-  "spread" : 1,
-  "fireTime" : 0.05,
+  "spread" : 2,
+  "fireTime" : 0.10,
   "twoHanded" : false,
 
-  "projectileType" : "madtulip_fire_extinguisher_proj",
-  "projectile" : { "speed" : 15,
+  "projectileType" : "madtulip_bone_mender_proj",
+  "projectile" : { "speed" : 5,
                    "power" : 0 , // energy costs
 				   "life" : 3,   // heals ?
 				   "color" : [150, 90, 150] },
   "muzzleEffect" : {
-       "animation" :  "/_not_for_release/crew/guns/fire extinguisher/muzzle/madtulip_fire_ex_muzzle.animation" ,
+       "animation" :  "/_not_for_release/crew/guns/bone mender/muzzle/madtulip_bone_mender_muzzle.animation" ,
        "fireSound" : [ { "file" : "/sfx/gun/fireblast.wav" } ]
 	   },
   // required ?
