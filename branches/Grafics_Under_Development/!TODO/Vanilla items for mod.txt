@@ -1,0 +1,36 @@
+///Allcrew///
+locker
+locker2
+apexoven (while resting)
+fridge (while resting)
+watermachine (while resting)
+
+///Engenering//
+metalbarrel1
+metalbarrel2
+pixelcompressor
+refinery
+sewertank
+apexconsole1
+miningbelt
+miningcrusher
+miningskip
+
+///Science//
+screenplanet
+tvstation
+wiringstation
+apexcoolserver
+blueflask
+tesla
+
+///Medical///
+apexbrainjar
+apexbloodbank
+apexcoolbookcase
+apexcoolcomputer
+apexcoolcupboard
+apexmedsign
+apexpod
+apexpod2
+apextorturebed (maybe change into medical bed)
