@@ -4,11 +4,16 @@
 -- Task can be as general as wanna be (any Table).
 madtulip_TS = {}
 
-function madtulip_TS.update_Task_Scheduler (dt)
+function madtulip_TS.Init()
 	if storage.Known_Tasks == nil then storage.Known_Tasks = {} end
 	if storage.Known_Tasks.size == nil then storage.Known_Tasks.size = 0 end
 	if storage.Known_Tasks.Tasks == nil then storage.Known_Tasks.Tasks = {} end
-world.logInfo("A1")
+	if storage.Known_Tasks.Is_Init == nil then storage.Known_Tasks.Is_Init = true end
+end
+
+function madtulip_TS.update_Task_Scheduler (dt)
+	madtulip_TS.Init()
+	
 	-- Search surroundings for all kinds of Tasks
 	local Detected_Tasks = madtulip_TS.Search_Tasks()
 	
@@ -21,7 +26,6 @@ world.logInfo("A1")
 	-- if I handle it and then hear from others that they also handle it i would ?
 	--   stop doing it.
 	-- Known Tasks should set .Var.Known_as_index to which one in storage they refer
-world.logInfo("A2")
 	local Splited_Tasks = madtulip_TS.Split_Task_in_New_and_Known(Detected_Tasks)
 	
 	-- TODO: implement this.
@@ -36,15 +40,18 @@ world.logInfo("A2")
 	-- madtulip_TS.Update_Known_Tasks_Properties(Splited_Tasks.Known_Tasks)
 	-- Remember the new Tasks found
 	if (Splited_Tasks ~= nil) then
-world.logInfo("A3")
-		madtulip_TS.Remember_Tasks(Splited_Tasks.New_Tasks)
+		if (Splited_Tasks.New_Tasks ~= nil) then
+			if (Splited_Tasks.New_Tasks.size ~= nil) then
+				if (Splited_Tasks.New_Tasks.size > 0) then
+					madtulip_TS.Remember_Tasks(Splited_Tasks.New_Tasks)
+					
+					-- Broadcast newly detected Tasks
+					madtulip_TS.Broadcast_Tasks(Splited_Tasks.New_Tasks)
+				end
+			end
+		end
 	end
-	-- Broadcast newly detected Tasks
-	if (Splited_Tasks ~= nil) then
-world.logInfo("A4")
-		madtulip_TS.Broadcast_Tasks(Splited_Tasks.New_Tasks)
-	end
-world.logInfo("A5")
+
 	-- Forget old Tasks
 	madtulip_TS.Forget_Old_Tasks(dt)
 	
@@ -52,7 +59,7 @@ world.logInfo("A5")
 	--if (Splited_Tasks ~= nil) then
 	--madtulip_TS.Broadcast_Tasks(storage.Known_Tasks)
 	--end
-world.logInfo("A6")
+
 	-- Pick a Task for self
 	madtulip_TS.Update_My_Task()
 end
@@ -60,7 +67,7 @@ end
 function madtulip_TS.Search_Tasks()
 	Tasks = {};
 	Tasks_size = 0;
---[[
+
 	-- add a dummy task
 	Tasks_size = Tasks_size + 1;
 	Tasks[Tasks_size] = {}
@@ -68,12 +75,12 @@ function madtulip_TS.Search_Tasks()
 	Tasks[Tasks_size].Header.Name = "someone_at_low_health" -- any content here is optional, but all of it together is used as a key to define this task as unique
 	Tasks[Tasks_size].Header.Occupation = "Medic" -- any content here is optional, but all of it together is used as a key to define this task as unique
 	Tasks[Tasks_size].Header.Target_ID = PlayerId
-	--Tasks[Tasks_size].Header.Fct_can_PickTask  = madtulip_Task_Heal_NPC_or_Player.can_PickTask
-	--Tasks[Tasks_size].Header.Fct_main_PickTask = madtulip_Task_Heal_NPC_or_Player.main_Task
-	--Tasks[Tasks_size].Header.Fct_end_PickTask  = madtulip_Task_Heal_NPC_or_Player.end_Task
+	Tasks[Tasks_size].Header.Fct_Task  = "madtulip_Task_Heal_NPC_or_Player"
+	Tasks[Tasks_size].Header.Msg_on_discover_this_Task = "MEDIC!!!"
+	Tasks[Tasks_size].Header.Msg_on_PickTask = "I can handle that!"
 	Tasks[Tasks_size].Const = {} -- const is to be set initially and never again afterwards. content can varry while still being the same task (if header is the same)
 	Tasks[Tasks_size].Const.Timeout = 3 -- required to prevent network oscillation
-
+--[[
 	Tasks_size = Tasks_size + 1;
 	Tasks[Tasks_size] = {}
 	Tasks[Tasks_size].Header = {}
@@ -88,7 +95,7 @@ function madtulip_TS.Search_Tasks()
 	Tasks[Tasks_size].Header.Msg_on_PickTask = "I can handle that!"
 	Tasks[Tasks_size].Const = {}
 	Tasks[Tasks_size].Const.Timeout = 3
-]]
+
 -- TODO: from config real which functions to call to search for tasks. then get this from a Task_bla.lua
 	for idx, NPCId in pairs(world.npcQuery(entity.position(), 250)) do
 		local NPC_health = world.entityHealth(NPCId)
@@ -101,9 +108,7 @@ function madtulip_TS.Search_Tasks()
 			Tasks[Tasks_size].Header.Name = "Heal_NPC"
 			Tasks[Tasks_size].Header.Occupation = "Medic"
 			Tasks[Tasks_size].Header.Target_ID = PlayerId
-			--Tasks[Tasks_size].Header.Fct_can_PickTask  = madtulip_Task_Heal_NPC_or_Player.can_PickTask
-			--Tasks[Tasks_size].Header.Fct_main_PickTask = madtulip_Task_Heal_NPC_or_Player.main_Task
-			--Tasks[Tasks_size].Header.Fct_end_PickTask  = madtulip_Task_Heal_NPC_or_Player.end_Task
+			Tasks[Tasks_size].Header.Fct_Task  = "madtulip_Task_Heal_NPC_or_Player"
 			Tasks[Tasks_size].Header.Msg_on_discover_this_Task = "MEDIC!!!"
 			--Tasks[Tasks_size].Header.Msg_on_heared_about_Task = "MEDIC!!!"
 			Tasks[Tasks_size].Header.Msg_on_PickTask = "I can handle that!"
@@ -122,9 +127,7 @@ function madtulip_TS.Search_Tasks()
 			Tasks[Tasks_size].Header.Name = "Heal_Player"
 			Tasks[Tasks_size].Header.Occupation = "Medic"
 			Tasks[Tasks_size].Header.Target_ID = PlayerId
-			--Tasks[Tasks_size].Header.Fct_can_PickTask  = madtulip_Task_Heal_NPC_or_Player.can_PickTask
-			--Tasks[Tasks_size].Header.Fct_main_PickTask = madtulip_Task_Heal_NPC_or_Player.main_Task
-			--Tasks[Tasks_size].Header.Fct_end_PickTask  = madtulip_Task_Heal_NPC_or_Player.end_Task
+			Tasks[Tasks_size].Header.Fct_Task  = "madtulip_Task_Heal_NPC_or_Player"
 			Tasks[Tasks_size].Header.Msg_on_discover_this_Task = "MEDIC!!!"
 			--Tasks[Tasks_size].Header.Msg_on_heared_about_Task = "MEDIC!!!"
 			Tasks[Tasks_size].Header.Msg_on_PickTask = "I can handle that!"
@@ -132,7 +135,7 @@ function madtulip_TS.Search_Tasks()
 			Tasks[Tasks_size].Const.Timeout = 30
 		end
 	end
-	
+]]
 	return {
 		Tasks = Tasks,
 		size = Tasks_size
@@ -146,12 +149,14 @@ function madtulip_TS.Split_Task_in_New_and_Known(Tasks_to_check)
 	-- if known
 	--- add to Known_Tasks
 	
-	-- retrn if input is bad
+	-- return if input is bad
+--[[
 	if Tasks_to_check == nil then return end
+	if Tasks_to_check.Tasks == nil then return end
 	if Tasks_to_check.size == nil then return end
-	
 	-- any inbound Tasks at all ?
 	if (Tasks_to_check.size < 1) then return nil end
+]]
 	
 	-- init variables
 	local New_Tasks = {}
@@ -177,15 +182,14 @@ function madtulip_TS.Split_Task_in_New_and_Known(Tasks_to_check)
 		for idx_cur_known_Task = 1,storage.Known_Tasks.size,1 do
 			-- check if everything in Header is the same for the new and the known Task.
 			--- if not its a new Task. if yes then the Task is known already
-			
 			there_is_new_information_in_cur_Task_to_check = false
-			for Task_to_check_prop, Task_to_check_val in pairs(Tasks_to_check.Tasks[idx_cur_Task].Header) do
+			for Task_to_check_key, Task_to_check_val in pairs(Tasks_to_check.Tasks[idx_cur_Task].Header) do
 				-- check if that Header property is present in current known Task
-				--if Task_to_check_prop ~= nil then world.logInfo("Task_to_check_prop : " .. Task_to_check_prop) end
+				--if Task_to_check_key ~= nil then world.logInfo("Task_to_check_key : " .. Task_to_check_key) end
 				--if Task_to_check_val ~= nil then world.logInfo("Task_to_check_val : " .. Task_to_check_val) end
-				if storage.Known_Tasks.Tasks[idx_cur_known_Task].Header[Task_to_check_prop] ~= nil then
+				if storage.Known_Tasks.Tasks[idx_cur_known_Task].Header[Task_to_check_key] ~= nil then
 					-- known task has the same property
-					known_val = storage.Known_Tasks.Tasks[idx_cur_known_Task].Header[Task_to_check_prop]
+					known_val = storage.Known_Tasks.Tasks[idx_cur_known_Task].Header[Task_to_check_key]
 					--if Task_to_check_val ~= nil then world.logInfo("known_val : " .. known_val) end
 					if (Task_to_check_val ~= known_val) then
 						-- values of known and current task of that property differ
@@ -195,7 +199,7 @@ function madtulip_TS.Split_Task_in_New_and_Known(Tasks_to_check)
 					end
 				else
 					-- we dont even have that property in the current known task
-					--world.logInfo("This property is not known by this known Task")
+					--world.logInfo("This key is not known by this known Task")
 					there_is_new_information_in_cur_Task_to_check = true
 				end
 			end
@@ -234,8 +238,8 @@ function madtulip_TS.Update_Known_Tasks_Properties(Known_Tasks)
 end
 
 function madtulip_TS.Remember_Tasks(New_Tasks)
-	if New_Tasks == nil then return end
-	if New_Tasks.size == nil then return end
+	--if New_Tasks == nil then return end
+	--if New_Tasks.size == nil then return end
 	for idx_cur_Task = 1,New_Tasks.size,1 do
 --[[
 		world.logInfo("New Task found!")
@@ -249,6 +253,8 @@ function madtulip_TS.Remember_Tasks(New_Tasks)
 		
 		-- add minimal required structure to it
 		if storage.Known_Tasks.Tasks[storage.Known_Tasks.size].Var == nil then storage.Known_Tasks.Tasks[storage.Known_Tasks.size].Var = {} end
+		if storage.Known_Tasks.Tasks[storage.Known_Tasks.size].Global == nil then storage.Known_Tasks.Tasks[storage.Known_Tasks.size].Global = {} end
+		if storage.Known_Tasks.Tasks[storage.Known_Tasks.size].Global.is_done == nil then storage.Known_Tasks.Tasks[storage.Known_Tasks.size].Global.is_done = false end
 		-- Set its Timeout value
 		if storage.Known_Tasks.Tasks[storage.Known_Tasks.size].Var.Timeout_timer == nil then
 			-- only if the Task didn`t have a running Timer we start a new one.
@@ -257,14 +263,10 @@ function madtulip_TS.Remember_Tasks(New_Tasks)
 			storage.Known_Tasks.Tasks[storage.Known_Tasks.size].Var.Timeout_timer = New_Tasks.Tasks[idx_cur_Task].Const.Timeout
 			
 			-- Say something if you heared about this task (not the first one to discover it
--- TODO: place this somewhere else
 			if storage.Known_Tasks.Tasks[storage.Known_Tasks.size].Header.Msg_on_discover_this_Task ~= nil then
 				entity.say(storage.Known_Tasks.Tasks[storage.Known_Tasks.size].Header.Msg_on_discover_this_Task)
 			end
 		end
-		
-		if storage.Known_Tasks.Tasks[storage.Known_Tasks.size].Global == nil then storage.Known_Tasks.Tasks[storage.Known_Tasks.size].Global = {} end
-		if storage.Known_Tasks.Tasks[storage.Known_Tasks.size].Global.is_done == nil then storage.Known_Tasks.Tasks[storage.Known_Tasks.size].Global.is_done = false end
 		
 		-- Say something if you heared about this task (not the first one to discover it
 		if storage.Known_Tasks.Tasks[storage.Known_Tasks.size].Header.Msg_on_heared_about_Task ~= nil then
@@ -326,7 +328,6 @@ function madtulip_TS.Forget_Old_Tasks(dt)
 end
 
 function madtulip_TS.Update_My_Task()
---[[
 	-- execute my current Task
 	-- or search through all known tasks (storage)
 	-- and find one which can be picked and executed if i dont have one.
@@ -339,34 +340,42 @@ function madtulip_TS.Update_My_Task()
 			if storage.Known_Tasks.Tasks[idx_cur_Task].Global.is_beeing_handled == nil
 			   or storage.Known_Tasks.Tasks[idx_cur_Task].Global.is_beeing_handled == false then
 			   -- noone I know of handles it
-				--if (storage.Known_Tasks.Tasks[idx_cur_Task].Header.Fct_can_PickTask(storage.Known_Tasks[idx_cur_Task])) then
-if (1) then
+				if (_ENV[storage.Known_Tasks.Tasks[idx_cur_Task].Header.Fct_Task].can_PickTask(storage.Known_Tasks.Tasks[idx_cur_Task])) then
 					-- I could handle this task
 					--> pick this task (save by index)
 					storage.Known_Tasks.idx_of_my_current_Task = idx_cur_Task
+					
 					-- mark the task as being processed
 					storage.Known_Tasks.Tasks[idx_cur_Task].Global.is_beeing_handled = true
 					storage.Known_Tasks.Tasks[idx_cur_Task].Global.handled_by_ID = entity.id()
 					
 					-- communicate to others that I handle it
-					madtulip_TS.Broadcast_Tasks({Tasks = storage.Known_Tasks.Tasks[idx_cur_Task],size = 1})
+					local Msg_Tasks = {}
+					Msg_Tasks.Tasks = {}
+					Msg_Tasks.size = 1
+					Msg_Tasks.Tasks[1] = storage.Known_Tasks.Tasks[idx_cur_Task]
+					madtulip_TS.Broadcast_Tasks(Msg_Tasks)
+					
 					break -- we did pick a new task for us, we can stop searching.
 				end
 			end
 		end
 	else
 		-- I do have a Task, lets execute it!
-		--if (storage.Known_Tasks.Tasks[storage.Known_Tasks.idx_of_my_current_Task].Fct_main_PickTask(storage.Known_Tasks.Tasks[storage.Known_Tasks.idx_of_my_current_Task])) then
-if (1) then
+		if (_ENV[storage.Known_Tasks.Tasks[storage.Known_Tasks.idx_of_my_current_Task].Header.Fct_Task].main_Task(storage.Known_Tasks.Tasks[storage.Known_Tasks.idx_of_my_current_Task])) then
 			-- my current task is finished!
 			--> call its ending function
---storage.Known_Tasks.Tasks[storage.Known_Tasks.idx_of_my_current_Task].Fct_end_PickTask(storage.Known_Tasks.Tasks[storage.Known_Tasks.idx_of_my_current_Task])
-			
+			_ENV[storage.Known_Tasks.Tasks[storage.Known_Tasks.idx_of_my_current_Task].Header.Fct_Task].end_Task()
+
 			-- mark Task as done
 			storage.Known_Tasks.Tasks[storage.Known_Tasks.idx_of_my_current_Task].Global.is_done = true
 			
 			-- communicate to others that "I did it !"
-			madtulip_TS.Broadcast_Tasks({Tasks = storage.Known_Tasks.Tasks[storage.Known_Tasks.idx_of_my_current_Task],size = 1})
+			local Msg_Tasks = {}
+			Msg_Tasks.Tasks = {}
+			Msg_Tasks.size = 1
+			Msg_Tasks.Tasks[1] = storage.Known_Tasks.Tasks[storage.Known_Tasks.idx_of_my_current_Task]
+			madtulip_TS.Broadcast_Tasks(Msg_Tasks)
 			
 			-- forget that I was working on that
 			storage.Known_Tasks.idx_of_my_current_Task = nil
@@ -374,68 +383,54 @@ if (1) then
 			-- it will be removed from my memory with the next call to "madtulip_TS.Forget_Old_Tasks(dt)"
 		end
 	end
-]]
 end
 
 function madtulip_TS.Broadcast_Tasks(New_Tasks)
-	--world.logInfo("function madtulip_TS.Broadcast_Tasks")
-	if New_Tasks == nil then return end
-	if New_Tasks.size == nil then return end
-	
-	if (New_Tasks.size > 0) then
-		-- Tell all NPCs in the area that can receive it the good news (or maybe bad ones also .... .  .... ... .)
 -- TODO: replace 250 by parameter
+		-- Tell all NPCs in the area that can receive it the good news (or maybe bad ones also :p)
 		world.npcQuery(entity.position(), 250, {withoutEntityId = entity.id(),callScript = "madtulip_TS.Offer_Tasks", callScriptArgs = {New_Tasks}})
-	end
 end
 
 function madtulip_TS.Offer_Tasks(Offered_Tasks)
-world.logInfo("madtulip_TS.Offer_Tasks(Offered_Tasks)")
-	if Offered_Tasks == nil then return end
-	if Offered_Tasks.size == nil then return end
---[[
-world.logInfo("--- Tasks Offered ---")
-	for idx_cur_Task = 1,Offered_Tasks.size,1 do
-		world.logInfo("Offered_Tasks Nr: " .. idx_cur_Task)
-		world.logInfo("Offered_Tasks Name: " .. Offered_Tasks.Tasks[idx_cur_Task].Header.Name)
-		world.logInfo("Offered_Tasks Occupation: " .. Offered_Tasks.Tasks[idx_cur_Task].Header.Occupation)
+	if (storage.Known_Tasks.Is_Init) then
+		--world.logInfo("External offered")
+		local Splited_Tasks = madtulip_TS.Split_Task_in_New_and_Known(Offered_Tasks)
+
+		-- Remember the new Tasks found
+		if (Splited_Tasks ~= nil) then
+			if (Splited_Tasks.New_Tasks ~= nil) then
+				if (Splited_Tasks.New_Tasks.size ~= nil) then
+					if (Splited_Tasks.New_Tasks.size > 0) then
+						madtulip_TS.Remember_Tasks(Splited_Tasks.New_Tasks)
+					end
+				end
+			end
+		end
+		
+		-- Tasks that we already knew about might have been updated
+		--madtulip_TS.Update_Known_Tasks_Properties(Splited_Tasks.Known_Tasks)
 	end
-]]
-	-- Find only those Tasks which are not known already
-	local Splited_Tasks = madtulip_TS.Split_Task_in_New_and_Known(Offered_Tasks)
---[[
-	for idx_cur_Task = 1,New_Tasks.size,1 do
-		world.logInfo("--- Some of the offered Tasks where even news to me. ---")
-		world.logInfo("New_Tasks Nr: " .. idx_cur_Task)
-		world.logInfo("New_Tasks Name: " .. New_Tasks.Tasks[idx_cur_Task].Header.Name)
-		world.logInfo("New_Tasks Occupation: " .. New_Tasks.Tasks[idx_cur_Task].Header.Occupation)
-	end
-]]
-	-- Remember the new Tasks found
-	if (Splited_Tasks ~= nil) then
-		madtulip_TS.Remember_Tasks(Splited_Tasks.New_Tasks)
-	end
-	
-	-- Tasks that we already knew about might have been updated
-	--madtulip_TS.Update_Known_Tasks_Properties(Splited_Tasks.Known_Tasks)
 end
 
 --------------- THIS TO A NEW FILE INSTEAD -----------------
 madtulip_Task_Heal_NPC_or_Player = {}
-function madtulip_Task_Heal_NPC_or_Player.can_PickTask()
-	-- Check if i have the right Occupation to do the job
-	if not((storage.Known_Tasks.Tasks[idx_cur_Task].Header.Occupation == "all") or
-	       (storage.Known_Tasks.Tasks[idx_cur_Task].Header.Occupation == storage.Occupation)) then return false end
+function madtulip_Task_Heal_NPC_or_Player.can_PickTask(Task)
+	world.logInfo("madtulip_Task_Heal_NPC_or_Player.can_PickTask()")
+	-- Check if I have the right Occupation to do the job
+	if not((Task.Header.Occupation == "all") or (Task.Header.Occupation == storage.Occupation)) then return false end
 		   
 	-- Is there something i should say to start the Job ?
 	-- TODO: randomized List of sentences here.
-	if (storage.Known_Tasks.Tasks[idx_cur_Task].Header.Msg_on_PickTask ~= nil) then
-		entity.say(storage.Known_Tasks.Tasks[idx_cur_Task].Header.Msg_on_PickTask)
+	if (Task.Header.Msg_on_PickTask ~= nil) then
+		entity.say(Task.Header.Msg_on_PickTask)
 	end
 
 	return true
 end
-function madtulip_Task_Heal_NPC_or_Player.main_Task()
+function madtulip_Task_Heal_NPC_or_Player.main_Task(Task)
+	world.logInfo("madtulip_Task_Heal_NPC_or_Player.main_Task(Task)")
+	return true -- if done
 end
 function madtulip_Task_Heal_NPC_or_Player.end_Task()
+	world.logInfo("madtulip_Task_Heal_NPC_or_Player.end_Task()")
 end
