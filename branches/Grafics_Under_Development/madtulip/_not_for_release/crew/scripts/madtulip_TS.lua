@@ -37,31 +37,35 @@ function madtulip_TS.update_Task_Scheduler (dt)
 	-- If Global.is_beeing_handled == true and im also handling this and the ID of th guy handling it is not mine
 	-- i should check if that other guy exists. If he doesnt then i continue handling it as his ID might have changed.
 	-- If he does exist then i should stop doing it.
-	-- madtulip_TS.Update_Known_Tasks_Properties(Splited_Tasks.Known_Tasks)
 	-- Remember the new Tasks found
 	if (Splited_Tasks ~= nil) then
 		if (Splited_Tasks.New_Tasks ~= nil) then
 			if (Splited_Tasks.New_Tasks.size ~= nil) then
 				if (Splited_Tasks.New_Tasks.size > 0) then
+					-- The new tasks are to be copierd to own memory
 					madtulip_TS.Remember_Tasks(Splited_Tasks.New_Tasks)
 					
 					-- Broadcast newly detected Tasks
+					--world.logInfo("Broadcast that i spotted a new Task " .. entity.id())
 					madtulip_TS.Broadcast_Tasks(Splited_Tasks.New_Tasks)
 				end
 			end
 		end
+		if (Splited_Tasks.Known_Tasks ~= nil) then
+			if (Splited_Tasks.Known_Tasks.size ~= nil) then
+				if (Splited_Tasks.Known_Tasks.size > 0) then
+					-- Tasks that we already knew about might have been updated
+					madtulip_TS.Update_Known_Tasks_Properties(Splited_Tasks.Known_Tasks)
+				end
+			end
+		end
 	end
-
-	-- Forget old Tasks
-	madtulip_TS.Forget_Old_Tasks(dt)
 	
-	-- Broadcast known Tasks ? Maybe every once in a while
-	--if (Splited_Tasks ~= nil) then
-	--madtulip_TS.Broadcast_Tasks(storage.Known_Tasks)
-	--end
-
 	-- Pick a Task for self
 	madtulip_TS.Update_My_Task()
+	
+	-- Forget old Tasks
+	madtulip_TS.Forget_Old_Tasks(dt)
 end
 
 function madtulip_TS.Search_Tasks()
@@ -78,8 +82,21 @@ function madtulip_TS.Search_Tasks()
 	Tasks[Tasks_size].Header.Fct_Task  = "madtulip_Task_Heal_NPC_or_Player"
 	Tasks[Tasks_size].Header.Msg_on_discover_this_Task = "MEDIC!!!"
 	Tasks[Tasks_size].Header.Msg_on_PickTask = "I can handle that!"
+	Tasks[Tasks_size].Global = {}
+	Tasks[Tasks_size].Global.is_beeing_handled = false
+	Tasks[Tasks_size].Global.is_beeing_handled_timestemp = os.time()
+	Tasks[Tasks_size].Global.is_done = false
+	Tasks[Tasks_size].Global.is_done_timestemp = os.time()
 	Tasks[Tasks_size].Const = {} -- const is to be set initially and never again afterwards. content can varry while still being the same task (if header is the same)
-	Tasks[Tasks_size].Const.Timeout = 3 -- required to prevent network oscillation
+	Tasks[Tasks_size].Const.Timeout = 10 -- required to prevent network oscillation
+	
+	-- Something to say on disconver?
+	for idx_cur_Task = 1,Tasks_size,1 do
+		if (Tasks[Tasks_size].Header.Msg_on_discover_this_Task ~= nil) then
+			entity.say(Tasks[Tasks_size].Header.Msg_on_discover_this_Task)
+			break; -- only one entity.say in case of multiples found. the first one in this case.
+		end
+	end
 --[[
 	Tasks_size = Tasks_size + 1;
 	Tasks[Tasks_size] = {}
@@ -149,15 +166,6 @@ function madtulip_TS.Split_Task_in_New_and_Known(Tasks_to_check)
 	-- if known
 	--- add to Known_Tasks
 	
-	-- return if input is bad
---[[
-	if Tasks_to_check == nil then return end
-	if Tasks_to_check.Tasks == nil then return end
-	if Tasks_to_check.size == nil then return end
-	-- any inbound Tasks at all ?
-	if (Tasks_to_check.size < 1) then return nil end
-]]
-	
 	-- init variables
 	local New_Tasks = {}
 	New_Tasks.Tasks = {}
@@ -217,69 +225,102 @@ function madtulip_TS.Split_Task_in_New_and_Known(Tasks_to_check)
 			-- add it to list of Known_Tasks
 			Known_Tasks.size = Known_Tasks.size + 1
 			Known_Tasks.Tasks[Known_Tasks.size] = Tasks_to_check.Tasks[idx_cur_Task]
+			--world.logInfo("Known_Tasks added. Known_Tasks.size: " .. Known_Tasks.size)
 		else
 			-- add it to list of New_Tasks
 			New_Tasks.size = New_Tasks.size + 1
 			New_Tasks.Tasks[New_Tasks.size] = Tasks_to_check.Tasks[idx_cur_Task]
+			--world.logInfo("New_Tasks added. New_Tasks.size: " .. Known_Tasks.size)
 		end
 	end
---[[
-	for idx_cur_Task = 1,New_Tasks.size,1 do
-		world.logInfo("New_Tasks Nr: " .. idx_cur_Task)
-		world.logInfo("New_Tasks Name: " .. New_Tasks.Tasks[idx_cur_Task].Header.Name)
-		world.logInfo("New_Tasks Occupation: " .. New_Tasks.Tasks[idx_cur_Task].Header.Occupation)
-	end
-]]
 	return {New_Tasks = New_Tasks,Known_Tasks = Known_Tasks}
 end
 
 function madtulip_TS.Update_Known_Tasks_Properties(Known_Tasks)
--- TODO: work the Knwon_Tasks into storage
+	-- TODO: work the Knwon_Tasks into storage
+	local idx_cur_Stored_Task = nil
+	local cur_Known_Task_contained_new_global_information = nil
+	for idx_cur_Task = 1,Known_Tasks.size,1 do
+		-- index under which I stored the known Task
+		idx_cur_Stored_Task = Known_Tasks.Tasks[idx_cur_Task].Var.Known_as_storage_index
+		cur_Known_Task_contained_new_global_information = false
+		
+		-- Copy parts of contents of the .Global part
+		-- In order to decided which part of the .Global is new we use a timestemp
+		
+		if (Known_Tasks.Tasks[idx_cur_Task].Global.is_beeing_handled_timestemp > storage.Known_Tasks.Tasks[idx_cur_Stored_Task].Global.is_beeing_handled_timestemp)
+		or ((Known_Tasks.Tasks[idx_cur_Task].Global.is_beeing_handled == true) and (storage.Known_Tasks.Tasks[idx_cur_Stored_Task].Global.is_beeing_handled == false)) then
+			-- received Global information is newer then known information -> update known information
+			storage.Known_Tasks.Tasks[idx_cur_Stored_Task].Global.is_beeing_handled           = Known_Tasks.Tasks[idx_cur_Task].Global.is_beeing_handled
+			storage.Known_Tasks.Tasks[idx_cur_Stored_Task].Global.handled_by_ID               = Known_Tasks.Tasks[idx_cur_Task].Global.handled_by_ID
+			storage.Known_Tasks.Tasks[idx_cur_Stored_Task].Global.is_beeing_handled_timestemp = Known_Tasks.Tasks[idx_cur_Task].Global.is_beeing_handled_timestemp
+			-- as this contained new information we might want to broadcast this later on so others also know about it.
+			cur_Known_Task_contained_new_global_information = true;
+			--world.logInfo("is_being_handled_timestemp update detected by entity id: " .. entity.id())
+			if (Known_Tasks.Tasks[idx_cur_Task].Global.is_beeing_handled == true) then
+				-- if this is also my task then someone else is also doing it
+				if (idx_cur_Stored_Task == storage.Known_Tasks.idx_of_my_current_Task) then
+					-- yes, someone else started working on it. I stop doing it as tasks are designed for only one person
+-- TODO: here we should start communication with Known_Tasks.Tasks[idx_cur_Task].Global.handled_by_ID
+-- and decide who will do the job (maybe one of them is closer to being done).
+					madtulip_TS.end_my_current_Task()
+					--world.logInfo("Stopping my current Task as he already does it. My Id: " .. entity.id() .. " handler_ID : " .. Known_Tasks.Tasks[idx_cur_Task].Global.handled_by_ID)
+				end
+				--world.logInfo("I received that .Global.is_beeing_handled update. My Id: " .. entity.id() .. " handler_ID : " .. Known_Tasks.Tasks[idx_cur_Task].Global.handled_by_ID)
+			end
+		end
+		if (Known_Tasks.Tasks[idx_cur_Task].Global.is_done_timestemp > storage.Known_Tasks.Tasks[idx_cur_Stored_Task].Global.is_done_timestemp)
+		or ((Known_Tasks.Tasks[idx_cur_Task].Global.is_done == true) and (storage.Known_Tasks.Tasks[idx_cur_Stored_Task].Global.is_done == false)) then
+			-- received Global information is newer then known information
+			-- OR received global information that shows a state progression of a Task
+			--> update known information
+			storage.Known_Tasks.Tasks[idx_cur_Stored_Task].Global.is_done = Known_Tasks.Tasks[idx_cur_Task].Global.is_done
+			storage.Known_Tasks.Tasks[idx_cur_Stored_Task].Global.is_done_timestemp = Known_Tasks.Tasks[idx_cur_Task].Global.is_done_timestemp
+			-- as this contained new information we might want to broadcast this later on so others also know about it.
+			cur_Known_Task_contained_new_global_information = true;
+			--world.logInfo("is_done_timestemp update detected by entity id: " .. entity.id())
+			if (Known_Tasks.Tasks[idx_cur_Task].Global.is_done == true) then
+				-- its done, am i also working on that task?
+				if (idx_cur_Stored_Task == storage.Known_Tasks.idx_of_my_current_Task) then
+					-- im also working on that ... call its ending function for me as well
+					madtulip_TS.end_my_current_Task()
+					--world.logInfo("Stopping my current Task as someone else did already finish it.")
+				end
+				--world.logInfo("Heared about .Global.is_done update")
+			end
+		end
+		
+		if (cur_Known_Task_contained_new_global_information) then
+			-- we could update our .Global for this Known Task
+			--> broadcast the new information to others as well so it propagates through the net
+			local Msg_Tasks = {}
+			Msg_Tasks.Tasks = {}
+			Msg_Tasks.size = 1
+			Msg_Tasks.Tasks[1] = storage.Known_Tasks.Tasks[idx_cur_Stored_Task]
+			--world.logInfo("Broadcast that i received Global. news" .. entity.id())
+			--madtulip_TS.Broadcast_Tasks(Msg_Tasks)
+		end
+	end
 end
 
 function madtulip_TS.Remember_Tasks(New_Tasks)
 	--if New_Tasks == nil then return end
 	--if New_Tasks.size == nil then return end
 	for idx_cur_Task = 1,New_Tasks.size,1 do
---[[
-		world.logInfo("New Task found!")
-		world.logInfo("New_Tasks Nr: " .. idx_cur_Task)
-		world.logInfo("New_Tasks Name: " .. New_Tasks.Tasks[idx_cur_Task].Header.Name)
-		world.logInfo("New_Tasks Occupation: " .. New_Tasks.Tasks[idx_cur_Task].Header.Occupation)
-]]
 		-- copy the new task to our "knowledge"
 		storage.Known_Tasks.size = storage.Known_Tasks.size +1
 		storage.Known_Tasks.Tasks[storage.Known_Tasks.size] = New_Tasks.Tasks[idx_cur_Task]
 		
 		-- add minimal required structure to it
 		if storage.Known_Tasks.Tasks[storage.Known_Tasks.size].Var == nil then storage.Known_Tasks.Tasks[storage.Known_Tasks.size].Var = {} end
-		if storage.Known_Tasks.Tasks[storage.Known_Tasks.size].Global == nil then storage.Known_Tasks.Tasks[storage.Known_Tasks.size].Global = {} end
-		if storage.Known_Tasks.Tasks[storage.Known_Tasks.size].Global.is_done == nil then storage.Known_Tasks.Tasks[storage.Known_Tasks.size].Global.is_done = false end
 		-- Set its Timeout value
 		if storage.Known_Tasks.Tasks[storage.Known_Tasks.size].Var.Timeout_timer == nil then
 			-- only if the Task didn`t have a running Timer we start a new one.
 			-- This ensures that Tasks, no matter if communicated or self noticed
 			-- never live longer then max timer and thus don`t oscillate through the net.
 			storage.Known_Tasks.Tasks[storage.Known_Tasks.size].Var.Timeout_timer = New_Tasks.Tasks[idx_cur_Task].Const.Timeout
-			
-			-- Say something if you heared about this task (not the first one to discover it
-			if storage.Known_Tasks.Tasks[storage.Known_Tasks.size].Header.Msg_on_discover_this_Task ~= nil then
-				entity.say(storage.Known_Tasks.Tasks[storage.Known_Tasks.size].Header.Msg_on_discover_this_Task)
-			end
-		end
-		
-		-- Say something if you heared about this task (not the first one to discover it
-		if storage.Known_Tasks.Tasks[storage.Known_Tasks.size].Header.Msg_on_heared_about_Task ~= nil then
-			entity.say(storage.Known_Tasks.Tasks[storage.Known_Tasks.size].Header.Msg_on_heared_about_Task)
 		end
 	end
---[[	
-	for idx_cur_Task = 1,storage.Known_Tasks.size,1 do
-		world.logInfo("Known_Tasks Nr: " .. idx_cur_Task)
-		world.logInfo("Known_Tasks Name: " .. storage.Known_Tasks.Tasks[idx_cur_Task].Header.Name)
-		world.logInfo("Known_Tasks Occupation: " .. storage.Known_Tasks.Tasks[idx_cur_Task].Header.Occupation)
-	end
-]]
 end
 
 function madtulip_TS.Forget_Old_Tasks(dt)
@@ -348,13 +389,21 @@ function madtulip_TS.Update_My_Task()
 					-- mark the task as being processed
 					storage.Known_Tasks.Tasks[idx_cur_Task].Global.is_beeing_handled = true
 					storage.Known_Tasks.Tasks[idx_cur_Task].Global.handled_by_ID = entity.id()
+					storage.Known_Tasks.Tasks[idx_cur_Task].Global.is_beeing_handled_timestemp = os.time()
 					
 					-- communicate to others that I handle it
 					local Msg_Tasks = {}
 					Msg_Tasks.Tasks = {}
 					Msg_Tasks.size = 1
 					Msg_Tasks.Tasks[1] = storage.Known_Tasks.Tasks[idx_cur_Task]
+					--world.logInfo("Broadcast that i start doing it " .. entity.id())
 					madtulip_TS.Broadcast_Tasks(Msg_Tasks)
+					
+					-- Is there something i should say to start the Job ?
+					-- TODO: randomized List of sentences here.
+					if (storage.Known_Tasks.Tasks[idx_cur_Task].Header.Msg_on_PickTask ~= nil) then
+						entity.say(storage.Known_Tasks.Tasks[idx_cur_Task].Header.Msg_on_PickTask)
+					end
 					
 					break -- we did pick a new task for us, we can stop searching.
 				end
@@ -363,35 +412,42 @@ function madtulip_TS.Update_My_Task()
 	else
 		-- I do have a Task, lets execute it!
 		if (_ENV[storage.Known_Tasks.Tasks[storage.Known_Tasks.idx_of_my_current_Task].Header.Fct_Task].main_Task(storage.Known_Tasks.Tasks[storage.Known_Tasks.idx_of_my_current_Task])) then
-			-- my current task is finished!
+			-- my current task is finished! ( eigther i finished it or someone else finished and told me about it)
 			--> call its ending function
-			_ENV[storage.Known_Tasks.Tasks[storage.Known_Tasks.idx_of_my_current_Task].Header.Fct_Task].end_Task()
-
-			-- mark Task as done
-			storage.Known_Tasks.Tasks[storage.Known_Tasks.idx_of_my_current_Task].Global.is_done = true
-			
-			-- communicate to others that "I did it !"
-			local Msg_Tasks = {}
-			Msg_Tasks.Tasks = {}
-			Msg_Tasks.size = 1
-			Msg_Tasks.Tasks[1] = storage.Known_Tasks.Tasks[storage.Known_Tasks.idx_of_my_current_Task]
-			madtulip_TS.Broadcast_Tasks(Msg_Tasks)
-			
-			-- forget that I was working on that
-			storage.Known_Tasks.idx_of_my_current_Task = nil
-			
-			-- it will be removed from my memory with the next call to "madtulip_TS.Forget_Old_Tasks(dt)"
+			madtulip_TS.end_my_current_Task()
 		end
 	end
 end
 
+function madtulip_TS.end_my_current_Task()
+	_ENV[storage.Known_Tasks.Tasks[storage.Known_Tasks.idx_of_my_current_Task].Header.Fct_Task].end_Task()
+
+	-- mark Task as done
+	storage.Known_Tasks.Tasks[storage.Known_Tasks.idx_of_my_current_Task].Global.is_done = true
+	storage.Known_Tasks.Tasks[storage.Known_Tasks.idx_of_my_current_Task].Global.is_done_timestemp = os.time()
+	
+	-- communicate to others that "I did it !"
+	local Msg_Tasks = {}
+	Msg_Tasks.Tasks = {}
+	Msg_Tasks.size = 1
+	Msg_Tasks.Tasks[1] = storage.Known_Tasks.Tasks[storage.Known_Tasks.idx_of_my_current_Task]
+	--world.logInfo("Broadcast that i did it" .. entity.id())
+	madtulip_TS.Broadcast_Tasks(Msg_Tasks)
+	
+	-- forget that I was working on that
+	storage.Known_Tasks.idx_of_my_current_Task = nil
+	
+	-- it will be removed from my memory with the next call to "madtulip_TS.Forget_Old_Tasks(dt)"
+end
+
 function madtulip_TS.Broadcast_Tasks(New_Tasks)
--- TODO: replace 250 by parameter
+-- TODO: replace 50 by parameter
 		-- Tell all NPCs in the area that can receive it the good news (or maybe bad ones also :p)
-		world.npcQuery(entity.position(), 250, {withoutEntityId = entity.id(),callScript = "madtulip_TS.Offer_Tasks", callScriptArgs = {New_Tasks}})
+		world.npcQuery(entity.position(), 50, {withoutEntityId = entity.id(),callScript = "madtulip_TS.Offer_Tasks", callScriptArgs = {New_Tasks}})
 end
 
 function madtulip_TS.Offer_Tasks(Offered_Tasks)
+	--world.logInfo("Im offered a Task " .. entity.id())
 	if (storage.Known_Tasks.Is_Init) then
 		--world.logInfo("External offered")
 		local Splited_Tasks = madtulip_TS.Split_Task_in_New_and_Known(Offered_Tasks)
@@ -401,36 +457,43 @@ function madtulip_TS.Offer_Tasks(Offered_Tasks)
 			if (Splited_Tasks.New_Tasks ~= nil) then
 				if (Splited_Tasks.New_Tasks.size ~= nil) then
 					if (Splited_Tasks.New_Tasks.size > 0) then
+						-- the new tasks are to be copied to memory
 						madtulip_TS.Remember_Tasks(Splited_Tasks.New_Tasks)
 					end
 				end
 			end
+			if (Splited_Tasks.Known_Tasks ~= nil) then
+				if (Splited_Tasks.Known_Tasks.size ~= nil) then
+					if (Splited_Tasks.Known_Tasks.size > 0) then
+						-- Tasks that we already knew about might have been updated
+						madtulip_TS.Update_Known_Tasks_Properties(Splited_Tasks.Known_Tasks)
+					end
+				end
+			end
 		end
-		
-		-- Tasks that we already knew about might have been updated
-		--madtulip_TS.Update_Known_Tasks_Properties(Splited_Tasks.Known_Tasks)
 	end
 end
 
 --------------- THIS TO A NEW FILE INSTEAD -----------------
 madtulip_Task_Heal_NPC_or_Player = {}
 function madtulip_Task_Heal_NPC_or_Player.can_PickTask(Task)
-	world.logInfo("madtulip_Task_Heal_NPC_or_Player.can_PickTask()")
+	-- this gets called by all NPCs that receive this task which are searching for a Task to do it.
+	-- If this returns true the NPC will pick this Task and start to execute it.
+	-- So here you should check for the currents NPC Occupation i.e. to see if hes able to do it.
+	--world.logInfo("madtulip_Task_Heal_NPC_or_Player.can_PickTask()")
 	-- Check if I have the right Occupation to do the job
 	if not((Task.Header.Occupation == "all") or (Task.Header.Occupation == storage.Occupation)) then return false end
-		   
-	-- Is there something i should say to start the Job ?
-	-- TODO: randomized List of sentences here.
-	if (Task.Header.Msg_on_PickTask ~= nil) then
-		entity.say(Task.Header.Msg_on_PickTask)
-	end
 
+	--world.logInfo("TASK PICKED" .. entity.id())
 	return true
 end
 function madtulip_Task_Heal_NPC_or_Player.main_Task(Task)
-	world.logInfo("madtulip_Task_Heal_NPC_or_Player.main_Task(Task)")
+	-- the main of the Task which is called all the time until it return true (the task is done)
+	--world.logInfo("madtulip_Task_Heal_NPC_or_Player.main_Task(Task)")
 	return true -- if done
 end
 function madtulip_Task_Heal_NPC_or_Player.end_Task()
-	world.logInfo("madtulip_Task_Heal_NPC_or_Player.end_Task()")
+	-- Called when the Task was completed
+	-- eigther by me, or by someone else doing the same thing!
+	--world.logInfo("madtulip_Task_Heal_NPC_or_Player.end_Task()")
 end
