@@ -70,7 +70,7 @@
 		// ROI
 		"Work_Attractor_Search_Radius" : 60,			// Radius around NPC to search for new ROI anchor
 		"Rest_Attractor_Search_Radius" : 100,			// Radius around NPC to search for new ROI anchor
-		"ROI_BB" : [-3,0,3,3],           			// X1,Y1,X2,Y2 Interval which defines ROI around Work Anchor Position
+		"ROI_BB" : [-3,0,3,3],           				// X1,Y1,X2,Y2 Interval which defines ROI around Work Anchor Position
 		"Switch_Target_Inside_ROI_Time" : [ 2.0, 5.0], 	// how long to pause after each target in ROI
 
 		"chatDistance" : 4,								// max distance infront of NPC to initiate chat

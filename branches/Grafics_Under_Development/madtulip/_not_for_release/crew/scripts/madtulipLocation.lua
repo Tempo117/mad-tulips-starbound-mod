@@ -8,6 +8,7 @@ madtulipLocation.Standable.BB[3] =  1 -- X2
 madtulipLocation.Standable.BB[4] =  3 -- Y2 (hight of player)
 
 function madtulipLocation.get_next_target_inside_ROI(ROI)
+	-- return if parameters are bad
 	if (ROI == nil) then return nil end
 	if (ROI.Pathable_Moveable_Standable_Positions == nil) then return nil end
 	if (ROI.Pathable_Moveable_Standable_Positions_size == nil) then return nil end
@@ -17,6 +18,7 @@ function madtulipLocation.get_next_target_inside_ROI(ROI)
 end
 
 function madtulipLocation.create_ROI_from_anchor(ROI_anchor_position,BB)
+	--world.logInfo("Testing ROI anchor")
 	if (ROI_anchor_position == nil) then return nil end
 	--world.logInfo("initial ROI anchor valid")
 	

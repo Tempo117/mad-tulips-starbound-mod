@@ -95,12 +95,13 @@ function madtulip_Task_Heal_NPC_or_Player.main_Task(Task)
 		-- health larger 95% of max health
 		local own_position = entity.position()
 		local target_position = world.entityPosition (Task.Header.Target_ID)
-		local distance = world.distance(own_position,target_position)
+		local distance = world.magnitude(world.distance(own_position,target_position))
 		
-		-- move towards target (handles by madtulipROIState
+		-- move towards target (handled by madtulipROIState)
 		Task.Var.Cur_Target_Position    = target_position
 		Task.Var.Cur_Target_Position_BB = entity.configParameter("madtulipTS.Heal_NPC_or_Player_ROI_BB", nil)
 
+--[[ just included as an example
 		if (Task.Var.State_Error_cant_reach_Target) then
 			-- State Machine couldn't find a passable target to finish job
 			Task.Var.State_Error_cant_reach_Target = nil -- clear flag
@@ -111,7 +112,6 @@ function madtulip_Task_Heal_NPC_or_Player.main_Task(Task)
 			-- is possible that the target is just jumping atm. and will be targetable for movement again soon.
 		end
 		
---[[ just included as an example
 		if (Task.Var.State_ROI_on_the_move) then
 			-- state machine is still moveing towards its target
 			Task.Var.State_ROI_on_the_move = false -- clear flag
@@ -123,14 +123,15 @@ function madtulip_Task_Heal_NPC_or_Player.main_Task(Task)
 			-- close enough to use bone mender --> fire
 			entity.beginPrimaryFire()
 			
+--[[ just included as an example
 			if (Task.Var.State_ROI_target_reached) then
 				-- state machine reach position and exited state
 				Task.Var.State_ROI_target_reached = false -- clear flag
-				
 				--> remove target so state machine stops starting again for searching for new target
-				Task.Var.Cur_Target_Position    = nil
-				Task.Var.Cur_Target_Position_BB = nil
+				--Task.Var.Cur_Target_Position    = nil
+				--Task.Var.Cur_Target_Position_BB = nil
 			end
+]]
 		end
 		
 		return false -- if NOT done
