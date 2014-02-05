@@ -1,70 +1,16 @@
 madtulip_Task_Heal_NPC_or_Player = {}
 
 function madtulip_Task_Heal_NPC_or_Player.spot_Task()
---[[
-	-- add a dummy task
-	Tasks = {}
-	Tasks.Header = {} -- header is to be set initially and never again afterwards. the exact same header is the exact same task
-	Tasks.Header.Name = "someone_at_low_health" -- any content here is optional, but all of it together is used as a key to define this task as unique
-	Tasks.Header.Occupation = "Medic" -- any content here is optional, but all of it together is used as a key to define this task as unique
-	Tasks.Header.Target_ID = PlayerId
-	Tasks.Header.Fct_Task  = "madtulip_Task_Heal_NPC_or_Player"
-	Tasks.Header.Msg_on_discover_this_Task = "MEDIC!!!"
-	Tasks.Header.Msg_on_PickTask = "I can handle that!"
-	Tasks.Global = {}
-	Tasks.Global.is_beeing_handled = false
-	Tasks.Global.is_beeing_handled_timestemp = os.time()
-	Tasks.Global.is_done = false
-	Tasks.Global.is_done_timestemp = os.time()
-	Tasks.Const = {} -- const is to be set initially and never again afterwards. content can varry while still being the same task (if header is the same)
-	Tasks.Const.Timeout = 10 -- required to prevent network oscillation
-	
-	return Tasks
-	-- return nil -- no task avaible of this type
-
-	Tasks_size = Tasks_size + 1;
-	Tasks[Tasks_size] = {}
-	Tasks[Tasks_size].Header = {}
-	Tasks[Tasks_size].Header.Name = "save the rain forest"
-	Tasks[Tasks_size].Header.Occupation = "Medic"
-	Tasks[Tasks_size].Header.Target_ID = PlayerId
-	--Tasks[Tasks_size].Header.Fct_can_PickTask  = madtulip_Task_Heal_NPC_or_Player.can_PickTask
-	--Tasks[Tasks_size].Header.Fct_main_PickTask = madtulip_Task_Heal_NPC_or_Player.main_Task
-	--Tasks[Tasks_size].Header.Fct_end_PickTask  = madtulip_Task_Heal_NPC_or_Player.end_Task
-	Tasks[Tasks_size].Header.Msg_on_discover_this_Task = "MEDIC!!!"
-	--Tasks[Tasks_size].Header.Msg_on_heared_about_Task = "MEDIC!!!"
-	Tasks[Tasks_size].Header.Msg_on_PickTask = "I can handle that!"
-	Tasks[Tasks_size].Const = {}
-	Tasks[Tasks_size].Const.Timeout = 3
-
-	for idx, NPCId in pairs(world.npcQuery(entity.position(), 250)) do
-		local NPC_health = world.entityHealth(NPCId)
-		-- health smaler 95% of max health
-		if (NPC_health[1] < 0.95* NPC_health[2]) then
-			-- spawn task
-			Tasks_size = Tasks_size + 1;
-			Tasks[Tasks_size] = {}
-			Tasks[Tasks_size].Header = {}
-			Tasks[Tasks_size].Header.Name = "Heal_NPC"
-			Tasks[Tasks_size].Header.Occupation = "Medic"
-			Tasks[Tasks_size].Header.Target_ID = PlayerId
-			Tasks[Tasks_size].Header.Fct_Task  = "madtulip_Task_Heal_NPC_or_Player"
-			Tasks[Tasks_size].Header.Msg_on_discover_this_Task = "MEDIC!!!"
-			--Tasks[Tasks_size].Header.Msg_on_heared_about_Task = "MEDIC!!!"
-			Tasks[Tasks_size].Header.Msg_on_PickTask = "I can handle that!"
-			Tasks[Tasks_size].Const = {}
-			Tasks[Tasks_size].Const.Timeout = 30
-		end
-	end
-]]
+	-- init variables
 	local Tasks = {}
-	local radius = 50
+	local radius = entity.configParameter("madtulipTS.find_Heal_NPC_or_Player_range", nil)
 	local Tasks_size = 0
 	
+	-- find damaged players
 	for idx, PlayerId in pairs(world.playerQuery(entity.position(), radius)) do
 		local Player_health = world.entityHealth(PlayerId)
 		-- health smaller 95% of max health
-		if (Player_health[1] < 1.95* Player_health[2]) then
+		if (Player_health[1] < 0.95* Player_health[2]) then
 			-- spawn task
 			Tasks_size = Tasks_size + 1;
 			Tasks[Tasks_size] = {}
@@ -82,12 +28,46 @@ function madtulip_Task_Heal_NPC_or_Player.spot_Task()
 			Tasks[Tasks_size].Global.is_done_timestemp = os.time()
 			Tasks[Tasks_size].Const = {}
 			Tasks[Tasks_size].Const.Timeout = 30
+			Tasks[Tasks_size].Var = {}
+			Tasks[Tasks_size].Var.Cur_Target_Position = nil
+			Tasks[Tasks_size].Var.Cur_Target_Position_BB = nil
 			
-			Tasks[Tasks_size].Const.Do_this_from  = os.time() + 5
-			Tasks[Tasks_size].Const.Do_this_until = os.time() + 10
+			--Tasks[Tasks_size].Const.Do_this_from  = os.time() + 5
+			--Tasks[Tasks_size].Const.Do_this_until = os.time() + 10
 		end
 	end
 
+	-- find damaged NPCs
+	for idx, NPCId in pairs(world.npcQuery(entity.position(), radius)) do
+		local NPC_health = world.entityHealth(NPCId)
+		-- health smaller 95% of max health
+		if (NPC_health[1] < 0.95* NPC_health[2]) then
+			-- spawn task
+			Tasks_size = Tasks_size + 1;
+			Tasks[Tasks_size] = {}
+			Tasks[Tasks_size].Header = {}
+			Tasks[Tasks_size].Header.Name = "Heal_Player"
+			Tasks[Tasks_size].Header.Occupation = "Medic"
+			Tasks[Tasks_size].Header.Target_ID = NPCId
+			Tasks[Tasks_size].Header.Fct_Task  = "madtulip_Task_Heal_NPC_or_Player"
+			Tasks[Tasks_size].Header.Msg_on_discover_this_Task = "MEDIC!!!"
+			Tasks[Tasks_size].Header.Msg_on_PickTask = "I can handle that!"
+			Tasks[Tasks_size].Global = {}
+			Tasks[Tasks_size].Global.is_beeing_handled = false
+			Tasks[Tasks_size].Global.is_beeing_handled_timestemp = os.time()
+			Tasks[Tasks_size].Global.is_done = false
+			Tasks[Tasks_size].Global.is_done_timestemp = os.time()
+			Tasks[Tasks_size].Const = {}
+			Tasks[Tasks_size].Const.Timeout = 30
+			Tasks[Tasks_size].Var = {}
+			Tasks[Tasks_size].Var.Cur_Target_Position = nil
+			Tasks[Tasks_size].Var.Cur_Target_Position_BB = nil
+			
+			--Tasks[Tasks_size].Const.Do_this_from  = os.time() + 5
+			--Tasks[Tasks_size].Const.Do_this_until = os.time() + 10
+		end
+	end
+	
 	return Tasks;
 end
 
@@ -109,16 +89,50 @@ function madtulip_Task_Heal_NPC_or_Player.main_Task(Task)
 	-- the main of the Task which is called all the time until it return true (the task is done)
 	--world.logInfo("madtulip_Task_Heal_NPC_or_Player.main_Task(Task)")
 	
-	local Player_health = world.entityHealth(Task.Header.Target_ID)
-	--if (Player_health[1] < 2.95* Player_health[2]) then
-	if (Task.Const.Do_this_until > os.time()) then
+	local cur_health = world.entityHealth(Task.Header.Target_ID)
+	if (cur_health[1] < 0.95* cur_health[2]) then
+	--if (Task.Const.Do_this_until > os.time()) then
 		-- health larger 95% of max health
-		local position = entity.position()
-		position[1] = position[1]+3
-	    entity.setAimPosition(position)
-		if (Task.Const.Do_this_from < os.time()) then
-			entity.beginPrimaryFire()
+		local own_position = entity.position()
+		local target_position = world.entityPosition (Task.Header.Target_ID)
+		local distance = world.distance(own_position,target_position)
+		
+		-- move towards target (handles by madtulipROIState
+		Task.Var.Cur_Target_Position    = target_position
+		Task.Var.Cur_Target_Position_BB = entity.configParameter("madtulipTS.Heal_NPC_or_Player_ROI_BB", nil)
+
+		if (Task.Var.State_Error_cant_reach_Target) then
+			-- State Machine couldn't find a passable target to finish job
+			Task.Var.State_Error_cant_reach_Target = nil -- clear flag
+			--return true -- stop Task
+			-- instead of stopping we can just wait for timeout.
+			-- other NPCs will also not be able to reach the target of this task.
+			-- we could increase the BB to search for a moveable target here.
+			-- is possible that the target is just jumping atm. and will be targetable for movement again soon.
 		end
+		
+--[[ just included as an example
+		if (Task.Var.State_ROI_on_the_move) then
+			-- state machine is still moveing towards its target
+			Task.Var.State_ROI_on_the_move = false -- clear flag
+		end
+]]
+		-- aim at target
+	    entity.setAimPosition(target_position)
+		if (distance < entity.configParameter("madtulipTS.use_bonemender_range", nil))then
+			-- close enough to use bone mender --> fire
+			entity.beginPrimaryFire()
+			
+			if (Task.Var.State_ROI_target_reached) then
+				-- state machine reach position and exited state
+				Task.Var.State_ROI_target_reached = false -- clear flag
+				
+				--> remove target so state machine stops starting again for searching for new target
+				Task.Var.Cur_Target_Position    = nil
+				Task.Var.Cur_Target_Position_BB = nil
+			end
+		end
+		
 		return false -- if NOT done
 	else
 		return true -- if done
@@ -132,4 +146,6 @@ function madtulip_Task_Heal_NPC_or_Player.end_Task()
 	
 	entity.setItemSlot("primary", nil)
 	entity.setItemSlot("alt", nil)
+	
+	-- TODO: exit all current state machine states (before killing the task)
 end

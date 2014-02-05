@@ -15,20 +15,21 @@
 	"/_not_for_release/crew/scripts/madtulip_crew_interact.lua",
 	"/_not_for_release/crew/scripts/madtulip_crew_occupation.lua",
 	"/_not_for_release/crew/scripts/madtulipLocation.lua",
+
+	"/_not_for_release/crew/scripts/tasks/madtulip_task_heal_npc_or_player.lua",
+	
+	"/_not_for_release/crew/scripts/madtulip_TS.lua",
 	
 	"/_not_for_release/crew/scripts/states/madtulipcommandState.lua",
-	//"/_not_for_release/crew/scripts/states/madtulipROIState.lua",
+	"/_not_for_release/crew/scripts/states/madtulipROIState.lua",
 	//"/_not_for_release/crew/scripts/states/chatState.lua",
 	//"/_not_for_release/crew/scripts/states/converseState.lua",
 	//"/_not_for_release/crew/scripts/states/sitState.lua",
 	//"/_not_for_release/crew/scripts/states/sleepState.lua",
 	
-	"/_not_for_release/crew/scripts/tasks/madtulip_task_heal_npc_or_player.lua",
-	
     "/npcs/timers.lua",
     "/scripts/sensors.lua",
 	"/scripts/stateMachine.lua",
-	"/_not_for_release/crew/scripts/madtulip_TS.lua",
     "/scripts/util.lua",
     "/scripts/vec2.lua"
   ],
@@ -43,6 +44,11 @@
 
 	"madtulipTS" : {
 		"broadcast_range" : 50,
+		
+		"find_Heal_NPC_or_Player_range" : 50,		// -> madtulip_Task_Heal_NPC_or_Player
+		"use_bonemender_range" : 5,					// -> madtulip_Task_Heal_NPC_or_Player
+		"Heal_NPC_or_Player_ROI_BB" : [-3,0,3,3],	// -> madtulip_Task_Heal_NPC_or_Player
+		
 		"Task_spotting_functions" : [
 			"madtulip_Task_Heal_NPC_or_Player"
 		]

@@ -3,6 +3,13 @@
 -- They define a number of states and goals to walk through in order to solve them (like get fire extinguisher -> walk to fire -> extinguish fire)
 madtulip_TS = {}
 
+function madtulip_TS.Has_A_Task()
+	if (storage.Known_Tasks.idx_of_my_current_Task ~= nil) and (madtulip_TS.is_init) then
+		return true
+	end
+	return false
+end
+
 function madtulip_TS.Init()
 	-- adding this line forgets all previous tasks. this is sadly necessary as IDs dont persist over load.
 	storage.Known_Tasks = nil
@@ -165,57 +172,54 @@ function madtulip_TS.Split_Task_in_New_and_Known(Tasks_to_check)
 end
 
 function madtulip_TS.Update_Known_Tasks_Properties(Known_Tasks)
-world.logInfo("Update_Known_Tasks_Properties My Id: " .. entity.id())
+	-- world.logInfo("Update_Known_Tasks_Properties My Id: " .. entity.id())
 	local idx_cur_Stored_Task = nil
 	local cur_Known_Task_contained_new_global_information = nil
+	
 	for idx_cur_Task = 1,Known_Tasks.size,1 do
 		-- index under which I stored the known Task
 		idx_cur_Stored_Task = Known_Tasks.Tasks[idx_cur_Task].Var.Known_as_storage_index
 		cur_Known_Task_contained_new_global_information = false
 		
+		--local info_who_handles_this_task_is_newer = (Known_Tasks.Tasks[idx_cur_Task].Global.is_beeing_handled_timestemp > storage.Known_Tasks.Tasks[idx_cur_Stored_Task].Global.is_beeing_handled_timestemp)
+		local someone_started_handling_the_task = (Known_Tasks.Tasks[idx_cur_Task].Global.is_beeing_handled == true) and (storage.Known_Tasks.Tasks[idx_cur_Stored_Task].Global.is_beeing_handled == false)
+		--local info_that_task_is_done_is_newer = (Known_Tasks.Tasks[idx_cur_Task].Global.is_done_timestemp > storage.Known_Tasks.Tasks[idx_cur_Stored_Task].Global.is_done_timestemp)
+		local someone_did_the_task = (Known_Tasks.Tasks[idx_cur_Task].Global.is_done == true) and (storage.Known_Tasks.Tasks[idx_cur_Stored_Task].Global.is_done == false)		
+		
 		-- Copy parts of contents of the .Global part
 		-- In order to decided which part of the .Global is new we use a timestemp
+		if someone_started_handling_the_task then
+			--world.logInfo("someone_started_handling_the_task update detected by entity id: " .. entity.id() .. " handler id: " .. " handler_ID : " .. Known_Tasks.Tasks[idx_cur_Task].Global.handled_by_ID))
+			cur_Known_Task_contained_new_global_information = true;
 		
-		if (Known_Tasks.Tasks[idx_cur_Task].Global.is_beeing_handled_timestemp > storage.Known_Tasks.Tasks[idx_cur_Stored_Task].Global.is_beeing_handled_timestemp)
-		or ((Known_Tasks.Tasks[idx_cur_Task].Global.is_beeing_handled == true) and (storage.Known_Tasks.Tasks[idx_cur_Stored_Task].Global.is_beeing_handled == false)) then
-			-- received Global information is newer then known information -> update known information
+			--> update my known information
 			storage.Known_Tasks.Tasks[idx_cur_Stored_Task].Global.is_beeing_handled           = Known_Tasks.Tasks[idx_cur_Task].Global.is_beeing_handled
 			storage.Known_Tasks.Tasks[idx_cur_Stored_Task].Global.handled_by_ID               = Known_Tasks.Tasks[idx_cur_Task].Global.handled_by_ID
-			storage.Known_Tasks.Tasks[idx_cur_Stored_Task].Global.is_beeing_handled_timestemp = Known_Tasks.Tasks[idx_cur_Task].Global.is_beeing_handled_timestemp
-			-- as this contained new information we might want to broadcast this later on so others also know about it.
-			cur_Known_Task_contained_new_global_information = true;
-			--world.logInfo("is_being_handled_timestemp update detected by entity id: " .. entity.id())
-			if (Known_Tasks.Tasks[idx_cur_Task].Global.is_beeing_handled == true) then
-				-- if this is also my task then someone else is also doing it
-				if (idx_cur_Stored_Task == storage.Known_Tasks.idx_of_my_current_Task) then
-					-- yes, someone else started working on it. I stop doing it as tasks are designed for only one person
+			--storage.Known_Tasks.Tasks[idx_cur_Stored_Task].Global.is_beeing_handled_timestemp = Known_Tasks.Tasks[idx_cur_Task].Global.is_beeing_handled_timestemp
+			
+			-- if this is also my task which someone else is doing
+			if (idx_cur_Stored_Task == storage.Known_Tasks.idx_of_my_current_Task) then
+				-- yes, someone else started working on it also.
+				-- I stop doing it as tasks are designed for only one person.
 -- TODO: here we should start communication with Known_Tasks.Tasks[idx_cur_Task].Global.handled_by_ID
 -- and decide who will do the job (maybe one of them is closer to being done).
-					-- the rule we use here is that the smallest ID keeps the Task
-					madtulip_TS.cancel_my_current_Task()
-					world.logInfo("Stopping my current Task as he already does it. My Id: " .. entity.id() .. " handler_ID : " .. Known_Tasks.Tasks[idx_cur_Task].Global.handled_by_ID)
-				end
-				--world.logInfo("I received that .Global.is_beeing_handled update. My Id: " .. entity.id() .. " handler_ID : " .. Known_Tasks.Tasks[idx_cur_Task].Global.handled_by_ID)
+				madtulip_TS.cancel_my_current_Task()
+				world.logInfo("Stopping my current Task as he already does it. My Id: " .. entity.id() .. " handler_ID : " .. Known_Tasks.Tasks[idx_cur_Task].Global.handled_by_ID)
 			end
 		end
-		if (Known_Tasks.Tasks[idx_cur_Task].Global.is_done_timestemp > storage.Known_Tasks.Tasks[idx_cur_Stored_Task].Global.is_done_timestemp)
-		or ((Known_Tasks.Tasks[idx_cur_Task].Global.is_done == true) and (storage.Known_Tasks.Tasks[idx_cur_Stored_Task].Global.is_done == false)) then
-			-- received Global information is newer then known information
-			-- OR received global information that shows a state progression of a Task
-			--> update known information
-			storage.Known_Tasks.Tasks[idx_cur_Stored_Task].Global.is_done = Known_Tasks.Tasks[idx_cur_Task].Global.is_done
-			storage.Known_Tasks.Tasks[idx_cur_Stored_Task].Global.is_done_timestemp = Known_Tasks.Tasks[idx_cur_Task].Global.is_done_timestemp
-			-- as this contained new information we might want to broadcast this later on so others also know about it.
+		if someone_did_the_task then
+			--world.logInfo("someone_did_the_task update detected by entity id: " .. entity.id())
 			cur_Known_Task_contained_new_global_information = true;
-			--world.logInfo("is_done_timestemp update detected by entity id: " .. entity.id())
-			if (Known_Tasks.Tasks[idx_cur_Task].Global.is_done == true) then
-				-- its done, am i also working on that task?
-				if (idx_cur_Stored_Task == storage.Known_Tasks.idx_of_my_current_Task) then
-					-- im also working on that ... call its ending function for me as well
-					madtulip_TS.cancel_my_current_Task()
-					--world.logInfo("Stopping my current Task as someone else did already finish it.")
-				end
-				--world.logInfo("Heared about .Global.is_done update")
+			
+			--> update my known information
+			storage.Known_Tasks.Tasks[idx_cur_Stored_Task].Global.is_done = Known_Tasks.Tasks[idx_cur_Task].Global.is_done
+			--storage.Known_Tasks.Tasks[idx_cur_Stored_Task].Global.is_done_timestemp = Known_Tasks.Tasks[idx_cur_Task].Global.is_done_timestemp
+			
+			-- its done, am i also working on that task?
+			if (idx_cur_Stored_Task == storage.Known_Tasks.idx_of_my_current_Task) then
+				--world.logInfo("Stopping my current Task as someone else did already finish it.")
+				-- im also working on that ... call its ending function for me as well
+				madtulip_TS.cancel_my_current_Task()
 			end
 		end
 		
@@ -226,8 +230,8 @@ world.logInfo("Update_Known_Tasks_Properties My Id: " .. entity.id())
 			Msg_Tasks.Tasks = {}
 			Msg_Tasks.size = 1
 			Msg_Tasks.Tasks[1] = storage.Known_Tasks.Tasks[idx_cur_Stored_Task]
-			--world.logInfo("Broadcast that i received Global. news" .. entity.id())
-			--madtulip_TS.Broadcast_Tasks(Msg_Tasks)
+			world.logInfo("Broadcast that i received Global. news" .. entity.id())
+			madtulip_TS.Broadcast_Tasks(Msg_Tasks)
 		end
 	end
 end
@@ -319,7 +323,7 @@ function madtulip_TS.Update_My_Task()
 					-- mark the task as being processed
 					storage.Known_Tasks.Tasks[idx_cur_Task].Global.is_beeing_handled = true
 					storage.Known_Tasks.Tasks[idx_cur_Task].Global.handled_by_ID = entity.id()
-					storage.Known_Tasks.Tasks[idx_cur_Task].Global.is_beeing_handled_timestemp = os.time()
+					--storage.Known_Tasks.Tasks[idx_cur_Task].Global.is_beeing_handled_timestemp = os.time()
 					
 					-- communicate to others that I handle it
 					local Msg_Tasks = {}
@@ -363,7 +367,8 @@ function madtulip_TS.successfully_end_my_current_Task()
 
 	-- communicate to others that "I did it !"
 	storage.Known_Tasks.Tasks[storage.Known_Tasks.idx_of_my_current_Task].Global.is_done = true
-	storage.Known_Tasks.Tasks[storage.Known_Tasks.idx_of_my_current_Task].Global.is_done_timestemp = os.time()
+	--storage.Known_Tasks.Tasks[storage.Known_Tasks.idx_of_my_current_Task].Global.is_done_timestemp = os.time()
+	
 	local Msg_Tasks = {}
 	Msg_Tasks.Tasks = {}
 	Msg_Tasks.size = 1
@@ -387,7 +392,7 @@ end
 function madtulip_TS.Offer_Tasks(Offered_Tasks)
 	world.logInfo("Im offered a Task " .. entity.id())
 	if (storage.Known_Tasks.Is_Init) then
-		--world.logInfo("External offered")
+		world.logInfo("External offered to ID: " .. entity.id())
 		local Splited_Tasks = madtulip_TS.Split_Task_in_New_and_Known(Offered_Tasks)
 
 		-- Remember the new Tasks found
@@ -396,6 +401,7 @@ function madtulip_TS.Offer_Tasks(Offered_Tasks)
 				if (Splited_Tasks.New_Tasks.size ~= nil) then
 					if (Splited_Tasks.New_Tasks.size > 0) then
 						-- the new tasks are to be copied to memory
+						world.logInfo("External contained NEW to ID: " .. entity.id())
 						madtulip_TS.Remember_Tasks(Splited_Tasks.New_Tasks)
 					end
 				end
@@ -404,6 +410,7 @@ function madtulip_TS.Offer_Tasks(Offered_Tasks)
 				if (Splited_Tasks.Known_Tasks.size ~= nil) then
 					if (Splited_Tasks.Known_Tasks.size > 0) then
 						-- Tasks that we already knew about might have been updated
+						world.logInfo("External contained KNOWN to ID: " .. entity.id())
 						madtulip_TS.Update_Known_Tasks_Properties(Splited_Tasks.Known_Tasks)
 					end
 				end

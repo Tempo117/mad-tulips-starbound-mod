@@ -43,36 +43,36 @@ function Set_Occupation_Cloth()
 	if storage.Occupation == nil then return nil end
 	if     storage.Occupation == "Engineer" then
 		-- Engineer
-		entity.setItemSlot("primary", nil)
-		entity.setItemSlot("alt", nil)
+		--entity.setItemSlot("primary", nil)
+		--entity.setItemSlot("alt", nil)
 		entity.setItemSlot("chest", {name = "madtulip_" .. entity.species() .. "_engineer_chest", data ={ colorIndex = storage.colorIndex }})
 		entity.setItemSlot("legs" , {name = "madtulip_" .. entity.species() .. "_engineer_pants", data ={ colorIndex = storage.colorIndex }})
 		return true
 	elseif storage.Occupation == "Medic" then
 		-- Medic
-		entity.setItemSlot("primary", nil)
-		entity.setItemSlot("alt", nil)
+		--entity.setItemSlot("primary", nil)
+		--entity.setItemSlot("alt", nil)
 		entity.setItemSlot("chest", {name = "madtulip_" .. entity.species() .. "_medical_chest", data ={ colorIndex = storage.colorIndex }})
 		entity.setItemSlot("legs" , {name = "madtulip_" .. entity.species() .. "_medical_pants", data ={ colorIndex = storage.colorIndex }})
 		return true
 	elseif storage.Occupation == "Scientist" then
 		-- Scientist
-		entity.setItemSlot("primary", nil)
-		entity.setItemSlot("alt", nil)
+		--entity.setItemSlot("primary", nil)
+		--entity.setItemSlot("alt", nil)
 		entity.setItemSlot("chest", {name = "madtulip_" .. entity.species() .. "_science_chest", data ={ colorIndex = storage.colorIndex }})
 		entity.setItemSlot("legs" , {name = "madtulip_" .. entity.species() .. "_science_pants", data ={ colorIndex = storage.colorIndex }})
 		return true
 	elseif storage.Occupation == "Marine" then
 		-- Marine
-		entity.setItemSlot("primary", nil)
-		entity.setItemSlot("alt", nil)
+		--entity.setItemSlot("primary", nil)
+		--entity.setItemSlot("alt", nil)
 		entity.setItemSlot("chest", {name = "madtulip_" .. entity.species() .. "_marine_chest", data ={ colorIndex = storage.colorIndex }})
 		entity.setItemSlot("legs" , {name = "madtulip_" .. entity.species() .. "_marine_pants", data ={ colorIndex = storage.colorIndex }})
 		return true
 	elseif storage.Occupation == "Deckhand" then
 		-- None
-		entity.setItemSlot("primary", nil)
-		entity.setItemSlot("alt", nil)
+		--entity.setItemSlot("primary", nil)
+		--entity.setItemSlot("alt", nil)
 		entity.setItemSlot("chest", {name = "madtulip_" .. entity.species() .. "_deckhand_chest", data ={ colorIndex = storage.colorIndex }})
 		entity.setItemSlot("legs" , {name = "madtulip_" .. entity.species() .. "_deckhand_pants", data ={ colorIndex = storage.colorIndex }})
 		return true
