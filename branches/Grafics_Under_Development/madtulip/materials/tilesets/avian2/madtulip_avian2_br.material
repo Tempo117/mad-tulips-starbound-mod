@@ -1,0 +1,14 @@
+{
+  "materialId" : 21223,
+  "materialName" : "madtulip_avian2_br",
+  "frames" : "madtulip_avian2_br.png",
+  "transparent" : true,
+  "particleColor" : [110, 110, 110, 255],
+  "variants" : 1,
+  "itemDrop" : "madtulip_avian2_tileset",
+  "description" : "Avian Spaceship Hull Tileset 2",
+  "shortdescription" : "Avian Spaceship Hull Tileset 2",
+  "multicolored" : false,
+  "footstepSound" : "/sfx/blocks/footstep_composite.wav",
+  "health" : 10
+}

@@ -137,104 +137,21 @@ end
 
 function get_tileset_mat_type(cur_F_mat)
 	-- returns the mat type of the mat (human,glitch ..) or nil if unknown
-	if     (cur_F_mat == "madtulip_apex_bl")
-		or (cur_F_mat == "madtulip_apex_blt")
-		or (cur_F_mat == "madtulip_apex_br")
-		or (cur_F_mat == "madtulip_apex_lr")
-		or (cur_F_mat == "madtulip_apex_ltr")
-		or (cur_F_mat == "madtulip_apex_rbl")
-		or (cur_F_mat == "madtulip_apex_tb")
-		or (cur_F_mat == "madtulip_apex_tl")
-		or (cur_F_mat == "madtulip_apex_tr")
-		or (cur_F_mat == "madtulip_apex_trb")
-		or (cur_F_mat == "madtulip_apex_trbl") 
-		or (cur_F_mat == "madtulip_apex_default") then
-		return "apex"
-	end
-	if     (cur_F_mat == "madtulip_avian_bl")
-		or (cur_F_mat == "madtulip_avian_blt")
-		or (cur_F_mat == "madtulip_avian_br")
-		or (cur_F_mat == "madtulip_avian_lr")
-		or (cur_F_mat == "madtulip_avian_ltr")
-		or (cur_F_mat == "madtulip_avian_rbl")
-		or (cur_F_mat == "madtulip_avian_tb")
-		or (cur_F_mat == "madtulip_avian_tl")
-		or (cur_F_mat == "madtulip_avian_tr")
-		or (cur_F_mat == "madtulip_avian_trb")
-		or (cur_F_mat == "madtulip_avian_trbl")
-		or (cur_F_mat == "madtulip_avian_default") then
-		return "avian"
-	end
-	if     (cur_F_mat == "madtulip_floran_bl")
-		or (cur_F_mat == "madtulip_floran_blt")
-		or (cur_F_mat == "madtulip_floran_br")
-		or (cur_F_mat == "madtulip_floran_lr")
-		or (cur_F_mat == "madtulip_floran_ltr")
-		or (cur_F_mat == "madtulip_floran_rbl")
-		or (cur_F_mat == "madtulip_floran_tb")
-		or (cur_F_mat == "madtulip_floran_tl")
-		or (cur_F_mat == "madtulip_floran_tr")
-		or (cur_F_mat == "madtulip_floran_trb")
-		or (cur_F_mat == "madtulip_floran_trbl")
-		or (cur_F_mat == "madtulip_floran_default") then
-		return "floran"
-	end
-	if     (cur_F_mat == "madtulip_glitch_bl")
-		or (cur_F_mat == "madtulip_glitch_blt")
-		or (cur_F_mat == "madtulip_glitch_br")
-		or (cur_F_mat == "madtulip_glitch_lr")
-		or (cur_F_mat == "madtulip_glitch_ltr")
-		or (cur_F_mat == "madtulip_glitch_rbl")
-		or (cur_F_mat == "madtulip_glitch_tb")
-		or (cur_F_mat == "madtulip_glitch_tl")
-		or (cur_F_mat == "madtulip_glitch_tr")
-		or (cur_F_mat == "madtulip_glitch_trb")
-		or (cur_F_mat == "madtulip_glitch_trbl")
-		or (cur_F_mat == "madtulip_glitch_default") then
-		return "glitch"
-	end
-	if     (cur_F_mat == "madtulip_human_bl")
-		or (cur_F_mat == "madtulip_human_blt")
-		or (cur_F_mat == "madtulip_human_br")
-		or (cur_F_mat == "madtulip_human_lr")
-		or (cur_F_mat == "madtulip_human_ltr")
-		or (cur_F_mat == "madtulip_human_rbl")
-		or (cur_F_mat == "madtulip_human_tb")
-		or (cur_F_mat == "madtulip_human_tl")
-		or (cur_F_mat == "madtulip_human_tr")
-		or (cur_F_mat == "madtulip_human_trb")
-		or (cur_F_mat == "madtulip_human_trbl")
-		or (cur_F_mat == "madtulip_human_default") then
-		return "human"
-	end
-	if     (cur_F_mat == "madtulip_hylotl_bl")
-		or (cur_F_mat == "madtulip_hylotl_blt")
-		or (cur_F_mat == "madtulip_hylotl_br")
-		or (cur_F_mat == "madtulip_hylotl_lr")
-		or (cur_F_mat == "madtulip_hylotl_ltr")
-		or (cur_F_mat == "madtulip_hylotl_rbl")
-		or (cur_F_mat == "madtulip_hylotl_tb")
-		or (cur_F_mat == "madtulip_hylotl_tl")
-		or (cur_F_mat == "madtulip_hylotl_tr")
-		or (cur_F_mat == "madtulip_hylotl_trb")
-		or (cur_F_mat == "madtulip_hylotl_trbl")
-		or (cur_F_mat == "madtulip_hylotl_default") then
-		return "hylotl"
-	end
-	if     (cur_F_mat == "madtulip_glass_bl")
-		or (cur_F_mat == "madtulip_glass_blt")
-		or (cur_F_mat == "madtulip_glass_br")
-		or (cur_F_mat == "madtulip_glass_lr")
-		or (cur_F_mat == "madtulip_glass_ltr")
-		or (cur_F_mat == "madtulip_glass_rbl")
-		or (cur_F_mat == "madtulip_glass_tb")
-		or (cur_F_mat == "madtulip_glass_tl")
-		or (cur_F_mat == "madtulip_glass_tr")
-		or (cur_F_mat == "madtulip_glass_trb")
-		or (cur_F_mat == "madtulip_glass_trbl")
-		or (cur_F_mat == "madtulip_glass_default") then
-		return "glass"
-	end
+	if cur_F_mat == nil then return nil end
+	
+	if string.find(cur_F_mat, "madtulip_apex2_") then return "apex2" end
+	if string.find(cur_F_mat, "madtulip_apex_") then return "apex" end
+	if string.find(cur_F_mat, "madtulip_avian2_") then return "avian2" end
+	if string.find(cur_F_mat, "madtulip_avian_") then return "avian" end
+	if string.find(cur_F_mat, "madtulip_floran2_") then return "floran2" end
+	if string.find(cur_F_mat, "madtulip_floran_") then return "floran" end
+	if string.find(cur_F_mat, "madtulip_glitch2_") then return "glitch2" end
+	if string.find(cur_F_mat, "madtulip_glitch_") then return "glitch" end
+	if string.find(cur_F_mat, "madtulip_human2_") then return "human2" end
+	if string.find(cur_F_mat, "madtulip_human_") then return "human" end
+	if string.find(cur_F_mat, "madtulip_hylotl2_") then return "hylotl2" end
+	if string.find(cur_F_mat, "madtulip_hylotl_") then return "hylotl" end
+	if string.find(cur_F_mat, "madtulip_glass_") then return "glass" end
 	
 	-- default
 	return nil
@@ -304,122 +221,33 @@ function set_own_mat (cur_Pos,layer,f_tileset_mat_type,own_mat_to_be_set)
 	world.damageTiles({cur_Pos}, layer, cur_Pos, "crushing", 10000)
 	-- place new block
 	local could_place = false
-	if (f_tileset_mat_type == "human") then
-		if(own_mat_to_be_set == "bl")       then could_place = world.placeMaterial(cur_Pos, layer, "madtulip_human_bl")
-		elseif(own_mat_to_be_set == "blt")  then could_place = world.placeMaterial(cur_Pos, layer, "madtulip_human_blt")
-		elseif(own_mat_to_be_set == "br")   then could_place = world.placeMaterial(cur_Pos, layer, "madtulip_human_br")
-		elseif(own_mat_to_be_set == "lr")   then could_place = world.placeMaterial(cur_Pos, layer, "madtulip_human_lr")
-		elseif(own_mat_to_be_set == "ltr")  then could_place = world.placeMaterial(cur_Pos, layer, "madtulip_human_ltr")
-		elseif(own_mat_to_be_set == "rbl")  then could_place = world.placeMaterial(cur_Pos, layer, "madtulip_human_rbl")
-		elseif(own_mat_to_be_set == "tb")   then could_place = world.placeMaterial(cur_Pos, layer, "madtulip_human_tb")
-		elseif(own_mat_to_be_set == "tl")   then could_place = world.placeMaterial(cur_Pos, layer, "madtulip_human_tl")
-		elseif(own_mat_to_be_set == "tr")   then could_place = world.placeMaterial(cur_Pos, layer, "madtulip_human_tr")
-		elseif(own_mat_to_be_set == "trb")  then could_place = world.placeMaterial(cur_Pos, layer, "madtulip_human_trb")
-		elseif(own_mat_to_be_set == "trbl") then could_place = world.placeMaterial(cur_Pos, layer, "madtulip_human_trbl")
-		elseif(own_mat_to_be_set == "default") then could_place = world.placeMaterial(cur_Pos, layer, "madtulip_human_default")
-		else
-			return nil
-		end
-	elseif (f_tileset_mat_type == "apex") then
-		if(own_mat_to_be_set == "bl")       then could_place = world.placeMaterial(cur_Pos, layer, "madtulip_apex_bl")
-		elseif(own_mat_to_be_set == "blt")  then could_place = world.placeMaterial(cur_Pos, layer, "madtulip_apex_blt")
-		elseif(own_mat_to_be_set == "br")   then could_place = world.placeMaterial(cur_Pos, layer, "madtulip_apex_br")
-		elseif(own_mat_to_be_set == "lr")   then could_place = world.placeMaterial(cur_Pos, layer, "madtulip_apex_lr")
-		elseif(own_mat_to_be_set == "ltr")  then could_place = world.placeMaterial(cur_Pos, layer, "madtulip_apex_ltr")
-		elseif(own_mat_to_be_set == "rbl")  then could_place = world.placeMaterial(cur_Pos, layer, "madtulip_apex_rbl")
-		elseif(own_mat_to_be_set == "tb")   then could_place = world.placeMaterial(cur_Pos, layer, "madtulip_apex_tb")
-		elseif(own_mat_to_be_set == "tl")   then could_place = world.placeMaterial(cur_Pos, layer, "madtulip_apex_tl")
-		elseif(own_mat_to_be_set == "tr")   then could_place = world.placeMaterial(cur_Pos, layer, "madtulip_apex_tr")
-		elseif(own_mat_to_be_set == "trb")  then could_place = world.placeMaterial(cur_Pos, layer, "madtulip_apex_trb")
-		elseif(own_mat_to_be_set == "trbl") then could_place = world.placeMaterial(cur_Pos, layer, "madtulip_apex_trbl")
-		elseif(own_mat_to_be_set == "default") then could_place = world.placeMaterial(cur_Pos, layer, "madtulip_apex_default")
-		else
-			return nil
-		end
-	elseif (f_tileset_mat_type == "avian") then
-		if(own_mat_to_be_set == "bl")       then could_place = world.placeMaterial(cur_Pos, layer, "madtulip_avian_bl")
-		elseif(own_mat_to_be_set == "blt")  then could_place = world.placeMaterial(cur_Pos, layer, "madtulip_avian_blt")
-		elseif(own_mat_to_be_set == "br")   then could_place = world.placeMaterial(cur_Pos, layer, "madtulip_avian_br")
-		elseif(own_mat_to_be_set == "lr")   then could_place = world.placeMaterial(cur_Pos, layer, "madtulip_avian_lr")
-		elseif(own_mat_to_be_set == "ltr")  then could_place = world.placeMaterial(cur_Pos, layer, "madtulip_avian_ltr")
-		elseif(own_mat_to_be_set == "rbl")  then could_place = world.placeMaterial(cur_Pos, layer, "madtulip_avian_rbl")
-		elseif(own_mat_to_be_set == "tb")   then could_place = world.placeMaterial(cur_Pos, layer, "madtulip_avian_tb")
-		elseif(own_mat_to_be_set == "tl")   then could_place = world.placeMaterial(cur_Pos, layer, "madtulip_avian_tl")
-		elseif(own_mat_to_be_set == "tr")   then could_place = world.placeMaterial(cur_Pos, layer, "madtulip_avian_tr")
-		elseif(own_mat_to_be_set == "trb")  then could_place = world.placeMaterial(cur_Pos, layer, "madtulip_avian_trb")
-		elseif(own_mat_to_be_set == "trbl") then could_place = world.placeMaterial(cur_Pos, layer, "madtulip_avian_trbl")
-		elseif(own_mat_to_be_set == "default") then could_place = world.placeMaterial(cur_Pos, layer, "madtulip_avian_default")
-		else
-			return nil
-		end
-	elseif (f_tileset_mat_type == "floran") then
-		if(own_mat_to_be_set == "bl")       then could_place = world.placeMaterial(cur_Pos, layer, "madtulip_floran_bl")
-		elseif(own_mat_to_be_set == "blt")  then could_place = world.placeMaterial(cur_Pos, layer, "madtulip_floran_blt")
-		elseif(own_mat_to_be_set == "br")   then could_place = world.placeMaterial(cur_Pos, layer, "madtulip_floran_br")
-		elseif(own_mat_to_be_set == "lr")   then could_place = world.placeMaterial(cur_Pos, layer, "madtulip_floran_lr")
-		elseif(own_mat_to_be_set == "ltr")  then could_place = world.placeMaterial(cur_Pos, layer, "madtulip_floran_ltr")
-		elseif(own_mat_to_be_set == "rbl")  then could_place = world.placeMaterial(cur_Pos, layer, "madtulip_floran_rbl")
-		elseif(own_mat_to_be_set == "tb")   then could_place = world.placeMaterial(cur_Pos, layer, "madtulip_floran_tb")
-		elseif(own_mat_to_be_set == "tl")   then could_place = world.placeMaterial(cur_Pos, layer, "madtulip_floran_tl")
-		elseif(own_mat_to_be_set == "tr")   then could_place = world.placeMaterial(cur_Pos, layer, "madtulip_floran_tr")
-		elseif(own_mat_to_be_set == "trb")  then could_place = world.placeMaterial(cur_Pos, layer, "madtulip_floran_trb")
-		elseif(own_mat_to_be_set == "trbl") then could_place = world.placeMaterial(cur_Pos, layer, "madtulip_floran_trbl")
-		elseif(own_mat_to_be_set == "default") then could_place = world.placeMaterial(cur_Pos, layer, "madtulip_floran_default")
-		else
-			return nil
-		end
-	elseif (f_tileset_mat_type == "glitch") then
-		if(own_mat_to_be_set == "bl")       then could_place = world.placeMaterial(cur_Pos, layer, "madtulip_glitch_bl")
-		elseif(own_mat_to_be_set == "blt")  then could_place = world.placeMaterial(cur_Pos, layer, "madtulip_glitch_blt")
-		elseif(own_mat_to_be_set == "br")   then could_place = world.placeMaterial(cur_Pos, layer, "madtulip_glitch_br")
-		elseif(own_mat_to_be_set == "lr")   then could_place = world.placeMaterial(cur_Pos, layer, "madtulip_glitch_lr")
-		elseif(own_mat_to_be_set == "ltr")  then could_place = world.placeMaterial(cur_Pos, layer, "madtulip_glitch_ltr")
-		elseif(own_mat_to_be_set == "rbl")  then could_place = world.placeMaterial(cur_Pos, layer, "madtulip_glitch_rbl")
-		elseif(own_mat_to_be_set == "tb")   then could_place = world.placeMaterial(cur_Pos, layer, "madtulip_glitch_tb")
-		elseif(own_mat_to_be_set == "tl")   then could_place = world.placeMaterial(cur_Pos, layer, "madtulip_glitch_tl")
-		elseif(own_mat_to_be_set == "tr")   then could_place = world.placeMaterial(cur_Pos, layer, "madtulip_glitch_tr")
-		elseif(own_mat_to_be_set == "trb")  then could_place = world.placeMaterial(cur_Pos, layer, "madtulip_glitch_trb")
-		elseif(own_mat_to_be_set == "trbl") then could_place = world.placeMaterial(cur_Pos, layer, "madtulip_glitch_trbl")
-		elseif(own_mat_to_be_set == "default") then could_place = world.placeMaterial(cur_Pos, layer, "madtulip_glitch_default")
-		else
-			return nil
-		end
-	elseif (f_tileset_mat_type == "hylotl") then
-		if(own_mat_to_be_set == "bl")       then could_place = world.placeMaterial(cur_Pos, layer, "madtulip_hylotl_bl")
-		elseif(own_mat_to_be_set == "blt")  then could_place = world.placeMaterial(cur_Pos, layer, "madtulip_hylotl_blt")
-		elseif(own_mat_to_be_set == "br")   then could_place = world.placeMaterial(cur_Pos, layer, "madtulip_hylotl_br")
-		elseif(own_mat_to_be_set == "lr")   then could_place = world.placeMaterial(cur_Pos, layer, "madtulip_hylotl_lr")
-		elseif(own_mat_to_be_set == "ltr")  then could_place = world.placeMaterial(cur_Pos, layer, "madtulip_hylotl_ltr")
-		elseif(own_mat_to_be_set == "rbl")  then could_place = world.placeMaterial(cur_Pos, layer, "madtulip_hylotl_rbl")
-		elseif(own_mat_to_be_set == "tb")   then could_place = world.placeMaterial(cur_Pos, layer, "madtulip_hylotl_tb")
-		elseif(own_mat_to_be_set == "tl")   then could_place = world.placeMaterial(cur_Pos, layer, "madtulip_hylotl_tl")
-		elseif(own_mat_to_be_set == "tr")   then could_place = world.placeMaterial(cur_Pos, layer, "madtulip_hylotl_tr")
-		elseif(own_mat_to_be_set == "trb")  then could_place = world.placeMaterial(cur_Pos, layer, "madtulip_hylotl_trb")
-		elseif(own_mat_to_be_set == "trbl") then could_place = world.placeMaterial(cur_Pos, layer, "madtulip_hylotl_trbl")
-		elseif(own_mat_to_be_set == "default") then could_place = world.placeMaterial(cur_Pos, layer, "madtulip_hylotl_default")
-		else
-			return nil
-		end
-	elseif (f_tileset_mat_type == "glass") then
-		if(own_mat_to_be_set == "bl")       then could_place = world.placeMaterial(cur_Pos, layer, "madtulip_glass_bl")
-		elseif(own_mat_to_be_set == "blt")  then could_place = world.placeMaterial(cur_Pos, layer, "madtulip_glass_blt")
-		elseif(own_mat_to_be_set == "br")   then could_place = world.placeMaterial(cur_Pos, layer, "madtulip_glass_br")
-		elseif(own_mat_to_be_set == "lr")   then could_place = world.placeMaterial(cur_Pos, layer, "madtulip_glass_lr")
-		elseif(own_mat_to_be_set == "ltr")  then could_place = world.placeMaterial(cur_Pos, layer, "madtulip_glass_ltr")
-		elseif(own_mat_to_be_set == "rbl")  then could_place = world.placeMaterial(cur_Pos, layer, "madtulip_glass_rbl")
-		elseif(own_mat_to_be_set == "tb")   then could_place = world.placeMaterial(cur_Pos, layer, "madtulip_glass_tb")
-		elseif(own_mat_to_be_set == "tl")   then could_place = world.placeMaterial(cur_Pos, layer, "madtulip_glass_tl")
-		elseif(own_mat_to_be_set == "tr")   then could_place = world.placeMaterial(cur_Pos, layer, "madtulip_glass_tr")
-		elseif(own_mat_to_be_set == "trb")  then could_place = world.placeMaterial(cur_Pos, layer, "madtulip_glass_trb")
-		elseif(own_mat_to_be_set == "trbl") then could_place = world.placeMaterial(cur_Pos, layer, "madtulip_glass_trbl")
-		elseif(own_mat_to_be_set == "default") then could_place = world.placeMaterial(cur_Pos, layer, "madtulip_glass_default")
-		else
-			return nil
-		end
-	else
-		-- default
-		return nil
-	end
+	if not(   (f_tileset_mat_type == "apex")
+           or (f_tileset_mat_type == "apex2") 
+		   or (f_tileset_mat_type == "avian") 
+		   or (f_tileset_mat_type == "avian2") 
+		   or (f_tileset_mat_type == "floran") 
+		   or (f_tileset_mat_type == "floran2") 
+		   or (f_tileset_mat_type == "glitch") 
+		   or (f_tileset_mat_type == "glitch2") 
+		   or (f_tileset_mat_type == "human") 
+		   or (f_tileset_mat_type == "human2") 
+		   or (f_tileset_mat_type == "hylotl") 
+		   or (f_tileset_mat_type == "hylotl2") 
+		   or (f_tileset_mat_type == "glass")) then return nil end
+	if not(   (own_mat_to_be_set == "bl")
+           or (own_mat_to_be_set == "blt") 
+		   or (own_mat_to_be_set == "br") 
+		   or (own_mat_to_be_set == "lr") 
+		   or (own_mat_to_be_set == "ltr") 
+		   or (own_mat_to_be_set == "rbl") 
+		   or (own_mat_to_be_set == "tb") 
+		   or (own_mat_to_be_set == "tl") 
+		   or (own_mat_to_be_set == "tr") 
+		   or (own_mat_to_be_set == "trb") 
+		   or (own_mat_to_be_set == "trbl") 
+		   or (own_mat_to_be_set == "default")) then return nil end
+		   
+	could_place = world.placeMaterial(cur_Pos, layer, "madtulip_" .. f_tileset_mat_type .. "_" .. own_mat_to_be_set)
 	
 	return could_place
 end
