@@ -1,9 +1,0 @@
-{
-  "itemName" : "madtulip_avian_collumn",
-  "rarity" : "Common",
-  "inventoryIcon" : "madtulip_avian_collumn_icon.png",
-  "dropCollision" : [-2.5, -2.0, 2.5, 2.0],
-  "description" : "Avian Spaceship Collumn",
-  "shortdescription" : "Avian Spaceship Collumn",
-  "materialId" : 21169
-}

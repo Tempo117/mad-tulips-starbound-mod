@@ -1,9 +1,0 @@
-{
-  "itemName" : "madtulip_floran_detail",
-  "rarity" : "Common",
-  "inventoryIcon" : "madtulip_floran_detail_icon.png",
-  "dropCollision" : [-2.5, -2.0, 2.5, 2.0],
-  "description" : "Floran Spaceship Detail",
-  "shortdescription" : "Floran Spaceship Detail",
-  "materialId" : 21163
-}

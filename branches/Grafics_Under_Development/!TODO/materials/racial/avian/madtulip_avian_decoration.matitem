@@ -1,9 +1,0 @@
-{
-  "itemName" : "madtulip_avian_decoration",
-  "rarity" : "Common",
-  "inventoryIcon" : "madtulip_avian_decoration_icon.png",
-  "dropCollision" : [-2.5, -2.0, 2.5, 2.0],
-  "description" : "Avian Spaceship Decoration",
-  "shortdescription" : "Avian Spaceship Decoration",
-  "materialId" : 21168
-}
