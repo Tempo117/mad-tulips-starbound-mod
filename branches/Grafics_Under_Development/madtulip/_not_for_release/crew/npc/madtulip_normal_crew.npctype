@@ -15,19 +15,20 @@
 	"/_not_for_release/crew/scripts/madtulip_crew_interact.lua",
 	"/_not_for_release/crew/scripts/madtulip_crew_occupation.lua",
 	"/_not_for_release/crew/scripts/madtulipLocation.lua",
-	"/_not_for_release/crew/scripts/madtulip_TS.lua",
 	
-	"/_not_for_release/crew/scripts/madtulipcommandState.lua",
-	"/_not_for_release/crew/scripts/madtulipROIState.lua",
-	"/_not_for_release/crew/scripts/chatState.lua",		// same as vanilla, just filename changed
-	"/_not_for_release/crew/scripts/converseState.lua",	// same as vanilla, just filename changed
-	"/_not_for_release/crew/scripts/sitState.lua",		// same as vanilla, just filename changed
-	"/_not_for_release/crew/scripts/sleepState.lua",	// same as vanilla, just filename changed
-
-//"/npcs/wanderState.lua",
+	"/_not_for_release/crew/scripts/states/madtulipcommandState.lua",
+	//"/_not_for_release/crew/scripts/states/madtulipROIState.lua",
+	//"/_not_for_release/crew/scripts/states/chatState.lua",
+	//"/_not_for_release/crew/scripts/states/converseState.lua",
+	//"/_not_for_release/crew/scripts/states/sitState.lua",
+	//"/_not_for_release/crew/scripts/states/sleepState.lua",
+	
+	"/_not_for_release/crew/scripts/tasks/madtulip_task_heal_npc_or_player.lua",
+	
     "/npcs/timers.lua",
     "/scripts/sensors.lua",
 	"/scripts/stateMachine.lua",
+	"/_not_for_release/crew/scripts/madtulip_TS.lua",
     "/scripts/util.lua",
     "/scripts/vec2.lua"
   ],
@@ -40,6 +41,13 @@
     "gapFarSideSensors" : [ [3.0, -4.5], [4.0, -4.5], [5.0, -4.5], [6.0, -4.5], [7.0, -4.5], [8.0, -4.5] ],
     "gapJumpHoldTime" : 0.4,
 
+	"madtulipTS" : {
+		"broadcast_range" : 50,
+		"Task_spotting_functions" : [
+			"madtulip_Task_Heal_NPC_or_Player"
+		]
+	},
+	
     "madtulipROI" : {
 		// Debug switches
 		//"timeOfDayRangeWork" : [[0.0, 1.0]],				// time of day when to perform this in general

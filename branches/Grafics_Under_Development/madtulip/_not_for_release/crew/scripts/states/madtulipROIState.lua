@@ -4,6 +4,7 @@ function madtulipROIState.enter()
 	if not isTimeFor("madtulipROI.timeOfDayRanges") then
 		return nil, entity.configParameter("madtulipROI.cooldown")
 	end
+	world.logInfo("Entering ROIState")
 	-- randomize the order the states are beeing executed in
 	self.state.shuffleStates()
 	
