@@ -1,5 +1,11 @@
 General
 
+Turrets : insert grafics please
+
+-Hylotl comms _icon is a stub -> replace
+
+-crew console (TODO: filter buttons and top left menue icon are stubs -> replace please)
+
 Crew
 - uniform of the scientist with a green belt instead of blue - to similar to medic atm.
 - interacting obejcts

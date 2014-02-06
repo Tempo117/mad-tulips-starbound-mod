@@ -3,78 +3,93 @@
   "rarity" : "Common",
   "objectType" : "wire",
 
+  "isInteractive" : true,
+
+  "description" : "Turret for your protection! Can only be placed once.",
+  "shortdescription" : "Hylorl Defense Turret",
+  "race" : "generic",
   "category" : "wire",
-  "price" : 2000,
-  "description" : "The finest automated security the Hylotl labs have to offer.",
-  "shortdescription" : "Hylotl Defense Turret",
-  "race" : "apex",
+
+  "breakDropOptions" : [
+    [ [ "circuitboard", 1, { } ], [ "laserdiode", 1, { } ] ]
+  ],
+
 
   "apexDescription" : "Always watchful.",
-  "avianDescription" : "Must move like the wind to remain unseen.",
-  "floranDescription" : "Sssuch bright lasersss.",
+  "avianDescription" : "The monsters don't stand a chance, unless they can fly.",
+  "floranDescription" : "Effective againssst living thingsss.",
   "glitchDescription" : "Care. Must not disrupt my brother in his vigilance.",
-  "humanDescription" : "An automated security camera.",
-  "hylotlDescription" : "A mere laser could not penetrate depths of the ocean.",
+  "humanDescription" : "An automated security system.",
+  "hylotlDescription" : "Looks like a turret of some sort.",
 
   "inventoryIcon" : "madtulip_hylotl_defense_turret_icon.png",
   "orientations" : [
     {
-      "imageLayers" : [ { "image" : "madtulip_hylotl_defense_turret.png:idle" }, { "image" : "madtulip_hylotl_defense_turret.png:bracket" } ],
+      "dualImage" : "madtulip_hylotl_defense_turret.png:dead",
+      "imagePosition" : [0, 0],
+      "imageLayers" : [ { "image" : "madtulip_hylotl_defense_turret.png:dead" }, { "image" : "madtulip_hylotl_defense_turret.png:stand" } ],
       "spaces" : [
         [0, 0], [1, 0], [2, 0], [3, 0],
-        [0, 1], [1, 1], [2, 1], [3, 1],
-        [0, 2], [1, 2]
+        [0, 1], [1, 1], [2, 1], [3, 1]
       ],
-      "anchors" : [ "left" ],
-      "direction" : "right",
-      "imagePosition" : [-12, 0]
-    },
-    {
-      "imageLayers" : [ { "image" : "madtulip_hylotl_defense_turret.png:idle" }, { "image" : "madtulip_hylotl_defense_turret.png:bracket" } ],
-      "flipImages" : true,
-      "spaces" : [
-        [0, 0], [1, 0], [2, 0], [3, 0],
-        [0, 1], [1, 1], [2, 1], [3, 1],
-        [0, 2], [1, 2]
-      ],
-      "anchors" : [ "right" ],
-      "direction" : "left",
-      "imagePosition" : [-12, 0]
+      "anchors" : [ "bottom" ]
     }
   ],
 
+  "objectWidth" : 4,
+
+  "animation" : "madtulip_hylotl_defense_turret.animation",
+  "animationParts" : {
+    "gun" : "madtulip_hylotl_defense_turret.png",
+    "stand" : "madtulip_hylotl_defense_turret.png",
+    "energy" : "energy.png"
+  },
+  "animationPosition" : [0, 0],
+
   "scripts" : [
-    "/objects/defense turrets/turret.lua",
+    "turret.lua",
     "/scripts/stateMachine.lua",
     "/scripts/util.lua",
     "/scripts/vec2.lua"
   ],
-  "animation" : "madtulip_hylotl_defense_turret.animation",
-  "animationParts" : {
-    "gun" : "madtulip_hylotl_defense_turret.png",
-    "bracket" : "madtulip_hylotl_defense_turret.png",
-    "beam" : "madtulip_hylotl_defense_turret_beam.png"
-  },
+
+
+  "powerUpSound" : "/sfx/tech/mech_jump3.wav",
+  "powerDownSound" : "/sfx/tech/mech_powerdown2.wav",
+  "foundTargetSound" : "/sfx/interface/nav_computer_on.wav",
+  "scanSound" : "/sfx/interface/scan.wav",
+  "fireSound" : "/sfx/gun/ar5.wav",
 
   "damageTeam" : {
-    "type" : "passive"
+    "type" : "friendly"
   },
 
   "scriptDelta" : 5,
 
-  "outboundNodes" : [ [0, 0] ],
+  "outboundNodes" : [ [3, 0] ],
+  "inboundNodes" : [ [0, 2] ],
 
-  "rotationTime" : 2.5,
-  "rotationRange" : [0, 60],
-  "rotationPauseTime" : 0.5,
+  "rotationTime" : 5,
+  "rotationRange" : 30,
 
-  "maxLaserLength" : 20,
+  "baseOffset" : [1.5, 1.875],
+  "tipOffset" : [4, 1.9375],
 
-  "baseOffset" : [1.625, 0.9375],
-  "tipOffset" : [3.375, 0.875],
+  "minTargetRange" : 2.5,
+  "targetRange" : 50,
+  "targetAngleRange" : 40,
+  "targetOffset" : [0, -0.5],
+  "letGoCooldown" : 0.5,
+  "targetCooldown" : 0.5,
 
-  "fireCooldown" : 0.10,
-  "fireOffsets" : [-0.25, -0.125, 0, 0.125, 0.25, 0.125, 0, -0.125],
-  "targetHoldTime" : 2
+  "maxTrackingYVel" : 2.5,
 
+  "bulletType" : "turretbullet",
+  "bulletSpeed" : 50,
+  "bulletSize" : [11, 3],
+  "fireCooldown" : 0.25,
+
+  "maxEnergy" : 3600,
+  "energyTickTime" : 1,
+  "energyPerShot" : 10
 }
