@@ -430,6 +430,98 @@ function is_shipworld()
 end
 
 function Broadcast_Hull_Breach_Task(breach_pos,counter_breaches)
+	-- we have all currently known breaches and need to structure them a bit
+	-- so lets first cluster them.:
+	-- for all pixels
+		-- cur_pixels_cluster_list = {}
+		-- cur_pixels_cluster_list_size = 0
+		-- if cur pixel is next to any member of any existing cluster
+			-- cur_pixels_cluster_list_size = cur_pixels_cluster_list_size + 1
+			-- add that clusters label to cur_pixels_cluster_list
+		-- end
+		-- if cur_pixels_cluster_list_size == 0
+			-- create new cluster
+		-- elseif cur_pixels_cluster_list_size == 1
+			-- add pixel to that one cluster
+		-- else
+			-- merge all those clusters in the list
+		-- end
+	-- end
+	
+--[[
+	local Clusters = {}
+	Clusters.size = 0
+	local cur_pixel = {}
+
+	local cur_pixels_cluster_list = {}
+	local cur_pixels_cluster_list_size = 0	
+	
+	-- for all pixels
+	for cur_idx_pixel = 1,counter_breaches,1 do
+		-- get cur breach
+		cur_pixel = breach_pos[1]	
+		cur_pixels_cluster_list = {}
+		cur_pixels_cluster_list_size = 0
+		-- if cur pixel is next to any member of any existing cluster
+		for cur_Cluster = 1,Clusters.size,1 do
+			-- for all pixels in the cur cluster
+			for cur_pixel_in_cur_cluster = 1,Clusters[cur_Cluster].size,1 do
+				-- if cur pixel is next to that pixel in the cluster
+				if (pixels_next_to_eachother(cur_pixel,Clusters[cur_Cluster].Cluster[cur_pixel_in_cur_cluster])) then
+					-- get that clusters label
+					-- add those cluster labels to cur_pixels_cluster_list
+					cur_pixels_cluster_list_size = cur_pixels_cluster_list_size + 1
+					cur_pixels_cluster_list[cur_pixels_cluster_list_size] = cur_Cluster
+				end
+			end
+		end
+		if cur_pixels_cluster_list_size == 0 then
+			-- create new cluster
+			Clusters.size = Clusters.size +1
+			Clusters[Clusters.size] = {}
+			Clusters[Clusters.size].Cluster = {}
+			Clusters[Clusters.size].size = 0
+			-- add cur pixel
+			Clusters[Clusters.size].size = Clusters[Clusters.size].size +1
+			Clusters[Clusters.size].Cluster[Clusters[Clusters.size].size] = cur_pixel
+		elseif cur_pixels_cluster_list_size == 1 then
+			-- add pixel to that one cluster
+			Clusters[cur_pixels_cluster_list[1] ].size = Clusters[cur_pixels_cluster_list[1] ].size +1
+			Clusters[cur_pixels_cluster_list[1] ].Cluster[Clusters[cur_pixels_cluster_list[1] ].size] = cur_pixel
+		else
+			-- merge all clusters in cur_pixels_cluster_list
+			for i = 2,cur_pixels_cluster_list_size,1 do
+				local a = cur_pixels_cluster_list[1] -- cluster to merge into
+				local b = cur_pixels_cluster_list[i] -- cluster to merge
+				for cur_idx_b = 1,Clusters[b].size,1 do
+					-- move pixel from b to a
+					Clusters[a].size = Clusters[a].size+1
+					Clusters[a].Cluster[Clusters[a].size] = Clusters[b].Cluster[cur_idx_b]
+					Clusters[b].Cluster[cur_idx_b] = nil
+				end
+				Clusters[b].size = 0 -- cluster has been fully merged into a
+			end
+			-- resize the cluster label so that there are no gaps
+			local new_cluster_size = 0
+			for i = 1,Clusters.size,1 do
+				if (Clusters[i].size ~= 0) then
+					new_cluster_size = new_cluster_size+1
+					if (i ~= new_cluster_size) then
+						Clusters[new_cluster_size] = Clusters[i]
+					end
+				end
+			end
+			Clusters.size = new_cluster_size
+		end
+	end
+	world.logInfo ("Number of Breach Clusters detected : " .. Clusters.size)
+	for cur_cluster = 1,Clusters.size,1 do
+		world.logInfo ("Cluster Nr: " .. cur_cluster .. " has a size of : " .. Clusters[cur_cluster].size)
+	end
+]]
+	
+-- TODO: create one task for each cluster
+	-- Broadcast the final Task
 	local New_Tasks = {}
 	New_Tasks.Tasks = {}
 	New_Tasks.size = 0
@@ -459,4 +551,10 @@ function Broadcast_Hull_Breach_Task(breach_pos,counter_breaches)
 	end
 	
 	world.npcQuery(entity.position(), radius, {callScript = "madtulip_TS.Offer_Tasks", callScriptArgs = {New_Tasks}})
+end
+
+function pixels_next_to_eachother(a,b)
+	local c = world.distance(a,b)
+	if (math.abs(c[1]) <= 1) and (math.abs(c[2]) <= 1) then return true end
+	return false
 end

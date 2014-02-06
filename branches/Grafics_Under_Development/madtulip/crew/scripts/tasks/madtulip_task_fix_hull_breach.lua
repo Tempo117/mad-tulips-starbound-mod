@@ -29,6 +29,11 @@ function madtulip_task_fix_hull_breach.main_Task(Task)
 	entity.setAimPosition(Task.Header.Target_Position)
 	if (distance < entity.configParameter("madtulipTS.Hull_Breach_place_Block_Range", nil))then
 		-- close enough to use bone mender --> fire
+		world.placeMaterial(Task.Header.Target_Position, "foreground", "dirt")
+		world.placeMaterial(Task.Header.Target_Position, "background", "dirt")
+		world.placeMaterial(Task.Header.Target_Position, "foreground", "dirt")
+		world.placeMaterial(Task.Header.Target_Position, "background", "dirt")
+--[[
 		local could_place = world.placeMaterial(Task.Header.Target_Position, "foreground", "dirt")
 		-- place background instead if foreground isn`t possible
 		if not (could_place) then
@@ -50,6 +55,7 @@ function madtulip_task_fix_hull_breach.main_Task(Task)
 				end
 			end
 		end
+--]]
 	end
 
 	if (world.material(Task.Header.Target_Position,"foreground") ~= nil) then
