@@ -315,7 +315,7 @@ function madtulip_TS.Update_My_Task()
 			   -- noone I know of handles it
 				if (_ENV[storage.Known_Tasks.Tasks[idx_cur_Task].Header.Fct_Task].can_PickTask(storage.Known_Tasks.Tasks[idx_cur_Task])) then
 					-- I could handle this task
-					world.logInfo("Starting Task. My Id: " .. entity.id() .. " idx_cur_Task: " .. idx_cur_Task)
+					--world.logInfo("Starting Task. My Id: " .. entity.id() .. " idx_cur_Task: " .. idx_cur_Task)
 					
 					--> pick this task (save by index)
 					storage.Known_Tasks.idx_of_my_current_Task = idx_cur_Task
@@ -330,7 +330,7 @@ function madtulip_TS.Update_My_Task()
 					Msg_Tasks.Tasks = {}
 					Msg_Tasks.size = 1
 					Msg_Tasks.Tasks[1] = storage.Known_Tasks.Tasks[idx_cur_Task]
-					world.logInfo("Broadcast that I start a Task " .. entity.id())
+					--world.logInfo("Broadcast that I start a Task " .. entity.id())
 					madtulip_TS.Broadcast_Tasks(Msg_Tasks)
 					
 					-- Is there something i should say to start the Job ?
@@ -374,7 +374,7 @@ function madtulip_TS.successfully_end_my_current_Task()
 	Msg_Tasks.size = 1
 	Msg_Tasks.Tasks[1] = storage.Known_Tasks.Tasks[storage.Known_Tasks.idx_of_my_current_Task]
 	madtulip_TS.Broadcast_Tasks(Msg_Tasks)
-	world.logInfo("Broadcast that I successfully completed a Task " .. entity.id())
+	--world.logInfo("Broadcast that I successfully completed a Task " .. entity.id())
 	
 	-- forget that I was working on that
 	storage.Known_Tasks.idx_of_my_current_Task = nil
@@ -401,7 +401,7 @@ function madtulip_TS.Offer_Tasks(Offered_Tasks)
 				if (Splited_Tasks.New_Tasks.size ~= nil) then
 					if (Splited_Tasks.New_Tasks.size > 0) then
 						-- the new tasks are to be copied to memory
-						world.logInfo("External contained NEW to ID: " .. entity.id())
+						-- world.logInfo("External contained NEW to ID: " .. entity.id())
 						madtulip_TS.Remember_Tasks(Splited_Tasks.New_Tasks)
 					end
 				end
@@ -410,7 +410,7 @@ function madtulip_TS.Offer_Tasks(Offered_Tasks)
 				if (Splited_Tasks.Known_Tasks.size ~= nil) then
 					if (Splited_Tasks.Known_Tasks.size > 0) then
 						-- Tasks that we already knew about might have been updated
-						world.logInfo("External contained KNOWN to ID: " .. entity.id())
+						-- world.logInfo("External contained KNOWN to ID: " .. entity.id())
 						madtulip_TS.Update_Known_Tasks_Properties(Splited_Tasks.Known_Tasks)
 					end
 				end
