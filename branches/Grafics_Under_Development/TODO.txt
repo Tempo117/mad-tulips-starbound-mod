@@ -2,8 +2,6 @@ General
 
 Turrets : insert grafics please
 
--Hylotl comms _icon is a stub -> replace
-
 -crew console (TODO: filter buttons and top left menue icon are stubs -> replace please)
 
 Crew
@@ -35,7 +33,7 @@ Older about ship parts (we got some of those alreadym, no?)
 - heat absorber: apex,floran,human
 - small fin: floran
 - medium fin: floran
-- large fin: floran, glitch
+- large fin: glitch
 - comms: floran,apex
 - 1st weapon: avian
 - 2nd weapon: avian, floran,hylotl
