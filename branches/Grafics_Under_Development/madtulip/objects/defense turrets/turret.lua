@@ -147,7 +147,9 @@ function scanState.findTarget(startPosition, endPosition)
   local entityIds = world.entityLineQuery(startPosition, endPosition, { validTargetOf = selfId })
   for i, entityId in ipairs(entityIds) do
     if entityId ~= selfId then
-      return entityId
+	  if world.entityType(entityId) == "monster" then
+        return entityId
+	  end
     end
   end
 

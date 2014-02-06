@@ -1,12 +1,12 @@
 {
-  "objectName" : "madtulip_avian_defense_turret",
+  "objectName" : "madtulip_apex_defense_turret",
   "rarity" : "Common",
   "objectType" : "wire",
 
   "category" : "wire",
   "price" : 2000,
-  "description" : "The finest automated security the Avian labs have to offer.",
-  "shortdescription" : "Avian Defense Turret",
+  "description" : "The finest automated security the Apex labs have to offer.",
+  "shortdescription" : "Apex Defense Turret",
   "race" : "apex",
 
   "apexDescription" : "Always watchful.",
@@ -16,10 +16,10 @@
   "humanDescription" : "An automated security camera.",
   "hylotlDescription" : "A mere laser could not penetrate depths of the ocean.",
 
-  "inventoryIcon" : "madtulip_avian_defense_turret_icon.png",
+  "inventoryIcon" : "madtulip_apex_defense_turret_icon.png",
   "orientations" : [
     {
-      "imageLayers" : [ { "image" : "madtulip_avian_defense_turret.png:idle" }, { "image" : "madtulip_avian_defense_turret.png:bracket" } ],
+      "imageLayers" : [ { "image" : "madtulip_apex_defense_turret.png:idle" }, { "image" : "madtulip_apex_defense_turret.png:bracket" } ],
       "spaces" : [
         [0, 0], [1, 0], [2, 0], [3, 0],
         [0, 1], [1, 1], [2, 1], [3, 1],
@@ -30,7 +30,7 @@
       "imagePosition" : [-12, 0]
     },
     {
-      "imageLayers" : [ { "image" : "madtulip_avian_defense_turret.png:idle" }, { "image" : "madtulip_avian_defense_turret.png:bracket" } ],
+      "imageLayers" : [ { "image" : "madtulip_apex_defense_turret.png:idle" }, { "image" : "madtulip_apex_defense_turret.png:bracket" } ],
       "flipImages" : true,
       "spaces" : [
         [0, 0], [1, 0], [2, 0], [3, 0],
@@ -44,16 +44,16 @@
   ],
 
   "scripts" : [
-    "turret.lua",
+    "/objects/defense turrets/turret.lua",
     "/scripts/stateMachine.lua",
     "/scripts/util.lua",
     "/scripts/vec2.lua"
   ],
-  "animation" : "madtulip_avian_defense_turret.animation",
+  "animation" : "madtulip_apex_defense_turret.animation",
   "animationParts" : {
-    "gun" : "madtulip_avian_defense_turret.png",
-    "bracket" : "madtulip_avian_defense_turret.png",
-    "beam" : "madtulip_avian_defense_turret_beam.png"
+    "gun" : "madtulip_apex_defense_turret.png",
+    "bracket" : "madtulip_apex_defense_turret.png",
+    "beam" : "madtulip_apex_defense_turret_beam.png"
   },
 
   "damageTeam" : {
