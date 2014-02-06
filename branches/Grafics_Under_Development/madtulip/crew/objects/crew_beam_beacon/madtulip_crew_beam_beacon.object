@@ -22,12 +22,12 @@
 	
 	"animation" : "madtulip_crew_beam_beacon.animation",
 	"animationParts" : {
-		"normal_operation_image" : "/_not_for_release/crew/objects/crew_beam_beacon/madtulip_crew_beam_beacon.png"
+		"normal_operation_image" : "/crew/objects/crew_beam_beacon/madtulip_crew_beam_beacon.png"
 	},
 	"animationPosition" : [-8, 0],
 
 	"scripts" : [
-		"/_not_for_release/crew/objects/crew_beam_beacon/madtulip_crew_beam_beacon.lua"
+		"/crew/objects/crew_beam_beacon/madtulip_crew_beam_beacon.lua"
 	],
 	"scriptDelta" : 5,
 	"breakDropOptions" : [],

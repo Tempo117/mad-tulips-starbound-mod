@@ -24,12 +24,12 @@
 
 	"animation" : "madtulip_crew_marine_attractor.animation",
 	"animationParts" : {
-		"normal_operation_image" : "/_not_for_release/crew/objects/attractors/marine/madtulip_crew_marine_attractor.png"
+		"normal_operation_image" : "/crew/objects/attractors/marine/madtulip_crew_marine_attractor.png"
 	},
 	"animationPosition" : [1, 0],
 
 	"scripts" : [
-		"/_not_for_release/crew/objects/attractors/marine/madtulip_crew_marine_attractor.lua"
+		"/crew/objects/attractors/marine/madtulip_crew_marine_attractor.lua"
 	],
 	"scriptDelta" : 5,
 

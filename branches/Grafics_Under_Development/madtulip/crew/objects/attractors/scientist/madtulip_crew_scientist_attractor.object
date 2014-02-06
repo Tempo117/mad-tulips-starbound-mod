@@ -24,12 +24,12 @@
 
 	"animation" : "madtulip_crew_scientist_attractor.animation",
 	"animationParts" : {
-		"normal_operation_image" : "/_not_for_release/crew/objects/attractors/scientist/madtulip_crew_scientist_attractor.png"
+		"normal_operation_image" : "/crew/objects/attractors/scientist/madtulip_crew_scientist_attractor.png"
 	},
 	"animationPosition" : [1, 0],
 
 	"scripts" : [
-		"/_not_for_release/crew/objects/attractors/scientist/madtulip_crew_scientist_attractor.lua"
+		"/crew/objects/attractors/scientist/madtulip_crew_scientist_attractor.lua"
 	],
 	"scriptDelta" : 5,
 

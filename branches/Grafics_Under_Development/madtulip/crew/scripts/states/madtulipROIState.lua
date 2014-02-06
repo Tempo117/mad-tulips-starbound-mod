@@ -150,7 +150,9 @@ function madtulipROIState.update(dt, stateData)
 end
 
 function madtulipROIState.set_Task_ROI_Anchor()
-	-- Check fi Task has a target to walk to
+	if (storage.Known_Tasks.Tasks[storage.Known_Tasks.idx_of_my_current_Task].Var == nil) then return nil end
+	
+	-- Check if Task has a target to walk to
 	if (storage.Known_Tasks.Tasks[storage.Known_Tasks.idx_of_my_current_Task].Var.Cur_Target_Position ~= nil) then
 		-- yes, movement target assigned by the current Task
 		--world.logInfo("ROI Anchor assigned")

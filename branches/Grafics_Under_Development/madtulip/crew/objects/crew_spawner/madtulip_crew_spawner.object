@@ -24,12 +24,12 @@
 
 	"animation" : "madtulip_crew_spawner.animation",
 	"animationParts" : {
-		"normal_operation_image" : "/_not_for_release/crew/objects/crew_spawner/madtulip_crew_spawner.png"
+		"normal_operation_image" : "/crew/objects/crew_spawner/madtulip_crew_spawner.png"
 	},
 	"animationPosition" : [1, 0],
 
 	"scripts" : [
-		"/_not_for_release/crew/objects/crew_spawner/madtulip_crew_spawner.lua"
+		"/crew/objects/crew_spawner/madtulip_crew_spawner.lua"
 	],
 	"scriptDelta" : 5
 }

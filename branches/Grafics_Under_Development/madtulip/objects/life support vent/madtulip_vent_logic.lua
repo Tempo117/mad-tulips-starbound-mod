@@ -103,6 +103,8 @@ function main_threaded()
 					counter_breaches = counter_breaches +1;
 					breach_pos[counter_breaches] = Breach_Location;
 				end
+				-- Spawn a Task for each breach
+				Broadcast_Hull_Breach_Task(breach_pos,counter_breaches)
 				-- limit theire number
 				if (counter_breaches > madtulip.maximum_particle_fountains) then
 					-- spawn them (limited amount)
@@ -425,4 +427,36 @@ end
 
 function is_shipworld()
 	if (world.info() == nil) then return true else return false end
+end
+
+function Broadcast_Hull_Breach_Task(breach_pos,counter_breaches)
+	local New_Tasks = {}
+	New_Tasks.Tasks = {}
+	New_Tasks.size = 0
+	local radius = 50
+
+	for cur_breach_nr = 1,counter_breaches,1 do
+		-- spawn task
+		New_Tasks.size = New_Tasks.size + 1;
+		New_Tasks.Tasks[New_Tasks.size] = {}
+		New_Tasks.Tasks[New_Tasks.size].Header = {}
+		New_Tasks.Tasks[New_Tasks.size].Header.Name = "Fix_Hull_Breach"
+		New_Tasks.Tasks[New_Tasks.size].Header.Occupation = "Engineer"
+		New_Tasks.Tasks[New_Tasks.size].Header.Target_Position = breach_pos[counter_breaches]
+		New_Tasks.Tasks[New_Tasks.size].Header.Fct_Task  = "madtulip_task_fix_hull_breach"
+		New_Tasks.Tasks[New_Tasks.size].Header.Msg_on_discover_this_Task = "Hull Breach !!!"
+		New_Tasks.Tasks[New_Tasks.size].Header.Msg_on_PickTask = "I can handle that!"
+		New_Tasks.Tasks[New_Tasks.size].Global = {}
+		New_Tasks.Tasks[New_Tasks.size].Global.is_beeing_handled = false
+		New_Tasks.Tasks[New_Tasks.size].Global.is_beeing_handled_timestemp = os.time()
+		New_Tasks.Tasks[New_Tasks.size].Global.is_done = false
+		New_Tasks.Tasks[New_Tasks.size].Global.is_done_timestemp = os.time()
+		New_Tasks.Tasks[New_Tasks.size].Const = {}
+		New_Tasks.Tasks[New_Tasks.size].Const.Timeout = 30
+		New_Tasks.Tasks[New_Tasks.size].Var = {}
+		New_Tasks.Tasks[New_Tasks.size].Var.Cur_Target_Position = nil
+		New_Tasks.Tasks[New_Tasks.size].Var.Cur_Target_Position_BB = nil
+	end
+	
+	world.npcQuery(entity.position(), radius, {callScript = "madtulip_TS.Offer_Tasks", callScriptArgs = {New_Tasks}})
 end

@@ -390,9 +390,9 @@ function madtulip_TS.Broadcast_Tasks(New_Tasks)
 end
 
 function madtulip_TS.Offer_Tasks(Offered_Tasks)
-	world.logInfo("Im offered a Task " .. entity.id())
+	--world.logInfo("Im offered a Task " .. entity.id())
 	if (storage.Known_Tasks.Is_Init) then
-		world.logInfo("External offered to ID: " .. entity.id())
+		--world.logInfo("External offered to ID: " .. entity.id())
 		local Splited_Tasks = madtulip_TS.Split_Task_in_New_and_Known(Offered_Tasks)
 
 		-- Remember the new Tasks found

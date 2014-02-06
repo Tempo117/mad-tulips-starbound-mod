@@ -11,21 +11,22 @@
 
   "scripts" : [
 	"/npcs/main.lua",
-	"/_not_for_release/crew/scripts/madtulip_npc_Main.lua",
-	"/_not_for_release/crew/scripts/madtulip_crew_interact.lua",
-	"/_not_for_release/crew/scripts/madtulip_crew_occupation.lua",
-	"/_not_for_release/crew/scripts/madtulipLocation.lua",
+	"/crew/scripts/madtulip_npc_Main.lua",
+	"/crew/scripts/madtulip_crew_interact.lua",
+	"/crew/scripts/madtulip_crew_occupation.lua",
+	"/crew/scripts/madtulipLocation.lua",
 
-	"/_not_for_release/crew/scripts/tasks/madtulip_task_heal_npc_or_player.lua",
+	"/crew/scripts/tasks/madtulip_task_heal_npc_or_player.lua",
+	"/crew/scripts/tasks/madtulip_task_fix_hull_breach.lua",
 	
-	"/_not_for_release/crew/scripts/madtulip_TS.lua",
+	"/crew/scripts/madtulip_TS.lua",
 	
-	"/_not_for_release/crew/scripts/states/madtulipcommandState.lua",
-	"/_not_for_release/crew/scripts/states/madtulipROIState.lua",
-	//"/_not_for_release/crew/scripts/states/chatState.lua",
-	//"/_not_for_release/crew/scripts/states/converseState.lua",
-	//"/_not_for_release/crew/scripts/states/sitState.lua",
-	//"/_not_for_release/crew/scripts/states/sleepState.lua",
+	"/crew/scripts/states/madtulipcommandState.lua",
+	"/crew/scripts/states/madtulipROIState.lua",
+	"/crew/scripts/states/chatState.lua",
+	"/crew/scripts/states/converseState.lua",
+	"/crew/scripts/states/sitState.lua",
+	"/crew/scripts/states/sleepState.lua",
 	
     "/npcs/timers.lua",
     "/scripts/sensors.lua",
@@ -48,6 +49,9 @@
 		"find_Heal_NPC_or_Player_range" : 50,		// -> madtulip_Task_Heal_NPC_or_Player
 		"use_bonemender_range" : 5,					// -> madtulip_Task_Heal_NPC_or_Player
 		"Heal_NPC_or_Player_ROI_BB" : [-3,0,3,3],	// -> madtulip_Task_Heal_NPC_or_Player
+		
+		"Hull_Breach_ROI_BB" : [-3,0,3,3],			// -> madtulip_task_fix_hull_breach
+		"Hull_Breach_place_Block_Range" : 4,		// -> madtulip_task_fix_hull_breach
 		
 		"Task_spotting_functions" : [
 			"madtulip_Task_Heal_NPC_or_Player"

@@ -19,7 +19,7 @@
 				   "life" : 3,   // heals ?
 				   "color" : [150, 90, 150] },
   "muzzleEffect" : {
-       "animation" :  "/_not_for_release/crew/guns/bone mender/muzzle/madtulip_bone_mender_muzzle.animation" ,
+       "animation" :  "/crew/guns/bone mender/muzzle/madtulip_bone_mender_muzzle.animation" ,
        "fireSound" : [ { "file" : "/sfx/gun/fireblast.wav" } ]
 	   },
   // required ?
