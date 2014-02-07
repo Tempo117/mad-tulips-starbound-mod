@@ -23,9 +23,7 @@ function madtulip_Task_Heal_NPC_or_Player.spot_Task()
 			Tasks[Tasks_size].Header.Msg_on_PickTask = "I can handle that!"
 			Tasks[Tasks_size].Global = {}
 			Tasks[Tasks_size].Global.is_beeing_handled = false
-			Tasks[Tasks_size].Global.is_beeing_handled_timestemp = os.time()
 			Tasks[Tasks_size].Global.is_done = false
-			Tasks[Tasks_size].Global.is_done_timestemp = os.time()
 			Tasks[Tasks_size].Const = {}
 			Tasks[Tasks_size].Const.Timeout = 30
 			Tasks[Tasks_size].Var = {}

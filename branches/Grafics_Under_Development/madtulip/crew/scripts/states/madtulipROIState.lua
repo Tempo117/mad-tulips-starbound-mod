@@ -1,13 +1,37 @@
 madtulipROIState = {}
 
+function madtulipROIState.enterWith(args)
+-- TODO: Hand the Movement relevant parameters to the ROI State here via args instead of accessing 
+-- the TASK from the STATE.
+-- The state should not need to know about the task at all. remove all those dependencies
+-- The is the option to implement a callback once the state is done reaching the target
+	if (args ~= "TEST") then return nil end
+	
+	madtulipROIState.Init()
+	
+	return {
+		timer = entity.randomizeParameterRange("madtulipROI.timeRange"),
+		direction = util.toDirection(math.random(100) - 50)
+	}
+end
+
 function madtulipROIState.enter()
 	if not isTimeFor("madtulipROI.timeOfDayRanges") then
 		return nil, entity.configParameter("madtulipROI.cooldown")
 	end
-	--world.logInfo("Entering ROIState")
+	--world.logInfo("Entering ROIState by enter()")
 	-- randomize the order the states are beeing executed in
 	self.state.shuffleStates()
 	
+	madtulipROIState.Init()
+	
+	return {
+		timer = entity.randomizeParameterRange("madtulipROI.timeRange"),
+		direction = util.toDirection(math.random(100) - 50)
+	}
+end
+
+function madtulipROIState.Init()
 	-- declare variables
 	madtulipROIState.ROI = madtulipLocation.get_empty_ROI()
 	
@@ -22,11 +46,6 @@ function madtulipROIState.enter()
 	
 	-- equip work clothing
 	Set_Occupation_Cloth()
-	
-	return {
-		timer = entity.randomizeParameterRange("madtulipROI.timeRange"),
-		direction = util.toDirection(math.random(100) - 50)
-	}
 end
 
 function madtulipROIState.update(dt, stateData)

@@ -11,54 +11,58 @@ function madtulip_task_fix_hull_breach.can_PickTask(Task)
 
 	--entity.setItemSlot("primary", "beamaxe")
 	--entity.setItemSlot("alt", nil)
+	
+	madtulip_task_fix_hull_breach.is_init = nil
+	
 	return true
 end
 
 function madtulip_task_fix_hull_breach.main_Task(Task)
 	-- the main of the Task which is called all the time until it return true (the task is done)
 	--world.logInfo("madtulip_task_fix_hull_breach.main_Task(Task)")
-	
+
 	local own_position = entity.position()
-	local distance = world.magnitude(world.distance(own_position,Task.Header.Target_Position))
+	local target_position = Task.Var.Breach_Cluster.Cluster[1] -- pick first breach location as target
+	local distance = world.magnitude(world.distance(own_position,target_position))
 	
 	-- move towards target (handled by madtulipROIState)
-	Task.Var.Cur_Target_Position    = Task.Header.Target_Position
+	Task.Var.Cur_Target_Position    = target_position
 	Task.Var.Cur_Target_Position_BB = entity.configParameter("madtulipTS.Hull_Breach_ROI_BB", nil)
 
+	-- enforce to pick ROI state to navigate to target
+	if not madtulip_task_fix_hull_breach.is_init then
+		world.logInfo("Enforcing ROI State")
+-- TODO: Hand the Movement relevant parameters to the ROI State here instead of accessing the TASK from the STATE.
+-- The state should not need to know about the task at all. remove all those dependencies
+-- The is the option to implement a callback once the state is done reaching the target
+		self.state.pickState("TEST")
+		madtulip_task_fix_hull_breach.is_init = true
+	end
+	
 	-- aim at target
-	entity.setAimPosition(Task.Header.Target_Position)
+	entity.setAimPosition(target_position)
 	if (distance < entity.configParameter("madtulipTS.Hull_Breach_place_Block_Range", nil))then
 		-- close enough to use bone mender --> fire
-		world.placeMaterial(Task.Header.Target_Position, "foreground", "dirt")
-		world.placeMaterial(Task.Header.Target_Position, "background", "dirt")
-		world.placeMaterial(Task.Header.Target_Position, "foreground", "dirt")
-		world.placeMaterial(Task.Header.Target_Position, "background", "dirt")
---[[
-		local could_place = world.placeMaterial(Task.Header.Target_Position, "foreground", "dirt")
-		-- place background instead if foreground isn`t possible
-		if not (could_place) then
-			could_place = world.placeMaterial(Task.Header.Target_Position, "background", "dirt")
-			if not (could_place) then
-				-- if thats also not possible then try placing in the surrounding (maybe its a diagonal breach)
-				for X=-1,1,1 do
-					for Y=-1,1,1 do
-						-- from -1,-1 to +1,+1 around target
-						-- check if foreground is placed
-						if    (world.material({Task.Header.Target_Position[1]+X,Task.Header.Target_Position[2]+Y},"foreground") == nil)
-						  and (world.material({Task.Header.Target_Position[1]+X,Task.Header.Target_Position[2]+Y},"background") == nil) then
-							-- if not try to place foreground
-							could_place = world.placeMaterial({Task.Header.Target_Position[1]+X,Task.Header.Target_Position[2]+Y}, "foreground", "dirt")
-							-- else place background at least
-							if not (could_place) then world.placeMaterial({Task.Header.Target_Position[1]+X,Task.Header.Target_Position[2]+Y}, "backround", "dirt") end
-						end
-					end
-				end
-			end
+		for cur_breach = 1,Task.Var.Breach_Cluster.size,1 do
+			world.placeMaterial(Task.Var.Breach_Cluster.Cluster[cur_breach], "foreground", "dirt")
+			world.placeMaterial(Task.Var.Breach_Cluster.Cluster[cur_breach], "background", "dirt")
+			world.placeMaterial(Task.Var.Breach_Cluster.Cluster[cur_breach], "foreground", "dirt")
+			world.placeMaterial(Task.Var.Breach_Cluster.Cluster[cur_breach], "background", "dirt")
 		end
---]]
 	end
-
-	if (world.material(Task.Header.Target_Position,"foreground") ~= nil) then
+	
+-- TODO: if we cant reach the target (ROI cant be placed)
+-- we need to mark this task as unsolvable for us, stop it and dont try it again.
+-- This "i tried it once and failed condition should be a general thing for tasks to be implemented
+	
+	-- check if all breaches have been closed
+	local all_breaches_closed = true
+	for cur_breach = 1,Task.Var.Breach_Cluster.size,1 do
+		if (world.material(Task.Var.Breach_Cluster.Cluster[cur_breach],"foreground") == nil) then all_breaches_closed = false end
+	end
+	
+	-- end task depending on all breaches beeing closed
+	if all_breaches_closed then
 		return true -- if done
 	else
 		return false -- if NOT done
@@ -72,6 +76,9 @@ function madtulip_task_fix_hull_breach.end_Task()
 	
 	entity.setItemSlot("primary", nil)
 	entity.setItemSlot("alt", nil)
+	
+	-- Exit current state machine State
+	self.state.endState()
 	
 	-- TODO: exit all current state machine states (before killing the task)
 end

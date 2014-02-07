@@ -430,6 +430,62 @@ function is_shipworld()
 end
 
 function Broadcast_Hull_Breach_Task(breach_pos,counter_breaches)
+	local Cluster_Data = pixel_array_to_clusters(breach_pos,counter_breaches)
+	
+-- TODO: create one task for each cluster
+	-- Broadcast the final Task
+	local New_Tasks = {}
+	New_Tasks.Tasks = {}
+	New_Tasks.size = 0
+	local radius = 50
+
+	for cur_breach_cluster_nr = 1,Cluster_Data.Clusters.size,1 do
+
+		-- we use the max x THEN max y breach location as identifier key for the cluster
+		local max_x = 0
+		for i = 1,Cluster_Data.Clusters[cur_breach_cluster_nr].size,1 do
+			-- X
+			local pos = Cluster_Data.Clusters[cur_breach_cluster_nr].Cluster[i]
+			if (pos[1] > max_x) then max_x = pos[1] end
+		end
+		local max_y = 0
+		for i = 1,Cluster_Data.Clusters[cur_breach_cluster_nr].size,1 do
+			-- Y
+			local pos = Cluster_Data.Clusters[cur_breach_cluster_nr].Cluster[i]
+			if (pos[1] == max_x) then
+				-- only if X == max_x
+				if (pos[2] > max_y) then max_y = pos[2] end
+			end
+		end
+		
+		-- spawn task
+		New_Tasks.size = New_Tasks.size + 1;
+		New_Tasks.Tasks[New_Tasks.size] = {}
+		New_Tasks.Tasks[New_Tasks.size].Header = {}
+		New_Tasks.Tasks[New_Tasks.size].Header.Name = "Fix_Hull_Breach"
+		New_Tasks.Tasks[New_Tasks.size].Header.Occupation = "Engineer"
+		--New_Tasks.Tasks[New_Tasks.size].Header.Target_Position = {Cluster_Data.Clusters[cur_breach_cluster_nr].BB[3],Cluster_Data.Clusters[cur_breach_cluster_nr].BB[4]}
+		New_Tasks.Tasks[New_Tasks.size].Header.Cluster_max_x = 1--max_x
+		New_Tasks.Tasks[New_Tasks.size].Header.Cluster_max_y = 1--max_y
+		New_Tasks.Tasks[New_Tasks.size].Header.Fct_Task  = "madtulip_task_fix_hull_breach"
+		New_Tasks.Tasks[New_Tasks.size].Header.Msg_on_discover_this_Task = "Hull Breach !!!"
+		New_Tasks.Tasks[New_Tasks.size].Header.Msg_on_PickTask = "I can handle that!"
+		New_Tasks.Tasks[New_Tasks.size].Global = {}
+		New_Tasks.Tasks[New_Tasks.size].Global.is_beeing_handled = false
+		New_Tasks.Tasks[New_Tasks.size].Global.is_done = false
+		New_Tasks.Tasks[New_Tasks.size].Const = {}
+		New_Tasks.Tasks[New_Tasks.size].Const.Timeout = 30
+		New_Tasks.Tasks[New_Tasks.size].Var = {}
+		New_Tasks.Tasks[New_Tasks.size].Var.Cur_Target_Position = nil
+		New_Tasks.Tasks[New_Tasks.size].Var.Cur_Target_Position_BB = nil
+		New_Tasks.Tasks[New_Tasks.size].Var.Breach_Cluster = copyTable(Cluster_Data.Clusters[cur_breach_cluster_nr]) -- here the breach locations are stored
+		
+	end
+	
+	world.npcQuery(entity.position(), radius, {callScript = "madtulip_TS.Offer_Tasks", callScriptArgs = {New_Tasks}})
+end
+
+function pixel_array_to_clusters(pixels,pixel_size)
 	-- we have all currently known breaches and need to structure them a bit
 	-- so lets first cluster them.:
 	-- for all pixels
@@ -448,7 +504,6 @@ function Broadcast_Hull_Breach_Task(breach_pos,counter_breaches)
 		-- end
 	-- end
 	
---[[
 	local Clusters = {}
 	Clusters.size = 0
 	local cur_pixel = {}
@@ -457,9 +512,10 @@ function Broadcast_Hull_Breach_Task(breach_pos,counter_breaches)
 	local cur_pixels_cluster_list_size = 0	
 	
 	-- for all pixels
-	for cur_idx_pixel = 1,counter_breaches,1 do
+	--world.logInfo ("----- START OF CLUSTERING -----")
+	for cur_idx_pixel = 1,pixel_size,1 do
 		-- get cur breach
-		cur_pixel = breach_pos[1]	
+		cur_pixel = pixels[cur_idx_pixel]	
 		cur_pixels_cluster_list = {}
 		cur_pixels_cluster_list_size = 0
 		-- if cur pixel is next to any member of any existing cluster
@@ -470,8 +526,18 @@ function Broadcast_Hull_Breach_Task(breach_pos,counter_breaches)
 				if (pixels_next_to_eachother(cur_pixel,Clusters[cur_Cluster].Cluster[cur_pixel_in_cur_cluster])) then
 					-- get that clusters label
 					-- add those cluster labels to cur_pixels_cluster_list
-					cur_pixels_cluster_list_size = cur_pixels_cluster_list_size + 1
-					cur_pixels_cluster_list[cur_pixels_cluster_list_size] = cur_Cluster
+					--world.logInfo ("cur_Cluster " .. cur_Cluster .. " is next to cur_pixel nr: " .. cur_idx_pixel .. " (x: " .. cur_pixel[1] .. " y: " .. cur_pixel[2] .. ")")
+					-- only if cur_Cluster is not already in the cur_pixels_cluster_list list
+					local cluster_is_knwon_already = false
+					for cur_list_idx = 1,cur_pixels_cluster_list_size,1 do
+						if (cur_pixels_cluster_list[cur_list_idx] == cur_Cluster) then
+							cluster_is_knwon_already = true
+						end
+					end
+					if not(cluster_is_knwon_already) then
+						cur_pixels_cluster_list_size = cur_pixels_cluster_list_size + 1
+						cur_pixels_cluster_list[cur_pixels_cluster_list_size] = cur_Cluster
+					end
 				end
 			end
 		end
@@ -484,12 +550,16 @@ function Broadcast_Hull_Breach_Task(breach_pos,counter_breaches)
 			-- add cur pixel
 			Clusters[Clusters.size].size = Clusters[Clusters.size].size +1
 			Clusters[Clusters.size].Cluster[Clusters[Clusters.size].size] = cur_pixel
+			
+			--world.logInfo ("No neighbour, creating new cluster nr: " .. Clusters.size .. " for cur_pixel nr: " .. cur_idx_pixel .. " (x: " .. cur_pixel[1] .. " y: " .. cur_pixel[2] .. ")")
 		elseif cur_pixels_cluster_list_size == 1 then
 			-- add pixel to that one cluster
 			Clusters[cur_pixels_cluster_list[1] ].size = Clusters[cur_pixels_cluster_list[1] ].size +1
 			Clusters[cur_pixels_cluster_list[1] ].Cluster[Clusters[cur_pixels_cluster_list[1] ].size] = cur_pixel
+			--world.logInfo ("One neighbour. adding to cluster nr: " .. cur_pixels_cluster_list[1] .. " for cur_pixel nr: " .. cur_idx_pixel .. " (x: " .. cur_pixel[1] .. " y: " .. cur_pixel[2] .. ")")
 		else
 			-- merge all clusters in cur_pixels_cluster_list
+			--world.logInfo ("Multiple neighbours. Merging for cur_pixel nr: " .. cur_idx_pixel .. " (x: " .. cur_pixel[1] .. " y: " .. cur_pixel[2] .. ")")
 			for i = 2,cur_pixels_cluster_list_size,1 do
 				local a = cur_pixels_cluster_list[1] -- cluster to merge into
 				local b = cur_pixels_cluster_list[i] -- cluster to merge
@@ -514,43 +584,78 @@ function Broadcast_Hull_Breach_Task(breach_pos,counter_breaches)
 			Clusters.size = new_cluster_size
 		end
 	end
+
+	-- sort the clusters in size
+	local tmp_Clusters = copyTable(Clusters)
+	local cur_max_size = 0
+	local cur_max_size_cluster_idx = nil
+	for cur_write_cluster = 1,Clusters.size,1 do
+		cur_max_size = 0
+		cur_max_size_cluster_idx = nil
+		for cur_read_cluster = 1,tmp_Clusters.size,1 do
+			if (tmp_Clusters[cur_read_cluster].size > cur_max_size) then
+				cur_max_size = tmp_Clusters[cur_read_cluster].size
+				cur_max_size_cluster_idx = cur_read_cluster
+			end
+		end
+		-- write cur largest cluster first
+		Clusters[cur_write_cluster] = tmp_Clusters[cur_max_size_cluster_idx]
+		Clusters[cur_write_cluster].size = tmp_Clusters[cur_max_size_cluster_idx].size
+		-- clear data
+		tmp_Clusters[cur_max_size_cluster_idx] = {}
+		tmp_Clusters[cur_max_size_cluster_idx].size = 0
+	end
+
+	local BB = {}
+	for cur_cluster = 1,Clusters.size,1 do
+		BB = {500,500,0,0}
+		-- min
+		for i = 1,Clusters[cur_cluster].size,1 do
+			local pos = Clusters[cur_cluster].Cluster[i]
+			if (pos[1] < BB[1]) then BB[1] = pos[1] end
+		end
+		for i = 1,Clusters[cur_cluster].size,1 do
+			local pos = Clusters[cur_cluster].Cluster[i]
+			if (pos[2] < BB[2]) then BB[2] = pos[2] end
+		end
+		-- max
+		for i = 1,Clusters[cur_cluster].size,1 do
+			local pos = Clusters[cur_cluster].Cluster[i]
+			if (pos[1] > BB[3]) then BB[3] = pos[1] end
+		end
+		for i = 1,Clusters[cur_cluster].size,1 do
+			local pos = Clusters[cur_cluster].Cluster[i]
+			if (pos[2] > BB[4]) then BB[4] = pos[2] end
+		end
+		Clusters[cur_cluster].BB = copyTable(BB)
+	end
+--[[
+	world.logInfo ("----- END OF CLUSTERING -----")
 	world.logInfo ("Number of Breach Clusters detected : " .. Clusters.size)
 	for cur_cluster = 1,Clusters.size,1 do
 		world.logInfo ("Cluster Nr: " .. cur_cluster .. " has a size of : " .. Clusters[cur_cluster].size)
+		for cur_pixel = 1,Clusters[cur_cluster].size,1 do
+			world.logInfo ("-Pixel Nr: " .. cur_pixel .. " X: " .. Clusters[cur_cluster].Cluster[cur_pixel][1] .. " Y: " .. Clusters[cur_cluster].Cluster[cur_pixel][2])
+		end
 	end
 ]]
-	
--- TODO: create one task for each cluster
-	-- Broadcast the final Task
-	local New_Tasks = {}
-	New_Tasks.Tasks = {}
-	New_Tasks.size = 0
-	local radius = 50
+	return {
+	Clusters = Clusters,
+	size = Clusters.size
+	}
+end
 
-	for cur_breach_nr = 1,counter_breaches,1 do
-		-- spawn task
-		New_Tasks.size = New_Tasks.size + 1;
-		New_Tasks.Tasks[New_Tasks.size] = {}
-		New_Tasks.Tasks[New_Tasks.size].Header = {}
-		New_Tasks.Tasks[New_Tasks.size].Header.Name = "Fix_Hull_Breach"
-		New_Tasks.Tasks[New_Tasks.size].Header.Occupation = "Engineer"
-		New_Tasks.Tasks[New_Tasks.size].Header.Target_Position = breach_pos[counter_breaches]
-		New_Tasks.Tasks[New_Tasks.size].Header.Fct_Task  = "madtulip_task_fix_hull_breach"
-		New_Tasks.Tasks[New_Tasks.size].Header.Msg_on_discover_this_Task = "Hull Breach !!!"
-		New_Tasks.Tasks[New_Tasks.size].Header.Msg_on_PickTask = "I can handle that!"
-		New_Tasks.Tasks[New_Tasks.size].Global = {}
-		New_Tasks.Tasks[New_Tasks.size].Global.is_beeing_handled = false
-		New_Tasks.Tasks[New_Tasks.size].Global.is_beeing_handled_timestemp = os.time()
-		New_Tasks.Tasks[New_Tasks.size].Global.is_done = false
-		New_Tasks.Tasks[New_Tasks.size].Global.is_done_timestemp = os.time()
-		New_Tasks.Tasks[New_Tasks.size].Const = {}
-		New_Tasks.Tasks[New_Tasks.size].Const.Timeout = 30
-		New_Tasks.Tasks[New_Tasks.size].Var = {}
-		New_Tasks.Tasks[New_Tasks.size].Var.Cur_Target_Position = nil
-		New_Tasks.Tasks[New_Tasks.size].Var.Cur_Target_Position_BB = nil
+function copyTable(source)
+	local _copy
+	if type(source) == "table" then
+		_copy = {}
+		for k, v in pairs(source) do
+			_copy[copyTable(k)] = copyTable(v)
+		end
+	else
+		_copy = source
 	end
-	
-	world.npcQuery(entity.position(), radius, {callScript = "madtulip_TS.Offer_Tasks", callScriptArgs = {New_Tasks}})
+	return _copy
 end
 
 function pixels_next_to_eachother(a,b)
