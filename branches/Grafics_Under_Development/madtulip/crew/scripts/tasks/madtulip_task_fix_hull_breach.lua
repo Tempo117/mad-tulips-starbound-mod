@@ -21,47 +21,93 @@ function madtulip_task_fix_hull_breach.main_Task(Task)
 	-- the main of the Task which is called all the time until it return true (the task is done)
 	--world.logInfo("madtulip_task_fix_hull_breach.main_Task(Task)")
 
-	local own_position = entity.position()
-	local target_position = Task.Var.Breach_Cluster.Cluster[1] -- pick first breach location as target
-	local distance = world.magnitude(world.distance(own_position,target_position))
-	
+-- TODO: After finding a cluster we need to create a BB around that which consideres world wrap
+--       Inside the BB we will use floodfill to find areas enclosed by the breaches conture.
+--       Those Areas will also be filled with breaches. Afterwards the "place_foreground" will be added to the whole cluster.
+--       This will correctly fill shapes like 3x3 breach in background wall.
+
+-- TODO: The BB for the task is the BB around all breaches + a boarder of placement range. In that BB the player needs
+--       to be able to stand somewhere to do the Task. If he cant stand there the Task is not solvable. Eigther not spawn it at all
+--       or include NOT_SOLVABLE in the TASK variables so that crew doesnt try on and on and on.
+
+-- TODO: Hand the Movement relevant parameters to the ROI State here instead of accessing the TASK from the STATE.
+-- The state should not need to know about the task at all. remove all those dependencies
+-- The is the option to implement a callback once the state is done reaching the target.
+-- Errors in create of ROI could be returned i.e. by callback functions
+
 	-- move towards target (handled by madtulipROIState)
-	Task.Var.Cur_Target_Position    = target_position
-	Task.Var.Cur_Target_Position_BB = entity.configParameter("madtulipTS.Hull_Breach_ROI_BB", nil)
+-- TODO
+--Task.Var.Cur_Target_Position    = target_position
+--Task.Var.Cur_Target_Position_BB = entity.configParameter("madtulipTS.Hull_Breach_ROI_BB", nil)
 
 	-- enforce to pick ROI state to navigate to target
 	if not madtulip_task_fix_hull_breach.is_init then
-		world.logInfo("Enforcing ROI State")
--- TODO: Hand the Movement relevant parameters to the ROI State here instead of accessing the TASK from the STATE.
--- The state should not need to know about the task at all. remove all those dependencies
--- The is the option to implement a callback once the state is done reaching the target
-		self.state.pickState("TEST")
+		world.logInfo("creating ROI_Parameters")
+		local ROI_Parameters = {}
+		
+		ROI_Parameters.BB = Task.Var.Breach_Cluster.BB
+		-- enlarge the BB to where the player can be while building
+		ROI_Parameters.BB[1] = ROI_Parameters.BB[1] - entity.configParameter("madtulipTS.Hull_Breach_place_Block_Range", nil) + 1
+		ROI_Parameters.BB[2] = ROI_Parameters.BB[2] - entity.configParameter("madtulipTS.Hull_Breach_place_Block_Range", nil) + 1
+		ROI_Parameters.BB[3] = ROI_Parameters.BB[3] + entity.configParameter("madtulipTS.Hull_Breach_place_Block_Range", nil) - 1
+		ROI_Parameters.BB[4] = ROI_Parameters.BB[4] + entity.configParameter("madtulipTS.Hull_Breach_place_Block_Range", nil) - 1
+		
+		ROI_Parameters.Anchor = {ROI_Parameters.BB[1],ROI_Parameters.BB[2]} -- bottom left of BB
+		
+		-- use Anchor as 0,0 point for the BB
+		ROI_Parameters.BB[1] = ROI_Parameters.BB[1] - ROI_Parameters.Anchor[1]
+		ROI_Parameters.BB[2] = ROI_Parameters.BB[2] - ROI_Parameters.Anchor[2]
+		ROI_Parameters.BB[3] = ROI_Parameters.BB[3] - ROI_Parameters.Anchor[1]
+		ROI_Parameters.BB[4] = ROI_Parameters.BB[4] - ROI_Parameters.Anchor[2]
+		
+		ROI_Parameters.Ground_the_Anchor = false
+		
+		ROI_Parameters.Pick_New_Target_after_old_is_reached = false
+		
+		ROI_Parameters.start_chats_on_the_way = false
+		
+		ROI_Parameters.Statename = "madtulipROIState"
+		
+		self.state.pickState(ROI_Parameters)
+		
 		madtulip_task_fix_hull_breach.is_init = true
 	end
 	
 	-- aim at target
-	entity.setAimPosition(target_position)
-	if (distance < entity.configParameter("madtulipTS.Hull_Breach_place_Block_Range", nil))then
-		-- close enough to use bone mender --> fire
+	--entity.setAimPosition(target_position)
+	
+	-- find minimal distance to any breach in cluster
+	local min_distance = math.huge
+	for cur_breach = 1,Task.Var.Breach_Cluster.size,1 do
+		local cur_distance = world.magnitude(world.distance(entity.position(),Task.Var.Breach_Cluster.Cluster[cur_breach]))
+		if cur_distance < min_distance then min_distance = cur_distance end
+	end
+
+	-- build ?
+	if (min_distance <= entity.configParameter("madtulipTS.Hull_Breach_place_Block_Range", nil))then
+		-- close enough to build -> BUILD ALL BLOCKS AT ONCE
 		for cur_breach = 1,Task.Var.Breach_Cluster.size,1 do
-			world.placeMaterial(Task.Var.Breach_Cluster.Cluster[cur_breach], "foreground", "dirt")
+			-- always place background
 			world.placeMaterial(Task.Var.Breach_Cluster.Cluster[cur_breach], "background", "dirt")
-			world.placeMaterial(Task.Var.Breach_Cluster.Cluster[cur_breach], "foreground", "dirt")
-			world.placeMaterial(Task.Var.Breach_Cluster.Cluster[cur_breach], "background", "dirt")
+			-- optionally place foreground (if this is an outer wall towards "space")
+			if (Task.Var.Breach_Cluster.place_foreground[cur_breach]) then
+				world.placeMaterial(Task.Var.Breach_Cluster.Cluster[cur_breach], "foreground", "dirt")
+			end
 		end
 	end
-	
--- TODO: if we cant reach the target (ROI cant be placed)
--- we need to mark this task as unsolvable for us, stop it and dont try it again.
--- This "i tried it once and failed condition should be a general thing for tasks to be implemented
 	
 	-- check if all breaches have been closed
 	local all_breaches_closed = true
 	for cur_breach = 1,Task.Var.Breach_Cluster.size,1 do
-		if (world.material(Task.Var.Breach_Cluster.Cluster[cur_breach],"foreground") == nil) then all_breaches_closed = false end
+		-- check if background is placed
+		if (world.material(Task.Var.Breach_Cluster.Cluster[cur_breach],"background") == nil) then all_breaches_closed = false end
+		-- check if foreground is placed
+		if (Task.Var.Breach_Cluster.place_foreground[cur_breach]) then
+			if (world.material(Task.Var.Breach_Cluster.Cluster[cur_breach],"foreground") == nil) then all_breaches_closed = false end
+		end
 	end
 	
-	-- end task depending on all breaches beeing closed
+	-- end task depending on all breaches being closed
 	if all_breaches_closed then
 		return true -- if done
 	else

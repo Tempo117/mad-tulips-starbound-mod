@@ -54,7 +54,7 @@
 		"Hull_Breach_place_Block_Range" : 5,		// -> madtulip_task_fix_hull_breach
 		
 		"Task_spotting_functions" : [
-			"madtulip_Task_Heal_NPC_or_Player"
+			//"madtulip_Task_Heal_NPC_or_Player"
 		]
 	},
 	

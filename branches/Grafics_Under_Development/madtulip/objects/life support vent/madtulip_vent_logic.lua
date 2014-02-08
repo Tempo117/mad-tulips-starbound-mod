@@ -432,6 +432,11 @@ end
 function Broadcast_Hull_Breach_Task(breach_pos,counter_breaches)
 	local Cluster_Data = pixel_array_to_clusters(breach_pos,counter_breaches)
 	
+	-- add information where to place fore and background in oreder to close the breach
+	for cur_breach_cluster_nr = 1,Cluster_Data.Clusters.size,1 do
+		Cluster_Data.Clusters[cur_breach_cluster_nr].place_foreground = Add_Breach_fixing_Info_to_Cluster(Cluster_Data.Clusters[cur_breach_cluster_nr])
+	end
+	
 -- TODO: create one task for each cluster
 	-- Broadcast the final Task
 	local New_Tasks = {}
@@ -479,7 +484,6 @@ function Broadcast_Hull_Breach_Task(breach_pos,counter_breaches)
 		New_Tasks.Tasks[New_Tasks.size].Var.Cur_Target_Position = nil
 		New_Tasks.Tasks[New_Tasks.size].Var.Cur_Target_Position_BB = nil
 		New_Tasks.Tasks[New_Tasks.size].Var.Breach_Cluster = copyTable(Cluster_Data.Clusters[cur_breach_cluster_nr]) -- here the breach locations are stored
-		
 	end
 	
 	world.npcQuery(entity.position(), radius, {callScript = "madtulip_TS.Offer_Tasks", callScriptArgs = {New_Tasks}})
@@ -608,7 +612,7 @@ function pixel_array_to_clusters(pixels,pixel_size)
 
 	local BB = {}
 	for cur_cluster = 1,Clusters.size,1 do
-		BB = {500,500,0,0}
+		BB = {math.huge,math.huge,-math.huge,-math.huge}
 		-- min
 		for i = 1,Clusters[cur_cluster].size,1 do
 			local pos = Clusters[cur_cluster].Cluster[i]
@@ -643,6 +647,47 @@ function pixel_array_to_clusters(pixels,pixel_size)
 	Clusters = Clusters,
 	size = Clusters.size
 	}
+end
+
+function Add_Breach_fixing_Info_to_Cluster(args)
+
+	local cur_pos = {}
+	local has_space_next_to_it = false
+	
+	local place_foreground = {}
+	
+	for cur_pixel = 1,args.size,1 do
+		for X = -1,1,1 do
+			for Y = -1,1,1 do
+
+				cur_pos[1] = args.Cluster[cur_pixel][1] + X
+				cur_pos[2] = args.Cluster[cur_pixel][2] + Y
+				-- check if cur_pos is part of cluster
+				local cur_pos_is_part_of_cluster = false
+				for i = 1,args.size,1 do
+					if (args.Cluster[i][1] == cur_pos[1]) and (args.Cluster[i][2] == cur_pos[2]) then
+						cur_pos_is_part_of_cluster = true
+					end
+				end
+				-- if no fore, no back and not part of cluster then its space.
+				if ((world.material(cur_pos,"foreground") == nil) and
+				    (world.material(cur_pos,"background") == nil) and
+				    (cur_pos_is_part_of_cluster == false)) then
+				   has_space_next_to_it = true
+			   end
+
+			end
+		end
+		if (has_space_next_to_it) then
+			-- blocks next to space need to place foreground
+			place_foreground[cur_pixel] = true
+		else
+			place_foreground[cur_pixel] = false
+		end
+		-- all breached blocks need to place background anyway so thats not recorded
+	end
+	
+	return place_foreground
 end
 
 function copyTable(source)

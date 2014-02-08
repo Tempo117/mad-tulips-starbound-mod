@@ -5,9 +5,12 @@ function madtulipROIState.enterWith(args)
 -- the TASK from the STATE.
 -- The state should not need to know about the task at all. remove all those dependencies
 -- The is the option to implement a callback once the state is done reaching the target
-	if (args ~= "TEST") then return nil end
+	if (args.Statename ~= "madtulipROIState") then return nil end
 	
 	madtulipROIState.Init()
+	
+	-- save input parameters
+	madtulipROIState.Inputargs = args
 	
 	return {
 		timer = entity.randomizeParameterRange("madtulipROI.timeRange"),
@@ -35,6 +38,8 @@ function madtulipROIState.Init()
 	-- declare variables
 	madtulipROIState.ROI = madtulipLocation.get_empty_ROI()
 	
+	madtulipROIState.Inputargs = {}
+	
 	madtulipROIState.Movement = {}
 	madtulipROIState.Movement.Target = nil -- current movement target block
 	madtulipROIState.Movement.Switch_Target_Inside_ROI_Timer = nil -- time to pass between targets inside the same ROI
@@ -58,65 +63,92 @@ function madtulipROIState.update(dt, stateData)
 
 	madtulipROIState.update_timers(stateData,dt)
 	
-	local NPC_is_on_a_Task = madtulip_TS.Has_A_Task()
+	--local NPC_is_on_a_Task = madtulip_TS.Has_A_Task()
 	--if (NPC_is_on_a_Task) then world.logInfo("ROI sees a Task") else world.logInfo("ROI sees NO Task") end
 	
 	if (madtulipROIState.ROI.anchor_pos == nil) then
-		--world.logInfo("get_Work_ROI_Anchor_Position")
-		-- no region of interest to walk to determined -> get an anchor for such a ROI
-		local Work_ROI_Anchor_Position = nil
-		if (NPC_is_on_a_Task) then
-			-- we are on a Task
-			Work_ROI_Anchor_Position = madtulipROIState.set_Task_ROI_Anchor()
+		-- get Anchor for ROI
+		--world.logInfo("getting Anchor for ROI")
+		local ROI_Anchor_Position = nil
+		if (madtulipROIState.Inputargs.Anchor ~= nil) then
+			-- using external parameter
+			ROI_Anchor_Position = madtulipROIState.Inputargs.Anchor
 		else
 			-- we are just wandering around looking busy
-			Work_ROI_Anchor_Position = madtulipROIState.set_wandering_ROI_Anchor_around(entity.position())
-			if (Work_ROI_Anchor_Position == nil) then return true end
+			ROI_Anchor_Position = madtulipROIState.set_wandering_ROI_Anchor_around(entity.position())
+			if (ROI_Anchor_Position == nil) then return true end
 		end
+		--world.logInfo("ROI_Anchor_Position X: " .. ROI_Anchor_Position[1] .. " Y: " .. ROI_Anchor_Position[2])
 
-		-- create a ROI around the anchor		
-		--world.logInfo("get_ROI")
-		local BB
-		local ROI
-		if (NPC_is_on_a_Task) then
-			-- Boundary Box defining the ROI around the anchor
-			if (storage.Known_Tasks.Tasks[storage.Known_Tasks.idx_of_my_current_Task].Var.Cur_Target_Position_BB ~= nil) then
-				BB = storage.Known_Tasks.Tasks[storage.Known_Tasks.idx_of_my_current_Task].Var.Cur_Target_Position_BB
-				ROI = madtulipLocation.create_ROI_from_anchor(Work_ROI_Anchor_Position,BB)
-				if (ROI ~= nil) then
-					madtulipROIState.ROI = ROI
-				else
-					-- target of Task is not reachable (NOT HANDLED SO FAR!)
-					--world.logInfo("target of Task is not reachable")
-					storage.Known_Tasks.Tasks[storage.Known_Tasks.idx_of_my_current_Task].Var.State_Error_cant_reach_Target = true
-					return true
-				end
-			else
-				-- Task has no BB defined!
-				--world.logInfo("Task has no BB defined!")
-				return true
+		-- Ground Anchor
+		if (madtulipROIState.Inputargs.Ground_the_Anchor ~= nil) then
+			-- external parameter
+			if (madtulipROIState.Inputargs.Ground_the_Anchor) then
+				ROI_Anchor_Position = madtulipLocation.ground_Around(ROI_Anchor_Position)
 			end
 		else
-			-- Boundary Box defining the ROI around the anchor
-			BB = entity.configParameter("madtulipROI.ROI_BB",nil)
-			ROI = madtulipLocation.create_ROI_from_anchor(Work_ROI_Anchor_Position,BB)
-			if (ROI ~= nil) then madtulipROIState.ROI = ROI end
+			-- default
+			ROI_Anchor_Position = madtulipLocation.ground_Around(ROI_Anchor_Position)
 		end
 		
-		--world.logInfo("get_Target")
-		-- pick one target inside the ROI (all are passable) as next target to move towards
+		-- get BB for ROI
+		--world.logInfo("getting BB for ROI")
+		local BB
+		if (madtulipROIState.Inputargs.BB ~= nil) then
+			-- using external parameter
+			BB = madtulipROIState.Inputargs.BB
+		else
+			-- generating own
+			BB = entity.configParameter("madtulipROI.ROI_BB",nil)
+		end
+		--world.logInfo("BB = {" .. BB[1] .. "," .. BB[2] .. "," .. BB[3] .. "," .. BB[4] .."}")
+		
+		-- get Additional_Blocked_Positions
+		--world.logInfo("getting ABL for ROI")
+		local Additional_Blocked_Positions
+		if (madtulipROIState.Inputargs.Additional_Blocked_Positions ~= nil) then
+			-- using external parameter
+			Additional_Blocked_Positions = madtulipROIState.Inputargs.Additional_Blocked_Positions
+		else
+			-- generating own
+			Additional_Blocked_Positions = nil
+		end
+		
+		-- create ROI
+		--world.logInfo("creating ROI")
+		local ROI
+		ROI = madtulipLocation.create_ROI_around_anchor(ROI_Anchor_Position,BB,Additional_Blocked_Positions)
+-- why not direct ?
+		if (ROI ~= nil) then
+			madtulipROIState.ROI = ROI
+		else
+			return false
+		end
+		
+		-- Pick Target
+		-- random one inside the ROI, all are passable
+		--world.logInfo("Picking Target")
 		local Target = madtulipLocation.get_next_target_inside_ROI(madtulipROIState.ROI)
-		if (Target ~= nil) then madtulipROIState.Movement.Target = Target end
-		--if (Target ~= nil) then world.logInfo("Target is not nil") end
+-- why not direct ?
+		if (Target ~= nil) then
+			madtulipROIState.Movement.Target = Target
+		else
+			return false
+		end
+		--world.logInfo("Target pick successfull")
 	else
 		-- we have a ROI
 		if madtulipROIState.Movement.Target == nil then
 			--world.logInfo("ROI but no Target")
-			-- we have no target inside the ROI to move to
-			if (NPC_is_on_a_Task) then  
-				-- pick the next target NOW!
-				return true -- if (Target ~= nil) then madtulipROIState.Movement.Target = Target end
+			if (madtulipROIState.Inputargs.Pick_New_Target_after_old_is_reached ~= nil) then
+				-- use external parameter
+				if (madtulipROIState.Inputargs.Pick_New_Target_after_old_is_reached) then
+				else
+					-- we are done here
+					return true
+				end
 			else
+				-- use default
 				-- "wandering around" - use a timer to start next movement
 				if not madtulipROIState.Movement.Switch_Target_Inside_ROI_Timer then
 					-- its time to go somewhere else inside this ROI
@@ -134,26 +166,27 @@ function madtulipROIState.update(dt, stateData)
 			   math.abs(toTarget[1]) < madtulipROIState.Movement.Min_X_Dist_required_to_reach_target then
 					-- target reached
 					--world.logInfo("target reached")
-					-- Signal to Task scheduler
-					if (NPC_is_on_a_Task) then storage.Known_Tasks.Tasks[storage.Known_Tasks.idx_of_my_current_Task].Var.State_ROI_target_reached = true end
 					
 					--> clear movement target
 					madtulipROIState.Movement.Target = nil
-					--if (NPC_is_on_a_Task) then  madtulipROIState.ROI.anchor_pos = nil end
-					--return true
-					--if (NPC_is_on_a_Task) then return true end
 			else
 				-- still moving
 				--world.logInfo("still moving")
-				-- signal move to Task scheduler
-				if (NPC_is_on_a_Task) then storage.Known_Tasks.Tasks[storage.Known_Tasks.idx_of_my_current_Task].Var.State_ROI_on_the_move = true end
 				
 				-- execute movement
 				moveTo(madtulipROIState.Movement.Target, dt)
+				
 				-- chat while moving
-				if not(NPC_is_on_a_Task) then
+				if (madtulipROIState.Inputargs.start_chats_on_the_way ~= nil) then
+					-- use external parameter
+					if (madtulipROIState.Inputargs.start_chats_on_the_way) then
+						madtulipROIState.start_chats_on_the_way()
+					end
+				else
+					-- default
 					madtulipROIState.start_chats_on_the_way()
 				end
+
 				-- close doors while moving
 				if not madtulipROIState.Movement.Switch_Target_Inside_ROI_Timer then
 					madtulipROIState.close_doors_behind_you()
@@ -166,21 +199,6 @@ function madtulipROIState.update(dt, stateData)
 
 	-- default return : we are not done
 	return false
-end
-
-function madtulipROIState.set_Task_ROI_Anchor()
-	if (storage.Known_Tasks.Tasks[storage.Known_Tasks.idx_of_my_current_Task].Var == nil) then return nil end
-	
-	-- Check if Task has a target to walk to
-	if (storage.Known_Tasks.Tasks[storage.Known_Tasks.idx_of_my_current_Task].Var.Cur_Target_Position ~= nil) then
-		-- yes, movement target assigned by the current Task
-		--world.logInfo("ROI Anchor assigned")
-		return storage.Known_Tasks.Tasks[storage.Known_Tasks.idx_of_my_current_Task].Var.Cur_Target_Position
-	else
-		-- we have a Task but it doesnt have a movement target -> quit this state
-		--world.logInfo("Var.Cur_Target_Position == nil")
-		return nil
-	end
 end
 
 function madtulipROIState.set_wandering_ROI_Anchor_around(position)

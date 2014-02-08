@@ -17,17 +17,25 @@ function madtulipLocation.get_next_target_inside_ROI(ROI)
 	return ROI.Pathable_Moveable_Standable_Positions[math.random (ROI.Pathable_Moveable_Standable_Positions_size)]
 end
 
-function madtulipLocation.create_ROI_from_anchor(ROI_anchor_position,BB)
+function madtulipLocation.ground_Around(Anchor)
 	--world.logInfo("Testing ROI anchor")
-	if (ROI_anchor_position == nil) then return nil end
+	if (Anchor == nil) then return nil end
 	--world.logInfo("initial ROI anchor valid")
 	
 	-- shift the anchor down to walkable floor in case the attractor objects anchor is above floor
 	local max_distance = 15; -- maximum depth under anchor to search for walkable floor
-	ROI_anchor_position = madtulipLocation.Find_Block_above_floor(ROI_anchor_position,max_distance)
+	Anchor = madtulipLocation.Find_Block_above_floor(Anchor,max_distance)
 	-- check if floor could be found, else return
-	if (ROI_anchor_position == nil) then return nil end
-	--world.logInfo("floor under ROI anchor found X: " .. ROI_anchor_position[1] .. " Y: " .. ROI_anchor_position[2])
+	if (Anchor == nil) then
+		--world.logInfo("NO floor under Anchor found !!!")
+		return nil
+	end
+	--world.logInfo("floor under Anchor found X: " .. Anchor[1] .. " Y: " .. Anchor[2])
+	
+	return Anchor
+end
+
+function madtulipLocation.create_ROI_around_anchor(ROI_anchor_position,BB,Additional_Blocked_Positions)
 
 	local tmp_BB = {}
 	tmp_BB[1] = ROI_anchor_position[1] + BB[1]
@@ -36,9 +44,10 @@ function madtulipLocation.create_ROI_from_anchor(ROI_anchor_position,BB)
 	tmp_BB[4] = ROI_anchor_position[2] + BB[4]
 	
 	-- find all those blocks which have enough space above them so the payer could be here without collision
-	local Pathable_Positions_Data = madtulipLocation.Find_Pathable_Positions_in_BB(tmp_BB)
+	local Pathable_Positions_Data = madtulipLocation.Find_Pathable_Positions_in_BB(tmp_BB,Additional_Blocked_Positions)
+	--world.logInfo("Find_Pathable_Positions_in_BB found : " .. Pathable_Positions_Data.size)
 	if (Pathable_Positions_Data.size < 1) then return nil end
-	--world.logInfo("Find_Pathable_Positions_in_BB(tmp_BB) successful")
+
 	-- now the player doesnt want to target the floor where he can stand, but an offset in hip hight instead,
 	-- so we shift them all up a bit to make them "moveable"
 	local Pathable_Moveable_Positions = {}
@@ -46,13 +55,14 @@ function madtulipLocation.create_ROI_from_anchor(ROI_anchor_position,BB)
 	for idx_cur_Pathable_Position = 1,Pathable_Positions_Data.size,1 do
 		Pathable_Moveable_Positions[idx_cur_Pathable_Position] = madtulipLocation.Shift_Above_Floor_to_Moveable_Position(Pathable_Positions_Data.Positions[idx_cur_Pathable_Position])
 	end
-	--world.logInfo("Pathable_Positions_Data build successful")
+	--world.logInfo("Shift_Above_Floor_to_Moveable_Position successful")
 	
 	-- find all those blocks which have enough space above them so the payer could be here without collision
 	-- they also need to have a floor directly under them
 	local Pathable_Above_Floor_Positions_Data = madtulipLocation.Find_Pathable_Above_Floor_Positions_in_BB(tmp_BB)
 	if (Pathable_Above_Floor_Positions_Data.size < 1) then return nil end
 	--world.logInfo("Find_Pathable_Above_Floor_Positions_in_BB(tmp_BB) successful")
+	
 	-- now the player doesnt want to target the floor where he can stand, but an offset in hip hight instead,
 	-- so we shift them all up a bit to make them "moveable"
 	local Pathable_Moveable_Standable_Positions = {}
@@ -60,7 +70,7 @@ function madtulipLocation.create_ROI_from_anchor(ROI_anchor_position,BB)
 	for idx_cur_Pathable_Standable_Position = 1,Pathable_Above_Floor_Positions_Data.size,1 do
 		Pathable_Moveable_Standable_Positions[idx_cur_Pathable_Standable_Position] = madtulipLocation.Shift_Above_Floor_to_Moveable_Position(Pathable_Above_Floor_Positions_Data.Positions[idx_cur_Pathable_Standable_Position])
 	end
-	--world.logInfo("Pathable_Above_Floor_Positions_Data build successful")
+	--world.logInfo("Pathable_Above_Floor_Positions_Data build successful" .. Pathable_Above_Floor_Positions_Data.size)
 	
 	--world.logInfo("ROI build successful")
 	local ROI = {}
@@ -79,8 +89,14 @@ function madtulipLocation.create_ROI_from_anchor(ROI_anchor_position,BB)
 	ROI.Pathable_Moveable_Standable_Positions      = Pathable_Moveable_Standable_Positions
 	ROI.Pathable_Moveable_Standable_Positions_size = Pathable_Moveable_Standable_Positions_size
 	
-	--world.logInfo("ROI.Anchor X: " .. ROI.anchor_pos[1] .. " Y: " .. ROI.anchor_pos[2])
-	
+--[[
+	world.logInfo("--- ROI created! ---")
+	world.logInfo("ROI.Anchor X: " .. ROI.anchor_pos[1] .. " Y: " .. ROI.anchor_pos[2])
+	world.logInfo("ROI.Pathable_Above_Floor_Positions_size: " .. ROI.Pathable_Above_Floor_Positions_size)
+	world.logInfo("ROI.Pathable_Moveable_Positions_size: " .. ROI.Pathable_Moveable_Positions_size)
+	world.logInfo("ROI.Pathable_Moveable_Standable_Positions_size: " .. ROI.Pathable_Moveable_Standable_Positions_size)
+	world.logInfo("--------------------")
+]]
 	return ROI
 end
 
@@ -107,12 +123,12 @@ function madtulipLocation.Shift_Above_Floor_to_Moveable_Position(position)
 	return return_position
 end
 
-function madtulipLocation.Find_Pathable_Positions_in_BB(BB)
+function madtulipLocation.Find_Pathable_Positions_in_BB(BB,Additional_Blocked_Positions)
 	-- a player can stand at a location with this box around him beeing free of foreground blocks
 	-- we want to check every position in BB against this box
 
 	-- find all those positions in the BB which have a floor under them and are without foreground block themselves
-	--world.logInfo("Find_Pathable_Positions_in_BB(BB)")
+	--world.logInfo("Find_Pathable_Positions_in_BB(BB,Additional_Blocked_Positions)")
 	local Pathable_Positions = {}
 	local Pathable_Positions_size = 0
 	local cur_position = {};
@@ -135,6 +151,14 @@ function madtulipLocation.Find_Pathable_Positions_in_BB(BB)
 					if (cur_mat ~= nil) then
 						--world.logInfo("--BLOCKED at X:" .. cur_mat_pos[1] .. "Y:" .. cur_mat_pos[2] .. "mat: " .. cur_mat)
 						cur_position_is_Pathable = false
+					end
+					-- Check if Positions defined in the Additional_Blocked_Positions apply
+					if (Additional_Blocked_Positions ~= nil) then
+						for _, cur_Blocked_Location in pairs(Additional_Blocked_Positions) do
+							if (cur_mat_pos[1] == cur_Blocked_Location[1]) and (cur_mat_pos[2] == cur_Blocked_Location[2]) then
+								cur_position_is_Pathable = false
+							end
+						end
 					end
 				end
 			end
