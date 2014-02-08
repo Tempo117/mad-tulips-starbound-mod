@@ -1,11 +1,10 @@
 General
 
-Turrets : insert grafics please
 
 -crew console (TODO: filter buttons and top left menue icon are stubs -> replace please)
 
 Crew
-- uniform of the scientist with a green belt instead of blue - to similar to medic atm.
+
 - interacting obejcts
 -- crew beamer
 -- crew dismisser
@@ -26,7 +25,7 @@ Ship Station
 
 Mining pod
 - bottom left window still displays some debris pixels in the glass CANT FIND IT
-- animated png for the drill itself
+- animated png for the drill itself - DONE JUST FIX THE ANIMATION FILES
 
 
 Older about ship parts (we got some of those alreadym, no?)
@@ -34,7 +33,7 @@ Older about ship parts (we got some of those alreadym, no?)
 - small fin: floran
 - medium fin: floran
 - large fin: glitch
-- comms: floran,apex
+- comms: floran,apex DONE
 - 1st weapon: avian
 - 2nd weapon: avian, floran,hylotl
 - apex turret animation
