@@ -21,7 +21,7 @@
       "image" : "welcomescreen.png:<color>.<frame>",
       "imagePosition" : [-16, 0],
       "frames" : 8,
-      "animationCycle" : 8.0,
+      "animationCycle" : 16.0,
 
       "spaceScan" : 0.1,
       "anchors" : [ "bottom" ]
