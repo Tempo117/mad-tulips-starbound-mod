@@ -30,25 +30,15 @@ function madtulip_task_fix_hull_breach.main_Task(Task)
 --       to be able to stand somewhere to do the Task. If he cant stand there the Task is not solvable. Eigther not spawn it at all
 --       or include NOT_SOLVABLE in the TASK variables so that crew doesnt try on and on and on.
 
--- TODO: Hand the Movement relevant parameters to the ROI State here instead of accessing the TASK from the STATE.
--- The state should not need to know about the task at all. remove all those dependencies
--- The is the option to implement a callback once the state is done reaching the target.
--- Errors in create of ROI could be returned i.e. by callback functions
-
-	-- move towards target (handled by madtulipROIState)
--- TODO
---Task.Var.Cur_Target_Position    = target_position
---Task.Var.Cur_Target_Position_BB = entity.configParameter("madtulipTS.Hull_Breach_ROI_BB", nil)
-
 	-- enforce to pick ROI state to navigate to target
 	if not madtulip_task_fix_hull_breach.is_init then
-		world.logInfo("creating ROI_Parameters")
+		--world.logInfo("creating ROI_Parameters")
 		local ROI_Parameters = {}
 		
 		ROI_Parameters.BB = Task.Var.Breach_Cluster.BB
 		-- enlarge the BB to where the player can be while building
 -- TODO: might need to be increased by jump hight
--- Problem would be if we move to a floor below the brach then
+-- Problem would be if we move to a floor below the breach then
 		ROI_Parameters.BB[1] = ROI_Parameters.BB[1] - entity.configParameter("madtulipTS.Hull_Breach_place_Block_Range", nil) + 1
 		ROI_Parameters.BB[2] = ROI_Parameters.BB[2] - entity.configParameter("madtulipTS.Hull_Breach_place_Block_Range", nil) + 1
 		ROI_Parameters.BB[3] = ROI_Parameters.BB[3] + entity.configParameter("madtulipTS.Hull_Breach_place_Block_Range", nil) - 1
@@ -76,7 +66,7 @@ function madtulip_task_fix_hull_breach.main_Task(Task)
 -- Pathfinding Errors would i.e. call this
 -- No possible Movement location would also call this
 -- It might be better to remember that we failed this task so others can try it instead of marking it as done
-		--ROI_Parameters.Critical_Fail_Callback = 
+		ROI_Parameters.Critical_Fail_Callback = madtulip_task_fix_hull_breach.failed_Task
 		
 		self.state.pickState(ROI_Parameters)
 		
@@ -137,4 +127,9 @@ function madtulip_task_fix_hull_breach.end_Task()
 	self.state.endState()
 	
 	-- TODO: exit all current state machine states (before killing the task)
+end
+
+function madtulip_task_fix_hull_breach.failed_Task()
+	-- hand the error back up to the Task scheduler, he will also call .end_Task()
+	madtulip_TS.fail_my_current_Task()
 end

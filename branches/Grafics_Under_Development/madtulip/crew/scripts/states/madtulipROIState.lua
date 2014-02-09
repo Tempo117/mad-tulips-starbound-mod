@@ -1,12 +1,8 @@
 madtulipROIState = {}
 
 function madtulipROIState.enterWith(args)
--- TODO: Hand the Movement relevant parameters to the ROI State here via args instead of accessing 
--- the TASK from the STATE.
--- The state should not need to know about the task at all. remove all those dependencies
--- The is the option to implement a callback once the state is done reaching the target
 	if (args.Statename ~= "madtulipROIState") then return nil end
-	
+	--world.logInfo("ROI State enterWith()")	
 	madtulipROIState.Init()
 	
 	-- save input parameters
@@ -22,7 +18,7 @@ function madtulipROIState.enter()
 	if not isTimeFor("madtulipROI.timeOfDayRanges") then
 		return nil, entity.configParameter("madtulipROI.cooldown")
 	end
-	--world.logInfo("Entering ROIState by enter()")
+	--world.logInfo("ROIState enter()")
 	-- randomize the order the states are beeing executed in
 	self.state.shuffleStates()
 	
@@ -122,6 +118,11 @@ function madtulipROIState.update(dt, stateData)
 		if (ROI ~= nil) then
 			madtulipROIState.ROI = ROI
 		else
+			if (madtulipROIState.Inputargs.Critical_Fail_Callback ~= nil) then
+				--world.logInfo("failed ROI creation")
+				madtulipROIState.Inputargs.Critical_Fail_Callback()
+				return true
+			end
 			return false
 		end
 		
@@ -133,6 +134,11 @@ function madtulipROIState.update(dt, stateData)
 		if (Target ~= nil) then
 			madtulipROIState.Movement.Target = Target
 		else
+			if (madtulipROIState.Inputargs.Critical_Fail_Callback ~= nil) then
+				--world.logInfo("failed TARGET creation")
+				madtulipROIState.Inputargs.Critical_Fail_Callback()
+				return true
+			end
 			return false
 		end
 		--world.logInfo("Target pick successfull")
@@ -143,6 +149,7 @@ function madtulipROIState.update(dt, stateData)
 			if (madtulipROIState.Inputargs.Pick_New_Target_after_old_is_reached ~= nil) then
 				-- use external parameter
 				if (madtulipROIState.Inputargs.Pick_New_Target_after_old_is_reached) then
+					-- not handled
 				else
 					-- we are done here
 					return true

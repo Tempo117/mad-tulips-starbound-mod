@@ -437,7 +437,6 @@ function Broadcast_Hull_Breach_Task(breach_pos,counter_breaches)
 		Cluster_Data.Clusters[cur_breach_cluster_nr].place_foreground = Add_Breach_fixing_Info_to_Cluster(Cluster_Data.Clusters[cur_breach_cluster_nr])
 	end
 	
--- TODO: create one task for each cluster
 	-- Broadcast the final Task
 	local New_Tasks = {}
 	New_Tasks.Tasks = {}
@@ -445,33 +444,15 @@ function Broadcast_Hull_Breach_Task(breach_pos,counter_breaches)
 	local radius = 50
 
 	for cur_breach_cluster_nr = 1,Cluster_Data.Clusters.size,1 do
-
-		-- we use the max x THEN max y breach location as identifier key for the cluster
-		local max_x = 0
-		for i = 1,Cluster_Data.Clusters[cur_breach_cluster_nr].size,1 do
-			-- X
-			local pos = Cluster_Data.Clusters[cur_breach_cluster_nr].Cluster[i]
-			if (pos[1] > max_x) then max_x = pos[1] end
-		end
-		local max_y = 0
-		for i = 1,Cluster_Data.Clusters[cur_breach_cluster_nr].size,1 do
-			-- Y
-			local pos = Cluster_Data.Clusters[cur_breach_cluster_nr].Cluster[i]
-			if (pos[1] == max_x) then
-				-- only if X == max_x
-				if (pos[2] > max_y) then max_y = pos[2] end
-			end
-		end
-		
 		-- spawn task
-		New_Tasks.size = New_Tasks.size + 1;
+		-- New_Tasks.size = New_Tasks.size + 1; -- one task for all clusters
+		New_Tasks.size = 1 -- one task per cluster
 		New_Tasks.Tasks[New_Tasks.size] = {}
 		New_Tasks.Tasks[New_Tasks.size].Header = {}
 		New_Tasks.Tasks[New_Tasks.size].Header.Name = "Fix_Hull_Breach"
 		New_Tasks.Tasks[New_Tasks.size].Header.Occupation = "Engineer"
-		--New_Tasks.Tasks[New_Tasks.size].Header.Target_Position = {Cluster_Data.Clusters[cur_breach_cluster_nr].BB[3],Cluster_Data.Clusters[cur_breach_cluster_nr].BB[4]}
-		New_Tasks.Tasks[New_Tasks.size].Header.Cluster_max_x = 1--max_x
-		New_Tasks.Tasks[New_Tasks.size].Header.Cluster_max_y = 1--max_y
+		New_Tasks.Tasks[New_Tasks.size].Header.Cluster_Identifier_Breach_x = Cluster_Data.Clusters[cur_breach_cluster_nr].Cluster[1][1]
+		New_Tasks.Tasks[New_Tasks.size].Header.Cluster_Identifier_Breach_y = Cluster_Data.Clusters[cur_breach_cluster_nr].Cluster[1][2]
 		New_Tasks.Tasks[New_Tasks.size].Header.Fct_Task  = "madtulip_task_fix_hull_breach"
 		New_Tasks.Tasks[New_Tasks.size].Header.Msg_on_discover_this_Task = "Hull Breach !!!"
 		New_Tasks.Tasks[New_Tasks.size].Header.Msg_on_PickTask = "I can handle that!"
@@ -484,9 +465,11 @@ function Broadcast_Hull_Breach_Task(breach_pos,counter_breaches)
 		New_Tasks.Tasks[New_Tasks.size].Var.Cur_Target_Position = nil
 		New_Tasks.Tasks[New_Tasks.size].Var.Cur_Target_Position_BB = nil
 		New_Tasks.Tasks[New_Tasks.size].Var.Breach_Cluster = copyTable(Cluster_Data.Clusters[cur_breach_cluster_nr]) -- here the breach locations are stored
+		
+		world.npcQuery(entity.position(), radius, {callScript = "madtulip_TS.Offer_Tasks", callScriptArgs = {New_Tasks}}) -- one task per cluster
 	end
 	
-	world.npcQuery(entity.position(), radius, {callScript = "madtulip_TS.Offer_Tasks", callScriptArgs = {New_Tasks}})
+	-- world.npcQuery(entity.position(), radius, {callScript = "madtulip_TS.Offer_Tasks", callScriptArgs = {New_Tasks}}) -- one task for all clusters
 end
 
 function pixel_array_to_clusters(pixels,pixel_size)

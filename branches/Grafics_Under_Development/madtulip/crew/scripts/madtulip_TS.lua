@@ -274,12 +274,16 @@ function madtulip_TS.Forget_Old_Tasks(dt)
 			Task_has_timetout = true
 		end
 		
-		-- check if this thas was handled and can thus be discarded
+		-- check if this task was handled and can thus be discarded
 		if (storage.Known_Tasks.Tasks[idx_cur_Task].Global.is_done == true) then
 			Task_is_done = true
 		end
 		
 		if (Task_has_timetout or Task_is_done) then
+			if (idx_cur_Task == storage.Known_Tasks.idx_of_my_current_Task) then
+				-- I am currently working on that task -> cancel as not successful
+				madtulip_TS.cancel_my_current_Task()
+			end
 			-- Task is obsolete -> delete Task
 			storage.Known_Tasks.Tasks[idx_cur_Task] = {}
 		else
@@ -309,9 +313,14 @@ function madtulip_TS.Update_My_Task()
 		-- I don`t have a task
 		--> search through all tasks i know
 		for idx_cur_Task = 1,storage.Known_Tasks.size,1 do
+			--world.logInfo("Try to pick Task.")
+			--world.logInfo("storage.Known_Tasks.size: " .. storage.Known_Tasks.size)
+			--world.logInfo("idx_cur_Task: " .. idx_cur_Task)
 			-- we dont have a task, so try to pick one from those im aware of.
 			-- check if this one is being handled by someone else already
-			if storage.Known_Tasks.Tasks[idx_cur_Task].Global.is_beeing_handled == false then
+			if (storage.Known_Tasks.Tasks[idx_cur_Task].Global.is_beeing_handled == false)
+			   and not(storage.Known_Tasks.Tasks[idx_cur_Task].Var.Failed_this_already) then
+			   --world.logInfo("Could Pick this.")
 			   -- noone I know of handles it
 				if (_ENV[storage.Known_Tasks.Tasks[idx_cur_Task].Header.Fct_Task].can_PickTask(storage.Known_Tasks.Tasks[idx_cur_Task])) then
 					-- I could handle this task
@@ -323,7 +332,6 @@ function madtulip_TS.Update_My_Task()
 					-- mark the task as being processed
 					storage.Known_Tasks.Tasks[idx_cur_Task].Global.is_beeing_handled = true
 					storage.Known_Tasks.Tasks[idx_cur_Task].Global.handled_by_ID = entity.id()
-					--storage.Known_Tasks.Tasks[idx_cur_Task].Global.is_beeing_handled_timestemp = os.time()
 					
 					-- communicate to others that I handle it
 					local Msg_Tasks = {}
@@ -361,6 +369,17 @@ function madtulip_TS.cancel_my_current_Task()
 	storage.Known_Tasks.idx_of_my_current_Task = nil
 end
 
+function madtulip_TS.fail_my_current_Task()
+	-- Set a Flag so we do not try this Task again until it Times out
+	if (storage.Known_Tasks.Tasks[storage.Known_Tasks.idx_of_my_current_Task].Var ~= nil) then
+		storage.Known_Tasks.Tasks[storage.Known_Tasks.idx_of_my_current_Task].Var.Failed_this_already = true
+	end
+	-- forget task and call its ending functions
+	madtulip_TS.cancel_my_current_Task()
+	
+	entity.say("FAILED MY TASK!")
+end
+
 function madtulip_TS.successfully_end_my_current_Task()
 	-- call task ending function
 	_ENV[storage.Known_Tasks.Tasks[storage.Known_Tasks.idx_of_my_current_Task].Header.Fct_Task].end_Task()
@@ -380,6 +399,7 @@ function madtulip_TS.successfully_end_my_current_Task()
 	storage.Known_Tasks.idx_of_my_current_Task = nil
 	
 	-- it will be removed from my memory with the next call to "madtulip_TS.Forget_Old_Tasks(dt)"
+	entity.say("TASK DONE!")
 end
 
 function madtulip_TS.Broadcast_Tasks(New_Tasks)
