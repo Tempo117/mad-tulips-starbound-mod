@@ -47,6 +47,8 @@ function madtulip_task_fix_hull_breach.main_Task(Task)
 		
 		ROI_Parameters.BB = Task.Var.Breach_Cluster.BB
 		-- enlarge the BB to where the player can be while building
+-- TODO: might need to be increased by jump hight
+-- Problem would be if we move to a floor below the brach then
 		ROI_Parameters.BB[1] = ROI_Parameters.BB[1] - entity.configParameter("madtulipTS.Hull_Breach_place_Block_Range", nil) + 1
 		ROI_Parameters.BB[2] = ROI_Parameters.BB[2] - entity.configParameter("madtulipTS.Hull_Breach_place_Block_Range", nil) + 1
 		ROI_Parameters.BB[3] = ROI_Parameters.BB[3] + entity.configParameter("madtulipTS.Hull_Breach_place_Block_Range", nil) - 1
@@ -64,9 +66,17 @@ function madtulip_task_fix_hull_breach.main_Task(Task)
 		
 		ROI_Parameters.Pick_New_Target_after_old_is_reached = false
 		
+		ROI_Parameters.run = true
+		
 		ROI_Parameters.start_chats_on_the_way = false
 		
 		ROI_Parameters.Statename = "madtulipROIState"
+		
+-- TODO: We need to be able to fail on Task execution
+-- Pathfinding Errors would i.e. call this
+-- No possible Movement location would also call this
+-- It might be better to remember that we failed this task so others can try it instead of marking it as done
+		--ROI_Parameters.Critical_Fail_Callback = 
 		
 		self.state.pickState(ROI_Parameters)
 		

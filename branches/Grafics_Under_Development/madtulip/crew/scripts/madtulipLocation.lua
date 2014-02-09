@@ -12,9 +12,21 @@ function madtulipLocation.get_next_target_inside_ROI(ROI)
 	if (ROI == nil) then return nil end
 	if (ROI.Pathable_Moveable_Standable_Positions == nil) then return nil end
 	if (ROI.Pathable_Moveable_Standable_Positions_size == nil) then return nil end
+	if (ROI.Pathable_Moveable_Standable_Positions_size < 1) then return nil end
 	
 	-- for now just pick a random target
 	return ROI.Pathable_Moveable_Standable_Positions[math.random (ROI.Pathable_Moveable_Standable_Positions_size)]
+end
+
+function madtulipLocation.get_next_full_background_target_inside_ROI(ROI)
+	-- return if parameters are bad
+	if (ROI == nil) then return nil end
+	if (ROI.Pathable_Moveable_Standable_FullBackground_Positions == nil) then return nil end
+	if (ROI.Pathable_Moveable_Standable_FullBackground_Positions_size == nil) then return nil end
+	if (ROI.Pathable_Moveable_Standable_FullBackground_Positions_size < 1) then return nil end
+	
+	-- for now just pick a random target
+	return ROI.Pathable_Moveable_Standable_FullBackground_Positions[math.random (ROI.Pathable_Moveable_Standable_FullBackground_Positions_size)]
 end
 
 function madtulipLocation.ground_Around(Anchor)
@@ -72,6 +84,15 @@ function madtulipLocation.create_ROI_around_anchor(ROI_anchor_position,BB,Additi
 	end
 	--world.logInfo("Pathable_Above_Floor_Positions_Data build successful" .. Pathable_Above_Floor_Positions_Data.size)
 	
+	local Pathable_Moveable_Standable_FullBackground_Positions = {}
+	local Pathable_Moveable_Standable_FullBackground_Positions_size = 0
+	for idx_cur_pos = 1,Pathable_Moveable_Standable_Positions_size,1 do
+		if (madtulipLocation.Position_has_Player_sized_Background (Pathable_Moveable_Standable_Positions[idx_cur_pos])) then
+			Pathable_Moveable_Standable_FullBackground_Positions_size = Pathable_Moveable_Standable_FullBackground_Positions_size + 1
+			Pathable_Moveable_Standable_FullBackground_Positions[Pathable_Moveable_Standable_FullBackground_Positions_size] = Pathable_Moveable_Standable_Positions[idx_cur_pos]
+		end
+	end
+	
 	--world.logInfo("ROI build successful")
 	local ROI = {}
 	ROI.anchor_pos                                = ROI_anchor_position
@@ -88,16 +109,41 @@ function madtulipLocation.create_ROI_around_anchor(ROI_anchor_position,BB,Additi
 	-- these are pathable and standable (a move to will result in the NPC standing on some floor)
 	ROI.Pathable_Moveable_Standable_Positions      = Pathable_Moveable_Standable_Positions
 	ROI.Pathable_Moveable_Standable_Positions_size = Pathable_Moveable_Standable_Positions_size
-	
+
+	-- these in addition also have full background behind the player, which is a good indication for "inside the spaceship"
+	ROI.Pathable_Moveable_Standable_FullBackground_Positions      = Pathable_Moveable_Standable_FullBackground_Positions
+	ROI.Pathable_Moveable_Standable_FullBackground_Positions_size = Pathable_Moveable_Standable_FullBackground_Positions_size	
 --[[
 	world.logInfo("--- ROI created! ---")
 	world.logInfo("ROI.Anchor X: " .. ROI.anchor_pos[1] .. " Y: " .. ROI.anchor_pos[2])
 	world.logInfo("ROI.Pathable_Above_Floor_Positions_size: " .. ROI.Pathable_Above_Floor_Positions_size)
 	world.logInfo("ROI.Pathable_Moveable_Positions_size: " .. ROI.Pathable_Moveable_Positions_size)
 	world.logInfo("ROI.Pathable_Moveable_Standable_Positions_size: " .. ROI.Pathable_Moveable_Standable_Positions_size)
+	world.logInfo("ROI.Pathable_Moveable_Standable_FullBackground_Positions_size: " .. ROI.Pathable_Moveable_Standable_FullBackground_Positions_size)
 	world.logInfo("--------------------")
 ]]
 	return ROI
+end
+
+function madtulipLocation.Position_has_Player_sized_Background(Position)
+
+	local cur_pos = {}
+	local cur_position_has_Player_sized_Background = true
+	-- check clearance boundary box
+	for X = madtulipLocation.Standable.BB[1], madtulipLocation.Standable.BB[3], 1 do
+		for Y = madtulipLocation.Standable.BB[2], madtulipLocation.Standable.BB[4], 1 do
+			-- check for foreground at this position
+			cur_pos[1] = Position[1] + X
+			cur_pos[2] = Position[2] + Y
+			-- world.logInfo("X:" .. cur_pos[1] .. "Y:" .. cur_pos[2])
+			cur_mat = world.material(cur_pos,"background")
+			if (cur_mat == nil) then
+				-- world.logInfo("BLOCKED: " .. cur_mat)
+				cur_position_has_Player_sized_Background = false
+			end
+		end
+	end
+	return cur_position_has_Player_sized_Background
 end
 
 function madtulipLocation.get_empty_ROI()
