@@ -18,20 +18,17 @@ Crew
 -- marine objects (rifle racks for the wall, lockers, guardpost things) to make a marine styles room
 -- resting state objects (so far we have all beds registered as rest objects) there could be other chill things
 - attractors (existing vanilla objects names they would walk towards)
--- marine - are there no more rifle racks or something?
 -- deckhand - where could they hang around ?
 -- resting in general
 
 Ship Station
 - icon in top left corner when opening ship station
 
-Mining pod
-- animated png for the drill itself - DONE JUST FIX THE ANIMATION FILES
+
 
 
 Older about ship parts (we got some of those alreadym, no?)
 - heat absorber: apex,floran,human
-- large fin: glitch
+
 - 1st weapon: avian
 - 2nd weapon: avian, floran,hylotl
-- apex turret animation
