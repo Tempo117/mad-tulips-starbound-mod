@@ -1,3 +1,8 @@
+
+- Mining pod drill animation
+
+- crew pistol and rifle rack object files
+
 General
 
 -- ftl thrusters and stabilizers don't use the jumping animation while jumping
