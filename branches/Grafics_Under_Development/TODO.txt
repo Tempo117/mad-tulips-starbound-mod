@@ -21,7 +21,7 @@ Older ship parts
 - 2nd weapon: avian, floran,hylotl
 ----------------------------------------------------------------------------------------------------
 top/bottom objects with lua file
-- bottom grafics for all turrets
+- bottom grafics for all turrets                                                                DONE
 - implementation of animation flip via lua
 ----------------------------------------------------------------------------------------------------
 Doors
