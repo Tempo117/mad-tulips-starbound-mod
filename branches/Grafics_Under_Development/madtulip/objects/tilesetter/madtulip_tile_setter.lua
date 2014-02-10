@@ -139,18 +139,27 @@ function get_tileset_mat_type(cur_F_mat)
 	-- returns the mat type of the mat (human,glitch ..) or nil if unknown
 	if cur_F_mat == nil then return nil end
 	
+	if string.find(cur_F_mat, "madtulip_apex3_") then return "apex3" end
 	if string.find(cur_F_mat, "madtulip_apex2_") then return "apex2" end
 	if string.find(cur_F_mat, "madtulip_apex_") then return "apex" end
+	if string.find(cur_F_mat, "madtulip_avian3_") then return "avian3" end
 	if string.find(cur_F_mat, "madtulip_avian2_") then return "avian2" end
 	if string.find(cur_F_mat, "madtulip_avian_") then return "avian" end
+	if string.find(cur_F_mat, "madtulip_floran3_") then return "floran3" end
 	if string.find(cur_F_mat, "madtulip_floran2_") then return "floran2" end
 	if string.find(cur_F_mat, "madtulip_floran_") then return "floran" end
+	if string.find(cur_F_mat, "madtulip_glitch3_") then return "glitch3" end
 	if string.find(cur_F_mat, "madtulip_glitch2_") then return "glitch2" end
 	if string.find(cur_F_mat, "madtulip_glitch_") then return "glitch" end
+	if string.find(cur_F_mat, "madtulip_human3_") then return "human3" end
 	if string.find(cur_F_mat, "madtulip_human2_") then return "human2" end
 	if string.find(cur_F_mat, "madtulip_human_") then return "human" end
+	if string.find(cur_F_mat, "madtulip_hylotl3_") then return "hylotl3" end
 	if string.find(cur_F_mat, "madtulip_hylotl2_") then return "hylotl2" end
 	if string.find(cur_F_mat, "madtulip_hylotl_") then return "hylotl" end
+	if string.find(cur_F_mat, "madtulip_novakid3_") then return "novakid3" end
+	if string.find(cur_F_mat, "madtulip_novakid2_") then return "novakid2" end
+	if string.find(cur_F_mat, "madtulip_novakid_") then return "novakid" end
 	if string.find(cur_F_mat, "madtulip_glass_") then return "glass" end
 	
 	-- default
@@ -222,17 +231,26 @@ function set_own_mat (cur_Pos,layer,f_tileset_mat_type,own_mat_to_be_set)
 	-- place new block
 	local could_place = false
 	if not(   (f_tileset_mat_type == "apex")
-           or (f_tileset_mat_type == "apex2") 
+           or (f_tileset_mat_type == "apex2")
+		   or (f_tileset_mat_type == "apex3")
 		   or (f_tileset_mat_type == "avian") 
 		   or (f_tileset_mat_type == "avian2") 
+		   or (f_tileset_mat_type == "avian3") 
 		   or (f_tileset_mat_type == "floran") 
 		   or (f_tileset_mat_type == "floran2") 
+		   or (f_tileset_mat_type == "floran3") 
 		   or (f_tileset_mat_type == "glitch") 
 		   or (f_tileset_mat_type == "glitch2") 
+		   or (f_tileset_mat_type == "glitch3") 
 		   or (f_tileset_mat_type == "human") 
 		   or (f_tileset_mat_type == "human2") 
+		   or (f_tileset_mat_type == "human3") 
 		   or (f_tileset_mat_type == "hylotl") 
 		   or (f_tileset_mat_type == "hylotl2") 
+		   or (f_tileset_mat_type == "hylotl3") 
+		   or (f_tileset_mat_type == "novakid") 
+		   or (f_tileset_mat_type == "novakid2") 
+		   or (f_tileset_mat_type == "novakid3") 
 		   or (f_tileset_mat_type == "glass")) then return nil end
 	if not(   (own_mat_to_be_set == "bl")
            or (own_mat_to_be_set == "blt") 

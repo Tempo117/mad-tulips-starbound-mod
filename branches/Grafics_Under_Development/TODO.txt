@@ -1,35 +1,75 @@
+Packets: please try to fully finish one at a time so we get things in a working condition
 
--- pistol and rifle rack _icons
--- pistol and rifle rack smaler by 33-50% ? looks to large to me
 
--- pist and rifle rack recipe costs
-
--- FTL animation
-
--- tilesets: all _icons _DEFAULT and such unique/ stubs replaced ?
-
-- Mining pod drill animation
-
-- crew pistol and rifle rack object files
-
-General
-
+----------------------------------------------------------------------------------------------------
+-----------------------------------------GENERIC----------------------------------------------------
+----------------------------------------------------------------------------------------------------
+Tilesets (high priority)
+- all _icons and _DEFAULT of all tileset2 and 3 are stubs and need replacements
+- human type 3 tileset is broken (gfx glitches)
+----------------------------------------------------------------------------------------------------
+Weapon Racks (high priority)
+- pistol and rifle rack _icons
+- pistol and rifle rack smaler by 33-50% ? looks to large to me
+- pist and rifle rack recipe costs
+----------------------------------------------------------------------------------------------------
+FTL Thrusters (high priority)
 -- ftl thrusters and stabilizers don't use the jumping animation while jumping
 -crew console (TODO: filter buttons and top left menue icon are stubs -> replace please)
+----------------------------------------------------------------------------------------------------
+Older ship parts
+- heat absorber: apex,floran,human
+- 1st weapon: avian
+- 2nd weapon: avian, floran,hylotl
 
+
+
+
+----------------------------------------------------------------------------------------------------
+-----------------------------------------CREW-------------------------------------------------------
+----------------------------------------------------------------------------------------------------
+Crew console
+- Filter Buttons need icons
+- top left corner icon needs to be done
+----------------------------------------------------------------------------------------------------
 Crew
-- interacting obejcts
--- crew beamer
--- crew dismisser
--objects (new)
--- medical objects like surgery desk and monitors for a clinical themed room
--- marine objects (rifle racks for the wall, lockers, guardpost things) to make a marine styles room
--- resting state objects (so far we have all beds registered as rest objects) there could be other chill things
-- attractors (existing vanilla objects names they would walk towards)
--- deckhand - where could they hang around ?
--- resting in general
+- 2 to 5 resting objects like fridges ? and the like
+- 2 to 5 medical objects like surgery desk and monitors for a clinical themed room
+- 1 to 3 marine objects (rifle racks for the wall, lockers, granade stack ? guardpost things) to make a marine styled hangout
+- deckhand - where could they hang around ? normal resting state objects?
 
-- crew code:
+- crew beamer 1-hand item: needs icon (handheld scotty beam me up teleporting device ? (low priority)
+- crew dismisser 1-hand item: makes crew disappear/die - idea? (low priority)
+
+- mannequin -> spacesuit
+- mannequin -> military outfit
+- recipes for some vanilla items that would make good work attractor items like medical tank ?
+----------------------------------------------------------------------------------------------------
+
+
+
+
+----------------------------------------------------------------------------------------------------
+-----------------------------------------Novakid----------------------------------------------------
+----------------------------------------------------------------------------------------------------
+- comms
+- flux
+- ftl
+- gyro
+- s,m,l fin
+- shipdoor (horizontal and vertical)
+- stabilization thruster
+- weapon 1
+- weapon 2
+
+- shipstructure file
+
+
+
+----------------------------------------------------------------------------------------------------
+-----------------------------------------CODE-------------------------------------------------------
+----------------------------------------------------------------------------------------------------
+-Crew
 -- heal task is broken due to new ROI handling
 -- think about a way to do live target_position tracking with the current implementation -> pass target_entity ID to ROIState?
 -- include A* pathfinding (jumper lib ?) at least to outrule locations that cant be reached at all on a birdview grid
@@ -43,13 +83,3 @@ Crew
 -- use grid dataformat from jumper instead of array[]{x,y} where possible
 -- build grid for jumper function in madtulipLocation
 -- floodfill breach cluster interior -> additional breache locations so that larger breaches are not "outlined" by foreground walls but filled with background instead
-
-Ship Station
-- icon in top left corner when opening ship station
-
-
-Older about ship parts (we got some of those alreadym, no?)
-- heat absorber: apex,floran,human
-
-- 1st weapon: avian
-- 2nd weapon: avian, floran,hylotl
