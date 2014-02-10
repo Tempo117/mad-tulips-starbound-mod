@@ -1,4 +1,8 @@
 
+-- FTL animation
+
+-- tilesets: all _icons _DEFAULT and such unique/ stubs replaced ?
+
 - Mining pod drill animation
 
 - crew pistol and rifle rack object files
