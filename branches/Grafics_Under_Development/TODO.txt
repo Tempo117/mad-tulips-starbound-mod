@@ -5,8 +5,7 @@ Packets: please try to fully finish one at a time so we get things in a working 
 -----------------------------------------GENERIC----------------------------------------------------
 ----------------------------------------------------------------------------------------------------
 Tilesets (high priority)
-- all _icons and _DEFAULT of all tileset2 and 3 are stubs and need replacements
-- human type 3 tileset is broken (gfx glitches)
+- human type 3 tileset is broken (Working on it, sigh i expected it to be a bit broken but not this much)
 ----------------------------------------------------------------------------------------------------
 Weapon Racks (high priority)
 - pistol and rifle rack _icons
@@ -14,8 +13,7 @@ Weapon Racks (high priority)
 - pist and rifle rack recipe costs
 ----------------------------------------------------------------------------------------------------
 FTL Thrusters (high priority)
--- ftl thrusters and stabilizers don't use the jumping animation while jumping
--crew console (TODO: filter buttons and top left menue icon are stubs -> replace please)
+- ftl thrusters and stabilizers don't use the jumping animation while jumping
 ----------------------------------------------------------------------------------------------------
 Older ship parts
 - heat absorber: apex,floran,human
@@ -65,7 +63,7 @@ Crew
 - shipstructure file
 
 
-
+Give Hugg all your ideas because im bone dry for ideas on novakid unique objects, thanks
 ----------------------------------------------------------------------------------------------------
 -----------------------------------------CODE-------------------------------------------------------
 ----------------------------------------------------------------------------------------------------
