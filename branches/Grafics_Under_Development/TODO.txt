@@ -42,6 +42,7 @@ Crew
 -- some function i.e. from LS should be moved to madtulipLocation.lua instead
 -- use grid dataformat from jumper instead of array[]{x,y} where possible
 -- build grid for jumper function in madtulipLocation
+-- floodfill breach cluster interior -> additional breache locations so that larger breaches are not "outlined" by foreground walls but filled with background instead
 
 Ship Station
 - icon in top left corner when opening ship station
