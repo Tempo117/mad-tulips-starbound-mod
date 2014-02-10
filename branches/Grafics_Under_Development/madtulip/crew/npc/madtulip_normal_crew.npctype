@@ -114,7 +114,9 @@
 		"marine_attractors" : [
 			"madtulip_crew_marine_attractor",
 			"locker", // all crew
-			"locker2" // all crew
+			"locker2", // all crew
+			"madtulip_rifle_rack",
+			"madtulip_pistol_rack"
 		],
 		"medic_attractors" : [
 			"madtulip_crew_medic_attractor",

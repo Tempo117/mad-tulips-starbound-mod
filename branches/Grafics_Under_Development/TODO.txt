@@ -1,4 +1,9 @@
 
+-- pistol and rifle rack _icons
+-- pistol and rifle rack smaler by 33-50% ? looks to large to me
+
+-- pist and rifle rack recipe costs
+
 -- FTL animation
 
 -- tilesets: all _icons _DEFAULT and such unique/ stubs replaced ?
