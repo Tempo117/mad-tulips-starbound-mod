@@ -18,7 +18,6 @@ General
 -crew console (TODO: filter buttons and top left menue icon are stubs -> replace please)
 
 Crew
-
 - interacting obejcts
 -- crew beamer
 -- crew dismisser
@@ -29,6 +28,20 @@ Crew
 - attractors (existing vanilla objects names they would walk towards)
 -- deckhand - where could they hang around ?
 -- resting in general
+
+- crew code:
+-- heal task is broken due to new ROI handling
+-- think about a way to do live target_position tracking with the current implementation -> pass target_entity ID to ROIState?
+-- include A* pathfinding (jumper lib ?) at least to outrule locations that cant be reached at all on a birdview grid
+-- test multiple NPCs task distribution
+-- task communication based on sight instead of 50 blocks braodcast range
+--- maybe also additional "auditory" bubble of a fixed radius as is now
+-- get movement physics functions
+--- jumping trajectory
+--- player and npc exact collision box
+-- some function i.e. from LS should be moved to madtulipLocation.lua instead
+-- use grid dataformat from jumper instead of array[]{x,y} where possible
+-- build grid for jumper function in madtulipLocation
 
 Ship Station
 - icon in top left corner when opening ship station

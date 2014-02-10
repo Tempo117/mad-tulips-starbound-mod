@@ -61,11 +61,8 @@ function madtulip_task_fix_hull_breach.main_Task(Task)
 		ROI_Parameters.start_chats_on_the_way = false
 		
 		ROI_Parameters.Statename = "madtulipROIState"
-		
--- TODO: We need to be able to fail on Task execution
--- Pathfinding Errors would i.e. call this
--- No possible Movement location would also call this
--- It might be better to remember that we failed this task so others can try it instead of marking it as done
+
+		-- called if State decided that task is not solveable (i.e. not reachable)
 		ROI_Parameters.Critical_Fail_Callback = madtulip_task_fix_hull_breach.failed_Task
 		
 		self.state.pickState(ROI_Parameters)
