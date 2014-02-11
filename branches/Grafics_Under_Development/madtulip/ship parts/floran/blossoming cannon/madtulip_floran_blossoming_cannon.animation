@@ -107,7 +107,7 @@
               "properties" : {
                 "image" : "<partImage>:default.<frame>",
 				"direction" : "left",
-				"offset" : [0, 0.625]
+				"offset" : [0, 0.75]
               }
             },
             "OFF_Bottom_operation" : {
@@ -139,7 +139,7 @@
               "properties" : {
                 "image" : "<partImage>:default.<frame>",
 				"direction" : "left",
-				"offset" : [0, 0.625]
+				"offset" : [0, 0.75]
               }
             }
           }

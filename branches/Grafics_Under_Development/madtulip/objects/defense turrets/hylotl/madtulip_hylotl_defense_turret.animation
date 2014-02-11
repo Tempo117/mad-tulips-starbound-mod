@@ -92,7 +92,7 @@
 
       "energy" : {
         "properties" : {
-          "offset" : [0, 0.5],
+          "offset" : [-0.5, 0.5],
           "centered" : false,
           "zLevel" : 2
         },

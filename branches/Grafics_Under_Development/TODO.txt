@@ -1,44 +1,28 @@
-Packets: please try to fully finish one at a time so we get things in a working condition
-
-
 ----------------------------------------------------------------------------------------------------
 -----------------------------------------NEXT UPDATE------------------------------------------------
 ----------------------------------------------------------------------------------------------------
-Weapon Racks (high priority)                                                                      
-- pistol and rifle rack _icons                                                                  DONE
-- pistol and rifle rack smaler by 33-50% ? looks to large to me                                 DONE
-- pist and rifle rack recipe costs
+Crew console (high priority)                                                                      
+- Filter Buttons need icons
+- top left corner icon needs to be done
 ----------------------------------------------------------------------------------------------------
-FTL Thrusters (high priority)
-- ftl thrusters and stabilizers don't use the jumping animation while jumping		Maybe not possible
-----------------------------------------------------------------------------------------------------
-Older ship parts
-- heat absorber: apex,floran,human                                                              DONE    
-- 1st weapon: avian
-- 2nd weapon: avian, floran,hylotl
-----------------------------------------------------------------------------------------------------
-top/bottom objects with lua file
-- bottom grafics for all turrets                                                                DONE
-- implementation of animation flip via lua							DONE
-----------------------------------------------------------------------------------------------------
-Doors
-- forcefield door horizontal/vertical colorable (all colors)
-- LS code support for horizontal doors								DONE
+Doors (high priority)
 - fix doors in all shipworld files (they have a new offset and thus cant be placed anymore)	creep on it
+- please add a door to the "shell" race ship which is commited by the race mods author.
+- forcefield door horizontal/vertical colorable (all colors) (mid priority)
 ----------------------------------------------------------------------------------------------------
-Crew
+FTL Thrusters
+- ftl thrusters and stabilizers don't use the jumping animation while jumping		Maybe not possible, ill check again
+----------------------------------------------------------------------------------------------------
+Crew (mid to low priority)
 - 2 to 5 resting objects like fridges ? and the like
 - 2 to 5 medical objects like surgery desk and monitors for a clinical themed room
 - 1 to 3 marine objects (rifle racks for the wall, lockers, granade stack ? guardpost things) to make a marine styled hangout
 - deckhand - where could they hang around ? normal resting state objects?
 - recipes for some vanilla items that would make good work attractor items like medical tank ?
-----------------------------------------------------------------------------------------------------
-Crew console
-- Filter Buttons need icons
-- top left corner icon needs to be done
-----------------------------------------------------------------------------------------------------
-Ship files
-- please add a door to the "shell" race ship which is commited by the race mods author.
+
+
+
+
 
 
 
@@ -74,8 +58,19 @@ Crew
 
 - shipstructure file
 
-
 Give Hugg all your ideas because im bone dry for ideas on novakid unique objects, thanks
+
+
+
+----------------------------------------------------------------------------------------------------
+-----------------------------------AFTER NEXT UPDATE------------------------------------------------
+----------------------------------------------------------------------------------------------------
+Older ship parts
+- 1st weapon: avian
+- 2nd weapon: avian, floran,hylotl
+
+
+
 ----------------------------------------------------------------------------------------------------
 -----------------------------------------CODE-------------------------------------------------------
 ----------------------------------------------------------------------------------------------------

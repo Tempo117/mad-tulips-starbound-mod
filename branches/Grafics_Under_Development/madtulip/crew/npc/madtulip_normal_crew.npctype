@@ -66,7 +66,7 @@
 		//"timeOfDayRangeRest" : [[0.0, 0.0]],				// time of day when to perform this in general
 
 		"cooldown" : 10,								// cooldown of this state
-		"timeOfDayRanges" : [[0.0, 1.0]],				// time of day when to perform this in general
+		"timeOfDayRanges"    : [[0.0, 1.0]],			// time of day when to perform this in general
 		"timeOfDayRangeWork" : [[0.2,0.8]],				// time of day when to perform work
 		"timeOfDayRangeRest" : [[0.8,1.0],[0.0,0.2]],	// time of day when to perform rest
 		"timeRange" : [3.0, 10.0],						// duration for which to perform this state each time its called
@@ -164,8 +164,8 @@
 			]
     },
     "sit" : {
-		"timeOfDayRanges" : [ [0.0, 1.0]],
-		//"timeOfDayRanges" : [ [0.6, 1.0], [0.0, 0.2] ],
+		//"timeOfDayRanges" : [ [0.0, 1.0]],
+		"timeOfDayRanges" : [ [0.6, 1.0], [0.0, 0.2] ],
 		"moveTimeLimit" : 8,
 		"searchRadius" : 10,
 		"sitRadius" : 3,
@@ -257,9 +257,7 @@
 				"Some of the rest of my team has been a little trigger happy."
 			],
 			"Deckhand" : [
-				"Im telling you Deckhand things ...",
-				"Im telling you Deckhand things 2 ...",
-				"Im telling you Deckhand things 3 ..."
+				"Hello ..."
 			]
 		}
     }
