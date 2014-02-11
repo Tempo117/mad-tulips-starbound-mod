@@ -42,7 +42,8 @@
             "ON_Top_operation" : {
               "properties" : {
                 "image" : "<partImage>:default.<frame>",
-				"direction" : "left"
+				"direction" : "left",
+				"offset" : [0, 0]
               }
             },
             "OFF_Top_operation" : {
@@ -73,7 +74,8 @@
             "OFF_Top_operation" : {
               "properties" : {
                 "image" : "<partImage>:default.<frame>",
-				"direction" : "left"
+				"direction" : "left",
+				"offset" : [0, 0]
               }
             },
 			"ON_Bottom_operation" : {
@@ -104,7 +106,8 @@
             "ON_Bottom_operation" : {
               "properties" : {
                 "image" : "<partImage>:default.<frame>",
-				"direction" : "left"
+				"direction" : "left",
+				"offset" : [0, -0.5]
               }
             },
             "OFF_Bottom_operation" : {
@@ -135,7 +138,8 @@
             "OFF_Bottom_operation" : {
               "properties" : {
                 "image" : "<partImage>:default.<frame>",
-				"direction" : "left"
+				"direction" : "left",
+				"offset" : [0, -0.5]
               }
             }
           }

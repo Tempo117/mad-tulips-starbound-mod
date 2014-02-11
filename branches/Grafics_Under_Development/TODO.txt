@@ -10,7 +10,7 @@ Weapon Racks (high priority)
 - pist and rifle rack recipe costs
 ----------------------------------------------------------------------------------------------------
 FTL Thrusters (high priority)
-- ftl thrusters and stabilizers don't use the jumping animation while jumping
+- ftl thrusters and stabilizers don't use the jumping animation while jumping		Maybe not possible
 ----------------------------------------------------------------------------------------------------
 Older ship parts
 - heat absorber: apex,floran,human                                                              DONE    
@@ -18,28 +18,31 @@ Older ship parts
 - 2nd weapon: avian, floran,hylotl
 ----------------------------------------------------------------------------------------------------
 top/bottom objects with lua file
-DONE - bottom grafics for all turrets                                                                
-- implementation of animation flip via lua
+- bottom grafics for all turrets                                                                DONE
+- implementation of animation flip via lua							DONE
 ----------------------------------------------------------------------------------------------------
 Doors
 - forcefield door horizontal/vertical colorable (all colors)
 - LS code support for horizontal doors								DONE
-- fix doors in all shipworld files (they have a new offset and thus cant be placed anymore)
+- fix doors in all shipworld files (they have a new offset and thus cant be placed anymore)	creep on it
 ----------------------------------------------------------------------------------------------------
 Crew
 - 2 to 5 resting objects like fridges ? and the like
 - 2 to 5 medical objects like surgery desk and monitors for a clinical themed room
 - 1 to 3 marine objects (rifle racks for the wall, lockers, granade stack ? guardpost things) to make a marine styled hangout
 - deckhand - where could they hang around ? normal resting state objects?
+- recipes for some vanilla items that would make good work attractor items like medical tank ?
+----------------------------------------------------------------------------------------------------
+Crew console
+- Filter Buttons need icons
+- top left corner icon needs to be done
+
+
 
 
 
 ----------------------------------------------------------------------------------------------------
 -----------------------------------------CREW-------------------------------------------------------
-----------------------------------------------------------------------------------------------------
-Crew console
-- Filter Buttons need icons
-- top left corner icon needs to be done
 ----------------------------------------------------------------------------------------------------
 Crew
 
@@ -48,7 +51,6 @@ Crew
 
 - mannequin -> spacesuit
 - mannequin -> military outfit
-- recipes for some vanilla items that would make good work attractor items like medical tank ?
 ----------------------------------------------------------------------------------------------------
 
 
