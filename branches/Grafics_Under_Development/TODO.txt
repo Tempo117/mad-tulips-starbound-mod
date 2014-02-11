@@ -7,9 +7,9 @@ Packets: please try to fully finish one at a time so we get things in a working 
 Tilesets (high priority)
 - human type 3 tileset is broken (Working on it, sigh i expected it to be a bit broken but not this much)
 ----------------------------------------------------------------------------------------------------
-Weapon Racks (high priority)
-- pistol and rifle rack _icons
-- pistol and rifle rack smaler by 33-50% ? looks to large to me
+Weapon Racks (high priority)                                                                      
+- pistol and rifle rack _icons                                                                  DONE
+- pistol and rifle rack smaler by 33-50% ? looks to large to me                                 DONE
 - pist and rifle rack recipe costs
 ----------------------------------------------------------------------------------------------------
 FTL Thrusters (high priority)
