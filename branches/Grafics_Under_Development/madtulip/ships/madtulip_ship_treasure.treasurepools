@@ -15,7 +15,6 @@
         "allowDuplication" : false
       } ]
   ],
-
   "madtulip_apexShipStarterTreasure" : [
     [0, {
         "fill" : [
@@ -49,7 +48,6 @@
         "allowDuplication" : false
       } ]
   ],
-
   "madtulip_glitchShipStarterTreasure" : [
     [0, {
         "fill" : [
@@ -66,7 +64,6 @@
         "allowDuplication" : false
       } ]
   ],
-
   "madtulip_hylotlShipStarterTreasure" : [
     [0, {
         "fill" : [
@@ -83,7 +80,6 @@
         "allowDuplication" : false
       } ]
   ],
-
   "madtulip_floranShipStarterTreasure" : [
     [0, {
         "fill" : [
@@ -95,6 +91,21 @@
           [ "bonebooseed", 3],
           [ "wheatseed", 3],
           [ "floranstarter", 1]
+        ],
+        "levelVariance" : [0, 0],
+        "allowDuplication" : false
+      } ]
+  ],
+    "madtulip_shellStarterTreasure" : [
+    [0, {
+        "fill" : [
+          "beamaxe",
+          "flashlight",
+		  "madtulip_gravity-chip",
+		  "madtulip_tier1_pod",
+          [ "torch", 10],
+          [ "flare", 3],
+          [ "shellstarter", 1]
         ],
         "levelVariance" : [0, 0],
         "allowDuplication" : false

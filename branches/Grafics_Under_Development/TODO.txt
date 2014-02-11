@@ -36,6 +36,9 @@ Crew
 Crew console
 - Filter Buttons need icons
 - top left corner icon needs to be done
+----------------------------------------------------------------------------------------------------
+Ship files
+- please add a door to the "shell" race ship which is commited by the race mods author.
 
 
 
