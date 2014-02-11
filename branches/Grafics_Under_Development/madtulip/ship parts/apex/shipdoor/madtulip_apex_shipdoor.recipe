@@ -6,7 +6,7 @@
 	{ "item" : "money", "count" : 100 }
   ],
   "output" : {
-    "item" : "madtulip_shipdoor",
+    "item" : "madtulip_apex_shipdoor",
     "count" : 1
   },
   "groups" : [ "madtulip_shipstation", "all", "objects" ]

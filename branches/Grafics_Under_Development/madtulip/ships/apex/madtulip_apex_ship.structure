@@ -223,7 +223,7 @@
 	{
       "value" : [1, 1, 5, 255],
       "foregroundBlock" : false,"backgroundBlock" : true,
-      "object" : "madtulip_shipdoor",
+      "object" : "madtulip_apex_shipdoor",
 	  "backgroundMat" : "madtulip_bottom_decoration"
     },
 // Other Objects [3,0,x]

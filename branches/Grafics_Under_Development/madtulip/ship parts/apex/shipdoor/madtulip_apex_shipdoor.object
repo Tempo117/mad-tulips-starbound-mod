@@ -1,13 +1,13 @@
 {
-  "objectName" : "madtulip_floran_shipdoor",
+  "objectName" : "madtulip_apex_shipdoor",
   "rarity" : "Common",
   "objectType" : "wire",
 
   "category" : "door",
   "price" : 1000,
   "description" : "A reinforced space-grade hatch that can be placed dynamically.",
-  "shortdescription" : "Avian Ship Door",
-  "race" : "floran",
+  "shortdescription" : "Apex Ship Door",
+  "race" : "apex",
 
   "apexDescription" : "We use these doors on our ships.",
   "avianDescription" : "A door.",
@@ -17,17 +17,17 @@
   "hylotlDescription" : "A basic door.",
 
 
-  "inventoryIcon" : "madtulip_floran_shipdoor_icon.png",
+  "inventoryIcon" : "madtulip_apex_shipdoor_icon.png",
   "orientations" : [
     {
-      "dualImage" : "madtulip_floran_shipdoor.png:closeWall",
+      "dualImage" : "madtulip_apex_shipdoor.png:closeWall",
       "imagePosition" : [-16, -16],
 
       "spaceScan" : 0.1,
       "anchors" : [ "top", "bottom" ]
     },
 	{
-      "dualImage" : "madtulip_floran_shipdoor.png:closeFloor",
+      "dualImage" : "madtulip_apex_shipdoor.png:closeFloor",
       "imagePosition" : [-16, -16],
 
       "spaceScan" : 0.3,
@@ -40,7 +40,7 @@
 
   "animation" : "door.animation",
   "animationParts" : {
-    "door" : "madtulip_floran_shipdoor.png"
+    "door" : "madtulip_apex_shipdoor.png"
   },
   "animationPosition" : [-16, -16],
   

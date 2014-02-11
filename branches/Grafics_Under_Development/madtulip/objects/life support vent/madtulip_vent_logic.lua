@@ -14,7 +14,6 @@ function init()
 	madtulip.MSS_Range = {} -- range to scan for other vents around the master
 	madtulip.MSS_Range[1] = {1,1} -- bottom left corner
 	madtulip.MSS_Range[2] = {1102,1048} -- top right corner (size of the shipmap
-	madtulip.Door_max_range = 10 -- maximum number of blocks in all directions around a door root that are scanned for the door
 	madtulip.On_Off_State = 1; -- "1:ON,2:OFF"
 	madtulip.ANY_Breach = 0;	
 
@@ -191,8 +190,6 @@ function Start_New_Room_Breach_Scan(size_to_scan,Scan_8_method)
 	madtulip.Flood_Data_Matrix.Y_max          = madtulip.Origin[2] + size_to_scan;
 	madtulip.Flood_Data_Matrix.Max_Iteration  = ((size_to_scan*2)+1)*((size_to_scan*2)+1); -- maximum room size. if the room is larger this will terminate early stating that the room is not closed
 	madtulip.Flood_Data_Matrix.Scan_8_method  = Scan_8_method; -- if == 0 scan 4 surrounding blocks (W,N,E,S) else scan also the 4 diagonal corners
-	madtulip.Flood_Data_Matrix.max_door_hight_top    = 5;
-	madtulip.Flood_Data_Matrix.max_door_hight_bottom = 5;
 	madtulip.Flood_Data_Matrix.target_color          = 1;
 	madtulip.Flood_Data_Matrix.none_target_color     = 2;
 	madtulip.Flood_Data_Matrix.replacement_color     = 3;
@@ -218,82 +215,8 @@ function Start_New_Room_Breach_Scan(size_to_scan,Scan_8_method)
 		end	
 	end
 	
-	-- check for doors in the area first
--- world.logInfo ("Prepare_Doors_for_Flood_Fill()")
-	Prepare_Doors_for_Flood_Fill();
--- world.logInfo ("Prepare_Doors_for_Flood_Fill() -- DONE")
 	-- test the area around the block where this is placed for beeing an enclosed room
 	Flood_Fill(madtulip.Flood_Data_Matrix.Origin,1,2,3);
-end
-
-function Prepare_Doors_for_Flood_Fill()
-	-- add additional information about surrounding, like doors
-	local radius_to_scan = madtulip.Flood_Data_Matrix.size_to_scan*2;
-	local closedDoorIds  = world.objectQuery (madtulip.Flood_Data_Matrix.Origin, radius_to_scan, { callScript = "hasCapability", callScriptArgs = { "closedDoor" } });
-	
-	if (closedDoorIds == nil) then
-		-- no doors found, nothing to do
-		return;
-	end
-	
-	local root_Door_Position = {}
-	local cur_Door_IDs = {}
-	local cur_door_pos = {}
-	local foreground_block_found = nil
-	-- for all closed doors in vicinity, get theire coordinates
-	for closed_door_nr, closedDoorId in pairs(closedDoorIds) do
-		root_Door_Position = world.entityPosition (closedDoorId);
-		-- door is inside currently intialized memory
---world.logInfo ("Root closed door #" .. closed_door_nr .. "@X:" .. root_Door_Position[1] .. "Y:" .. root_Door_Position[2])
-		set_flood_data_matrix_content (root_Door_Position[1],root_Door_Position[2],madtulip.Flood_Data_Matrix.replacement_color)
-		cur_door_pos = { root_Door_Position[1], root_Door_Position[2] }
-		if (world.material(cur_door_pos, "foreground")) then
--- world.logInfo ("Door root has foreground")
-			-- root of the door is a foreground block -> we asume its going only up
-			-- scan from root to top
-			foreground_block_found = false;
-			for cur_Y=(root_Door_Position[2]+1),(root_Door_Position[2]+madtulip.Door_max_range),1 do		
-				if not(foreground_block_found) then
-					cur_door_pos = { root_Door_Position[1], cur_Y }
-					if (world.material(cur_door_pos, "foreground")) then
-						foreground_block_found = true
-					else
--- world.logInfo ("Closed door #" .. closed_door_nr .. "@X:" .. root_Door_Position[1] .. "Y:" .. cur_Y)
-						set_flood_data_matrix_content (root_Door_Position[1],cur_Y,madtulip.Flood_Data_Matrix.replacement_color)
-					end
-				end
-			end
-		else
--- world.logInfo ("Door root has NO foreground")
-			-- root of the door is NO foreground block. we scan towards top and bottom
-			-- scan from root to top
-			foreground_block_found = false;
-			for cur_Y=(root_Door_Position[2]+1),(root_Door_Position[2]+madtulip.Door_max_range),1 do		
-				if not(foreground_block_found) then
-					cur_door_pos = { root_Door_Position[1], cur_Y }
-					if (world.material(cur_door_pos, "foreground")) then
-						foreground_block_found = true
-					else
---world.logInfo ("Closed door #" .. closed_door_nr .. "@X:" .. root_Door_Position[1] .. "Y:" .. cur_Y)
-						set_flood_data_matrix_content (root_Door_Position[1],cur_Y,madtulip.Flood_Data_Matrix.replacement_color)
-					end
-				end
-			end
-			-- scan from root to bottom
-			foreground_block_found = false;
-			for cur_Y=(root_Door_Position[2]-1),(root_Door_Position[2]-madtulip.Door_max_range),1 do		
-				if not(foreground_block_found) then
-					cur_door_pos = { root_Door_Position[1], cur_Y }
-					if (world.material(cur_door_pos, "foreground")) then
-						foreground_block_found = true
-					else
---world.logInfo ("Closed door #" .. closed_door_nr .. "@X:" .. root_Door_Position[1] .. "Y:" .. cur_Y)
-						set_flood_data_matrix_content (root_Door_Position[1],cur_Y,madtulip.Flood_Data_Matrix.replacement_color)
-					end
-				end
-			end
-		end
-	end
 end
 
 function Flood_Fill(cur_Position)
@@ -324,7 +247,7 @@ function Flood_Fill(cur_Position)
 		madtulip.Flood_Data_Matrix.Stop_Iteration = 1;
 		return;
 	end
-	
+
 	-- if this block has already been scanned
 	if madtulip.Flood_Data_Matrix.Content[cur_Position[1]][cur_Position[2]] == madtulip.Flood_Data_Matrix.replacement_color then
 		-- we have already been here
@@ -346,12 +269,12 @@ function Flood_Fill(cur_Position)
 	-- ----- so far we are good, take next step in the state machine -----
 	-- increment iteration step
 	madtulip.Flood_Data_Matrix.Cur_Iteration = madtulip.Flood_Data_Matrix.Cur_Iteration + 1;
-	
+
 	-- check if there is a foreground block
 	--  ,if not then check if there is a background block
 	--  ,if also not its a breach.
 	-- write the gathered info to "madtulip.Flood_Data_Matrix.Content[x,y]" which is the data object used further on
-	if world.material(cur_Position, "foreground") == nil then
+	if (world.material(cur_Position, "foreground") == nil) and(not(world.pointCollision(cur_Position, true)) )then
 		-- nil foreground block found. This is our target.
 		set_flood_data_matrix_content(cur_Position[1],cur_Position[2],madtulip.Flood_Data_Matrix.target_color)
 		-- if this is also a nil background block we have a breach that we might or might not be aware of yet

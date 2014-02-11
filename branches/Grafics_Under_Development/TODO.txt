@@ -23,7 +23,8 @@ top/bottom objects with lua file
 ----------------------------------------------------------------------------------------------------
 Doors
 - forcefield door horizontal/vertical colorable (all colors)
-- LS code support for horizontal doors
+- LS code support for horizontal doors								DONE
+- fix doors in all shipworld files (they have a new offset and thus cant be placed anymore)
 ----------------------------------------------------------------------------------------------------
 Crew
 - 2 to 5 resting objects like fridges ? and the like
