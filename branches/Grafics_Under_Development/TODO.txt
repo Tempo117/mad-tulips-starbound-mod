@@ -13,12 +13,12 @@ FTL Thrusters (high priority)
 - ftl thrusters and stabilizers don't use the jumping animation while jumping
 ----------------------------------------------------------------------------------------------------
 Older ship parts
-- heat absorber: apex,floran,human
+- heat absorber: apex,floran,human                                                              DONE    
 - 1st weapon: avian
 - 2nd weapon: avian, floran,hylotl
 ----------------------------------------------------------------------------------------------------
 top/bottom objects with lua file
-- bottom grafics for all turrets                                                                DONE
+DONE - bottom grafics for all turrets                                                                
 - implementation of animation flip via lua
 ----------------------------------------------------------------------------------------------------
 Doors
