@@ -2,15 +2,27 @@
   "animatedParts" : {
     "stateTypes" : {
       "DisplayState" : {
-        "default" : "ON_operation",
+        "default" : "ON_Top_operation",
         "states" : {
-          "ON_operation" : {
+          "ON_Top_operation" : {
             "frames" : 34,
             "cycle" : 1,
 			//"mode" : "loop",
 			"direction" : "left"
           },
-          "OFF_operation" : {
+          "OFF_Top_operation" : {
+            "frames" : 34,
+            "cycle" : 1,
+            //"mode" : "loop",
+			"direction" : "left"
+          },
+          "ON_Bottom_operation" : {
+            "frames" : 34,
+            "cycle" : 1,
+			//"mode" : "loop",
+			"direction" : "left"
+          },
+          "OFF_Bottom_operation" : {
             "frames" : 34,
             "cycle" : 1,
             //"mode" : "loop",
@@ -21,37 +33,106 @@
     },
 
     "parts" : {
-      "ON_PNG" : {
+      "ON_Top_PNG" : {
         "properties" : {
           "centered" : false
         },
         "partStates" : {
           "DisplayState" : {
-            "ON_operation" : {
+            "ON_Top_operation" : {
               "properties" : {
                 "image" : "<partImage>:default.<frame>",
 				"direction" : "left"
               }
             },
-            "OFF_operation" : {
+            "OFF_Top_operation" : {
+              "properties" : {
+              }
+            },
+            "ON_Bottom_operation" : {
+              "properties" : {
+              }
+            },
+            "OFF_Bottom_operation" : {
               "properties" : {
               }
             }
           }
         }
       },
-      "OFF_PNG" : {
+      "OFF_Top_PNG" : {
         "properties" : {
           "centered" : false
         },
         "partStates" : {
           "DisplayState" : {
-            "ON_operation" : {
+            "ON_Top_operation" : {
               "properties" : {
-
               }
             },
-            "OFF_operation" : {
+            "OFF_Top_operation" : {
+              "properties" : {
+                "image" : "<partImage>:default.<frame>",
+				"direction" : "left"
+              }
+            },
+			"ON_Bottom_operation" : {
+              "properties" : {
+              }
+            },
+            "OFF_Bottom_operation" : {
+              "properties" : {
+              }
+            }
+          }
+        }
+	  },
+      "ON_Bottom_PNG" : {
+        "properties" : {
+          "centered" : false
+        },
+        "partStates" : {
+          "DisplayState" : {
+            "ON_Top_operation" : {
+              "properties" : {
+              }
+            },
+            "OFF_Top_operation" : {
+              "properties" : {
+              }
+            },
+            "ON_Bottom_operation" : {
+              "properties" : {
+                "image" : "<partImage>:default.<frame>",
+				"direction" : "left"
+              }
+            },
+            "OFF_Bottom_operation" : {
+              "properties" : {
+              }
+            }
+          }
+        }
+      },
+      "OFF_Bottom_PNG" : {
+        "properties" : {
+          "centered" : false
+        },
+        "partStates" : {
+          "DisplayState" : {
+            "ON_Top_operation" : {
+              "properties" : {
+              }
+            },
+            "OFF_Top_operation" : {
+              "properties" : {
+              }
+            },
+            "ON_Bottom_operation" : {
+              "properties" : {
+              }
+            },
+            "OFF_Bottom_operation" : {
               "properties" : {
                 "image" : "<partImage>:default.<frame>",
 				"direction" : "left"

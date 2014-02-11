@@ -12,19 +12,29 @@
 	"inventoryIcon" : "madtulip_cool_pulse_cannon_icon.png",
 	"orientations" : [
 		{
-			"dualImage" : "madtulip_cool_pulse_cannon_ON.png:<color>.<frame>",
+			"dualImage" : "madtulip_cool_pulse_cannon_top_ON.png:<color>.<frame>",
 			"imagePosition" : [-110,-16],
 			"frames" : 1,
 			"animationCycle" : 1,
 			"spaceScan" : 0.1,
 			"anchors" : [ "bottom" ]
+		},
+		{
+			"dualImage" : "madtulip_cool_pulse_cannon_bottom_ON.png:<color>.<frame>",
+			"imagePosition" : [-110,-20],
+			"frames" : 1,
+			"animationCycle" : 1,
+			"spaceScan" : 0.1,
+			"anchors" : [ "top" ]
 		}
 	],
 	
 	"animation" : "madtulip_cool_pulse_cannon.animation",
 	"animationParts" : {
-		"ON_PNG" : "madtulip_cool_pulse_cannon_ON.png",
-		"OFF_PNG" : "madtulip_cool_pulse_cannon_OFF.png"
+		"ON_Top_PNG" : "madtulip_cool_pulse_cannon_top_ON.png",
+		"OFF_Top_PNG" : "madtulip_cool_pulse_cannon_top_OFF.png",
+		"ON_Bottom_PNG" : "madtulip_cool_pulse_cannon_bottom_ON.png",
+		"OFF_Bottom_PNG" : "madtulip_cool_pulse_cannon_bottom_OFF.png"
 	},
 	"animationPosition" : [-110, -16],
 
