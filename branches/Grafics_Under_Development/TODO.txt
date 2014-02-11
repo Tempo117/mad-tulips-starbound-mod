@@ -19,14 +19,36 @@ Crew (mid to low priority)
 - 1 to 3 marine objects (rifle racks for the wall, lockers, granade stack ? guardpost things) to make a marine styled hangout
 - deckhand - where could they hang around ? normal resting state objects?
 - recipes for some vanilla items that would make good work attractor items like medical tank ?
-
-
-
-
-
-
-
-
+----------------------------------------------------------------------------------------------------
+Tileset 2 and 3
+- like this: for 4 connections
+ABCDDBCA
+B      B
+C      C
+D      D
+D      D
+C      C
+B      B
+ABCDDBCA
+- like this: for 3 connections
+ABCDDBCA
+B      B
+C      C
+D      D
+D      D
+C      C
+B      B
+A      A
+- like this: for 2 connections
+A      A
+B      B
+C      C
+D      D
+D      D
+C      C
+B      B
+A      A
+- mid is arbitrary just so that the one block looks good. symmetric for straights might be a good idea.
 
 ----------------------------------------------------------------------------------------------------
 -----------------------------------------CREW-------------------------------------------------------
