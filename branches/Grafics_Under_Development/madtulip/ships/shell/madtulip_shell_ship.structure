@@ -380,7 +380,7 @@
       "object": "madtulip_shiplocker",
       "objectParameters": {
         "treasurePools": [
-          "madtulip_shellShipStarterTreasure"
+          "madtulip_shellStarterTreasure"
         ],
         "level": 1.0,
         "unbreakable": false

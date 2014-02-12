@@ -7,7 +7,6 @@ Crew console (high priority)
 ----------------------------------------------------------------------------------------------------
 Doors (high priority)
 - fix doors in all shipworld files (they have a new offset and thus cant be placed anymore)	creep on it
-- please add a door to the "shell" race ship which is commited by the race mods author.
 - forcefield door horizontal/vertical colorable (all colors) (mid priority)
 ----------------------------------------------------------------------------------------------------
 FTL Thrusters
