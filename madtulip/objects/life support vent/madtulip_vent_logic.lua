@@ -14,7 +14,6 @@ function init()
 	madtulip.MSS_Range = {} -- range to scan for other vents around the master
 	madtulip.MSS_Range[1] = {1,1} -- bottom left corner
 	madtulip.MSS_Range[2] = {1102,1048} -- top right corner (size of the shipmap
-	madtulip.Door_max_range = 10 -- maximum number of blocks in all directions around a door root that are scanned for the door
 	madtulip.On_Off_State = 1; -- "1:ON,2:OFF"
 	madtulip.ANY_Breach = 0;	
 
@@ -72,6 +71,9 @@ end
 
 function main_threaded()
 
+	-- only works on ship, not on planet
+	if not is_shipworld() then return false end
+
 	-- grafic update
 	if(os.time() >= madtulip.spawn_projectile_time_last_execution + madtulip.spawn_projectile_intervall_time) then
 		-- check for system beeing offline
@@ -100,6 +102,8 @@ function main_threaded()
 					counter_breaches = counter_breaches +1;
 					breach_pos[counter_breaches] = Breach_Location;
 				end
+				-- Spawn a Task for each breach
+-- Broadcast_Hull_Breach_Task(breach_pos,counter_breaches)
 				-- limit theire number
 				if (counter_breaches > madtulip.maximum_particle_fountains) then
 					-- spawn them (limited amount)
@@ -186,8 +190,6 @@ function Start_New_Room_Breach_Scan(size_to_scan,Scan_8_method)
 	madtulip.Flood_Data_Matrix.Y_max          = madtulip.Origin[2] + size_to_scan;
 	madtulip.Flood_Data_Matrix.Max_Iteration  = ((size_to_scan*2)+1)*((size_to_scan*2)+1); -- maximum room size. if the room is larger this will terminate early stating that the room is not closed
 	madtulip.Flood_Data_Matrix.Scan_8_method  = Scan_8_method; -- if == 0 scan 4 surrounding blocks (W,N,E,S) else scan also the 4 diagonal corners
-	madtulip.Flood_Data_Matrix.max_door_hight_top    = 5;
-	madtulip.Flood_Data_Matrix.max_door_hight_bottom = 5;
 	madtulip.Flood_Data_Matrix.target_color          = 1;
 	madtulip.Flood_Data_Matrix.none_target_color     = 2;
 	madtulip.Flood_Data_Matrix.replacement_color     = 3;
@@ -213,82 +215,8 @@ function Start_New_Room_Breach_Scan(size_to_scan,Scan_8_method)
 		end	
 	end
 	
-	-- check for doors in the area first
--- world.logInfo ("Prepare_Doors_for_Flood_Fill()")
-	Prepare_Doors_for_Flood_Fill();
--- world.logInfo ("Prepare_Doors_for_Flood_Fill() -- DONE")
 	-- test the area around the block where this is placed for beeing an enclosed room
 	Flood_Fill(madtulip.Flood_Data_Matrix.Origin,1,2,3);
-end
-
-function Prepare_Doors_for_Flood_Fill()
-	-- add additional information about surrounding, like doors
-	local radius_to_scan = madtulip.Flood_Data_Matrix.size_to_scan*2;
-	local closedDoorIds  = world.objectQuery (madtulip.Flood_Data_Matrix.Origin, radius_to_scan, { callScript = "hasCapability", callScriptArgs = { "closedDoor" } });
-	
-	if (closedDoorIds == nil) then
-		-- no doors found, nothing to do
-		return;
-	end
-	
-	local root_Door_Position = {}
-	local cur_Door_IDs = {}
-	local cur_door_pos = {}
-	local foreground_block_found = nil
-	-- for all closed doors in vicinity, get theire coordinates
-	for closed_door_nr, closedDoorId in pairs(closedDoorIds) do
-		root_Door_Position = world.entityPosition (closedDoorId);
-		-- door is inside currently intialized memory
---world.logInfo ("Root closed door #" .. closed_door_nr .. "@X:" .. root_Door_Position[1] .. "Y:" .. root_Door_Position[2])
-		set_flood_data_matrix_content (root_Door_Position[1],root_Door_Position[2],madtulip.Flood_Data_Matrix.replacement_color)
-		cur_door_pos = { root_Door_Position[1], root_Door_Position[2] }
-		if (world.material(cur_door_pos, "foreground")) then
--- world.logInfo ("Door root has foreground")
-			-- root of the door is a foreground block -> we asume its going only up
-			-- scan from root to top
-			foreground_block_found = false;
-			for cur_Y=(root_Door_Position[2]+1),(root_Door_Position[2]+madtulip.Door_max_range),1 do		
-				if not(foreground_block_found) then
-					cur_door_pos = { root_Door_Position[1], cur_Y }
-					if (world.material(cur_door_pos, "foreground")) then
-						foreground_block_found = true
-					else
--- world.logInfo ("Closed door #" .. closed_door_nr .. "@X:" .. root_Door_Position[1] .. "Y:" .. cur_Y)
-						set_flood_data_matrix_content (root_Door_Position[1],cur_Y,madtulip.Flood_Data_Matrix.replacement_color)
-					end
-				end
-			end
-		else
--- world.logInfo ("Door root has NO foreground")
-			-- root of the door is NO foreground block. we scan towards top and bottom
-			-- scan from root to top
-			foreground_block_found = false;
-			for cur_Y=(root_Door_Position[2]+1),(root_Door_Position[2]+madtulip.Door_max_range),1 do		
-				if not(foreground_block_found) then
-					cur_door_pos = { root_Door_Position[1], cur_Y }
-					if (world.material(cur_door_pos, "foreground")) then
-						foreground_block_found = true
-					else
---world.logInfo ("Closed door #" .. closed_door_nr .. "@X:" .. root_Door_Position[1] .. "Y:" .. cur_Y)
-						set_flood_data_matrix_content (root_Door_Position[1],cur_Y,madtulip.Flood_Data_Matrix.replacement_color)
-					end
-				end
-			end
-			-- scan from root to bottom
-			foreground_block_found = false;
-			for cur_Y=(root_Door_Position[2]-1),(root_Door_Position[2]-madtulip.Door_max_range),1 do		
-				if not(foreground_block_found) then
-					cur_door_pos = { root_Door_Position[1], cur_Y }
-					if (world.material(cur_door_pos, "foreground")) then
-						foreground_block_found = true
-					else
---world.logInfo ("Closed door #" .. closed_door_nr .. "@X:" .. root_Door_Position[1] .. "Y:" .. cur_Y)
-						set_flood_data_matrix_content (root_Door_Position[1],cur_Y,madtulip.Flood_Data_Matrix.replacement_color)
-					end
-				end
-			end
-		end
-	end
 end
 
 function Flood_Fill(cur_Position)
@@ -319,7 +247,7 @@ function Flood_Fill(cur_Position)
 		madtulip.Flood_Data_Matrix.Stop_Iteration = 1;
 		return;
 	end
-	
+
 	-- if this block has already been scanned
 	if madtulip.Flood_Data_Matrix.Content[cur_Position[1]][cur_Position[2]] == madtulip.Flood_Data_Matrix.replacement_color then
 		-- we have already been here
@@ -341,12 +269,12 @@ function Flood_Fill(cur_Position)
 	-- ----- so far we are good, take next step in the state machine -----
 	-- increment iteration step
 	madtulip.Flood_Data_Matrix.Cur_Iteration = madtulip.Flood_Data_Matrix.Cur_Iteration + 1;
-	
+
 	-- check if there is a foreground block
 	--  ,if not then check if there is a background block
 	--  ,if also not its a breach.
 	-- write the gathered info to "madtulip.Flood_Data_Matrix.Content[x,y]" which is the data object used further on
-	if world.material(cur_Position, "foreground") == nil then
+	if (world.material(cur_Position, "foreground") == nil) and(not(world.pointCollision(cur_Position, true)) )then
 		-- nil foreground block found. This is our target.
 		set_flood_data_matrix_content(cur_Position[1],cur_Position[2],madtulip.Flood_Data_Matrix.target_color)
 		-- if this is also a nil background block we have a breach that we might or might not be aware of yet
@@ -421,16 +349,268 @@ function set_flood_data_matrix_content (X,Y,Content)
 end
 
 function is_shipworld()
-	-- dirty dirty workaround: This searches if a teleporter is at that very location
-	-- this is the case for the fixed teleporter in the ship.
-	-- i didn't know any other way to degine the ship world.
-	local Teleporter_found = false;
-	local TeleporterIds = world.entityQuery ({1026,1016}, 1);
-	-- loop over one object, brilliant
-	for _, TeleporterId in pairs(TeleporterIds) do
-		if (world.entityName(TeleporterId) == "madtulip_teleporter") then
-			Teleporter_found = true;
+	if (world.info() == nil) then return true else return false end
+end
+
+function Broadcast_Hull_Breach_Task(breach_pos,counter_breaches)
+	local Cluster_Data = pixel_array_to_clusters(breach_pos,counter_breaches)
+	
+	-- add information where to place fore and background in oreder to close the breach
+	for cur_breach_cluster_nr = 1,Cluster_Data.Clusters.size,1 do
+		Cluster_Data.Clusters[cur_breach_cluster_nr].place_foreground = Add_Breach_fixing_Info_to_Cluster(Cluster_Data.Clusters[cur_breach_cluster_nr])
+	end
+	
+	-- Broadcast the final Task
+	local New_Tasks = {}
+	New_Tasks.Tasks = {}
+	New_Tasks.size = 0
+	local radius = 50
+
+	for cur_breach_cluster_nr = 1,Cluster_Data.Clusters.size,1 do
+		-- spawn task
+		-- New_Tasks.size = New_Tasks.size + 1; -- one task for all clusters
+		New_Tasks.size = 1 -- one task per cluster
+		New_Tasks.Tasks[New_Tasks.size] = {}
+		New_Tasks.Tasks[New_Tasks.size].Header = {}
+		New_Tasks.Tasks[New_Tasks.size].Header.Name = "Fix_Hull_Breach"
+		New_Tasks.Tasks[New_Tasks.size].Header.Occupation = "Engineer"
+		New_Tasks.Tasks[New_Tasks.size].Header.Cluster_Identifier_Breach_x = Cluster_Data.Clusters[cur_breach_cluster_nr].Cluster[1][1]
+		New_Tasks.Tasks[New_Tasks.size].Header.Cluster_Identifier_Breach_y = Cluster_Data.Clusters[cur_breach_cluster_nr].Cluster[1][2]
+		New_Tasks.Tasks[New_Tasks.size].Header.Fct_Task  = "madtulip_task_fix_hull_breach"
+		New_Tasks.Tasks[New_Tasks.size].Header.Msg_on_discover_this_Task = "Hull Breach !!!"
+		New_Tasks.Tasks[New_Tasks.size].Header.Msg_on_PickTask = "I can handle that!"
+		New_Tasks.Tasks[New_Tasks.size].Global = {}
+		New_Tasks.Tasks[New_Tasks.size].Global.is_beeing_handled = false
+		New_Tasks.Tasks[New_Tasks.size].Global.is_done = false
+		New_Tasks.Tasks[New_Tasks.size].Const = {}
+		New_Tasks.Tasks[New_Tasks.size].Const.Timeout = 30
+		New_Tasks.Tasks[New_Tasks.size].Var = {}
+		New_Tasks.Tasks[New_Tasks.size].Var.Cur_Target_Position = nil
+		New_Tasks.Tasks[New_Tasks.size].Var.Cur_Target_Position_BB = nil
+		New_Tasks.Tasks[New_Tasks.size].Var.Breach_Cluster = copyTable(Cluster_Data.Clusters[cur_breach_cluster_nr]) -- here the breach locations are stored
+		
+		world.npcQuery(entity.position(), radius, {callScript = "madtulip_TS.Offer_Tasks", callScriptArgs = {New_Tasks}}) -- one task per cluster
+	end
+	
+	-- world.npcQuery(entity.position(), radius, {callScript = "madtulip_TS.Offer_Tasks", callScriptArgs = {New_Tasks}}) -- one task for all clusters
+end
+
+function pixel_array_to_clusters(pixels,pixel_size)
+	-- we have all currently known breaches and need to structure them a bit
+	-- so lets first cluster them.:
+	-- for all pixels
+		-- cur_pixels_cluster_list = {}
+		-- cur_pixels_cluster_list_size = 0
+		-- if cur pixel is next to any member of any existing cluster
+			-- cur_pixels_cluster_list_size = cur_pixels_cluster_list_size + 1
+			-- add that clusters label to cur_pixels_cluster_list
+		-- end
+		-- if cur_pixels_cluster_list_size == 0
+			-- create new cluster
+		-- elseif cur_pixels_cluster_list_size == 1
+			-- add pixel to that one cluster
+		-- else
+			-- merge all those clusters in the list
+		-- end
+	-- end
+	
+	local Clusters = {}
+	Clusters.size = 0
+	local cur_pixel = {}
+
+	local cur_pixels_cluster_list = {}
+	local cur_pixels_cluster_list_size = 0	
+	
+	-- for all pixels
+	--world.logInfo ("----- START OF CLUSTERING -----")
+	for cur_idx_pixel = 1,pixel_size,1 do
+		-- get cur breach
+		cur_pixel = pixels[cur_idx_pixel]	
+		cur_pixels_cluster_list = {}
+		cur_pixels_cluster_list_size = 0
+		-- if cur pixel is next to any member of any existing cluster
+		for cur_Cluster = 1,Clusters.size,1 do
+			-- for all pixels in the cur cluster
+			for cur_pixel_in_cur_cluster = 1,Clusters[cur_Cluster].size,1 do
+				-- if cur pixel is next to that pixel in the cluster
+				if (pixels_next_to_eachother(cur_pixel,Clusters[cur_Cluster].Cluster[cur_pixel_in_cur_cluster])) then
+					-- get that clusters label
+					-- add those cluster labels to cur_pixels_cluster_list
+					--world.logInfo ("cur_Cluster " .. cur_Cluster .. " is next to cur_pixel nr: " .. cur_idx_pixel .. " (x: " .. cur_pixel[1] .. " y: " .. cur_pixel[2] .. ")")
+					-- only if cur_Cluster is not already in the cur_pixels_cluster_list list
+					local cluster_is_knwon_already = false
+					for cur_list_idx = 1,cur_pixels_cluster_list_size,1 do
+						if (cur_pixels_cluster_list[cur_list_idx] == cur_Cluster) then
+							cluster_is_knwon_already = true
+						end
+					end
+					if not(cluster_is_knwon_already) then
+						cur_pixels_cluster_list_size = cur_pixels_cluster_list_size + 1
+						cur_pixels_cluster_list[cur_pixels_cluster_list_size] = cur_Cluster
+					end
+				end
+			end
+		end
+		if cur_pixels_cluster_list_size == 0 then
+			-- create new cluster
+			Clusters.size = Clusters.size +1
+			Clusters[Clusters.size] = {}
+			Clusters[Clusters.size].Cluster = {}
+			Clusters[Clusters.size].size = 0
+			-- add cur pixel
+			Clusters[Clusters.size].size = Clusters[Clusters.size].size +1
+			Clusters[Clusters.size].Cluster[Clusters[Clusters.size].size] = cur_pixel
+			
+			--world.logInfo ("No neighbour, creating new cluster nr: " .. Clusters.size .. " for cur_pixel nr: " .. cur_idx_pixel .. " (x: " .. cur_pixel[1] .. " y: " .. cur_pixel[2] .. ")")
+		elseif cur_pixels_cluster_list_size == 1 then
+			-- add pixel to that one cluster
+			Clusters[cur_pixels_cluster_list[1] ].size = Clusters[cur_pixels_cluster_list[1] ].size +1
+			Clusters[cur_pixels_cluster_list[1] ].Cluster[Clusters[cur_pixels_cluster_list[1] ].size] = cur_pixel
+			--world.logInfo ("One neighbour. adding to cluster nr: " .. cur_pixels_cluster_list[1] .. " for cur_pixel nr: " .. cur_idx_pixel .. " (x: " .. cur_pixel[1] .. " y: " .. cur_pixel[2] .. ")")
+		else
+			-- merge all clusters in cur_pixels_cluster_list
+			--world.logInfo ("Multiple neighbours. Merging for cur_pixel nr: " .. cur_idx_pixel .. " (x: " .. cur_pixel[1] .. " y: " .. cur_pixel[2] .. ")")
+			for i = 2,cur_pixels_cluster_list_size,1 do
+				local a = cur_pixels_cluster_list[1] -- cluster to merge into
+				local b = cur_pixels_cluster_list[i] -- cluster to merge
+				for cur_idx_b = 1,Clusters[b].size,1 do
+					-- move pixel from b to a
+					Clusters[a].size = Clusters[a].size+1
+					Clusters[a].Cluster[Clusters[a].size] = Clusters[b].Cluster[cur_idx_b]
+					Clusters[b].Cluster[cur_idx_b] = nil
+				end
+				Clusters[b].size = 0 -- cluster has been fully merged into a
+			end
+			-- resize the cluster label so that there are no gaps
+			local new_cluster_size = 0
+			for i = 1,Clusters.size,1 do
+				if (Clusters[i].size ~= 0) then
+					new_cluster_size = new_cluster_size+1
+					if (i ~= new_cluster_size) then
+						Clusters[new_cluster_size] = Clusters[i]
+					end
+				end
+			end
+			Clusters.size = new_cluster_size
 		end
 	end
-	return Teleporter_found;
+
+	-- sort the clusters in size
+	local tmp_Clusters = copyTable(Clusters)
+	local cur_max_size = 0
+	local cur_max_size_cluster_idx = nil
+	for cur_write_cluster = 1,Clusters.size,1 do
+		cur_max_size = 0
+		cur_max_size_cluster_idx = nil
+		for cur_read_cluster = 1,tmp_Clusters.size,1 do
+			if (tmp_Clusters[cur_read_cluster].size > cur_max_size) then
+				cur_max_size = tmp_Clusters[cur_read_cluster].size
+				cur_max_size_cluster_idx = cur_read_cluster
+			end
+		end
+		-- write cur largest cluster first
+		Clusters[cur_write_cluster] = tmp_Clusters[cur_max_size_cluster_idx]
+		Clusters[cur_write_cluster].size = tmp_Clusters[cur_max_size_cluster_idx].size
+		-- clear data
+		tmp_Clusters[cur_max_size_cluster_idx] = {}
+		tmp_Clusters[cur_max_size_cluster_idx].size = 0
+	end
+
+	local BB = {}
+	for cur_cluster = 1,Clusters.size,1 do
+		BB = {math.huge,math.huge,-math.huge,-math.huge}
+		-- min
+		for i = 1,Clusters[cur_cluster].size,1 do
+			local pos = Clusters[cur_cluster].Cluster[i]
+			if (pos[1] < BB[1]) then BB[1] = pos[1] end
+		end
+		for i = 1,Clusters[cur_cluster].size,1 do
+			local pos = Clusters[cur_cluster].Cluster[i]
+			if (pos[2] < BB[2]) then BB[2] = pos[2] end
+		end
+		-- max
+		for i = 1,Clusters[cur_cluster].size,1 do
+			local pos = Clusters[cur_cluster].Cluster[i]
+			if (pos[1] > BB[3]) then BB[3] = pos[1] end
+		end
+		for i = 1,Clusters[cur_cluster].size,1 do
+			local pos = Clusters[cur_cluster].Cluster[i]
+			if (pos[2] > BB[4]) then BB[4] = pos[2] end
+		end
+		Clusters[cur_cluster].BB = copyTable(BB)
+	end
+--[[
+	world.logInfo ("----- END OF CLUSTERING -----")
+	world.logInfo ("Number of Breach Clusters detected : " .. Clusters.size)
+	for cur_cluster = 1,Clusters.size,1 do
+		world.logInfo ("Cluster Nr: " .. cur_cluster .. " has a size of : " .. Clusters[cur_cluster].size)
+		for cur_pixel = 1,Clusters[cur_cluster].size,1 do
+			world.logInfo ("-Pixel Nr: " .. cur_pixel .. " X: " .. Clusters[cur_cluster].Cluster[cur_pixel][1] .. " Y: " .. Clusters[cur_cluster].Cluster[cur_pixel][2])
+		end
+	end
+]]
+	return {
+	Clusters = Clusters,
+	size = Clusters.size
+	}
+end
+
+function Add_Breach_fixing_Info_to_Cluster(args)
+
+	local cur_pos = {}
+	local has_space_next_to_it = false
+	
+	local place_foreground = {}
+	
+	for cur_pixel = 1,args.size,1 do
+		for X = -1,1,1 do
+			for Y = -1,1,1 do
+
+				cur_pos[1] = args.Cluster[cur_pixel][1] + X
+				cur_pos[2] = args.Cluster[cur_pixel][2] + Y
+				-- check if cur_pos is part of cluster
+				local cur_pos_is_part_of_cluster = false
+				for i = 1,args.size,1 do
+					if (args.Cluster[i][1] == cur_pos[1]) and (args.Cluster[i][2] == cur_pos[2]) then
+						cur_pos_is_part_of_cluster = true
+					end
+				end
+				-- if no fore, no back and not part of cluster then its space.
+				if ((world.material(cur_pos,"foreground") == nil) and
+				    (world.material(cur_pos,"background") == nil) and
+				    (cur_pos_is_part_of_cluster == false)) then
+				   has_space_next_to_it = true
+			   end
+
+			end
+		end
+		if (has_space_next_to_it) then
+			-- blocks next to space need to place foreground
+			place_foreground[cur_pixel] = true
+		else
+			place_foreground[cur_pixel] = false
+		end
+		-- all breached blocks need to place background anyway so thats not recorded
+	end
+	
+	return place_foreground
+end
+
+function copyTable(source)
+	local _copy
+	if type(source) == "table" then
+		_copy = {}
+		for k, v in pairs(source) do
+			_copy[copyTable(k)] = copyTable(v)
+		end
+	else
+		_copy = source
+	end
+	return _copy
+end
+
+function pixels_next_to_eachother(a,b)
+	local c = world.distance(a,b)
+	if (math.abs(c[1]) <= 1) and (math.abs(c[2]) <= 1) then return true end
+	return false
 end

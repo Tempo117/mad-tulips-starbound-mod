@@ -1,0 +1,9 @@
+{
+  "itemName" : "madtulip_glitch2_tileset",
+  "rarity" : "Common",
+  "inventoryIcon" : "madtulip_glitch2_tileset_icon.png",
+  "dropCollision" : [-2.5, -2.0, 2.5, 2.0],
+  "description" : "Glitch Spaceship Hull Tileset 2",
+  "shortdescription" : "Glitch Spaceship Hull Tileset 2",
+  "materialId" : 21272
+}

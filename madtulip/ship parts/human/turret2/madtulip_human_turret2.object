@@ -12,26 +12,36 @@
 	"inventoryIcon" : "madtulip_human_turret2_icon.png",
 	"orientations" : [
 		{
-			"dualImage" : "madtulip_human_turret2_ON.png:<color>.<frame>",
+			"dualImage" : "madtulip_human_turret2_top_ON.png:<color>.<frame>",
 			"imagePosition" : [-49,-16],
 			"frames" : 1,
 			"animationCycle" : 1,
 			"spaceScan" : 0.1,
 			"anchors" : [ "bottom" ]
+		},
+		{
+			"dualImage" : "madtulip_human_turret2_bottom_ON.png:<color>.<frame>",
+			"imagePosition" : [-49,-16],
+			"frames" : 1,
+			"animationCycle" : 1,
+			"spaceScan" : 0.1,
+			"anchors" : [ "top" ]
 		}
 	],
 	
 	"animation" : "madtulip_human_turret2.animation",
 	"animationParts" : {
-		"ON_PNG" : "madtulip_human_turret2_ON.png",
-		"OFF_PNG" : "madtulip_human_turret2_OFF.png"
+		"ON_Top_PNG" : "madtulip_human_turret2_top_ON.png",
+		"OFF_Top_PNG" : "madtulip_human_turret2_top_OFF.png",
+		"ON_Bottom_PNG" : "madtulip_human_turret2_bottom_ON.png",
+		"OFF_Bottom_PNG" : "madtulip_human_turret2_bottom_OFF.png"
 	},
 	"animationPosition" : [-49, -16],
 
 	"scripts" : [ "madtulip_human_turret2.lua" ],
 	"scriptDelta" : 5,
 	
-	"inboundNodes" : [ [-4, -2] ],
+	"inboundNodes" : [ [-4, 0] ],
 	"outboundNodes" : [ ],
 
 	"gates" : 1,

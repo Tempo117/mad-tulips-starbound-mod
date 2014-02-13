@@ -1,13 +1,25 @@
 function init(args)
+  if not self.initialized and not args then
+	  self.initialized = true
+	  self.anchor = entity.configParameter("anchors")[1]
+  end
   entity.setInteractive(false)
   if storage.state == nil then
     output(false)
   else
     entity.setAllOutboundNodes(storage.state)
     if storage.state then
-      entity.setAnimationState("DisplayState", "ON_operation")
+	  if (self.anchor == "bottom") then
+		entity.setAnimationState("DisplayState", "ON_Top_operation")
+	  elseif (self.anchor == "top") then
+	    entity.setAnimationState("DisplayState", "ON_Bottom_operation")
+	  end
     else
-      entity.setAnimationState("DisplayState", "OFF_operation")
+	  if (self.anchor == "bottom") then
+		entity.setAnimationState("DisplayState", "OFF_Top_operation")
+	  elseif (self.anchor == "top") then
+	    entity.setAnimationState("DisplayState", "OFF_Bottom_operation")
+	  end
     end
   end
   self.gates = entity.configParameter("gates")
@@ -19,9 +31,17 @@ function output(state)
     storage.state = state
     entity.setAllOutboundNodes(state)
     if state then
-      entity.setAnimationState("DisplayState", "ON_operation")
+	  if (self.anchor == "bottom") then
+		entity.setAnimationState("DisplayState", "ON_Top_operation")
+	  elseif (self.anchor == "top") then
+	    entity.setAnimationState("DisplayState", "ON_Bottom_operation")
+	  end
     else
-      entity.setAnimationState("DisplayState", "OFF_operation")
+	  if (self.anchor == "bottom") then
+		entity.setAnimationState("DisplayState", "OFF_Top_operation")
+	  elseif (self.anchor == "top") then
+	    entity.setAnimationState("DisplayState", "OFF_Bottom_operation")
+	  end
     end
   end
 end
