@@ -1,63 +1,13 @@
 -- TEST RECIPES:
-		{"item" : "madtulip_apex3_tileset", "count":50},
-		{"item" : "madtulip_avian3_tileset", "count":50},
-		{"item" : "madtulip_floran3_tileset", "count":50},
-		{"item" : "madtulip_glitch3_tileset", "count":50},
-		{"item" : "madtulip_human3_tileset", "count":50},
-		{"item" : "madtulip_hylotl3_tileset", "count":50},
-
-		{"item" : "madtulip_apex2_tileset", "count":50},
-		{"item" : "madtulip_avian2_tileset", "count":50},
-		{"item" : "madtulip_floran2_tileset", "count":50},
-		{"item" : "madtulip_glitch2_tileset", "count":50},
-		{"item" : "madtulip_human2_tileset", "count":50},
-		{"item" : "madtulip_hylotl2_tileset", "count":50},	
-
-		{"item" : "madtulip_cool_pulse_cannon"},
-		{"item" : "madtulip_floran_blossoming_cannon"},
-		{"item" : "madtulip_glitchy_lazor"},
-		{"item" : "madtulip_glitch_turret"},
-		{"item" : "madtulip_human_turret"},
-		{"item" : "madtulip_human_turret_missile"},
-		{"item" : "madtulip_human_turret2"},
-	
-		{"item" : "madtulip_apex_heat_absorber"},
-		{"item" : "madtulip_floran_heat_absorber"},
-		{"item" : "madtulip_human_heat_absorber"},
-
-		{"item" : "madtulip_apex_shipdoor"},
-		{"item" : "madtulip_avian_shipdoor"},
-		{"item" : "madtulip_floran_shipdoor"},
-		{"item" : "madtulip_glitch_shipdoor"},
-		{"item" : "madtulip_human_shipdoor"},
-		{"item" : "madtulip_hylotl_shipdoor"},
-		
-		{"item" : "madtulip_apex_ship_comms"},
-		{"item" : "madtulip_floran_ship_comms"},
-		{"item" : "madtulip_hylotl_ship_comms"},
-		{"item" : "madtulip_glitch_large_fin"},
-		{"item" : "madtulip_floran_small_fin"},
-		{"item" : "madtulip_floran_medium_fin"},
-
-		{"item" : "madtulip_apex_defense_turret"},
-		{"item" : "madtulip_avian_defense_turret"},
-		{"item" : "madtulip_floran_defense_turret"},
-		{"item" : "madtulip_glitch_defense_turret"},
-		{"item" : "madtulip_human_defense_turret"},
-		{"item" : "madtulip_hylotl_defense_turret"},
-
-		{"item" : "madtulip_rifle_rack"},
-		{"item" : "madtulip_pistol_rack"},
-
-		{"item" : "madtulip_crewconsole"},		
-		{"item" : "madtulip_crew_spawner"},	
-		{"item" : "madtulip_crew_info"},
-		{"item" : "madtulip_engineere_promotion"},
-		{"item" : "madtulip_marine_promotion"},
-		{"item" : "madtulip_medic_promotion"},
-		{"item" : "madtulip_scientist_promotion"},
-		{"item" : "madtulip_deckhand_demotion"}
-
+		{"item" : "madtulip_crew_wall_mounted_bed"},
+		{"item" : "madtulip_shower"},
+		{"item" : "madtulip_medical_bed"},
+		{"item" : "madtulip_marine_armor_stand"},
+		{"item" : "madtulip_marine_spacesuit_stand"},
+		{"item" : "madtulip_medical_bed"},
+		{"item" : "madtulip_medical_sign"},
+		{"item" : "madtulip_medical_staff_locker"},
+		{"item" : "madtulip_medical_surgery_bed"},
 
 ----------------------------------------------------------------------------------------------------
 -----------------------------------------NEXT UPDATE------------------------------------------------
@@ -76,7 +26,11 @@ Crew (mid to low priority)
 - deckhand - where could they hang around ? normal resting state objects?
 - recipes for some vanilla items that would make good work attractor items like medical tank ?
 
-
+Beds sleepable:
+{"item" : "madtulip_crew_wall_mounted_bed"},
+{"item" : "madtulip_medical_bed"},
+{"item" : "madtulip_medical_bed"},
+{"item" : "madtulip_medical_surgery_bed"},
 
 
 ----------------------------------------------------------------------------------------------------

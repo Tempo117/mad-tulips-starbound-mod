@@ -116,7 +116,10 @@
 			"locker", // all crew
 			"locker2", // all crew
 			"madtulip_rifle_rack",
-			"madtulip_pistol_rack"
+			"madtulip_pistol_rack",
+			"madtulip_marine_armor_stand",
+			"madtulip_marine_spacesuit_stand"			
+
 		],
 		"medic_attractors" : [
 			"madtulip_crew_medic_attractor",
@@ -130,7 +133,11 @@
 			"apexmedsign",
 			"apexpod",
 			"apexpod2",
-			"apextorturebed"
+			"apextorturebed",
+			"madtulip_medical_bed",
+			"madtulip_medical_sign",
+			"madtulip_medical_surgery_bed",
+			"madtulip_medical_staff_locker"
 		],
 		"scientist_attractors" : [
 			"madtulip_crew_scientist_attractor",
@@ -160,7 +167,9 @@
 			"madtulip_teleporter",
 			"apexoven",
 			"fridge",
-			"watermachine"
+			"watermachine",
+			"madtulip_crew_wall_mounted_bed",
+			"madtulip_shower"
 			]
     },
     "sit" : {
