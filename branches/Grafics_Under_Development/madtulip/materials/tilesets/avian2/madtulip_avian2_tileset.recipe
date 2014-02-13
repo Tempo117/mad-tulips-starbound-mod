@@ -1,6 +1,6 @@
 {
   "input" : [
-	{ "item" : "madtulip_avian2_plating", "count" : 1 },
+	{ "item" : "madtulip_avian_plating", "count" : 1 },
 	{ "item" : "madtulip_tier_durasteel_plating_1", "count" : 1 }
   ],
   "output" : {
