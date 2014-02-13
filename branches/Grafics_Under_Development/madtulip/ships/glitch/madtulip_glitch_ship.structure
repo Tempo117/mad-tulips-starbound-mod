@@ -773,6 +773,214 @@
       ]
     },
     {
+      "comment": "madtulip_glitch2_bl  madtulip_glitch2_bl",
+      "foregroundBlock": true,
+      "backgroundBlock": true,
+      "foregroundMat": "madtulip_glitch2_bl",
+      "backgroundMat": "madtulip_glitch2_bl",
+      "value": [
+        0,
+        4,
+        117,
+        100
+      ]
+    },
+    {
+      "comment": "madtulip_glitch2_blt  madtulip_glitch2_blt",
+      "foregroundBlock": true,
+      "backgroundBlock": true,
+      "foregroundMat": "madtulip_glitch2_blt",
+      "backgroundMat": "madtulip_glitch2_blt",
+      "value": [
+        0,
+        4,
+        118,
+        100
+      ]
+    },
+    {
+      "comment": "madtulip_glitch2_br  madtulip_glitch2_br",
+      "foregroundBlock": true,
+      "backgroundBlock": true,
+      "foregroundMat": "madtulip_glitch2_br",
+      "backgroundMat": "madtulip_glitch2_br",
+      "value": [
+        0,
+        4,
+        119,
+        100
+      ]
+    },
+    {
+      "comment": "madtulip_glitch2_default  madtulip_glitch2_default",
+      "foregroundBlock": true,
+      "backgroundBlock": true,
+      "foregroundMat": "madtulip_glitch2_default",
+      "backgroundMat": "madtulip_glitch2_default",
+      "value": [
+        0,
+        4,
+        120,
+        100
+      ]
+    },
+    {
+      "comment": "madtulip_glitch2_lr  madtulip_glitch2_lr",
+      "foregroundBlock": true,
+      "backgroundBlock": true,
+      "foregroundMat": "madtulip_glitch2_lr",
+      "backgroundMat": "madtulip_glitch2_lr",
+      "value": [
+        0,
+        4,
+        121,
+        100
+      ]
+    },
+    {
+      "comment": "madtulip_glitch2_ltr  madtulip_glitch2_ltr",
+      "foregroundBlock": true,
+      "backgroundBlock": true,
+      "foregroundMat": "madtulip_glitch2_ltr",
+      "backgroundMat": "madtulip_glitch2_ltr",
+      "value": [
+        0,
+        4,
+        122,
+        100
+      ]
+    },
+    {
+      "comment": "madtulip_glitch2_rbl  madtulip_glitch2_rbl",
+      "foregroundBlock": true,
+      "backgroundBlock": true,
+      "foregroundMat": "madtulip_glitch2_rbl",
+      "backgroundMat": "madtulip_glitch2_rbl",
+      "value": [
+        0,
+        4,
+        123,
+        100
+      ]
+    },
+    {
+      "comment": "madtulip_glitch2_tb  madtulip_glitch2_tb",
+      "foregroundBlock": true,
+      "backgroundBlock": true,
+      "foregroundMat": "madtulip_glitch2_tb",
+      "backgroundMat": "madtulip_glitch2_tb",
+      "value": [
+        0,
+        4,
+        124,
+        100
+      ]
+    },
+    {
+      "comment": "madtulip_glitch2_tl  madtulip_glitch2_tl",
+      "foregroundBlock": true,
+      "backgroundBlock": true,
+      "foregroundMat": "madtulip_glitch2_tl",
+      "backgroundMat": "madtulip_glitch2_tl",
+      "value": [
+        0,
+        4,
+        125,
+        100
+      ]
+    },
+    {
+      "comment": "madtulip_glitch2_tr  madtulip_glitch2_tr",
+      "foregroundBlock": true,
+      "backgroundBlock": true,
+      "foregroundMat": "madtulip_glitch2_tr",
+      "backgroundMat": "madtulip_glitch2_tr",
+      "value": [
+        0,
+        4,
+        126,
+        100
+      ]
+    },
+    {
+      "comment": "madtulip_glitch2_trb  madtulip_glitch2_trb",
+      "foregroundBlock": true,
+      "backgroundBlock": true,
+      "foregroundMat": "madtulip_glitch2_trb",
+      "backgroundMat": "madtulip_glitch2_trb",
+      "value": [
+        0,
+        4,
+        127,
+        100
+      ]
+    },
+    {
+      "comment": "madtulip_glitch2_trbl  madtulip_glitch2_trbl",
+      "foregroundBlock": true,
+      "backgroundBlock": true,
+      "foregroundMat": "madtulip_glitch2_trbl",
+      "backgroundMat": "madtulip_glitch2_trbl",
+      "value": [
+        0,
+        4,
+        128,
+        100
+      ]
+    },
+    {
+      "comment": "madtulip_bottom_decoration  madtulip_glitch2_bl",
+      "foregroundBlock": true,
+      "backgroundBlock": true,
+      "foregroundMat": "madtulip_glitch2_bl",
+      "backgroundMat": "madtulip_bottom_decoration",
+      "value": [
+        0,
+        4,
+        129,
+        100
+      ]
+    },
+    {
+      "comment": "madtulip_bottom_decoration  madtulip_glitch2_br",
+      "foregroundBlock": true,
+      "backgroundBlock": true,
+      "foregroundMat": "madtulip_glitch2_br",
+      "backgroundMat": "madtulip_bottom_decoration",
+      "value": [
+        0,
+        4,
+        130,
+        100
+      ]
+    },
+    {
+      "comment": "madtulip_top_decoration  madtulip_glitch2_tl",
+      "foregroundBlock": true,
+      "backgroundBlock": true,
+      "foregroundMat": "madtulip_glitch2_tl",
+      "backgroundMat": "madtulip_top_decoration",
+      "value": [
+        0,
+        4,
+        131,
+        100
+      ]
+    },
+    {
+      "comment": "madtulip_top_decoration  madtulip_glitch2_tr",
+      "foregroundBlock": true,
+      "backgroundBlock": true,
+      "foregroundMat": "madtulip_glitch2_tr",
+      "backgroundMat": "madtulip_top_decoration",
+      "value": [
+        0,
+        4,
+        132,
+        100
+      ]
+    },
+    {
       "comment": "madtulip_glass_bl  madtulip_glass_bl",
       "foregroundBlock": true,
       "backgroundBlock": true,

@@ -772,6 +772,214 @@
       ]
     },
     {
+      "comment": "madtulip_human2_bl  madtulip_human2_bl",
+      "foregroundBlock": true,
+      "backgroundBlock": true,
+      "foregroundMat": "madtulip_human2_bl",
+      "backgroundMat": "madtulip_human2_bl",
+      "value": [
+        0,
+        5,
+        117,
+        100
+      ]
+    },
+    {
+      "comment": "madtulip_human2_blt  madtulip_human2_blt",
+      "foregroundBlock": true,
+      "backgroundBlock": true,
+      "foregroundMat": "madtulip_human2_blt",
+      "backgroundMat": "madtulip_human2_blt",
+      "value": [
+        0,
+        5,
+        118,
+        100
+      ]
+    },
+    {
+      "comment": "madtulip_human2_br  madtulip_human2_br",
+      "foregroundBlock": true,
+      "backgroundBlock": true,
+      "foregroundMat": "madtulip_human2_br",
+      "backgroundMat": "madtulip_human2_br",
+      "value": [
+        0,
+        5,
+        119,
+        100
+      ]
+    },
+    {
+      "comment": "madtulip_human2_default  madtulip_human2_default",
+      "foregroundBlock": true,
+      "backgroundBlock": true,
+      "foregroundMat": "madtulip_human2_default",
+      "backgroundMat": "madtulip_human2_default",
+      "value": [
+        0,
+        5,
+        120,
+        100
+      ]
+    },
+    {
+      "comment": "madtulip_human2_lr  madtulip_human2_lr",
+      "foregroundBlock": true,
+      "backgroundBlock": true,
+      "foregroundMat": "madtulip_human2_lr",
+      "backgroundMat": "madtulip_human2_lr",
+      "value": [
+        0,
+        5,
+        121,
+        100
+      ]
+    },
+    {
+      "comment": "madtulip_human2_ltr  madtulip_human2_ltr",
+      "foregroundBlock": true,
+      "backgroundBlock": true,
+      "foregroundMat": "madtulip_human2_ltr",
+      "backgroundMat": "madtulip_human2_ltr",
+      "value": [
+        0,
+        5,
+        122,
+        100
+      ]
+    },
+    {
+      "comment": "madtulip_human2_rbl  madtulip_human2_rbl",
+      "foregroundBlock": true,
+      "backgroundBlock": true,
+      "foregroundMat": "madtulip_human2_rbl",
+      "backgroundMat": "madtulip_human2_rbl",
+      "value": [
+        0,
+        5,
+        123,
+        100
+      ]
+    },
+    {
+      "comment": "madtulip_human2_tb  madtulip_human2_tb",
+      "foregroundBlock": true,
+      "backgroundBlock": true,
+      "foregroundMat": "madtulip_human2_tb",
+      "backgroundMat": "madtulip_human2_tb",
+      "value": [
+        0,
+        5,
+        124,
+        100
+      ]
+    },
+    {
+      "comment": "madtulip_human2_tl  madtulip_human2_tl",
+      "foregroundBlock": true,
+      "backgroundBlock": true,
+      "foregroundMat": "madtulip_human2_tl",
+      "backgroundMat": "madtulip_human2_tl",
+      "value": [
+        0,
+        5,
+        125,
+        100
+      ]
+    },
+    {
+      "comment": "madtulip_human2_tr  madtulip_human2_tr",
+      "foregroundBlock": true,
+      "backgroundBlock": true,
+      "foregroundMat": "madtulip_human2_tr",
+      "backgroundMat": "madtulip_human2_tr",
+      "value": [
+        0,
+        5,
+        126,
+        100
+      ]
+    },
+    {
+      "comment": "madtulip_human2_trb  madtulip_human2_trb",
+      "foregroundBlock": true,
+      "backgroundBlock": true,
+      "foregroundMat": "madtulip_human2_trb",
+      "backgroundMat": "madtulip_human2_trb",
+      "value": [
+        0,
+        5,
+        127,
+        100
+      ]
+    },
+    {
+      "comment": "madtulip_human2_trbl  madtulip_human2_trbl",
+      "foregroundBlock": true,
+      "backgroundBlock": true,
+      "foregroundMat": "madtulip_human2_trbl",
+      "backgroundMat": "madtulip_human2_trbl",
+      "value": [
+        0,
+        5,
+        128,
+        100
+      ]
+    },
+    {
+      "comment": "madtulip_bottom_decoration  madtulip_human2_bl",
+      "foregroundBlock": true,
+      "backgroundBlock": true,
+      "foregroundMat": "madtulip_human2_bl",
+      "backgroundMat": "madtulip_bottom_decoration",
+      "value": [
+        0,
+        5,
+        129,
+        100
+      ]
+    },
+    {
+      "comment": "madtulip_bottom_decoration  madtulip_human2_br",
+      "foregroundBlock": true,
+      "backgroundBlock": true,
+      "foregroundMat": "madtulip_human2_br",
+      "backgroundMat": "madtulip_bottom_decoration",
+      "value": [
+        0,
+        5,
+        130,
+        100
+      ]
+    },
+    {
+      "comment": "madtulip_top_decoration  madtulip_human2_tl",
+      "foregroundBlock": true,
+      "backgroundBlock": true,
+      "foregroundMat": "madtulip_human2_tl",
+      "backgroundMat": "madtulip_top_decoration",
+      "value": [
+        0,
+        5,
+        131,
+        100
+      ]
+    },
+    {
+      "comment": "madtulip_top_decoration  madtulip_human2_tr",
+      "foregroundBlock": true,
+      "backgroundBlock": true,
+      "foregroundMat": "madtulip_human2_tr",
+      "backgroundMat": "madtulip_top_decoration",
+      "value": [
+        0,
+        5,
+        132,
+        100
+      ]
+    },
+    {
       "comment": "madtulip_glass_bl  madtulip_glass_bl",
       "foregroundBlock": true,
       "backgroundBlock": true,
