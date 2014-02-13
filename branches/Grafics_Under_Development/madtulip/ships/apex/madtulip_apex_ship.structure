@@ -772,6 +772,214 @@
       ]
     },
     {
+      "comment": "madtulip_apex2_bl  madtulip_apex2_bl",
+      "foregroundBlock": true,
+      "backgroundBlock": true,
+      "foregroundMat": "madtulip_apex2_bl",
+      "backgroundMat": "madtulip_apex2_bl",
+      "value": [
+        0,
+        1,
+        117,
+        100
+      ]
+    },
+    {
+      "comment": "madtulip_apex2_blt  madtulip_apex2_blt",
+      "foregroundBlock": true,
+      "backgroundBlock": true,
+      "foregroundMat": "madtulip_apex2_blt",
+      "backgroundMat": "madtulip_apex2_blt",
+      "value": [
+        0,
+        1,
+        118,
+        100
+      ]
+    },
+    {
+      "comment": "madtulip_apex2_br  madtulip_apex2_br",
+      "foregroundBlock": true,
+      "backgroundBlock": true,
+      "foregroundMat": "madtulip_apex2_br",
+      "backgroundMat": "madtulip_apex2_br",
+      "value": [
+        0,
+        1,
+        119,
+        100
+      ]
+    },
+    {
+      "comment": "madtulip_apex2_default  madtulip_apex2_default",
+      "foregroundBlock": true,
+      "backgroundBlock": true,
+      "foregroundMat": "madtulip_apex2_default",
+      "backgroundMat": "madtulip_apex2_default",
+      "value": [
+        0,
+        1,
+        120,
+        100
+      ]
+    },
+    {
+      "comment": "madtulip_apex2_lr  madtulip_apex2_lr",
+      "foregroundBlock": true,
+      "backgroundBlock": true,
+      "foregroundMat": "madtulip_apex2_lr",
+      "backgroundMat": "madtulip_apex2_lr",
+      "value": [
+        0,
+        1,
+        121,
+        100
+      ]
+    },
+    {
+      "comment": "madtulip_apex2_ltr  madtulip_apex2_ltr",
+      "foregroundBlock": true,
+      "backgroundBlock": true,
+      "foregroundMat": "madtulip_apex2_ltr",
+      "backgroundMat": "madtulip_apex2_ltr",
+      "value": [
+        0,
+        1,
+        122,
+        100
+      ]
+    },
+    {
+      "comment": "madtulip_apex2_rbl  madtulip_apex2_rbl",
+      "foregroundBlock": true,
+      "backgroundBlock": true,
+      "foregroundMat": "madtulip_apex2_rbl",
+      "backgroundMat": "madtulip_apex2_rbl",
+      "value": [
+        0,
+        1,
+        123,
+        100
+      ]
+    },
+    {
+      "comment": "madtulip_apex2_tb  madtulip_apex2_tb",
+      "foregroundBlock": true,
+      "backgroundBlock": true,
+      "foregroundMat": "madtulip_apex2_tb",
+      "backgroundMat": "madtulip_apex2_tb",
+      "value": [
+        0,
+        1,
+        124,
+        100
+      ]
+    },
+    {
+      "comment": "madtulip_apex2_tl  madtulip_apex2_tl",
+      "foregroundBlock": true,
+      "backgroundBlock": true,
+      "foregroundMat": "madtulip_apex2_tl",
+      "backgroundMat": "madtulip_apex2_tl",
+      "value": [
+        0,
+        1,
+        125,
+        100
+      ]
+    },
+    {
+      "comment": "madtulip_apex2_tr  madtulip_apex2_tr",
+      "foregroundBlock": true,
+      "backgroundBlock": true,
+      "foregroundMat": "madtulip_apex2_tr",
+      "backgroundMat": "madtulip_apex2_tr",
+      "value": [
+        0,
+        1,
+        126,
+        100
+      ]
+    },
+    {
+      "comment": "madtulip_apex2_trb  madtulip_apex2_trb",
+      "foregroundBlock": true,
+      "backgroundBlock": true,
+      "foregroundMat": "madtulip_apex2_trb",
+      "backgroundMat": "madtulip_apex2_trb",
+      "value": [
+        0,
+        1,
+        127,
+        100
+      ]
+    },
+    {
+      "comment": "madtulip_apex2_trbl  madtulip_apex2_trbl",
+      "foregroundBlock": true,
+      "backgroundBlock": true,
+      "foregroundMat": "madtulip_apex2_trbl",
+      "backgroundMat": "madtulip_apex2_trbl",
+      "value": [
+        0,
+        1,
+        128,
+        100
+      ]
+    },
+    {
+      "comment": "madtulip_bottom_decoration  madtulip_apex2_bl",
+      "foregroundBlock": true,
+      "backgroundBlock": true,
+      "foregroundMat": "madtulip_apex2_bl",
+      "backgroundMat": "madtulip_bottom_decoration",
+      "value": [
+        0,
+        1,
+        129,
+        100
+      ]
+    },
+    {
+      "comment": "madtulip_bottom_decoration  madtulip_apex2_br",
+      "foregroundBlock": true,
+      "backgroundBlock": true,
+      "foregroundMat": "madtulip_apex2_br",
+      "backgroundMat": "madtulip_bottom_decoration",
+      "value": [
+        0,
+        1,
+        130,
+        100
+      ]
+    },
+    {
+      "comment": "madtulip_top_decoration  madtulip_apex2_tl",
+      "foregroundBlock": true,
+      "backgroundBlock": true,
+      "foregroundMat": "madtulip_apex2_tl",
+      "backgroundMat": "madtulip_top_decoration",
+      "value": [
+        0,
+        1,
+        131,
+        100
+      ]
+    },
+    {
+      "comment": "madtulip_top_decoration  madtulip_apex2_tr",
+      "foregroundBlock": true,
+      "backgroundBlock": true,
+      "foregroundMat": "madtulip_apex2_tr",
+      "backgroundMat": "madtulip_top_decoration",
+      "value": [
+        0,
+        1,
+        132,
+        100
+      ]
+    },
+    {
       "comment": "madtulip_glass_bl  madtulip_glass_bl",
       "foregroundBlock": true,
       "backgroundBlock": true,
