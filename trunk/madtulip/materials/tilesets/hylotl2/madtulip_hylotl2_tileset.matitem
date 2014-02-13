@@ -1,0 +1,9 @@
+{
+  "itemName" : "madtulip_hylotl2_tileset",
+  "rarity" : "Common",
+  "inventoryIcon" : "madtulip_hylotl2_tileset_icon.png",
+  "dropCollision" : [-2.5, -2.0, 2.5, 2.0],
+  "description" : "Hylotl Spaceship Hull Tileset 2",
+  "shortdescription" : "Hylotl Spaceship Hull Tileset 2",
+  "materialId" : 21312
+}

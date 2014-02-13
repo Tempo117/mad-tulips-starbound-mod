@@ -4,11 +4,10 @@
   "objectType" : "wire",
 
   "category" : "door",
-  "description" : "A door. Possibly suitable for a spaceship.",
+  "price" : 1000,
+  "description" : "A reinforced space-grade hatch that can be placed dynamically.",
   "shortdescription" : "Glitch Ship Door",
-  "race" : "generic",
-  "printable" : false,
-  "price" : 2000,
+  "race" : "glitch",
 
   "apexDescription" : "We use these doors on our ships.",
   "avianDescription" : "A door.",
@@ -17,29 +16,37 @@
   "humanDescription" : "Cool door.",
   "hylotlDescription" : "A basic door.",
 
+
   "inventoryIcon" : "madtulip_glitch_shipdoor_icon.png",
   "orientations" : [
     {
-      "dualImage" : "madtulip_glitch_shipdoor.png:default",
-      "imagePosition" : [-20, 0],
+      "dualImage" : "madtulip_glitch_shipdoor.png:closeWall",
+      "imagePosition" : [-16, -16],
 
       "spaceScan" : 0.1,
-      "anchors" : [ "bottom", "top" ]
+      "anchors" : [ "top", "bottom" ]
+    },
+	{
+      "dualImage" : "madtulip_glitch_shipdoor.png:closeFloor",
+      "imagePosition" : [-16, -16],
+
+      "spaceScan" : 0.3,
+      "anchors" : [ "left", "right" ]
     }
   ],
 
-  "scripts" : [ "/objects/wired/door/door.lua" ],
+  "scripts" : [ "door.lua" ],
   "scriptDelta" : 5,
 
-  "animation" : "/objects/wired/door/door.animation",
+  "animation" : "door.animation",
   "animationParts" : {
     "door" : "madtulip_glitch_shipdoor.png"
   },
-  "animationPosition" : [-20, 0],
-
-  "inboundNodes" : [ [-1, 4] ],
-  "outboundNodes" : [ [1, 0] ],
-
+  "animationPosition" : [-16, -16],
+  
+  "inboundNodes" : [ [0, 1] ],
+  "outboundNodes" : [ [0, -1] ],
+  
   "openSounds" : [ "/sfx/objects/apexcooldoor_open.wav" ],
   "closeSounds" : [ "/sfx/objects/apexcooldoor_close.wav" ]
 }

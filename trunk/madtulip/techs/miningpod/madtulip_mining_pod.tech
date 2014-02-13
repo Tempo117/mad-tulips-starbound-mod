@@ -61,7 +61,7 @@
 	"Air_resistance_parameter_LR": 10,
 	"Air_resistance_parameter_TB": 10,
 	
-	"mining_damage": 3.25,
+	"mining_damage": 2.0,
 	"mining_timer_max": 0.3,
 	"mining_cost": 0,
 

@@ -1,0 +1,9 @@
+{
+  "itemName" : "madtulip_apex2_tileset",
+  "rarity" : "Common",
+  "inventoryIcon" : "madtulip_apex2_tileset_icon.png",
+  "dropCollision" : [-2.5, -2.0, 2.5, 2.0],
+  "description" : "Apex Spaceship Hull Tileset 2",
+  "shortdescription" : "Apex Spaceship Hull Tileset 2",
+  "materialId" : 21212
+}

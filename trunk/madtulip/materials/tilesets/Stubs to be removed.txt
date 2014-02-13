@@ -1,0 +1,6 @@
+in all <racename2> folders:
+*default.png
+*_icon.png
+*_lr.png
+*_tb.png
+*_trbl.png
