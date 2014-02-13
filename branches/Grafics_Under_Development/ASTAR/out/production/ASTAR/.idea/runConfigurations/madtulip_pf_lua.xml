@@ -1,0 +1,14 @@
+<component name="ProjectRunConfigurationManager">
+  <configuration default="false" name="madtulip_pf.lua" type="#com.sylvanaar.idea.Lua.run.LuaConfigurationType" factoryName="Lua Script">
+    <option name="INTERPRETER_OPTIONS" value="" />
+    <option name="INTERPRETER_PATH" value="" />
+    <option name="WORKING_DIRECTORY" value="$PROJECT_DIR$" />
+    <option name="PARENT_ENVS" value="true" />
+    <option name="ALTERNATE_INTERPRETER" value="false" />
+    <envs />
+    <module name="ASTAR" />
+    <option name="SCRIPT_NAME" value="madtulip_pf.lua" />
+    <option name="PARAMETERS" value="" />
+    <method />
+  </configuration>
+</component>
