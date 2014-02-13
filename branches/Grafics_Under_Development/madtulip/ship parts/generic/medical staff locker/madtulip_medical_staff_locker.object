@@ -4,7 +4,8 @@
   "description" : "Locker for medical supplies",
   "shortdescription" : "Medical Locker",
   "race" : "generic",
-  "category" : "decorative",
+  "objectType" : "container",
+  "category" : "storage",
   "price" : 10,
   "printable" : false,
   "multicolored" : true,
@@ -19,5 +20,12 @@
       "spaceScan" : 0.1,
       "anchors" : [ "bottom" ]
     }
-  ]
+  ],
+  
+  "openSounds" : [ "/sfx/objects/locker_open.wav" ],
+  "closeSounds" : [ "/sfx/objects/locker_close.wav" ],
+  "slotCount" : 12,
+  "uiConfig" : "/interface/chests/chest%slots%.config",
+  "frameCooldown" : 67,
+  "autoCloseCooldown" : 3600
 }

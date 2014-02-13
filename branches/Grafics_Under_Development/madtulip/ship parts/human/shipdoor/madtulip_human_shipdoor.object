@@ -6,7 +6,7 @@
   "category" : "door",
   "price" : 1000,
   "description" : "A reinforced space-grade hatch that can be placed dynamically.",
-  "shortdescription" : "Avian Ship Door",
+  "shortdescription" : "Human Ship Door",
   "race" : "avian",
 
   "apexDescription" : "We use these doors on our ships.",

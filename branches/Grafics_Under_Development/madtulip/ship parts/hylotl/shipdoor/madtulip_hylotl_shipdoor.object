@@ -6,7 +6,7 @@
   "category" : "door",
   "price" : 1000,
   "description" : "A reinforced space-grade hatch that can be placed dynamically.",
-  "shortdescription" : "Avian Ship Door",
+  "shortdescription" : "Hylotl Ship Door",
   "race" : "hylotl",
 
   "apexDescription" : "We use these doors on our ships.",
