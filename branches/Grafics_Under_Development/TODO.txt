@@ -8,23 +8,25 @@
 		{"item" : "madtulip_medical_sign"},
 		{"item" : "madtulip_medical_staff_locker"},
 		{"item" : "madtulip_medical_surgery_bed"},
+		
+		{"item" : "madtulip_apex_sector_airlock"},
+		{"item" : "madtulip_avian_sector_airlock"},
+		{"item" : "madtulip_floran_sector_airlock"},
+		{"item" : "madtulip_glitch_sector_airlock"},
+		{"item" : "madtulip_hylotl_sector_airlock"},
 
 ----------------------------------------------------------------------------------------------------
 -----------------------------------------NEXT UPDATE------------------------------------------------
-----------------------------------------------------------------------------------------------------
-Crew console (high priority)                                                                      
-- Filter Buttons need icons
-- top left corner icon needs to be done
 ----------------------------------------------------------------------------------------------------
 Doors (high priority)
 - forcefield door horizontal/vertical colorable (all colors) (mid priority)
 ----------------------------------------------------------------------------------------------------
 Crew (mid to low priority)
-- 2 to 5 resting objects like fridges ? and the like
-- 2 to 5 medical objects like surgery desk and monitors for a clinical themed room
-- 1 to 3 marine objects (rifle racks for the wall, lockers, granade stack ? guardpost things) to make a marine styled hangout
+- 2 to 3 resting objects like fridges ? and the like
 - deckhand - where could they hang around ? normal resting state objects?
 - recipes for some vanilla items that would make good work attractor items like medical tank ?
+
+- door sector unlock human not done at all
 
 Beds sleepable:
 {"item" : "madtulip_crew_wall_mounted_bed"},
