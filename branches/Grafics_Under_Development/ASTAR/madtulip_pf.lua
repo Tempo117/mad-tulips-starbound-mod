@@ -1,5 +1,6 @@
 madtulip_pf = {}
 
+------------------------------Constants--------------------------------------------
 -- Offsets for straights moves
 madtulip_pf.straightOffsets = {
     {x = 1, y = 0} --[[W]], {x = -1, y =  0}, --[[E]]
@@ -13,8 +14,10 @@ madtulip_pf.diagonalOffsets = {
 
 -- TODO: create possible jump trajectory entries from jumping experiments in game
 madtulip_pf.PossibleJumpTrajectories ={
-    -- jump trajectories include the start and end node where the player was still on ground
-    -- the x and y values are relative offsets to the start of the rump. so root is allways at 0,0
+    -- jump trajectories include the start node where the player was still on ground as well as
+    -- the end node where the player hits ground again.
+    -- the x and y values are relative offsets to the start of the rump. so root is allways at 0,0.
+    -- a jump can be left at any point of the trajectory.
 
     {{x = 0, y = 0},{x = 0, y = 1},{x = 0, y = 2},{x = 0, y = 3},{x = 0, y = 4},{x = 0, y = 5},{x = 1, y = 5},{x = 2, y = 5}}
 --[[
@@ -32,91 +35,7 @@ madtulip_pf.PossibleJumpTrajectories ={
     {{x = 0, y = 0},{x = 1, y = 0},{x = 2, y = 0},{x = 3, y = 1},{x = 4, y = 1},{x = 5, y = 2},{x = 6, y = 2},{x = 5, y = 3} }
     ]]
 }
-
-function madtulip_pf.NodeIsInAir(node)
-    local nodeValue = madtulip_pf.finder._grid._map[node._x] and madtulip_pf.finder._grid._map[node._y][node._x]
-    return nodeValue == 0 -- 0 is air
-end
-
-function madtulip_pf.tracebackJump (neighbour, node)
-    local inv_jump_path = {}
-    table.insert(inv_jump_path,1,neighbour) -- current point in jump
-    print (' --- Jump Trajectory traceback --- ')
-    print ('(From node    X: ' .. node._x .. ' Y: ' .. node._y .. ')')
-    print ('to node       X: ' .. neighbour._x .. ' Y: ' .. neighbour._y)
-    -- tracback jump tracectory up to the node where the player was on ground before jumping
-    while true do
-        if (madtulip_pf.NodeIsInAir(node) and node._parent) then
-            -- trace path to jump start
-            table.insert(inv_jump_path,1,node)
-            print ('adding        X: ' .. node._x .. ' Y: ' .. node._y)
-            node = madtulip_pf.get_preprocessed_NodeAt(node._parent[1],node._parent[2])
-        else
-            -- jump start reached
-            table.insert(inv_jump_path,1,node)
-            print ('START of jump X: ' .. node._x .. ' Y: ' .. node._y .. ' of length: ' .. #inv_jump_path)
-            -- inverse order of inv_jump_path so it goes for start ([1]) to end ([#final_jump_path]) of the jump
-            local final_jump_path = {}
-            for cur_jump_path_idx = #inv_jump_path,1,-1 do
-                table.insert(final_jump_path,1,inv_jump_path[cur_jump_path_idx])
-            end
-            return final_jump_path
-        end
-    end
-end
-
-function madtulip_pf.validate_jump_path(jump_path)
-    -- get root of jump
-    local rootnode = jump_path[1]
-
-    -- if jump doesnt start on ground its not valid
-    if madtulip_pf.NodeIsInAir(rootnode) then return false end
-
-    -- this is a linked tree containing all possible jumps.
-    -- its a list with relative offset to jump start in each node
-    -- the adress of each following node is that offset.
-    -- if there is no populated node at that adress the jump is not possible.
-    -- root of tree is on ground where jump starts at {0,0}
-    local cur_Possible_JumpConnection = madtulip_pf.finder._JumpConnections
-
-    print ('---- Testing Jump ----')
-    print ('Root: x: ' .. rootnode._x .. ' Y: ' .. rootnode._y)
-
-    local sign = 0 -- undefined (not + or - in this case)
-    for idxx_cur_node = 1,#jump_path do
-        -- get offset from root that we want to move to next
-        local x = jump_path[idxx_cur_node]._x - rootnode._x
-        local y = jump_path[idxx_cur_node]._y - rootnode._y
-        print ('jump_path[' .. idxx_cur_node .. '/' .. #jump_path .. '] at X: ' .. jump_path[idxx_cur_node]._x .. ' Y: ' .. jump_path[idxx_cur_node]._y )
-
-        -- all jumps are just defined from left to right. this block allows mirroring all those jumps
-        -- once the jump has decided for a certain direction it has to stay in that direction or will not be valid
-        if (x > 0) and (sign < 0) then return false end -- tried to change jump direction, not possible
-        if (x < 0) and (sign > 0) then return false end -- tried to change jump direction, not possible
-        if (x > 0) then sign = 1 end -- set sign of jump (this is a jump to the right)
-        if (x < 0) then sign = -1 end -- set sign of jump (this is a jump to the right)
-        if (sign ~= 0) then x = sign*x end
-
-        -- check if that offset is present as one of the possible next nodes in the jump tree
-        if cur_Possible_JumpConnection.c[x] ~= nil then
-            if cur_Possible_JumpConnection.c[x][y] ~= nil then
-                -- This is a possible jump trajectory so far -> go to the next node
-                cur_Possible_JumpConnection = cur_Possible_JumpConnection.c[x][y]
-                print ('Jump node at X: ' .. x .. ' Y: ' .. y .. ' existed in tree.')
-            else
-                -- thats not a possible jump because the relative y-offset of this part of the trajectory was no valid option
-                print ('Jump node at X: ' .. x .. ' Y: ' .. y .. ' DID NOT exist in tree (y is nil).')
-                return false
-            end
-        else
-            -- thats not a possible jump because the relative x-offset of this part of the trajectory was no valid option
-            print ('Jump node at X: ' .. x .. ' Y: ' .. y .. ' DID NOT exist in tree (x is nil).')
-            return false
-        end
-    end
-    return true
-end
-
+------------------------------Heuristics--------------------------------------------
 function madtulip_pf.EUCLIDIAN(neighbour, startnode)
     local dx = neighbour._x - startnode._x
     local dy = neighbour._y - startnode._y
@@ -141,52 +60,7 @@ function madtulip_pf.Jump_EUCLIDIAN(neighbour, node)
     return madtulip_pf.EUCLIDIAN(neighbour, node)
 end
 
-function madtulip_pf.new_JumpMap (Possible_Jump_Trajectories)
-    if (Possible_Jump_Trajectories == nil) then Possible_Jump_Trajectories = madtulip_pf.PossibleJumpTrajectories end
-    local RootJumpNode = nil
-    for idx_cur_JT = 1, #Possible_Jump_Trajectories do
-        print ('--- Jump Nr.: ' .. idx_cur_JT .. '---')
-        local cur_JT = Possible_Jump_Trajectories[idx_cur_JT]
-        local LastJumpNode = nil
-        for idx_cur_JT_node = 1, #cur_JT do
-            local x = cur_JT[idx_cur_JT_node].x
-            local y = cur_JT[idx_cur_JT_node].y
-            -- print ('Parsing X: ' .. x .. ' Y: ' .. y)
-            -- create new root node if it doesnt exists
-            if (RootJumpNode == nil) then
-                RootJumpNode = {}
-                RootJumpNode.c = {}
-            end
-            -- start at root if no LastJumpNode for this jump
-            if (LastJumpNode == nil) then
-                LastJumpNode = RootJumpNode
-            end
-
-            -- append NewJumpNode to LastJumpNode if it doesnt exists
-            if (LastJumpNode.c[x] == nil) then
-                LastJumpNode.c[x] = {}
-            end
-            if (LastJumpNode.c[x][y] == nil) then
-                -- create new node to append
-                local NewJumpNode = {}
-                NewJumpNode.c = {}
-                -- append new node
-                LastJumpNode.c[x][y] = NewJumpNode
-                print ('X: ' .. x .. ' Y: ' .. y .. ' created.')
-            else
-                print ('X: ' .. x .. ' Y: ' .. y .. ' already existing.')
-            end
-
-            -- set pointer to created or already existing last node
-            LastJumpNode = LastJumpNode.c[x][y]
-        end
-    end
-
-    return RootJumpNode
-end
-
---------------------------------------------------------------------------
-
+------------------------------Grid--------------------------------------------
 function madtulip_pf.new_grid(map, cacheNodeAtRuntime)
     --[[
         if type(map) == 'string' then
@@ -325,8 +199,165 @@ function madtulip_pf.annotateGrid(min_x,max_x,min_y,max_y)
     madtulip_pf.finder._grid._isAnnotated[madtulip_pf.finder._walkable] = true
 end
 
---------------------------------------------------------------------------
+--------------------------------Nodes------------------------------------------
+function madtulip_pf.new_Node(x,y)
+    return setmetatable({_x = x, _y = y, _clearance = {}}, Node)
+end
 
+function madtulip_pf.reset_Node(x,y)
+    local Node = madtulip_pf.get_preprocessed_NodeAt(x,y)
+    -- overwrite its parameters with default
+    Node._g, Node._h, Node._f = nil, nil, nil
+    Node._opened, Node._closed, Node._parent = nil, nil, nil
+    -- write it back to global structure
+    madtulip_pf.finder._grid._nodes[Node._y][Node._x] = Node
+    return Node
+end
+
+function madtulip_pf.get_preprocessed_NodeAt(x,y)
+    return madtulip_pf.finder._grid._nodes[y] and madtulip_pf.finder._grid._nodes[y][x] or nil
+end
+
+function madtulip_pf.getClearance(x,y,walkable)
+    local node = madtulip_pf.get_preprocessed_NodeAt(x,y)
+    return node._clearance[walkable]
+end
+
+function madtulip_pf.NodeIsInAir(node)
+    local nodeValue = madtulip_pf.finder._grid._map[node._x] and madtulip_pf.finder._grid._map[node._y][node._x]
+    return nodeValue == 0 -- 0 is air
+end
+
+-------------------------------Jumping-------------------------------------------
+-- This initiates a tree starting at {0,0} the origin of each jump.
+-- it branches in all supported jump trajactories (also falling) by indexing subnodes with [x][y] offsets
+-- relative to jump starting block. It is later used to validate a certain jump trajectory.
+function madtulip_pf.new_JumpMap (Possible_Jump_Trajectories)
+    if (Possible_Jump_Trajectories == nil) then Possible_Jump_Trajectories = madtulip_pf.PossibleJumpTrajectories end
+    local RootJumpNode = nil
+    for idx_cur_JT = 1, #Possible_Jump_Trajectories do
+        print ('--- Jump Nr.: ' .. idx_cur_JT .. '---')
+        local cur_JT = Possible_Jump_Trajectories[idx_cur_JT]
+        local LastJumpNode = nil
+        for idx_cur_JT_node = 1, #cur_JT do
+            local x = cur_JT[idx_cur_JT_node].x
+            local y = cur_JT[idx_cur_JT_node].y
+            -- print ('Parsing X: ' .. x .. ' Y: ' .. y)
+            -- create new root node if it doesnt exists
+            if (RootJumpNode == nil) then
+                RootJumpNode = {}
+                RootJumpNode.c = {}
+            end
+            -- start at root if no LastJumpNode for this jump
+            if (LastJumpNode == nil) then
+                LastJumpNode = RootJumpNode
+            end
+
+            -- append NewJumpNode to LastJumpNode if it doesnt exists
+            if (LastJumpNode.c[x] == nil) then
+                LastJumpNode.c[x] = {}
+            end
+            if (LastJumpNode.c[x][y] == nil) then
+                -- create new node to append
+                local NewJumpNode = {}
+                NewJumpNode.c = {}
+                -- append new node
+                LastJumpNode.c[x][y] = NewJumpNode
+                print ('X: ' .. x .. ' Y: ' .. y .. ' created.')
+            else
+                print ('X: ' .. x .. ' Y: ' .. y .. ' already existing.')
+            end
+
+            -- set pointer to created or already existing last node
+            LastJumpNode = LastJumpNode.c[x][y]
+        end
+    end
+    return RootJumpNode
+end
+
+-- This is called by the heuristics. It determines of the jump path that has been taken since liftoff until current node.
+function madtulip_pf.tracebackJump (neighbour, node)
+    local inv_jump_path = {}
+    table.insert(inv_jump_path,1,neighbour) -- current point in jump
+    print (' --- Jump Trajectory traceback --- ')
+    print ('(From node    X: ' .. node._x .. ' Y: ' .. node._y .. ')')
+    print ('to node       X: ' .. neighbour._x .. ' Y: ' .. neighbour._y)
+    -- tracback jump tracectory up to the node where the player was on ground before jumping
+    while true do
+        if (madtulip_pf.NodeIsInAir(node) and node._parent) then
+            -- trace path to jump start
+            table.insert(inv_jump_path,1,node)
+            print ('adding        X: ' .. node._x .. ' Y: ' .. node._y)
+            node = madtulip_pf.get_preprocessed_NodeAt(node._parent[1],node._parent[2])
+        else
+            -- jump start reached
+            table.insert(inv_jump_path,1,node)
+            print ('START of jump X: ' .. node._x .. ' Y: ' .. node._y .. ' of length: ' .. #inv_jump_path)
+            -- inverse order of inv_jump_path so it goes for start ([1]) to end ([#final_jump_path]) of the jump
+            local final_jump_path = {}
+            for cur_jump_path_idx = #inv_jump_path,1,-1 do
+                table.insert(final_jump_path,1,inv_jump_path[cur_jump_path_idx])
+            end
+            return final_jump_path
+        end
+    end
+end
+
+-- A traced jumppath will be validated to check if its a trajectory possible for game physics.
+-- If not the heuristics working on this will return INF costs marking a physically impossible jump as a blocked path.
+function madtulip_pf.validate_jump_path(jump_path)
+    -- get root of jump
+    local rootnode = jump_path[1]
+
+    -- if jump doesnt start on ground its not valid
+    if madtulip_pf.NodeIsInAir(rootnode) then return false end
+
+    -- this is a linked tree containing all possible jumps.
+    -- its a list with relative offset to jump start in each node
+    -- the adress of each following node is that offset.
+    -- if there is no populated node at that adress the jump is not possible.
+    -- root of tree is on ground where jump starts at {0,0}
+    local cur_Possible_JumpConnection = madtulip_pf.finder._JumpConnections
+
+    print ('---- Testing Jump ----')
+    print ('Root: x: ' .. rootnode._x .. ' Y: ' .. rootnode._y)
+
+    local sign = 0 -- undefined (not + or - in this case)
+    for idxx_cur_node = 1,#jump_path do
+        -- get offset from root that we want to move to next
+        local x = jump_path[idxx_cur_node]._x - rootnode._x
+        local y = jump_path[idxx_cur_node]._y - rootnode._y
+        print ('jump_path[' .. idxx_cur_node .. '/' .. #jump_path .. '] at X: ' .. jump_path[idxx_cur_node]._x .. ' Y: ' .. jump_path[idxx_cur_node]._y )
+
+        -- all jumps are just defined from left to right. this block allows mirroring all those jumps
+        -- once the jump has decided for a certain direction it has to stay in that direction or will not be valid
+        if (x > 0) and (sign < 0) then return false end -- tried to change jump direction, not possible
+        if (x < 0) and (sign > 0) then return false end -- tried to change jump direction, not possible
+        if (x > 0) then sign = 1 end -- set sign of jump (this is a jump to the right)
+        if (x < 0) then sign = -1 end -- set sign of jump (this is a jump to the right)
+        if (sign ~= 0) then x = sign*x end
+
+        -- check if that offset is present as one of the possible next nodes in the jump tree
+        if cur_Possible_JumpConnection.c[x] ~= nil then
+            if cur_Possible_JumpConnection.c[x][y] ~= nil then
+                -- This is a possible jump trajectory so far -> go to the next node
+                cur_Possible_JumpConnection = cur_Possible_JumpConnection.c[x][y]
+                print ('Jump node at X: ' .. x .. ' Y: ' .. y .. ' existed in tree.')
+            else
+                -- thats not a possible jump because the relative y-offset of this part of the trajectory was no valid option
+                print ('Jump node at X: ' .. x .. ' Y: ' .. y .. ' DID NOT exist in tree (y is nil).')
+                return false
+            end
+        else
+            -- thats not a possible jump because the relative x-offset of this part of the trajectory was no valid option
+            print ('Jump node at X: ' .. x .. ' Y: ' .. y .. ' DID NOT exist in tree (x is nil).')
+            return false
+        end
+    end
+    return true
+end
+
+--------------------------------Pathfinder------------------------------------------
 function madtulip_pf.new_pathfinder(grid,JumpConnections, finder, walkable, heuristic, allowDiagonal, tunnel)
     madtulip_pf.finder = {}
     madtulip_pf.finder._grid = grid
@@ -362,15 +393,6 @@ function madtulip_pf.reset_pf()
     madtulip_pf.finder._toClear = {}
 end
 
-function madtulip_pf.get_preprocessed_NodeAt(x,y)
-    return madtulip_pf.finder._grid._nodes[y] and madtulip_pf.finder._grid._nodes[y][x] or nil
-end
-
-function madtulip_pf.getClearance(x,y,walkable)
-    local node = madtulip_pf.get_preprocessed_NodeAt(x,y)
-    return node._clearance[walkable]
-end
-
 -- Extract a path from a given start/end position
 function madtulip_pf.traceBackPath(node, startNode)
     --local path = Path:new()
@@ -389,67 +411,7 @@ function madtulip_pf.traceBackPath(node, startNode)
     end
 end
 
-----------------------------------------------------------
-
--- Converts an array to a set of nodes
-function madtulip_pf.arrayToNodes(map)
-    local min_x, max_x
-    local min_y, max_y
-    local nodes = {}
-    for y in pairs(map) do
-        min_y = not min_y and y or (y<min_y and y or min_y)
-        max_y = not max_y and y or (y>max_y and y or max_y)
-        nodes[y] = {}
-        for x in pairs(map[y]) do
-            min_x = not min_x and x or (x<min_x and x or min_x)
-            max_x = not max_x and x or (x>max_x and x or max_x)
-            nodes[y][x] = madtulip_pf.new_Node(x,y)
-        end
-    end
-    return nodes,
-    (min_x or 0), (max_x or 0),
-    (min_y or 0), (max_y or 0)
-end
-
-function madtulip_pf.getArrayBounds(map)
-    local min_x, max_x
-    local min_y, max_y
-    for y in pairs(map) do
-        min_y = not min_y and y or (y<min_y and y or min_y)
-        max_y = not max_y and y or (y>max_y and y or max_y)
-        for x in pairs(map[y]) do
-            min_x = not min_x and x or (x<min_x and x or min_x)
-            max_x = not max_x and x or (x>max_x and x or max_x)
-        end
-    end
-    return min_x,max_x,min_y,max_y
-end
-
-
-----------------------------------------------------------------------------
-
---- Inits a new `node`
--- @class function
--- @tparam int x the x-coordinate of the node on the collision map
--- @tparam int y the y-coordinate of the node on the collision map
--- @treturn node a new `node`
--- @usage local node = Node(3,4)
-function madtulip_pf.new_Node(x,y)
-    return setmetatable({_x = x, _y = y, _clearance = {}}, Node)
-end
-
-function madtulip_pf.reset_Node(x,y)
-    local Node = madtulip_pf.get_preprocessed_NodeAt(x,y)
-    -- overwrite its parameters with default
-    Node._g, Node._h, Node._f = nil, nil, nil
-    Node._opened, Node._closed, Node._parent = nil, nil, nil
-    -- write it back to global structure
-    madtulip_pf.finder._grid._nodes[Node._y][Node._x] = Node
-    return Node
-end
-
----------------------------------------------------------------------------
-
+-------------------------------ASTAR--------------------------------------------
 function madtulip_pf.push_to_heap(node)
     -- perculate up
     for i=#madtulip_pf.Heap,1,-1 do
@@ -543,3 +505,37 @@ function madtulip_pf.computeCost(node, neighbour, clearance)
     return neighbour
 end
 
+----------------------Utils------------------------------------
+-- Converts an array to a set of nodes
+function madtulip_pf.arrayToNodes(map)
+    local min_x, max_x
+    local min_y, max_y
+    local nodes = {}
+    for y in pairs(map) do
+        min_y = not min_y and y or (y<min_y and y or min_y)
+        max_y = not max_y and y or (y>max_y and y or max_y)
+        nodes[y] = {}
+        for x in pairs(map[y]) do
+            min_x = not min_x and x or (x<min_x and x or min_x)
+            max_x = not max_x and x or (x>max_x and x or max_x)
+            nodes[y][x] = madtulip_pf.new_Node(x,y)
+        end
+    end
+    return nodes,
+    (min_x or 0), (max_x or 0),
+    (min_y or 0), (max_y or 0)
+end
+
+function madtulip_pf.getArrayBounds(map)
+    local min_x, max_x
+    local min_y, max_y
+    for y in pairs(map) do
+        min_y = not min_y and y or (y<min_y and y or min_y)
+        max_y = not max_y and y or (y>max_y and y or max_y)
+        for x in pairs(map[y]) do
+            min_x = not min_x and x or (x<min_x and x or min_x)
+            max_x = not max_x and x or (x>max_x and x or max_x)
+        end
+    end
+    return min_x,max_x,min_y,max_y
+end

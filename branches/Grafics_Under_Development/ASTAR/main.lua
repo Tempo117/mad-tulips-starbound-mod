@@ -1,18 +1,15 @@
 require "madtulip_pf"
 
--- TODO: clearance_size_shift doesnt work with negative values due to the for loop implementation counting only up
---- TODO: would it be better to have 2 clearance maps for x and y direction ?
--- TODO: option to update each node the moment he is walked (once per pathfinding!)
--- TODO: jumping
---- TODO: physics and trajectory
---- TODO: heuristics need to assign costs accordingly
 -- TODO: generation of map from starbound
+-- TODO: jumping: measure physics and build trajectories
+-- TODO: clearance_size_shift doesnt work with negative values due to the for loop implementation counting only up
+-- TODO: option to update each node the moment he is walked (once per pathfinding!)
 
 -- Here we want to find a path from current position to target
 -- Set up a collision map
--- 0 is air
--- 1 has floor under it
--- 2 is not walkable
+-- 0 := air
+-- 1 := has floor under it (standable)
+-- 2 := blocked
 local map = {
     {2,2,2,2,2,2,2,2,2,2},
     {1,1,1,1,1,1,1,1,1,1},
@@ -25,16 +22,13 @@ local map = {
     {0,0,0,0,0,0,0,0,0,0},
     {0,0,0,0,0,0,0,0,0,0}
 }
--- start and end of path to find
-local startx, starty = 1,2
-local endx, endy = 5,7
-
 -- Value for walkable tiles
 local walkable = function(v) return v~=2 end
+
 -- sizes of agent to move the map
 local agent_size =  2
--- TODO: this needs to be able to handle {0,-2}. i believe the agent is upside down atm!
-local agent_size_shift = {0,2} -- x,y shift to apply to the agent_size to allow for rect none square agents
+-- x,y shift to apply to the agent_size to allow for rect none square agents
+local agent_size_shift = {0,2}
 -- create grid from map
 local grid = madtulip_pf.new_grid(map);
 -- create jump connection tree
@@ -54,6 +48,10 @@ print "--- Annotating Grid ---"
 madtulip_pf.annotateGrid()
 
 print "--- Searching Path ---"
+-- start and end of path to find
+local startx, starty = 1,2
+local endx, endy     = 5,7
+-- find a path from start to end
 local path = madtulip_pf.getPath(startx, starty, endx, endy, agent_size, agent_size_shift)
 
 -- Pretty-printing the results
