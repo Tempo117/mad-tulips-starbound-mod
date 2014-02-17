@@ -18,6 +18,10 @@ madtulip_pf.PossibleJumpTrajectories ={
     -- the end node where the player hits ground again.
     -- the x and y values are relative offsets to the start of the rump. so root is allways at 0,0.
     -- a jump can be left at any point of the trajectory.
+	
+	-- the measured trajectories work with math.floor values. so even a 1.99 is reduced to a 1.
+	-- we thus need to have a 1 bigger collision box in x and y direction then used by the actual player.
+	-- this mean the NPC cant reach some places the player can
 
     {{x = 0, y = 0},{x = 0, y = 1},{x = 0, y = 2},{x = 0, y = 3},{x = 0, y = 4},{x = 0, y = 5},{x = 1, y = 5},{x = 2, y = 5}}
 --[[

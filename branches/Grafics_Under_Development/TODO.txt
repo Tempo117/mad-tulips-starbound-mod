@@ -4,6 +4,7 @@
 Doors
 - forcefield door horizontal/vertical colorable (all colors) (mid priority)
 - door sector unlock human not done at all
+- make all doors unprintable (3D)
 ----------------------------------------------------------------------------------------------------
 Crew (mid to low priority)
 - 2 to 3 resting objects like fridges ? and the like

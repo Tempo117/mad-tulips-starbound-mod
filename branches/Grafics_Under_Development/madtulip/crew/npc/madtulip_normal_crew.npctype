@@ -15,6 +15,7 @@
 	"/crew/scripts/madtulip_crew_interact.lua",
 	"/crew/scripts/madtulip_crew_occupation.lua",
 	"/crew/scripts/madtulipLocation.lua",
+/*
 
 	//"/crew/scripts/tasks/madtulip_task_heal_npc_or_player.lua",
 	//"/crew/scripts/tasks/madtulip_task_fix_hull_breach.lua",
@@ -27,7 +28,7 @@
 	"/crew/scripts/states/converseState.lua",
 	"/crew/scripts/states/sitState.lua",
 	"/crew/scripts/states/sleepState.lua",
-	
+*/
     "/npcs/timers.lua",
     "/scripts/sensors.lua",
 	"/scripts/stateMachine.lua",
