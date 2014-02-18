@@ -1,6 +1,6 @@
 {
   "name" : "madtulip",
-  "version" : "Beta v. Furious Koala",
+  "version" : "Beta v. Enraged Koala",
   "path" : ".",
   "dependencies" : ["Modules in a Box"],
   "metadata": {
