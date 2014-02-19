@@ -1,13 +1,10 @@
--- TODO: check for shipworld using teleporter as in the tech
--- wire them ? con: cant set up on starter ship
-
 function init()
 	-- Make our object interactive (we can interract by 'Use')
 	entity.setInteractive(true);
 	
 	-- Change animation for state "normal_operation"
 	--entity.setAnimationState("DisplayState", "no_vent");
-	entity.setAnimationState("DisplayState", "offline");
+	entity.setAnimationState("DisplayState", "normal_operation");
 	
 	-- globals
 	madtulip = {}
@@ -265,7 +262,6 @@ function Flood_Fill(cur_Position)
 		madtulip.Flood_Data_Matrix.Max_Nr_of_Iterations_happend  = 1; -- set flag
 		madtulip.Flood_Data_Matrix.Stop_Iteration                = 1; -- break iteration
 	end
-	
 	-- ----- so far we are good, take next step in the state machine -----
 	-- increment iteration step
 	madtulip.Flood_Data_Matrix.Cur_Iteration = madtulip.Flood_Data_Matrix.Cur_Iteration + 1;
@@ -274,11 +270,11 @@ function Flood_Fill(cur_Position)
 	--  ,if not then check if there is a background block
 	--  ,if also not its a breach.
 	-- write the gathered info to "madtulip.Flood_Data_Matrix.Content[x,y]" which is the data object used further on
-	if (world.material(cur_Position, "foreground") == nil) and(not(world.pointCollision(cur_Position, true)) )then
+	if (world.material(cur_Position, "foreground") == false)  and(not(world.pointCollision(cur_Position, true)) )then
 		-- nil foreground block found. This is our target.
 		set_flood_data_matrix_content(cur_Position[1],cur_Position[2],madtulip.Flood_Data_Matrix.target_color)
 		-- if this is also a nil background block we have a breach that we might or might not be aware of yet
-		if  world.material(cur_Position, "background") == nil then
+		if  world.material(cur_Position, "background") == false then
 		
 			-- its a bachground breach that we have not been aware of!
 			madtulip.Flood_Data_Matrix.Nr_of_Breaches = madtulip.Flood_Data_Matrix.Nr_of_Breaches+1;-- inc counter for breaches
@@ -349,7 +345,14 @@ function set_flood_data_matrix_content (X,Y,Content)
 end
 
 function is_shipworld()
-	if (world.info() == nil) then return true else return false end
+	local info = world.info()
+	if info.name ~= ""then
+		-- planet
+		return false
+	else
+		-- shipworld
+		return true
+	end
 end
 
 function Broadcast_Hull_Breach_Task(breach_pos,counter_breaches)
@@ -576,8 +579,8 @@ function Add_Breach_fixing_Info_to_Cluster(args)
 					end
 				end
 				-- if no fore, no back and not part of cluster then its space.
-				if ((world.material(cur_pos,"foreground") == nil) and
-				    (world.material(cur_pos,"background") == nil) and
+				if ((world.material(cur_pos,"foreground") == false) and
+				    (world.material(cur_pos,"background") == false) and
 				    (cur_pos_is_part_of_cluster == false)) then
 				   has_space_next_to_it = true
 			   end

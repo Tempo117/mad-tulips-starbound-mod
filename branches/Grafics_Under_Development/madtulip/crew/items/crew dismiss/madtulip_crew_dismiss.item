@@ -1,7 +1,0 @@
-{
-  "itemName" : "madtulip_crew_dismiss",
-  "rarity" : "Uncommon",
-  "inventoryIcon" : "madtulip_crew_dismiss.png",
-  "description" : "Permenently dismisses a Crew member.",
-  "shortdescription" : "Crew Dismisser"
-}

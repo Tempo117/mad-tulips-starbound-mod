@@ -97,10 +97,10 @@ function madtulip_task_fix_hull_breach.main_Task(Task)
 	local all_breaches_closed = true
 	for cur_breach = 1,Task.Var.Breach_Cluster.size,1 do
 		-- check if background is placed
-		if (world.material(Task.Var.Breach_Cluster.Cluster[cur_breach],"background") == nil) then all_breaches_closed = false end
+		if (world.material(Task.Var.Breach_Cluster.Cluster[cur_breach],"background") == false) then all_breaches_closed = false end
 		-- check if foreground is placed
 		if (Task.Var.Breach_Cluster.place_foreground[cur_breach]) then
-			if (world.material(Task.Var.Breach_Cluster.Cluster[cur_breach],"foreground") == nil) then all_breaches_closed = false end
+			if (world.material(Task.Var.Breach_Cluster.Cluster[cur_breach],"foreground") == false) then all_breaches_closed = false end
 		end
 	end
 	

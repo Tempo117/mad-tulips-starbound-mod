@@ -2,7 +2,7 @@
   "objectName" : "madtulip_crewconsole",
   "rarity" : "Common",
 
-  "objectType" : "interactable",
+  //"objectType" : "interactable",
   "interactAction" : "OpenCraftingInterface",
   "interactData" : {
     "config" : "/objects/crewconsole/madtulip_crewconsole.config",

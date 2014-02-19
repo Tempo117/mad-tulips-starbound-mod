@@ -60,7 +60,7 @@ function determine_if_ZERO_gravity_should_end(Range)
 			-- Y coordinate where to get data
 			cur_abs_Position[2] = Origin[2] + cur_Y;
 			
-			if ((world.material(cur_abs_Position, "foreground") == nil) and (world.material(cur_abs_Position, "background") == nil)) then
+			if ((world.material(cur_abs_Position, "foreground") == false) and (world.material(cur_abs_Position, "background") == false)) then
 				-- write the findings at this position to output variable
 				Zero_gravity_ends = false;
 			end
@@ -89,7 +89,8 @@ function determine_if_ZERO_gravity(Range)
 	end
 ]]
 	-- return if we are on a planet
-	if (world.info() ~= nil) then return false end
+	local info = world.info()
+	if info.name ~= ""then return false end
 	
 	-- we assume Zero gravity unless we find blocks in the vicinity
 	local Zero_gravity = true;
@@ -102,7 +103,7 @@ function determine_if_ZERO_gravity(Range)
 			-- Y coordinate where to get data
 			cur_abs_Position[2] = Origin[2] + cur_Y;
 			
-			if not((world.material(cur_abs_Position, "foreground") == nil) and (world.material(cur_abs_Position, "background") == nil)) then
+			if not((world.material(cur_abs_Position, "foreground") == false) and (world.material(cur_abs_Position, "background") == false)) then
 				-- write the findings at this position to output variable
 				Zero_gravity = false;
 			end

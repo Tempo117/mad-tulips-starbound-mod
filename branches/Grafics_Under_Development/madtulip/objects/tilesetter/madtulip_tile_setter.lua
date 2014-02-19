@@ -138,6 +138,7 @@ end
 function get_tileset_mat_type(cur_F_mat)
 	-- returns the mat type of the mat (human,glitch ..) or nil if unknown
 	if cur_F_mat == nil then return nil end
+	if cur_F_mat == false then return nil end
 	
 	if string.find(cur_F_mat, "madtulip_apex3_") then return "apex3" end
 	if string.find(cur_F_mat, "madtulip_apex2_") then return "apex2" end

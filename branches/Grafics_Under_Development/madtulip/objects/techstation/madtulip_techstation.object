@@ -2,7 +2,7 @@
   "objectName" : "madtulip_techstation",
   "rarity" : "Common",
 
-  "objectType" : "interactable",
+  //"objectType" : "interactable",
   "interactAction" : "OpenTech3DPrinterDialog",
 
   "category" : "decorative",

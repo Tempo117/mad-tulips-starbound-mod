@@ -2,7 +2,7 @@
   "objectName" : "madtulip_shipstation",
   "rarity" : "Common",
 
-  "objectType" : "interactable",
+  //"objectType" : "interactable",
   "interactAction" : "OpenCraftingInterface",
   "interactData" : {
     "config" : "/objects/ship station/madtulip_shipstation.config",

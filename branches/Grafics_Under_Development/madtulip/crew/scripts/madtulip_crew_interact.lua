@@ -57,14 +57,6 @@ interact = function(args)
 	elseif world.entityHandItem(args.sourceId, "primary") == "madtulip_crew_beam" then
 		-- Beams crew up (spawns a Crew beam beacon that will unpack into the crew)
 	elseif world.entityHandItem(args.sourceId, "primary") == "madtulip_crew_debug_menue_1" then
-		local run = true
-		local Jump_Distance = 8
-		local Move_Distance = 10
-		entity.say("Jumping!")
-		entity.jump()
-		entity.move(Move_Distance, run)
-		self.pathing.jumpHoldTimer = Jump_Distance * 0.5
-
 		-- Open some Debug menue for testing
 		--[[
 		-- merchantstate.lua

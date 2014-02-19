@@ -137,7 +137,7 @@ function madtulipLocation.Position_has_Player_sized_Background(Position)
 			cur_pos[2] = Position[2] + Y
 			-- world.logInfo("X:" .. cur_pos[1] .. "Y:" .. cur_pos[2])
 			cur_mat = world.material(cur_pos,"background")
-			if (cur_mat == nil) then
+			if (cur_mat == false) then
 				-- world.logInfo("BLOCKED: " .. cur_mat)
 				cur_position_has_Player_sized_Background = false
 			end
@@ -194,7 +194,7 @@ function madtulipLocation.Find_Pathable_Positions_in_BB(BB,Additional_Blocked_Po
 					cur_mat_pos[1] = X+X_BB
 					cur_mat_pos[2] = Y+Y_BB
 					cur_mat = world.material(cur_mat_pos,"foreground")
-					if (cur_mat ~= nil) then
+					if (cur_mat ~= false) then
 						--world.logInfo("--BLOCKED at X:" .. cur_mat_pos[1] .. "Y:" .. cur_mat_pos[2] .. "mat: " .. cur_mat)
 						cur_position_is_Pathable = false
 					end
@@ -264,7 +264,7 @@ function madtulipLocation.Find_Pathable_Above_Floor_Positions_in_BB(BB)
 				cur_pos[2] = cur_position[2] + Y
 				--world.logInfo("X:" .. cur_pos[1] .. "Y:" .. cur_pos[2])
 				cur_mat = world.material(cur_pos,"foreground")
-				if (cur_mat ~= nil) then
+				if (cur_mat ~= false) then
 					--world.logInfo("BLOCKED: " .. cur_mat)
 					cur_position_is_Pathable_Above_Floor = false
 				end
@@ -311,7 +311,7 @@ function madtulipLocation.Find_Block_above_floor(position,max_distance)
 		mat_at_belowoffset = world.material(pos_mat_at_belowoffset,"foreground")
 		--if (mat_at_offset ~= nil) then      world.logInfo("-mat_at_offset" .. mat_at_offset) end
 		--if (mat_at_belowoffset ~= nil) then world.logInfo("-mat_at_belowoffset" .. mat_at_belowoffset) end
-		if mat_at_offset == nil and mat_at_belowoffset ~= nil then
+		if mat_at_offset == false and mat_at_belowoffset ~= false then
 			-- we have found a block above floor
 			-- return its coordinates
 			return_position[1] = position[1] + offset[1]

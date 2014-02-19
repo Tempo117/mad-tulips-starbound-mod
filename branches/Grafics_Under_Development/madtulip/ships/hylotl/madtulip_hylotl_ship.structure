@@ -401,7 +401,7 @@
       "backgroundBlock": true,
       "backgroundMat": "madtulip_bottom_decoration",
       "object": "madtulip_captainschair",
-      "objectDirection": "left",
+      "objectDirection": "right",
       "objectParameters": {
         "unbreakable": false
       },
