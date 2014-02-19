@@ -4,7 +4,8 @@
   "objectType" : "wire",
 
   "category" : "door",
-  "price" : 1000,
+  "price" : 10,
+  "printable" : false,
   "description" : "A reinforced space-grade hatch that can be placed dynamically.",
   "shortdescription" : "Floran Ship Door",
   "race" : "floran",
