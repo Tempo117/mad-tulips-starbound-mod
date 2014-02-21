@@ -59,7 +59,7 @@ local path = madtulip_pf.getPath(startx, starty, endx, endy, agent_size, agent_s
 if path then
     print(('Path found! Length: %.2f'):format(#path._nodes))
     for count,node in pairs(path._nodes) do
-        print(('Step: %d - x: %d - y: %d - g: %f - f: %f - h: %f'):format(count, node._x, node._y, node._g, node._f, node._h))
+        print(('Step: %d - x: %d - y: %d - g: %f - f: %f - h: %f - j: %f'):format(count, node._x, node._y, node._g, node._f, node._h, node._j))
     end
 else
     print('NO Path found!')

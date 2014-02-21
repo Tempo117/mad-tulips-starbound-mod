@@ -49,19 +49,30 @@ end
 function madtulip_pf.Jump_EUCLIDIAN(neighbour, node)
     -- this block checks if we are jumping
     -- if thats not the case its just the normal euclidian costs
-    local jumping = false
-    if madtulip_pf.NodeIsInAir(neighbour) or madtulip_pf.NodeIsInAir(node) then
-        jumping = true
+    local jump_path_validation_result = {}
+    jump_path_validation_result.Jump_ID = 0
+    local still_in_air = madtulip_pf.NodeIsInAir(neighbour) or madtulip_pf.NodeIsInAir(node)
+    local might_still_be_on_a_jump_trajectory = still_in_air or (node._j ~= 0)
+    if still_in_air then
         -- we are jumping or falling
         -- check if there is a possible jump trajectory leading to this point
         local jump_path = madtulip_pf.tracebackJump (neighbour, node)
-        local jump_path_is_valid = madtulip_pf.validate_jump_path(jump_path)
-        if not jump_path_is_valid then return math.huge end -- this jump is no possible way
+        jump_path_validation_result = madtulip_pf.validate_jump_path(jump_path)
+        if not jump_path_validation_result.valid then
+            if (still_in_air) then
+                -- this jump is not possible
+                return {Cost = math.huge,
+                        Jump_ID = jump_path_validation_result.Jump_ID }
+            end
+            -- we might have landed already
+        end
     end
 
     -- return same cost as euclidian if jump can be done !
     -- thats important as euclidian is used alone elsewhere.
-    return madtulip_pf.EUCLIDIAN(neighbour, node)
+    -- return madtulip_pf.EUCLIDIAN(neighbour, node)
+    return {Cost = madtulip_pf.EUCLIDIAN(neighbour, node),
+            Jump_ID = jump_path_validation_result.Jump_ID}
 end
 
 ------------------------------Grid--------------------------------------------
@@ -211,7 +222,7 @@ end
 function madtulip_pf.reset_Node(x,y)
     local Node = madtulip_pf.get_preprocessed_NodeAt(x,y)
     -- overwrite its parameters with default
-    Node._g, Node._h, Node._f = nil, nil, nil
+    Node._g, Node._h, Node._f, Node._j = nil, nil, nil, nil
     Node._opened, Node._closed, Node._parent = nil, nil, nil
     -- write it back to global structure
     madtulip_pf.finder._grid._nodes[Node._y][Node._x] = Node
@@ -272,6 +283,12 @@ function madtulip_pf.new_JumpMap (Possible_Jump_Trajectories)
                 print ('X: ' .. x .. ' Y: ' .. y .. ' already existing.')
             end
 
+            -- add jump ID to node
+            if (LastJumpNode.c[x][y].id == nil) then
+                LastJumpNode.c[x][y].id = {}
+            end
+            LastJumpNode.c[x][y].id[#LastJumpNode.c[x][y].id + 1] = idx_cur_JT
+
             -- set pointer to created or already existing last node
             LastJumpNode = LastJumpNode.c[x][y]
         end
@@ -279,17 +296,42 @@ function madtulip_pf.new_JumpMap (Possible_Jump_Trajectories)
     return RootJumpNode
 end
 
--- This is called by the heuristics. It determines of the jump path that has been taken since liftoff until current node.
+-- This is called by the heuristics. It determines the jump path that has been taken since liftoff until current node.
 function madtulip_pf.tracebackJump (neighbour, node)
     local inv_jump_path = {}
+    local was_airborne_once = false
     table.insert(inv_jump_path,1,neighbour) -- current point in jump
     print (' --- Jump Trajectory traceback --- ')
     print ('(From node    X: ' .. node._x .. ' Y: ' .. node._y .. ')')
     print ('to node       X: ' .. neighbour._x .. ' Y: ' .. neighbour._y)
     -- tracback jump tracectory up to the node where the player was on ground before jumping
     while true do
+-- TODO: the old uncommented condition doesnt trace jumps ends which are not in air, but it should.
+-- The place could be just slightly touching a block that has ground instead of landing there.
+-- It would be good to trace back node._j ~= 0 instead, if thats available here already
+        --if (madtulip_pf.NodeIsInAir(node) and node._parent) then
+        --[[
+        local still_on_a_jump_trajectory = false
         if (madtulip_pf.NodeIsInAir(node) and node._parent) then
+            --still_on_a_jump_trajectory = true
+            local parent = madtulip_pf.get_preprocessed_NodeAt(node._parent[1],node._parent[2])
+            if (parent._j ~= 0) then
+                still_on_a_jump_trajectory = true
+            end
+        end
+        if (still_on_a_jump_trajectory) then
+            --]]
+--[[
+        if (madtulip_pf.NodeIsInAir(node)) then
+            was_airborne_once = true
+        end
+        -- after we have been in the air once it is a constant condition be remain in air
+        -- if we hit ground next we touched ground again (the start of the jump)
+        if (node._parent) and (not((not madtulip_pf.NodeIsInAir(node)) and was_airborne_once)) then
+--]]
+        if (node._parent) and madtulip_pf.NodeIsInAir(node) then
             -- trace path to jump start
+            node._a = madtulip_pf.NodeIsInAir(node)
             table.insert(inv_jump_path,1,node)
             print ('adding        X: ' .. node._x .. ' Y: ' .. node._y)
             node = madtulip_pf.get_preprocessed_NodeAt(node._parent[1],node._parent[2])
@@ -314,7 +356,7 @@ function madtulip_pf.validate_jump_path(jump_path)
     local rootnode = jump_path[1]
 
     -- if jump doesnt start on ground its not valid
-    if madtulip_pf.NodeIsInAir(rootnode) then return false end
+    if madtulip_pf.NodeIsInAir(rootnode) then return {valid = false,Jump_ID = 0} end
 
     -- this is a linked tree containing all possible jumps.
     -- its a list with relative offset to jump start in each node
@@ -335,30 +377,63 @@ function madtulip_pf.validate_jump_path(jump_path)
 
         -- all jumps are just defined from left to right. this block allows mirroring all those jumps
         -- once the jump has decided for a certain direction it has to stay in that direction or will not be valid
-        if (x > 0) and (sign < 0) then return false end -- tried to change jump direction, not possible
-        if (x < 0) and (sign > 0) then return false end -- tried to change jump direction, not possible
+        if (x > 0) and (sign < 0) then return {valid = false,Jump_ID = 0} end -- tried to change jump direction, not possible
+        if (x < 0) and (sign > 0) then return {valid = false,Jump_ID = 0} end -- tried to change jump direction, not possible
         if (x > 0) then sign = 1 end -- set sign of jump (this is a jump to the right)
         if (x < 0) then sign = -1 end -- set sign of jump (this is a jump to the right)
         if (sign ~= 0) then x = sign*x end
 
         -- check if that offset is present as one of the possible next nodes in the jump tree
+        local cur_node_exists_in_jump_tree = nil
         if cur_Possible_JumpConnection.c[x] ~= nil then
             if cur_Possible_JumpConnection.c[x][y] ~= nil then
                 -- This is a possible jump trajectory so far -> go to the next node
                 cur_Possible_JumpConnection = cur_Possible_JumpConnection.c[x][y]
                 print ('Jump node at X: ' .. x .. ' Y: ' .. y .. ' existed in tree.')
+                cur_node_exists_in_jump_tree = true
             else
                 -- thats not a possible jump because the relative y-offset of this part of the trajectory was no valid option
                 print ('Jump node at X: ' .. x .. ' Y: ' .. y .. ' DID NOT exist in tree (y is nil).')
-                return false
+                --return {valid = false,Jump_ID = 0 }
+                cur_node_exists_in_jump_tree = false
             end
         else
             -- thats not a possible jump because the relative x-offset of this part of the trajectory was no valid option
             print ('Jump node at X: ' .. x .. ' Y: ' .. y .. ' DID NOT exist in tree (x is nil).')
-            return false
+            --return {valid = false,Jump_ID = 0 }
+            cur_node_exists_in_jump_tree = false
+        end
+
+        if (not cur_node_exists_in_jump_tree) then
+            -- cur node is not part of a trajectory
+            if (jump_path[idxx_cur_node]._a) then
+                -- we are still in the air -> invalid jump
+                return {valid = false,Jump_ID = 0 }
+            else
+                -- we are already on ground or shortly above it. its not clear if we touched ground yet.
+                -- if the parent of the current node has any neighbour that would continue the jump trajectory
+                -- which is not blocked, then we didnt fully touch down so far -> this is an invalid jump
+                if (0) then
+                    return {valid = false,Jump_ID = 0 }
+                end
+            end
+        end
+        -- here we need to check if there would be another none blocked possible
+        -- continuation of the jump trajectory if thats the case this jump is not valid
+        if ((not cur_node_exists_in_jump_tree) and jump_path[idxx_cur_node]._a) then
+            -- if the none existing node is still in the air this jump is not valid
+            return {valid = false,Jump_ID = 0 }
         end
     end
-    return true
+
+    -- get the Jump id of the last node in path (which is the last point in time of the jump)
+    -- we use [1] as one of all possible jumps that reach here.
+    -- The jumps defined first in madtulip_pf.PossibleJumpTrajectories are thus prefered to be executed
+    -- among jumps of the same cost.
+    local JumpID = cur_Possible_JumpConnection.id[1]
+    print ('Jump ID: ' .. JumpID)
+
+    return {valid = true,Jump_ID = JumpID}
 end
 
 --------------------------------Pathfinder------------------------------------------
@@ -441,7 +516,8 @@ function madtulip_pf.ASTAR(startNode, endNode, clearance, clearance_size_shift)
     --startNode._h = madtulip_pf.finder._heuristic(endNode, startNode)
     startNode._h = madtulip_pf.EUCLIDIAN(endNode, startNode)
     startNode._f = startNode._g + startNode._h
-    --openList:push(startNode)
+    startNode._j = 0
+        --openList:push(startNode)
     madtulip_pf.push_to_heap(startNode)
     startNode._opened = true
     -- store updated node
@@ -500,12 +576,12 @@ end
 
 -- Updates G-cost
 function madtulip_pf.computeCost(node, neighbour, clearance)
-    local mCost = madtulip_pf.finder._heuristic(neighbour, node)
-    if (neighbour._g == nil) or (node._g + mCost < neighbour._g) then
+    local Heuristic = madtulip_pf.finder._heuristic(neighbour, node)
+    if (neighbour._g == nil) or (node._g + Heuristic.Cost < neighbour._g) then
         neighbour._parent = {node._x,node._y}
-        neighbour._g = node._g + mCost
+        neighbour._g = node._g + Heuristic.Cost
+        neighbour._j = Heuristic.Jump_ID
     end
-
     return neighbour
 end
 
