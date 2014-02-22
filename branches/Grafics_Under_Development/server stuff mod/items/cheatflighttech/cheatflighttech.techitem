@@ -1,0 +1,10 @@
+{
+  "itemName" : "cheatflighttech",
+  "rarity" : "Legendary",
+  "inventoryIcon" : "flight.png",
+  "description" : "Unlocks the Creative Flight tech.",
+  "shortdescription" : "Creative Flight",
+  "inspectionKind" : "tech",
+
+  "techModule" : "cheatflighttech.tech"
+}
