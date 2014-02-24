@@ -5,8 +5,13 @@ Bugreports:
 - MIAB:
 I don't understand what just happened. I did everything like you did in your video, for modules in a box. I scanned an entire science laboratory, the scanner took all of it. and gave me nothing. I have no objects anywhere that let me re-print this building. How do I get a printing device to print this with? Where did it save the schematic to? :/
 Also, level 4 BP "BP - Tier 4 Landing Pod" drops some items after it finished, even though I had flattened and cleaned all the land before printing. It drops: 35 Metal Object, 1 Ship Navigation Console, 47 Wall Panel, 8 Perfectly Generic Item, and a Pixel Printer.
-I will verify this when I build another tomorrow. I'd still like to know what happened to my apex lab that I copied in full and how I'm supposed to build it. 
+I will verify this when I build another tomorrow. I'd still like to know what happened to my apex lab that I copied in full and how I'm supposed to build it.
 
+Ideas:
+- blacklist for .materials like wood that do not function as hull and produce breaches
+- destroy blacklisted blocks on warp
+- no warp on hullbreach
+- other conditions for warp
 
 
 ----------------------------------------------------------------------------------------------------
