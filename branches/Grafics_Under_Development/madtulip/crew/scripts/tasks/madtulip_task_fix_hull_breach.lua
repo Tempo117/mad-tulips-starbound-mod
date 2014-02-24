@@ -5,9 +5,24 @@ function madtulip_task_fix_hull_breach.can_PickTask(Task)
 	-- If this returns true the NPC will pick this Task and start to execute it.
 	-- So here you should check for the currents NPC Occupation i.e. to see if hes able to do it.
 	--world.logInfo("madtulip_task_fix_hull_breach.can_PickTask()")
-	
+
+	-- check if I have the command to do this tasks
+	local has_command_to_do_the_task = false
+	for _idx, _val in pairs(storage.Command_Task_Name) do
+		if (storage.Command_Task_Name[_idx] == Task.Header.Name) and (storage.Command_Perform[_idx]) then
+			has_command_to_do_the_task = true
+		end
+	end
+	if not has_command_to_do_the_task then return false end -- kick out because performing this task is disabled
+
 	-- Check if I have the right Occupation to do the job
-	if not((Task.Header.Occupation == "all") or (Task.Header.Occupation == storage.Occupation)) then return false end
+	if not(   (Task.Header.Occupation == "all")
+	       or (Task.Header.Occupation == storage.Occupation)
+		   ) then
+	   return false
+   end
+   
+   -- ok we can pick that task
 
 	--entity.setItemSlot("primary", "beamaxe")
 	--entity.setItemSlot("alt", nil)

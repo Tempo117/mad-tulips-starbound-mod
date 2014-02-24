@@ -1,7 +1,14 @@
 function Init_Crew_Data()
 	if storage.Occupation == nil then storage.Occupation = "Deckhand" end
 	if storage.colorIndex == nil then storage.colorIndex = 1 end
-	--if storage.shouldDie == nil then storage.shouldDie = false end
+	if storage.Command_Texts == nil then
+		storage.Command_Texts = {}
+		storage.Command_Perform = {}
+		storage.Command_Task_Name = {}
+		storage.Command_Texts[1] = "Not available."
+		storage.Command_Perform[1] = false
+		storage.Command_Task_Name[1] = ""
+	end
 	
 	Set_Occupation_Cloth()
 end

@@ -3,7 +3,7 @@
   "rarity" : "Common",
   "inventoryIcon" : "madtulip_human3_tileset_icon.png",
   "dropCollision" : [-2.5, -2.0, 2.5, 2.0],
-  "description" : "Human Spaceship Hull Tileset 2",
-  "shortdescription" : "Human Spaceship Hull Tileset 2",
+  "description" : "Human Spaceship Hull Tileset 3",
+  "shortdescription" : "Human Spaceship Hull Tileset 3",
   "materialId" : 21492
 }

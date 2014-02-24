@@ -20,5 +20,12 @@ function onInteraction(args)
 end
 
 function is_shipworld()
-	if (world.info() == nil) then return true else return false end
+	local info = world.info()
+	if info.name ~= ""then
+		-- planet
+		return false
+	else
+		-- shipworld
+		return true
+	end
 end

@@ -41,14 +41,21 @@ interact = function(args)
 			Command       = "Set_Occupation",
 			Occupation    = "Deckhand"
 		 })
+	elseif world.entityHandItem(args.sourceId, "primary") == "madtulip_crew_command_one" then
+		-- Set Deckhand occupation (basic guy)
+		self.state.pickState({
+			sourceId      = args.sourceId,
+			Issue_Command = true,
+			Command       = "toggle_crew_command",
+			command_nr    = 1
+		 })
 	elseif world.entityHandItem(args.sourceId, "primary") == "madtulip_crew_info" then
 		-- Show Crew information
-		--world.logInfo("Show information for ID:" .. entity.id())
-		--world.logInfo("Species: " .. entity.species())
 		return {"ShowPopup",{message =
 				"^green;Name: ^white;" .. world.entityName(entity.id()) .. "\n" ..
 				"^green;Species : ^white;" .. entity.species() .. "\n" ..
-				"^green;Occupation: ^white;" .. storage.Occupation
+				"^green;Occupation: ^white;" .. storage.Occupation .. "\n" ..
+				"^green;Command One: ^white;" .. storage.Command_Texts[1]
 				}}
 	elseif world.entityHandItem(args.sourceId, "primary") == "madtulip_crew_dismiss" then
 		-- Dismiss Crew

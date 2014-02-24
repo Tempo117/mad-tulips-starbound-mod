@@ -100,7 +100,7 @@ function main_threaded()
 					breach_pos[counter_breaches] = Breach_Location;
 				end
 				-- Spawn a Task for each breach
--- Broadcast_Hull_Breach_Task(breach_pos,counter_breaches)
+				Broadcast_Hull_Breach_Task(breach_pos,counter_breaches)
 				-- limit theire number
 				if (counter_breaches > madtulip.maximum_particle_fountains) then
 					-- spawn them (limited amount)

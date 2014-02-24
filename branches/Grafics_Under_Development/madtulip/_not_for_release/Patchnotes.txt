@@ -1,0 +1,33 @@
+- nerfed Mining Pod damage from 3.25 down to 2.0 as we got feedback it was overpowered
+- reduced Plating costt to approx 66% resulting in overall cost reduction as we got feedback the things where to costly
+- reduced ammount of alien meat required for plastics as we got feedback that hunting that was tidious
+- life support system workd only on shipworld for now (as there is atmosphere on (most) planets
+- initial teleporter is breakable now (need to start a new ship for that)
+- new alternate tilesets for all races
+- support for some additional races
+- automatic gun turrets styles for each race
+- all animated decorative gun turrets are not top and bottom placeable
+- all our doors are now also placeable horizontal
+- filled up all left standard ship objects like heat absorbers, comm stations, fins
+- life support code speedup and support for horizontal doors
+- shipstation gfx reworked
+- drill for mining pod animated
+
+- Crew
+- crafting station: Crew Console is craftable at tier2 with shipstation
+- crafting station sells crew NPC spawners as well als a info and some promotion items
+- crew spawner is to be placed on the ground and used (on your ship - wont work on planets (we do that later))
+- promotion and info items are to be equiped and then the crew is to be used in order to take effect (we cant code interaction menue buttons yet)
+
+- Crew behavior
+What you currently see is the crew just hanging around doing theire thing. Inspired by dwarfen fortress we
+will add more things the crew might do on the ship. We already wrote a quite large framework to support
+such crew behavior and are currently working on pathfinding for that system (the vanilla pathfind is just bad as you noticed already)
+
+So for now they have 2 phases of the day: rest and work
+- during rest they seach for items that they can rest with/on. those would include:
+- during work they search for items that fit theyre job
+(i.e. a medic like to hang at a medical tube or table while a marine likes to hang near a weapons rack)
+
+- you can chat with them for some prebuild sentences (if you feel writy send us some more :)
+- they also chat with eachother, sit, sleep and whatnot to look busy.

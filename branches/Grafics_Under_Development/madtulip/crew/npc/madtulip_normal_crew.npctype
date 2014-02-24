@@ -17,7 +17,7 @@
 	"/crew/scripts/madtulipLocation.lua",
 
 	//"/crew/scripts/tasks/madtulip_task_heal_npc_or_player.lua",
-	//"/crew/scripts/tasks/madtulip_task_fix_hull_breach.lua",
+	"/crew/scripts/tasks/madtulip_task_fix_hull_breach.lua",
 	
 	"/crew/scripts/madtulip_TS.lua",
 	

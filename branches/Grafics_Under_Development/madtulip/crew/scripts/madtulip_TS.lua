@@ -230,7 +230,7 @@ function madtulip_TS.Update_Known_Tasks_Properties(Known_Tasks)
 			Msg_Tasks.Tasks = {}
 			Msg_Tasks.size = 1
 			Msg_Tasks.Tasks[1] = storage.Known_Tasks.Tasks[idx_cur_Stored_Task]
-			world.logInfo("Broadcast that i received Global. news" .. entity.id())
+			--world.logInfo("Broadcast that i received Global. news" .. entity.id())
 			madtulip_TS.Broadcast_Tasks(Msg_Tasks)
 		end
 	end

@@ -1,18 +1,15 @@
 Bugreports:
-- when i get all the Alloy Upgrades And Open The Ship Crafting Station i dont see any tier 2+ landing pod upgrades 
-- teleporter -> home planet broken ?
-- Hyloti Scout Tech vehicle, sound doesnt stop
+- Hyloti Scout Tech vehicle sound doesnt stop on exit vehicle. probably a starbound code bug
 - MIAB:
 I don't understand what just happened. I did everything like you did in your video, for modules in a box. I scanned an entire science laboratory, the scanner took all of it. and gave me nothing. I have no objects anywhere that let me re-print this building. How do I get a printing device to print this with? Where did it save the schematic to? :/
 Also, level 4 BP "BP - Tier 4 Landing Pod" drops some items after it finished, even though I had flattened and cleaned all the land before printing. It drops: 35 Metal Object, 1 Ship Navigation Console, 47 Wall Panel, 8 Perfectly Generic Item, and a Pixel Printer.
 I will verify this when I build another tomorrow. I'd still like to know what happened to my apex lab that I copied in full and how I'm supposed to build it.
 
 Ideas:
-- blacklist for .materials like wood that do not function as hull and produce breaches
+- blacklist for .materials like wood that do not function as hull and produce breaches (or white list ?)
 - destroy blacklisted blocks on warp
 - no warp on hullbreach
 - other conditions for warp
-
 
 ----------------------------------------------------------------------------------------------------
 -----------------------------------------NEXT UPDATE------------------------------------------------
@@ -20,7 +17,6 @@ Ideas:
 Doors
 - forcefield door horizontal/vertical colorable (all colors) (mid priority)
 - door sector unlock human not done at all
-- make all doors unprintable (3D)
 ----------------------------------------------------------------------------------------------------
 Crew (mid to low priority)
 - 2 to 3 resting objects like fridges ? and the like
@@ -80,16 +76,21 @@ Older ship parts
 -----------------------------------------CODE-------------------------------------------------------
 ----------------------------------------------------------------------------------------------------
 -Crew
+-- hull breach: -> "i can handle that" -> npc doesnt move. where does it hang ? happens sometimes.
 -- heal task is broken due to new ROI handling
 -- think about a way to do live target_position tracking with the current implementation -> pass target_entity ID to ROIState?
--- include A* pathfinding (jumper lib ?) at least to outrule locations that cant be reached at all on a birdview grid
 -- test multiple NPCs task distribution
 -- task communication based on sight instead of 50 blocks braodcast range
 --- maybe also additional "auditory" bubble of a fixed radius as is now
+-- floodfill breach cluster interior -> additional breache locations so that larger breaches are not "outlined" by foreground walls but filled with background instead
+
+-- include A* pathfinding (jumper lib ?) at least to outrule locations that cant be reached at all on a birdview grid
 -- get movement physics functions
 --- jumping trajectory
 --- player and npc exact collision box
 -- some function i.e. from LS should be moved to madtulipLocation.lua instead
--- use grid dataformat from jumper instead of array[]{x,y} where possible
--- build grid for jumper function in madtulipLocation
--- floodfill breach cluster interior -> additional breache locations so that larger breaches are not "outlined" by foreground walls but filled with background instead
+
+----------------------------------------------------------------------------------------------------
+----------------------------------------Currently not solvable:-------------------------------------
+----------------------------------------------------------------------------------------------------
+- teleporter -> home planet broken
