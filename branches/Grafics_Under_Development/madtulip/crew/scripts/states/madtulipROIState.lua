@@ -1,8 +1,9 @@
 madtulipROIState = {}
 
 function madtulipROIState.enterWith(args)
+	--world.logInfo("ROI State enterWith() attempt")	
 	if (args.Statename ~= "madtulipROIState") then return nil end
-	--world.logInfo("ROI State enterWith()")	
+	--world.logInfo("ROI State enterWith() success")	
 	madtulipROIState.Init()
 	
 	-- save input parameters
@@ -15,10 +16,13 @@ function madtulipROIState.enterWith(args)
 end
 
 function madtulipROIState.enter()
+	--world.logInfo("ROIState enter() attempt")
 	if not isTimeFor("madtulipROI.timeOfDayRanges") then
+		-- returning a cooldown doesnt allow to pickState this which is needed by some Tasks
+		--return nil, entity.configParameter("madtulipROI.cooldown")
 		return nil, entity.configParameter("madtulipROI.cooldown")
 	end
-	--world.logInfo("ROIState enter()")
+	--world.logInfo("ROIState enter() success")
 	-- randomize the order the states are beeing executed in
 	self.state.shuffleStates()
 	
@@ -53,8 +57,9 @@ function madtulipROIState.update(dt, stateData)
 	-- return if wander is on cooldown
 	stateData.timer = stateData.timer - dt
 	if stateData.timer < 0 then
-		--world.logInfo("COOLDOWN")
-		return true, entity.configParameter("madtulipROI.cooldown", nil)
+		--world.logInfo("TIMEOUT")
+		--return true, entity.configParameter("madtulipROI.cooldown", nil)
+		return true -- timeout
 	end
 
 	madtulipROIState.update_timers(stateData,dt)

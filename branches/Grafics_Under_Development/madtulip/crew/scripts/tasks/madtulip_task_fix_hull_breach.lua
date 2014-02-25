@@ -34,7 +34,7 @@ end
 
 function madtulip_task_fix_hull_breach.main_Task(Task)
 	-- the main of the Task which is called all the time until it return true (the task is done)
-	--world.logInfo("madtulip_task_fix_hull_breach.main_Task(Task)")
+	--world.logInfo("Task main - start")
 
 -- TODO: After finding a cluster we need to create a BB around that which consideres world wrap
 --       Inside the BB we will use floodfill to find areas enclosed by the breaches conture.
@@ -47,7 +47,7 @@ function madtulip_task_fix_hull_breach.main_Task(Task)
 
 	-- enforce to pick ROI state to navigate to target
 	if not madtulip_task_fix_hull_breach.is_init then
-		--world.logInfo("creating ROI_Parameters")
+		--world.logInfo("Init Task - start")
 		local ROI_Parameters = {}
 		
 		ROI_Parameters.BB = Task.Var.Breach_Cluster.BB
@@ -80,9 +80,16 @@ function madtulip_task_fix_hull_breach.main_Task(Task)
 		-- called if State decided that task is not solveable (i.e. not reachable)
 		ROI_Parameters.Critical_Fail_Callback = madtulip_task_fix_hull_breach.failed_Task
 		
-		self.state.pickState(ROI_Parameters)
+		--world.logInfo("State description: " .. self.state.stateDesc())
+		self.state.endState() -- end current state, whatever that is
+		if (self.state.pickState(ROI_Parameters)) then
+			--world.logInfo("State description: " .. self.state.stateDesc())
+		else
+			--world.logInfo("Couldnt Pick State!")
+		end
 		
 		madtulip_task_fix_hull_breach.is_init = true
+		--world.logInfo("Init Task - end")
 	end
 	
 	-- aim at target
@@ -119,6 +126,7 @@ function madtulip_task_fix_hull_breach.main_Task(Task)
 		end
 	end
 	
+	--world.logInfo("Task main - end")
 	-- end task depending on all breaches being closed
 	if all_breaches_closed then
 		return true -- if done

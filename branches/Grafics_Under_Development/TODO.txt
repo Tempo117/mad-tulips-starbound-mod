@@ -76,7 +76,10 @@ Older ship parts
 -----------------------------------------CODE-------------------------------------------------------
 ----------------------------------------------------------------------------------------------------
 -Crew
--- hull breach: -> "i can handle that" -> npc doesnt move. where does it hang ? happens sometimes.
+-- hull breach: LS needs to update the Task if new breaches are added to the clusters
+-- hull breach: NPC should also be able to reach higher jump locations
+-- hull breach: instead of placing all blocks at the same time we could animate that nicer (one at a time with a beamaxe i.e.)
+-- 
 -- heal task is broken due to new ROI handling
 -- think about a way to do live target_position tracking with the current implementation -> pass target_entity ID to ROIState?
 -- test multiple NPCs task distribution
