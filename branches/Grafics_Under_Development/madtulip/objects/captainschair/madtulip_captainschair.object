@@ -36,7 +36,10 @@
     }
   ],
 
-  "interactAction" : "openCockpitInterface",
+  //"interactAction" : "openCockpitInterface",
+  "scripts" : [
+    "madtulip_captainschair_logic.lua"
+  ],
 
   "sitPosition" : [3, 21]
 }
