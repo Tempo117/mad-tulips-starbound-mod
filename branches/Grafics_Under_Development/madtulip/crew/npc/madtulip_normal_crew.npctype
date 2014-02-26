@@ -50,8 +50,8 @@
 		"use_bonemender_range" : 5,					// -> madtulip_Task_Heal_NPC_or_Player
 		"Heal_NPC_or_Player_ROI_BB" : [-3,0,3,3],	// -> madtulip_Task_Heal_NPC_or_Player
 		
-		"Hull_Breach_ROI_BB" : [-5,0,5,3],			// -> madtulip_task_fix_hull_breach
-		"Hull_Breach_place_Block_Range" : 5,		// -> madtulip_task_fix_hull_breach
+		//"Hull_Breach_ROI_BB" : [-5,0,5,3],			// -> madtulip_task_fix_hull_breach
+		"Hull_Breach_place_Block_Range" : 10,		// -> madtulip_task_fix_hull_breach
 		
 		"Task_spotting_functions" : [
 			//"madtulip_Task_Heal_NPC_or_Player"

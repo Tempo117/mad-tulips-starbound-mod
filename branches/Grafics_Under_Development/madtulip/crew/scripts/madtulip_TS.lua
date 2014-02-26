@@ -181,13 +181,16 @@ function madtulip_TS.Update_Known_Tasks_Properties(Known_Tasks)
 		idx_cur_Stored_Task = Known_Tasks.Tasks[idx_cur_Task].Var.Known_as_storage_index
 		cur_Known_Task_contained_new_global_information = false
 		
-		--local info_who_handles_this_task_is_newer = (Known_Tasks.Tasks[idx_cur_Task].Global.is_beeing_handled_timestemp > storage.Known_Tasks.Tasks[idx_cur_Stored_Task].Global.is_beeing_handled_timestemp)
-		local someone_started_handling_the_task = (Known_Tasks.Tasks[idx_cur_Task].Global.is_beeing_handled == true) and (storage.Known_Tasks.Tasks[idx_cur_Stored_Task].Global.is_beeing_handled == false)
-		--local info_that_task_is_done_is_newer = (Known_Tasks.Tasks[idx_cur_Task].Global.is_done_timestemp > storage.Known_Tasks.Tasks[idx_cur_Stored_Task].Global.is_done_timestemp)
-		local someone_did_the_task = (Known_Tasks.Tasks[idx_cur_Task].Global.is_done == true) and (storage.Known_Tasks.Tasks[idx_cur_Stored_Task].Global.is_done == false)		
+		-- most general
+		local cur_Known_Task_contained_new_global_information = (Known_Tasks.Tasks[idx_cur_Task].Global.revision > storage.Known_Tasks.Tasks[idx_cur_Stored_Task].Global.revision)
+		-- specific cases
+		local someone_started_handling_the_task =     (Known_Tasks.Tasks[idx_cur_Task].Global.is_beeing_handled == true)
+		                                          and (storage.Known_Tasks.Tasks[idx_cur_Stored_Task].Global.is_beeing_handled == false)
+		local someone_did_the_task =     (Known_Tasks.Tasks[idx_cur_Task].Global.is_done == true)
+		                             and (storage.Known_Tasks.Tasks[idx_cur_Stored_Task].Global.is_done == false)
+		
 		
 		-- Copy parts of contents of the .Global part
-		-- In order to decided which part of the .Global is new we use a timestemp
 		if someone_started_handling_the_task then
 			--world.logInfo("someone_started_handling_the_task update detected by entity id: " .. entity.id() .. " handler id: " .. " handler_ID : " .. Known_Tasks.Tasks[idx_cur_Task].Global.handled_by_ID))
 			cur_Known_Task_contained_new_global_information = true;
@@ -213,7 +216,6 @@ function madtulip_TS.Update_Known_Tasks_Properties(Known_Tasks)
 			
 			--> update my known information
 			storage.Known_Tasks.Tasks[idx_cur_Stored_Task].Global.is_done = Known_Tasks.Tasks[idx_cur_Task].Global.is_done
-			--storage.Known_Tasks.Tasks[idx_cur_Stored_Task].Global.is_done_timestemp = Known_Tasks.Tasks[idx_cur_Task].Global.is_done_timestemp
 			
 			-- its done, am i also working on that task?
 			if (idx_cur_Stored_Task == storage.Known_Tasks.idx_of_my_current_Task) then
