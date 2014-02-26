@@ -440,8 +440,6 @@ function Broadcast_Hull_Breach_Task(breach_pos,counter_breaches)
 			New_Tasks.Tasks[New_Tasks.size].Header["Breach_" .. cur_breach .. "_x"] = Cluster_Data.Clusters[cur_breach_cluster_nr].Cluster[cur_breach][1]
 			New_Tasks.Tasks[New_Tasks.size].Header["Breach_" .. cur_breach .. "_y"] = Cluster_Data.Clusters[cur_breach_cluster_nr].Cluster[cur_breach][2]
 		end
-		--New_Tasks.Tasks[New_Tasks.size].Header.Cluster_Identifier_Breach_x = Cluster_Data.Clusters[cur_breach_cluster_nr].Cluster[1][1]
-		--New_Tasks.Tasks[New_Tasks.size].Header.Cluster_Identifier_Breach_y = Cluster_Data.Clusters[cur_breach_cluster_nr].Cluster[1][2]
 		New_Tasks.Tasks[New_Tasks.size].Global = {}
 		New_Tasks.Tasks[New_Tasks.size].Global.is_beeing_handled = false
 		New_Tasks.Tasks[New_Tasks.size].Global.is_done = false
@@ -462,8 +460,6 @@ function Broadcast_Hull_Breach_Task(breach_pos,counter_breaches)
 	madtulip.Old_Task_Broadcast.breach_pos       = breach_pos
 	madtulip.Old_Task_Broadcast.counter_breaches = counter_breaches
 	madtulip.Old_Task_Broadcast.Tasks_Announced  = New_Tasks
-	
-	-- world.npcQuery(entity.position(), radius, {callScript = "madtulip_TS.Offer_Tasks", callScriptArgs = {New_Tasks}}) -- one task for all clusters
 end
 
 function pixel_array_to_clusters(pixels,pixel_size)

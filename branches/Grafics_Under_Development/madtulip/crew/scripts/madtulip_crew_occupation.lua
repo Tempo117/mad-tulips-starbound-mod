@@ -105,9 +105,9 @@ function Set_Commands_based_on_occupation()
 		storage.Command_Texts = {}
 		storage.Command_Perform = {}
 		storage.Command_Task_Name = {}
-		storage.Command_Texts[1] = "Not available."
-		storage.Command_Perform[1] = false
-		storage.Command_Task_Name[1] = ""
+		storage.Command_Texts[1] = "Healing the crew, SIR!"
+		storage.Command_Perform[1] = true
+		storage.Command_Task_Name[1] = "Heal_Player" -- both player and NPC have the same Task name atm
 		return true
 	elseif storage.Occupation == "Scientist" then
 		-- Scientist
@@ -160,12 +160,25 @@ function Toggle_Commands_based_on_occupation(command_nr)
 				entity.say(storage.Command_Texts[command_nr])
 				return true
 			end
-			
 		-- elseif here for other commands
 		end
 		return false
 	elseif storage.Occupation == "Medic" then
 		-- Medic
+		if (command_nr == 1) then
+			if (storage.Command_Perform[command_nr] == true) then
+				storage.Command_Perform[command_nr] = false
+				storage.Command_Texts[command_nr] = "NOT healing the crew, SIR!"
+				entity.say(storage.Command_Texts[command_nr])
+				return true
+			else
+				storage.Command_Perform[command_nr] = true
+				storage.Command_Texts[command_nr] = "Healing the crew, SIR!"
+				entity.say(storage.Command_Texts[command_nr])
+				return true
+			end
+		-- elseif here for other commands
+		end
 		return false
 	elseif storage.Occupation == "Scientist" then
 		-- Scientist

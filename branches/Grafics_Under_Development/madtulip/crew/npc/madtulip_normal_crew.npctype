@@ -16,7 +16,7 @@
 	"/crew/scripts/madtulip_crew_occupation.lua",
 	"/crew/scripts/madtulipLocation.lua",
 
-	//"/crew/scripts/tasks/madtulip_task_heal_npc_or_player.lua",
+	"/crew/scripts/tasks/madtulip_task_heal_npc_or_player.lua",
 	"/crew/scripts/tasks/madtulip_task_fix_hull_breach.lua",
 	
 	"/crew/scripts/madtulip_TS.lua",
@@ -46,15 +46,13 @@
 	"madtulipTS" : {
 		"broadcast_range" : 50,
 		
-		"find_Heal_NPC_or_Player_range" : 50,		// -> madtulip_Task_Heal_NPC_or_Player
-		"use_bonemender_range" : 5,					// -> madtulip_Task_Heal_NPC_or_Player
-		"Heal_NPC_or_Player_ROI_BB" : [-3,0,3,3],	// -> madtulip_Task_Heal_NPC_or_Player
+		"find_Heal_NPC_or_Player_range" : 50,		// -> madtulip_Task_Heal_NPC_or_Player. This is the raius to spot the task
+		"use_bonemender_range" : 5,					// -> madtulip_Task_Heal_NPC_or_Player. Range of bone mender gun and distance to target to move towards
 		
-		//"Hull_Breach_ROI_BB" : [-5,0,5,3],			// -> madtulip_task_fix_hull_breach
 		"Hull_Breach_place_Block_Range" : 10,		// -> madtulip_task_fix_hull_breach
 		
 		"Task_spotting_functions" : [
-			//"madtulip_Task_Heal_NPC_or_Player"
+			"madtulip_Task_Heal_NPC_or_Player"
 		]
 	},
 	

@@ -47,7 +47,7 @@ function madtulip_TS.update_Task_Scheduler (dt)
 					madtulip_TS.Remember_Tasks(Splited_Tasks.New_Tasks)
 					
 					-- Broadcast newly detected Tasks
-					world.logInfo("Broadcasting newly detected Tasks " .. entity.id())
+					-- world.logInfo("Broadcasting newly detected Tasks " .. entity.id())
 					madtulip_TS.Broadcast_Tasks(Splited_Tasks.New_Tasks)
 				end
 			end

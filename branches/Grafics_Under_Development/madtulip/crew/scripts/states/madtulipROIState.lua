@@ -154,21 +154,23 @@ function madtulipROIState.update(dt, stateData)
 			if (madtulipROIState.Inputargs.Pick_New_Target_after_old_is_reached ~= nil) then
 				-- use external parameter
 				if (madtulipROIState.Inputargs.Pick_New_Target_after_old_is_reached) then
-					-- not handled
+					-- wandering around
 				else
 					-- we are done here
 					return true
 				end
 			else
 				-- use default
-				-- "wandering around" - use a timer to start next movement
-				if not madtulipROIState.Movement.Switch_Target_Inside_ROI_Timer then
-					-- its time to go somewhere else inside this ROI
-					-- pick one target inside the ROI (all are passable) as next target to move towards
-					local Target = madtulipLocation.get_next_full_background_target_inside_ROI(madtulipROIState.ROI)
-					if (Target ~= nil) then madtulipROIState.Movement.Target = Target end
-					madtulipROIState.Movement.Switch_Target_Inside_ROI_Timer = entity.randomizeParameterRange("madtulipROI.Switch_Target_Inside_ROI_Time")
-				end
+				-- wandering around
+			end
+			
+			-- "wandering around" - use a timer to start next movement
+			if not madtulipROIState.Movement.Switch_Target_Inside_ROI_Timer then
+				-- its time to go somewhere else inside this ROI
+				-- pick one target inside the ROI (all are passable) as next target to move towards
+				local Target = madtulipLocation.get_next_full_background_target_inside_ROI(madtulipROIState.ROI)
+				if (Target ~= nil) then madtulipROIState.Movement.Target = Target end
+				madtulipROIState.Movement.Switch_Target_Inside_ROI_Timer = entity.randomizeParameterRange("madtulipROI.Switch_Target_Inside_ROI_Time")
 			end
 		else
 			-- move
