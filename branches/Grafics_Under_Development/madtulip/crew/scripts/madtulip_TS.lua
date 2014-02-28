@@ -63,7 +63,7 @@ function madtulip_TS.update_Task_Scheduler (dt)
 	end
 	
 	-- Pick a Task for self
-	madtulip_TS.Update_My_Task()
+	madtulip_TS.Update_My_Task(dt)
 	
 	-- Forget old Tasks
 	madtulip_TS.Forget_Old_Tasks(dt)
@@ -307,7 +307,7 @@ function madtulip_TS.Forget_Old_Tasks(dt)
 	storage.Known_Tasks.size = idx_cur_Surviving_Task
 end
 
-function madtulip_TS.Update_My_Task()
+function madtulip_TS.Update_My_Task(dt)
 	-- execute my current Task
 	-- or search through all known tasks (storage)
 	-- and find one which can be picked and executed if i dont have one.
@@ -355,7 +355,7 @@ function madtulip_TS.Update_My_Task()
 		end
 	else
 		-- I do have a Task, lets execute it!
-		if (_ENV[storage.Known_Tasks.Tasks[storage.Known_Tasks.idx_of_my_current_Task].Header.Fct_Task].main_Task(storage.Known_Tasks.Tasks[storage.Known_Tasks.idx_of_my_current_Task])) then
+		if (_ENV[storage.Known_Tasks.Tasks[storage.Known_Tasks.idx_of_my_current_Task].Header.Fct_Task].main_Task(storage.Known_Tasks.Tasks[storage.Known_Tasks.idx_of_my_current_Task],dt)) then
 			-- my current task is finished! ( eigther i finished it or someone else finished and told me about it)
 			--> call its ending function
 			madtulip_TS.successfully_end_my_current_Task()

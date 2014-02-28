@@ -85,69 +85,53 @@ function madtulip_Task_Heal_NPC_or_Player.can_PickTask(Task)
 	entity.setItemSlot("primary", "madtulip_bone_mender")
 	entity.setItemSlot("alt", nil)
 
-	madtulip_Task_Heal_NPC_or_Player.is_init = nil	
+	madtulip_Task_Heal_NPC_or_Player.movement_is_init = nil	
 	
 	return true
 end
 
-function madtulip_Task_Heal_NPC_or_Player.main_Task(Task)
+function madtulip_Task_Heal_NPC_or_Player.main_Task(Task,dt)
 	-- the main of the Task which is called all the time until it return true (the task is done)
 	--world.logInfo("madtulip_Task_Heal_NPC_or_Player.main_Task(Task)")
 	
-	-- check if I STILL have the command to do this tasks
-	if not madtulip_Task_Heal_NPC_or_Player.has_command_to_do_the_task(Task.Header.Name) then return true end -- kick out because performing this task is disabled
+	-- check if I STILL have the command to do this tasks, else kick out
+	if not madtulip_Task_Heal_NPC_or_Player.has_command_to_do_the_task(Task.Header.Name) then return true end -- kick out because performing this task has just been disabled
 	
-	local own_position = entity.position()
-	local target_position = world.entityPosition (Task.Header.Target_ID)
-	local distance = world.magnitude(world.distance(own_position,target_position))
+	madtulip_Task_Heal_NPC_or_Player.update_timers(dt)
+	
+	-- check if target health smaller 95% of its max health
+	if not madtulip_Task_Heal_NPC_or_Player.Task_is_fullfilled(Task) then
+	
+		local own_position = entity.position()
+		local target_position = world.entityPosition (Task.Header.Target_ID)
+		local distance = world.magnitude(world.distance(own_position,target_position))
 
-	local cur_health = world.entityHealth(Task.Header.Target_ID)
-	if (cur_health[1] < 0.95* cur_health[2]) then	
-		-- health smaller 95% of max health
-		
-		-- Init movement
-		if not madtulip_Task_Heal_NPC_or_Player.is_init then
+		-- Init new movement target
+		if not madtulip_Task_Heal_NPC_or_Player.movement_is_init then
 			-- set initial movement target area
 			madtulip_Task_Heal_NPC_or_Player.use_ROI_State_to_navigate_to_target_area(
 				{target_position[1],target_position[2],target_position[1],target_position[2]},
 				entity.configParameter("madtulipTS.use_bonemender_range"),
-				madtulip_Task_Heal_NPC_or_Player.failed_Task)
-			madtulip_Task_Heal_NPC_or_Player.is_init = true
+				madtulip_Task_Heal_NPC_or_Player.failed_Task,
+				madtulip_Task_Heal_NPC_or_Player.ROI_State_ended)
 			madtulip_Task_Heal_NPC_or_Player.old_target_position = target_position
+			
+			madtulip_Task_Heal_NPC_or_Player.movement_is_init = true
 		end
 		
-		-- Check if target changed position
-		if not(    (math.ceil(target_position[1]) == math.ceil(madtulip_Task_Heal_NPC_or_Player.old_target_position[1]))
-		       and (math.ceil(target_position[2]) == math.ceil(madtulip_Task_Heal_NPC_or_Player.old_target_position[2]))) then
-			entity.say("Target moved!")
-			-- target changed position, update movement target area
-			madtulip_Task_Heal_NPC_or_Player.use_ROI_State_to_navigate_to_target_area(
-				{target_position[1],target_position[2],target_position[1],target_position[2]},
-				entity.configParameter("madtulipTS.use_bonemender_range"),
-				madtulip_Task_Heal_NPC_or_Player.failed_Task)
-			madtulip_Task_Heal_NPC_or_Player.old_target_position = target_position		
+		-- Check if target changed position. If so, chase it.
+		if (not(   (math.ceil(target_position[1]) == math.ceil(madtulip_Task_Heal_NPC_or_Player.old_target_position[1]))
+		       and (math.ceil(target_position[2]) == math.ceil(madtulip_Task_Heal_NPC_or_Player.old_target_position[2]))))
+		    and (madtulip_Task_Heal_NPC_or_Player.Chase_Target_Timer == nil) then
+entity.say("Target moved! Chasing.")
+			madtulip_Task_Heal_NPC_or_Player.movement_is_init = false -- enforce new creation target and ROI state
+			madtulip_Task_Heal_NPC_or_Player.Chase_Target_Timer = 0.5 -- allow next target_position adjustment in 1s
+			--madtulip_Task_Heal_NPC_or_Player.old_target_position = target_position
 		end
-	
-		-- ROI State is left with his timeout after a while of healing.
-		-- We could use a callback to see when that happens and then decide based on Task if we want to restart it
-		-- Its also not clear how to handle chasing of a target most efficient. The above check for target position locks while a target costantly moves
-		-- we should at least use a timer to check for changing positions.
-		-- maybe all of that should be handles in ROI State.
---[[
-		-- Check if ROI State is still running
-		if (self.state.stateDesc() == madtulipROIState) then
-			-- ROI State had timeout. Kick it again
-			madtulip_Task_Heal_NPC_or_Player.use_ROI_State_to_navigate_to_target_area(
-				{target_position[1],target_position[2],target_position[1],target_position[2]},
-				entity.configParameter("madtulipTS.use_bonemender_range"),
-				madtulip_Task_Heal_NPC_or_Player.failed_Task)
-			madtulip_Task_Heal_NPC_or_Player.old_target_position = target_position		
-		end
---]]
 
 		-- Aim at target
-	    entity.setAimPosition(target_position)
 		if (distance < entity.configParameter("madtulipTS.use_bonemender_range", nil))then
+			entity.setAimPosition(target_position)
 			-- close enough to use bone mender --> fire
 			entity.beginPrimaryFire()
 		end
@@ -159,18 +143,19 @@ function madtulip_Task_Heal_NPC_or_Player.main_Task(Task)
 end
 
 function madtulip_Task_Heal_NPC_or_Player.end_Task()
-	-- Called when the Task was completed
-	-- eigther by me, or by someone else doing the same thing!
+	-- Called by Task scheduler when the Task ends
+	-- I.e. when the task was completed by me or by someone else doing the same thing.
 	--world.logInfo("madtulip_Task_Heal_NPC_or_Player.end_Task()")
 	
+	-- remove hand items
 	entity.setItemSlot("primary", nil)
 	entity.setItemSlot("alt", nil)
 	
-	-- TODO: exit all current state machine states (before killing the task)
+	self.state.endState() -- end current state, whatever that is
 end
 
 function madtulip_Task_Heal_NPC_or_Player.failed_Task()
-	-- hand the error back up to the Task scheduler, he will also call .end_Task()
+	-- hand the error back up to the Task scheduler, he will also call my .end_Task() then
 	madtulip_TS.fail_my_current_Task()
 end
 
@@ -185,7 +170,7 @@ function madtulip_Task_Heal_NPC_or_Player.has_command_to_do_the_task(Task_Name)
 	return has_cmd_to_do_the_task
 end
 
-function madtulip_Task_Heal_NPC_or_Player.use_ROI_State_to_navigate_to_target_area(Work_site_BB,work_range,fail_callback_fct)
+function madtulip_Task_Heal_NPC_or_Player.use_ROI_State_to_navigate_to_target_area(Work_site_BB,work_range,fail_callback_fct,state_end_callback_fct)
 	--world.logInfo("Init Task - start")
 	local ROI_Parameters = {}
 	
@@ -218,9 +203,32 @@ function madtulip_Task_Heal_NPC_or_Player.use_ROI_State_to_navigate_to_target_ar
 
 	-- called if State decided that task is not solveable (i.e. not reachable)
 	ROI_Parameters.Critical_Fail_Callback = fail_callback_fct
+
+	-- called if State ended (i.e. by timeout)
+	ROI_Parameters.State_End_Callback = state_end_callback_fct
 	
 	--world.logInfo("State description: " .. self.state.stateDesc())
 	self.state.endState() -- end current state, whatever that is
 	self.state.pickState(ROI_Parameters)
 	--world.logInfo("Init Task - end")
+end
+
+function madtulip_Task_Heal_NPC_or_Player.Task_is_fullfilled(Task)
+	local cur_health = world.entityHealth(Task.Header.Target_ID)
+	if (cur_health[1] < 0.95* cur_health[2]) then return false else return true end
+end
+
+function madtulip_Task_Heal_NPC_or_Player.ROI_State_ended()
+	-- just mark it as not init so the call to main will init and start the ROI State again
+	madtulip_Task_Heal_NPC_or_Player.movement_is_init = false
+end
+
+function madtulip_Task_Heal_NPC_or_Player.update_timers(dt)
+	-- update Switch_Target_Inside_ROI_Timer timer
+	if madtulip_Task_Heal_NPC_or_Player.Chase_Target_Timer ~= nil then
+		madtulip_Task_Heal_NPC_or_Player.Chase_Target_Timer = madtulip_Task_Heal_NPC_or_Player.Chase_Target_Timer - dt
+		if madtulip_Task_Heal_NPC_or_Player.Chase_Target_Timer < 0 then
+			madtulip_Task_Heal_NPC_or_Player.Chase_Target_Timer = nil
+		end
+	end
 end

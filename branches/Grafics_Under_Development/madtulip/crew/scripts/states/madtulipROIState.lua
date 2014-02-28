@@ -59,6 +59,9 @@ function madtulipROIState.update(dt, stateData)
 	if stateData.timer < 0 then
 		--world.logInfo("TIMEOUT")
 		--return true, entity.configParameter("madtulipROI.cooldown", nil)
+		if (madtulipROIState.Inputargs.State_End_Callback ~= nil) then
+			madtulipROIState.Inputargs.State_End_Callback()
+		end
 		return true -- timeout
 	end
 
@@ -77,7 +80,12 @@ function madtulipROIState.update(dt, stateData)
 		else
 			-- we are just wandering around looking busy
 			ROI_Anchor_Position = madtulipROIState.set_wandering_ROI_Anchor_around(entity.position())
-			if (ROI_Anchor_Position == nil) then return true end
+			if (ROI_Anchor_Position == nil) then
+				if (madtulipROIState.Inputargs.State_End_Callback ~= nil) then
+					madtulipROIState.Inputargs.State_End_Callback()
+				end
+				return true
+			end
 		end
 		--world.logInfo("ROI_Anchor_Position X: " .. ROI_Anchor_Position[1] .. " Y: " .. ROI_Anchor_Position[2])
 
@@ -157,6 +165,9 @@ function madtulipROIState.update(dt, stateData)
 					-- wandering around
 				else
 					-- we are done here
+					if (madtulipROIState.Inputargs.State_End_Callback ~= nil) then
+						madtulipROIState.Inputargs.State_End_Callback()
+					end
 					return true
 				end
 			else
@@ -336,6 +347,9 @@ function madtulipROIState.start_chats_on_the_way()
 			local direction = nil
 			if (toTarget[1] > 0) then direction = 1 else direction = -1 end
 				if chatState.initiateChat(entity.position(), vec2.add({ chatDistance * direction, 0 }, entity.position())) then
+					if (madtulipROIState.Inputargs.State_End_Callback ~= nil) then
+						madtulipROIState.Inputargs.State_End_Callback()
+					end
 					return true
 				end
 			end
