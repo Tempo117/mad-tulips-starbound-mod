@@ -19,8 +19,8 @@ function madtulip_Task_Heal_NPC_or_Player.spot_Task()
 			Tasks[Tasks_size].Header.Occupation = "Medic"
 			Tasks[Tasks_size].Header.Target_ID = PlayerId
 			Tasks[Tasks_size].Header.Fct_Task  = "madtulip_Task_Heal_NPC_or_Player"
-			Tasks[Tasks_size].Header.Msg_on_discover_this_Task = "MEDIC!!!"
-			Tasks[Tasks_size].Header.Msg_on_PickTask = "I can handle that!"
+			Tasks[Tasks_size].Header.Msg_on_discover_this_Task = "MEDIC!"
+			Tasks[Tasks_size].Header.Msg_on_PickTask = "I`ll would stitch you up if there wasn`t hard coded invulnerability on the shipworld!"
 			Tasks[Tasks_size].Global = {}
 			Tasks[Tasks_size].Global.is_beeing_handled = false
 			Tasks[Tasks_size].Global.is_done = false
@@ -110,8 +110,11 @@ function madtulip_Task_Heal_NPC_or_Player.main_Task(Task,dt)
 		if not madtulip_Task_Heal_NPC_or_Player.movement_is_init then
 			-- set initial movement target area
 			madtulip_Task_Heal_NPC_or_Player.use_ROI_State_to_navigate_to_target_area(
-				{target_position[1],target_position[2],target_position[1],target_position[2]},
-				entity.configParameter("madtulipTS.use_bonemender_range"),
+				 {target_position[1] - entity.configParameter("madtulipTS.use_bonemender_min_range"),
+				  target_position[2] - entity.configParameter("madtulipTS.use_bonemender_min_range"),
+				  target_position[1] + entity.configParameter("madtulipTS.use_bonemender_min_range"),
+				  target_position[2] + entity.configParameter("madtulipTS.use_bonemender_min_range")},
+				entity.configParameter("madtulipTS.use_bonemender_range")-entity.configParameter("madtulipTS.use_bonemender_min_range"),
 				madtulip_Task_Heal_NPC_or_Player.failed_Task,
 				madtulip_Task_Heal_NPC_or_Player.ROI_State_ended)
 			madtulip_Task_Heal_NPC_or_Player.old_target_position = target_position
@@ -123,14 +126,15 @@ function madtulip_Task_Heal_NPC_or_Player.main_Task(Task,dt)
 		if (not(   (math.ceil(target_position[1]) == math.ceil(madtulip_Task_Heal_NPC_or_Player.old_target_position[1]))
 		       and (math.ceil(target_position[2]) == math.ceil(madtulip_Task_Heal_NPC_or_Player.old_target_position[2]))))
 		    and (madtulip_Task_Heal_NPC_or_Player.Chase_Target_Timer == nil) then
-entity.say("Target moved! Chasing.")
+			-- entity.say("Target moved! Chasing.")
 			madtulip_Task_Heal_NPC_or_Player.movement_is_init = false -- enforce new creation target and ROI state
 			madtulip_Task_Heal_NPC_or_Player.Chase_Target_Timer = 0.5 -- allow next target_position adjustment in 1s
 			--madtulip_Task_Heal_NPC_or_Player.old_target_position = target_position
 		end
 
 		-- Aim at target
-		if (distance < entity.configParameter("madtulipTS.use_bonemender_range", nil))then
+		if     (distance <= entity.configParameter("madtulipTS.use_bonemender_range", nil))
+		   and (distance >= entity.configParameter("madtulipTS.use_bonemender_min_range", nil)) then
 			entity.setAimPosition(target_position)
 			-- close enough to use bone mender --> fire
 			entity.beginPrimaryFire()
@@ -171,13 +175,13 @@ function madtulip_Task_Heal_NPC_or_Player.has_command_to_do_the_task(Task_Name)
 end
 
 function madtulip_Task_Heal_NPC_or_Player.use_ROI_State_to_navigate_to_target_area(Work_site_BB,work_range,fail_callback_fct,state_end_callback_fct)
+	-- Work_site_BB is a not standable BB around the target "construction site" (relative coors to anchor)
+	-- work_range is a BB around the Work_site_BB in which the NPC can stand while working (relative coors to anchor)
 	--world.logInfo("Init Task - start")
 	local ROI_Parameters = {}
-	
-	ROI_Parameters.BB = Work_site_BB
+
+	ROI_Parameters.BB = copyTable(Work_site_BB)
 	-- enlarge the BB to where the player can be while building
--- TODO: might need to be increased by jump hight
--- Problem would be if we move to a floor below the breach then
 	ROI_Parameters.BB[1] = ROI_Parameters.BB[1] - work_range + 1
 	ROI_Parameters.BB[2] = ROI_Parameters.BB[2] - work_range + 1
 	ROI_Parameters.BB[3] = ROI_Parameters.BB[3] + work_range - 1
@@ -190,6 +194,22 @@ function madtulip_Task_Heal_NPC_or_Player.use_ROI_State_to_navigate_to_target_ar
 	ROI_Parameters.BB[2] = ROI_Parameters.BB[2] - ROI_Parameters.Anchor[2]
 	ROI_Parameters.BB[3] = ROI_Parameters.BB[3] - ROI_Parameters.Anchor[1]
 	ROI_Parameters.BB[4] = ROI_Parameters.BB[4] - ROI_Parameters.Anchor[2]
+	
+	local Additional_Blocked_Positions_BB = copyTable(Work_site_BB)
+	-- use Anchor as 0,0 point for the BB
+	-- X keepout area
+	Additional_Blocked_Positions_BB[1] = Additional_Blocked_Positions_BB[1] - ROI_Parameters.Anchor[1]
+	Additional_Blocked_Positions_BB[3] = Additional_Blocked_Positions_BB[3] - ROI_Parameters.Anchor[1]
+	-- y keepout area is the same as for the work area
+	Additional_Blocked_Positions_BB[2] = ROI_Parameters.BB[2]
+	Additional_Blocked_Positions_BB[4] = ROI_Parameters.BB[4]
+	ROI_Parameters.Additional_Blocked_Positions = {}
+	for x = Additional_Blocked_Positions_BB[1],Additional_Blocked_Positions_BB[3],1 do
+		for y = Additional_Blocked_Positions_BB[2],Additional_Blocked_Positions_BB[4],1 do
+			-- all theese locations are marked as not passable
+			ROI_Parameters.Additional_Blocked_Positions[#ROI_Parameters.Additional_Blocked_Positions+1] = {x,y}
+		end
+	end
 	
 	ROI_Parameters.Ground_the_Anchor = false
 	
@@ -220,6 +240,7 @@ end
 
 function madtulip_Task_Heal_NPC_or_Player.ROI_State_ended()
 	-- just mark it as not init so the call to main will init and start the ROI State again
+	-- entity.say("ROI timeout")
 	madtulip_Task_Heal_NPC_or_Player.movement_is_init = false
 end
 

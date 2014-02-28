@@ -432,8 +432,8 @@ function Broadcast_Hull_Breach_Task(breach_pos,counter_breaches)
 		New_Tasks.Tasks[New_Tasks.size].Header.Name = "Fix_Hull_Breach"
 		New_Tasks.Tasks[New_Tasks.size].Header.Occupation = "Engineer"
 		New_Tasks.Tasks[New_Tasks.size].Header.Fct_Task  = "madtulip_task_fix_hull_breach"
-		New_Tasks.Tasks[New_Tasks.size].Header.Msg_on_discover_this_Task = "Hull Breach !!!"
-		New_Tasks.Tasks[New_Tasks.size].Header.Msg_on_PickTask = "I can handle that!"
+		New_Tasks.Tasks[New_Tasks.size].Header.Msg_on_discover_this_Task = "HULL BREACHED!"
+		New_Tasks.Tasks[New_Tasks.size].Header.Msg_on_PickTask = "I`ll fix that hull breach!"
 		-- The header of the Task is used in total as key to check if the task is known.
 		-- We put all breaches in the header to make this unique.
 		for cur_breach = 1,#Cluster_Data.Clusters[cur_breach_cluster_nr].Cluster,1 do

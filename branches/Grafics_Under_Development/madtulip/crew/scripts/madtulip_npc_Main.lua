@@ -97,3 +97,16 @@ init = function (args)
     storage.spawnPosition = { position[1], supportRegion[2] + 3.5 }
   end
 end
+
+function copyTable(source)
+	local _copy
+	if type(source) == "table" then
+		_copy = {}
+		for k, v in pairs(source) do
+			_copy[copyTable(k)] = copyTable(v)
+		end
+	else
+		_copy = source
+	end
+	return _copy
+end

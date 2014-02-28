@@ -180,6 +180,7 @@ function madtulipROIState.update(dt, stateData)
 				-- its time to go somewhere else inside this ROI
 				-- pick one target inside the ROI (all are passable) as next target to move towards
 				local Target = madtulipLocation.get_next_full_background_target_inside_ROI(madtulipROIState.ROI)
+				-- entity.say("Target switching time!")
 				if (Target ~= nil) then madtulipROIState.Movement.Target = Target end
 				madtulipROIState.Movement.Switch_Target_Inside_ROI_Timer = entity.randomizeParameterRange("madtulipROI.Switch_Target_Inside_ROI_Time")
 			end
@@ -191,6 +192,7 @@ function madtulipROIState.update(dt, stateData)
 			   math.abs(toTarget[1]) < madtulipROIState.Movement.Min_X_Dist_required_to_reach_target then
 					-- target reached
 					--world.logInfo("target reached")
+					--entity.say("Target reached!")
 					
 					--> clear movement target
 					madtulipROIState.Movement.Target = nil

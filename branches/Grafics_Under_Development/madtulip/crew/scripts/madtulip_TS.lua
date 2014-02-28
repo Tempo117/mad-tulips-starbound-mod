@@ -401,7 +401,7 @@ function madtulip_TS.successfully_end_my_current_Task()
 	storage.Known_Tasks.idx_of_my_current_Task = nil
 	
 	-- it will be removed from my memory with the next call to "madtulip_TS.Forget_Old_Tasks(dt)"
-	entity.say("TASK DONE!")
+	-- entity.say("TASK DONE!")
 end
 
 function madtulip_TS.Broadcast_Tasks(New_Tasks)

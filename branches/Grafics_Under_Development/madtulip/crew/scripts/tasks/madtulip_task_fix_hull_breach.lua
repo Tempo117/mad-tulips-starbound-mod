@@ -67,10 +67,10 @@ function madtulip_task_fix_hull_breach.main_Task(Task)
 		-- close enough to build -> BUILD ALL BLOCKS AT ONCE
 		for cur_breach = 1,Task.Var.Breach_Cluster.size,1 do
 			-- always place background
-			world.placeMaterial(Task.Var.Breach_Cluster.Cluster[cur_breach], "background", "rustymetal")
+			world.placeMaterial(Task.Var.Breach_Cluster.Cluster[cur_breach], "background", "madtuip_rustymetal")
 			-- optionally place foreground (if this is an outer wall towards "space")
 			if (Task.Var.Breach_Cluster.place_foreground[cur_breach]) then
-				world.placeMaterial(Task.Var.Breach_Cluster.Cluster[cur_breach], "foreground", "rustymetal")
+				world.placeMaterial(Task.Var.Breach_Cluster.Cluster[cur_breach], "foreground", "madtuip_rustymetal")
 			end
 		end
 	end
@@ -153,7 +153,7 @@ function madtulip_task_fix_hull_breach.use_ROI_State_to_navigate_to_target_area(
 	ROI_Parameters.run = true
 	
 	ROI_Parameters.start_chats_on_the_way = false
-	
+
 	ROI_Parameters.Statename = "madtulipROIState"
 
 	-- called if State decided that task is not solveable (i.e. not reachable)

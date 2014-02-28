@@ -47,7 +47,8 @@
 		"broadcast_range" : 50,
 		
 		"find_Heal_NPC_or_Player_range" : 50,		// -> madtulip_Task_Heal_NPC_or_Player. This is the raius to spot the task
-		"use_bonemender_range" : 5,					// -> madtulip_Task_Heal_NPC_or_Player. Range of bone mender gun and distance to target to move towards
+		"use_bonemender_range" : 7,					// -> madtulip_Task_Heal_NPC_or_Player. Range of bone mender gun to target before fire
+		"use_bonemender_min_range": 3,				// -> madtulip_Task_Heal_NPC_or_Player. minimal range of bone mender gun to target before fire
 		
 		"Hull_Breach_place_Block_Range" : 10,		// -> madtulip_task_fix_hull_breach
 		
@@ -67,13 +68,13 @@
 		"timeOfDayRanges"    : [[0.0, 1.0]],			// time of day when to perform this in general
 		"timeOfDayRangeWork" : [[0.2,0.8]],				// time of day when to perform work
 		"timeOfDayRangeRest" : [[0.8,1.0],[0.0,0.2]],	// time of day when to perform rest
-		"timeRange" : [3.0, 10.0],						// duration for which to perform this state each time its called
+		"timeRange" : [7.5, 15.0],						// duration for which to perform this state each time its called
 
 		// ROI
 		"Work_Attractor_Search_Radius" : 60,			// Radius around NPC to search for new ROI anchor
 		"Rest_Attractor_Search_Radius" : 100,			// Radius around NPC to search for new ROI anchor
 		"ROI_BB" : [-3,0,3,3],           				// X1,Y1,X2,Y2 Interval which defines ROI around Work Anchor Position
-		"Switch_Target_Inside_ROI_Time" : [ 2.0, 5.0], 	// how long to pause after each target in ROI
+		"Switch_Target_Inside_ROI_Time" : [ 2.0, 6.0], 	// how long to pause after each target in ROI
 
 		"chatDistance" : 4,								// max distance infront of NPC to initiate chat
 
