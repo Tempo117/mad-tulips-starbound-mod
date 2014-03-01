@@ -11,6 +11,10 @@ function Init_Crew_Data()
 	end
 	
 	Set_Occupation_Cloth()
+	
+-- debug out damage team
+--local damage_team =  entity.damageTeam()
+--world.logInfo("Player Damage Team:" .. damage_team.type .. " " .. damage_team.team)
 end
 
 main = function ()

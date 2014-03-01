@@ -1,7 +1,7 @@
 function init(args)
 	entity.setDeathParticleBurst("deathPoof")
 	--entity.setAnimationState("movement", "idle")
-	self.health = 10 -- entity.health()
+	self.health = 100 -- entity.health()
 end
 
 function shouldDie()

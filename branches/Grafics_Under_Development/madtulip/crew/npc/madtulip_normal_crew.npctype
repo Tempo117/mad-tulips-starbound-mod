@@ -1,6 +1,7 @@
 {
   "type" : "madtulip_normal_crew",
   "damageTeam": 0,
+  "damageTeamType": "friendly", // apperently useless
   "disableWornArmor" : false,
   "inateStatusEffects" : [
     {

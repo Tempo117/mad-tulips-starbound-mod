@@ -1,4 +1,5 @@
 Bugreports:
+- Crew doesnt spawn/is buggy for custom races -> check race to spawn against the original 6, if none of theese use human default
 - Hyloti Scout Tech vehicle sound doesnt stop on exit vehicle. probably a starbound code bug
 - MIAB:
 I don't understand what just happened. I did everything like you did in your video, for modules in a box. I scanned an entire science laboratory, the scanner took all of it. and gave me nothing. I have no objects anywhere that let me re-print this building. How do I get a printing device to print this with? Where did it save the schematic to? :/
