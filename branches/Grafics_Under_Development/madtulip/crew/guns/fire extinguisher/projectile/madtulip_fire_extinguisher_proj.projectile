@@ -5,20 +5,20 @@
   "animationCycle" : 1,
   "damageKindImage" : "madtulip_fire_extinguisher_proj.png",
   "frameNumber" : 12,
-  "power" : 50,
-  "level" : 3,
-  "speed" : 25,
-  "timeToLive" : 1,
+  "power" : 0.1,
+  "level" : 1,
+  "speed" : 20,
+  "timeToLive" : 0.75,
   "bounces" : 4,
   "piercing" : true,
   "damagePoly" : [ [-9, 0], [-6, -6], [0, -9], [6, -6], [9, 0], [6, 6], [0, 9], [-6, 6] ],
-  "lightColor" : [235, 126, 2],
-  "damageKind" : "flamethrower",
+  "lightColor" : [250, 250, 250],
+  "damageKind" : "fire_extinguisher",
   "statusEffects" : [
     {
       "kind" : "glow",
       "amount" : 100.0,
-      "color" : "orange",
+      "color" : "white",
       "duration" : 5.0
     },
     { "kind" : "testburning" }

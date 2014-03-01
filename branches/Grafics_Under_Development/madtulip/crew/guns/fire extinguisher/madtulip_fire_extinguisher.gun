@@ -12,18 +12,20 @@
   "spread" : 1,
   "fireTime" : 0.05,
   "twoHanded" : false,
+  "energyCostPerDamagePoint" : 0,
+  "classMultiplier" : 0,
 
   "projectileType" : "madtulip_fire_extinguisher_proj",
   "projectile" : { "speed" : 15,
-                   "power" : 0 , // energy costs
-				   "life" : 3,   // heals ?
-				   "color" : [150, 90, 150] },
+                   "power" : 0.1 , // damage
+				   "life" : 0,   // heals
+				   "color" : [150, 150, 150] },
   "muzzleEffect" : {
        "animation" :  "/crew/guns/fire extinguisher/muzzle/madtulip_fire_ex_muzzle.animation" ,
        "fireSound" : [ { "file" : "/sfx/gun/fireblast.wav" } ]
 	   },
   // required ?
   "maxStack" : 1,
-  "level" : 7,
-  "weaponType" : "Bio-Agent"
+  "level" : 1,
+  "weaponType" : "Fire-Extinguisher"
 }
