@@ -11,6 +11,8 @@ Ideas:
 - destroy blacklisted blocks on warp
 - no warp on hullbreach
 - other conditions for warp
+- spacesuit with zero gravity attached to its chest item including a jetpack which is faster then zero gravity movement.
+- automated harvest drones for wood and metal (digging to the metal and then mining it, bringing it back to some container) -> starfoundry
 
 ----------------------------------------------------------------------------------------------------
 -----------------------------------------NEXT UPDATE------------------------------------------------
