@@ -28,15 +28,17 @@ local walkable = function(v) return v~=2 end
 -- sizes of agent to move the map
 local agent_size =  2
 -- x,y shift to apply to the agent_size to allow for rect none square agents
-local agent_size_shift = {0,2}
+local agent_size_shift = {0,0} -- {0,0} for a quadratic agent_size agent -- {0,2} together with agent_size 2 for a 2,4 player sized model
 -- create grid from map
 local grid = madtulip_pf.new_grid(map);
--- create jump connection tree
-local JumpConnections = madtulip_pf.new_JumpMap ()
+-- create jump connection tree (only needed for ground based units)
+-- local JumpConnections = madtulip_pf.new_JumpMap ()
 -- pathfinden routine
 local finder = madtulip_pf.ASTAR
--- heuristic function calculating costs to move from NodeA to NodeB
-local heuristic = madtulip_pf.Jump_EUCLIDIAN
+-- heuristic function calculating costs to move from NodeA to NodeB (for ground bound unit that has to jump)
+--local heuristic = madtulip_pf.Jump_EUCLIDIAN
+-- heuristic function calculating costs to move from NodeA to NodeB (for flyer)
+local heuristic = madtulip_pf.Walk_EUCLIDIAN
 -- if diagonal movement on the map is allowed
 local allowDiagonal = true
 -- if a diagonal tunnel through 2 blocked tiles is allowed

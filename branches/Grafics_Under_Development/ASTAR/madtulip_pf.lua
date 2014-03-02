@@ -46,6 +46,13 @@ function madtulip_pf.EUCLIDIAN(neighbour, startnode)
     return math.sqrt(dx*dx+dy*dy)
 end
 
+function madtulip_pf.Walk_EUCLIDIAN(neighbour, startnode)
+    local dx = neighbour._x - startnode._x
+    local dy = neighbour._y - startnode._y
+    return {Cost = math.sqrt(dx*dx+dy*dy),
+            Jump_ID = 0}
+end
+
 function madtulip_pf.Jump_EUCLIDIAN(neighbour, node)
     -- this block checks if we are jumping
     -- if thats not the case its just the normal euclidian costs
