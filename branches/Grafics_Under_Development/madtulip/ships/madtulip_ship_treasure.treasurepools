@@ -128,6 +128,26 @@
         "allowDuplication" : false
       } ]
   ],
+  "madtulip_peglaciShipStarterTreasure" : [
+    [0, {
+        "fill" : [
+          "beamaxe",
+          "flashlight",
+		  "madtulip_gravity-chip",
+		  "madtulip_tier1_pod",
+		  [ "snowberryseed", 3],
+		  [ "spongeweedseed", 3], 
+		  "brokenemergpistol",
+		  "peglacitier1chest",
+		  "peglacitier1pants",
+		  "peglacitier1head",
+		  "peglacitier1spear",
+		  [ "peglacitier1knife", 3]
+        ],
+        "levelVariance" : [0, 0],
+        "allowDuplication" : false
+      } ]
+  ],
     "madtulip_shellStarterTreasure" : [
     [0, {
         "fill" : [
