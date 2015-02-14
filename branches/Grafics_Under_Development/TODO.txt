@@ -1,3 +1,20 @@
+----------------------------------------------------------------------------------------------------
+---------------------------------------Giraffe things----------------------------------------------
+----------------------------------------------------------------------------------------------------
+- TECHS -
+- you probably cant accquire our techs at the moment
+- Chip .recipe files removed from all techs. they seems to handle tech accquiring differently now.
+
+- SHIPS -
+- ships not initializing at all
+- ships are beeing included differently now i guess.
+- "/ship/madtulip_ship_treasure.treasurepools" renamed as not working
+
+- CREW -
+- "/crew/guns/bone mender" folder removed as not working. probably misses its statuseffect
+- "/crew/statuseffects" removed as not working. probably different implementation of status effects now
+
+
 Bugreports:
 - Crew doesnt spawn/is buggy for custom races -> check race to spawn against the original 6, if none of theese use human default
 - Hyloti Scout Tech vehicle sound doesnt stop on exit vehicle. probably a starbound code bug

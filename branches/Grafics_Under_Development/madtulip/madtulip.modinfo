@@ -1,6 +1,5 @@
 {
   "name" : "madtulip",
-  "version" : "Beta v. Enraged Koala",
   "path" : ".",
   "dependencies" : ["Modules in a Box"],
   "metadata": {

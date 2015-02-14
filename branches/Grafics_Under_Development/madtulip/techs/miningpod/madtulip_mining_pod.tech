@@ -1,5 +1,8 @@
 {
-	"script" : "madtulip_mining_pod.lua",
+	"name" : "madtulip_mining_pod",
+	"type" : "head",
+	"scripts" : ["madtulip_mining_pod.lua"],
+	
 	"actions" : ["mechActivate", "mechDeactivate", "mechMove", "mechJump"],
 	"animator" : "madtulip_mining_pod.animation",
 

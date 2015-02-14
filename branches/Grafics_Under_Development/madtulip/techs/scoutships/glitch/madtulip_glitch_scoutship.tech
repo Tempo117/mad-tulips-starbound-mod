@@ -1,5 +1,7 @@
 {
-	"script" : "/techs/scoutships/scoutship.lua",
+	"name" : "madtulip_glitch_scoutship",
+	"type" : "head",
+	"scripts" : ["/techs/scoutships/scoutship.lua"],
 	"actions" : ["mechActivate", "mechDeactivate", "mechMove", "mechJump"],
 	"animator" : "madtulip_glitch_scoutship.animation",
 
