@@ -5,10 +5,17 @@
 - you probably cant accquire our techs at the moment
 - Chip .recipe files removed from all techs. they seems to handle tech accquiring differently now.
 
-- SHIPS -
-- ships not initializing at all
-- ships are beeing included differently now i guess.
-- "/ship/madtulip_ship_treasure.treasurepools" renamed as not working
+- SHIPS - all broken, apex at least starting
+- "/ship/madtulip_ship_treasure.treasurepools" renamed as not working -> moved to !TODO\_Files_not_working_in_giraffe
+
+- inside ships\apex\madtulip_apex_blockkey.config some things prevent initial ship loading.:
+-- needs to be uncommented for now:
+--- //"object": "madtulip_apex_ftl_thruster",
+--- //"object": "madtulip_apex_stabilization_thruster",
+- materials don`t show at all anymore
+
+- MATERIAL
+- basically all invisible/broken. probably some needs material ID handling. ...
 
 - CREW -
 - "/crew/guns/bone mender" folder removed as not working. probably misses its statuseffect
