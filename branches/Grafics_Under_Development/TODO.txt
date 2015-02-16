@@ -5,14 +5,9 @@
 - you probably cant accquire our techs at the moment
 - Chip .recipe files removed from all techs. they seems to handle tech accquiring differently now.
 
-- SHIPS - all broken, apex at least starting
-- "/ship/madtulip_ship_treasure.treasurepools" renamed as not working -> moved to !TODO\_Files_not_working_in_giraffe
-
-- inside ships\apex\madtulip_apex_blockkey.config some things prevent initial ship loading.:
--- needs to be uncommented for now:
---- //"object": "madtulip_apex_ftl_thruster",
---- //"object": "madtulip_apex_stabilization_thruster",
-- materials don`t show at all anymore
+- SHIPS -
+- "treasurepool" not defined for any race ship (defaulted to human vanilla)
+- custom materials not visible
 
 - MATERIAL
 - basically all invisible/broken. probably some needs material ID handling. ...
@@ -21,6 +16,12 @@
 - "/crew/guns/bone mender" folder removed as not working. probably misses its statuseffect
 - "/crew/statuseffects" removed as not working. probably different implementation of status effects now
 
+- CREW -
+- decrease block costs by giving out mroe block poer craft
+
+----------------------------------------------------------------------------------------------------
+---------------------------------------OLD----------------------------------------------
+----------------------------------------------------------------------------------------------------
 
 Bugreports:
 - Crew doesnt spawn/is buggy for custom races -> check race to spawn against the original 6, if none of theese use human default

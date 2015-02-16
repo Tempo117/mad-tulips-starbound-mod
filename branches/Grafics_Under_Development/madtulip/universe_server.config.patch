@@ -1,17 +1,5 @@
 [
 	// ORIGINAL RACES
-/*
-		// Apex
-			{"op":"replace","path":"/speciesShips/apex/0","value":"/ships/apex/apext0.structure"},
-			{"op":"replace","path":"/speciesShips/apex/1","value":"/ships/apex/apext0.structure"},
-			{"op":"replace","path":"/speciesShips/apex/2","value":"/ships/apex/apext0.structure"},
-			{"op":"replace","path":"/speciesShips/apex/3","value":"/ships/apex/apext0.structure"},
-			{"op":"replace","path":"/speciesShips/apex/4","value":"/ships/apex/apext0.structure"},
-			{"op":"replace","path":"/speciesShips/apex/5","value":"/ships/apex/apext0.structure"},
-			{"op":"replace","path":"/speciesShips/apex/6","value":"/ships/apex/apext0.structure"},
-			{"op":"replace","path":"/speciesShips/apex/7","value":"/ships/apex/apext0.structure"},
-			{"op":"replace","path":"/speciesShips/apex/8","value":"/ships/apex/apext0.structure"},
-*/
 		// Apex
 			{"op":"replace","path":"/speciesShips/apex/0","value":"/ships/apex/madtulip_apex_ship_T0.structure"},
 			{"op":"replace","path":"/speciesShips/apex/1","value":"/ships/apex/madtulip_apex_ship_T0.structure"},
