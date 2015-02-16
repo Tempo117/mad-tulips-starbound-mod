@@ -1,0 +1,21 @@
+{
+  "materialId" : 30019,
+  "materialName" : "madtulip_novakid_1_",
+  "particleColor" : [194, 194, 194, 255],
+  "itemDrop" : "madtulip_novakid_1_",
+  "shortdescription" : "Novakid Tileset 1",
+  "description" : "Novakid Tileset 1",
+  "footstepSound" : "/sfx/blocks/footstep_lightmetal.wav",
+  "drawBackground" : true,
+  "health" : 10,
+
+  "renderTemplate" : "/materials/tilesets/madtulip_tileset.config",
+  "renderParameters" : {
+    "texture" : "madtulip_novakid_1_.png",
+    "variants" : 5,
+    "lightTransparent" : true,
+    "occludesBelow" : false,
+    "multiColored" : true,
+    "zLevel" : 10
+  }
+}

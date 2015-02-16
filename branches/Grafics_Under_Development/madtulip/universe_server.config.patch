@@ -64,7 +64,18 @@
 			{"op":"replace","path":"/speciesShips/hylotl/5","value":"/ships/hylotl/madtulip_hylotl_ship_T0.structure"},
 			{"op":"replace","path":"/speciesShips/hylotl/6","value":"/ships/hylotl/madtulip_hylotl_ship_T0.structure"},
 			{"op":"replace","path":"/speciesShips/hylotl/7","value":"/ships/hylotl/madtulip_hylotl_ship_T0.structure"},
-			{"op":"replace","path":"/speciesShips/hylotl/8","value":"/ships/hylotl/madtulip_hylotl_ship_T0.structure"}
+			{"op":"replace","path":"/speciesShips/hylotl/8","value":"/ships/hylotl/madtulip_hylotl_ship_T0.structure"},
+			
+		// Novakid
+			{"op":"replace","path":"/speciesShips/novakid/0","value":"/ships/novakid/madtulip_novakid_ship_T0.structure"},
+			{"op":"replace","path":"/speciesShips/novakid/1","value":"/ships/novakid/madtulip_novakid_ship_T0.structure"},
+			{"op":"replace","path":"/speciesShips/novakid/2","value":"/ships/novakid/madtulip_novakid_ship_T0.structure"},
+			{"op":"replace","path":"/speciesShips/novakid/3","value":"/ships/novakid/madtulip_novakid_ship_T0.structure"},
+			{"op":"replace","path":"/speciesShips/novakid/4","value":"/ships/novakid/madtulip_novakid_ship_T0.structure"},
+			{"op":"replace","path":"/speciesShips/novakid/5","value":"/ships/novakid/madtulip_novakid_ship_T0.structure"},
+			{"op":"replace","path":"/speciesShips/novakid/6","value":"/ships/novakid/madtulip_novakid_ship_T0.structure"},
+			{"op":"replace","path":"/speciesShips/novakid/7","value":"/ships/novakid/madtulip_novakid_ship_T0.structure"},
+			{"op":"replace","path":"/speciesShips/novakid/8","value":"/ships/novakid/madtulip_novakid_ship_T0.structure"}
 	
 	// MODDED RACES
 		// TODO
