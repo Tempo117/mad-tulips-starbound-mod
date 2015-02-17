@@ -1,0 +1,14 @@
+{
+  "materialId" : 21044,
+  "materialName" : "madtulip_floran_lr",
+  "frames" : "madtulip_floran_lr.png",
+  "transparent" : true,
+  "particleColor" : [110, 110, 110, 255],
+  "variants" : 1,
+  "itemDrop" : "madtulip_floran_tileset",
+  "description" : "Floran Spaceship Hull Tileset",
+  "shortdescription" : "Floran Spaceship Hull Tileset",
+  "multicolored" : false,
+  "footstepSound" : "/sfx/blocks/footstep_composite.wav",
+  "health" : 10
+}

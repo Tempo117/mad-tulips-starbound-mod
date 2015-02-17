@@ -1,0 +1,14 @@
+{
+  "materialId" : 21102,
+  "materialName" : "madtulip_hylotl_blt",
+  "frames" : "madtulip_hylotl_blt.png",
+  "transparent" : true,
+  "particleColor" : [110, 110, 110, 255],
+  "variants" : 1,
+  "itemDrop" : "madtulip_hylotl_tileset",
+  "description" : "Hylotl Spaceship Hull Tileset",
+  "shortdescription" : "Hylotl Spaceship Hull Tileset",
+  "multicolored" : false,
+  "footstepSound" : "/sfx/blocks/footstep_composite.wav",
+  "health" : 10
+}

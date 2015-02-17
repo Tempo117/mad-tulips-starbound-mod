@@ -1,0 +1,11 @@
+{
+  "input" : [
+	{ "item" : "madtulip_hylotl_plating", "count" : 1 },
+	{ "item" : "madtulip_tier_durasteel_plating_1", "count" : 1 }
+  ],
+  "output" : {
+    "item" : "madtulip_hylotl3_tileset",
+    "count" : 4
+  },
+  "groups" : [ "madtulip_metal_press", "all", "tileset" ]
+}

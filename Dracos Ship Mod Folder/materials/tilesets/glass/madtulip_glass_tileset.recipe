@@ -1,0 +1,10 @@
+{
+  "input" : [
+	{ "item" : "money", "count" : 10 }
+  ],
+  "output" : {
+    "item" : "madtulip_glass_tileset",
+    "count" : 8
+  },
+  "groups" : [ "madtulip_metal_press", "all", "tileset" ]
+}

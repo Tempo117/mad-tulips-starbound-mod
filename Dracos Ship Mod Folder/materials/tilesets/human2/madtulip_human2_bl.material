@@ -1,0 +1,14 @@
+{
+  "materialId" : 21281,
+  "materialName" : "madtulip_human2_bl",
+  "frames" : "madtulip_human2_bl.png",
+  "transparent" : true,
+  "particleColor" : [110, 110, 110, 255],
+  "variants" : 1,
+  "itemDrop" : "madtulip_human2_tileset",
+  "description" : "Human Spaceship Hull Tileset 2",
+  "shortdescription" : "Human Spaceship Hull Tileset 2",
+  "multicolored" : false,
+  "footstepSound" : "/sfx/blocks/footstep_composite.wav",
+  "health" : 10
+}
