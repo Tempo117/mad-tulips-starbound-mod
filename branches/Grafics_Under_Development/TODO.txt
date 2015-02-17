@@ -25,13 +25,13 @@
 - check modules
 -- T1 Pod drops woodencraftingtable1 as perfectly genereic item (was renamed to woodencraftingtable1)
 -- T2,3,4 pods dont print at all
-- check if content of pods (crafting tables) is still in line with the vanilla game progression. not that it allows to unlock a table at an earlier tier
+-- check if content of pods (crafting tables) is still in line with the vanilla game progression. not that it allows to unlock a table at an earlier tier
 - fix all techs
 - fix life support system
-- fix crew
 - fix Ship AI Quests
 -- Ship AI Quest throws "Error: Could not instantiate item '[shipengine, 10, {}]'. (ItemException) No such item 'shipengine'"
 -- Ship AI Quest shows strange rewards for first quest
+- fix crew
 
 ----------------------------------------------------------------------------------------------------
 ---------------------------------------OLD----------------------------------------------

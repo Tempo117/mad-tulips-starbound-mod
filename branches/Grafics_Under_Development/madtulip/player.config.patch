@@ -1,18 +1,22 @@
 [
 	// defaultitems
 		// debug usefull
-
-{"op":"add","path":"/defaultItems/-","value":{"item":"woodencraftingtable","count":1}},
-{"op":"add","path":"/defaultItems/-","value":{"item":"madtulip_tier1_pod","count":1}},
-{"op":"add","path":"/defaultItems/-","value":{"item":"madtulip_tier2_pod","count":1}},
-{"op":"add","path":"/defaultItems/-","value":{"item":"madtulip_tier3_pod","count":1}},
-{"op":"add","path":"/defaultItems/-","value":{"item":"madtulip_tier4_pod","count":1}},
-		
 			{"op":"add","path":"/defaultItems/-","value":{"item":"diamonddrill","count":1}},
+			
 	/*
-			{"op":"add","path":"/defaultItems/-","value":{"item":"spawnerguard","count":1}},
 			{"op":"add","path":"/defaultItems/-","value":{"item":"wire","count":100}},
 			{"op":"add","path":"/defaultItems/-","value":{"item":"wiretool","count":1}},
+			{"op":"add","path":"/defaultItems/-","value":{"item":"miab_basestore_scanner","count":1}},
+			{"op":"add","path":"/defaultItems/-","value":{"item":"miab_basestore_receiver","count":1}},
+
+			{"op":"add","path":"/defaultItems/-","value":{"item":"madtulip_tier1_pod","count":1}},
+			{"op":"add","path":"/defaultItems/-","value":{"item":"madtulip_tier2_pod","count":1}},
+			{"op":"add","path":"/defaultItems/-","value":{"item":"madtulip_tier3_pod","count":1}},
+			{"op":"add","path":"/defaultItems/-","value":{"item":"madtulip_tier4_pod","count":1}},
+	*/
+
+	/*
+			{"op":"add","path":"/defaultItems/-","value":{"item":"spawnerguard","count":1}},
 			{"op":"add","path":"/defaultItems/-","value":{"item":"ironswitch","count":1}},
 			{"op":"add","path":"/defaultItems/-","value":{"item":"buster","count":1}},
 	*/
@@ -60,7 +64,9 @@
 				{"op":"add","path":"/defaultBlueprints/tier1/-","value":{"item":"madtulip_silicium"}},
 
 			// Objects
+/*
 				{"op":"add","path":"/defaultBlueprints/tier1/-","value":{"item":"madtulip_tier1_pod"}},
+*/
 				{"op":"add","path":"/defaultBlueprints/tier1/-","value":{"item":"madtulip_shiplight"}},
 
 			// Tech
@@ -118,9 +124,10 @@
 				{"op":"add","path":"/defaultBlueprints/tier2/-","value":{"item":"madtulip_wallplate"}},
 
 			// Objects
-				{"op":"add","path":"/defaultBlueprints/tier2/-","value":{"item":"madtulip_metal_press"}},
-			
+/*
 				{"op":"add","path":"/defaultBlueprints/tier2/-","value":{"item":"madtulip_tier2_pod"}},
+*/
+				{"op":"add","path":"/defaultBlueprints/tier2/-","value":{"item":"madtulip_metal_press"}},
 
 				{"op":"add","path":"/defaultBlueprints/tier2/-","value":{"item":"madtulip_rifle_rack"}},
 				{"op":"add","path":"/defaultBlueprints/tier2/-","value":{"item":"madtulip_pistol_rack"}},
@@ -154,8 +161,9 @@
 				{"op":"add","path":"/defaultBlueprints/tier3/-","value":{"item":"madtulip_tier_steel_plating_3"}},
 				
 			// Objects
+/*
 				{"op":"add","path":"/defaultBlueprints/tier3/-","value":{"item":"madtulip_tier3_pod"}},
-				
+*/
 				{"op":"add","path":"/defaultBlueprints/tier3/-","value":{"item":"madtulip_fuelhatch"}},
 				{"op":"add","path":"/defaultBlueprints/tier3/-","value":{"item":"madtulip_shipnavigationconsole"}},
 				{"op":"add","path":"/defaultBlueprints/tier3/-","value":{"item":"madtulip_techstation"}},
@@ -223,9 +231,9 @@
 				{"op":"add","path":"/defaultBlueprints/tier4/-","value":{"item":"madtulip_glass_1_"}},
 			
 			// Objects
+/*
 				{"op":"add","path":"/defaultBlueprints/tier4/-","value":{"item":"madtulip_tier4_pod"}},
-				
-				{"op":"add","path":"/defaultBlueprints/tier4/-","value":{"item":"madtulip_tile_setter"}},
+*/
 				
 				{"op":"add","path":"/defaultBlueprints/tier4/-","value":{"item":"madtulip_captainschair"}},
 				{"op":"add","path":"/defaultBlueprints/tier4/-","value":{"item":"madtulip_shiplocker"}},
@@ -277,6 +285,7 @@
 				{"op":"add","path":"/defaultBlueprints/tier5/-","value":{"item":"madtulip_tier_durasteel_plating_3"}},
 				
 			// Materials
+/*
 				{"op":"add","path":"/defaultBlueprints/tier5/-","value":{"item":"madtulip_apex2_tileset"}},
 				{"op":"add","path":"/defaultBlueprints/tier5/-","value":{"item":"madtulip_avian2_tileset"}},
 				{"op":"add","path":"/defaultBlueprints/tier5/-","value":{"item":"madtulip_floran2_tileset"}},
@@ -290,7 +299,7 @@
 				{"op":"add","path":"/defaultBlueprints/tier5/-","value":{"item":"madtulip_glitch3_tileset"}},
 				{"op":"add","path":"/defaultBlueprints/tier5/-","value":{"item":"madtulip_human3_tileset"}},
 				{"op":"add","path":"/defaultBlueprints/tier5/-","value":{"item":"madtulip_hylotl3_tileset"}},
-				
+*/
 			// Objects
 				{"op":"add","path":"/defaultBlueprints/tier5/-","value":{"item":"miab_basestore_scanner"}},
 				{"op":"add","path":"/defaultBlueprints/tier5/-","value":{"item":"miab_basestore_receiver"}},
