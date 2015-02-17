@@ -1,7 +1,6 @@
 {
   "objectName" : "madtulip_scanner",
   "rarity" : "Common",
-  "objectType" : "wire",
   "description" : "Scans the surroundings",
   "shortdescription" : "Scanner",
   "race" : "generic",

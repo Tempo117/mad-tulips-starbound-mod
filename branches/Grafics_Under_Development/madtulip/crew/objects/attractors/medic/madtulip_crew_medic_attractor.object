@@ -1,7 +1,6 @@
 {
 	"objectName" : "madtulip_crew_medic_attractor",
 	"rarity" : "Common",
-	"objectType" : "wire",
 	"description" : "Attracts Medics",
 	"shortdescription" : "Medic Attractor",
 

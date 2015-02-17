@@ -1,7 +1,6 @@
 {
   "objectName" : "madtulip_forcefield_door",
   "rarity" : "Common",
-  "objectType" : "wire",
 
   "category" : "door",
   "description" : "A door. Possibly suitable for a spaceship.",

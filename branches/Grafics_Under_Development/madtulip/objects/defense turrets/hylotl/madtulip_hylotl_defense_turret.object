@@ -1,7 +1,6 @@
 {
   "objectName" : "madtulip_hylotl_defense_turret",
   "rarity" : "Common",
-  "objectType" : "wire",
 
   "isInteractive" : true,
 

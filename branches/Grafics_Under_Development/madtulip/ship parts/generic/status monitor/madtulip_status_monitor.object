@@ -1,7 +1,6 @@
 {
 	"objectName" : "madtulip_status_monitor",
 	"rarity" : "Common",
-	"objectType" : "wire",
 	"description" : "A Monitor to display status of wired systems.",
 	"shortdescription" : "Status Monitor",
 	"race" : "generic",

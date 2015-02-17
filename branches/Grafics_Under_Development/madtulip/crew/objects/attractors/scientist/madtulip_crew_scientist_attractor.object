@@ -1,7 +1,6 @@
 {
 	"objectName" : "madtulip_crew_scientist_attractor",
 	"rarity" : "Common",
-	"objectType" : "wire",
 	"description" : "Attracts Scientists",
 	"shortdescription" : "Scientist Attractor",
 

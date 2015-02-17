@@ -1,7 +1,6 @@
 {
 	"objectName" : "madtulip_crew_beam_beacon",
 	"rarity" : "Common",
-	"objectType" : "wire",
 	"description" : "Marks the Positions where Crew is to be beamed down.",
 	"shortdescription" : "Crew Beam Beacon",
 	"race" : "generic",

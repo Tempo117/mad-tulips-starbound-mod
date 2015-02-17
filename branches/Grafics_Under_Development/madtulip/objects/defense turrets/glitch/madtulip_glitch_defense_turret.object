@@ -1,7 +1,6 @@
 {
   "objectName" : "madtulip_glitch_defense_turret",
   "rarity" : "Common",
-  "objectType" : "wire",
 
   "isInteractive" : true,
 

@@ -1,7 +1,6 @@
 {
 	"objectName" : "madtulip_crew_marine_attractor",
 	"rarity" : "Common",
-	"objectType" : "wire",
 	"description" : "Attracts Marines",
 	"shortdescription" : "Marine Attractor",
 

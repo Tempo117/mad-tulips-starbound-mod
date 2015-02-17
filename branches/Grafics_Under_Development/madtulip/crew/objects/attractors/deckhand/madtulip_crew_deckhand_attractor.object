@@ -1,7 +1,6 @@
 {
 	"objectName" : "madtulip_crew_deckhand_attractor",
 	"rarity" : "Common",
-	"objectType" : "wire",
 	"description" : "Attracts Deckhands",
 	"shortdescription" : "Deckhand Attractor",
 

@@ -1,7 +1,6 @@
 {
 	"objectName" : "madtulip_glitchy_lazor",
 	"rarity" : "Common",
-	"objectType" : "wire",
 	"description" : "A glitchy laZor!",
 	"shortdescription" : "Glitch Lazor",
 	"race" : "generic",

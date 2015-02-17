@@ -1,7 +1,6 @@
 {
 	"objectName" : "madtulip_small_blaze_spawner",
 	"rarity" : "Common",
-	"objectType" : "wire",
 	"description" : "Spawns small blaze",
 	"shortdescription" : "Small blaze spawner",
 
