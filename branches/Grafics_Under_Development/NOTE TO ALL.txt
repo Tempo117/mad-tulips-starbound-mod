@@ -1,3 +1,5 @@
 If you are making a tileset make the Z level 10 and the occludes below off, if on the tiles behind wont be rendered which looks very odd
 
  -Sid
+ 
+ This note is for information tat needs to be told to everyone as it is important, only post here if that is the case
