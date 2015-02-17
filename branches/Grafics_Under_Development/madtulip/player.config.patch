@@ -287,6 +287,8 @@
 				{"op":"add","path":"/defaultBlueprints/tier32/-","value":{"item":"madtulip_glitch_ftl_thruster"}},
 				{"op":"add","path":"/defaultBlueprints/tier32/-","value":{"item":"madtulip_human_ftl_thruster"}},
 				{"op":"add","path":"/defaultBlueprints/tier32/-","value":{"item":"madtulip_hylotl_ftl_thruster"}},
+
+				{"op":"add","path":"/defaultBlueprints/tier32/-","value":{"item":"madtulip_glitch_large_ftl_thruster"}},
 				
 			// Tech
 				{"op":"add","path":"/defaultBlueprints/tier32/-","value":{"item":"madtulip_apex_scoutship-chip"}},
