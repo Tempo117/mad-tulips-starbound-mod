@@ -1,0 +1,81 @@
+{
+  "madtulip_starterTreasure" : [
+    [0, {
+      "fill" : [
+        {"item" : "flashlight"},
+        {"item" : [ "torch", 10 ]},
+		{"item" : "madtulip_tier1_pod"}
+      ]
+    }]
+  ],
+
+  "madtulip_avianStarterTreasure" : [
+    [0, {
+      "fill" : [
+        {"pool" : "madtulip_starterTreasure"},
+        {"item" : [ "aviantier0shortsword", 1]},
+        {"item" : [ "avianstarter", 1]}
+      ]
+    }]
+  ],
+
+  "madtulip_apexStarterTreasure" : [
+    [0, {
+      "fill" : [
+        {"pool" : "madtulip_starterTreasure"},
+        {"item" : [ "apextier0shortsword", 1]},
+        {"item" : [ "apexstarter", 1]}
+      ]
+    }]
+  ],
+
+  "madtulip_humanStarterTreasure" : [
+    [0, {
+      "fill" : [
+        {"pool" : "madtulip_starterTreasure"},
+        {"item" : [ "humantier0shortsword", 1]},
+        {"item" : [ "humanstarter", 1]}
+      ]
+    }]
+  ],
+
+  "madtulip_glitchStarterTreasure" : [
+    [0, {
+      "fill" : [
+        {"pool" : "madtulip_starterTreasure"},
+        {"item" : [ "glitchtier0shortsword", 1]},
+        {"item" : [ "glitchstarter", 1]}
+      ]
+    }]
+  ],
+
+  "madtulip_hylotlStarterTreasure" : [
+    [0, {
+      "fill" : [
+        {"pool" : "madtulip_starterTreasure"},
+        {"item" : [ "hylotltier0shortsword", 1]},
+        {"item" : [ "hylotlstarter", 1]}
+      ]
+    }]
+  ],
+
+  "madtulip_floranStarterTreasure" : [
+    [0, {
+      "fill" : [
+        {"pool" : "madtulip_starterTreasure"},
+        {"item" : [ "florantier0shortsword", 1]},
+        {"item" : [ "floranstarter", 1]}
+      ]
+    }]
+  ],
+
+  "madtulip_novakidStarterTreasure" : [
+    [0, {
+      "fill" : [
+        {"pool" : "madtulip_starterTreasure"},
+        {"item" : [ "novastarter", 1]},
+        {"item" : [ "novatier0rifle", 1]}
+      ]
+    }]
+  ]
+}

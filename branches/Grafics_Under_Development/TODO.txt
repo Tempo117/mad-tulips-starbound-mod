@@ -3,10 +3,12 @@
 ----------------------------------------------------------------------------------------------------
 
 -------- Random things that need doing -----------
+- fix partly missing background behind tileset diagonals of starter ships
 - please fix the forcefield door by using the grafic in ship parts\generic\forcefield door\OLD_madtulip_forcefield_door instead of the current apex door placeholder
 - spawn and test all ship parts
 - techstation needs "madtulip_techstation_lit.png" to be implemented (its a dummy should show non-powered version of it (see vanilla files))
 - teleporters need _lit grafics as well (see vanilla teleporter) i added "madtulip_teleporter_lit" as placeholder to "ship parts\generic\teleporter" already.
+- check if tier1 to tier5 recipe unlocking mechanic is working
 
 --------- Objects missing: -----------
 - 1st weapon: avian
@@ -19,9 +21,11 @@
 - Player could later on be required to build certain parts of the ship in order to progress instead of upgrade the ship vanilla wise
 
 ----------- Things left to fix for madtulip ---------
-- fix ship treasure pools
 - check miab
 - check modules
+-- T1 Pod drops woodencraftingtable1 as perfectly genereic item (was renamed to woodencraftingtable1)
+-- T2,3,4 pods dont print at all
+- check if content of pods (crafting tables) is still in line with the vanilla game progression. not that it allows to unlock a table at an earlier tier
 - fix all techs
 - fix life support system
 - fix crew

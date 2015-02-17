@@ -2,10 +2,11 @@
 	// defaultitems
 		// debug usefull
 
-{"op":"add","path":"/defaultItems/-","value":{"item":"madtulip_metal_press","count":1}},
-{"op":"add","path":"/defaultItems/-","value":{"item":"madtulip_crewconsole","count":1}},
-
-
+{"op":"add","path":"/defaultItems/-","value":{"item":"woodencraftingtable","count":1}},
+{"op":"add","path":"/defaultItems/-","value":{"item":"madtulip_tier1_pod","count":1}},
+{"op":"add","path":"/defaultItems/-","value":{"item":"madtulip_tier2_pod","count":1}},
+{"op":"add","path":"/defaultItems/-","value":{"item":"madtulip_tier3_pod","count":1}},
+{"op":"add","path":"/defaultItems/-","value":{"item":"madtulip_tier4_pod","count":1}},
 		
 			{"op":"add","path":"/defaultItems/-","value":{"item":"diamonddrill","count":1}},
 	/*
@@ -52,6 +53,7 @@
 
 	//defaultBlueprints
 		//tier1
+		
 			// Items
 				{"op":"add","path":"/defaultBlueprints/tier1/-","value":{"item":"madtulip_polymer"}},
 				{"op":"add","path":"/defaultBlueprints/tier1/-","value":{"item":"madtulip_ic_logic"}},
@@ -62,10 +64,12 @@
 				{"op":"add","path":"/defaultBlueprints/tier1/-","value":{"item":"madtulip_shiplight"}},
 
 			// Tech
+/*
 				{"op":"add","path":"/defaultBlueprints/tier1/-","value":{"item":"madtulip_gravity-chip"}},
-
+*/
 		//tier2
 		{"op":"add","path":"/defaultBlueprints/tier2","value":[]},
+		
 			// Items
 				{"op":"add","path":"/defaultBlueprints/tier1/-","value":{"item":"madtulip_tier_steel_plating_1"}},
 				{"op":"add","path":"/defaultBlueprints/tier1/-","value":{"item":"madtulip_tier_steel_plating_2"}},
@@ -145,8 +149,10 @@
 				{"op":"add","path":"/defaultBlueprints/tier2/-","value":{"item":"madtulip_human_engine_core"}},
 		//tier3
 		{"op":"add","path":"/defaultBlueprints/tier3","value":[]},
+		
 			// Items
 				{"op":"add","path":"/defaultBlueprints/tier3/-","value":{"item":"madtulip_tier_steel_plating_3"}},
+				
 			// Objects
 				{"op":"add","path":"/defaultBlueprints/tier3/-","value":{"item":"madtulip_tier3_pod"}},
 				
@@ -201,17 +207,20 @@
 				{"op":"add","path":"/defaultBlueprints/tier3/-","value":{"item":"madtulip_landing_gear_3"}},
 		//tier4
 		{"op":"add","path":"/defaultBlueprints/tier4","value":[]},
+		
 			// Items
 				{"op":"add","path":"/defaultBlueprints/tier4/-","value":{"item":"madtulip_tier_durasteel_plating_1"}},
 				{"op":"add","path":"/defaultBlueprints/tier4/-","value":{"item":"madtulip_tier_durasteel_plating_2"}},			
+				
 			// Materials
-				{"op":"add","path":"/defaultBlueprints/tier4/-","value":{"item":"madtulip_apex_tileset"}},
-				{"op":"add","path":"/defaultBlueprints/tier4/-","value":{"item":"madtulip_avian_tileset"}},
-				{"op":"add","path":"/defaultBlueprints/tier4/-","value":{"item":"madtulip_floran_tileset"}},
-				{"op":"add","path":"/defaultBlueprints/tier4/-","value":{"item":"madtulip_glitch_tileset"}},
-				{"op":"add","path":"/defaultBlueprints/tier4/-","value":{"item":"madtulip_human_tileset"}},
-				{"op":"add","path":"/defaultBlueprints/tier4/-","value":{"item":"madtulip_hylotl_tileset"}},
-				{"op":"add","path":"/defaultBlueprints/tier4/-","value":{"item":"madtulip_glass_tileset"}},
+				{"op":"add","path":"/defaultBlueprints/tier4/-","value":{"item":"madtulip_apex_1_"}},
+				{"op":"add","path":"/defaultBlueprints/tier4/-","value":{"item":"madtulip_avian_1_"}},
+				{"op":"add","path":"/defaultBlueprints/tier4/-","value":{"item":"madtulip_floran_1_"}},
+				{"op":"add","path":"/defaultBlueprints/tier4/-","value":{"item":"madtulip_glitch_1_"}},
+				{"op":"add","path":"/defaultBlueprints/tier4/-","value":{"item":"madtulip_human_1_"}},
+				{"op":"add","path":"/defaultBlueprints/tier4/-","value":{"item":"madtulip_hylotl_1_"}},
+				{"op":"add","path":"/defaultBlueprints/tier4/-","value":{"item":"madtulip_novakid_1_"}},
+				{"op":"add","path":"/defaultBlueprints/tier4/-","value":{"item":"madtulip_glass_1_"}},
 			
 			// Objects
 				{"op":"add","path":"/defaultBlueprints/tier4/-","value":{"item":"madtulip_tier4_pod"}},
@@ -263,8 +272,10 @@
 				{"op":"add","path":"/defaultBlueprints/tier4/-","value":{"item":"madtulip_glitchy_lazor"}},
 		//level5
 		{"op":"add","path":"/defaultBlueprints/tier5","value":[]},
+		
 			// Items
 				{"op":"add","path":"/defaultBlueprints/tier5/-","value":{"item":"madtulip_tier_durasteel_plating_3"}},
+				
 			// Materials
 				{"op":"add","path":"/defaultBlueprints/tier5/-","value":{"item":"madtulip_apex2_tileset"}},
 				{"op":"add","path":"/defaultBlueprints/tier5/-","value":{"item":"madtulip_avian2_tileset"}},
@@ -293,9 +304,10 @@
 
 				{"op":"add","path":"/defaultBlueprints/tier5/-","value":{"item":"madtulip_human_turret_missile"}},
 				
-				{"op":"add","path":"/defaultBlueprints/tier5/-","value":{"item":"madtulip_glitch_large_ftl_thruster"}},
+				{"op":"add","path":"/defaultBlueprints/tier5/-","value":{"item":"madtulip_glitch_large_ftl_thruster"}}
 				
 			// Tech
+/*
 				{"op":"add","path":"/defaultBlueprints/tier5/-","value":{"item":"madtulip_apex_scoutship-chip"}},
 				{"op":"add","path":"/defaultBlueprints/tier5/-","value":{"item":"madtulip_human_scoutship-chip"}},
 				{"op":"add","path":"/defaultBlueprints/tier5/-","value":{"item":"madtulip_hylotl_scoutship-chip"}},
@@ -304,5 +316,5 @@
 				{"op":"add","path":"/defaultBlueprints/tier5/-","value":{"item":"madtulip_glitch_scoutship-chip"}},
 				
 				{"op":"add","path":"/defaultBlueprints/tier5/-","value":{"item":"madtulip_mining_pod-chip"}}
-	
+*/
 ]

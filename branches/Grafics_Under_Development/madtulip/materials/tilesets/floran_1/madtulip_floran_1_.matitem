@@ -1,5 +1,5 @@
 {
-  "itemName" : "madtulip_floran_1",
+  "itemName" : "madtulip_floran_1_",
   "rarity" : "Common",
   "inventoryIcon" : "madtulip_floran_1_icon.png",
   "dropCollision" : [-2.5, -2.0, 2.5, 2.0],
