@@ -1,25 +1,33 @@
 ----------------------------------------------------------------------------------------------------
 ---------------------------------------Giraffe things----------------------------------------------
 ----------------------------------------------------------------------------------------------------
-- TECHS -
-- you probably cant accquire our techs at the moment
-- Chip .recipe files removed from all techs. they seems to handle tech accquiring differently now.
 
-- SHIPS -
-- "treasurepool" not defined for any race ship (defaulted to human vanilla)
-
-- CREW -
-- "/crew/guns/bone mender" folder removed as not working. probably misses its statuseffect
-- "/crew/statuseffects" removed as not working. probably different implementation of status effects now
-
------------- Ship progression -----------------
-- we need a broken teleporter version (see vanilla "teleportertier0")
-- all working teleporters need a lit and none lit version. see vanilla "teleporter.png" and "teleporterlit.png". i added "madtulip_teleporter_lit" as placeholder to "ship parts\generic\teleporter" already
-- techstation needs a "madtulip_techstation_lit.png" as well
-
--------- Random things ive noticed -----------
-- there is no human SectorAirlock Door type
+-------- Random things that need doing -----------
 - please fix the forcefield door by using the grafic in ship parts\generic\forcefield door\OLD_madtulip_forcefield_door instead of the current apex door placeholder
+- spawn and test all ship parts
+- techstation needs "madtulip_techstation_lit.png" to be implemented (its a dummy should show non-powered version of it (see vanilla files))
+- teleporters need _lit grafics as well (see vanilla teleporter) i added "madtulip_teleporter_lit" as placeholder to "ship parts\generic\teleporter" already.
+
+--------- Objects missing: -----------
+- 1st weapon: avian
+- 2nd weapon: avian, floran,hylotl
+- Human SectorAirlock Door type
+- Most Novakids stuff
+
+------------------- Ship progression quest thoughts -----------------
+- We could also start with a broken ship as in vanilla and have people repair initial ship parts.
+- Player could later on be required to build certain parts of the ship in order to progress instead of upgrade the ship vanilla wise
+
+----------- Things left to fix for madtulip ---------
+- fix ship treasure pools
+- check miab
+- check modules
+- fix all techs
+- fix life support system
+- fix crew
+- fix Ship AI Quests
+-- Ship AI Quest throws "Error: Could not instantiate item '[shipengine, 10, {}]'. (ItemException) No such item 'shipengine'"
+-- Ship AI Quest shows strange rewards for first quest
 
 ----------------------------------------------------------------------------------------------------
 ---------------------------------------OLD----------------------------------------------
@@ -44,9 +52,6 @@ Ideas:
 ----------------------------------------------------------------------------------------------------
 -----------------------------------------NEXT UPDATE------------------------------------------------
 ----------------------------------------------------------------------------------------------------
-Doors
-- forcefield door horizontal/vertical colorable (all colors) (mid priority)
-- door sector unlock human not done at all
 ----------------------------------------------------------------------------------------------------
 Crew (mid to low priority)
 - 2 to 3 resting objects like fridges ? and the like
@@ -72,36 +77,6 @@ Crew
 ----------------------------------------------------------------------------------------------------
 
 
-
-
-----------------------------------------------------------------------------------------------------
------------------------------------------Novakid----------------------------------------------------
-----------------------------------------------------------------------------------------------------
-- comms
-- flux
-- ftl
-- gyro
-- s,m,l fin
-- shipdoor (horizontal and vertical)
-- stabilization thruster
-- weapon 1
-- weapon 2
-
-- shipstructure file
-
-Give Hugg all your ideas because im bone dry for ideas on novakid unique objects, thanks
-
-
-
-----------------------------------------------------------------------------------------------------
------------------------------------AFTER NEXT UPDATE------------------------------------------------
-----------------------------------------------------------------------------------------------------
-Older ship parts
-- 1st weapon: avian
-- 2nd weapon: avian, floran,hylotl
-
-
-
 ----------------------------------------------------------------------------------------------------
 -----------------------------------------CODE-------------------------------------------------------
 ----------------------------------------------------------------------------------------------------
@@ -122,8 +97,3 @@ Older ship parts
 --- jumping trajectory
 --- player and npc exact collision box
 -- some function i.e. from LS should be moved to madtulipLocation.lua instead
-
-----------------------------------------------------------------------------------------------------
-----------------------------------------Currently not solvable:-------------------------------------
-----------------------------------------------------------------------------------------------------
-- teleporter -> home planet broken

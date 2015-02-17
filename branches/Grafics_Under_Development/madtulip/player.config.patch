@@ -2,7 +2,9 @@
 	// defaultitems
 		// debug usefull
 
-{"op":"add","path":"/defaultItems/-","value":{"item":"madtulip_forcefield_door","count":1}},
+{"op":"add","path":"/defaultItems/-","value":{"item":"madtulip_metal_press","count":1}},
+{"op":"add","path":"/defaultItems/-","value":{"item":"madtulip_crewconsole","count":1}},
+
 
 		
 			{"op":"add","path":"/defaultItems/-","value":{"item":"diamonddrill","count":1}},
@@ -47,7 +49,6 @@
 		{"op":"add","path":"/defaultItems/-","value":{"item":"madtulip_crew_medic_attractor","count":1}},
 		{"op":"add","path":"/defaultItems/-","value":{"item":"madtulip_crew_marine_attractor","count":1}},
 	*/
-	
 
 	//defaultBlueprints
 		//tier1
@@ -76,6 +77,7 @@
 				{"op":"add","path":"/defaultBlueprints/tier1/-","value":{"item":"madtulip_human_plating"}},
 				{"op":"add","path":"/defaultBlueprints/tier1/-","value":{"item":"madtulip_hylotl_plating"}},
 
+/*
 			// Crew
 				{"op":"add","path":"/defaultBlueprints/tier2/-","value":{"item":"madtulip_crewconsole"}},
 				{"op":"add","path":"/defaultBlueprints/tier2/-","value":{"item":"madtulip_crew_spawner"}},
@@ -86,6 +88,7 @@
 				{"op":"add","path":"/defaultBlueprints/tier2/-","value":{"item":"madtulip_medic_promotion"}},
 				{"op":"add","path":"/defaultBlueprints/tier2/-","value":{"item":"madtulip_scientist_promotion"}},
 				{"op":"add","path":"/defaultBlueprints/tier2/-","value":{"item":"madtulip_deckhand_demotion"}},
+*/
 
 			// Resting Items
 				{"op":"add","path":"/defaultBlueprints/tier2/-","value":{"item":"madtulip_crew_wall_mounted_bed"}},
