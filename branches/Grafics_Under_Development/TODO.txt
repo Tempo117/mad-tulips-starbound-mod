@@ -7,25 +7,19 @@
 
 - SHIPS -
 - "treasurepool" not defined for any race ship (defaulted to human vanilla)
-- custom materials not visible
-
-- MATERIAL
-- basically all invisible/broken. probably some needs material ID handling. ...
 
 - CREW -
 - "/crew/guns/bone mender" folder removed as not working. probably misses its statuseffect
 - "/crew/statuseffects" removed as not working. probably different implementation of status effects now
 
-- CREW -
-- decrease block costs by giving out mroe block poer craft
-
 ------------ Ship progression -----------------
 - we need a broken teleporter version (see vanilla "teleportertier0")
 - all working teleporters need a lit and none lit version. see vanilla "teleporter.png" and "teleporterlit.png". i added "madtulip_teleporter_lit" as placeholder to "ship parts\generic\teleporter" already
+- techstation needs a "madtulip_techstation_lit.png" as well
 
 -------- Random things ive noticed -----------
 - there is no human SectorAirlock Door type
-
+- please fix the forcefield door by using the grafic in ship parts\generic\forcefield door\OLD_madtulip_forcefield_door instead of the current apex door placeholder
 
 ----------------------------------------------------------------------------------------------------
 ---------------------------------------OLD----------------------------------------------

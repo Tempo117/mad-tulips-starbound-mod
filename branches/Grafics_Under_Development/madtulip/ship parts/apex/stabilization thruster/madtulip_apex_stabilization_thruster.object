@@ -16,6 +16,7 @@
 
   "category" : "light",
   "lightColor" : [59, 183, 255],
+  "pointLight" : true,
   "flickerDistance" : 0.2,
   "flickerStrength" : 0.05,
   "flickerTiming" : 4,

@@ -2,6 +2,8 @@
 	// defaultitems
 		// debug usefull
 
+{"op":"add","path":"/defaultItems/-","value":{"item":"madtulip_forcefield_door","count":1}},
+
 		
 			{"op":"add","path":"/defaultItems/-","value":{"item":"diamonddrill","count":1}},
 	/*
@@ -52,28 +54,28 @@
 			// Items
 				{"op":"add","path":"/defaultBlueprints/tier1/-","value":{"item":"madtulip_polymer"}},
 				{"op":"add","path":"/defaultBlueprints/tier1/-","value":{"item":"madtulip_ic_logic"}},
-				{"op":"add","path":"/defaultBlueprints/tier1/-","value":{"item":"madtulip_silicium"}}
-/*			
+				{"op":"add","path":"/defaultBlueprints/tier1/-","value":{"item":"madtulip_silicium"}},
+
 			// Objects
 				{"op":"add","path":"/defaultBlueprints/tier1/-","value":{"item":"madtulip_tier1_pod"}},
 				{"op":"add","path":"/defaultBlueprints/tier1/-","value":{"item":"madtulip_shiplight"}},
-				
+
 			// Tech
 				{"op":"add","path":"/defaultBlueprints/tier1/-","value":{"item":"madtulip_gravity-chip"}},
 
 		//tier2
 		{"op":"add","path":"/defaultBlueprints/tier2","value":[]},
 			// Items
-				{"op":"add","path":"/defaultBlueprints/tier2/-","value":{"item":"madtulip_tier_steel_plating_1"}},
-				{"op":"add","path":"/defaultBlueprints/tier2/-","value":{"item":"madtulip_tier_steel_plating_2"}},
+				{"op":"add","path":"/defaultBlueprints/tier1/-","value":{"item":"madtulip_tier_steel_plating_1"}},
+				{"op":"add","path":"/defaultBlueprints/tier1/-","value":{"item":"madtulip_tier_steel_plating_2"}},
 	
-				{"op":"add","path":"/defaultBlueprints/tier2/-","value":{"item":"madtulip_apex_plating"}},
-				{"op":"add","path":"/defaultBlueprints/tier2/-","value":{"item":"madtulip_avian_plating"}},
-				{"op":"add","path":"/defaultBlueprints/tier2/-","value":{"item":"madtulip_floran_plating"}},
-				{"op":"add","path":"/defaultBlueprints/tier2/-","value":{"item":"madtulip_glitch_plating"}},
-				{"op":"add","path":"/defaultBlueprints/tier2/-","value":{"item":"madtulip_human_plating"}},
-				{"op":"add","path":"/defaultBlueprints/tier2/-","value":{"item":"madtulip_hylotl_plating"}},
-		
+				{"op":"add","path":"/defaultBlueprints/tier1/-","value":{"item":"madtulip_apex_plating"}},
+				{"op":"add","path":"/defaultBlueprints/tier1/-","value":{"item":"madtulip_avian_plating"}},
+				{"op":"add","path":"/defaultBlueprints/tier1/-","value":{"item":"madtulip_floran_plating"}},
+				{"op":"add","path":"/defaultBlueprints/tier1/-","value":{"item":"madtulip_glitch_plating"}},
+				{"op":"add","path":"/defaultBlueprints/tier1/-","value":{"item":"madtulip_human_plating"}},
+				{"op":"add","path":"/defaultBlueprints/tier1/-","value":{"item":"madtulip_hylotl_plating"}},
+
 			// Crew
 				{"op":"add","path":"/defaultBlueprints/tier2/-","value":{"item":"madtulip_crewconsole"}},
 				{"op":"add","path":"/defaultBlueprints/tier2/-","value":{"item":"madtulip_crew_spawner"}},
@@ -259,7 +261,7 @@
 		//level5
 		{"op":"add","path":"/defaultBlueprints/tier5","value":[]},
 			// Items
-				{"op":"add","path":"/defaultBlueprints/tier5/-","value":{"item":"madtulip_tier_durasteel_plating_3"}}			
+				{"op":"add","path":"/defaultBlueprints/tier5/-","value":{"item":"madtulip_tier_durasteel_plating_3"}},
 			// Materials
 				{"op":"add","path":"/defaultBlueprints/tier5/-","value":{"item":"madtulip_apex2_tileset"}},
 				{"op":"add","path":"/defaultBlueprints/tier5/-","value":{"item":"madtulip_avian2_tileset"}},
@@ -299,5 +301,5 @@
 				{"op":"add","path":"/defaultBlueprints/tier5/-","value":{"item":"madtulip_glitch_scoutship-chip"}},
 				
 				{"op":"add","path":"/defaultBlueprints/tier5/-","value":{"item":"madtulip_mining_pod-chip"}}
-	*/
+	
 ]
