@@ -19,6 +19,14 @@
 - CREW -
 - decrease block costs by giving out mroe block poer craft
 
+------------ Ship progression -----------------
+- we need a broken teleporter version (see vanilla "teleportertier0")
+- all working teleporters need a lit and none lit version. see vanilla "teleporter.png" and "teleporterlit.png". i added "madtulip_teleporter_lit" as placeholder to "ship parts\generic\teleporter" already
+
+-------- Random things ive noticed -----------
+- there is no human SectorAirlock Door type
+
+
 ----------------------------------------------------------------------------------------------------
 ---------------------------------------OLD----------------------------------------------
 ----------------------------------------------------------------------------------------------------

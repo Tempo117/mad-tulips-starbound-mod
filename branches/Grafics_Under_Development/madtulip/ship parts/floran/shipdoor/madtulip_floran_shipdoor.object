@@ -1,11 +1,11 @@
 {
   "objectName" : "madtulip_floran_shipdoor",
   "rarity" : "Common",
-  "objectType" : "wire",
 
   "category" : "door",
   "price" : 10,
   "printable" : false,
+  
   "description" : "A reinforced space-grade hatch that can be placed dynamically.",
   "shortdescription" : "Floran Ship Door",
   "race" : "floran",
@@ -40,14 +40,17 @@
   "scriptDelta" : 5,
 
   "animation" : "door.animation",
+  "animationCustom" : {
+    "sounds" : {
+      "openSounds" : [ "/sfx/objects/apexcooldoor_open.wav" ],
+      "closeSounds" : [ "/sfx/objects/apexcooldoor_close.wav" ]
+    }
+  },
   "animationParts" : {
     "door" : "madtulip_floran_shipdoor.png"
   },
   "animationPosition" : [-16, -16],
   
   "inboundNodes" : [ [0, 1] ],
-  "outboundNodes" : [ [0, -1] ],
-  
-  "openSounds" : [ "/sfx/objects/apexcooldoor_open.wav" ],
-  "closeSounds" : [ "/sfx/objects/apexcooldoor_close.wav" ]
+  "outboundNodes" : [ [0, -1] ]
 }

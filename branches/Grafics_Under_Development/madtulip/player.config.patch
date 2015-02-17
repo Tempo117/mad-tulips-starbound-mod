@@ -1,7 +1,11 @@
 [
 	// defaultitems
 		// debug usefull
-			{"op":"add","path":"/defaultItems/-","value":{"item":"madtulip_apex_1_","count":100}},
+			{"op":"add","path":"/defaultItems/-","value":{"item":"madtulip_apex_sector_airlock","count":100}},
+			{"op":"add","path":"/defaultItems/-","value":{"item":"madtulip_avian_sector_airlock","count":100}},
+			{"op":"add","path":"/defaultItems/-","value":{"item":"madtulip_floran_sector_airlock","count":100}},
+			{"op":"add","path":"/defaultItems/-","value":{"item":"madtulip_glitch_sector_airlock","count":100}},
+			{"op":"add","path":"/defaultItems/-","value":{"item":"madtulip_hylotl_sector_airlock","count":100}},
 			
 			{"op":"add","path":"/defaultItems/-","value":{"item":"diamonddrill","count":1}},
 			{"op":"add","path":"/defaultItems/-","value":{"item":"spawnerguard","count":1}},

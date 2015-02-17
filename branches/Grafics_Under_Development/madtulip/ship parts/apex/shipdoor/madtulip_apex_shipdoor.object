@@ -1,7 +1,7 @@
 {
   "objectName" : "madtulip_apex_shipdoor",
   "rarity" : "Common",
-  "objectType" : "wire",
+
   "category" : "door",
   "price" : 10,
   "printable" : false,
@@ -40,14 +40,17 @@
   "scriptDelta" : 5,
 
   "animation" : "door.animation",
+  "animationCustom" : {
+    "sounds" : {
+      "openSounds" : [ "/sfx/objects/apexcooldoor_open.wav" ],
+      "closeSounds" : [ "/sfx/objects/apexcooldoor_close.wav" ]
+    }
+  },
   "animationParts" : {
     "door" : "madtulip_apex_shipdoor.png"
   },
   "animationPosition" : [-16, -16],
   
   "inboundNodes" : [ [0, 1] ],
-  "outboundNodes" : [ [0, -1] ],
-  
-  "openSounds" : [ "/sfx/objects/apexcooldoor_open.wav" ],
-  "closeSounds" : [ "/sfx/objects/apexcooldoor_close.wav" ]
+  "outboundNodes" : [ [0, -1] ]
 }
