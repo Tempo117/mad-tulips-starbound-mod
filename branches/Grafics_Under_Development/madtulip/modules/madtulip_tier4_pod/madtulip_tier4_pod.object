@@ -45,7 +45,7 @@
 			"apexshipdetails" : 3,
 			"pressurizedsteel" : 4,
 			"glass" : 5,
-			"madtulip_glass_" : 6,
+			"madtulip_TS_glass" : 6,
 			"modernplatform" : 7,
 			"apexshipsupport" : 8
 		},

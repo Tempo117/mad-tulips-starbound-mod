@@ -42,10 +42,10 @@
 		"blocksTable" : {
 			"miab_scaffold" : 1,
 			"modernplatform" : 2,
-			"madtulip_human_1_" : 3,
+			"madtulip_TS_human_1" : 3,
 			"smoothmetal" : 4,
 			"glass" : 5,
-			"madtulip_glass_" : 6,
+			"madtulip_TS_glass" : 6,
 			"apexshipwall" : 7,
 			"pressurizedsteel" : 8
 			

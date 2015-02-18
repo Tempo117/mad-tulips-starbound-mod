@@ -1,7 +1,7 @@
 {
-  "itemName" : "madtulip_novakid_1_",
+  "itemName" : "madtulip_TS_novakid_1",
   "rarity" : "Common",
-  "inventoryIcon" : "madtulip_novakid_1_icon.png",
+  "inventoryIcon" : "madtulip_TS_novakid_1_icon.png",
   "dropCollision" : [-2.5, -2.0, 2.5, 2.0],
   "description" : "Novakid Tileset 1",
   "shortdescription" : "Novakid Tileset 1",

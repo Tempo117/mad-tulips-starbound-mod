@@ -1,8 +1,8 @@
 {
   "materialId" : 30022,
-  "materialName" : "madtulip_glass_",
+  "materialName" : "madtulip_TS_glass",
   "particleColor" : [194, 194, 194, 255],
-  "itemDrop" : "madtulip_glass_",
+  "itemDrop" : "madtulip_TS_glass",
   "shortdescription" : "Glass Tileset",
   "description" : "Glass Tileset",
   "footstepSound" : "/sfx/blocks/footstep_lightmetal.wav",
@@ -12,7 +12,7 @@
 
   "renderTemplate" : "/materials/tilesets/madtulip_tileset.config",
   "renderParameters" : {
-    "texture" : "madtulip_glass_.png",
+    "texture" : "madtulip_TS_glass.png",
     "variants" : 5,
     "lightTransparent" : true,
     "occludesBelow" : false,

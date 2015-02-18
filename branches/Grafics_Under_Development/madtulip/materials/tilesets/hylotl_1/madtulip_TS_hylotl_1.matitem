@@ -1,7 +1,7 @@
 {
-  "itemName" : "madtulip_hylotl_1_",
+  "itemName" : "madtulip_TS_hylotl_1",
   "rarity" : "Common",
-  "inventoryIcon" : "madtulip_hylotl_1_icon.png",
+  "inventoryIcon" : "madtulip_TS_hylotl_1_icon.png",
   "dropCollision" : [-2.5, -2.0, 2.5, 2.0],
   "description" : "Hylotl Tileset 1",
   "shortdescription" : "Hylotl Tileset 1",

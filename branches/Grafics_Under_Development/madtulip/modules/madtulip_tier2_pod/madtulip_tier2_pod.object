@@ -46,7 +46,7 @@
 			"glass" : 6,
 			"apexshipsupport" : 5,
 			"smoothmetal" : 3,
-			"madtulip_glass_" : 12
+			"madtulip_TS_glass" : 12
 		},
 		"nextBlockId" : 13,
 		"layoutTableBackground" : {

@@ -1,7 +1,7 @@
 {
-  "itemName" : "madtulip_glitch_1_",
+  "itemName" : "madtulip_TS_glitch_1",
   "rarity" : "Common",
-  "inventoryIcon" : "madtulip_glitch_1_icon.png",
+  "inventoryIcon" : "madtulip_TS_glitch_1_icon.png",
   "dropCollision" : [-2.5, -2.0, 2.5, 2.0],
   "description" : "Glitch Tileset 1",
   "shortdescription" : "Glitch Tileset 1",
