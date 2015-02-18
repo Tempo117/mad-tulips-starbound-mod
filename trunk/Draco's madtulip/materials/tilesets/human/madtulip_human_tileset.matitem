@@ -1,0 +1,10 @@
+{
+  "itemName" : "madtulip_human_tileset",
+  "rarity" : "Common",
+  "inventoryIcon" : "humantileseticon.png",
+  "dropCollision" : [-2.5, -2.0, 2.5, 2.0],
+  "description" : "Black Human Spaceship Hull Tileset",
+  "shortdescription" : "Black Human Spaceship Hull Tileset",
+  "materialId" : 21016
+  
+}

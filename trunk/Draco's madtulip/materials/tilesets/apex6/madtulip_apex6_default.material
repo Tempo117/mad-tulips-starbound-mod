@@ -1,0 +1,21 @@
+{
+  "materialId" : 21582,
+  "materialName" : "madtulip_apex6_default",
+  "category": "materials",
+  "particleColor" : [110, 110, 110, 255],
+  "itemDrop" : "madtulip_apex6_tileset",
+  "description" : "Purple Apex Spaceship Hull Tileset",
+  "shortdescription" : "Purple Apex Spaceship Hull Tileset",
+  "footstepSound" : "/sfx/blocks/footstep_composite.wav",
+  "health" : 10,
+  
+  "renderTemplate" : "/tiles/pipetemplate.config",
+  "renderParameters" : {
+    "texture" : "apex6.png",
+    "variants" : 1,
+    "lightTransparent" : true,
+    "multiColored" : true,
+    "occludesBelow" : false,
+    "zLevel" : 1
+  }
+}

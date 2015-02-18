@@ -1,0 +1,21 @@
+{
+  "materialId" : 21181,
+  "materialName" : "madtulip_detail",
+  "category": "materials",
+  "particleColor" : [110, 110, 110, 255],
+  "itemDrop" : "madtulip_detail",
+  "description" : "Spaceship Details",
+  "shortdescription" : "Spaceship Details",
+  "footstepSound" : "/sfx/blocks/footstep_composite.wav",
+  "health" : 5,
+  
+  "renderTemplate" : "/tiles/classicmaterialtemplate.config",
+  "renderParameters" : {
+    "texture" : "madtulip_detail.png",
+    "variants" : 1,
+    "lightTransparent" : true,
+    "multiColored" : true,
+    "occludesBelow" : false,
+    "zLevel" : 1
+  }
+}
