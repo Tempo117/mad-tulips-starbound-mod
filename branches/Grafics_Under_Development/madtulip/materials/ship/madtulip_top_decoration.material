@@ -6,7 +6,9 @@
   "description" : "Spaceship Top Decoration",
   "shortdescription" : "Spaceship Top Decoration",
   "footstepSound" : "/sfx/blocks/footstep_composite.wav",
+  "drawBackground" : true,
   "health" : 10,
+  "category": "decorations",
   
   "renderTemplate" : "/tiles/classicmaterialtemplate.config",
   "renderParameters" : {
