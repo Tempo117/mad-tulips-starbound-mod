@@ -21,7 +21,7 @@ function onInteraction(args)
 ]]
 end
 
-function main()
+function update(dt)
 --[[
 	if not(Done_printing) then
 		-- needs to be polled

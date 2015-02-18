@@ -2,7 +2,7 @@ function init(args)
 	entity.setInteractive(true)
 end
 
-function main()
+function update(dt)
 
 end
 

@@ -34,7 +34,7 @@ function init()
 	 end)
 end
 
-function main()
+function update(dt)
     -- due to
 	-- "scriptDelta" : 100
 	-- in the object script this is called approximately every 1s for my hardware
@@ -69,10 +69,8 @@ function onInteraction(args)
 end
 
 function main_threaded()
-
 	-- only works on ship, not on planet
 	if not is_shipworld() then return false end
-
 	-- grafic update
 	if(os.time() >= madtulip.spawn_projectile_time_last_execution + madtulip.spawn_projectile_intervall_time) then
 		-- check for system beeing offline
@@ -347,13 +345,12 @@ function set_flood_data_matrix_content (X,Y,Content)
 end
 
 function is_shipworld()
-	local info = world.info()
-	if info.name ~= ""then
-		-- planet
-		return false
-	else
+	if (world.getProperty("invinciblePlayers")) then
 		-- shipworld
 		return true
+	else
+		-- planet
+		return false
 	end
 end
 

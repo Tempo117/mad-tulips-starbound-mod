@@ -5,7 +5,7 @@ function initializeObject()
 	entity.setAnimationState("beaconState", "active");
 end
 
-function main()
+function update(dt)
 	-- Check for the single execution
 	if self.initialized == nil then
 		-- Init entity

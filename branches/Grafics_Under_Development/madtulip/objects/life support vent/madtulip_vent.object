@@ -46,6 +46,11 @@
   "Breach_Warning_Sound" : [ "/objects/life support vent/Breach_Warning_Sound.wav" ],
   
   "animation" : "/objects/life support vent/madtulip_vent.animation",
+  "animationCustom" : {
+    "sounds" : {
+      "Breach_Warning_Sound" : [ "Breach_Warning_Sound.wav" ]
+    }
+  },
   "animationParts" : {
     "O2_is_ok" : "/objects/life support vent/madtulip_vent_green.png",
 	"O2_is_bad" : "/objects/life support vent/madtulip_vent_red.png",

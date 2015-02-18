@@ -19,7 +19,7 @@ function damage(args)
 end
 
 
-function main()
+function update(dt)
 --[[
   local masterId, minionIndex, minionTimer = findMaster()
   if masterId ~= 0 then
