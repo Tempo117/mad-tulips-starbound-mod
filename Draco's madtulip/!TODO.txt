@@ -1,0 +1,36 @@
+All work done on object and items.
+
+New interface needs tags set.
+
+Updated the the player.config file to .patch system. fro object and items.
+
+Added recipes for all normal game items that relate to a ship. Based those 
+recipe off of old ones still needs work on balancing.
+
+ We have updated the glitch towers and engines to match the new style.
+ 
+ Added Novakid engines, large ftl thruster, sectorairlock, shipdoor, small fin, stabiliztion thruster.
+ 
+ Added large glitch engine thruster.
+ 
+ Go thru and see what is needed.
+ 
+ Old doors are broken.
+ 
+ I am not 100 percent but believe everything else but tech, tile sets and air systems 
+ has been updated as I had removed them.
+ 
+ Also removed references to module in a box. Needs re added.
+ 
+ Updated many object files under ship parts may have them all updated.
+
+ Recipes just need balanced. I fell they need some smoothing and some item need to be
+ available earlier in the game.
+ 
+ We should edit the quest to upgrade the ship to give parts to the player. What do you think?
+ 
+ Also, we should upgrade the fuel capacity at higher tiers. What do you think?
+ 
+ SO far from an object stand point that is what I have.
+ 
+ 
