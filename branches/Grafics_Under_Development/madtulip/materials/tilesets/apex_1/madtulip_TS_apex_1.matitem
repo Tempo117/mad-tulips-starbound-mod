@@ -1,7 +1,7 @@
 {
-  "itemName" : "madtulip_apex_1_",
+  "itemName" : "madtulip_TS_apex_1",
   "rarity" : "Common",
-  "inventoryIcon" : "madtulip_apex_1_icon.png",
+  "inventoryIcon" : "madtulip_TS_apex_1_icon.png",
   "dropCollision" : [-2.5, -2.0, 2.5, 2.0],
   "description" : "Apex Tileset 1",
   "shortdescription" : "Apex Tileset 1",
