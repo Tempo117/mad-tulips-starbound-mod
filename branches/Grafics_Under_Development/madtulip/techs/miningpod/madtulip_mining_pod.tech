@@ -66,7 +66,7 @@
 	
 	"mining_damage": 2.0,
 	"mining_timer_max": 0.3,
-	"mining_cost": 0,
+	"mining_energy_cost_per_sec": 25,
 
 	"parentOffset" : [0.25, 2.125],
 	"mechTransformPositionChange" : [0.0, 0.0],

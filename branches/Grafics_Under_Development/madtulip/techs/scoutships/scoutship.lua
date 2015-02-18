@@ -243,7 +243,6 @@ function update(args)
 		end
 
 		-- Apply movement physics parameters
-		-- tech.applyMovementParameters(data.mechCustomMovementParameters)
 		mcontroller.controlParameters(data.mechCustomMovementParameters)
 
 		-- Flip and offset player

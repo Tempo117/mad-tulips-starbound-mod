@@ -1,4 +1,5 @@
 function init()
+	data = {};
 	data.active = false
 	data.ranOut = false
 	tech.setVisible(false)
@@ -34,7 +35,7 @@ function input(args)
 	end
 
 	-- jump
-	if args.moves["jump"] and tech.jumping() then data.holdingJump = true end
+	if args.moves["jump"] then data.holdingJump = true end
 	--move left
 	if args.moves["left"] then data.holdingLeft = true end
 	--move right
@@ -69,7 +70,7 @@ function update(args)
 	data.m                              = data.mechCustomMovementParameters.mass;
 	
 	data.mining_damage                  = tech.parameter("mining_damage");
-	data.mining_cost                    = tech.parameter("mining_cost");
+	data.mining_energy_cost_per_sec     = tech.parameter("mining_energy_cost_per_sec");
 	data.mining_timer_max               = tech.parameter("mining_timer_max");
 	
 	data.cost 							= 0
@@ -77,10 +78,10 @@ function update(args)
 	if not data.active and args.actions["mechActivate"] then
 		-- Calculate new position
 		tech.setAnimationState("movement", "idle")
-		data.mechCollisionTest[1] = data.mechCollisionTest[1] + tech.position()[1]
-		data.mechCollisionTest[2] = data.mechCollisionTest[2] + tech.position()[2]
-		data.mechCollisionTest[3] = data.mechCollisionTest[3] + tech.position()[1]
-		data.mechCollisionTest[4] = data.mechCollisionTest[4] + tech.position()[2]
+		data.mechCollisionTest[1] = data.mechCollisionTest[1] + mcontroller.position()[1]
+		data.mechCollisionTest[2] = data.mechCollisionTest[2] + mcontroller.position()[2]
+		data.mechCollisionTest[3] = data.mechCollisionTest[3] + mcontroller.position()[1]
+		data.mechCollisionTest[4] = data.mechCollisionTest[4] + mcontroller.position()[2]
 		
 		-- Check collision for activate
 		if not world.rectCollision(data.mechCollisionTest) then
@@ -99,7 +100,7 @@ function update(args)
 		end
 
 		-- Calculate current angle and flip state
-		local diff = world.distance(args.aimPosition, tech.position())
+		local diff = world.distance(tech.aimPosition(), mcontroller.position())
 		local aimAngle = math.atan2(diff[2], diff[1])
 		local flip = aimAngle > math.pi / 2 or aimAngle < -math.pi / 2		
 		
@@ -258,19 +259,19 @@ function update(args)
 		end
 
 		-- Apply movement physics parameters
-		tech.applyMovementParameters(data.mechCustomMovementParameters)
+		mcontroller.controlParameters(data.mechCustomMovementParameters)
 
 		-- Flip and offset player
 		if flip then
 			tech.setFlipped(true)
-			local nudge = tech.stateNudge()
+			local nudge = tech.appliedOffset()
 			tech.setParentOffset({-data.parentOffset[1] - nudge[1], data.parentOffset[2] + nudge[2]})
-			tech.setParentFacingDirection(-1)
+			mcontroller.controlFace(-1)
 		else
 			tech.setFlipped(false)
-			local nudge = tech.stateNudge()
+			local nudge = tech.appliedOffset()
 			tech.setParentOffset({data.parentOffset[1] + nudge[1], data.parentOffset[2] + nudge[2]})
-			tech.setParentFacingDirection(1)
+			mcontroller.controlFace(1)
 		end
 		
 		-- Setup movement vector
@@ -337,102 +338,85 @@ function update(args)
 		end
 		
 		-- execute movement vector
-		tech.xControl(data.v_x, math.abs(f_x), false); -- why is a_x to be used absolute???
-		tech.yControl(data.v_y, data.Hold_at_level_Force +f_y, false);		
+		mcontroller.controlApproachXVelocity(data.v_x, math.abs(f_x), false); -- why is a_x to be used absolute???
+		mcontroller.controlApproachYVelocity(data.v_y, data.Hold_at_level_Force +f_y, false);
 		
 		----- Mining -----
-		execute_mining_action(args)
+		if (data.holdingLMB or data.holdingRMB) and tech.consumeTechEnergy(data.mining_energy_cost_per_sec * args.dt) then
+			execute_mining_action(args)
+		else
+			tech.setAnimationState("drilling", "idle")
+		end
 	end
 	--return 0
 	--return data.cost
 end
 
 function execute_mining_action(args)
-	-- return if no ready yet
-	data.mining_timer = data.mining_timer + args.dt
-	if (data.mining_timer < data.mining_timer_max) then
-		return 0
-	else
-		data.mining_timer = 0;
-	end
+	-- define target
+	-- _________
+	-- XXXXXXXXX
+	-- XXXXXXXXX
+	-- XXXXXXXXX
+	--   XXXXX
+	--     X
+	local pos = mcontroller.position();
+	x = pos[1];
+	y = pos[2];
+	y = y-2
+	local mining_target = {};
+	table.insert(mining_target,{x-5,y});
+	table.insert(mining_target,{x-4,y});
+	table.insert(mining_target,{x-3,y});
+	table.insert(mining_target,{x-2,y});
+	table.insert(mining_target,{x-1,y});
+	table.insert(mining_target,{x  ,y});
+	table.insert(mining_target,{x+1,y});
+	table.insert(mining_target,{x+2,y});
+	table.insert(mining_target,{x+3,y});
+	table.insert(mining_target,{x+4,y});
+	table.insert(mining_target,{x+5,y});
 	
-	if data.holdingLMB or data.holdingRMB then
-		-- return if no energy
-		if (args.availableEnergy < data.cost + data.mining_cost) then
-			return 0
-		end
-		
-		-- command accepted
-		-- apply cost
-		data.cost = data.cost + data.mining_cost;
-		
-		-- define target
-		-- _________
-		-- XXXXXXXXX
-		-- XXXXXXXXX
-		-- XXXXXXXXX
-		--   XXXXX
-		--     X
-		local pos = tech.position();
-		x = pos[1];
-		y = pos[2];
-		y = y-2
-		local mining_target = {};
-		table.insert(mining_target,{x-5,y});
-		table.insert(mining_target,{x-4,y});
-		table.insert(mining_target,{x-3,y});
-		table.insert(mining_target,{x-2,y});
-		table.insert(mining_target,{x-1,y});
-		table.insert(mining_target,{x  ,y});
-		table.insert(mining_target,{x+1,y});
-		table.insert(mining_target,{x+2,y});
-		table.insert(mining_target,{x+3,y});
-		table.insert(mining_target,{x+4,y});
-		table.insert(mining_target,{x+5,y});
-		
-		table.insert(mining_target,{x-5,y-1});
-		table.insert(mining_target,{x-4,y-1});
-		table.insert(mining_target,{x-3,y-1});
-		table.insert(mining_target,{x-2,y-1});
-		table.insert(mining_target,{x-1,y-1});
-		table.insert(mining_target,{x  ,y-1});
-		table.insert(mining_target,{x+1,y-1});
-		table.insert(mining_target,{x+2,y-1});
-		table.insert(mining_target,{x+3,y-1});
-		table.insert(mining_target,{x+4,y-1});
-		table.insert(mining_target,{x+5,y-1});
-		
-		table.insert(mining_target,{x-5,y-2});
-		table.insert(mining_target,{x-4,y-2});
-		table.insert(mining_target,{x-3,y-2});
-		table.insert(mining_target,{x-2,y-2});
-		table.insert(mining_target,{x-1,y-2});
-		table.insert(mining_target,{x  ,y-2});
-		table.insert(mining_target,{x+1,y-2});
-		table.insert(mining_target,{x+2,y-2});
-		table.insert(mining_target,{x+3,y-2});
-		table.insert(mining_target,{x+4,y-2});
-		table.insert(mining_target,{x+5,y-2});
+	table.insert(mining_target,{x-5,y-1});
+	table.insert(mining_target,{x-4,y-1});
+	table.insert(mining_target,{x-3,y-1});
+	table.insert(mining_target,{x-2,y-1});
+	table.insert(mining_target,{x-1,y-1});
+	table.insert(mining_target,{x  ,y-1});
+	table.insert(mining_target,{x+1,y-1});
+	table.insert(mining_target,{x+2,y-1});
+	table.insert(mining_target,{x+3,y-1});
+	table.insert(mining_target,{x+4,y-1});
+	table.insert(mining_target,{x+5,y-1});
+	
+	table.insert(mining_target,{x-5,y-2});
+	table.insert(mining_target,{x-4,y-2});
+	table.insert(mining_target,{x-3,y-2});
+	table.insert(mining_target,{x-2,y-2});
+	table.insert(mining_target,{x-1,y-2});
+	table.insert(mining_target,{x  ,y-2});
+	table.insert(mining_target,{x+1,y-2});
+	table.insert(mining_target,{x+2,y-2});
+	table.insert(mining_target,{x+3,y-2});
+	table.insert(mining_target,{x+4,y-2});
+	table.insert(mining_target,{x+5,y-2});
 
-		table.insert(mining_target,{x-2,y-3});
-		table.insert(mining_target,{x-1,y-3});
-		table.insert(mining_target,{x  ,y-3});
-		table.insert(mining_target,{x+1,y-3});
-		table.insert(mining_target,{x+2,y-3});
-		
-		table.insert(mining_target,{x  ,y-4});
-		
-		if data.holdingLMB and data.holdingRMB then
-			-- drop a bomb maybe ?
-		elseif data.holdingLMB then
-			world.damageTiles(mining_target, "foreground", tech.position(), "blockish", data.mining_damage)
-			tech.setAnimationState("drilling", "drill_on")
-		elseif data.holdingRMB then
-			world.damageTiles(mining_target, "background", tech.position(), "blockish", data.mining_damage)
-			tech.setAnimationState("drilling", "drill_on")
-		end
-	else
-		tech.setAnimationState("drilling", "idle")
+	table.insert(mining_target,{x-2,y-3});
+	table.insert(mining_target,{x-1,y-3});
+	table.insert(mining_target,{x  ,y-3});
+	table.insert(mining_target,{x+1,y-3});
+	table.insert(mining_target,{x+2,y-3});
+	
+	table.insert(mining_target,{x  ,y-4});
+	
+	if data.holdingLMB and data.holdingRMB then
+		-- drop a bomb maybe ?
+	elseif data.holdingLMB then
+		world.damageTiles(mining_target, "foreground", mcontroller.position(), "blockish", data.mining_damage)
+		tech.setAnimationState("drilling", "drill_on")
+	elseif data.holdingRMB then
+		world.damageTiles(mining_target, "background", mcontroller.position(), "blockish", data.mining_damage)
+		tech.setAnimationState("drilling", "drill_on")
 	end
 	
 	return 0
@@ -446,12 +430,12 @@ function activate()
 	data.v_x = 0;
 	data.v_y = 0;
 	
-	data.mining_timer = 0
+	--data.mining_timer = 0
 	
 	tech.burstParticleEmitter("mechActivateParticles")
-	tech.translate(mechTransformPositionChange)
+	mcontroller.translate(mechTransformPositionChange)
 	tech.setVisible(true)
-	tech.setParentAppearance("sit")
+	tech.setParentState("sit")
 	tech.setToolUsageSuppressed(true)
 	
 	tech.setParticleEmitterActive("Static_Light", true)
@@ -467,12 +451,11 @@ function deactivate()
 	tech.setAnimationState("drilling", "idle")
 	tech.burstParticleEmitter("mechDeactivateParticles")
 	
-	tech.translate({-mechTransformPositionChange[1], -mechTransformPositionChange[2]})
+	mcontroller.translate({-mechTransformPositionChange[1], -mechTransformPositionChange[2]})
 	tech.setVisible(false)
-	tech.setParentAppearance("normal")
+	tech.setParentState()
 	tech.setToolUsageSuppressed(false)
 	tech.setParentOffset({0, 0})
-	tech.setParentFacingDirection(nil)
 	data.active = false
 	return 0
 end

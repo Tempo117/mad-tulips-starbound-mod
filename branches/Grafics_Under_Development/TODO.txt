@@ -11,6 +11,7 @@
 - check if tier1 to tier5 recipe unlocking mechanic is working
 - There seems to be a 1 Pixel glitch with the Tileset part South-East connecting with its East side to i.e. West-East 
 - mining_pod_icon.png needs to be changed. looks like the scoutships
+- scoutships throw an error with the "off" animation of the "engine" grafic. coundt find that one so far.
 
 --------- Objects missing: -----------
 - 1st weapon: avian
