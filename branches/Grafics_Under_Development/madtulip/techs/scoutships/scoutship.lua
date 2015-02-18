@@ -1,6 +1,5 @@
 function init()
-	--data = {};
-	
+	data = {};
 	data.active = false
 	data.ranOut = false
 	tech.setVisible(false)
@@ -31,7 +30,7 @@ function input(args)
 	end
 
 	-- jump
-	if args.moves["jump"] and tech.jumping() then data.holdingJump = true end
+	if args.moves["jump"] then data.holdingJump = true end
 	--move left
 	if args.moves["left"] then data.holdingLeft = true end
 	--move right
@@ -63,10 +62,10 @@ function update(args)
 	if not data.active and args.actions["mechActivate"] then
 		-- Calculate new position
 		tech.setAnimationState("movement", "idle")
-		data.mechCollisionTest[1] = data.mechCollisionTest[1] + tech.position()[1]
-		data.mechCollisionTest[2] = data.mechCollisionTest[2] + tech.position()[2]
-		data.mechCollisionTest[3] = data.mechCollisionTest[3] + tech.position()[1]
-		data.mechCollisionTest[4] = data.mechCollisionTest[4] + tech.position()[2]
+		data.mechCollisionTest[1] = data.mechCollisionTest[1] + mcontroller.position()[1]
+		data.mechCollisionTest[2] = data.mechCollisionTest[2] + mcontroller.position()[2]
+		data.mechCollisionTest[3] = data.mechCollisionTest[3] + mcontroller.position()[1]
+		data.mechCollisionTest[4] = data.mechCollisionTest[4] + mcontroller.position()[2]
 		
 		-- Check collision for activate
 		if not world.rectCollision(data.mechCollisionTest) then
@@ -85,7 +84,7 @@ function update(args)
 		end
 
 		-- Calculate current angle and flip state
-		local diff = world.distance(args.aimPosition, tech.position())
+		local diff = world.distance(tech.aimPosition(), mcontroller.position())
 		local aimAngle = math.atan2(diff[2], diff[1])
 		local flip = aimAngle > math.pi / 2 or aimAngle < -math.pi / 2		
 		
@@ -244,19 +243,20 @@ function update(args)
 		end
 
 		-- Apply movement physics parameters
-		tech.applyMovementParameters(data.mechCustomMovementParameters)
+		-- tech.applyMovementParameters(data.mechCustomMovementParameters)
+		mcontroller.controlParameters(data.mechCustomMovementParameters)
 
 		-- Flip and offset player
 		if flip then
 			tech.setFlipped(true)
-			local nudge = tech.stateNudge()
+			local nudge = tech.appliedOffset()
 			tech.setParentOffset({-data.parentOffset[1] - nudge[1], data.parentOffset[2] + nudge[2]})
-			tech.setParentFacingDirection(-1)
+			mcontroller.controlFace(-1)
 		else
 			tech.setFlipped(false)
-			local nudge = tech.stateNudge()
+			local nudge = tech.appliedOffset()
 			tech.setParentOffset({data.parentOffset[1] + nudge[1], data.parentOffset[2] + nudge[2]})
-			tech.setParentFacingDirection(1)
+			mcontroller.controlFace(1)
 		end
 		
 		-- Setup movement vector
@@ -323,8 +323,8 @@ function update(args)
 		end
 		
 		-- execute movement vector
-		tech.xControl(data.v_x, math.abs(f_x), false); -- why is a_x to be used absolute???
-		tech.yControl(data.v_y, data.Hold_at_level_Force +f_y, false);		
+		mcontroller.controlApproachXVelocity(data.v_x, math.abs(f_x), false); -- why is a_x to be used absolute???
+		mcontroller.controlApproachYVelocity(data.v_y, data.Hold_at_level_Force +f_y, false);		
 	end
 
   return 0
@@ -339,9 +339,9 @@ function activate()
 	data.v_y = 0;
 	
 	tech.burstParticleEmitter("mechActivateParticles")
-	tech.translate(mechTransformPositionChange)
+	mcontroller.translate(mechTransformPositionChange)
 	tech.setVisible(true)
-	tech.setParentAppearance("sit")
+	tech.setParentState("sit")
 	tech.setToolUsageSuppressed(true)
 	
 	tech.setParticleEmitterActive("Static_Light", true)
@@ -356,12 +356,11 @@ function deactivate()
 	tech.setAnimationState("movement", "off")
 	tech.burstParticleEmitter("mechDeactivateParticles")
 	
-	tech.translate({-mechTransformPositionChange[1], -mechTransformPositionChange[2]})
+	mcontroller.translate({-mechTransformPositionChange[1], -mechTransformPositionChange[2]})
 	tech.setVisible(false)
-	tech.setParentAppearance("normal")
+	tech.setParentState()
 	tech.setToolUsageSuppressed(false)
 	tech.setParentOffset({0, 0})
-	tech.setParentFacingDirection(nil)
 	data.active = false
 	return 0
 end

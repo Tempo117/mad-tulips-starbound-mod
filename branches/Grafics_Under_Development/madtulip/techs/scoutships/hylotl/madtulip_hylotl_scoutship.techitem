@@ -6,5 +6,5 @@
 	"shortdescription": "Hylotl Scoutship",
 	"inspectionKind": "tech",
 
-	"techModule": "madtulip_hylotl_scoutship.tech"
+	"techModule": "madtulip_hylotl_scoutship"
 }

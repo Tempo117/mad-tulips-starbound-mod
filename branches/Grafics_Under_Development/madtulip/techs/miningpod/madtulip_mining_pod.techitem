@@ -6,5 +6,5 @@
 	"shortdescription": "Mining Pod",
 	"inspectionKind": "tech",
 
-	"techModule": "madtulip_mining_pod.tech"
+	"techModule": "madtulip_mining_pod"
 }

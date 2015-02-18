@@ -1,10 +1,10 @@
 {
-  "itemName" : "madtulip_gravity",
-  "rarity" : "Legendary",
-  "inventoryIcon" : "madtulip_gravity_icon.png",
-  "description" : "Unlockes the ZERO-Gravity tech.",
-  "shortdescription" : "ZERO-Gravity Tech",
-  "inspectionKind" : "tech",
+	"itemName" : "madtulip_gravity",
+	"rarity" : "Legendary",
+	"inventoryIcon" : "madtulip_gravity_icon.png",
+	"description" : "Unlockes the No Gravity in Space tech.",
+	"shortdescription" : "No Gravity in Space Tech",
+	"inspectionKind" : "tech",
 
-  "techModule" : "madtulip_gravity.tech"
+	"techModule" : "madtulip_gravity"
 }

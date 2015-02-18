@@ -10,6 +10,7 @@
 - teleporters need _lit grafics as well (see vanilla teleporter) i added "madtulip_teleporter_lit" as placeholder to "ship parts\generic\teleporter" already.
 - check if tier1 to tier5 recipe unlocking mechanic is working
 - There seems to be a 1 Pixel glitch with the Tileset part South-East connecting with its East side to i.e. West-East 
+- mining_pod_icon.png needs to be changed. looks like the scoutships
 
 --------- Objects missing: -----------
 - 1st weapon: avian

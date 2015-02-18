@@ -1,0 +1,8 @@
+{
+  "itemName" : "madtulip_gravityTech-chip",
+  "rarity" : "Legendary",
+  "inventoryIcon" : "/techs/madtulip_chip.png",
+  "description" : "Unlocks No Gravity In Space tech.",
+  "shortdescription" : "No Gravity In Space Unlocker",
+  "pickupQuestTemplates" : ["madtulip_gravity.gearup"]
+}

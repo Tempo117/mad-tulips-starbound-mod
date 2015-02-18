@@ -1,10 +1,11 @@
 function init()
+	-- default
+	data = {};
 	tech.setAnimationState("dummy_nothing", "off");
 	We_are_in_ZERO_gravity = false;
 end
 
 function input(args)
-	-- default
 	data.holdingJump = false;
 	data.holdingLeft = false;
 	data.holdingRight = false;
@@ -12,7 +13,7 @@ function input(args)
 	data.holdingDown = false;
 
 	-- jump
-	if args.moves["jump"] and tech.jumping() then data.holdingJump = true end
+	if args.moves["jump"] then data.holdingJump = true end
 	--move left
 	if args.moves["left"] then data.holdingLeft = true end
 	--move right
@@ -51,7 +52,7 @@ end
 function determine_if_ZERO_gravity_should_end(Range)
 	-- we assume Zero gravity unless we find blocks in the vicinity
 	local Zero_gravity_ends = true;
-	local Origin = tech.position();
+	local Origin = mcontroller.position();
 	for cur_X = -Range, Range, 1 do
 		for cur_Y = -Range, Range, 1 do
 			local cur_abs_Position = {};
@@ -89,12 +90,11 @@ function determine_if_ZERO_gravity(Range)
 	end
 ]]
 	-- return if we are on a planet
-	local info = world.info()
-	if info.name ~= ""then return false end
+	if not is_shipworld() then return false end
 	
 	-- we assume Zero gravity unless we find blocks in the vicinity
 	local Zero_gravity = true;
-	local Origin = tech.position();
+	local Origin = mcontroller.position();
 	for cur_X = -Range, Range, 1 do
 		for cur_Y = -Range, Range, 1 do
 			local cur_abs_Position = {};
@@ -135,6 +135,16 @@ function use_ZERO_gravity_movement()
 	end
 
 	-- execute movement vector
-	tech.xControl(0+v_x, 0+a_x, false);
-	tech.yControl(0+v_y, 100+a_y, false);
+	mcontroller.controlApproachXVelocity(0+v_x, 0+a_x, false);
+	mcontroller.controlApproachYVelocity(0+v_y, 100+a_y, false);
+end
+
+function is_shipworld()
+	if (world.getProperty("invinciblePlayers")) then
+		-- shipworld
+		return true
+	else
+		-- planet
+		return false
+	end
 end

@@ -6,5 +6,5 @@
 	"shortdescription": "Human Scoutship",
 	"inspectionKind": "tech",
 
-	"techModule": "madtulip_human_scoutship.tech"
+	"techModule": "madtulip_human_scoutship"
 }

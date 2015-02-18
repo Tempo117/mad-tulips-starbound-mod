@@ -6,5 +6,5 @@
 	"shortdescription": "Floran Scoutship",
 	"inspectionKind": "tech",
 
-	"techModule": "madtulip_floran_scoutship.tech"
+	"techModule": "madtulip_floran_scoutship"
 }

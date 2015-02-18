@@ -1,6 +1,15 @@
 [
 	// defaultitems
 		// debug usefull
+		
+			{"op":"add","path":"/defaultItems/-","value":{"item":"madtulip_gravityTech-chip","count":1}},
+			{"op":"add","path":"/defaultItems/-","value":{"item":"madtulip_apex_scoutshipTech-chip","count":1}},
+			{"op":"add","path":"/defaultItems/-","value":{"item":"madtulip_avian_scoutshipTech-chip","count":1}},
+			{"op":"add","path":"/defaultItems/-","value":{"item":"madtulip_floran_scoutshipTech-chip","count":1}},
+			{"op":"add","path":"/defaultItems/-","value":{"item":"madtulip_glitch_scoutshipTech-chip","count":1}},
+			{"op":"add","path":"/defaultItems/-","value":{"item":"madtulip_human_scoutshipTech-chip","count":1}},
+			{"op":"add","path":"/defaultItems/-","value":{"item":"madtulip_hylotl_scoutshipTech-chip","count":1}},
+			{"op":"add","path":"/defaultItems/-","value":{"item":"madtulip_hylotl_scoutshipTech-chip","count":1}},
 			{"op":"add","path":"/defaultItems/-","value":{"item":"diamonddrill","count":1}},
 			
 	/*

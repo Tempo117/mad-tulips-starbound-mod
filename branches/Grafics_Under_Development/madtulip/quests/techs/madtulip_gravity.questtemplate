@@ -1,0 +1,20 @@
+{
+  "id" : "madtulip_gravity.gearup",
+  "prerequisites" : [ ],
+  "title" : "^orange;Unlock No Gravity In Space",
+  "text" : "Unlocking of the No Gravity In Space tech.",
+  "completionText" : "No Gravity In Space tech has been unlocked. Now you may activate it in your S.A.I.L. interface.",
+  "conditions" : [
+    { "kind" : "gather", "item" : [ "madtulip_gravityTech-chip", 1], "consume" : true }
+  ],
+  "moneyRange" : [0, 0],
+  "rewards" : [
+   ],
+  "enableTech" : [
+    "madtulip_gravity"
+  ],
+  "canBeAbandoned" : true,
+  "planetMode" : "none",
+  "questDungeons" : [ ],
+  "followUp" : ""
+}

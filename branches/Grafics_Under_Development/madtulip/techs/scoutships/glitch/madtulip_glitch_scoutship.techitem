@@ -6,5 +6,5 @@
 	"shortdescription": "Glitch Scoutship",
 	"inspectionKind": "tech",
 
-	"techModule": "madtulip_glitch_scoutship.tech"
+	"techModule": "madtulip_glitch_scoutship"
 }

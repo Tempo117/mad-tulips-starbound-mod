@@ -1,7 +1,7 @@
 {
   "input" : [],
 	"output": {
-		"item": "madtulip_mining_pod",
+		"item": "madtulip_mining_podTech-chip",
 		"count": 1
 	},
 	"groups": [  ]
