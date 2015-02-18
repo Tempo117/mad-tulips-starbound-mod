@@ -1,0 +1,14 @@
+{
+  "input" : [
+	{ "item" : "circuitboard", "count" : 2 },
+    { "item" : "madtulip_polymer", "count" : 5 },
+	{ "item" : "madtulip_tier_durasteel_plating_2", "count" : 2 },
+	{ "item" : "diamond", "count" : 1 },
+	{ "item" : "money", "count" : 400 }
+  ],
+  "output" : {
+    "item" : "madtulip_teleporter",
+    "count" : 1
+  },
+  "groups" : [ "madtulip_shipstation", "all", "systems" ]
+}

@@ -1,0 +1,10 @@
+{
+  "itemName" : "madtulip_apex_tileset",
+  "rarity" : "Common",
+  "inventoryIcon" : "apextileseticon.png",
+  "dropCollision" : [-2.5, -2.0, 2.5, 2.0],
+  "description" : "Grey Apex Spaceship Hull Tileset",
+  "shortdescription" : "Grey Apex Spaceship Hull Tileset",
+  "materialId" : 21012
+  
+}

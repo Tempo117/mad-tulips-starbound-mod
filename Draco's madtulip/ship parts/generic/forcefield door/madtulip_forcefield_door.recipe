@@ -1,0 +1,13 @@
+{
+  "input" : [
+	{ "item" : "circuitboard", "count" : 2 },
+	{ "item" : "madtulip_ic_logic", "count" : 2 },
+	{ "item" : "madtulip_tier_durasteel_plating_2", "count" : 2 },
+	{ "item" : "money", "count" : 150 }
+  ],
+  "output" : {
+    "item" : "madtulip_forcefield_door",
+    "count" : 1
+  },
+  "groups" : [ "madtulip_shipstation", "all", "objects" ]
+}

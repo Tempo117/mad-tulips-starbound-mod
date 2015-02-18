@@ -1,0 +1,11 @@
+{
+  "input" : [
+	{ "item" : "madtulip_floran_plating", "count" : 1 },
+	{ "item" : "money", "count" : 10 }
+  ],
+  "output" : {
+    "item" : "madtulip_floran_tileset",
+    "count" : 10
+  },
+  "groups" : [ "madtulip_metal_press", "all", "tileset" ]
+}

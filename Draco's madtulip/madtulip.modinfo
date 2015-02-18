@@ -1,0 +1,12 @@
+{
+    "name" : "madtulip",
+    "version" : "Beta v. Upbeat Giraffe",
+    "path" : ".",
+    "dependencies" : [],
+    "metadata" : {
+        "diplayName" : "madtulip",
+        "author" : "HuggableCreep, MadTulip and TooManySecrets",
+        "version" : "1.1",
+        "description" : "Ship parts Mod"
+    }
+}

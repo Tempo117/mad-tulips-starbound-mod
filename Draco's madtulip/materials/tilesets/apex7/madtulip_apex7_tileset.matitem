@@ -1,0 +1,10 @@
+{
+  "itemName" : "madtulip_apex7_tileset",
+  "rarity" : "Common",
+  "inventoryIcon" : "apex7tileseticon.png",
+  "dropCollision" : [-2.5, -2.0, 2.5, 2.0],
+  "description" : "Orange Apex Spaceship Hull Tileset",
+  "shortdescription" : "Orange Apex Spaceship Hull Tileset",
+  "materialId" : 21572
+  
+}

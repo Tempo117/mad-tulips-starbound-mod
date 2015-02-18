@@ -1,0 +1,11 @@
+{
+  "input" : [
+	{ "item" : "madtulip_human_plating", "count" : 3 },
+	{ "item" : "money", "count" : 300 }
+  ],
+  "output" : {
+    "item" : "humanshipdoor",
+    "count" : 1
+  },
+  "groups" : [ "madtulip_shipstation", "all", "tileset" ]
+}

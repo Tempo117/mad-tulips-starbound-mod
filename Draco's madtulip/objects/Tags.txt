@@ -1,0 +1,47 @@
+In  an object/material/item files will have something like
+
+ "madtulip_shipstation" "objects" "all"
+ 
+ Those are tags, The tags for the new ship station is
+ 
+ teleporters
+ 
+ FTL
+ 
+ stabilizer
+ 
+ misc
+ 
+ craftingmaterials
+ 
+ hatches
+ 
+ chairs
+ 
+ doors
+ 
+ rawmaterials
+ 
+ fins
+ 
+ tilesets
+ 
+ decorations
+ 
+ avian
+ 
+ apex
+ 
+ hylotl
+ 
+ glitch
+ 
+ floran
+ 
+ human
+ 
+ 
+ EX: "madtulip_shipstation" "teleporter" "glitch"
+ 
+ do this for each item
+ 

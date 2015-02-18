@@ -1,0 +1,11 @@
+{
+  "input" : [
+    { "item" : "copperore", "count" : 2 },
+    { "item" : "coalore", "count" : 2 }
+  ],
+  "output" : {
+    "item" : "madtulip_polymer",
+    "count" : 5
+  },
+  "groups" : [ "madtulip_shipstation", "all", "materials" ]
+}
