@@ -6,6 +6,7 @@
   "shortdescription" : "Apex Tileset 1",
   "description" : "Apex Tileset 1",
   "footstepSound" : "/sfx/blocks/footstep_lightmetal.wav",
+  "drawBackground" : true,
   "health" : 10,
   "category": "materials",
 

@@ -6,6 +6,7 @@
   "shortdescription" : "Human Tileset 1",
   "description" : "Human Tileset 1",
   "footstepSound" : "/sfx/blocks/footstep_lightmetal.wav",
+  "drawBackground" : true,
   "health" : 10,
   "category": "materials",
 

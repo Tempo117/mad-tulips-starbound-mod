@@ -6,6 +6,7 @@
   "shortdescription" : "Avian Tileset 1",
   "description" : "Avian Tileset 1",
   "footstepSound" : "/sfx/blocks/footstep_lightmetal.wav",
+  "drawBackground" : true,
   "health" : 10,
   "category": "materials",
 
