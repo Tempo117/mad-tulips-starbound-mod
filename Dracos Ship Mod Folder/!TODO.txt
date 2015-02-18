@@ -1,5 +1,7 @@
 All work done on object and items.
 
+New interface needs tags set.
+
 Updated the the player.config file to .patch system. fro object and items.
 
 Added recipes for all normal game items that relate to a ship. Based those 
