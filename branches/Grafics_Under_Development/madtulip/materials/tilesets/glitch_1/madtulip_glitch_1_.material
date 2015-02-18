@@ -6,8 +6,8 @@
   "shortdescription" : "Glitch Tileset 1",
   "description" : "Glitch Tileset 1",
   "footstepSound" : "/sfx/blocks/footstep_lightmetal.wav",
-  "drawBackground" : true,
   "health" : 10,
+  "category": "materials",
 
   "renderTemplate" : "/materials/tilesets/madtulip_tileset.config",
   "renderParameters" : {
