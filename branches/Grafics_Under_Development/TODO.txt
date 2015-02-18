@@ -21,10 +21,7 @@
 - Player could later on be required to build certain parts of the ship in order to progress instead of upgrade the ship vanilla wise
 
 ----------- Things left to fix for madtulip ---------
-- check miab
-- check modules
--- T1 Pod drops woodencraftingtable1 as perfectly genereic item (was renamed to woodencraftingtable1)
--- T2,3,4 pods dont print at all
+- improove modules grafics. some things didnt port well - grafic gltiches remaining
 -- check if content of pods (crafting tables) is still in line with the vanilla game progression. not that it allows to unlock a table at an earlier tier
 - fix all techs
 - fix life support system
