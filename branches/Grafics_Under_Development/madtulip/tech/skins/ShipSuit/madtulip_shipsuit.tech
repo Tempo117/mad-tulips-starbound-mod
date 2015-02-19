@@ -1,0 +1,8 @@
+{
+  "name" : "madtulip_shipsuit",
+  "type" : "suit",
+  "suitOverlay" : "/tech/skins/ShipSuit/suits/<species>-<gender>.png",
+
+  "scripts" : ["madtulip_shipsuit.lua"],
+  "actions" : ["action_jump","action_up","action_down","action_left","action_right" ]
+}

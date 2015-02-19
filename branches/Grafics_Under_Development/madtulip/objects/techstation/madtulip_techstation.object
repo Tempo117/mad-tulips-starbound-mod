@@ -11,7 +11,7 @@
   "description" : "Tons of interesting tech, great for adventures",
   "shortdescription" : "Tech Station",
   "race" : "apex",
-
+  
   "apexDescription" : "A tech station. I can enable tech and talk to S.A.I.L through this.",
   "avianDescription" : "I can use this station to enable tech and talk to S.A.I.L.",
   "floranDescription" : "Floran use thisss for magiccc and talk to sshhip S.A.I.L!",
@@ -19,6 +19,8 @@
   "humanDescription" : "A tech station. Allows me to communicate with S.A.I.L and enable tech!",
   "hylotlDescription" : "This tech station enables tech and allows me to communicate with S.A.I.L.",
 
+  //"statusEffects" : ["madtulip_space_suffocate"],
+  
   "inventoryIcon" : "madtulip_techstation_icon.png",
   "orientations" : [
     {

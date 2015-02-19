@@ -5,6 +5,7 @@
 -------- Random things that need doing -----------
 - All Tilesets _icon need to be updated. they still show the rusty pipe
 - Glass Tileset
+- Images for Ship Suit "\tech\skins\ShipSuit" and "\tech\skins\ShipSuit\suits" are just copies from vanilla. i.e. "AIR SUPPLY" needs to be removed. the brownish tone recolored, the tech icon be changed from O2 to something else.
 - fix partly missing background behind tileset diagonals of starter ships
 - please fix the forcefield door by using the grafic in ship parts\generic\forcefield door\OLD_madtulip_forcefield_door instead of the current apex door placeholder
 - spawn and test all ship parts
@@ -23,8 +24,6 @@
 - Most Novakids stuff
 
 ----------- Things left to fix for madtulip ---------
--- add timeout for equip/unequip of scoutships and mining pod
-
 -- check if content of pods (crafting tables) is still in line with the vanilla game progression. not that it allows to unlock a table at an earlier tier
 
 - fix defense turrets. vanilla turrets have been upgraded. should look into them.
@@ -34,13 +33,30 @@
 
 ------------------- Ship progression quest thoughts -----------------
 - use ship "capabilities" : ["teleport", "planetTravel", "systemTravel"], with normal questline instead of just giving them
-- add permanent madtulips_shipmod statuseffect by some suitable source
-- put gravity into madtulip_shipmod_statuseffect instead of a tech
+-- need to find the points where we can hook in and replace *.aicommands and quests.
+--- remove stats from initial ship strucutre files
+--- givebeamaxe.aicommand or enableTeleporter.aicommand vanilla file has an example how to give those stats. so use that to create custom *.aicommands which unlock teleporter and the 2 other things
+--- replace the original quest that unlock those abilities by our custom ones.
+--- eventually the normal t0 to t8 ship progression will overwrite upgrades by constanty re appliing out empty t0 struct.
+----> remove t0 to t8 upgrade process of all ships from the quest path.
+-- working/none working version of the teleporter: use unlock of "enableTeleporter.aicommand" to spawn a working version of the teleporter? not sure how to do that.
 
-- We could also start with a broken ship as in vanilla and have people repair initial ship parts.
-- Player could later on be required to build certain parts of the ship in order to progress instead of upgrade the ship vanilla wise
+- Space Physics
+-- lua carrier as tech or better status effect
+--- apply status effect: add permanent madtulips_shipmod statuseffect by some suitable source (i.e. "statusEffects" : ["madtulip_LS_suffocate"] in some object)
+--- problem with statuseffect: probably cant accept controller input -> different handling of gravity.
 
-	
+-- life support - suffocate if no LS
+--- madtulip_LS_suffocate permanently applies damage IF ON SHIPWORLD and is blocked by madtulip_immune_LS_suffocate
+---- if on shipworld condition not readable -> workaround required -> create a general .lua for this function so we only need to replace it once.
+--- madtulip_immune_LS_suffocate has a timer and runs out if not refreshed by LS system.
+--- LS applies madtulip_immune_LS_suffocate by spawning a hidden projetile ontop of player if he is found in none breached area. see vanilla random status plant
+
+-- die quickly in space
+--- madtulip_space_death permanent status, cast by i.e. tech station
+---- checks if on shipworld and outside ship(same as gravity tech). if true then loads of damage. canceled by madtulip_immune_space_death.
+--- madtulip_immune_space_death status set by spacesuit armor
+
 ----------------------------------------------------------------------------------------------------
 ---------------------------------------OLD----------------------------------------------
 ----------------------------------------------------------------------------------------------------

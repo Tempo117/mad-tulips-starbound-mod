@@ -1,8 +1,0 @@
-{
-  "input" : [ ],
-  "output" : {
-    "item" : "madtulip_gravityTech-chip",
-    "count" : 1
-  },
-  "groups" : [ "tech" ]
-}

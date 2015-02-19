@@ -2,31 +2,26 @@
 	// defaultitems
 		// debug usefull
 
+			{"op":"add","path":"/defaultItems/-","value":{"item":"madtulip_shipsuitTech-chip","count":1}},
 			{"op":"add","path":"/defaultItems/-","value":{"item":"diamonddrill","count":1}},
-		
+	
 			{"op":"add","path":"/defaultItems/-","value":{"item":"madtulip_mining_podTech-chip","count":1}},
-			
-			{"op":"add","path":"/defaultItems/-","value":{"item":"madtulip_gravityTech-chip","count":1}},
 			{"op":"add","path":"/defaultItems/-","value":{"item":"madtulip_apex_scoutshipTech-chip","count":1}},
 			{"op":"add","path":"/defaultItems/-","value":{"item":"madtulip_avian_scoutshipTech-chip","count":1}},
 			{"op":"add","path":"/defaultItems/-","value":{"item":"madtulip_floran_scoutshipTech-chip","count":1}},
 			{"op":"add","path":"/defaultItems/-","value":{"item":"madtulip_glitch_scoutshipTech-chip","count":1}},
 			{"op":"add","path":"/defaultItems/-","value":{"item":"madtulip_human_scoutshipTech-chip","count":1}},
 			{"op":"add","path":"/defaultItems/-","value":{"item":"madtulip_hylotl_scoutshipTech-chip","count":1}},
-			
-	/*
+/*
 			{"op":"add","path":"/defaultItems/-","value":{"item":"wire","count":100}},
 			{"op":"add","path":"/defaultItems/-","value":{"item":"wiretool","count":1}},
 			{"op":"add","path":"/defaultItems/-","value":{"item":"miab_basestore_scanner","count":1}},
 			{"op":"add","path":"/defaultItems/-","value":{"item":"miab_basestore_receiver","count":1}},
-	*/
 			{"op":"add","path":"/defaultItems/-","value":{"item":"madtulip_tier1_pod","count":1}},
 			{"op":"add","path":"/defaultItems/-","value":{"item":"madtulip_tier2_pod","count":1}},
 			{"op":"add","path":"/defaultItems/-","value":{"item":"madtulip_tier3_pod","count":1}},
 			{"op":"add","path":"/defaultItems/-","value":{"item":"madtulip_tier4_pod","count":1}},
 
-
-	/*
 			{"op":"add","path":"/defaultItems/-","value":{"item":"spawnerguard","count":1}},
 			{"op":"add","path":"/defaultItems/-","value":{"item":"ironswitch","count":1}},
 			{"op":"add","path":"/defaultItems/-","value":{"item":"buster","count":1}},
@@ -81,9 +76,7 @@
 				{"op":"add","path":"/defaultBlueprints/tier1/-","value":{"item":"madtulip_shiplight"}},
 
 			// Tech
-/*
-				{"op":"add","path":"/defaultBlueprints/tier1/-","value":{"item":"madtulip_gravity-chip"}},
-*/
+			
 		//tier2
 		{"op":"add","path":"/defaultBlueprints/tier2","value":[]},
 		
