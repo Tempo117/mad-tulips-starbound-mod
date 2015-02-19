@@ -5,6 +5,9 @@ function init()
 	tech.setVisible(false)
 	
 	data.mining_timer = 0
+	
+	-- timer preventing instant re/unequip repetition
+	data.equiptimer = 0.5;
 end
 
 function uninit()
@@ -74,6 +77,10 @@ function update(args)
 	data.mining_timer_max               = tech.parameter("mining_timer_max");
 	
 	data.cost 							= 0
+	
+	if data.equiptimer > 0 then
+		data.equiptimer = data.equiptimer - args.dt
+	end
 	
 	if not data.active and args.actions["mechActivate"] then
 		-- Calculate new position
@@ -424,6 +431,10 @@ end
 
 -- Activate mech
 function activate()
+	-- to fast, dont activate yet
+	if data.equiptimer > 0 then return nil end
+	data.equiptimer = 0.5;
+	
 	local mechTransformPositionChange = tech.parameter("mechTransformPositionChange")
 
 	-- initial velocity
@@ -445,6 +456,10 @@ end
 
 -- Deactivate mech
 function deactivate()
+	-- to fast, dont deactivate yet
+	if data.equiptimer > 0 then return nil end
+	data.equiptimer = 0.5;
+	
 	local mechTransformPositionChange = tech.parameter("mechTransformPositionChange")
 	
 	tech.setAnimationState("movement", "off")

@@ -22,20 +22,24 @@
 - Human SectorAirlock Door type
 - Most Novakids stuff
 
-------------------- Ship progression quest thoughts -----------------
-- We could also start with a broken ship as in vanilla and have people repair initial ship parts.
-- Player could later on be required to build certain parts of the ship in order to progress instead of upgrade the ship vanilla wise
-
 ----------- Things left to fix for madtulip ---------
+-- add timeout for equip/unequip of scoutships and mining pod
+
 -- check if content of pods (crafting tables) is still in line with the vanilla game progression. not that it allows to unlock a table at an earlier tier
 
 - fix defense turrets. vanilla turrets have been upgraded. should look into them.
 - fix crew
 
-- Connect to vanilla Quests
-- add "capabilities" : ["teleport", "planetTravel", "systemTravel"], to ships
-
 - remove invulnerability on ship world option: world.setProperty("invinciblePlayers",false)
+
+------------------- Ship progression quest thoughts -----------------
+- use ship "capabilities" : ["teleport", "planetTravel", "systemTravel"], with normal questline instead of just giving them
+- add permanent madtulips_shipmod statuseffect by some suitable source
+- put gravity into madtulip_shipmod_statuseffect instead of a tech
+
+- We could also start with a broken ship as in vanilla and have people repair initial ship parts.
+- Player could later on be required to build certain parts of the ship in order to progress instead of upgrade the ship vanilla wise
+
 	
 ----------------------------------------------------------------------------------------------------
 ---------------------------------------OLD----------------------------------------------
