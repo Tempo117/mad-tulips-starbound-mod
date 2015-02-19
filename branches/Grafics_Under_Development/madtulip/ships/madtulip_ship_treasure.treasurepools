@@ -4,7 +4,12 @@
       "fill" : [
         {"item" : "flashlight"},
         {"item" : [ "torch", 10 ]},
-		{"item" : "madtulip_tier1_pod"}
+		{"item" : "madtulip_tier1_pod"},
+		{"item" : [ "apexshipsupport", 15 ]},
+		{"item" : [ "apexshipdetails", 15 ]},
+		{"item" : [ "madtulip_wallplate", 40 ]},
+		{"item" : [ "steelplatform", 10 ]},
+		{"item" : [ "apexshiplight", 1 ]}
       ]
     }]
   ],
@@ -14,7 +19,8 @@
       "fill" : [
         {"pool" : "madtulip_starterTreasure"},
         {"item" : [ "aviantier0shortsword", 1]},
-        {"item" : [ "avianstarter", 1]}
+        {"item" : [ "madtulip_TS_avian_1", 15]},
+		{"item" : [ "avianstarter", 1]}
       ]
     }]
   ],
@@ -24,6 +30,7 @@
       "fill" : [
         {"pool" : "madtulip_starterTreasure"},
         {"item" : [ "apextier0shortsword", 1]},
+		{"item" : [ "madtulip_TS_apex_1", 15]},
         {"item" : [ "apexstarter", 1]}
       ]
     }]
@@ -34,6 +41,7 @@
       "fill" : [
         {"pool" : "madtulip_starterTreasure"},
         {"item" : [ "humantier0shortsword", 1]},
+		{"item" : [ "madtulip_TS_human_1", 15]},
         {"item" : [ "humanstarter", 1]}
       ]
     }]
@@ -44,6 +52,7 @@
       "fill" : [
         {"pool" : "madtulip_starterTreasure"},
         {"item" : [ "glitchtier0shortsword", 1]},
+		{"item" : [ "madtulip_TS_glitch_1", 15]},
         {"item" : [ "glitchstarter", 1]}
       ]
     }]
@@ -54,6 +63,7 @@
       "fill" : [
         {"pool" : "madtulip_starterTreasure"},
         {"item" : [ "hylotltier0shortsword", 1]},
+		{"item" : [ "madtulip_TS_hylotl_1", 15]},
         {"item" : [ "hylotlstarter", 1]}
       ]
     }]
@@ -64,6 +74,7 @@
       "fill" : [
         {"pool" : "madtulip_starterTreasure"},
         {"item" : [ "florantier0shortsword", 1]},
+		{"item" : [ "madtulip_TS_floran_1", 15]},
         {"item" : [ "floranstarter", 1]}
       ]
     }]
@@ -73,8 +84,9 @@
     [0, {
       "fill" : [
         {"pool" : "madtulip_starterTreasure"},
-        {"item" : [ "novastarter", 1]},
-        {"item" : [ "novatier0rifle", 1]}
+		{"item" : [ "madtulip_TS_novakid_1", 15]},
+		{"item" : [ "novatier0rifle", 1]},
+        {"item" : [ "novastarter", 1]}
       ]
     }]
   ]

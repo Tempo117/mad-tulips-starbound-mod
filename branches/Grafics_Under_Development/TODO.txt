@@ -3,6 +3,8 @@
 ----------------------------------------------------------------------------------------------------
 
 -------- Random things that need doing -----------
+- All Tilesets _icon need to be updated. they still show the rusty pipe
+- Glass Tileset
 - fix partly missing background behind tileset diagonals of starter ships
 - please fix the forcefield door by using the grafic in ship parts\generic\forcefield door\OLD_madtulip_forcefield_door instead of the current apex door placeholder
 - spawn and test all ship parts
@@ -26,11 +28,14 @@
 
 ----------- Things left to fix for madtulip ---------
 -- check if content of pods (crafting tables) is still in line with the vanilla game progression. not that it allows to unlock a table at an earlier tier
-- fix Ship AI Quests
+
 - fix defense turrets. vanilla turrets have been upgraded. should look into them.
 - fix crew
-- remove invulnerability on ship world option: world.setProperty("invinciblePlayers",false)
+
+- Connect to vanilla Quests
 - add "capabilities" : ["teleport", "planetTravel", "systemTravel"], to ships
+
+- remove invulnerability on ship world option: world.setProperty("invinciblePlayers",false)
 	
 ----------------------------------------------------------------------------------------------------
 ---------------------------------------OLD----------------------------------------------
