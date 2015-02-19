@@ -27,13 +27,13 @@
 - check activateable ship objects like turrets
 - improove modules grafics. some things didnt port well - grafic gltiches remaining
 -- check if content of pods (crafting tables) is still in line with the vanilla game progression. not that it allows to unlock a table at an earlier tier
-- fix all techs
 - fix Ship AI Quests
 -- Ship AI Quest throws "Error: Could not instantiate item '[shipengine, 10, {}]'. (ItemException) No such item 'shipengine'"
 -- Ship AI Quest shows strange rewards for first quest
 - fix defense turrets. vanilla turrets have been upgraded. should look into them.
 - fix crew
 - remove invulnerability on ship world option: world.setProperty("invinciblePlayers",false)
+- add "capabilities" : ["teleport", "planetTravel", "systemTravel"], to ships
 	
 ----------------------------------------------------------------------------------------------------
 ---------------------------------------OLD----------------------------------------------
