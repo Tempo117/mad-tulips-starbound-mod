@@ -1,0 +1,20 @@
+{
+  "projectileName" : "lavashot",
+  "frames" : "lavashot.png",
+  "animationCycle" : 0.25,
+  "level" : 3,
+  "frameNumber" : 1,
+  "damageKindImage" : "icon.png",
+  "pointLight" : false,
+  "timeToLive" : 0.1,
+  "actionOnReap" : [
+    {
+      "action" : "liquid",
+      "liquidId" : 3,
+      "quantity" : 1000
+    }
+  ],
+  "power" : 5.0,
+  "damageType" : "hitTest",
+  "damageKind" : "default"
+}

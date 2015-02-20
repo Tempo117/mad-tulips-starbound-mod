@@ -1,0 +1,29 @@
+Tilesets:
+- like this: for 4 connections
+ABCDDBCA
+B      B
+C      C
+D      D
+D      D
+C      C
+B      B
+ABCDDBCA
+- like this: for 3 connections
+ABCDDBCA
+B      B
+C      C
+D      D
+D      D
+C      C
+B      B
+A      A
+- like this: for 2 connections
+A      A
+B      B
+C      C
+D      D
+D      D
+C      C
+B      B
+A      A
+- mid is arbitrary just so that the one block looks good. symmetric for straights might be a good idea.

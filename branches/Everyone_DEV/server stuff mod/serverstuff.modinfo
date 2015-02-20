@@ -1,0 +1,13 @@
+{
+  "name" : "serverstuff",
+  "version" : "Beta v. Enraged Koala",
+  "path" : ".",
+  
+  "metadata": {
+    "displayName" : "Server Stuff Mod",
+    "author" : "HuggableCreep, MadTulip and TooManySecrets",
+    "description" : "Stuff like sings for rules and other server related stuff",
+	"support_url" : "",
+	"version" : "Rev. 1"
+  }
+}
