@@ -1,0 +1,10 @@
+{
+  "name" : "Shipstructor",
+  "version" : "Beta v. Upbeat Giraffe",
+  "path" : ".",
+  "dependencies" : [ "" ],
+  "modauthor" : "Madtulip, HuggableCreep, toomanysecrets come back to us",
+  "modversion" : "V.0.0.1",
+  "moddescription" : "Crazy Ship Customization, with a hint of exploration",
+  "modsupporturl" : ""
+}

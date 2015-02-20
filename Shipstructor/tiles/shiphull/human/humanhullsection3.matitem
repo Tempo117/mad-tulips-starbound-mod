@@ -1,0 +1,9 @@
+{
+  "itemName" : "humanhullsection3",
+  "rarity" : "Common",
+  "inventoryIcon" : "humanhullsection3icon.png",
+  "dropCollision" : [-2.5, -2.0, 2.5, 2.0],
+  "description" : "Human Tileset 1",
+  "shortdescription" : "Human Tileset 1",
+  "materialId" : 21127
+}

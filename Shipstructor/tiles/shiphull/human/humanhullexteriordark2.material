@@ -1,0 +1,21 @@
+{
+  "materialId" : 21122,
+  "materialName" : "humanhullexteriordark2",
+  "particleColor" : [110, 110, 110, 255],
+  "itemDrop" : "humanhullexteriordark2",
+  "description" : "Human Spaceship Dark Hull Plating  Tileset, You can make your fancy StarCruiser outta this",
+  "shortdescription" : "Human Spaceship Dark Hull Plating Tileset",
+  "footstepSound" : "/sfx/blocks/footstep_composite.wav",
+  "health" : 8,
+  "category": "materials",
+  
+  "renderTemplate" : "/tiles/pipetemplate.config",
+  "renderParameters" : {
+    "texture" : "humanhullexteriordark2.png",
+    "variants" : 1,
+    "lightTransparent" : true,
+    "multiColored" : true,
+    "occludesBelow" : false,
+    "zLevel" : 10
+  }
+}

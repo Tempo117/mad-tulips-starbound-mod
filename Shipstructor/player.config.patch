@@ -1,0 +1,19 @@
+[
+//debug
+	{"op":"add","path":"/defaultItems/-","value":{"item":"humanhullexteriordark1","count":1000} },
+	{"op":"add","path":"/defaultItems/-","value":{"item":"humanhullexteriordark2","count":1000} },
+	{"op":"add","path":"/defaultItems/-","value":{"item":"humanhullplatingdark1","count":1000} },
+	{"op":"add","path":"/defaultItems/-","value":{"item":"humanhullplatingdark2","count":1000} },
+	{"op":"add","path":"/defaultItems/-","value":{"item":"humanhullsection1","count":1000} },
+	{"op":"add","path":"/defaultItems/-","value":{"item":"humanhullsection2","count":1000} },
+	{"op":"add","path":"/defaultItems/-","value":{"item":"humanhullsection3","count":1000} },
+
+
+	{"op":"add","path":"/defaultBlueprints/tier1/-","value":{"item":"humanhullexteriordark1"} },
+	{"op":"add","path":"/defaultBlueprints/tier1/-","value":{"item":"humanhullexteriordark2"} },
+	{"op":"add","path":"/defaultBlueprints/tier1/-","value":{"item":"humanhullplatingdark1"} },
+	{"op":"add","path":"/defaultBlueprints/tier1/-","value":{"item":"humanhullplatingdark2"} },
+	{"op":"add","path":"/defaultBlueprints/tier1/-","value":{"item":"humanhullsection1"} },
+	{"op":"add","path":"/defaultBlueprints/tier1/-","value":{"item":"humanhullsection2"} },
+	{"op":"add","path":"/defaultBlueprints/tier1/-","value":{"item":"humanhullsection3"} }
+]

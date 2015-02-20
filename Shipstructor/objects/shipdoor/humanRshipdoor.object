@@ -1,0 +1,56 @@
+{
+  "objectName" : "humanRshipdoor",
+  "rarity" : "Common",
+
+  "category" : "door",
+  "price" : 10,
+  "printable" : false,
+  
+  "description" : "A reinforced space-grade hatch that can be placed dynamically.",
+  "shortdescription" : "Human Ship Door",
+  "race" : "human",
+
+  "apexDescription" : "We use these doors on our ships.",
+  "avianDescription" : "A door.",
+  "floranDescription" : "Door!",
+  "glitchDescription" : "Statement. A door.",
+  "humanDescription" : "Cool door.",
+  "hylotlDescription" : "A basic door.",
+
+
+  "inventoryIcon" : "objects/ship/humanshipdoor/humanshipdooricon.png",
+  "orientations" : [
+    {
+      "dualImage" : "humanRshipdoor.png:closeWall",
+      "imagePosition" : [-16, -16],
+
+      "spaceScan" : 0.1,
+      "anchors" : [ "top", "bottom" ]
+    },
+	{
+      "dualImage" : "humanRshipdoor.png:closeFloor",
+      "imagePosition" : [-16, -16],
+
+      "spaceScan" : 0.3,
+      "anchors" : [ "left", "right" ]
+    }
+  ],
+
+  "scripts" : [ "door.lua" ],
+  "scriptDelta" : 5,
+
+  "animation" : "door.animation",
+  "animationCustom" : {
+    "sounds" : {
+      "openSounds" : [ "/sfx/objects/apexcooldoor_open.wav" ],
+      "closeSounds" : [ "/sfx/objects/apexcooldoor_close.wav" ]
+    }
+  },
+  "animationParts" : {
+    "door" : "humanRshipdoor.png"
+  },
+  "animationPosition" : [-16, -16],
+  
+  "inboundNodes" : [ [0, 1] ],
+  "outboundNodes" : [ [0, -1] ]
+}
