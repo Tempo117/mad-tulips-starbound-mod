@@ -1,1 +1,0 @@
-http://modules-in-a-box.googlecode.com/svn/trunk/
