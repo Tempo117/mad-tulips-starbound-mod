@@ -9,5 +9,18 @@ Go thru all ingame items and  make a list of what we could add that is not craft
 Testing
 
 
+
+{"op":"add","path":"/defaultBlueprints/tier1/-","value":{"item":"madtulip_Apex1_teleporter"}},
+
+{"op":"add","path":"/defaultBlueprints/tier1/-","value":{"item":"madtulip_avian1_teleporter"}},
+
+{"op":"add","path":"/defaultBlueprints/tier1/-","value":{"item":"madtulip_floran1_teleporter"}},
+
+{"op":"add","path":"/defaultBlueprints/tier1/-","value":{"item":"madtulip_glitch1_teleporter"}},
+
+{"op":"add","path":"/defaultBlueprints/tier1/-","value":{"item":"madtulip_human1_teleporter"}},
+
+{"op":"add","path":"/defaultBlueprints/tier1/-","value":{"item":"madtulip_novakid1_teleporter"}},
+
  
  
