@@ -20,6 +20,7 @@ Testing
 
 {"op":"add","path":"/defaultBlueprints/tier1/-","value":{"item":"madtulip_human1_teleporter"}},
 
+{"op":"add","path":"/defaultBlueprints/tier1/-","value":{"item":"Madtulip_hylotl1_teleporter"}},
 {"op":"add","path":"/defaultBlueprints/tier1/-","value":{"item":"madtulip_novakid1_teleporter"}},
 
  
