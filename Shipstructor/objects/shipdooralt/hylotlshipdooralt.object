@@ -1,5 +1,5 @@
 {
-  "objectName" : "floranairlock",
+  "objectName" : "hylotlshipdooralt",
   "rarity" : "Common",
 
   "category" : "door",
@@ -7,8 +7,8 @@
   "printable" : false,
   
   "description" : "A reinforced space-grade hatch that can be placed dynamically.",
-  "shortdescription" : "Glitch Sector Airlock",
-  "race" : "glitch",
+  "shortdescription" : "Hylotl Ship Door",
+  "race" : "human",
 
   "apexDescription" : "We use these doors on our ships.",
   "avianDescription" : "A door.",
@@ -18,17 +18,17 @@
   "hylotlDescription" : "A basic door.",
 
 
-  "inventoryIcon" : "floranairlockicon.png",
+  "inventoryIcon" : "hylotlshipdooralticon.png",
   "orientations" : [
     {
-      "dualImage" : "floranairlock.png:closeWall",
+      "dualImage" : "hylotlshipdooralt.png:closeWall",
       "imagePosition" : [-16, -16],
 
       "spaceScan" : 0.1,
       "anchors" : [ "top", "bottom" ]
     },
 	{
-      "dualImage" : "floranairlock.png:closeFloor",
+      "dualImage" : "hylotlshipdooralt.png:closeFloor",
       "imagePosition" : [-16, -16],
 
       "spaceScan" : 0.3,
@@ -47,7 +47,7 @@
     }
   },
   "animationParts" : {
-    "door" : "floranairlock.png"
+    "door" : "hylotlshipdooralt.png"
   },
   "animationPosition" : [-16, -16],
   

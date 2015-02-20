@@ -1,5 +1,5 @@
 {
-  "objectName" : "apexairlock",
+  "objectName" : "floranairlock",
   "rarity" : "Common",
 
   "category" : "door",
@@ -7,8 +7,8 @@
   "printable" : false,
   
   "description" : "A reinforced space-grade hatch that can be placed dynamically.",
-  "shortdescription" : "Apex Sector Airlock",
-  "race" : "apex",
+  "shortdescription" : "Floran Airlock",
+  "race" : "glitch",
 
   "apexDescription" : "We use these doors on our ships.",
   "avianDescription" : "A door.",
@@ -18,17 +18,17 @@
   "hylotlDescription" : "A basic door.",
 
 
-  "inventoryIcon" : "apexairlockicon.png",
+  "inventoryIcon" : "floranairlockicon.png",
   "orientations" : [
     {
-      "dualImage" : "apexairlock.png:closeWall",
+      "dualImage" : "floranairlock.png:closeWall",
       "imagePosition" : [-16, -16],
 
       "spaceScan" : 0.1,
       "anchors" : [ "top", "bottom" ]
     },
 	{
-      "dualImage" : "apexairlock.png:closeFloor",
+      "dualImage" : "floranairlock.png:closeFloor",
       "imagePosition" : [-16, -16],
 
       "spaceScan" : 0.3,
@@ -47,7 +47,7 @@
     }
   },
   "animationParts" : {
-    "door" : "apexairlock.png"
+    "door" : "floranairlock.png"
   },
   "animationPosition" : [-16, -16],
   

@@ -1,5 +1,5 @@
 {
-  "objectName" : "hylotlairlock",
+  "objectName" : "glitchairlock",
   "rarity" : "Common",
 
   "category" : "door",
@@ -7,7 +7,7 @@
   "printable" : false,
   
   "description" : "A reinforced space-grade hatch that can be placed dynamically.",
-  "shortdescription" : "Glitch Sector Airlock",
+  "shortdescription" : "Glitch Airlock",
   "race" : "glitch",
 
   "apexDescription" : "We use these doors on our ships.",
@@ -18,17 +18,17 @@
   "hylotlDescription" : "A basic door.",
 
 
-  "inventoryIcon" : "hylotlairlockicon.png",
+  "inventoryIcon" : "glitchairlockicon.png",
   "orientations" : [
     {
-      "dualImage" : "hylotlairlock.png:closeWall",
+      "dualImage" : "glitchairlock.png:closeWall",
       "imagePosition" : [-16, -16],
 
       "spaceScan" : 0.1,
       "anchors" : [ "top", "bottom" ]
     },
 	{
-      "dualImage" : "hylotlairlock.png:closeFloor",
+      "dualImage" : "glitchairlock.png:closeFloor",
       "imagePosition" : [-16, -16],
 
       "spaceScan" : 0.3,
@@ -47,7 +47,7 @@
     }
   },
   "animationParts" : {
-    "door" : "hylotlairlock.png"
+    "door" : "glitchairlock.png"
   },
   "animationPosition" : [-16, -16],
   

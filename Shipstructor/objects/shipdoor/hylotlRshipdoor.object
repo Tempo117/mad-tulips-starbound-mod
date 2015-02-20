@@ -7,7 +7,7 @@
   "printable" : false,
   
   "description" : "A reinforced space-grade hatch that can be placed dynamically.",
-  "shortdescription" : "Human Ship Door",
+  "shortdescription" : "Hylotl Ship Door",
   "race" : "human",
 
   "apexDescription" : "We use these doors on our ships.",
