@@ -1,21 +1,29 @@
-function initializeObject()
-	-- Make our object interactive (we can interract by 'Use')
-	object.setInteractive(true);
+function init(args)
+	entity.setInteractive(true)
 end
 
-function main()
-	-- Check for the single execution
-	if self.initialized == nil then
-		-- Init object
-		initializeObject();
-		-- Set flag
-		self.initialized = true;
-	end
+function update(dt)
+
 end
 
 function onInteraction(args)
 	-- if clicked by middle mouse or "e"
-	return {"OpenCockpitInterface"};
+	-- return {"OpenCockpitInterface"};
+	
+	-- Now build the actual trading config
+	local dummy = {}
+	return {"OpenCockpitInterface",{}}
+
+--[[
+	local tradingConfig = {}
+	tradingConfig.gui = {}
+	tradingConfig.gui.background = {}
+	tradingConfig.gui.background.type = "background"
+	tradingConfig.gui.background.fileHeader = "/interface/wires/header.png"
+	tradingConfig.gui.background.fileBody   = "/interface/wires/body.png"
+	tradingConfig.gui.background.fileFooter = "/interface/wires/footer.png"
+	return {"OpenNpcInterface",tradingConfig}
+--]]
 	
 	--Ship_Properties = {};
 	--Ship_Properties.Driveable = 0;

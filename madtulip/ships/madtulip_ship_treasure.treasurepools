@@ -1,130 +1,93 @@
 {
-  "madtulip_avianShipStarterTreasure" : [
+  "madtulip_starterTreasure" : [
     [0, {
-        "fill" : [
-          "beamaxe",
-          "flashlight",
-		  "madtulip_gravity-chip",
-		  "madtulip_tier1_pod",
-          [ "torch", 10],
-          [ "feathercrownseed", 3],
-          [ "wheatseed", 3],
-          [ "avianstarter", 1]
-        ],
-        "levelVariance" : [0, 0],
-        "allowDuplication" : false
-      } ]
-  ],
-  "madtulip_apexShipStarterTreasure" : [
-    [0, {
-        "fill" : [
-          "beamaxe",
-          "flashlight",
-		  "madtulip_gravity-chip",
-		  "madtulip_tier1_pod",
-          [ "torch", 10],
-          [ "bananaseed", 3],
-          [ "wheatseed", 3],
-          [ "apexstarter", 1]
-        ],
-        "levelVariance" : [0, 0],
-        "allowDuplication" : false
-      } ]
+      "fill" : [
+        {"item" : "flashlight"},
+        {"item" : [ "torch", 10 ]},
+		{"item" : "madtulip_tier1_pod"},
+		{"item" : [ "apexshipsupport", 15 ]},
+		{"item" : [ "apexshipdetails", 15 ]},
+		{"item" : [ "madtulip_wallplate", 40 ]},
+		{"item" : [ "steelplatform", 10 ]},
+		{"item" : [ "apexshiplight", 1 ]}
+      ]
+    }]
   ],
 
-  "madtulip_humanShipStarterTreasure" : [
+  "madtulip_avianStarterTreasure" : [
     [0, {
-        "fill" : [
-          "beamaxe",
-          "flashlight",
-		  "madtulip_gravity-chip",
-		  "madtulip_tier1_pod",
-          [ "torch", 10],
-          [ "cornseed", 3],
-          [ "wheatseed", 3],
-          [ "humanstarter", 1]
-        ],
-        "levelVariance" : [0, 0],
-        "allowDuplication" : false
-      } ]
+      "fill" : [
+        {"pool" : "madtulip_starterTreasure"},
+        {"item" : [ "aviantier0shortsword", 1]},
+        {"item" : [ "madtulip_TS_avian_1", 15]},
+		{"item" : [ "avianstarter", 1]}
+      ]
+    }]
   ],
-  "madtulip_glitchShipStarterTreasure" : [
+
+  "madtulip_apexStarterTreasure" : [
     [0, {
-        "fill" : [
-          "beamaxe",
-          "flashlight",
-		  "madtulip_gravity-chip",
-		  "madtulip_tier1_pod",
-          [ "torch", 10],
-          [ "boltbulbseed", 3],
-          [ "wheatseed", 3],
-          [ "glitchstarter", 1]
-        ],
-        "levelVariance" : [0, 0],
-        "allowDuplication" : false
-      } ]
+      "fill" : [
+        {"pool" : "madtulip_starterTreasure"},
+        {"item" : [ "apextier0shortsword", 1]},
+		{"item" : [ "madtulip_TS_apex_1", 15]},
+        {"item" : [ "apexstarter", 1]}
+      ]
+    }]
   ],
-  "madtulip_hylotlShipStarterTreasure" : [
+
+  "madtulip_humanStarterTreasure" : [
     [0, {
-        "fill" : [
-          "beamaxe",
-          "flashlight",
-		  "madtulip_gravity-chip",
-		  "madtulip_tier1_pod",
-          [ "torch", 10],
-          [ "coralcreepseed", 3],
-          [ "wheatseed", 3],
-          [ "hylotlstarter", 1]
-        ],
-        "levelVariance" : [0, 0],
-        "allowDuplication" : false
-      } ]
+      "fill" : [
+        {"pool" : "madtulip_starterTreasure"},
+        {"item" : [ "humantier0shortsword", 1]},
+		{"item" : [ "madtulip_TS_human_1", 15]},
+        {"item" : [ "humanstarter", 1]}
+      ]
+    }]
   ],
-  "madtulip_floranShipStarterTreasure" : [
+
+  "madtulip_glitchStarterTreasure" : [
     [0, {
-        "fill" : [
-          "beamaxe",
-          "flashlight",
-		  "madtulip_gravity-chip",
-		  "madtulip_tier1_pod",
-          [ "torch", 10],
-          [ "bonebooseed", 3],
-          [ "wheatseed", 3],
-          [ "floranstarter", 1]
-        ],
-        "levelVariance" : [0, 0],
-        "allowDuplication" : false
-      } ]
+      "fill" : [
+        {"pool" : "madtulip_starterTreasure"},
+        {"item" : [ "glitchtier0shortsword", 1]},
+		{"item" : [ "madtulip_TS_glitch_1", 15]},
+        {"item" : [ "glitchstarter", 1]}
+      ]
+    }]
   ],
-  "madtulip_novakidShipStarterTreasure" : [
+
+  "madtulip_hylotlStarterTreasure" : [
     [0, {
-        "fill" : [
-          "beamaxe",
-          "flashlight",
-		  "madtulip_gravity-chip",
-		  "madtulip_tier1_pod",
-          [ "torch", 10],
-          [ "cornseed", 3],
-          [ "wheatseed", 3],
-          [ "novakid+starter", 1]
-        ],
-        "levelVariance" : [0, 0],
-        "allowDuplication" : false
-      } ]
+      "fill" : [
+        {"pool" : "madtulip_starterTreasure"},
+        {"item" : [ "hylotltier0shortsword", 1]},
+		{"item" : [ "madtulip_TS_hylotl_1", 15]},
+        {"item" : [ "hylotlstarter", 1]}
+      ]
+    }]
   ],
-    "madtulip_shellStarterTreasure" : [
+
+  "madtulip_floranStarterTreasure" : [
     [0, {
-        "fill" : [
-          "beamaxe",
-          "flashlight",
-		  "madtulip_gravity-chip",
-		  "madtulip_tier1_pod",
-          [ "torch", 10],
-          [ "flare", 3],
-          [ "shellstarter", 1]
-        ],
-        "levelVariance" : [0, 0],
-        "allowDuplication" : false
-      } ]
+      "fill" : [
+        {"pool" : "madtulip_starterTreasure"},
+        {"item" : [ "florantier0shortsword", 1]},
+		{"item" : [ "madtulip_TS_floran_1", 15]},
+        {"item" : [ "floranstarter", 1]}
+      ]
+    }]
+  ],
+
+  "madtulip_novakidStarterTreasure" : [
+    [0, {
+      "fill" : [
+        {"pool" : "madtulip_starterTreasure"},
+		{"item" : [ "madtulip_TS_novakid_1", 15]},
+		{"item" : [ "novatier0rifle", 1]},
+        {"item" : [ "novastarter", 1]}
+      ]
+    }]
   ]
 }

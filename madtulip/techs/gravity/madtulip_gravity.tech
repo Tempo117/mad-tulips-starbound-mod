@@ -1,7 +1,0 @@
-{
-  "script" : "madtulip_gravity.lua",
-  "actions" : [ "action_jump","action_up","action_down","action_left","action_right" ],
-  "animator" : "madtulip_gravity.animation",
-
-  "energyUsagePerSecond" : 0
-}

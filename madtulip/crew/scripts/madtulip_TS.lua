@@ -47,7 +47,7 @@ function madtulip_TS.update_Task_Scheduler (dt)
 					madtulip_TS.Remember_Tasks(Splited_Tasks.New_Tasks)
 					
 					-- Broadcast newly detected Tasks
-					world.logInfo("Broadcasting newly detected Tasks " .. entity.id())
+					-- world.logInfo("Broadcasting newly detected Tasks " .. entity.id())
 					madtulip_TS.Broadcast_Tasks(Splited_Tasks.New_Tasks)
 				end
 			end
@@ -63,7 +63,7 @@ function madtulip_TS.update_Task_Scheduler (dt)
 	end
 	
 	-- Pick a Task for self
-	madtulip_TS.Update_My_Task()
+	madtulip_TS.Update_My_Task(dt)
 	
 	-- Forget old Tasks
 	madtulip_TS.Forget_Old_Tasks(dt)
@@ -181,13 +181,16 @@ function madtulip_TS.Update_Known_Tasks_Properties(Known_Tasks)
 		idx_cur_Stored_Task = Known_Tasks.Tasks[idx_cur_Task].Var.Known_as_storage_index
 		cur_Known_Task_contained_new_global_information = false
 		
-		--local info_who_handles_this_task_is_newer = (Known_Tasks.Tasks[idx_cur_Task].Global.is_beeing_handled_timestemp > storage.Known_Tasks.Tasks[idx_cur_Stored_Task].Global.is_beeing_handled_timestemp)
-		local someone_started_handling_the_task = (Known_Tasks.Tasks[idx_cur_Task].Global.is_beeing_handled == true) and (storage.Known_Tasks.Tasks[idx_cur_Stored_Task].Global.is_beeing_handled == false)
-		--local info_that_task_is_done_is_newer = (Known_Tasks.Tasks[idx_cur_Task].Global.is_done_timestemp > storage.Known_Tasks.Tasks[idx_cur_Stored_Task].Global.is_done_timestemp)
-		local someone_did_the_task = (Known_Tasks.Tasks[idx_cur_Task].Global.is_done == true) and (storage.Known_Tasks.Tasks[idx_cur_Stored_Task].Global.is_done == false)		
+		-- most general
+		local cur_Known_Task_contained_new_global_information = (Known_Tasks.Tasks[idx_cur_Task].Global.revision > storage.Known_Tasks.Tasks[idx_cur_Stored_Task].Global.revision)
+		-- specific cases
+		local someone_started_handling_the_task =     (Known_Tasks.Tasks[idx_cur_Task].Global.is_beeing_handled == true)
+		                                          and (storage.Known_Tasks.Tasks[idx_cur_Stored_Task].Global.is_beeing_handled == false)
+		local someone_did_the_task =     (Known_Tasks.Tasks[idx_cur_Task].Global.is_done == true)
+		                             and (storage.Known_Tasks.Tasks[idx_cur_Stored_Task].Global.is_done == false)
+		
 		
 		-- Copy parts of contents of the .Global part
-		-- In order to decided which part of the .Global is new we use a timestemp
 		if someone_started_handling_the_task then
 			--world.logInfo("someone_started_handling_the_task update detected by entity id: " .. entity.id() .. " handler id: " .. " handler_ID : " .. Known_Tasks.Tasks[idx_cur_Task].Global.handled_by_ID))
 			cur_Known_Task_contained_new_global_information = true;
@@ -213,7 +216,6 @@ function madtulip_TS.Update_Known_Tasks_Properties(Known_Tasks)
 			
 			--> update my known information
 			storage.Known_Tasks.Tasks[idx_cur_Stored_Task].Global.is_done = Known_Tasks.Tasks[idx_cur_Task].Global.is_done
-			--storage.Known_Tasks.Tasks[idx_cur_Stored_Task].Global.is_done_timestemp = Known_Tasks.Tasks[idx_cur_Task].Global.is_done_timestemp
 			
 			-- its done, am i also working on that task?
 			if (idx_cur_Stored_Task == storage.Known_Tasks.idx_of_my_current_Task) then
@@ -230,7 +232,7 @@ function madtulip_TS.Update_Known_Tasks_Properties(Known_Tasks)
 			Msg_Tasks.Tasks = {}
 			Msg_Tasks.size = 1
 			Msg_Tasks.Tasks[1] = storage.Known_Tasks.Tasks[idx_cur_Stored_Task]
-			world.logInfo("Broadcast that i received Global. news" .. entity.id())
+			--world.logInfo("Broadcast that i received Global. news" .. entity.id())
 			madtulip_TS.Broadcast_Tasks(Msg_Tasks)
 		end
 	end
@@ -305,7 +307,7 @@ function madtulip_TS.Forget_Old_Tasks(dt)
 	storage.Known_Tasks.size = idx_cur_Surviving_Task
 end
 
-function madtulip_TS.Update_My_Task()
+function madtulip_TS.Update_My_Task(dt)
 	-- execute my current Task
 	-- or search through all known tasks (storage)
 	-- and find one which can be picked and executed if i dont have one.
@@ -353,7 +355,7 @@ function madtulip_TS.Update_My_Task()
 		end
 	else
 		-- I do have a Task, lets execute it!
-		if (_ENV[storage.Known_Tasks.Tasks[storage.Known_Tasks.idx_of_my_current_Task].Header.Fct_Task].main_Task(storage.Known_Tasks.Tasks[storage.Known_Tasks.idx_of_my_current_Task])) then
+		if (_ENV[storage.Known_Tasks.Tasks[storage.Known_Tasks.idx_of_my_current_Task].Header.Fct_Task].main_Task(storage.Known_Tasks.Tasks[storage.Known_Tasks.idx_of_my_current_Task],dt)) then
 			-- my current task is finished! ( eigther i finished it or someone else finished and told me about it)
 			--> call its ending function
 			madtulip_TS.successfully_end_my_current_Task()
@@ -399,7 +401,7 @@ function madtulip_TS.successfully_end_my_current_Task()
 	storage.Known_Tasks.idx_of_my_current_Task = nil
 	
 	-- it will be removed from my memory with the next call to "madtulip_TS.Forget_Old_Tasks(dt)"
-	entity.say("TASK DONE!")
+	-- entity.say("TASK DONE!")
 end
 
 function madtulip_TS.Broadcast_Tasks(New_Tasks)

@@ -1,7 +1,6 @@
 {
   "objectName" : "madtulip_apex_defense_turret",
   "rarity" : "Common",
-  "objectType" : "wire",
 
   "isInteractive" : true,
 

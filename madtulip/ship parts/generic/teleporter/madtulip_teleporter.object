@@ -1,13 +1,8 @@
 {
   "objectName" : "madtulip_teleporter",
   "rarity" : "Common",
-  "objectType" : "interactable",
-  "interactAction" : "OpenTeleportDialog",
   "description" : "Trusty teleporter, what would I do without you?",
   "shortdescription" : "Teleporter",
-  "race" : "generic",
-  "price" : 10,
-  "printable" : false,
 
   "apexDescription" : "Teleporting feels like riding a rollercoaster at the speed of light.",
   "avianDescription" : "Teleporting feels like flying.",
@@ -17,15 +12,18 @@
   "hylotlDescription" : "Teleporting feels like diving into the ocean from a mountain top.",
 
   "category" : "light",
-  "lightColor" : [106, 125, 142],
+  "lightColor" : [99, 132, 153],
   "flickerDistance" : 0.2,
   "flickerStrength" : 0.05,
   "flickerTiming" : 4,
 
+  "interactAction" : "OpenTeleportDialog",
+  "interactData" : "/interface/warpmenu/shipteleporter.config",  
+
   "inventoryIcon" : "madtulip_teleporter_icon.png",
   "orientations" : [
     {
-      "dualImage" : "madtulip_teleporter.png:<color>",
+	  "imageLayers" : [ { "image" : "madtulip_teleporter.png:<color>", "fullbright" : true }, { "image" : "madtulip_teleporter_lit.png:<color>" } ],
 
       "imagePosition" : [-16, 0],
       "frames" : 1,
@@ -34,7 +32,6 @@
       "spaceScan" : 0.1,
       "anchors" : [ "bottom" ],
       "collision" : "solid"
-
     }
   ]
 }

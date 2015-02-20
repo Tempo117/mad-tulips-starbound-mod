@@ -1,10 +1,11 @@
 {
   "objectName" : "madtulip_captainschair",
   "rarity" : "Common",
-  "objectType" : "interactable",
+  "objectType" : "loungeable",
+  
   "description" : "ENGAGE!",
   "shortdescription" : "Captain's Chair",
-  "race" : "generic",
+  "race" : "human",
   "category" : "furniture",
   "printable" : false,
   "price" : 200,
@@ -19,19 +20,26 @@
   "inventoryIcon" : "madtulip_captainschair.png",
   "orientations" : [
     {
-      "dualImage" : "madtulip_captainschair.png:<color>",
-
+      "image" : "madtulip_captainschair.png:<color>",
       "imagePosition" : [-12, 0],
-      "frames" : 1,
-      "animationCycle" : 1.0,
-
       "spaceScan" : 0.1,
-      "anchors" : [ "bottom" ]
+      "anchors" : [ "bottom" ],
+      "direction" : "left"
+    },
+    {
+      "image" : "madtulip_captainschair.png:<color>",
+      "flipImages" : true,
+      "imagePosition" : [-12, 0],
+      "spaceScan" : 0.1,
+      "anchors" : [ "bottom" ],
+      "direction" : "right"
     }
   ],
 
-  "interactAction" : "openCockpitInterface",
-  
-  "sitFlipDirection" : true,
-  "sitPosition" : [1, 22]
+  //"interactAction" : "openCockpitInterface",
+  "scripts" : [
+    "madtulip_captainschair_logic.lua"
+  ],
+
+  "sitPosition" : [3, 21]
 }

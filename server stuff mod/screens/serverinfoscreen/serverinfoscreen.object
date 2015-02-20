@@ -1,0 +1,32 @@
+{
+  "objectName" : "serverinfoscreen",
+  "rarity" : "Common",
+  "category" : "decorative",
+  "price" : 200,
+  "printable" : false,
+  "lightColor" : [106, 125, 142],
+  "flickerDistance" : 0.2,
+  "flickerStrength" : 0.05,
+  "flickerTiming" : 4,
+  "description" : "Gives info on the server",
+  "shortdescription" : "Server Info Screen",
+  "race" : "apex",  
+  
+
+  "inventoryIcon" : "serverinfoscreen_icon.png",
+  
+  "orientations" : [
+    {
+      "image" : "serverinfoscreen.png:<color>.<frame>",
+      "imagePosition" : [-16, -8],
+      "frames" : 5,
+      "animationCycle" : 5,
+
+      "spaceScan" : 0.1,
+      "anchors" : [ "background" ]
+    }
+  ]
+  
+  
+}
+

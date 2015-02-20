@@ -1,7 +1,7 @@
 {
   "objectName" : "madtulip_floran_teleporter",
   "rarity" : "Common",
-  "objectType" : "interactable",
+  //"objectType" : "interactable",
   "interactAction" : "OpenTeleportDialog",
   "description" : "Trusty teleporter, what would I do without you?",
   "shortdescription" : "Floran Teleporter",

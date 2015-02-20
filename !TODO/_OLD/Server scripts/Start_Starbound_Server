@@ -1,0 +1,28 @@
+#! /bin/bash
+test -f /c/opt/Starbound/linux32/launch_starbound_server.sh || exit 0
+
+case "$1" in
+    start)
+        #echo "Updating Starbound by Steam"
+        #/c/opt/Starbound/Update_Starbound.sh
+        echo "Starting Starbound Server 32"
+        /c/opt/Starbound/linux32/launch_starbound_server.sh
+        pidof starbound_server > /var/run/starbound_server.pid
+        echo "Done!"
+        ;;
+    stop)
+        echo "Stopping Starbound Server 32"
+        pkill starbound_server
+        rm /var/run/starbound_server.pid
+        echo "Done!"
+        ;;
+
+    restart)
+        $0 stop
+        $0 start
+        ;;
+    *)
+        echo "usage:`basename $0` start | stop | restart"
+        exit 1
+        ;;
+esac

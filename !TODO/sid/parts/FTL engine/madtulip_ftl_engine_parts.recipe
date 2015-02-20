@@ -1,0 +1,11 @@
+{
+  "input" : [
+	{ "item" : "copperbar", "count" : 5 },
+	{ "item" : "supermatter", "count" : 5 }
+  ],
+  "output" : {
+    "item" : "madtulip_ftl_engine_parts",
+    "count" : 5
+  },
+  "groups" : [ "madtulip_shipstation", "all", "materials" ]
+}

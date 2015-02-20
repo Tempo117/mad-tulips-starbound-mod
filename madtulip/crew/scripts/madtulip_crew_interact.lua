@@ -41,37 +41,22 @@ interact = function(args)
 			Command       = "Set_Occupation",
 			Occupation    = "Deckhand"
 		 })
+	elseif world.entityHandItem(args.sourceId, "primary") == "madtulip_crew_command_one" then
+		-- Set Deckhand occupation (basic guy)
+		self.state.pickState({
+			sourceId      = args.sourceId,
+			Issue_Command = true,
+			Command       = "toggle_crew_command",
+			command_nr    = 1
+		 })
 	elseif world.entityHandItem(args.sourceId, "primary") == "madtulip_crew_info" then
 		-- Show Crew information
-		--world.logInfo("Show information for ID:" .. entity.id())
-		--world.logInfo("Species: " .. entity.species())
 		return {"ShowPopup",{message =
 				"^green;Name: ^white;" .. world.entityName(entity.id()) .. "\n" ..
 				"^green;Species : ^white;" .. entity.species() .. "\n" ..
-				"^green;Occupation: ^white;" .. storage.Occupation
+				"^green;Occupation: ^white;" .. storage.Occupation .. "\n" ..
+				"^green;Command One: ^white;" .. storage.Command_Texts[1]
 				}}
-	elseif world.entityHandItem(args.sourceId, "primary") == "madtulip_crew_dismiss" then
-		-- Dismiss Crew
-		--world.logInfo("Setting should Die")
-		--entity.smash()
-	elseif world.entityHandItem(args.sourceId, "primary") == "madtulip_crew_beam" then
-		-- Beams crew up (spawns a Crew beam beacon that will unpack into the crew)
-	elseif world.entityHandItem(args.sourceId, "primary") == "madtulip_crew_debug_menue_1" then
-		-- Open some Debug menue for testing
-		--[[
-		-- merchantstate.lua
-		  --if self.state.pickState({ interactArgs = args }) then
-		    if self.tradingConfig == nil then
-				self.tradingConfig = merchantState.buildTradingConfig()
-			end
-			if self.tradingConfig ~= nil and self.state.stateDesc() == "merchantState" then
-			  return { "OpenNpcCraftingInterface", self.tradingConfig }
-			end
-		  --end
-		  ]]
-	elseif world.entityHandItem(args.sourceId, "primary") == "madtulip_crew_debug_menue_2" then
-		-- Open some Debug menue for testing
-		--return {"OpenNpcInterface"}
 	else
 		-- Default is just chat
 -- TODO: explicit call chat state here

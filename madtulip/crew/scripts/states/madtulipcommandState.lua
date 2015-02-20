@@ -14,6 +14,15 @@ function madtulipcommandState.enterWith(args)
 			else
 				return nil
 			end
+		elseif (args.Command == "toggle_crew_command") then
+			-- set occupation
+			if Toggle_Commands_based_on_occupation(args.command_nr) then
+				return {sourceId = args.sourceId,
+						timer = entity.configParameter("converse.waitTime")}
+			else
+				return nil
+			end
+			return nil -- TODO: implement toggle
 		-- Different commmand types as elseif here.
 		end
 	end

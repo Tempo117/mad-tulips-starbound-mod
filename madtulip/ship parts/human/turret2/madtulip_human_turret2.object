@@ -1,7 +1,6 @@
 {
 	"objectName" : "madtulip_human_turret2",
 	"rarity" : "Common",
-	"objectType" : "wire",
 	"description" : "This one goes DAKKA DAKKA!",
 	"shortdescription" : "Human Main Gun Turret",
 	"race" : "generic",

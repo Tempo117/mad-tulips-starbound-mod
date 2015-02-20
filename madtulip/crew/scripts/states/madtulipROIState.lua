@@ -1,8 +1,9 @@
 madtulipROIState = {}
 
 function madtulipROIState.enterWith(args)
+	--world.logInfo("ROI State enterWith() attempt")	
 	if (args.Statename ~= "madtulipROIState") then return nil end
-	--world.logInfo("ROI State enterWith()")	
+	--world.logInfo("ROI State enterWith() success")	
 	madtulipROIState.Init()
 	
 	-- save input parameters
@@ -15,10 +16,13 @@ function madtulipROIState.enterWith(args)
 end
 
 function madtulipROIState.enter()
+	--world.logInfo("ROIState enter() attempt")
 	if not isTimeFor("madtulipROI.timeOfDayRanges") then
+		-- returning a cooldown doesnt allow to pickState this which is needed by some Tasks
+		--return nil, entity.configParameter("madtulipROI.cooldown")
 		return nil, entity.configParameter("madtulipROI.cooldown")
 	end
-	--world.logInfo("ROIState enter()")
+	--world.logInfo("ROIState enter() success")
 	-- randomize the order the states are beeing executed in
 	self.state.shuffleStates()
 	
@@ -53,8 +57,12 @@ function madtulipROIState.update(dt, stateData)
 	-- return if wander is on cooldown
 	stateData.timer = stateData.timer - dt
 	if stateData.timer < 0 then
-		--world.logInfo("COOLDOWN")
-		return true, entity.configParameter("madtulipROI.cooldown", nil)
+		--world.logInfo("TIMEOUT")
+		--return true, entity.configParameter("madtulipROI.cooldown", nil)
+		if (madtulipROIState.Inputargs.State_End_Callback ~= nil) then
+			madtulipROIState.Inputargs.State_End_Callback()
+		end
+		return true -- timeout
 	end
 
 	madtulipROIState.update_timers(stateData,dt)
@@ -72,7 +80,12 @@ function madtulipROIState.update(dt, stateData)
 		else
 			-- we are just wandering around looking busy
 			ROI_Anchor_Position = madtulipROIState.set_wandering_ROI_Anchor_around(entity.position())
-			if (ROI_Anchor_Position == nil) then return true end
+			if (ROI_Anchor_Position == nil) then
+				if (madtulipROIState.Inputargs.State_End_Callback ~= nil) then
+					madtulipROIState.Inputargs.State_End_Callback()
+				end
+				return true
+			end
 		end
 		--world.logInfo("ROI_Anchor_Position X: " .. ROI_Anchor_Position[1] .. " Y: " .. ROI_Anchor_Position[2])
 
@@ -149,21 +162,27 @@ function madtulipROIState.update(dt, stateData)
 			if (madtulipROIState.Inputargs.Pick_New_Target_after_old_is_reached ~= nil) then
 				-- use external parameter
 				if (madtulipROIState.Inputargs.Pick_New_Target_after_old_is_reached) then
-					-- not handled
+					-- wandering around
 				else
 					-- we are done here
+					if (madtulipROIState.Inputargs.State_End_Callback ~= nil) then
+						madtulipROIState.Inputargs.State_End_Callback()
+					end
 					return true
 				end
 			else
 				-- use default
-				-- "wandering around" - use a timer to start next movement
-				if not madtulipROIState.Movement.Switch_Target_Inside_ROI_Timer then
-					-- its time to go somewhere else inside this ROI
-					-- pick one target inside the ROI (all are passable) as next target to move towards
-					local Target = madtulipLocation.get_next_full_background_target_inside_ROI(madtulipROIState.ROI)
-					if (Target ~= nil) then madtulipROIState.Movement.Target = Target end
-					madtulipROIState.Movement.Switch_Target_Inside_ROI_Timer = entity.randomizeParameterRange("madtulipROI.Switch_Target_Inside_ROI_Time")
-				end
+				-- wandering around
+			end
+			
+			-- "wandering around" - use a timer to start next movement
+			if not madtulipROIState.Movement.Switch_Target_Inside_ROI_Timer then
+				-- its time to go somewhere else inside this ROI
+				-- pick one target inside the ROI (all are passable) as next target to move towards
+				local Target = madtulipLocation.get_next_full_background_target_inside_ROI(madtulipROIState.ROI)
+				-- entity.say("Target switching time!")
+				if (Target ~= nil) then madtulipROIState.Movement.Target = Target end
+				madtulipROIState.Movement.Switch_Target_Inside_ROI_Timer = entity.randomizeParameterRange("madtulipROI.Switch_Target_Inside_ROI_Time")
 			end
 		else
 			-- move
@@ -173,6 +192,7 @@ function madtulipROIState.update(dt, stateData)
 			   math.abs(toTarget[1]) < madtulipROIState.Movement.Min_X_Dist_required_to_reach_target then
 					-- target reached
 					--world.logInfo("target reached")
+					--entity.say("Target reached!")
 					
 					--> clear movement target
 					madtulipROIState.Movement.Target = nil
@@ -329,6 +349,9 @@ function madtulipROIState.start_chats_on_the_way()
 			local direction = nil
 			if (toTarget[1] > 0) then direction = 1 else direction = -1 end
 				if chatState.initiateChat(entity.position(), vec2.add({ chatDistance * direction, 0 }, entity.position())) then
+					if (madtulipROIState.Inputargs.State_End_Callback ~= nil) then
+						madtulipROIState.Inputargs.State_End_Callback()
+					end
 					return true
 				end
 			end

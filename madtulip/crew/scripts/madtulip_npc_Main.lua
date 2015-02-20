@@ -1,9 +1,20 @@
 function Init_Crew_Data()
 	if storage.Occupation == nil then storage.Occupation = "Deckhand" end
 	if storage.colorIndex == nil then storage.colorIndex = 1 end
-	--if storage.shouldDie == nil then storage.shouldDie = false end
+	if storage.Command_Texts == nil then
+		storage.Command_Texts = {}
+		storage.Command_Perform = {}
+		storage.Command_Task_Name = {}
+		storage.Command_Texts[1] = "Not available."
+		storage.Command_Perform[1] = false
+		storage.Command_Task_Name[1] = ""
+	end
 	
 	Set_Occupation_Cloth()
+	
+-- debug out damage team
+--local damage_team =  entity.damageTeam()
+--world.logInfo("Player Damage Team:" .. damage_team.type .. " " .. damage_team.team)
 end
 
 main = function ()
@@ -89,4 +100,17 @@ init = function (args)
 
     storage.spawnPosition = { position[1], supportRegion[2] + 3.5 }
   end
+end
+
+function copyTable(source)
+	local _copy
+	if type(source) == "table" then
+		_copy = {}
+		for k, v in pairs(source) do
+			_copy[copyTable(k)] = copyTable(v)
+		end
+	else
+		_copy = source
+	end
+	return _copy
 end

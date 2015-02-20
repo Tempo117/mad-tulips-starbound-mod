@@ -27,6 +27,9 @@ function chatState.enterWith(event)
   local conversation = event.chatConversation
   local conversationEntryIndex = 0
 
+  -- no chatting while on a task
+  if madtulip_TS.Has_A_Task() then return nil end
+  
   if partnerId == nil then
     if event.notification == nil or
        event.notification.name ~= "chat" or
