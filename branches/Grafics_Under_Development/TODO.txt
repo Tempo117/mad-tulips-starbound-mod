@@ -26,6 +26,8 @@
 ----------- Things left to fix for madtulip ---------
 -- check if content of pods (crafting tables) is still in line with the vanilla game progression. not that it allows to unlock a table at an earlier tier
 
+-- upgrading the ship is overwriting its current layout. remove T0 to T8 ship progression from quests and .aicommands completly.
+
 - fix defense turrets. vanilla turrets have been upgraded. should look into them.
 - fix crew
 
