@@ -16,14 +16,3 @@ function onInteraction(args)
 	-- kill self
 	entity.smash()
 end
-
-function is_shipworld()
-	local info = world.info()
-	if info.name ~= ""then
-		-- planet
-		return false
-	else
-		-- shipworld
-		return true
-	end
-end

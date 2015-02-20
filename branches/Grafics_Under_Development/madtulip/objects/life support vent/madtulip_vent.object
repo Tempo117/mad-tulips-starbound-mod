@@ -58,7 +58,11 @@
   },
   "animationPosition" : [-8, -8],
 
-  "scripts" : [ "/objects/life support vent/madtulip_vent_logic.lua" ],
+  "scripts" : [
+	"/lua/madtulip_is_shipworld.lua",
+	"/lua/madtulip_copy_table.lua",
+	"madtulip_vent_logic.lua"
+	],
   "scriptDelta" : 5,
   
   "outboundNodes" : [ [1, -1] ],

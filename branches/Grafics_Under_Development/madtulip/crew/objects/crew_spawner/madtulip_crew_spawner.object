@@ -28,7 +28,8 @@
 	"animationPosition" : [1, 0],
 
 	"scripts" : [
-		"/crew/objects/crew_spawner/madtulip_crew_spawner.lua"
+		"/lua/madtulip_is_shipworld.lua",
+		"madtulip_crew_spawner.lua"
 	],
 	"scriptDelta" : 5
 }

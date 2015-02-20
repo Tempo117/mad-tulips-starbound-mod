@@ -344,16 +344,6 @@ function set_flood_data_matrix_content (X,Y,Content)
    end
 end
 
-function is_shipworld()
-	if (world.getProperty("invinciblePlayers")) then
-		-- shipworld
-		return true
-	else
-		-- planet
-		return false
-	end
-end
-
 function Broadcast_Hull_Breach_Task(breach_pos,counter_breaches)
 	local radius = 50 -- TODO: parameter or line of sight or something instead
 
@@ -668,19 +658,6 @@ function Add_Breach_fixing_Info_to_Cluster(Cluster)
 	end
 	
 	return place_foreground
-end
-
-function copyTable(source)
-	local _copy
-	if type(source) == "table" then
-		_copy = {}
-		for k, v in pairs(source) do
-			_copy[copyTable(k)] = copyTable(v)
-		end
-	else
-		_copy = source
-	end
-	return _copy
 end
 
 function pixels_next_to_eachother(a,b)

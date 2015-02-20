@@ -28,7 +28,8 @@
 	"animationPosition" : [1, 0],
 
 	"scripts" : [
-		"/crew/objects/small_blaze_spawner/madtulip_small_blaze_spawner.lua"
+		"/lua/madtulip_is_shipworld.lua",
+		"madtulip_small_blaze_spawner.lua"
 	],
 	"scriptDelta" : 5
 }

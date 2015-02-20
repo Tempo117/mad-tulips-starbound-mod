@@ -25,11 +25,16 @@ function onInteraction(args)
 	
     local Origin = entity.toAbsolutePosition({ 0.0, 0.0 });
 	local Range = 50;
+	--[[
 	-- gather data about blocks at those locations
 	local Data = {};
 	Data = Scan_Area_for_Dead_Content(Origin, Range);
 	-- debug out the gathered data
 	--return { "ShowPopup", { message = {Data.Material.Position,Data.Material.foreground,Data.Material.background} } };
+	--]]
+	
+	Scan_Objects()
+	
 	return ("OpenCockpitInterface");
 end
 
@@ -71,29 +76,36 @@ function Scan_Objects ()
 		local ObjectIds = world.entityQuery (entity.toAbsolutePosition({ 0.0, 0.0 }), 10000);
 		for _, ObjectId in pairs(ObjectIds) do
 			-- Name
-			world.logInfo({"Name for ID (by call scripted entity):",ObjectId});
-			if ((world.callScriptedEntity(ObjectId, "entity.configParameter", "objectName")) ~= nil) then
-				world.logInfo(world.callScriptedEntity(ObjectId, "entity.configParameter", "objectName"));
-				if ((world.callScriptedEntity(ObjectId, "entity.configParameter", "objectType")) == "container") then
-					world.logInfo("It has objectType = container. the entity is:");
-					world.logInfo(world.callScriptedEntity(ObjectId, "entity"));
+			if(ObjectId ~= nil) then
+				world.logInfo("Name for ID (by call scripted entity):" .. ObjectId);
+				if ((world.callScriptedEntity(ObjectId, "entity.configParameter", "objectName")) ~= nil) then
+					world.logInfo(world.callScriptedEntity(ObjectId, "entity.configParameter", "objectName"));
+					--[[
+					if ((world.callScriptedEntity(ObjectId, "entity.configParameter", "objectType")) == "container") then
+						world.logInfo("It has objectType = container. the entity is:");
+						world.logInfo(world.callScriptedEntity(ObjectId, "entity"));
+					end
+					--]]
+				else
+					world.logInfo("name is nil");
+				end
+				
+				world.logInfo("Name for ID (by world.entityName):" .. ObjectId);
+				if ((world.entityName(ObjectId)) ~= nil) then
+					world.logInfo(world.entityName(ObjectId));
+				else
+					world.logInfo("name is nil");
+				end
+				-- position
+				world.logInfo("Position for ID:" .. ObjectId);
+				if ((world.entityPosition(ObjectId)) ~= nil) then
+					local poosition = world.entityPosition(ObjectId);
+					world.logInfo(poosition[1] .. "," .. poosition[2]);
+				else
+					world.logInfo("position is nil");
 				end
 			else
-				world.logInfo("name is nil");
-			end
-			
-			world.logInfo({"Name for ID (by world.entityName):",ObjectId});
-			if ((world.entityName(ObjectId)) ~= nil) then
-				world.logInfo(world.entityName(ObjectId));
-			else
-				world.logInfo("name is nil");
-			end
-			-- position
-			world.logInfo({"Position for ID:",ObjectId});
-			if ((world.entityPosition(ObjectId)) ~= nil) then
-				world.logInfo(world.entityPosition(ObjectId));
-			else
-				world.logInfo("position is nil");
+				world.logInfo("ObjectID is nil");
 			end
 		end
 	world.logInfo ("----------END Object Scan---------");

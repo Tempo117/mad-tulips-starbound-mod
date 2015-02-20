@@ -4,6 +4,8 @@
 
 			{"op":"add","path":"/defaultItems/-","value":{"item":"madtulip_shipsuitTech-chip","count":1}},
 			{"op":"add","path":"/defaultItems/-","value":{"item":"diamonddrill","count":1}},
+			
+			{"op":"add","path":"/defaultItems/-","value":{"item":"madtulip_scanner","count":1}},
 	
 			{"op":"add","path":"/defaultItems/-","value":{"item":"madtulip_mining_podTech-chip","count":1}},
 			{"op":"add","path":"/defaultItems/-","value":{"item":"madtulip_apex_scoutshipTech-chip","count":1}},
