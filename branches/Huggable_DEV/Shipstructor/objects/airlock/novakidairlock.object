@@ -1,5 +1,5 @@
 {
-  "objectName" : "glitchairlock",
+  "objectName" : "novakidairlock",
   "rarity" : "Common",
 
   "category" : "door",
@@ -7,7 +7,7 @@
   "printable" : false,
   
   "description" : "A reinforced space-grade hatch that can be placed dynamically.",
-  "shortdescription" : "Glitch Sector Airlock",
+  "shortdescription" : "Novakid Airlock",
   "race" : "glitch",
 
   "apexDescription" : "We use these doors on our ships.",
@@ -18,17 +18,17 @@
   "hylotlDescription" : "A basic door.",
 
 
-  "inventoryIcon" : "glitchairlockicon.png",
+  "inventoryIcon" : "novakidairlockicon.png",
   "orientations" : [
     {
-      "dualImage" : "glitchairlock.png:closeWall",
+      "dualImage" : "novakidairlock.png:closeWall",
       "imagePosition" : [-16, -16],
 
       "spaceScan" : 0.1,
       "anchors" : [ "top", "bottom" ]
     },
 	{
-      "dualImage" : "glitchairlock.png:closeFloor",
+      "dualImage" : "novakidairlock.png:closeFloor",
       "imagePosition" : [-16, -16],
 
       "spaceScan" : 0.3,
@@ -47,7 +47,7 @@
     }
   },
   "animationParts" : {
-    "door" : "glitchairlock.png"
+    "door" : "novakidairlock.png"
   },
   "animationPosition" : [-16, -16],
   

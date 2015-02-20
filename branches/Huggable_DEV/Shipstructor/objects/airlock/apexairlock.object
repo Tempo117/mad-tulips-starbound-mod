@@ -1,5 +1,5 @@
 {
-  "objectName" : "humanairlock",
+  "objectName" : "apexairlock",
   "rarity" : "Common",
 
   "category" : "door",
@@ -7,8 +7,8 @@
   "printable" : false,
   
   "description" : "A reinforced space-grade hatch that can be placed dynamically.",
-  "shortdescription" : "Glitch Sector Airlock",
-  "race" : "glitch",
+  "shortdescription" : "Apex Airlock",
+  "race" : "apex",
 
   "apexDescription" : "We use these doors on our ships.",
   "avianDescription" : "A door.",
@@ -18,17 +18,17 @@
   "hylotlDescription" : "A basic door.",
 
 
-  "inventoryIcon" : "humanairlockicon.png",
+  "inventoryIcon" : "apexairlockicon.png",
   "orientations" : [
     {
-      "dualImage" : "humanairlock.png:closeWall",
+      "dualImage" : "apexairlock.png:closeWall",
       "imagePosition" : [-16, -16],
 
       "spaceScan" : 0.1,
       "anchors" : [ "top", "bottom" ]
     },
 	{
-      "dualImage" : "humanairlock.png:closeFloor",
+      "dualImage" : "apexairlock.png:closeFloor",
       "imagePosition" : [-16, -16],
 
       "spaceScan" : 0.3,
@@ -47,7 +47,7 @@
     }
   },
   "animationParts" : {
-    "door" : "humanairlock.png"
+    "door" : "apexairlock.png"
   },
   "animationPosition" : [-16, -16],
   

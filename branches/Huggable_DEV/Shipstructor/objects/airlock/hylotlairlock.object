@@ -1,5 +1,5 @@
 {
-  "objectName" : "avianairlock",
+  "objectName" : "hylotlairlock",
   "rarity" : "Common",
 
   "category" : "door",
@@ -7,8 +7,8 @@
   "printable" : false,
   
   "description" : "A reinforced space-grade hatch that can be placed dynamically.",
-  "shortdescription" : "Avian Sector Airlock",
-  "race" : "avian",
+  "shortdescription" : "Hylotl Airlock",
+  "race" : "glitch",
 
   "apexDescription" : "We use these doors on our ships.",
   "avianDescription" : "A door.",
@@ -18,17 +18,17 @@
   "hylotlDescription" : "A basic door.",
 
 
-  "inventoryIcon" : "avianairlockicon.png",
+  "inventoryIcon" : "hylotlairlockicon.png",
   "orientations" : [
     {
-      "dualImage" : "avianairlock.png:closeWall",
+      "dualImage" : "hylotlairlock.png:closeWall",
       "imagePosition" : [-16, -16],
 
       "spaceScan" : 0.1,
       "anchors" : [ "top", "bottom" ]
     },
 	{
-      "dualImage" : "avianairlock.png:closeFloor",
+      "dualImage" : "hylotlairlock.png:closeFloor",
       "imagePosition" : [-16, -16],
 
       "spaceScan" : 0.3,
@@ -47,7 +47,7 @@
     }
   },
   "animationParts" : {
-    "door" : "avianairlock.png"
+    "door" : "hylotlairlock.png"
   },
   "animationPosition" : [-16, -16],
   

@@ -7,7 +7,7 @@
   "printable" : false,
   
   "description" : "A reinforced space-grade hatch that can be placed dynamically.",
-  "shortdescription" : "Glitch Ship Door",
+  "shortdescription" : "Floran Ship Door",
   "race" : "glitch",
 
   "apexDescription" : "We use these doors on our ships.",

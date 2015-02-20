@@ -1,5 +1,5 @@
 {
-  "objectName" : "novakidRshipdoor",
+  "objectName" : "hylotlshipdooralt",
   "rarity" : "Common",
 
   "category" : "door",
@@ -18,17 +18,17 @@
   "hylotlDescription" : "A basic door.",
 
 
-  "inventoryIcon" : "objects/ship/novakidshipdoor/novakidshipdooricon.png",
+  "inventoryIcon" : "hylotlshipdooralticon.png",
   "orientations" : [
     {
-      "dualImage" : "novakidRshipdoor.png:closeWall",
+      "dualImage" : "hylotlshipdooralt.png:closeWall",
       "imagePosition" : [-16, -16],
 
       "spaceScan" : 0.1,
       "anchors" : [ "top", "bottom" ]
     },
 	{
-      "dualImage" : "novakidRshipdoor.png:closeFloor",
+      "dualImage" : "hylotlshipdooralt.png:closeFloor",
       "imagePosition" : [-16, -16],
 
       "spaceScan" : 0.3,
@@ -47,7 +47,7 @@
     }
   },
   "animationParts" : {
-    "door" : "novakidRshipdoor.png"
+    "door" : "hylotlshipdooralt.png"
   },
   "animationPosition" : [-16, -16],
   

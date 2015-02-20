@@ -1,5 +1,5 @@
 {
-  "objectName" : "novakidRshipdoor",
+  "objectName" : "avianairlock",
   "rarity" : "Common",
 
   "category" : "door",
@@ -7,8 +7,8 @@
   "printable" : false,
   
   "description" : "A reinforced space-grade hatch that can be placed dynamically.",
-  "shortdescription" : "Novakid Ship Door",
-  "race" : "human",
+  "shortdescription" : "Avian Airlock",
+  "race" : "avian",
 
   "apexDescription" : "We use these doors on our ships.",
   "avianDescription" : "A door.",
@@ -18,17 +18,17 @@
   "hylotlDescription" : "A basic door.",
 
 
-  "inventoryIcon" : "objects/ship/novakidshipdoor/novakidshipdooricon.png",
+  "inventoryIcon" : "avianairlockicon.png",
   "orientations" : [
     {
-      "dualImage" : "novakidRshipdoor.png:closeWall",
+      "dualImage" : "avianairlock.png:closeWall",
       "imagePosition" : [-16, -16],
 
       "spaceScan" : 0.1,
       "anchors" : [ "top", "bottom" ]
     },
 	{
-      "dualImage" : "novakidRshipdoor.png:closeFloor",
+      "dualImage" : "avianairlock.png:closeFloor",
       "imagePosition" : [-16, -16],
 
       "spaceScan" : 0.3,
@@ -47,7 +47,7 @@
     }
   },
   "animationParts" : {
-    "door" : "novakidRshipdoor.png"
+    "door" : "avianairlock.png"
   },
   "animationPosition" : [-16, -16],
   
