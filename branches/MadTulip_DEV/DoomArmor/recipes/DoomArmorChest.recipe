@@ -1,0 +1,22 @@
+{
+    "input": [
+        {
+            "item": "money",
+            "count": 500
+        },
+        {
+            "item": "durasteelbar",
+            "count": 10
+        }
+    ],
+    "output": {
+        "item": "DoomArmorChest",
+        "count": 1
+    },
+    "groups": [
+        "anvil",
+        "mod",
+        "weapons",
+        "all"
+    ]
+}

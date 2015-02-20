@@ -1,0 +1,12 @@
+{
+  "name" : "madtulip_Life_Support",
+  "effectConfig" : {},
+  "defaultDuration" : 3,
+
+  "scripts" : [
+    "madtulip_Life_Support.lua"
+  ],
+
+  "label" : "Life Support System",
+  "icon" : "/interface/statuses/antidote.png"
+}
