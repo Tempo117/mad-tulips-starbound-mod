@@ -1,0 +1,10 @@
+{
+  "itemName" : "humanhullexteriordark2",
+  "rarity" : "Common",
+  "inventoryIcon" : "humanhullexteriordark2icon.png",
+  "dropCollision" : [-2.5, -2.0, 2.5, 2.0],
+  "description" : "Human Spaceship Dark Hull Plating  Tileset, You can make your fancy StarCruiser outta this",
+  "shortdescription" : "Human Spaceship Dark Hull Plating Tileset",
+  "materialId" : 21122
+  
+}

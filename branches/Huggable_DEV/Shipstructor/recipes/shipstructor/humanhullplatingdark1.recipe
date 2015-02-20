@@ -1,0 +1,10 @@
+{
+  "input" : [
+    { "item" : "dirtmaterial", "count" : 4 }
+  ],
+  "output" : {
+    "item" : "humanhullplatingdark1",
+    "count" : 1
+  },
+  "groups" : [ "plain", "all", "other" ]
+}

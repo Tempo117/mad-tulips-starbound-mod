@@ -1,0 +1,22 @@
+{
+  "materialId" : 21127,
+  "materialName" : "humanhullsection3",
+  "particleColor" : [194, 194, 194, 255],
+  "itemDrop" : "humanhullsection3",
+  "shortdescription" : "Human Tileset 1",
+  "description" : "Human Tileset 1",
+  "footstepSound" : "/sfx/blocks/footstep_lightmetal.wav",
+  "drawBackground" : true,
+  "health" : 10,
+  "category": "materials",
+
+  "renderTemplate" : "/tiles/pipetemplate.config",
+  "renderParameters" : {
+    "texture" : "humanhullsection3.png",
+    "variants" : 5,
+    "lightTransparent" : true,
+    "occludesBelow" : false,
+    "multiColored" : true,
+    "zLevel" : 10
+  }
+}
