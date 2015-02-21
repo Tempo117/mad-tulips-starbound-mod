@@ -334,7 +334,35 @@
 			// Objects
 				{"op":"add","path":"/defaultBlueprints/tier5/-","value":{"item":"miab_basestore_scanner"}},
 				{"op":"add","path":"/defaultBlueprints/tier5/-","value":{"item":"miab_basestore_receiver"}},
-				
+				{"op":"add","path":"/defaultBlueprints/tier5/-","value":{"item":"apexfuelhatch"}},
+
+{"op":"add","path":"/defaultBlueprints/tier5/-","value":{"item":"apexshiplocker"}},
+
+{"op":"add","path":"/defaultBlueprints/tier5/-","value":{"item":"avianfuelhatch"}},
+
+{"op":"add","path":"/defaultBlueprints/tier5/-","value":{"item":"avianshiplocker"}},
+
+{"op":"add","path":"/defaultBlueprints/tier5/-","value":{"item":"floranfuelhatch"}},
+
+{"op":"add","path":"/defaultBlueprints/tier5/-","value":{"item":"floranshiplocker"}},
+
+{"op":"add","path":"/defaultBlueprints/tier5/-","value":{"item":"glitchfuelhatch"}},
+
+{"op":"add","path":"/defaultBlueprints/tier5/-","value":{"item":"glitchshiplocker"}},
+
+
+{"op":"add","path":"/defaultBlueprints/tier5/-","value":{"item":"humanfuelhatch"}},
+
+{"op":"add","path":"/defaultBlueprints/tier5/-","value":{"item":"humanshiplocker"}},
+
+{"op":"add","path":"/defaultBlueprints/tier5/-","value":{"item":"hylotlfuelhatch"}},
+
+{"op":"add","path":"/defaultBlueprints/tier5/-","value":{"item":"hylotlshiplocker"}},
+
+
+{"op":"add","path":"/defaultBlueprints/tier5/-","value":{"item":"novakidfuelhatch"}},
+
+{"op":"add","path":"/defaultBlueprints/tier5/-","value":{"item":"novakidshiplocker"}},
 				{"op":"add","path":"/defaultBlueprints/tier5/-","value":{"item":"madtulip_apex_ftl_thruster"}},
 				{"op":"add","path":"/defaultBlueprints/tier5/-","value":{"item":"madtulip_avian_ftl_thruster"}},
 				{"op":"add","path":"/defaultBlueprints/tier5/-","value":{"item":"madtulip_floran_ftl_thruster"}},
