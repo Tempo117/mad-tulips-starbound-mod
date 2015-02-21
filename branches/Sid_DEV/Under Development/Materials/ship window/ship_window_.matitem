@@ -1,0 +1,9 @@
+{
+  "itemName" : "ship_window_",
+  "rarity" : "Common",
+  "inventoryIcon" : "ship_window_icon.png",
+  "dropCollision" : [-2.5, -2.0, 2.5, 2.0],
+  "description" : "I Can See Everything!",
+  "shortdescription" : "Ship Window",
+  "materialId" : 30027
+}
