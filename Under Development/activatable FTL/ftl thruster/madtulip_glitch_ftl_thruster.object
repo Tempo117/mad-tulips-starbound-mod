@@ -1,0 +1,71 @@
+{
+  "objectName" : "madtulip_glitch_ftl_thruster",
+  "rarity" : "Common",
+  "printable" : false,
+  "price" : 300,
+
+  "description" : "Thruster for faster than light travels",
+  "shortdescription" : "Glitch FTL Thruster",
+  "race" : "human",
+
+  "apexDescription" : "A vent.",
+  "avianDescription" : "A vent to recycle air.",
+  "floranDescription" : "Blowing grate.",
+  "glitchDescription" : "Analyse. The recycling process isn't fully functional.",
+  "humanDescription" : "An uninspiring vent.",
+  "hylotlDescription" : "A vent with a fan.",
+  
+  "category" : "light",
+  "lightColor" : [255, 162, 0],
+  "pointLight" : true,
+  "flickerDistance" : 0.2,
+  "flickerStrength" : 0.05,
+  "flickerTiming" : 4,
+
+  "particleEmitter" : {
+    "emissionRate" : 0.4,
+    "emissionVariance" : 0.5,
+    "pixelOrigin" : [-35, 0],
+
+    "particle" : {
+      "type" : "ember",
+      "size" : 1.0,
+      "color" : [94, 184, 236, 255],
+      "light" : [94, 184, 236],
+      "fade" : 0.9,
+      "initialVelocity" : [-10, 0],
+      "finalVelocity" : [-5, 0],
+      "approach" : [4, 0],
+      "timeToLive" : 1.0,
+      "layer" : "middle"
+    },
+
+    "particleVariance" : {
+      "initialVelocity" : [1.5, 5.0]
+    }
+  },
+
+  "inventoryIcon" : "madtulip_glitch_ftl_thruster_icon.png",
+  "orientations" : [
+    {
+      "image" : "madtulip_glitch_ftl_thruster.png:<color>.<frame>",
+      "imagePosition" : [-8, -8],
+      "frames" : 3,
+      "animationCycle" : 1.0,
+
+      "spaceScan" : 0.1,
+      "anchors" : [ "background" ]
+    }
+  ],
+  
+  "animation" : "/ship parts/glitch/ftl thruster/madtulip_vent.animation",
+  "animationCustom" : {
+    "sounds" : {}
+  },
+  "animationParts" : {
+    "O2_is_ok" : "/ship parts/glitch/ftl thruster/madtulip_glitch_ftl_thruster_on.png",
+	"O2_is_bad" : "/ship parts/glitch/ftl thruster/madtulip_glitch_ftl_thruster.png"
+  },
+  "animationPosition" : [-8, -8],
+
+}
