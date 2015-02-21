@@ -20,6 +20,7 @@
 30020 NOVAKID_2 none existent yet
 30021 NOVAKID_3 none existent yet
 30022 GLASS_
+30027 SHIP_WINDOW_
 
 // normal materials
 30023 madtulip_bottom_decoration
