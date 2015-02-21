@@ -1,0 +1,10 @@
+{
+	"itemName": "madtulip_mining_pod_t1",
+	"rarity": "Legendary",
+	"inventoryIcon": "/tech/Mining Drones/Drone MK1/mining_pod_icon.png",
+	"description": "An old mining pod from when people accually had pickaxes!",
+	"shortdescription": "Mining Pod T1",
+	"inspectionKind": "tech",
+
+	"techModule": "madtulip_mining_pod_t1"
+}
