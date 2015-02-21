@@ -1,6 +1,6 @@
 {
   "input" : [
-	{ "item" : "madtulip_tier_durasteel_plating_1", "count" : 1 }
+	{ "item" : "money", "count" : 1 }
   ],
   "output" : {
     "item" : "ship_window_",
