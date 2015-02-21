@@ -1,0 +1,22 @@
+{
+  "objectName" : "gravgen_glitch",
+  "rarity" : "Common",
+  "description" : "Made with a tad of magic and a load of ductape.",
+  "shortdescription" : "Glitch Gravity Generator",
+  "race" : "generic",
+  "category" : "decorative",
+  "price" : 10,
+  "printable" : false,
+
+  "inventoryIcon" : "gravgen_glitch_icon.png",
+  "orientations" : [
+    {
+      "dualImage" : "gravgen_glitch.png:<color>.<frame>",
+      "imagePosition" : [-36,-14],
+      "frames" : 10,
+      "animationCycle" : 3.0,
+      "spaceScan" : 0.1,
+      "anchors" : [ "bottom" ]
+    }
+  ]
+}
