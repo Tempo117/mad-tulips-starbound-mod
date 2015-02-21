@@ -7,7 +7,15 @@ function is_shipworld()
 	-- loop over one object, brilliant!
 	for _, TeleporterId in pairs(TeleporterIds) do
 		-- world.logInfo("Name of Entity.TeleporterID" .. world.entityName(TeleporterId));
-		if (world.entityName(TeleporterId) == "madtulip_teleporter") then
+		if (world.entityName(TeleporterId) == "madtulip_teleporter") or
+			(world.entityName(TeleporterId) == "madtulip_Apex1_teleporter") or
+			(world.entityName(TeleporterId) == "Madtulip_avian1_teleporter") or
+			(world.entityName(TeleporterId) == "Madtulip_floran1_teleporter") or
+			(world.entityName(TeleporterId) == "Madtulip_glitch1_teleporter") or
+			(world.entityName(TeleporterId) == "madtulip_human1_teleporter") or
+			(world.entityName(TeleporterId) == "madtulip_hylotl1_teleporter") or
+			(world.entityName(TeleporterId) == "madtulip_novakid1_teleporter")
+		then
 			-- world.logInfo("Teleporter found!")
 			Teleporter_found = true;
 		end
