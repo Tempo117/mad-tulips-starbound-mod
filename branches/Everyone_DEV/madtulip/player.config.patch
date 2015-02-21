@@ -334,6 +334,13 @@
 			// Objects
 				{"op":"add","path":"/defaultBlueprints/tier5/-","value":{"item":"miab_basestore_scanner"}},
 				{"op":"add","path":"/defaultBlueprints/tier5/-","value":{"item":"miab_basestore_receiver"}},
+{"op":"add","path":"/defaultBlueprints/tier5/-","value":{"item":"apextechstation"}},
+{"op":"add","path":"/defaultBlueprints/tier5/-","value":{"item":"aviantechstation"}},
+{"op":"add","path":"/defaultBlueprints/tier5/-","value":{"item":"florantechstation"}},
+{"op":"add","path":"/defaultBlueprints/tier5/-","value":{"item":"glitchtechstation"}},
+{"op":"add","path":"/defaultBlueprints/tier5/-","value":{"item":"humantechstation"}},
+{"op":"add","path":"/defaultBlueprints/tier5/-","value":{"item":"hylotltechstation"}},
+{"op":"add","path":"/defaultBlueprints/tier5/-","value":{"item":"novakidtechstation"}},
 				{"op":"add","path":"/defaultBlueprints/tier5/-","value":{"item":"apexfuelhatch"}},
 
 {"op":"add","path":"/defaultBlueprints/tier5/-","value":{"item":"apexshiplocker"}},
