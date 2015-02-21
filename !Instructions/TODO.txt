@@ -3,7 +3,7 @@
 ----------------------------------------------------------------------------------------------------
 
 -------- Random things that need doing -----------
-- All Tilesets _icon need to be updated. they still show the rusty pipe
+- Done
 - Glass Tileset
 - Images for Ship Suit "\tech\skins\ShipSuit" and "\tech\skins\ShipSuit\suits" are just copies from vanilla. i.e. "AIR SUPPLY" needs to be removed. the brownish tone recolored, the tech icon be changed from O2 to something else.
 - fix partly missing background behind tileset diagonals of starter ships
