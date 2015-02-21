@@ -13,7 +13,7 @@
   "renderTemplate" : "/materials/tilesets/madtulip_tileset.config",
   "renderParameters" : {
     "texture" : "madtulip_TS_glass.png",
-    "variants" : 5,
+    "variants" : 1,
     "lightTransparent" : true,
     "occludesBelow" : false,
     "multiColored" : false,
