@@ -1,0 +1,22 @@
+{
+  "materialId" : 30022,
+  "materialName" : "madtulip_TS_glass",
+  "particleColor" : [255, 255, 255, 255],
+  "itemDrop" : "madtulip_TS_glass",
+  "shortdescription" : "Ship Window",
+  "description" : "I Can SeeEverything!",
+  "footstepSound" : "/sfx/blocks/footstep_lightmetal.wav",
+  "drawBackground" : false,
+  "health" : 10,
+  "category": "materials",
+
+  "renderTemplate" : "/materials/tilesets/madtulip_tileset.config",
+  "renderParameters" : {
+    "texture" : "madtulip_TS_glass.png",
+    "variants" : 5,
+    "lightTransparent" : true,
+    "occludesBelow" : false,
+    "multiColored" : true,
+    "zLevel" : 1
+  }
+}
