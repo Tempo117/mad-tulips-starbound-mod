@@ -18,7 +18,7 @@
   "flickerTiming" : 4,
 
   "interactAction" : "OpenTeleportDialog",
-  "interactData" : "/interface/warpmenu/madtulip_shipteleporter.config",
+  "interactData" : "/interface/warpmenu/shipteleporter.config",  
 
   "inventoryIcon" : "madtulip_Apex1_teleportericon.png",
   "orientations" : [
