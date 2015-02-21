@@ -10,7 +10,7 @@
   "health" : 10,
   "category": "materials",
 
-  "renderTemplate" : "/materials/tilesets/madtulip_tileset.config",
+  "renderTemplate" : "/materials/tilesets/ship window/madtulip_tileset.config",
   "renderParameters" : {
     "texture" : "ship_window_.png",
     "variants" : 5,
