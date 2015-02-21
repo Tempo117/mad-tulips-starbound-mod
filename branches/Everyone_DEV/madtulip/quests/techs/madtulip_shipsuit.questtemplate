@@ -3,7 +3,7 @@
   "prerequisites" : [ ],
   "title" : "^orange;Unlock Ship Suit",
   "text" : "Unlocking of the Ship Suit tech.",
-  "completionText" : "Ship Suit tech has been unlocked. ^red;This or any other Suit Tech should be worn at all times for MadTulip`s Ship Mod to work properly.^white; Now you may activate it in your S.A.I.L. interface.",
+  "completionText" : "Ship Suit tech has been unlocked. ^red;It is required to wear this or any later suit tech (Breathingprotection, Coldprotection, Heatprotection, Radiationprotection) at all times for MadTulip`s Ship Mod to work properly.^white; Now you may activate it in your S.A.I.L. interface.",
   "conditions" : [
     { "kind" : "gather", "item" : [ "madtulip_shipsuitTech-chip", 1], "consume" : true }
   ],
