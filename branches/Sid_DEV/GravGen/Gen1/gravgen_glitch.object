@@ -12,9 +12,9 @@
   "orientations" : [
     {
       "dualImage" : "gravgen_glitch.png:<color>.<frame>",
-      "imagePosition" : [-36,-14],
+      "imagePosition" : [-36,-16],
       "frames" : 10,
-      "animationCycle" : 3.0,
+      "animationCycle" : 0.5,
       "spaceScan" : 0.1,
       "anchors" : [ "bottom" ]
     }
