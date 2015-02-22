@@ -2,16 +2,18 @@
 ---------------------------------------Giraffe things----------------------------------------------
 ----------------------------------------------------------------------------------------------------
 
--------- Random things that need doing -----------
-- fix partly missing background behind tileset diagonals of starter ships (above door only)
-- Images for Ship Suit "\tech\skins\ShipSuit" and "\tech\skins\ShipSuit\suits" are just copies from vanilla. i.e. "AIR SUPPLY" needs to be removed. the brownish tone recolored, the tech icon be changed from O2 to something else.
+-------- Bugs -----------
 - please fix the forcefield door by using the grafic in ship parts\generic\forcefield door\OLD_madtulip_forcefield_door instead of the current apex door placeholder
 - There seems to be a 1 Pixel glitch with the Tileset part South-East connecting with its East side to i.e. West-East 
-- spawn and test all ship parts
-- mining_pod_icon.png needs to be changed. looks like the scoutships
 - scoutships throw an error with the "off" animation of the "engine" grafic. coundt find that one so far.
+
+-------- Grafics required -----------
+- mining_pod_icon.png needs to be changed. looks like the scoutships
+- images for unlockers - put small grafic over each blueprint
+
+-------- Test -----------
+- spawn and test all ship parts
 - test activateable ship objects like turrets
-- images for unlockers - put small grafic over each blueprint?
 
 --------- Objects missing: -----------
 - 1st weapon: avian
