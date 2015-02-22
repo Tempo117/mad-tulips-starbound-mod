@@ -1,0 +1,19 @@
+- reboot (leads to T1 ships)
+-- Ship Tier 1
+-- enable matter manipulator
+--- enable teleporter
+-- enable ship thrusters
+
+
+
+
+--- tutorial 1: a flash of light (find flashlight)
+---- tutorial 2: shop class
+
+- enable ship thrusters (leads to T2 ships)
+-- repair ship´s FTL drive
+-- free as a bird quest
+
+- repair ship´s FTL drive (leads to T3 ships)
+-- Fuel (Quest) (is vorhanden)
+-- Enable Paint Tool (instant get item - NEED TO ADD)
