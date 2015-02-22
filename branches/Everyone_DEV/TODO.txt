@@ -3,31 +3,27 @@
 ----------------------------------------------------------------------------------------------------
 
 -------- Bugs -----------
-- please fix the forcefield door by using the grafic in ship parts\generic\forcefield door\OLD_madtulip_forcefield_door instead of the current apex door placeholder
+- please fix the forcefield door \!TODO\Objects\forcefield door (copy the "OLD..." grafic into the current working dummy png)
 - There seems to be a 1 Pixel glitch with the Tileset part South-East connecting with its East side to i.e. West-East 
 
 -------- Grafics required -----------
 - mining_pod_icon.png needs to be changed. looks like the scoutships
-- images for unlockers - put small grafic over each blueprint
-
--------- Test -----------
-- spawn and test all ship parts
+- images for unlockers - put small grafic over each blueprint? \madtulip\items\unlockers
+- most hylotl stuff needs orange -> new blue grafics
 
 --------- Objects missing: -----------
-- 1st weapon: avian
-- 2nd weapon: avian, floran,hylotl
-- Human SectorAirlock Door type
-- Most Novakids stuff
+- 1st ship weapon for avian
+- 2nd ship weapon for avian, floran and hylotl
+- Human SectorAirlock Door type (copy paste from another race)
+- Most Novakid objects
 
 ----------- Things left to fix for madtulip ---------
---- NOW
 - Check vanilla ship T4-T8 for addition quest spawn
-
---- LATER
 - create "novakid" filter in the shipstation
 - fix status monitor
 - recipe unlocking and progression mechanics
 - fix crew
+
 ------------------- Ship progression quest thoughts -----------------
 - use ship "capabilities" : ["teleport", "planetTravel", "systemTravel"], with normal questline instead of just giving them
 -- need to find the points where we can hook in and replace *.aicommands and quests.
