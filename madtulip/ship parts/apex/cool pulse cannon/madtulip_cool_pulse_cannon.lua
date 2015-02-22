@@ -54,7 +54,7 @@ function toIndex(truth)
   end
 end
 
-function main()
+function update(dt)
   if self.gates == 1 then
     output(self.truthtable[toIndex(entity.getInboundNodeLevel(0))])
   elseif self.gates == 2 then

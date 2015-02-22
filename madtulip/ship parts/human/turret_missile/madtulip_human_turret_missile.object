@@ -1,7 +1,6 @@
 {
 	"objectName" : "madtulip_human_turret_missile",
 	"rarity" : "Common",
-	"objectType" : "wire",
 	"description" : "This one goes PEW PEW!",
 	"shortdescription" : "Human Missile Launcher",
 	"race" : "generic",

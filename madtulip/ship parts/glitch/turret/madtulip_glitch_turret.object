@@ -1,7 +1,6 @@
 {
 	"objectName" : "madtulip_glitch_turret",
 	"rarity" : "Common",
-	"objectType" : "wire",
 	"description" : "This one goes BOOOM!",
 	"shortdescription" : "Glitch Main Gun Turret",
 	"race" : "generic",

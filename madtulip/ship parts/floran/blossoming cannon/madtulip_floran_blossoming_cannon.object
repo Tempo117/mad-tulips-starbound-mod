@@ -1,7 +1,6 @@
 {
 	"objectName" : "madtulip_floran_blossoming_cannon",
 	"rarity" : "Common",
-	"objectType" : "wire",
 	"description" : "Fires rapid pulses of Bose-Einstein condensate",
 	"shortdescription" : "Apex Cool Pulse Cannon",
 	"race" : "generic",
