@@ -287,12 +287,12 @@
 					"movement" : {
 						"idle" : {
 							"properties" : {
-								"image" : "madtulip_human_scoutship_engine.png:off"
+								"image" : "madtulip_human_scoutship_engine.png:off.<frame>"
 							}
 						},
 						"move_U" : {
 							"properties" : {
-								"image" : "madtulip_human_scoutship_engine.png:off"
+								"image" : "madtulip_human_scoutship_engine.png:off.<frame>"
 							}
 						},
 						"move_URF" : {
@@ -303,7 +303,7 @@
 						},
 						"move_URB" : {
 							"properties" : {
-								"image" : "madtulip_human_scoutship_engine.png:off"
+								"image" : "madtulip_human_scoutship_engine.png:off.<frame>"
 							}
 						},
 						"move_RF" : {
@@ -314,7 +314,7 @@
 						},
 						"move_RB" : {
 							"properties" : {
-								"image" : "madtulip_human_scoutship_engine.png:off"
+								"image" : "madtulip_human_scoutship_engine.png:off.<frame>"
 							}
 						},
 						"move_DRF" : {
@@ -325,12 +325,12 @@
 						},
 						"move_DRB" : {
 							"properties" : {
-								"image" : "madtulip_human_scoutship_engine.png:off"
+								"image" : "madtulip_human_scoutship_engine.png:off.<frame>"
 							}
 						},
 						"move_D" : {
 							"properties" : {
-								"image" : "madtulip_human_scoutship_engine.png:off"
+								"image" : "madtulip_human_scoutship_engine.png:off.<frame>"
 							}
 						},
 						"move_DLF" : {
@@ -341,7 +341,7 @@
 						},
 						"move_DLB" : {
 							"properties" : {
-								"image" : "madtulip_human_scoutship_engine.png:off"
+								"image" : "madtulip_human_scoutship_engine.png:off.<frame>"
 							}
 						},
 						"move_LF" : {
@@ -352,7 +352,7 @@
 						},
 						"move_LB" : {
 							"properties" : {
-								"image" : "madtulip_human_scoutship_engine.png:off"
+								"image" : "madtulip_human_scoutship_engine.png:off.<frame>"
 							}
 						},
 						"move_ULF" : {
@@ -363,7 +363,7 @@
 						},
 						"move_ULB" : {
 							"properties" : {
-								"image" : "madtulip_human_scoutship_engine.png:off"
+								"image" : "madtulip_human_scoutship_engine.png:off.<frame>"
 							}
 						}
 					}
