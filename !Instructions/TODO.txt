@@ -3,19 +3,15 @@
 ----------------------------------------------------------------------------------------------------
 
 -------- Random things that need doing -----------
-- Done
-- Glass Tileset
+- fix partly missing background behind tileset diagonals of starter ships (above door only)
 - Images for Ship Suit "\tech\skins\ShipSuit" and "\tech\skins\ShipSuit\suits" are just copies from vanilla. i.e. "AIR SUPPLY" needs to be removed. the brownish tone recolored, the tech icon be changed from O2 to something else.
-- fix partly missing background behind tileset diagonals of starter ships
 - please fix the forcefield door by using the grafic in ship parts\generic\forcefield door\OLD_madtulip_forcefield_door instead of the current apex door placeholder
-- spawn and test all ship parts
-- techstation needs "madtulip_techstation_lit.png" to be implemented (its a dummy should show non-powered version of it (see vanilla files))
-- teleporters need _lit grafics as well (see vanilla teleporter) i added "madtulip_teleporter_lit" as placeholder to "ship parts\generic\teleporter" already.
-- check if tier1 to tier5 recipe unlocking mechanic is working
 - There seems to be a 1 Pixel glitch with the Tileset part South-East connecting with its East side to i.e. West-East 
+- spawn and test all ship parts
 - mining_pod_icon.png needs to be changed. looks like the scoutships
 - scoutships throw an error with the "off" animation of the "engine" grafic. coundt find that one so far.
 - test activateable ship objects like turrets
+- images for unlockers - put small grafic over each blueprint?
 
 --------- Objects missing: -----------
 - 1st weapon: avian
@@ -24,8 +20,8 @@
 - Most Novakids stuff
 
 ----------- Things left to fix for madtulip ---------
-- Unlocked by Tier2 and upwards over player.config.patch will no longer work. we need to hook in differently
--- check if content of pods (crafting tables) is still in line with the vanilla game progression. not that it allows to unlock a table at an earlier tier
+- recipe unlocking and progression mechanics
+- remove fuelhatch,captainschair,techstation, shiplocker remnents. add recipes for all race version of those.
 
 - fix crew
 
