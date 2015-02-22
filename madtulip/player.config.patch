@@ -33,7 +33,6 @@
 		{"op":"add","path":"/defaultBlueprints/tier1/-","value":{"item":"madtulip_human_techstation"}},
 		{"op":"add","path":"/defaultBlueprints/tier1/-","value":{"item":"madtulip_hylotl_techstation"}},
 		{"op":"add","path":"/defaultBlueprints/tier1/-","value":{"item":"madtulip_novakid_techstation"}},
-		
 	
 		{"op":"add","path":"/defaultBlueprints/tier1/-","value":{"item":"madtulip_polymer"}},
 		{"op":"add","path":"/defaultBlueprints/tier1/-","value":{"item":"madtulip_ic_logic"}},

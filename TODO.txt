@@ -21,16 +21,11 @@
 - Most Novakids stuff
 
 ----------- Things left to fix for madtulip ---------
+--- NOW
 - Check vanilla ship T4-T8 for addition quest spawn
 
-- add reciepes for fuelhatch,captainschair,techstation, shiplocker to player.config.patch
-
---- NOW
-- onlock everythign at tier1
-- remove unlockquests for scoutship and mining pod
-- clear player.config.patch spawn
-
 --- LATER
+- fix status monitor
 - recipe unlocking and progression mechanics
 - fix crew
 ------------------- Ship progression quest thoughts -----------------
