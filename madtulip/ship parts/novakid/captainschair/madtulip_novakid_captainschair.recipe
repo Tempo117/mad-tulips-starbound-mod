@@ -7,7 +7,7 @@
 	{ "item" : "money", "count" : 200 }
   ],
   "output" : {
-    "item" : "novakidcaptainschair",
+    "item" : "madtulip_novakid_captainschair",
     "count" : 1
   },
   "groups" : [ "madtulip_shipstation", "all", "systems", "novakid" ]
