@@ -2,6 +2,7 @@
   "objectName" : "madtulip_apex_captainschair",
   "rarity" : "Common",
   "objectType" : "loungeable",
+  "printable" : false,
 
   "description" : "ENGAGE!",
   "shortdescription" : "Apex Captain's Chair",

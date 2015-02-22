@@ -2,6 +2,7 @@
   "objectName" : "madtulip_floran_captainschair",
   "rarity" : "Common",
   "objectType" : "loungeable",
+  "printable" : false,
 
   "description" : "ENGAGE!",
   "shortdescription" : "Floran Captain's Chair",

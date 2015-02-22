@@ -2,6 +2,7 @@
   "objectName" : "madtulip_human_captainschair",
   "rarity" : "Common",
   "objectType" : "loungeable",
+  "printable" : false,
 
   "description" : "ENGAGE!",
   "shortdescription" : "Human Captain's Chair",

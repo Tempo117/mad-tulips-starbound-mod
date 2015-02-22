@@ -2,6 +2,7 @@
   "objectName" : "madtulip_glitch_captainschair",
   "rarity" : "Common",
   "objectType" : "loungeable",
+  "printable" : false,
 
   "description" : "ENGAGE!",
   "shortdescription" : "Glitch Captain's Chair",
