@@ -1,352 +1,230 @@
 [
 	// defaultitems
-		// debug usefull
-
-			{"op":"add","path":"/defaultItems/-","value":{"item":"madtulip_shipsuitTech-chip","count":1}},
-			{"op":"add","path":"/defaultItems/-","value":{"item":"diamonddrill","count":1}},
-			
-			{"op":"add","path":"/defaultItems/-","value":{"item":"madtulip_UL_small_fins","count":1}},
-			
-			{"op":"add","path":"/defaultItems/-","value":{"item":"madtulip_apex_scoutshipTech-chip","count":1}},
-			{"op":"add","path":"/defaultItems/-","value":{"item":"madtulip_avian_scoutshipTech-chip","count":1}},
-			{"op":"add","path":"/defaultItems/-","value":{"item":"madtulip_floran_scoutshipTech-chip","count":1}},
-			{"op":"add","path":"/defaultItems/-","value":{"item":"madtulip_glitch_scoutshipTech-chip","count":1}},
-			{"op":"add","path":"/defaultItems/-","value":{"item":"madtulip_human_scoutshipTech-chip","count":1}},
-			{"op":"add","path":"/defaultItems/-","value":{"item":"madtulip_hylotl_scoutshipTech-chip","count":1}},
-/*	
-			{"op":"add","path":"/defaultItems/-","value":{"item":"madtulip_mining_podTech-chip","count":1}},
-			{"op":"add","path":"/defaultItems/-","value":{"item":"madtulip_apex_scoutshipTech-chip","count":1}},
-			{"op":"add","path":"/defaultItems/-","value":{"item":"madtulip_avian_scoutshipTech-chip","count":1}},
-			{"op":"add","path":"/defaultItems/-","value":{"item":"madtulip_floran_scoutshipTech-chip","count":1}},
-			{"op":"add","path":"/defaultItems/-","value":{"item":"madtulip_glitch_scoutshipTech-chip","count":1}},
-			{"op":"add","path":"/defaultItems/-","value":{"item":"madtulip_human_scoutshipTech-chip","count":1}},
-			{"op":"add","path":"/defaultItems/-","value":{"item":"madtulip_hylotl_scoutshipTech-chip","count":1}},
-
-			{"op":"add","path":"/defaultItems/-","value":{"item":"wire","count":100}},
-			{"op":"add","path":"/defaultItems/-","value":{"item":"wiretool","count":1}},
-			{"op":"add","path":"/defaultItems/-","value":{"item":"miab_basestore_scanner","count":1}},
-			{"op":"add","path":"/defaultItems/-","value":{"item":"miab_basestore_receiver","count":1}},
-			{"op":"add","path":"/defaultItems/-","value":{"item":"madtulip_tier1_pod","count":1}},
-			{"op":"add","path":"/defaultItems/-","value":{"item":"madtulip_tier2_pod","count":1}},
-			{"op":"add","path":"/defaultItems/-","value":{"item":"madtulip_tier3_pod","count":1}},
-			{"op":"add","path":"/defaultItems/-","value":{"item":"madtulip_tier4_pod","count":1}},
-
-			{"op":"add","path":"/defaultItems/-","value":{"item":"spawnerguard","count":1}},
-			{"op":"add","path":"/defaultItems/-","value":{"item":"ironswitch","count":1}},
-			{"op":"add","path":"/defaultItems/-","value":{"item":"buster","count":1}},
-	*/
-
-	/*
-		// Tier advancers
-			{"op":"add","path":"/defaultItems/-","value":{"item":"tier2engine","count":1}},
-			{"op":"add","path":"/defaultItems/-","value":{"item":"tier3engine","count":1}},
-			{"op":"add","path":"/defaultItems/-","value":{"item":"tier4engine","count":1}},
-			{"op":"add","path":"/defaultItems/-","value":{"item":"techupgrade32","count":1}},
-			{"op":"add","path":"/defaultItems/-","value":{"item":"techupgrade33","count":1}},
-	*/
-		
-
-	/*
-		// Crew
-		{"op":"add","path":"/defaultItems/-","value":{"item":"madtulip_crewconsole","count":1}},
-		{"op":"add","path":"/defaultItems/-","value":{"item":"madtulip_small_blaze_spawner","count":1}},
-		{"op":"add","path":"/defaultItems/-","value":{"item":"madtulip_crew_spawner","count":1}},
-		{"op":"add","path":"/defaultItems/-","value":{"item":"madtulip_crew_info","count":1}},
-		{"op":"add","path":"/defaultItems/-","value":{"item":"madtulip_crew_command_one","count":1}},
-		{"op":"add","path":"/defaultItems/-","value":{"item":"madtulip_engineere_promotion","count":1}},
-		{"op":"add","path":"/defaultItems/-","value":{"item":"madtulip_marine_promotion","count":1}},
-		{"op":"add","path":"/defaultItems/-","value":{"item":"madtulip_medic_promotion","count":1}},
-		{"op":"add","path":"/defaultItems/-","value":{"item":"madtulip_scientist_promotion","count":1}},
-		{"op":"add","path":"/defaultItems/-","value":{"item":"madtulip_deckhand_demotion","count":1}},
-		
-		{"op":"add","path":"/defaultItems/-","value":{"item":"madtulip_fire_extinguisher","count":1}},
-		{"op":"add","path":"/defaultItems/-","value":{"item":"madtulip_bone_mender","count":1}},
-
-		{"op":"add","path":"/defaultItems/-","value":{"item":"tier1bed","count":1}},
-		{"op":"add","path":"/defaultItems/-","value":{"item":"madtulip_crew_deckhand_attractor","count":1}},
-		{"op":"add","path":"/defaultItems/-","value":{"item":"madtulip_crew_engineer_attractor","count":1}},
-		{"op":"add","path":"/defaultItems/-","value":{"item":"madtulip_crew_scientist_attractor","count":1}},
-		{"op":"add","path":"/defaultItems/-","value":{"item":"madtulip_crew_medic_attractor","count":1}},
-		{"op":"add","path":"/defaultItems/-","value":{"item":"madtulip_crew_marine_attractor","count":1}},
-	*/
 
 	//defaultBlueprints
-		//tier1
+		{"op":"add","path":"/defaultBlueprints/tier1/-","value":{"item":"madtulip_apex_captainschair"}},
+		{"op":"add","path":"/defaultBlueprints/tier1/-","value":{"item":"madtulip_avian_captainschair"}},
+		{"op":"add","path":"/defaultBlueprints/tier1/-","value":{"item":"madtulip_floran_captainschair"}},
+		{"op":"add","path":"/defaultBlueprints/tier1/-","value":{"item":"madtulip_glitch_captainschair"}},
+		{"op":"add","path":"/defaultBlueprints/tier1/-","value":{"item":"madtulip_human_captainschair"}},
+		{"op":"add","path":"/defaultBlueprints/tier1/-","value":{"item":"madtulip_hylotl_captainschair"}},
+		{"op":"add","path":"/defaultBlueprints/tier1/-","value":{"item":"madtulip_novakid_captainschair"}},
 		
-			// Items
-				{"op":"add","path":"/defaultBlueprints/tier1/-","value":{"item":"madtulip_polymer"}},
-				{"op":"add","path":"/defaultBlueprints/tier1/-","value":{"item":"madtulip_ic_logic"}},
-				{"op":"add","path":"/defaultBlueprints/tier1/-","value":{"item":"madtulip_silicium"}},
+		{"op":"add","path":"/defaultBlueprints/tier1/-","value":{"item":"madtulip_apex_fuelhatch"}},
+		{"op":"add","path":"/defaultBlueprints/tier1/-","value":{"item":"madtulip_avian_fuelhatch"}},
+		{"op":"add","path":"/defaultBlueprints/tier1/-","value":{"item":"madtulip_floran_fuelhatch"}},
+		{"op":"add","path":"/defaultBlueprints/tier1/-","value":{"item":"madtulip_glitch_fuelhatch"}},
+		{"op":"add","path":"/defaultBlueprints/tier1/-","value":{"item":"madtulip_human_fuelhatch"}},
+		{"op":"add","path":"/defaultBlueprints/tier1/-","value":{"item":"madtulip_hylotl_fuelhatch"}},
+		{"op":"add","path":"/defaultBlueprints/tier1/-","value":{"item":"madtulip_novakid_fuelhatch"}},
+		
+		{"op":"add","path":"/defaultBlueprints/tier1/-","value":{"item":"madtulip_apex_shiplocker"}},
+		{"op":"add","path":"/defaultBlueprints/tier1/-","value":{"item":"madtulip_avian_shiplocker"}},
+		{"op":"add","path":"/defaultBlueprints/tier1/-","value":{"item":"madtulip_floran_shiplocker"}},
+		{"op":"add","path":"/defaultBlueprints/tier1/-","value":{"item":"madtulip_glitch_shiplocker"}},
+		{"op":"add","path":"/defaultBlueprints/tier1/-","value":{"item":"madtulip_human_shiplocker"}},
+		{"op":"add","path":"/defaultBlueprints/tier1/-","value":{"item":"madtulip_hylotl_shiplocker"}},
+		{"op":"add","path":"/defaultBlueprints/tier1/-","value":{"item":"madtulip_novakid_shiplocker"}},
+		
+		{"op":"add","path":"/defaultBlueprints/tier1/-","value":{"item":"madtulip_apex_techstation"}},
+		{"op":"add","path":"/defaultBlueprints/tier1/-","value":{"item":"madtulip_avian_techstation"}},
+		{"op":"add","path":"/defaultBlueprints/tier1/-","value":{"item":"madtulip_floran_techstation"}},
+		{"op":"add","path":"/defaultBlueprints/tier1/-","value":{"item":"madtulip_glitch_techstation"}},
+		{"op":"add","path":"/defaultBlueprints/tier1/-","value":{"item":"madtulip_human_techstation"}},
+		{"op":"add","path":"/defaultBlueprints/tier1/-","value":{"item":"madtulip_hylotl_techstation"}},
+		{"op":"add","path":"/defaultBlueprints/tier1/-","value":{"item":"madtulip_novakid_techstation"}},
+		
+	
+		{"op":"add","path":"/defaultBlueprints/tier1/-","value":{"item":"madtulip_polymer"}},
+		{"op":"add","path":"/defaultBlueprints/tier1/-","value":{"item":"madtulip_ic_logic"}},
+		{"op":"add","path":"/defaultBlueprints/tier1/-","value":{"item":"madtulip_silicium"}},
 
-			// Objects
-/*
-				{"op":"add","path":"/defaultBlueprints/tier1/-","value":{"item":"madtulip_tier1_pod"}},
-*/
-				{"op":"add","path":"/defaultBlueprints/tier1/-","value":{"item":"madtulip_shiplight"}},
+		{"op":"add","path":"/defaultBlueprints/tier1/-","value":{"item":"madtulip_tier1_pod"}},
+		{"op":"add","path":"/defaultBlueprints/tier1/-","value":{"item":"madtulip_tier2_pod"}},
+		{"op":"add","path":"/defaultBlueprints/tier1/-","value":{"item":"madtulip_tier3_pod"}},
+		{"op":"add","path":"/defaultBlueprints/tier1/-","value":{"item":"madtulip_tier4_pod"}},
 
-			// Tech
+		{"op":"add","path":"/defaultBlueprints/tier1/-","value":{"item":"madtulip_shiplight"}},
+
+		{"op":"add","path":"/defaultBlueprints/tier1/-","value":{"item":"madtulip_tier_steel_plating_1"}},
+		{"op":"add","path":"/defaultBlueprints/tier1/-","value":{"item":"madtulip_tier_steel_plating_2"}},
+
+		{"op":"add","path":"/defaultBlueprints/tier1/-","value":{"item":"madtulip_crew_wall_mounted_bed"}},
+		{"op":"add","path":"/defaultBlueprints/tier1/-","value":{"item":"madtulip_shower"}},
+		{"op":"add","path":"/defaultBlueprints/tier1/-","value":{"item":"madtulip_marine_armor_stand"}},
+		{"op":"add","path":"/defaultBlueprints/tier1/-","value":{"item":"madtulip_marine_spacesuit_stand"}},
+		{"op":"add","path":"/defaultBlueprints/tier1/-","value":{"item":"madtulip_medical_bed"}},
+		{"op":"add","path":"/defaultBlueprints/tier1/-","value":{"item":"madtulip_medical_sign"}},
+		{"op":"add","path":"/defaultBlueprints/tier1/-","value":{"item":"madtulip_medical_staff_locker"}},
+		{"op":"add","path":"/defaultBlueprints/tier1/-","value":{"item":"madtulip_medical_surgery_bed"}},
+
+		{"op":"add","path":"/defaultBlueprints/tier1/-","value":{"item":"apexshipdetails"}},
+		{"op":"add","path":"/defaultBlueprints/tier1/-","value":{"item":"apexshipsupport"}},
+		{"op":"add","path":"/defaultBlueprints/tier1/-","value":{"item":"apexshipwall"}},
+		{"op":"add","path":"/defaultBlueprints/tier1/-","value":{"item":"modernplatform"}},
+		{"op":"add","path":"/defaultBlueprints/tier1/-","value":{"item":"pressurizedsteel"}},
+		{"op":"add","path":"/defaultBlueprints/tier1/-","value":{"item":"smoothmetal"}},
+		
+		{"op":"add","path":"/defaultBlueprints/tier1/-","value":{"item":"madtulip_bottom_decoration"}},
+		{"op":"add","path":"/defaultBlueprints/tier1/-","value":{"item":"madtulip_detail"}},
+		{"op":"add","path":"/defaultBlueprints/tier1/-","value":{"item":"madtulip_top_decoration"}},
+		{"op":"add","path":"/defaultBlueprints/tier1/-","value":{"item":"madtulip_wallplate"}},
+
+		{"op":"add","path":"/defaultBlueprints/tier1/-","value":{"item":"madtulip_metal_press"}},
+
+		{"op":"add","path":"/defaultBlueprints/tier1/-","value":{"item":"madtulip_rifle_rack"}},
+		{"op":"add","path":"/defaultBlueprints/tier1/-","value":{"item":"madtulip_pistol_rack"}},
+		
+		{"op":"add","path":"/defaultBlueprints/tier1/-","value":{"item":"madtulip_human_engine_core"}},
+
+		{"op":"add","path":"/defaultBlueprints/tier1/-","value":{"item":"madtulip_tier_steel_plating_3"}},
+
+		{"op":"add","path":"/defaultBlueprints/tier1/-","value":{"item":"madtulip_shipnavigationconsole"}},
+		{"op":"add","path":"/defaultBlueprints/tier1/-","value":{"item":"madtulip_shipstation"}},
+		
+		{"op":"add","path":"/defaultBlueprints/tier1/-","value":{"item":"madtulip_vent"}},
+		
+		{"op":"add","path":"/defaultBlueprints/tier1/-","value":{"item":"madtulip_glitch_tower"}},
+		
+		{"op":"add","path":"/defaultBlueprints/tier1/-","value":{"item":"madtulip_human_turret"}},
+		{"op":"add","path":"/defaultBlueprints/tier1/-","value":{"item":"madtulip_human_turret2"}},
+		{"op":"add","path":"/defaultBlueprints/tier1/-","value":{"item":"madtulip_apex_turret"}},
+		{"op":"add","path":"/defaultBlueprints/tier1/-","value":{"item":"madtulip_glitch_turret"}},
+		{"op":"add","path":"/defaultBlueprints/tier1/-","value":{"item":"madtulip_floran_blossoming_cannon"}},
+		{"op":"add","path":"/defaultBlueprints/tier1/-","value":{"item":"madtulip_hyltol_water_cannon"}},
+		
+		{"op":"add","path":"/defaultBlueprints/tier1/-","value":{"item":"madtulip_textscreen"}},
+		{"op":"add","path":"/defaultBlueprints/tier1/-","value":{"item":"madtulip_barscreen"}},
+		{"op":"add","path":"/defaultBlueprints/tier1/-","value":{"item":"madtulip_mapscreen"}},
+
+		{"op":"add","path":"/defaultBlueprints/tier1/-","value":{"item":"madtulip_landing_gear_3"}},
+		{"op":"add","path":"/defaultBlueprints/tier1/-","value":{"item":"madtulip_tier_durasteel_plating_1"}},
+		{"op":"add","path":"/defaultBlueprints/tier1/-","value":{"item":"madtulip_tier_durasteel_plating_2"}},			
+
+		
+		{"op":"add","path":"/defaultBlueprints/tier1/-","value":{"item":"madtulip_starprojector"}},
+		{"op":"add","path":"/defaultBlueprints/tier1/-","value":{"item":"madtulip_analysisscreen"}},
+		{"op":"add","path":"/defaultBlueprints/tier1/-","value":{"item":"madtulip_captains_console"}},
+		{"op":"add","path":"/defaultBlueprints/tier1/-","value":{"item":"madtulip_thermodynamics_console"}},
+		
+		{"op":"add","path":"/defaultBlueprints/tier1/-","value":{"item":"madtulip_landing_gear_1"}},
+		{"op":"add","path":"/defaultBlueprints/tier1/-","value":{"item":"madtulip_landing_gear_2"}},
+		{"op":"add","path":"/defaultBlueprints/tier1/-","value":{"item":"madtulip_landing_gear_4"}},
+
+		{"op":"add","path":"/defaultBlueprints/tier1/-","value":{"item":"madtulip_glitch_tower2"}},
+		{"op":"add","path":"/defaultBlueprints/tier1/-","value":{"item":"madtulip_avian_crystal_energy_core"}},
+
+		{"op":"add","path":"/defaultBlueprints/tier1/-","value":{"item":"madtulip_human_turret_missile"}},
+		{"op":"add","path":"/defaultBlueprints/tier1/-","value":{"item":"madtulip_cool_pulse_cannon"}},
+		{"op":"add","path":"/defaultBlueprints/tier1/-","value":{"item":"madtulip_glitchy_lazor"}},
+
+		{"op":"add","path":"/defaultBlueprints/tier1/-","value":{"item":"madtulip_tier_durasteel_plating_3"}},
+		
+
+		{"op":"add","path":"/defaultBlueprints/tier1/-","value":{"item":"miab_basestore_scanner"}},
+		{"op":"add","path":"/defaultBlueprints/tier1/-","value":{"item":"miab_basestore_receiver"}},
+
+		{"op":"add","path":"/defaultBlueprints/tier1/-","value":{"item":"madtulip_human_turret_missile"}},
+		
+		{"op":"add","path":"/defaultBlueprints/tier1/-","value":{"item":"madtulip_glitch_large_ftl_thruster"}},
 			
-		//tier2
-		{"op":"add","path":"/defaultBlueprints/tier2","value":[]},
+		{"op":"add","path":"/defaultBlueprints/tier1/-","value":{"item":"madtulip_apex_small_fin"}},
+		{"op":"add","path":"/defaultBlueprints/tier1/-","value":{"item":"madtulip_avian_small_fin"}},
+		{"op":"add","path":"/defaultBlueprints/tier1/-","value":{"item":"madtulip_floran_small_fin"}},
+		{"op":"add","path":"/defaultBlueprints/tier1/-","value":{"item":"madtulip_glitch_small_fin"}},
+		{"op":"add","path":"/defaultBlueprints/tier1/-","value":{"item":"madtulip_hylotl_small_fin"}},
+		{"op":"add","path":"/defaultBlueprints/tier1/-","value":{"item":"madtulip_human_small_fin"}},
+
+		{"op":"add","path":"/defaultBlueprints/tier1/-","value":{"item":"madtulip_apex_medium_fin"}},
+		{"op":"add","path":"/defaultBlueprints/tier1/-","value":{"item":"madtulip_avian_medium_fin"}},
+		{"op":"add","path":"/defaultBlueprints/tier1/-","value":{"item":"madtulip_floran_medium_fin"}},
+		{"op":"add","path":"/defaultBlueprints/tier1/-","value":{"item":"madtulip_glitch_medium_fin"}},
+		{"op":"add","path":"/defaultBlueprints/tier1/-","value":{"item":"madtulip_hylotl_medium_fin"}},
+		{"op":"add","path":"/defaultBlueprints/tier1/-","value":{"item":"madtulip_human_medium_fin"}},
 		
-			// Items
-				{"op":"add","path":"/defaultBlueprints/tier1/-","value":{"item":"madtulip_tier_steel_plating_1"}},
-				{"op":"add","path":"/defaultBlueprints/tier1/-","value":{"item":"madtulip_tier_steel_plating_2"}},
-/*
-			// Crew
-				{"op":"add","path":"/defaultBlueprints/tier2/-","value":{"item":"madtulip_crewconsole"}},
-				{"op":"add","path":"/defaultBlueprints/tier2/-","value":{"item":"madtulip_crew_spawner"}},
-				{"op":"add","path":"/defaultBlueprints/tier2/-","value":{"item":"madtulip_crew_info"}},
-				{"op":"add","path":"/defaultBlueprints/tier2/-","value":{"item":"madtulip_crew_command_one"}},
-				{"op":"add","path":"/defaultBlueprints/tier2/-","value":{"item":"madtulip_engineere_promotion"}},
-				{"op":"add","path":"/defaultBlueprints/tier2/-","value":{"item":"madtulip_marine_promotion"}},
-				{"op":"add","path":"/defaultBlueprints/tier2/-","value":{"item":"madtulip_medic_promotion"}},
-				{"op":"add","path":"/defaultBlueprints/tier2/-","value":{"item":"madtulip_scientist_promotion"}},
-				{"op":"add","path":"/defaultBlueprints/tier2/-","value":{"item":"madtulip_deckhand_demotion"}},
-*/
+		{"op":"add","path":"/defaultBlueprints/tier1/-","value":{"item":"madtulip_apex_large_fin"}},
+		{"op":"add","path":"/defaultBlueprints/tier1/-","value":{"item":"madtulip_avian_large_fin"}},
+		{"op":"add","path":"/defaultBlueprints/tier1/-","value":{"item":"madtulip_floran_large_fin"}},
+		{"op":"add","path":"/defaultBlueprints/tier1/-","value":{"item":"madtulip_glitch_large_fin"}},
+		{"op":"add","path":"/defaultBlueprints/tier1/-","value":{"item":"madtulip_hylotl_large_fin"}},
+		{"op":"add","path":"/defaultBlueprints/tier1/-","value":{"item":"madtulip_human_large_fin"}},
 
-			// Resting Items
-				{"op":"add","path":"/defaultBlueprints/tier2/-","value":{"item":"madtulip_crew_wall_mounted_bed"}},
-				{"op":"add","path":"/defaultBlueprints/tier2/-","value":{"item":"madtulip_shower"}},
-				{"op":"add","path":"/defaultBlueprints/tier2/-","value":{"item":"madtulip_marine_armor_stand"}},
-				{"op":"add","path":"/defaultBlueprints/tier2/-","value":{"item":"madtulip_marine_spacesuit_stand"}},
-				{"op":"add","path":"/defaultBlueprints/tier2/-","value":{"item":"madtulip_medical_bed"}},
-				{"op":"add","path":"/defaultBlueprints/tier2/-","value":{"item":"madtulip_medical_sign"}},
-				{"op":"add","path":"/defaultBlueprints/tier2/-","value":{"item":"madtulip_medical_staff_locker"}},
-				{"op":"add","path":"/defaultBlueprints/tier2/-","value":{"item":"madtulip_medical_surgery_bed"}},
+		{"op":"add","path":"/defaultBlueprints/tier1/-","value":{"item":"madtulip_apex_shipdoor"}},
+		{"op":"add","path":"/defaultBlueprints/tier1/-","value":{"item":"madtulip_avian_shipdoor"}},
+		{"op":"add","path":"/defaultBlueprints/tier1/-","value":{"item":"madtulip_floran_shipdoor"}},
+		{"op":"add","path":"/defaultBlueprints/tier1/-","value":{"item":"madtulip_glitch_shipdoor"}},
+		{"op":"add","path":"/defaultBlueprints/tier1/-","value":{"item":"madtulip_human_shipdoor"}},
+		{"op":"add","path":"/defaultBlueprints/tier1/-","value":{"item":"madtulip_hylotl_shipdoor"}},
 
-			// Materials
-				{"op":"add","path":"/defaultBlueprints/tier2/-","value":{"item":"apexshipdetails"}},
-				{"op":"add","path":"/defaultBlueprints/tier2/-","value":{"item":"apexshipsupport"}},
-				{"op":"add","path":"/defaultBlueprints/tier2/-","value":{"item":"apexshipwall"}},
-				{"op":"add","path":"/defaultBlueprints/tier2/-","value":{"item":"modernplatform"}},
-				{"op":"add","path":"/defaultBlueprints/tier2/-","value":{"item":"pressurizedsteel"}},
-				{"op":"add","path":"/defaultBlueprints/tier2/-","value":{"item":"smoothmetal"}},
-				
-				{"op":"add","path":"/defaultBlueprints/tier2/-","value":{"item":"madtulip_bottom_decoration"}},
-				{"op":"add","path":"/defaultBlueprints/tier2/-","value":{"item":"madtulip_detail"}},
-				{"op":"add","path":"/defaultBlueprints/tier2/-","value":{"item":"madtulip_top_decoration"}},
-				{"op":"add","path":"/defaultBlueprints/tier2/-","value":{"item":"madtulip_wallplate"}},
+		{"op":"add","path":"/defaultBlueprints/tier1/-","value":{"item":"madtulip_apex_sector_airlock"}},
+		{"op":"add","path":"/defaultBlueprints/tier1/-","value":{"item":"madtulip_avian_sector_airlock"}},
+		{"op":"add","path":"/defaultBlueprints/tier1/-","value":{"item":"madtulip_floran_sector_airlock"}},
+		{"op":"add","path":"/defaultBlueprints/tier1/-","value":{"item":"madtulip_glitch_sector_airlock"}},
+		{"op":"add","path":"/defaultBlueprints/tier1/-","value":{"item":"madtulip_hylotl_sector_airlock"}},
 
-			// Objects
-/*
-				{"op":"add","path":"/defaultBlueprints/tier2/-","value":{"item":"madtulip_tier2_pod"}},
-*/
-				{"op":"add","path":"/defaultBlueprints/tier2/-","value":{"item":"madtulip_metal_press"}},
+		{"op":"add","path":"/defaultBlueprints/tier1/-","value":{"item":"madtulip_apex_stabilization_thruster"}},
+		{"op":"add","path":"/defaultBlueprints/tier1/-","value":{"item":"madtulip_avian_stabilization_thruster"}},
+		{"op":"add","path":"/defaultBlueprints/tier1/-","value":{"item":"madtulip_floran_stabilization_thruster"}},
+		{"op":"add","path":"/defaultBlueprints/tier1/-","value":{"item":"madtulip_glitch_stabilization_thruster"}},
+		{"op":"add","path":"/defaultBlueprints/tier1/-","value":{"item":"madtulip_human_stabilization_thruster"}},
+		{"op":"add","path":"/defaultBlueprints/tier1/-","value":{"item":"madtulip_hylotl_stabilization_thruster"}},
 
-				{"op":"add","path":"/defaultBlueprints/tier2/-","value":{"item":"madtulip_rifle_rack"}},
-				{"op":"add","path":"/defaultBlueprints/tier2/-","value":{"item":"madtulip_pistol_rack"}},
-				
-				
-				{"op":"add","path":"/defaultBlueprints/tier2/-","value":{"item":"madtulip_human_engine_core"}},
-		//tier3
-		{"op":"add","path":"/defaultBlueprints/tier3","value":[]},
+		{"op":"add","path":"/defaultBlueprints/tier1/-","value":{"item":"madtulip_apex_ftl_thruster"}},
+		{"op":"add","path":"/defaultBlueprints/tier1/-","value":{"item":"madtulip_avian_ftl_thruster"}},
+		{"op":"add","path":"/defaultBlueprints/tier1/-","value":{"item":"madtulip_floran_ftl_thruster"}},
+		{"op":"add","path":"/defaultBlueprints/tier1/-","value":{"item":"madtulip_glitch_ftl_thruster"}},
+		{"op":"add","path":"/defaultBlueprints/tier1/-","value":{"item":"madtulip_human_ftl_thruster"}},
+		{"op":"add","path":"/defaultBlueprints/tier1/-","value":{"item":"madtulip_hylotl_ftl_thruster"}},				
 		
-			// Items
-				{"op":"add","path":"/defaultBlueprints/tier3/-","value":{"item":"madtulip_tier_steel_plating_3"}},
-				
-			// Objects
-/*
-				{"op":"add","path":"/defaultBlueprints/tier3/-","value":{"item":"madtulip_tier3_pod"}},
-*/
-				{"op":"add","path":"/defaultBlueprints/tier3/-","value":{"item":"madtulip_fuelhatch"}},
-				{"op":"add","path":"/defaultBlueprints/tier3/-","value":{"item":"madtulip_shipnavigationconsole"}},
-				{"op":"add","path":"/defaultBlueprints/tier3/-","value":{"item":"madtulip_techstation"}},
-				{"op":"add","path":"/defaultBlueprints/tier3/-","value":{"item":"madtulip_shipstation"}},
-				
-				{"op":"add","path":"/defaultBlueprints/tier3/-","value":{"item":"madtulip_vent"}},
-				
-				{"op":"add","path":"/defaultBlueprints/tier3/-","value":{"item":"madtulip_glitch_tower"}},
-				
-				{"op":"add","path":"/defaultBlueprints/tier3/-","value":{"item":"madtulip_human_turret"}},
-				{"op":"add","path":"/defaultBlueprints/tier3/-","value":{"item":"madtulip_human_turret2"}},
-				{"op":"add","path":"/defaultBlueprints/tier3/-","value":{"item":"madtulip_apex_turret"}},
-				{"op":"add","path":"/defaultBlueprints/tier3/-","value":{"item":"madtulip_glitch_turret"}},
-				{"op":"add","path":"/defaultBlueprints/tier3/-","value":{"item":"madtulip_floran_blossoming_cannon"}},
-				{"op":"add","path":"/defaultBlueprints/tier3/-","value":{"item":"madtulip_hyltol_water_cannon"}},
-				
-				{"op":"add","path":"/defaultBlueprints/tier3/-","value":{"item":"madtulip_textscreen"}},
-				{"op":"add","path":"/defaultBlueprints/tier3/-","value":{"item":"madtulip_barscreen"}},
-				{"op":"add","path":"/defaultBlueprints/tier3/-","value":{"item":"madtulip_mapscreen"}},
-				{"op":"add","path":"/defaultBlueprints/tier3/-","value":{"item":"madtulip_status_monitor"}},
-
-				{"op":"add","path":"/defaultBlueprints/tier3/-","value":{"item":"madtulip_landing_gear_3"}},
-		//tier4
-		{"op":"add","path":"/defaultBlueprints/tier4","value":[]},
+		{"op":"add","path":"/defaultBlueprints/tier1/-","value":{"item":"madtulip_apex_flux_compensator"}},
+		{"op":"add","path":"/defaultBlueprints/tier1/-","value":{"item":"madtulip_avian_flux_compensator"}},
+		{"op":"add","path":"/defaultBlueprints/tier1/-","value":{"item":"madtulip_glitch_flux_compensator"}},
+		{"op":"add","path":"/defaultBlueprints/tier1/-","value":{"item":"madtulip_floran_flux_compensator"}},
+		{"op":"add","path":"/defaultBlueprints/tier1/-","value":{"item":"madtulip_human_flux_compensator"}},
+		{"op":"add","path":"/defaultBlueprints/tier1/-","value":{"item":"madtulip_hylotl_flux_compensator"}},
 		
-			// Items
-				{"op":"add","path":"/defaultBlueprints/tier4/-","value":{"item":"madtulip_tier_durasteel_plating_1"}},
-				{"op":"add","path":"/defaultBlueprints/tier4/-","value":{"item":"madtulip_tier_durasteel_plating_2"}},			
-				
-			// Objects
-/*
-				{"op":"add","path":"/defaultBlueprints/tier4/-","value":{"item":"madtulip_tier4_pod"}},
-*/
-				
-				{"op":"add","path":"/defaultBlueprints/tier4/-","value":{"item":"madtulip_captainschair"}},
-				{"op":"add","path":"/defaultBlueprints/tier4/-","value":{"item":"madtulip_shiplocker"}},
-				{"op":"add","path":"/defaultBlueprints/tier4/-","value":{"item":"madtulip_teleporter"}},
-				{"op":"add","path":"/defaultBlueprints/tier4/-","value":{"item":"madtulip_floran_teleporter"}},
-				
-				{"op":"add","path":"/defaultBlueprints/tier4/-","value":{"item":"madtulip_starprojector"}},
-				{"op":"add","path":"/defaultBlueprints/tier4/-","value":{"item":"madtulip_analysisscreen"}},
-				{"op":"add","path":"/defaultBlueprints/tier4/-","value":{"item":"madtulip_captains_console"}},
-				{"op":"add","path":"/defaultBlueprints/tier4/-","value":{"item":"madtulip_thermodynamics_console"}},
-				
-				{"op":"add","path":"/defaultBlueprints/tier4/-","value":{"item":"madtulip_landing_gear_1"}},
-				{"op":"add","path":"/defaultBlueprints/tier4/-","value":{"item":"madtulip_landing_gear_2"}},
-				{"op":"add","path":"/defaultBlueprints/tier4/-","value":{"item":"madtulip_landing_gear_4"}},
+		{"op":"add","path":"/defaultBlueprints/tier1/-","value":{"item":"madtulip_apex_gyro_stabilizer"}},
+		{"op":"add","path":"/defaultBlueprints/tier1/-","value":{"item":"madtulip_avian_gyro_stabilizer"}},
+		{"op":"add","path":"/defaultBlueprints/tier1/-","value":{"item":"madtulip_floran_gyro_stabilizer"}},
+		{"op":"add","path":"/defaultBlueprints/tier1/-","value":{"item":"madtulip_glitch_gyro_stabilizer"}},
+		{"op":"add","path":"/defaultBlueprints/tier1/-","value":{"item":"madtulip_hylotl_gyro_stabilizer"}},
+		{"op":"add","path":"/defaultBlueprints/tier1/-","value":{"item":"madtulip_human_gyro_stabilizer"}},
 
-				{"op":"add","path":"/defaultBlueprints/tier4/-","value":{"item":"madtulip_glitch_tower2"}},
-				{"op":"add","path":"/defaultBlueprints/tier4/-","value":{"item":"madtulip_avian_crystal_energy_core"}},
+		{"op":"add","path":"/defaultBlueprints/tier1/-","value":{"item":"madtulip_apex_heat_absorber"}},
+		{"op":"add","path":"/defaultBlueprints/tier1/-","value":{"item":"madtulip_avian_heat_absorber"}},
+		{"op":"add","path":"/defaultBlueprints/tier1/-","value":{"item":"madtulip_floran_heat_absorber"}},
+		{"op":"add","path":"/defaultBlueprints/tier1/-","value":{"item":"madtulip_glitch_heat_absorber"}},
+		{"op":"add","path":"/defaultBlueprints/tier1/-","value":{"item":"madtulip_hylotl_heat_absorber"}},
+		{"op":"add","path":"/defaultBlueprints/tier1/-","value":{"item":"madtulip_human_heat_absorber"}},
 
-				{"op":"add","path":"/defaultBlueprints/tier4/-","value":{"item":"madtulip_human_turret_missile"}},
-				{"op":"add","path":"/defaultBlueprints/tier4/-","value":{"item":"madtulip_cool_pulse_cannon"}},
-				{"op":"add","path":"/defaultBlueprints/tier4/-","value":{"item":"madtulip_glitchy_lazor"}},
-		//level5
-		{"op":"add","path":"/defaultBlueprints/tier5","value":[]},
+		{"op":"add","path":"/defaultBlueprints/tier1/-","value":{"item":"madtulip_apex_ship_comms"}},
+		{"op":"add","path":"/defaultBlueprints/tier1/-","value":{"item":"madtulip_avian_ship_comms"}},
+		{"op":"add","path":"/defaultBlueprints/tier1/-","value":{"item":"madtulip_floran_ship_comms"}},
+		{"op":"add","path":"/defaultBlueprints/tier1/-","value":{"item":"madtulip_glitch_ship_comms"}},
+		{"op":"add","path":"/defaultBlueprints/tier1/-","value":{"item":"madtulip_human_ship_comms"}},
+		{"op":"add","path":"/defaultBlueprints/tier1/-","value":{"item":"madtulip_hylotl_ship_comms"}},
 		
-			// Items
-				{"op":"add","path":"/defaultBlueprints/tier5/-","value":{"item":"madtulip_tier_durasteel_plating_3"}},
-				
-			// Materials
+		{"op":"add","path":"/defaultBlueprints/tier1/-","value":{"item":"madtulip_apex1_teleporter"}},
+		{"op":"add","path":"/defaultBlueprints/tier1/-","value":{"item":"madtulip_avian1_teleporter"}},
+		{"op":"add","path":"/defaultBlueprints/tier1/-","value":{"item":"madtulip_floran1_teleporter"}},
+		{"op":"add","path":"/defaultBlueprints/tier1/-","value":{"item":"madtulip_glitch1_teleporter"}},
+		{"op":"add","path":"/defaultBlueprints/tier1/-","value":{"item":"madtulip_human1_teleporter"}},
+		{"op":"add","path":"/defaultBlueprints/tier1/-","value":{"item":"madtulip_hylotl1_teleporter"}},
+		{"op":"add","path":"/defaultBlueprints/tier1/-","value":{"item":"madtulip_novakid1_teleporter"}},				
 
-			// Objects
-				{"op":"add","path":"/defaultBlueprints/tier5/-","value":{"item":"miab_basestore_scanner"}},
-				{"op":"add","path":"/defaultBlueprints/tier5/-","value":{"item":"miab_basestore_receiver"}},
-
-				{"op":"add","path":"/defaultBlueprints/tier5/-","value":{"item":"madtulip_human_turret_missile"}},
-				
-				{"op":"add","path":"/defaultBlueprints/tier5/-","value":{"item":"madtulip_glitch_large_ftl_thruster"}},
-				
-////////////////////////				
-// NEW recipe unlocking:
-////////////////////////
-			// madtulip_UL_small_fins
-			{"op":"add","path":"/defaultBlueprints/madtulip_UL_small_fins","value":[]},
-				{"op":"add","path":"/defaultBlueprints/madtulip_UL_small_fins/-","value":{"item":"madtulip_apex_small_fin"}},
-				{"op":"add","path":"/defaultBlueprints/madtulip_UL_small_fins/-","value":{"item":"madtulip_avian_small_fin"}},
-				{"op":"add","path":"/defaultBlueprints/madtulip_UL_small_fins/-","value":{"item":"madtulip_floran_small_fin"}},
-				{"op":"add","path":"/defaultBlueprints/madtulip_UL_small_fins/-","value":{"item":"madtulip_glitch_small_fin"}},
-				{"op":"add","path":"/defaultBlueprints/madtulip_UL_small_fins/-","value":{"item":"madtulip_hylotl_small_fin"}},
-				{"op":"add","path":"/defaultBlueprints/madtulip_UL_small_fins/-","value":{"item":"madtulip_human_small_fin"}},
-
-			// madtulip_UL_medium_fins
-			{"op":"add","path":"/defaultBlueprints/madtulip_UL_medium_fins","value":[]},
-				{"op":"add","path":"/defaultBlueprints/madtulip_UL_medium_fins/-","value":{"item":"madtulip_apex_medium_fin"}},
-				{"op":"add","path":"/defaultBlueprints/madtulip_UL_medium_fins/-","value":{"item":"madtulip_avian_medium_fin"}},
-				{"op":"add","path":"/defaultBlueprints/madtulip_UL_medium_fins/-","value":{"item":"madtulip_floran_medium_fin"}},
-				{"op":"add","path":"/defaultBlueprints/madtulip_UL_medium_fins/-","value":{"item":"madtulip_glitch_medium_fin"}},
-				{"op":"add","path":"/defaultBlueprints/madtulip_UL_medium_fins/-","value":{"item":"madtulip_hylotl_medium_fin"}},
-				{"op":"add","path":"/defaultBlueprints/madtulip_UL_medium_fins/-","value":{"item":"madtulip_human_medium_fin"}},
-				
-			// madtulip_UL_large_fins
-			{"op":"add","path":"/defaultBlueprints/madtulip_UL_large_fins","value":[]},
-				{"op":"add","path":"/defaultBlueprints/madtulip_UL_large_fins/-","value":{"item":"madtulip_apex_large_fin"}},
-				{"op":"add","path":"/defaultBlueprints/madtulip_UL_large_fins/-","value":{"item":"madtulip_avian_large_fin"}},
-				{"op":"add","path":"/defaultBlueprints/madtulip_UL_large_fins/-","value":{"item":"madtulip_floran_large_fin"}},
-				{"op":"add","path":"/defaultBlueprints/madtulip_UL_large_fins/-","value":{"item":"madtulip_glitch_large_fin"}},
-				{"op":"add","path":"/defaultBlueprints/madtulip_UL_large_fins/-","value":{"item":"madtulip_hylotl_large_fin"}},
-				{"op":"add","path":"/defaultBlueprints/madtulip_UL_large_fins/-","value":{"item":"madtulip_human_large_fin"}},
-
-			// madtulip_UL_ship_doors
-			{"op":"add","path":"/defaultBlueprints/madtulip_UL_ship_doors","value":[]},
-				{"op":"add","path":"/defaultBlueprints/madtulip_UL_ship_doors/-","value":{"item":"madtulip_apex_shipdoor"}},
-				{"op":"add","path":"/defaultBlueprints/madtulip_UL_ship_doors/-","value":{"item":"madtulip_avian_shipdoor"}},
-				{"op":"add","path":"/defaultBlueprints/madtulip_UL_ship_doors/-","value":{"item":"madtulip_floran_shipdoor"}},
-				{"op":"add","path":"/defaultBlueprints/madtulip_UL_ship_doors/-","value":{"item":"madtulip_glitch_shipdoor"}},
-				{"op":"add","path":"/defaultBlueprints/madtulip_UL_ship_doors/-","value":{"item":"madtulip_human_shipdoor"}},
-				{"op":"add","path":"/defaultBlueprints/madtulip_UL_ship_doors/-","value":{"item":"madtulip_hylotl_shipdoor"}},
-
-			// madtulip_UL_sector_airlocks
-			{"op":"add","path":"/defaultBlueprints/madtulip_UL_sector_airlocks","value":[]},
-				{"op":"add","path":"/defaultBlueprints/madtulip_UL_sector_airlocks/-","value":{"item":"madtulip_apex_sector_airlock"}},
-				{"op":"add","path":"/defaultBlueprints/madtulip_UL_sector_airlocks/-","value":{"item":"madtulip_avian_sector_airlock"}},
-				{"op":"add","path":"/defaultBlueprints/madtulip_UL_sector_airlocks/-","value":{"item":"madtulip_floran_sector_airlock"}},
-				{"op":"add","path":"/defaultBlueprints/madtulip_UL_sector_airlocks/-","value":{"item":"madtulip_glitch_sector_airlock"}},
-				{"op":"add","path":"/defaultBlueprints/madtulip_UL_sector_airlocks/-","value":{"item":"madtulip_hylotl_sector_airlock"}},
-
-			// madtulip_UL_stabilization_thrusters
-			{"op":"add","path":"/defaultBlueprints/madtulip_UL_stabilization_thrusters","value":[]},
-				{"op":"add","path":"/defaultBlueprints/madtulip_UL_stabilization_thrusters/-","value":{"item":"madtulip_apex_stabilization_thruster"}},
-				{"op":"add","path":"/defaultBlueprints/madtulip_UL_stabilization_thrusters/-","value":{"item":"madtulip_avian_stabilization_thruster"}},
-				{"op":"add","path":"/defaultBlueprints/madtulip_UL_stabilization_thrusters/-","value":{"item":"madtulip_floran_stabilization_thruster"}},
-				{"op":"add","path":"/defaultBlueprints/madtulip_UL_stabilization_thrusters/-","value":{"item":"madtulip_glitch_stabilization_thruster"}},
-				{"op":"add","path":"/defaultBlueprints/madtulip_UL_stabilization_thrusters/-","value":{"item":"madtulip_human_stabilization_thruster"}},
-				{"op":"add","path":"/defaultBlueprints/madtulip_UL_stabilization_thrusters/-","value":{"item":"madtulip_hylotl_stabilization_thruster"}},
-
-			// madtulip_UL_FTL_thrusters
-			{"op":"add","path":"/defaultBlueprints/madtulip_UL_FTL_thrusters","value":[]},
-				{"op":"add","path":"/defaultBlueprints/madtulip_UL_FTL_thrusters/-","value":{"item":"madtulip_apex_ftl_thruster"}},
-				{"op":"add","path":"/defaultBlueprints/madtulip_UL_FTL_thrusters/-","value":{"item":"madtulip_avian_ftl_thruster"}},
-				{"op":"add","path":"/defaultBlueprints/madtulip_UL_FTL_thrusters/-","value":{"item":"madtulip_floran_ftl_thruster"}},
-				{"op":"add","path":"/defaultBlueprints/madtulip_UL_FTL_thrusters/-","value":{"item":"madtulip_glitch_ftl_thruster"}},
-				{"op":"add","path":"/defaultBlueprints/madtulip_UL_FTL_thrusters/-","value":{"item":"madtulip_human_ftl_thruster"}},
-				{"op":"add","path":"/defaultBlueprints/madtulip_UL_FTL_thrusters/-","value":{"item":"madtulip_hylotl_ftl_thruster"}},				
-				
-			// madtulip_UL_flux_compensators
-			{"op":"add","path":"/defaultBlueprints/madtulip_UL_flux_compensators","value":[]},
-				{"op":"add","path":"/defaultBlueprints/madtulip_UL_flux_compensators/-","value":{"item":"madtulip_apex_flux_compensator"}},
-				{"op":"add","path":"/defaultBlueprints/madtulip_UL_flux_compensators/-","value":{"item":"madtulip_avian_flux_compensator"}},
-				{"op":"add","path":"/defaultBlueprints/madtulip_UL_flux_compensators/-","value":{"item":"madtulip_glitch_flux_compensator"}},
-				{"op":"add","path":"/defaultBlueprints/madtulip_UL_flux_compensators/-","value":{"item":"madtulip_floran_flux_compensator"}},
-				{"op":"add","path":"/defaultBlueprints/madtulip_UL_flux_compensators/-","value":{"item":"madtulip_human_flux_compensator"}},
-				{"op":"add","path":"/defaultBlueprints/madtulip_UL_flux_compensators/-","value":{"item":"madtulip_hylotl_flux_compensator"}},
-				
-			// madtulip_UL_gyro_stabilizers
-			{"op":"add","path":"/defaultBlueprints/madtulip_UL_gyro_stabilizers","value":[]},
-				{"op":"add","path":"/defaultBlueprints/madtulip_UL_gyro_stabilizers/-","value":{"item":"madtulip_apex_gyro_stabilizer"}},
-				{"op":"add","path":"/defaultBlueprints/madtulip_UL_gyro_stabilizers/-","value":{"item":"madtulip_avian_gyro_stabilizer"}},
-				{"op":"add","path":"/defaultBlueprints/madtulip_UL_gyro_stabilizers/-","value":{"item":"madtulip_floran_gyro_stabilizer"}},
-				{"op":"add","path":"/defaultBlueprints/madtulip_UL_gyro_stabilizers/-","value":{"item":"madtulip_glitch_gyro_stabilizer"}},
-				{"op":"add","path":"/defaultBlueprints/madtulip_UL_gyro_stabilizers/-","value":{"item":"madtulip_hylotl_gyro_stabilizer"}},
-				{"op":"add","path":"/defaultBlueprints/madtulip_UL_gyro_stabilizers/-","value":{"item":"madtulip_human_gyro_stabilizer"}},
-
-			// madtulip_UL_heat_absorbers
-			{"op":"add","path":"/defaultBlueprints/madtulip_UL_heat_absorbers","value":[]},
-				{"op":"add","path":"/defaultBlueprints/madtulip_UL_heat_absorbers/-","value":{"item":"madtulip_apex_heat_absorber"}},
-				{"op":"add","path":"/defaultBlueprints/madtulip_UL_heat_absorbers/-","value":{"item":"madtulip_avian_heat_absorber"}},
-				{"op":"add","path":"/defaultBlueprints/madtulip_UL_heat_absorbers/-","value":{"item":"madtulip_floran_heat_absorber"}},
-				{"op":"add","path":"/defaultBlueprints/madtulip_UL_heat_absorbers/-","value":{"item":"madtulip_glitch_heat_absorber"}},
-				{"op":"add","path":"/defaultBlueprints/madtulip_UL_heat_absorbers/-","value":{"item":"madtulip_hylotl_heat_absorber"}},
-				{"op":"add","path":"/defaultBlueprints/madtulip_UL_heat_absorbers/-","value":{"item":"madtulip_human_heat_absorber"}},
-
-			// madtulip_UL_ship_comms
-			{"op":"add","path":"/defaultBlueprints/madtulip_UL_ship_comms","value":[]},
-				{"op":"add","path":"/defaultBlueprints/madtulip_UL_ship_comms/-","value":{"item":"madtulip_apex_ship_comms"}},
-				{"op":"add","path":"/defaultBlueprints/madtulip_UL_ship_comms/-","value":{"item":"madtulip_avian_ship_comms"}},
-				{"op":"add","path":"/defaultBlueprints/madtulip_UL_ship_comms/-","value":{"item":"madtulip_floran_ship_comms"}},
-				{"op":"add","path":"/defaultBlueprints/madtulip_UL_ship_comms/-","value":{"item":"madtulip_glitch_ship_comms"}},
-				{"op":"add","path":"/defaultBlueprints/madtulip_UL_ship_comms/-","value":{"item":"madtulip_human_ship_comms"}},
-				{"op":"add","path":"/defaultBlueprints/madtulip_UL_ship_comms/-","value":{"item":"madtulip_hylotl_ship_comms"}},
-				
-			// madtulip_UL_Teleporters
-			{"op":"add","path":"/defaultBlueprints/madtulip_UL_Teleporters","value":[]},
-				{"op":"add","path":"/defaultBlueprints/madtulip_UL_Teleporters/-","value":{"item":"madtulip_apex1_teleporter"}},
-				{"op":"add","path":"/defaultBlueprints/madtulip_UL_Teleporters/-","value":{"item":"madtulip_avian1_teleporter"}},
-				{"op":"add","path":"/defaultBlueprints/madtulip_UL_Teleporters/-","value":{"item":"madtulip_floran1_teleporter"}},
-				{"op":"add","path":"/defaultBlueprints/madtulip_UL_Teleporters/-","value":{"item":"madtulip_glitch1_teleporter"}},
-				{"op":"add","path":"/defaultBlueprints/madtulip_UL_Teleporters/-","value":{"item":"madtulip_human1_teleporter"}},
-				{"op":"add","path":"/defaultBlueprints/madtulip_UL_Teleporters/-","value":{"item":"madtulip_hylotl1_teleporter"}},
-				{"op":"add","path":"/defaultBlueprints/madtulip_UL_Teleporters/-","value":{"item":"madtulip_novakid1_teleporter"}},				
-
-			// madtulip_UL_race_platings
-			{"op":"add","path":"/defaultBlueprints/madtulip_UL_race_platings","value":[]},
-				{"op":"add","path":"/defaultBlueprints/madtulip_UL_race_platings/-","value":{"item":"madtulip_apex_plating"}},
-				{"op":"add","path":"/defaultBlueprints/madtulip_UL_race_platings/-","value":{"item":"madtulip_avian_plating"}},
-				{"op":"add","path":"/defaultBlueprints/madtulip_UL_race_platings/-","value":{"item":"madtulip_floran_plating"}},
-				{"op":"add","path":"/defaultBlueprints/madtulip_UL_race_platings/-","value":{"item":"madtulip_glitch_plating"}},
-				{"op":"add","path":"/defaultBlueprints/madtulip_UL_race_platings/-","value":{"item":"madtulip_human_plating"}},
-				{"op":"add","path":"/defaultBlueprints/madtulip_UL_race_platings/-","value":{"item":"madtulip_hylotl_plating"}},
-				
-			// madtulip_UL_tilesets_1
-			{"op":"add","path":"/defaultBlueprints/madtulip_UL_tilesets_1","value":[]},
-				{"op":"add","path":"/defaultBlueprints/madtulip_UL_tilesets_1/-","value":{"item":"madtulip_TS_apex_1"}},
-				{"op":"add","path":"/defaultBlueprints/madtulip_UL_tilesets_1/-","value":{"item":"madtulip_TS_avian_1"}},
-				{"op":"add","path":"/defaultBlueprints/madtulip_UL_tilesets_1/-","value":{"item":"madtulip_TS_floran_1"}},
-				{"op":"add","path":"/defaultBlueprints/madtulip_UL_tilesets_1/-","value":{"item":"madtulip_TS_glitch_1"}},
-				{"op":"add","path":"/defaultBlueprints/madtulip_UL_tilesets_1/-","value":{"item":"madtulip_TS_human_1"}},
-				{"op":"add","path":"/defaultBlueprints/madtulip_UL_tilesets_1/-","value":{"item":"madtulip_TS_hylotl_1"}},
-				{"op":"add","path":"/defaultBlueprints/madtulip_UL_tilesets_1/-","value":{"item":"madtulip_TS_novakid_1"}},
-				{"op":"add","path":"/defaultBlueprints/madtulip_UL_tilesets_1/-","value":{"item":"madtulip_TS_glass"}}
+		{"op":"add","path":"/defaultBlueprints/tier1/-","value":{"item":"madtulip_apex_plating"}},
+		{"op":"add","path":"/defaultBlueprints/tier1/-","value":{"item":"madtulip_avian_plating"}},
+		{"op":"add","path":"/defaultBlueprints/tier1/-","value":{"item":"madtulip_floran_plating"}},
+		{"op":"add","path":"/defaultBlueprints/tier1/-","value":{"item":"madtulip_glitch_plating"}},
+		{"op":"add","path":"/defaultBlueprints/tier1/-","value":{"item":"madtulip_human_plating"}},
+		{"op":"add","path":"/defaultBlueprints/tier1/-","value":{"item":"madtulip_hylotl_plating"}},
+		
+		{"op":"add","path":"/defaultBlueprints/tier1/-","value":{"item":"madtulip_TS_apex_1"}},
+		{"op":"add","path":"/defaultBlueprints/tier1/-","value":{"item":"madtulip_TS_avian_1"}},
+		{"op":"add","path":"/defaultBlueprints/tier1/-","value":{"item":"madtulip_TS_floran_1"}},
+		{"op":"add","path":"/defaultBlueprints/tier1/-","value":{"item":"madtulip_TS_glitch_1"}},
+		{"op":"add","path":"/defaultBlueprints/tier1/-","value":{"item":"madtulip_TS_human_1"}},
+		{"op":"add","path":"/defaultBlueprints/tier1/-","value":{"item":"madtulip_TS_hylotl_1"}},
+		{"op":"add","path":"/defaultBlueprints/tier1/-","value":{"item":"madtulip_TS_novakid_1"}},
+		{"op":"add","path":"/defaultBlueprints/tier1/-","value":{"item":"madtulip_TS_glass"}}
 ]

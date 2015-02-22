@@ -23,7 +23,7 @@
 ----------- Things left to fix for madtulip ---------
 - Check vanilla ship T4-T8 for addition quest spawn
 
-- remove fuelhatch,captainschair,techstation, shiplocker remnents. add recipes for all race version of those.
+- add reciepes for fuelhatch,captainschair,techstation, shiplocker to player.config.patch
 
 --- NOW
 - onlock everythign at tier1
