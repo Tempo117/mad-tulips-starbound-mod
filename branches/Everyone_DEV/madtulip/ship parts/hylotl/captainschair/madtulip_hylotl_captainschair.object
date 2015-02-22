@@ -2,6 +2,7 @@
   "objectName" : "madtulip_hylotl_captainschair",
   "rarity" : "Common",
   "objectType" : "loungeable",
+  "printable" : false,
 
   "description" : "ENGAGE!",
   "shortdescription" : "Hylotl Captain's Chair",
