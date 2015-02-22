@@ -5,7 +5,6 @@
 -------- Bugs -----------
 - please fix the forcefield door by using the grafic in ship parts\generic\forcefield door\OLD_madtulip_forcefield_door instead of the current apex door placeholder
 - There seems to be a 1 Pixel glitch with the Tileset part South-East connecting with its East side to i.e. West-East 
-- scoutships throw an error with the "off" animation of the "engine" grafic. coundt find that one so far.
 
 -------- Grafics required -----------
 - mining_pod_icon.png needs to be changed. looks like the scoutships
@@ -22,11 +21,18 @@
 - Most Novakids stuff
 
 ----------- Things left to fix for madtulip ---------
-- recipe unlocking and progression mechanics
+- Check vanilla ship T4-T8 for addition quest spawn
+
 - remove fuelhatch,captainschair,techstation, shiplocker remnents. add recipes for all race version of those.
 
-- fix crew
+--- NOW
+- onlock everythign at tier1
+- remove unlockquests for scoutship and mining pod
+- clear player.config.patch spawn
 
+--- LATER
+- recipe unlocking and progression mechanics
+- fix crew
 ------------------- Ship progression quest thoughts -----------------
 - use ship "capabilities" : ["teleport", "planetTravel", "systemTravel"], with normal questline instead of just giving them
 -- need to find the points where we can hook in and replace *.aicommands and quests.

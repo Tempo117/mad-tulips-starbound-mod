@@ -7,6 +7,12 @@
 			
 			{"op":"add","path":"/defaultItems/-","value":{"item":"madtulip_UL_small_fins","count":1}},
 			
+			{"op":"add","path":"/defaultItems/-","value":{"item":"madtulip_apex_scoutshipTech-chip","count":1}},
+			{"op":"add","path":"/defaultItems/-","value":{"item":"madtulip_avian_scoutshipTech-chip","count":1}},
+			{"op":"add","path":"/defaultItems/-","value":{"item":"madtulip_floran_scoutshipTech-chip","count":1}},
+			{"op":"add","path":"/defaultItems/-","value":{"item":"madtulip_glitch_scoutshipTech-chip","count":1}},
+			{"op":"add","path":"/defaultItems/-","value":{"item":"madtulip_human_scoutshipTech-chip","count":1}},
+			{"op":"add","path":"/defaultItems/-","value":{"item":"madtulip_hylotl_scoutshipTech-chip","count":1}},
 /*	
 			{"op":"add","path":"/defaultItems/-","value":{"item":"madtulip_mining_podTech-chip","count":1}},
 			{"op":"add","path":"/defaultItems/-","value":{"item":"madtulip_apex_scoutshipTech-chip","count":1}},
@@ -186,8 +192,6 @@
 				{"op":"add","path":"/defaultBlueprints/tier4/-","value":{"item":"madtulip_analysisscreen"}},
 				{"op":"add","path":"/defaultBlueprints/tier4/-","value":{"item":"madtulip_captains_console"}},
 				{"op":"add","path":"/defaultBlueprints/tier4/-","value":{"item":"madtulip_thermodynamics_console"}},
-				
-				{"op":"add","path":"/defaultBlueprints/tier4/-","value":{"item":"madtulip_forcefield_door"}},
 				
 				{"op":"add","path":"/defaultBlueprints/tier4/-","value":{"item":"madtulip_landing_gear_1"}},
 				{"op":"add","path":"/defaultBlueprints/tier4/-","value":{"item":"madtulip_landing_gear_2"}},
