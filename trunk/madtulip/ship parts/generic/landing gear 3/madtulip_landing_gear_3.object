@@ -1,7 +1,6 @@
 {
   "objectName" : "madtulip_landing_gear_3",
   "rarity" : "Common",
-  "objectType" : "wire",
   "description" : "Landing Gear for a Spaceship",
   "shortdescription" : "Small Landing Gear",
   "race" : "generic",

@@ -2,7 +2,7 @@
   "objectName" : "madtulip_metal_press",
   "rarity" : "Common",
 
-  "objectType" : "interactable",
+  //"objectType" : "interactable",
   "interactAction" : "OpenCraftingInterface",
   "interactData" : {
     "config" : "/objects/metal press/madtulip_metal_press.config",

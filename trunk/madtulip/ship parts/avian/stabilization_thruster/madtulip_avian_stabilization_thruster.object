@@ -1,7 +1,6 @@
 {
   "objectName" : "madtulip_avian_stabilization_thruster",
   "rarity" : "Common",
-  "objectType" : "engine",
   "description" : "Thruster for sub FTL maneuvers.",
   "shortdescription" : "Avian Stabilization Thruster",
   "race" : "generic",
@@ -17,6 +16,7 @@
 
   "category" : "light",
   "lightColor" : [59, 183, 255],
+  "pointLight" : true,
   "flickerDistance" : 0.2,
   "flickerStrength" : 0.05,
   "flickerTiming" : 4,
@@ -51,6 +51,7 @@
       "imagePosition" : [-17, -11],
       "frames" : 3,
       "animationCycle" : 0.4,
+	  "fullbright" : true,
 
       "spaces" : [[-3, 1], [-3, 0], [-3, -1], [-2, 1], [-2, 0], [-2, -1], [-1, 1], [-1, 0], [-1, -1], [0, 1], [0, 0], [0, -1], [1, 1], [1, 0], [1, -1] ],
       "anchors" : [ "top" ]
@@ -63,6 +64,7 @@
       "imagePosition" : [-17, -11],
       "frames" : 3,
       "animationCycle" : 0.3,
+	  "fullbright" : true,
 
       "spaces" : [[-3, 1], [-3, 0], [-3, -1], [-2, 1], [-2, 0], [-2, -1], [-1, 1], [-1, 0], [-1, -1], [0, 1], [0, 0], [0, -1], [1, 1], [1, 0], [1, -1] ],
       "anchors" : [ "top" ]

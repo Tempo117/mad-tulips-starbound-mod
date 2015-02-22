@@ -2,7 +2,7 @@
   "objectName" : "madtulip_shipstation",
   "rarity" : "Common",
 
-  "objectType" : "interactable",
+  //"objectType" : "interactable",
   "interactAction" : "OpenCraftingInterface",
   "interactData" : {
     "config" : "/objects/ship station/madtulip_shipstation.config",
@@ -22,6 +22,8 @@
   "humanDescription" : "A ship station. I can create awesome stuff here!",
   "hylotlDescription" : "This ship station looks decent enough.",
 
+  //"statusEffects" : ["madtulip_Life_Support"],
+  
   "inventoryIcon" : "madtulip_shipstation_inv.png",
   "orientations" : [
     {

@@ -1,13 +1,14 @@
 {
   "objectName" : "madtulip_human_shipdoor",
   "rarity" : "Common",
-  "objectType" : "wire",
 
   "category" : "door",
-  "price" : 1000,
+  "price" : 10,
+  "printable" : false,
+  
   "description" : "A reinforced space-grade hatch that can be placed dynamically.",
   "shortdescription" : "Human Ship Door",
-  "race" : "avian",
+  "race" : "human",
 
   "apexDescription" : "We use these doors on our ships.",
   "avianDescription" : "A door.",
@@ -39,14 +40,17 @@
   "scriptDelta" : 5,
 
   "animation" : "door.animation",
+  "animationCustom" : {
+    "sounds" : {
+      "openSounds" : [ "/sfx/objects/apexcooldoor_open.wav" ],
+      "closeSounds" : [ "/sfx/objects/apexcooldoor_close.wav" ]
+    }
+  },
   "animationParts" : {
     "door" : "madtulip_human_shipdoor.png"
   },
   "animationPosition" : [-16, -16],
   
   "inboundNodes" : [ [0, 1] ],
-  "outboundNodes" : [ [0, -1] ],
-  
-  "openSounds" : [ "/sfx/objects/apexcooldoor_open.wav" ],
-  "closeSounds" : [ "/sfx/objects/apexcooldoor_close.wav" ]
+  "outboundNodes" : [ [0, -1] ]
 }

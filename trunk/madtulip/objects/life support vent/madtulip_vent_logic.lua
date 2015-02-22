@@ -1,13 +1,10 @@
--- TODO: check for shipworld using teleporter as in the tech
--- wire them ? con: cant set up on starter ship
-
 function init()
 	-- Make our object interactive (we can interract by 'Use')
 	entity.setInteractive(true);
 	
 	-- Change animation for state "normal_operation"
 	--entity.setAnimationState("DisplayState", "no_vent");
-	entity.setAnimationState("DisplayState", "offline");
+	entity.setAnimationState("DisplayState", "normal_operation");
 	
 	-- globals
 	madtulip = {}
@@ -28,6 +25,8 @@ function init()
 	madtulip.beep_time_last_execution = os.time() --[s]
 	madtulip.spawn_projectile_time_last_execution = os.time() --[s]
 	
+	madtulip.Old_Task_Broadcast = {}
+	
 	-- spawn a new main calculation thread
 	co = coroutine.create(function ()
 		-- Automatic Hull Breach Scans for all Vents in the Area
@@ -35,7 +34,7 @@ function init()
 	 end)
 end
 
-function main()
+function update(dt)
     -- due to
 	-- "scriptDelta" : 100
 	-- in the object script this is called approximately every 1s for my hardware
@@ -70,10 +69,8 @@ function onInteraction(args)
 end
 
 function main_threaded()
-
 	-- only works on ship, not on planet
 	if not is_shipworld() then return false end
-
 	-- grafic update
 	if(os.time() >= madtulip.spawn_projectile_time_last_execution + madtulip.spawn_projectile_intervall_time) then
 		-- check for system beeing offline
@@ -103,7 +100,7 @@ function main_threaded()
 					breach_pos[counter_breaches] = Breach_Location;
 				end
 				-- Spawn a Task for each breach
--- Broadcast_Hull_Breach_Task(breach_pos,counter_breaches)
+				Broadcast_Hull_Breach_Task(breach_pos,counter_breaches)
 				-- limit theire number
 				if (counter_breaches > madtulip.maximum_particle_fountains) then
 					-- spawn them (limited amount)
@@ -265,7 +262,6 @@ function Flood_Fill(cur_Position)
 		madtulip.Flood_Data_Matrix.Max_Nr_of_Iterations_happend  = 1; -- set flag
 		madtulip.Flood_Data_Matrix.Stop_Iteration                = 1; -- break iteration
 	end
-	
 	-- ----- so far we are good, take next step in the state machine -----
 	-- increment iteration step
 	madtulip.Flood_Data_Matrix.Cur_Iteration = madtulip.Flood_Data_Matrix.Cur_Iteration + 1;
@@ -274,11 +270,11 @@ function Flood_Fill(cur_Position)
 	--  ,if not then check if there is a background block
 	--  ,if also not its a breach.
 	-- write the gathered info to "madtulip.Flood_Data_Matrix.Content[x,y]" which is the data object used further on
-	if (world.material(cur_Position, "foreground") == nil) and(not(world.pointCollision(cur_Position, true)) )then
+	if (world.material(cur_Position, "foreground") == false)  and(not(world.pointCollision(cur_Position, true)) )then
 		-- nil foreground block found. This is our target.
 		set_flood_data_matrix_content(cur_Position[1],cur_Position[2],madtulip.Flood_Data_Matrix.target_color)
 		-- if this is also a nil background block we have a breach that we might or might not be aware of yet
-		if  world.material(cur_Position, "background") == nil then
+		if  world.material(cur_Position, "background") == false then
 		
 			-- its a bachground breach that we have not been aware of!
 			madtulip.Flood_Data_Matrix.Nr_of_Breaches = madtulip.Flood_Data_Matrix.Nr_of_Breaches+1;-- inc counter for breaches
@@ -348,23 +344,71 @@ function set_flood_data_matrix_content (X,Y,Content)
    end
 end
 
-function is_shipworld()
-	if (world.info() == nil) then return true else return false end
-end
-
 function Broadcast_Hull_Breach_Task(breach_pos,counter_breaches)
+	local radius = 50 -- TODO: parameter or line of sight or something instead
+
+	-- check if there are any new breaches.
+	-- If that is the case we need to cancel all old tasks we gave and update with the new information.
+	-- This might be new clusters which have been formed.
+	if (madtulip.Old_Task_Broadcast.exists) then
+		-- check for new breaches
+		local there_are_new_breaches = false
+		for cur_new_breach_idx = 1,counter_breaches,1 do
+			local new_breach_was_known = false
+			for cur_old_breach_idx = 1,madtulip.Old_Task_Broadcast.counter_breaches,1 do
+				local new_pixel = madtulip.Old_Task_Broadcast.breach_pos[cur_old_breach_idx]
+				local old_pixel = breach_pos[cur_new_breach_idx]
+				if (new_pixel[1] == old_pixel[1]) and (new_pixel[2] == old_pixel[2]) then
+					new_breach_was_known = true
+				end
+			end
+			if not (new_breach_was_known) then
+				there_are_new_breaches = true
+			end
+		end
+		for cur_old_breach_idx = 1,madtulip.Old_Task_Broadcast.counter_breaches,1 do
+			local new_breach_was_known = false
+			for cur_new_breach_idx = 1,counter_breaches,1 do
+				local new_pixel = madtulip.Old_Task_Broadcast.breach_pos[cur_old_breach_idx]
+				local old_pixel = breach_pos[cur_new_breach_idx]
+				if (new_pixel[1] == old_pixel[1]) and (new_pixel[2] == old_pixel[2]) then
+					new_breach_was_known = true
+				end
+			end
+			if not (new_breach_was_known) then
+				there_are_new_breaches = true
+			end
+		end
+		-- act based on new breaches or not (eighter broadcast the old stuff or mark the old stuff as obsolete and broadcast the new stuff)
+		if not (there_are_new_breaches) then
+			-- just continue to broadcast the old stuff. we need to do that in case someone didnt hear the task so far. (sirens are still on :))
+			world.npcQuery(entity.position(), radius, {callScript = "madtulip_TS.Offer_Tasks", callScriptArgs = {madtulip.Old_Task_Broadcast.Tasks_Announced}})
+			return
+		else
+			-- cancel the old tasks we did announce
+			for cur_Task = 1,#madtulip.Old_Task_Broadcast.Tasks_Announced.Tasks,1 do
+				-- we mark them as done so people stop doing them and they forget about them
+				madtulip.Old_Task_Broadcast.Tasks_Announced.Tasks[cur_Task].Global.is_done = true
+			end
+			-- we broadcast that they are all done
+			world.npcQuery(entity.position(), radius, {callScript = "madtulip_TS.Offer_Tasks", callScriptArgs = {madtulip.Old_Task_Broadcast.Tasks_Announced}})
+			-- and delete them from memory and all history about broadcasting from memory as we start over now.
+			madtulip.Old_Task_Broadcast = {}
+		end
+	end
+
+	-- cluster the breaches
 	local Cluster_Data = pixel_array_to_clusters(breach_pos,counter_breaches)
 	
-	-- add information where to place fore and background in oreder to close the breach
+	-- add information where to place fore and background in order to close the breach
 	for cur_breach_cluster_nr = 1,Cluster_Data.Clusters.size,1 do
-		Cluster_Data.Clusters[cur_breach_cluster_nr].place_foreground = Add_Breach_fixing_Info_to_Cluster(Cluster_Data.Clusters[cur_breach_cluster_nr])
+		Cluster_Data.Clusters[cur_breach_cluster_nr].place_foreground = Add_Breach_fixing_Info_to_Cluster(Cluster_Data.Clusters[cur_breach_cluster_nr].Cluster)
 	end
 	
-	-- Broadcast the final Task
+	-- Assemble the Tasks
 	local New_Tasks = {}
 	New_Tasks.Tasks = {}
 	New_Tasks.size = 0
-	local radius = 50
 
 	for cur_breach_cluster_nr = 1,Cluster_Data.Clusters.size,1 do
 		-- spawn task
@@ -374,25 +418,35 @@ function Broadcast_Hull_Breach_Task(breach_pos,counter_breaches)
 		New_Tasks.Tasks[New_Tasks.size].Header = {}
 		New_Tasks.Tasks[New_Tasks.size].Header.Name = "Fix_Hull_Breach"
 		New_Tasks.Tasks[New_Tasks.size].Header.Occupation = "Engineer"
-		New_Tasks.Tasks[New_Tasks.size].Header.Cluster_Identifier_Breach_x = Cluster_Data.Clusters[cur_breach_cluster_nr].Cluster[1][1]
-		New_Tasks.Tasks[New_Tasks.size].Header.Cluster_Identifier_Breach_y = Cluster_Data.Clusters[cur_breach_cluster_nr].Cluster[1][2]
 		New_Tasks.Tasks[New_Tasks.size].Header.Fct_Task  = "madtulip_task_fix_hull_breach"
-		New_Tasks.Tasks[New_Tasks.size].Header.Msg_on_discover_this_Task = "Hull Breach !!!"
-		New_Tasks.Tasks[New_Tasks.size].Header.Msg_on_PickTask = "I can handle that!"
+		New_Tasks.Tasks[New_Tasks.size].Header.Msg_on_discover_this_Task = "HULL BREACHED!"
+		New_Tasks.Tasks[New_Tasks.size].Header.Msg_on_PickTask = "I`ll fix that hull breach!"
+		-- The header of the Task is used in total as key to check if the task is known.
+		-- We put all breaches in the header to make this unique.
+		for cur_breach = 1,#Cluster_Data.Clusters[cur_breach_cluster_nr].Cluster,1 do
+			New_Tasks.Tasks[New_Tasks.size].Header["Breach_" .. cur_breach .. "_x"] = Cluster_Data.Clusters[cur_breach_cluster_nr].Cluster[cur_breach][1]
+			New_Tasks.Tasks[New_Tasks.size].Header["Breach_" .. cur_breach .. "_y"] = Cluster_Data.Clusters[cur_breach_cluster_nr].Cluster[cur_breach][2]
+		end
 		New_Tasks.Tasks[New_Tasks.size].Global = {}
 		New_Tasks.Tasks[New_Tasks.size].Global.is_beeing_handled = false
 		New_Tasks.Tasks[New_Tasks.size].Global.is_done = false
+		New_Tasks.Tasks[New_Tasks.size].Global.revision = 1
 		New_Tasks.Tasks[New_Tasks.size].Const = {}
 		New_Tasks.Tasks[New_Tasks.size].Const.Timeout = 30
 		New_Tasks.Tasks[New_Tasks.size].Var = {}
 		New_Tasks.Tasks[New_Tasks.size].Var.Cur_Target_Position = nil
 		New_Tasks.Tasks[New_Tasks.size].Var.Cur_Target_Position_BB = nil
-		New_Tasks.Tasks[New_Tasks.size].Var.Breach_Cluster = copyTable(Cluster_Data.Clusters[cur_breach_cluster_nr]) -- here the breach locations are stored
+		New_Tasks.Tasks[New_Tasks.size].Var.Breach_Cluster = copyTable(Cluster_Data.Clusters[cur_breach_cluster_nr]) -- here the breach locations are stored (again, apart from the stupid formating in the header ("640kb should be enough for everyone.")
 		
 		world.npcQuery(entity.position(), radius, {callScript = "madtulip_TS.Offer_Tasks", callScriptArgs = {New_Tasks}}) -- one task per cluster
 	end
 	
-	-- world.npcQuery(entity.position(), radius, {callScript = "madtulip_TS.Offer_Tasks", callScriptArgs = {New_Tasks}}) -- one task for all clusters
+	-- save breaches to be able to check for new breaches on next execution
+	if (madtulip.Old_Task_Broadcast == nil) then madtulip.Old = {} end
+	madtulip.Old_Task_Broadcast.exists           = true
+	madtulip.Old_Task_Broadcast.breach_pos       = breach_pos
+	madtulip.Old_Task_Broadcast.counter_breaches = counter_breaches
+	madtulip.Old_Task_Broadcast.Tasks_Announced  = New_Tasks
 end
 
 function pixel_array_to_clusters(pixels,pixel_size)
@@ -414,6 +468,8 @@ function pixel_array_to_clusters(pixels,pixel_size)
 		-- end
 	-- end
 	
+	--world.logInfo ("Initial number of pixels : " .. pixel_size)
+	
 	local Clusters = {}
 	Clusters.size = 0
 	local cur_pixel = {}
@@ -426,6 +482,7 @@ function pixel_array_to_clusters(pixels,pixel_size)
 	for cur_idx_pixel = 1,pixel_size,1 do
 		-- get cur breach
 		cur_pixel = pixels[cur_idx_pixel]	
+		--world.logInfo ("cur_pixel nr" .. cur_idx_pixel .. " (x: " .. cur_pixel[1] .. " y: " .. cur_pixel[2] .. ")")
 		cur_pixels_cluster_list = {}
 		cur_pixels_cluster_list_size = 0
 		-- if cur pixel is next to any member of any existing cluster
@@ -468,17 +525,24 @@ function pixel_array_to_clusters(pixels,pixel_size)
 			Clusters[cur_pixels_cluster_list[1] ].Cluster[Clusters[cur_pixels_cluster_list[1] ].size] = cur_pixel
 			--world.logInfo ("One neighbour. adding to cluster nr: " .. cur_pixels_cluster_list[1] .. " for cur_pixel nr: " .. cur_idx_pixel .. " (x: " .. cur_pixel[1] .. " y: " .. cur_pixel[2] .. ")")
 		else
-			-- merge all clusters in cur_pixels_cluster_list
+			-- add pixel to the first cluster
+			Clusters[cur_pixels_cluster_list[1] ].size = Clusters[cur_pixels_cluster_list[1] ].size +1
+			Clusters[cur_pixels_cluster_list[1] ].Cluster[Clusters[cur_pixels_cluster_list[1] ].size] = cur_pixel
+			
+			-- merge all clusters in cur_pixels_cluster_list into the first
 			--world.logInfo ("Multiple neighbours. Merging for cur_pixel nr: " .. cur_idx_pixel .. " (x: " .. cur_pixel[1] .. " y: " .. cur_pixel[2] .. ")")
 			for i = 2,cur_pixels_cluster_list_size,1 do
 				local a = cur_pixels_cluster_list[1] -- cluster to merge into
 				local b = cur_pixels_cluster_list[i] -- cluster to merge
+				--world.logInfo ("Clusters[a].size: " .. Clusters[a].size .. " Clusters[b].size : " .. Clusters[b].size)
 				for cur_idx_b = 1,Clusters[b].size,1 do
 					-- move pixel from b to a
+					--world.logInfo ("Copy Pixel b (x: " .. Clusters[b].Cluster[cur_idx_b][1] .. " y: " .. Clusters[b].Cluster[cur_idx_b][2] .. ") to a")
 					Clusters[a].size = Clusters[a].size+1
 					Clusters[a].Cluster[Clusters[a].size] = Clusters[b].Cluster[cur_idx_b]
 					Clusters[b].Cluster[cur_idx_b] = nil
 				end
+				--world.logInfo ("Clusters[a].size after merge: " .. Clusters[a].size)
 				Clusters[b].size = 0 -- cluster has been fully merged into a
 			end
 			-- resize the cluster label so that there are no gaps
@@ -492,6 +556,7 @@ function pixel_array_to_clusters(pixels,pixel_size)
 				end
 			end
 			Clusters.size = new_cluster_size
+			--world.logInfo ("Number of Clusters after merge: " .. Clusters.size)
 		end
 	end
 
@@ -548,36 +613,35 @@ function pixel_array_to_clusters(pixels,pixel_size)
 			world.logInfo ("-Pixel Nr: " .. cur_pixel .. " X: " .. Clusters[cur_cluster].Cluster[cur_pixel][1] .. " Y: " .. Clusters[cur_cluster].Cluster[cur_pixel][2])
 		end
 	end
-]]
+--]]
 	return {
 	Clusters = Clusters,
 	size = Clusters.size
 	}
 end
 
-function Add_Breach_fixing_Info_to_Cluster(args)
+function Add_Breach_fixing_Info_to_Cluster(Cluster)
 
 	local cur_pos = {}
 	local has_space_next_to_it = false
 	
 	local place_foreground = {}
-	
-	for cur_pixel = 1,args.size,1 do
+	for cur_pixel = 1,#Cluster,1 do
 		for X = -1,1,1 do
 			for Y = -1,1,1 do
 
-				cur_pos[1] = args.Cluster[cur_pixel][1] + X
-				cur_pos[2] = args.Cluster[cur_pixel][2] + Y
+				cur_pos[1] = Cluster[cur_pixel][1] + X
+				cur_pos[2] = Cluster[cur_pixel][2] + Y
 				-- check if cur_pos is part of cluster
 				local cur_pos_is_part_of_cluster = false
-				for i = 1,args.size,1 do
-					if (args.Cluster[i][1] == cur_pos[1]) and (args.Cluster[i][2] == cur_pos[2]) then
+				for i = 1,#Cluster,1 do
+					if (Cluster[i][1] == cur_pos[1]) and (Cluster[i][2] == cur_pos[2]) then
 						cur_pos_is_part_of_cluster = true
 					end
 				end
 				-- if no fore, no back and not part of cluster then its space.
-				if ((world.material(cur_pos,"foreground") == nil) and
-				    (world.material(cur_pos,"background") == nil) and
+				if ((world.material(cur_pos,"foreground") == false) and
+				    (world.material(cur_pos,"background") == false) and
 				    (cur_pos_is_part_of_cluster == false)) then
 				   has_space_next_to_it = true
 			   end
@@ -594,19 +658,6 @@ function Add_Breach_fixing_Info_to_Cluster(args)
 	end
 	
 	return place_foreground
-end
-
-function copyTable(source)
-	local _copy
-	if type(source) == "table" then
-		_copy = {}
-		for k, v in pairs(source) do
-			_copy[copyTable(k)] = copyTable(v)
-		end
-	else
-		_copy = source
-	end
-	return _copy
 end
 
 function pixels_next_to_eachother(a,b)
