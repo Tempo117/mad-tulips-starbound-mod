@@ -6,7 +6,7 @@
 	{ "item" : "money", "count" : 350 }
   ],
   "output" : {
-    "item" : "madtulip_techstation",
+    "item" : "novakidtechstation",
     "count" : 1
   },
   "groups" : [ "madtulip_shipstation", "all", "systems" ]

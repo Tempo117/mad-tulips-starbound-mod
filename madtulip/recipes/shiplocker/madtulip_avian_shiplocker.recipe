@@ -6,7 +6,7 @@
 	{ "item" : "money", "count" : 1500 }
   ],
   "output" : {
-    "item" : "madtulip_shiplocker",
+    "item" : "avianshiplocker",
     "count" : 1
   },
   "groups" : [ "madtulip_shipstation", "all", "systems" ]
