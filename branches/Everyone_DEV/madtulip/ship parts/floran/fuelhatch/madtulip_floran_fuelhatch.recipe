@@ -6,8 +6,8 @@
 	{ "item" : "money", "count" : 300 }
   ],
   "output" : {
-    "item" : "glitchfuelhatch",
+    "item" : "madtulip_floran_fuelhatch",
     "count" : 1
   },
-  "groups" : [ "madtulip_shipstation", "all", "systems", "glitch" ]
+  "groups" : [ "madtulip_shipstation", "all", "systems", "floran" ]
 }

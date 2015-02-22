@@ -1,0 +1,29 @@
+Giraffes dont have more cervical vertebraes then you. (them bones in da neck i mean)
+
+Main idea of this rev. is to make the mod giraffe compatible. By intent we didnt add new things. we even left some things out. whats missing this time will comes back in later; its still beeing fixed.
+
+Bugs: yes please! as pm or to the discussion section. the more you post the more gets fixed. we realy hope you find them all!
+
+- temporarily removed:
+-- crew
+-- defense turrets
+-- status_monitor
+-- forcefield door
+
+- permanently removed:
+-- tileseter was removed as tilesets are now a possible property of vanilla materials
+
+- feature (read: "BUUUGS!") changes:
+-- there is a new ship suit which replaces the old no gravity in space tech. the ship suit is available right from the start (in the shiplocker) and wearing it or any vanilla suit (breathing-, cold- ,heat- or radioprotection) at all times is required for all features of the mod to work. it wont crash if you dont thought.
+-- the starting ship teleporter is fixated for now. this is a workaround which allows us to distinguish between planet and spaceship map which is required here and there. it will be released once lua is capable of that (again).
+-- there are close to no novakid objects yet.
+-- nearly no hylotl objects have be recolored orange->blue
+-- no novakid filter in the shipstation
+-- every item is unlocked right from the start (tough maybe only craftable with higher tier mats. adaptation to the new progression system will hopefully follow.
+
+- dirty things which affect compatibility with other mods.
+-- we overwrite all vanilla suit techs
+-- we add and remove parts from vanilla questline in order to disable vanilla ship progression (required). so your ship is able to do everything right from the start (i.e. teleporter is active). we hopefully implement this more complex later on.
+-- im sorry, and if i may cite: "its beta". if other mods rely on the quests or the suits problem might arise.
+
+happy hunting! :)

@@ -1,6 +1,6 @@
 [
 	// defaultitems
-
+	
 	//defaultBlueprints
 		{"op":"add","path":"/defaultBlueprints/tier1/-","value":{"item":"madtulip_apex_captainschair"}},
 		{"op":"add","path":"/defaultBlueprints/tier1/-","value":{"item":"madtulip_avian_captainschair"}},

@@ -6,8 +6,8 @@
 	{ "item" : "money", "count" : 300 }
   ],
   "output" : {
-    "item" : "apexfuelhatch",
+    "item" : "madtulip_novakid_fuelhatch",
     "count" : 1
   },
-  "groups" : [ "madtulip_shipstation", "all", "systems", "apex" ]
+  "groups" : [ "madtulip_shipstation", "all", "systems", "novakid" ]
 }

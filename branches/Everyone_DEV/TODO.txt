@@ -12,7 +12,6 @@
 
 -------- Test -----------
 - spawn and test all ship parts
-- test activateable ship objects like turrets
 
 --------- Objects missing: -----------
 - 1st weapon: avian
@@ -25,6 +24,7 @@
 - Check vanilla ship T4-T8 for addition quest spawn
 
 --- LATER
+- create "novakid" filter in the shipstation
 - fix status monitor
 - recipe unlocking and progression mechanics
 - fix crew

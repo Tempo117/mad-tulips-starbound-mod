@@ -6,7 +6,7 @@
 	{ "item" : "money", "count" : 300 }
   ],
   "output" : {
-    "item" : "humanfuelhatch",
+    "item" : "madtulip_glitch_fuelhatch",
     "count" : 1
   },
   "groups" : [ "madtulip_shipstation", "all", "systems", "glitch" ]
