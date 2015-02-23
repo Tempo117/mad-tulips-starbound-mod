@@ -8,6 +8,7 @@
 
 -------- Grafics required -----------
 - mining_pod_icon.png needs to be changed. looks like the scoutships
+- \tech\skins\ShipSuit\madtulip_shipsuit_overlay.png needs to have something "Shup Suit" like instead of current dummy
 - images for unlockers - put small grafic over each blueprint? \madtulip\items\unlockers
 - most hylotl stuff needs orange -> new blue grafics
 
