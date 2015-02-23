@@ -9,8 +9,6 @@ function init()
 
   self.pulseTimer = 0
   self.halfPi = math.pi / 2
-  
-  world.setProperty("invinciblePlayers",false)
 end
 
 function update(dt)

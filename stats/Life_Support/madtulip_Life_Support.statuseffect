@@ -8,5 +8,5 @@
   ],
 
   "label" : "Life Support System",
-  "icon" : "/interface/statuses/antidote.png"
+  "icon" : "madtulip_space_suffocate.png"
 }
