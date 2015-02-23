@@ -3,7 +3,7 @@
   "blockingStat" : "madtulip_space_suffocate_immunity",
   
   "effectConfig" : {},
-  "defaultDuration" : 10000000,
+  "defaultDuration" : 3,
 
   "scripts" : [
     "madtulip_space_suffocate.lua"
@@ -12,5 +12,5 @@
   "animationConfig" : "madtulip_space_suffocate.animation",
 
   "label" : "Suffocation",
-  "icon" : "/interface/statuses/biomeheat.png"
+  "icon" : "madtulip_space_suffocate.png"
 }
