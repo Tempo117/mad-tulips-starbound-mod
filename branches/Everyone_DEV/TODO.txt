@@ -18,6 +18,7 @@
 - Most Novakid objects
 
 ----------- Things left to fix for madtulip ---------
+- wiretool unlock results from one of the ship upgrades. integrate
 - Check vanilla ship T4-T8 for addition quest spawn
 - create "novakid" filter in the shipstation
 - fix status monitor
