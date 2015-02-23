@@ -13,8 +13,8 @@
 
   "statusEffects" : [
     {
-      "kind" : "runboost",
-      "amount" : "50"
+      "stat" : "madtulip_vacuum_legs_immunity",
+      "amount" : 1
     }
   ],
   "colorOptions" : [
