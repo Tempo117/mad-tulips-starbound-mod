@@ -1,31 +1,22 @@
 {
-  "itemName" : "madtulip_spacesuit_chest",
-  "inventoryIcon" : "icons.png:chest",
+  "itemName" : "madtulip_spacesuit_head",
+  "inventoryIcon" : "icons.png:head",
   "dropCollision" : [-4.0, -3.0, 4.0, 3.0],
   "maxStack" : 100,
   "rarity" : "Rare",
-  "description" : "An old fashioned spacesuit chest piece!  Looks bulky.",
-  "shortdescription" : "Spacesuit Chest",
+  "description" : "An old fashioned space helmet!  Wow!",
+  "shortdescription" : "Space Helmet",
   "inspectionKind" : "armor",
 
-  "maleFrames" : {
-    "body" : "chest.png",
-    "backSleeve" : "bsleeve.png",
-    "frontSleeve" : "fsleeve.png"
-  },
-
-  "femaleFrames" : {
-    "body" : "chest.png",
-    "backSleeve" : "bsleeve.png",
-    "frontSleeve" : "fsleeve.png"
-  },
+  "maleFrames" : "head.png",
+  "femaleFrames" : "head.png",
+  "mask" : "mask.png",
 
   "statusEffects" : [
     {
-      "kind" : "ColdProtection",
-      "amount" : "1"
+      "stat" : "madtulip_vacuum_head_immunity",
+      "amount" : 1
     }
-
   ],
   "colorOptions" : [
     { "ffca8a" : "414141", "e0975c" : "1c1c1c", "a85636" : "0b0b0b", "6f2919" : "0b0b0b" },
