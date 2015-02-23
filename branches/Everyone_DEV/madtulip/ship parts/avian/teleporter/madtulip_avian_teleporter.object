@@ -1,9 +1,10 @@
 {
-  "objectName" : "madtulip_novakid1_teleporter",
+  "objectName" : "madtulip_avian_teleporter",
   "rarity" : "Common",
-  "description" : "Trusty teleporter, what would I do without you? Of Novakid design..I think.",
-  "shortdescription" : "Novakid Teleporter",
-  "race" : "human",
+  "description" : "Trusty teleporter, what would I do without you? Of Avian design.",
+  "shortdescription" : "Avian Teleporter",
+  "race" : "avian",
+  "objectType" : "loungeable",
 
   "apexDescription" : "Teleporting feels like riding a rollercoaster at the speed of light.",
   "avianDescription" : "Teleporting feels like flying.",
@@ -18,13 +19,18 @@
   "flickerStrength" : 0.05,
   "flickerTiming" : 4,
 
-  "interactAction" : "OpenTeleportDialog",
+  //"interactAction" : "OpenTeleportDialog",
+  "scripts" : [
+	"/lua/madtulip_is_shipworld.lua",
+	"/lua/madtulip_teleporter.lua"
+	],
+  "scriptDelta" : 5,
   "interactData" : "/interface/warpmenu/shipteleporter.config",
 
-  "inventoryIcon" : "madtulip_novakid1_teleportericon.png",
+  "inventoryIcon" : "madtulip_avian_teleporter_icon.png",
   "orientations" : [
     {
-      "imageLayers" : [ { "image" : "madtulip_novakid1_teleporter.png:<color>", "fullbright" : true }, { "image" : "madtulip_novakid1_teleporterlit.png:<color>" } ],
+      "imageLayers" : [ { "image" : "madtulip_avian_teleporter.png:<color>", "fullbright" : true }, { "image" : "madtulip_avian_teleporter_lit.png:<color>" } ],
 
       "imagePosition" : [-16, 0],
       "frames" : 1,
