@@ -9,7 +9,6 @@
 -------- Grafics required -----------
 - icons for \stats\Space_Vacuum_*****\madtulip_vacuum_****.png
 - mining_pod_icon.png needs to be changed. looks like the scoutships
-- \tech\skins\ShipSuit\madtulip_shipsuit_overlay.png needs to have something "Shup Suit" like instead of current dummy
 - images for unlockers - put small grafic over each blueprint? \madtulip\items\unlockers
 
 - some of the hylotl ship objects have snapping/clipping issues. i didnt correct any. here is a list to spawn all hylotl ship items from player.config :
@@ -37,38 +36,34 @@
 - Most Novakid objects
 
 ----------- Things left to fix for madtulip ---------
-- wiretool unlock results from one of the ship upgrades. integrate
-- Check vanilla ship T4-T8 for addition quest spawn
 - create "novakid" filter in the shipstation
 - fix status monitor
 - recipe unlocking and progression mechanics
 - fix crew
 
-------------------- Ship progression quest thoughts -----------------
-- use ship "capabilities" : ["teleport", "planetTravel", "systemTravel"], with normal questline instead of just giving them
--- need to find the points where we can hook in and replace *.aicommands and quests.
---- remove stats from initial ship strucutre files
---- givebeamaxe.aicommand or enableTeleporter.aicommand vanilla file has an example how to give those stats. so use that to create custom *.aicommands which unlock teleporter and the 2 other things
---- replace the original quest that unlock those abilities by our custom ones.
---- eventually the normal t0 to t8 ship progression will overwrite upgrades by constanty re appliing out empty t0 struct.
-----> remove t0 to t8 upgrade process of all ships from the quest path.
--- working/none working version of the teleporter: use unlock of "enableTeleporter.aicommand" to spawn a working version of the teleporter? not sure how to do that.
+----------- Ship progression quest thoughts ---------
+- replace the original quest/ai missions that deal with ship repair and intregrate out own
 
-- Space Physics
--- lua carrier as tech or better status effect
---- apply status effect: add permanent madtulips_shipmod statuseffect by some suitable source (i.e. "statusEffects" : ["madtulip_LS_suffocate"] in some object)
---- problem with statuseffect: probably cant accept controller input -> different handling of gravity.
+----------- Space Physics -------------
+-- accelerate floating while wearing space suit (jetpack)
+-- damage by missing LS
+--- run LS code on player suit tech to detect if hes in a breached area -> set a stat which is prevented by equipping the spacesuit
 
--- life support - suffocate if no LS
---- madtulip_LS_suffocate permanently applies damage IF ON SHIPWORLD and is blocked by madtulip_immune_LS_suffocate
----- if on shipworld condition not readable -> workaround required -> create a general .lua for this function so we only need to replace it once.
---- madtulip_immune_LS_suffocate has a timer and runs out if not refreshed by LS system.
---- LS applies madtulip_immune_LS_suffocate by spawning a hidden projetile ontop of player if he is found in none breached area. see vanilla random status plant
 
--- die quickly in space
---- madtulip_space_death permanent status, cast by i.e. tech station
----- checks if on shipworld and outside ship(same as gravity tech). if true then loads of damage. canceled by madtulip_immune_space_death.
---- madtulip_immune_space_death status set by spacesuit armor
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 
 ----------------------------------------------------------------------------------------------------
 ---------------------------------------OLD----------------------------------------------
