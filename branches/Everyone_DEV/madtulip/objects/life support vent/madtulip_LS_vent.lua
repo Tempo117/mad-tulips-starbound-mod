@@ -30,8 +30,11 @@ function onInteraction(args)
 	
 	-- here you can switch the main unit and all slaves off
 	if(madtulip.On_Off_State == 1) then
+		-- deactivated until suit can detect that state
+		--[[
 		madtulip.On_Off_State = 2;
 		entity.setAnimationState("DisplayState", "offline");
+		--]]
 	else
 		madtulip.On_Off_State = 1;
 		--entity.setAnimationState("DisplayState", "no_vent");

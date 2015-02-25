@@ -39,6 +39,7 @@
 - fix status monitor
 - recipe unlocking and progression mechanics
 - fix crew
+- reactivate on/off toggle of life support once ship suit can detect that states
 
 ----------- Ship progression quest thoughts ---------
 - replace the original quest/ai missions that deal with ship repair and intregrate out own
