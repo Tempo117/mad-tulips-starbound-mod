@@ -7,7 +7,6 @@
 - There seems to be a 1 Pixel glitch with the Tileset part South-East connecting with its East side to i.e. West-East 
 
 -------- Grafics required -----------
-- icons for \stats\Space_Vacuum_*****\madtulip_vacuum_****.png
 - mining_pod_icon.png needs to be changed. looks like the scoutships
 - images for unlockers - put small grafic over each blueprint? \madtulip\items\unlockers
 

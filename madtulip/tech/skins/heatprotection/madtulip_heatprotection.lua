@@ -17,5 +17,6 @@ function input(args)
 end
 
 function update(args)
+	Require_Life_Support();
 	No_Gravity_In_Space_update(args);
 end
