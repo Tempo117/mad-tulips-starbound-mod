@@ -1,0 +1,9 @@
+{
+  "itemName" : "shuttleglass2",
+  "rarity" : "Common",
+  "inventoryIcon" : "shuttleglass2icon.png",
+  "dropCollision" : [-2.5, -2.0, 2.5, 2.0],
+  "description" : "Shuttle Glass 2",
+  "shortdescription" : "Shuttle Glass 2",
+  "materialId" : 21211
+}

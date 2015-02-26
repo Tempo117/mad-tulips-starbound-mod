@@ -1,0 +1,22 @@
+{
+  "materialId" : 21003,
+  "materialName" : "apexhullsection3",
+  "particleColor" : [194, 194, 194, 255],
+  "itemDrop" : "apexhullsection3",
+  "shortdescription" : "Apex Tileset 3",
+  "description" : "Apex Tileset 3",
+  "footstepSound" : "/sfx/blocks/footstep_lightmetal.wav",
+  "drawBackground" : true,
+  "health" : 10,
+  "category": "materials",
+
+  "renderTemplate" : "/tiles/pipetemplate.config",
+  "renderParameters" : {
+    "texture" : "apexhullsection3.png",
+    "variants" : 5,
+    "lightTransparent" : true,
+    "occludesBelow" : false,
+    "multiColored" : true,
+    "zLevel" : 10
+  }
+}

@@ -1,0 +1,22 @@
+{
+  "materialId" : 21093,
+  "materialName" : "glitchhullsection3",
+  "particleColor" : [194, 194, 194, 255],
+  "itemDrop" : "glitchhullsection3",
+  "shortdescription" : "Glitch Tileset 3",
+  "description" : "Glitch Tileset 3",
+  "footstepSound" : "/sfx/blocks/footstep_lightmetal.wav",
+  "drawBackground" : true,
+  "health" : 10,
+  "category": "materials",
+
+  "renderTemplate" : "/tiles/pipetemplate.config",
+  "renderParameters" : {
+    "texture" : "glitchhullsection3.png",
+    "variants" : 5,
+    "lightTransparent" : true,
+    "occludesBelow" : false,
+    "multiColored" : true,
+    "zLevel" : 10
+  }
+}

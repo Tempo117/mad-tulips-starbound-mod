@@ -1,0 +1,22 @@
+{
+  "materialId" : 21181,
+  "materialName" : "novakidhullsection1",
+  "particleColor" : [194, 194, 194, 255],
+  "itemDrop" : "novakidhullsection1",
+  "shortdescription" : "Novakid Tileset 1",
+  "description" : "Novakid Tileset 1",
+  "footstepSound" : "/sfx/blocks/footstep_lightmetal.wav",
+  "drawBackground" : true,
+  "health" : 10,
+  "category": "materials",
+
+  "renderTemplate" : "/tiles/pipetemplate.config",
+  "renderParameters" : {
+    "texture" : "novakidhullsection1.png",
+    "variants" : 5,
+    "lightTransparent" : true,
+    "occludesBelow" : false,
+    "multiColored" : true,
+    "zLevel" : 10
+  }
+}

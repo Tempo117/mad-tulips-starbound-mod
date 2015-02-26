@@ -1,0 +1,22 @@
+{
+  "materialId" : 21032,
+  "materialName" : "avianhullsection2",
+  "particleColor" : [194, 194, 194, 255],
+  "itemDrop" : "avianhullsection2",
+  "shortdescription" : "Avian Tileset 2",
+  "description" : "Avian Tileset 2",
+  "footstepSound" : "/sfx/blocks/footstep_lightmetal.wav",
+  "drawBackground" : true,
+  "health" : 10,
+  "category": "materials",
+
+  "renderTemplate" : "/tiles/pipetemplate.config",
+  "renderParameters" : {
+    "texture" : "avianhullsection2.png",
+    "variants" : 5,
+    "lightTransparent" : true,
+    "occludesBelow" : false,
+    "multiColored" : true,
+    "zLevel" : 10
+  }
+}

@@ -1,0 +1,22 @@
+{
+  "materialId" : 21211,
+  "materialName" : "shuttleglass1",
+  "particleColor" : [194, 194, 194, 255],
+  "itemDrop" : "shuttleglass1",
+  "shortdescription" : "Shuttle Glass 1",
+  "description" : "Shuttle Glass 1",
+  "footstepSound" : "/sfx/blocks/footstep_lightmetal.wav",
+  "drawBackground" : true,
+  "health" : 10,
+  "category": "materials",
+
+  "renderTemplate" : "/tiles/pipetemplate.config",
+  "renderParameters" : {
+    "texture" : "shuttleglass1.png",
+    "variants" : 5,
+    "lightTransparent" : true,
+    "occludesBelow" : false,
+    "multiColored" : true,
+    "zLevel" : 10
+  }
+}

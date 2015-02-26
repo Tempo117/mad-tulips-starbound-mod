@@ -1,0 +1,9 @@
+{
+  "itemName" : "apexhullsection3",
+  "rarity" : "Common",
+  "inventoryIcon" : "apexhullsection3icon.png",
+  "dropCollision" : [-2.5, -2.0, 2.5, 2.0],
+  "description" : "Apex Tileset 3",
+  "shortdescription" : "Apex Tileset 3",
+  "materialId" : 21003
+}
