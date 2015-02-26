@@ -9,24 +9,7 @@
 -------- Grafics required -----------
 - mining_pod_icon.png needs to be changed. looks like the scoutships
 - images for unlockers - put small grafic over each blueprint? \madtulip\items\unlockers
-
-- some of the hylotl ship objects have snapping/clipping issues. i didnt correct any. here is a list to spawn all hylotl ship items from player.config :
-
-	{"op":"add","path":"/defaultItems/-","value":{"item":"madtulip_hylotl_captainschair","count":1}},
-	{"op":"add","path":"/defaultItems/-","value":{"item":"madtulip_hylotl_fuelhatch","count":1}},
-	{"op":"add","path":"/defaultItems/-","value":{"item":"madtulip_hylotl_shiplocker","count":1}},
-	{"op":"add","path":"/defaultItems/-","value":{"item":"madtulip_hylotl_techstation","count":1}},
-	{"op":"add","path":"/defaultItems/-","value":{"item":"madtulip_hylotl_small_fin","count":1}},
-	{"op":"add","path":"/defaultItems/-","value":{"item":"madtulip_hylotl_medium_fin","count":1}},
-	{"op":"add","path":"/defaultItems/-","value":{"item":"madtulip_hylotl_large_fin","count":1}},
-	{"op":"add","path":"/defaultItems/-","value":{"item":"madtulip_hylotl_shipdoor","count":1}},
-	{"op":"add","path":"/defaultItems/-","value":{"item":"madtulip_hylotl_sector_airlock","count":1}},
-	{"op":"add","path":"/defaultItems/-","value":{"item":"madtulip_hylotl_stabilization_thruster","count":1}},
-	{"op":"add","path":"/defaultItems/-","value":{"item":"madtulip_hylotl_ftl_thruster","count":1}},
-	{"op":"add","path":"/defaultItems/-","value":{"item":"madtulip_hylotl_gyro_stabilizer","count":1}},
-	{"op":"add","path":"/defaultItems/-","value":{"item":"madtulip_hylotl_heat_absorber","count":1}},
-	{"op":"add","path":"/defaultItems/-","value":{"item":"madtulip_hylotl_ship_comms","count":1}},
-	{"op":"add","path":"/defaultItems/-","value":{"item":"madtulip_hylotl_teleporter","count":1}},
+- hylotl hull plating needs recoloring
 
 --------- Objects missing: -----------
 - 1st ship weapon for avian
