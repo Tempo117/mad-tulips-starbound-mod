@@ -1,0 +1,21 @@
+{
+  "materialId" : 21034,
+  "materialName" : "avianhullexteriordark1",
+  "particleColor" : [110, 110, 110, 255],
+  "itemDrop" : "avianhullexteriordark1",
+  "description" : "Avian Spaceship Dark Hull Plating  Tileset, You can make your fancy StarCruiser outta this",
+  "shortdescription" : "Avian Spaceship Dark Hull Plating Tileset",
+  "footstepSound" : "/sfx/blocks/footstep_composite.wav",
+  "health" : 8,
+  "category": "materials",
+  
+  "renderTemplate" : "/tiles/pipetemplate.config",
+  "renderParameters" : {
+    "texture" : "avianhullexteriordark1.png",
+    "variants" : 1,
+    "lightTransparent" : true,
+    "multiColored" : true,
+    "occludesBelow" : false,
+    "zLevel" : 10
+  }
+}

@@ -1,0 +1,22 @@
+{
+  "materialId" : 21213,
+  "materialName" : "shuttlewindow1",
+  "particleColor" : [194, 194, 194, 255],
+  "itemDrop" : "shuttlewindow1",
+  "shortdescription" : "Shuttle Window 1",
+  "description" : "Shuttle Window 1",
+  "footstepSound" : "/sfx/blocks/footstep_lightmetal.wav",
+  "drawBackground" : true,
+  "health" : 10,
+  "category": "materials",
+
+  "renderTemplate" : "/tiles/pipetemplate.config",
+  "renderParameters" : {
+    "texture" : "shuttlewindow1.png",
+    "variants" : 5,
+    "lightTransparent" : true,
+    "occludesBelow" : false,
+    "multiColored" : true,
+    "zLevel" : 10
+  }
+}

@@ -1,0 +1,22 @@
+{
+  "materialId" : 21062,
+  "materialName" : "floranhullsection2",
+  "particleColor" : [194, 194, 194, 255],
+  "itemDrop" : "floranhullsection2",
+  "shortdescription" : "Floran Tileset 2",
+  "description" : "Floran Tileset 2",
+  "footstepSound" : "/sfx/blocks/footstep_lightmetal.wav",
+  "drawBackground" : true,
+  "health" : 10,
+  "category": "materials",
+
+  "renderTemplate" : "/tiles/pipetemplate.config",
+  "renderParameters" : {
+    "texture" : "floranhullsection2.png",
+    "variants" : 5,
+    "lightTransparent" : true,
+    "occludesBelow" : false,
+    "multiColored" : true,
+    "zLevel" : 10
+  }
+}

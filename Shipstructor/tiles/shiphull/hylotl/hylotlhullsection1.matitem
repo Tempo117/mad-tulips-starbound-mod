@@ -1,0 +1,9 @@
+{
+  "itemName" : "hylotlhullsection1",
+  "rarity" : "Common",
+  "inventoryIcon" : "hylotlhullsection1icon.png",
+  "dropCollision" : [-2.5, -2.0, 2.5, 2.0],
+  "description" : "Hylotl Tileset 1",
+  "shortdescription" : "Hylotl Tileset 1",
+  "materialId" : 21151
+}

@@ -1,5 +1,26 @@
 [
 //debug
+
+	{"op":"add","path":"/defaultItems/-","value":{"item":"diamonddrill","count":1}},
+
+
+	{"op":"add","path":"/defaultItems/-","value":{"item":"apexhullsection1","count":1000} },
+	{"op":"add","path":"/defaultItems/-","value":{"item":"apexhullsection2","count":1000} },
+	{"op":"add","path":"/defaultItems/-","value":{"item":"apexhullsection3","count":1000} },
+
+	{"op":"add","path":"/defaultItems/-","value":{"item":"avianhullexteriordark1","count":1000} },
+	{"op":"add","path":"/defaultItems/-","value":{"item":"avianhullsection1","count":1000} },
+	{"op":"add","path":"/defaultItems/-","value":{"item":"avianhullsection2","count":1000} },
+	{"op":"add","path":"/defaultItems/-","value":{"item":"avianhullsection3","count":1000} },
+
+	{"op":"add","path":"/defaultItems/-","value":{"item":"floranhullsection1","count":1000} },
+	{"op":"add","path":"/defaultItems/-","value":{"item":"floranhullsection2","count":1000} },
+	{"op":"add","path":"/defaultItems/-","value":{"item":"floranhullsection3","count":1000} },
+
+	{"op":"add","path":"/defaultItems/-","value":{"item":"glitchhullsection1","count":1000} },
+	{"op":"add","path":"/defaultItems/-","value":{"item":"glitchhullsection2","count":1000} },
+	{"op":"add","path":"/defaultItems/-","value":{"item":"glitchhullsection3","count":1000} },
+
 	{"op":"add","path":"/defaultItems/-","value":{"item":"humanhullexteriordark1","count":1000} },
 	{"op":"add","path":"/defaultItems/-","value":{"item":"humanhullexteriordark2","count":1000} },
 	{"op":"add","path":"/defaultItems/-","value":{"item":"humanhullplatingdark1","count":1000} },
@@ -8,6 +29,19 @@
 	{"op":"add","path":"/defaultItems/-","value":{"item":"humanhullsection2","count":1000} },
 	{"op":"add","path":"/defaultItems/-","value":{"item":"humanhullsection3","count":1000} },
 
+	{"op":"add","path":"/defaultItems/-","value":{"item":"hylotlhullsection1","count":1000} },
+	{"op":"add","path":"/defaultItems/-","value":{"item":"hylotlhullsection2","count":1000} },
+	{"op":"add","path":"/defaultItems/-","value":{"item":"hylotlhullsection3","count":1000} },
+
+	{"op":"add","path":"/defaultItems/-","value":{"item":"novakidhullsection1","count":1000} },
+	{"op":"add","path":"/defaultItems/-","value":{"item":"novakidhullsection2","count":1000} },
+	{"op":"add","path":"/defaultItems/-","value":{"item":"novakidhullsection3","count":1000} },
+
+	{"op":"add","path":"/defaultItems/-","value":{"item":"shuttleglass1","count":1000} },
+	{"op":"add","path":"/defaultItems/-","value":{"item":"shuttleglass2","count":1000} },
+	{"op":"add","path":"/defaultItems/-","value":{"item":"shuttlewindow1","count":1000} },
+
+//Blueprints
 
 	{"op":"add","path":"/defaultBlueprints/tier1/-","value":{"item":"humanhullexteriordark1"} },
 	{"op":"add","path":"/defaultBlueprints/tier1/-","value":{"item":"humanhullexteriordark2"} },

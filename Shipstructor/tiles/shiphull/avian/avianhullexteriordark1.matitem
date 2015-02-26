@@ -1,0 +1,10 @@
+{
+  "itemName" : "avianhullexteriordark1",
+  "rarity" : "Common",
+  "inventoryIcon" : "avianhullexteriordark1icon.png",
+  "dropCollision" : [-2.5, -2.0, 2.5, 2.0],
+  "description" : "Avian Spaceship Dark Hull Plating  Tileset, You can make your fancy StarCruiser outta this",
+  "shortdescription" : "Avian Spaceship Dark Hull Plating Tileset",
+  "materialId" : 21034
+  
+}

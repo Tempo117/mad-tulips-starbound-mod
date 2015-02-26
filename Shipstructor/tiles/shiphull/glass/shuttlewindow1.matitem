@@ -1,0 +1,9 @@
+{
+  "itemName" : "shuttlewindow1",
+  "rarity" : "Common",
+  "inventoryIcon" : "shuttlewindow1icon.png",
+  "dropCollision" : [-2.5, -2.0, 2.5, 2.0],
+  "description" : "Shuttle Window 1",
+  "shortdescription" : "Shuttle Window 1",
+  "materialId" : 21213
+}

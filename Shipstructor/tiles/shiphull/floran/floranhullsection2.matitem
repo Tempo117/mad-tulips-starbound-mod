@@ -1,0 +1,9 @@
+{
+  "itemName" : "floranhullsection2",
+  "rarity" : "Common",
+  "inventoryIcon" : "floranhullsection2icon.png",
+  "dropCollision" : [-2.5, -2.0, 2.5, 2.0],
+  "description" : "Floran Tileset 2",
+  "shortdescription" : "Floran Tileset 2",
+  "materialId" : 21062
+}

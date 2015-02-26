@@ -1,0 +1,22 @@
+{
+  "materialId" : 21153,
+  "materialName" : "hylotlhullsection3",
+  "particleColor" : [194, 194, 194, 255],
+  "itemDrop" : "hylotlhullsection3",
+  "shortdescription" : "Hylotl Tileset 3",
+  "description" : "Hylotl Tileset 3",
+  "footstepSound" : "/sfx/blocks/footstep_lightmetal.wav",
+  "drawBackground" : true,
+  "health" : 10,
+  "category": "materials",
+
+  "renderTemplate" : "/tiles/pipetemplate.config",
+  "renderParameters" : {
+    "texture" : "hylotlhullsection3.png",
+    "variants" : 5,
+    "lightTransparent" : true,
+    "occludesBelow" : false,
+    "multiColored" : true,
+    "zLevel" : 10
+  }
+}

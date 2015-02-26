@@ -1,0 +1,9 @@
+{
+  "itemName" : "avianhullsection2",
+  "rarity" : "Common",
+  "inventoryIcon" : "avianhullsection2icon.png",
+  "dropCollision" : [-2.5, -2.0, 2.5, 2.0],
+  "description" : "Avian Tileset 2",
+  "shortdescription" : "Avian Tileset 2",
+  "materialId" : 21032
+}

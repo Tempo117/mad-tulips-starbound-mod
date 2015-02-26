@@ -1,0 +1,9 @@
+{
+  "itemName" : "novakidhullsection2",
+  "rarity" : "Common",
+  "inventoryIcon" : "novakidhullsection2icon.png",
+  "dropCollision" : [-2.5, -2.0, 2.5, 2.0],
+  "description" : "Novakid Tileset 2",
+  "shortdescription" : "Novakid Tileset 2",
+  "materialId" : 21182
+}

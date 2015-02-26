@@ -1,0 +1,9 @@
+{
+  "itemName" : "glitchhullsection3",
+  "rarity" : "Common",
+  "inventoryIcon" : "glitchhullsection3icon.png",
+  "dropCollision" : [-2.5, -2.0, 2.5, 2.0],
+  "description" : "Glitch Tileset 3",
+  "shortdescription" : "Glitch Tileset 3",
+  "materialId" : 21093
+}
