@@ -1,7 +1,13 @@
 [
 	// defaultitems
-	
+
 	//defaultBlueprints
+	
+		{"op":"add","path":"/defaultBlueprints/tier1/-","value":{"item":"madtulip_spacesuit_back"}},
+		{"op":"add","path":"/defaultBlueprints/tier1/-","value":{"item":"madtulip_spacesuit_head"}},
+		{"op":"add","path":"/defaultBlueprints/tier1/-","value":{"item":"madtulip_spacesuit_chest"}},
+		{"op":"add","path":"/defaultBlueprints/tier1/-","value":{"item":"madtulip_spacesuit_legs"}},
+	
 		{"op":"add","path":"/defaultBlueprints/tier1/-","value":{"item":"madtulip_apex_captainschair"}},
 		{"op":"add","path":"/defaultBlueprints/tier1/-","value":{"item":"madtulip_avian_captainschair"}},
 		{"op":"add","path":"/defaultBlueprints/tier1/-","value":{"item":"madtulip_floran_captainschair"}},
@@ -203,13 +209,13 @@
 		{"op":"add","path":"/defaultBlueprints/tier1/-","value":{"item":"madtulip_human_ship_comms"}},
 		{"op":"add","path":"/defaultBlueprints/tier1/-","value":{"item":"madtulip_hylotl_ship_comms"}},
 		
-		{"op":"add","path":"/defaultBlueprints/tier1/-","value":{"item":"madtulip_apex1_teleporter"}},
-		{"op":"add","path":"/defaultBlueprints/tier1/-","value":{"item":"madtulip_avian1_teleporter"}},
-		{"op":"add","path":"/defaultBlueprints/tier1/-","value":{"item":"madtulip_floran1_teleporter"}},
-		{"op":"add","path":"/defaultBlueprints/tier1/-","value":{"item":"madtulip_glitch1_teleporter"}},
-		{"op":"add","path":"/defaultBlueprints/tier1/-","value":{"item":"madtulip_human1_teleporter"}},
-		{"op":"add","path":"/defaultBlueprints/tier1/-","value":{"item":"madtulip_hylotl1_teleporter"}},
-		{"op":"add","path":"/defaultBlueprints/tier1/-","value":{"item":"madtulip_novakid1_teleporter"}},				
+		{"op":"add","path":"/defaultBlueprints/tier1/-","value":{"item":"madtulip_apex_teleporter"}},
+		{"op":"add","path":"/defaultBlueprints/tier1/-","value":{"item":"madtulip_avian_teleporter"}},
+		{"op":"add","path":"/defaultBlueprints/tier1/-","value":{"item":"madtulip_floran_teleporter"}},
+		{"op":"add","path":"/defaultBlueprints/tier1/-","value":{"item":"madtulip_glitch_teleporter"}},
+		{"op":"add","path":"/defaultBlueprints/tier1/-","value":{"item":"madtulip_human_teleporter"}},
+		{"op":"add","path":"/defaultBlueprints/tier1/-","value":{"item":"madtulip_hylotl_teleporter"}},
+		{"op":"add","path":"/defaultBlueprints/tier1/-","value":{"item":"madtulip_novakid_teleporter"}},				
 
 		{"op":"add","path":"/defaultBlueprints/tier1/-","value":{"item":"madtulip_apex_plating"}},
 		{"op":"add","path":"/defaultBlueprints/tier1/-","value":{"item":"madtulip_avian_plating"}},

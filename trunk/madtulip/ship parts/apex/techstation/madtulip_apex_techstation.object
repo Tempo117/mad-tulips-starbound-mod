@@ -1,8 +1,6 @@
 {
   "objectName" : "madtulip_apex_techstation",
   "rarity" : "Common",
-
-  "interactAction" : "OpenAiInterface",
   "printable" : false,
 
   "category" : "decorative",
@@ -34,5 +32,12 @@
       "anchors" : [ "background" ]
 
     }
-  ]
+  ],
+  
+  //"interactAction" : "OpenAiInterface"
+  "scripts" : [
+	"/lua/madtulip_is_shipworld.lua",
+	"/lua/madtulip_techstation.lua"
+	],
+  "scriptDelta" : 5
 }
