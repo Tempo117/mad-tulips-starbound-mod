@@ -32,8 +32,8 @@
 -- damage by missing LS
 --- run LS code on player suit tech to detect if hes in a breached area -> set a stat which is prevented by equipping the spacesuit
 
-
-
+----------- Races ----------- 
+-Need support for more custom races such as the kineptic one
 
 
 
