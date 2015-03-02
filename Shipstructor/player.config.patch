@@ -3,7 +3,6 @@
 
 	{"op":"add","path":"/defaultItems/-","value":{"item":"diamonddrill","count":1}},
 
-
 	{"op":"add","path":"/defaultItems/-","value":{"item":"apexhullsection1","count":1000} },
 	{"op":"add","path":"/defaultItems/-","value":{"item":"apexhullsection2","count":1000} },
 	{"op":"add","path":"/defaultItems/-","value":{"item":"apexhullsection3","count":1000} },
