@@ -1,0 +1,37 @@
+{
+  "objectName" : "glitchsmallcargohold",
+  "rarity" : "Common",
+  "objectType" : "container",
+  "tooltipKind" : "container",
+
+  "category" : "storage",
+  "price" : 500,
+  "description" : "Store some stuff, why don't you?",
+  "shortdescription" : "Glitch Small Cargo Hold",
+  "race" : "apex",
+
+  "apexDescription" : "The ship's storage system.",
+  "avianDescription" : "A device that holds many items. It appears to function differently from our own.",
+  "floranDescription" : "Sssstorage.",
+  "glitchDescription" : "Stating the obvious. An Apex storage system.",
+  "humanDescription" : "A storage device, seems to function a lot like my own.",
+  "hylotlDescription" : "An elegant storage solution.",
+
+  "inventoryIcon" : "glitchsmallcargoholdicon.png",
+  "orientations" : [
+    {
+      "dualImage" : "glitchsmallcargohold.png:<color>.<key>",
+      "imagePosition" : [-8, 0],
+
+      "spaceScan" : 0.1,
+      "anchors" : [ "background" ]
+    }
+  ],
+
+  "openSounds" : [ "/sfx/objects/chest_small_open.wav" ],
+  "closeSounds" : [ "/sfx/objects/chest_small_close.wav" ],
+  "slotCount" : 24,
+  "uiConfig" : "/interface/chests/chest%slots%.config",
+  "frameCooldown" : 5,
+  "autoCloseCooldown" : 3600
+}
