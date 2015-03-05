@@ -1,0 +1,45 @@
+{
+  "objectName" : "shipshieldgenerator",
+  "printable" : false,
+  "rarity" : "Common",
+  "description" : "I know it doesn't LOOK like a shield generator...",
+  "shortdescription" : "Ship Shield Generator",
+  "race" : "generic",
+
+  "floranDescription" : "Ssswitch!",
+  "glitchDescription" : "Statement. A small switch.",
+
+  "category" : "wire",
+  "price" : 300,
+
+  "hasObjectItem" : true,
+
+  "inventoryIcon" : "shipshieldgeneratoricon.png",
+  "orientations" : [
+    {
+      "image" : "shieldgenerator.png:<color>.off",
+      "imagePosition" : [-8, -8],
+
+      "spaceScan" : 0.1,
+      "anchors" : [ "background" ]
+    }
+  ],
+
+  "scripts" : [ "shipshieldgenerator.lua" ],
+  "scriptDelta" : 5,
+
+  "animation" : "/objects/wired/switch/switchtoggle2.animation",
+  "animationCustom" : {
+    "sounds" : {
+      "on" : [ "/sfx/objects/apexconsole2switch.wav" ],
+      "off" : [ "/sfx/objects/apexconsole2switch.wav" ]
+    }
+  },
+
+  "animationParts" : {
+    "switch" : "shipshieldgenerator.png"
+  },
+  "animationPosition" : [-8, -8],
+
+  "inboundNodes" : [ [-1, 0] ]
+}
