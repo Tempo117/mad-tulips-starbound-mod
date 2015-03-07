@@ -18,7 +18,7 @@
   "hylotlDescription" : "A basic door.",
 
 
-  "inventoryIcon" : "objects/ship/glitchshipdoor/glitchshipdooricon.png",
+  "inventoryIcon" : "glitchRshipdooricon.png",
   "orientations" : [
     {
       "dualImage" : "glitchRshipdoor.png:closeWall",

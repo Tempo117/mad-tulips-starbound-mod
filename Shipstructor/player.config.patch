@@ -13,6 +13,30 @@
 
 	{"op":"add","path":"/defaultItems/-","value":{"item":"shipshieldgenerator","count":1}},
 
+	{"op":"add","path":"/defaultItems/-","value":{"item":"apexRshipdoor","count":1}},
+	{"op":"add","path":"/defaultItems/-","value":{"item":"avianRshipdoor","count":1}},
+	{"op":"add","path":"/defaultItems/-","value":{"item":"floranRshipdoor","count":1}},
+	{"op":"add","path":"/defaultItems/-","value":{"item":"glitchRshipdoor","count":1}},
+	{"op":"add","path":"/defaultItems/-","value":{"item":"humanRshipdoor","count":1}},
+	{"op":"add","path":"/defaultItems/-","value":{"item":"hylotlRshipdoor","count":1}},
+	{"op":"add","path":"/defaultItems/-","value":{"item":"novakidRshipdoor","count":1}},
+
+	{"op":"add","path":"/defaultItems/-","value":{"item":"apexshipdooralt","count":1}},
+	{"op":"add","path":"/defaultItems/-","value":{"item":"avianshipdooralt","count":1}},
+	{"op":"add","path":"/defaultItems/-","value":{"item":"floranshipdooralt","count":1}},
+	{"op":"add","path":"/defaultItems/-","value":{"item":"glitchshipdooralt","count":1}},
+	{"op":"add","path":"/defaultItems/-","value":{"item":"humanshipdooralt","count":1}},
+	{"op":"add","path":"/defaultItems/-","value":{"item":"hylotlshipdooralt","count":1}},
+	{"op":"add","path":"/defaultItems/-","value":{"item":"novakidshipdooralt","count":1}},
+
+	{"op":"add","path":"/defaultItems/-","value":{"item":"apexshipdooralt2","count":1}},
+	{"op":"add","path":"/defaultItems/-","value":{"item":"avianshipdooralt2","count":1}},
+	{"op":"add","path":"/defaultItems/-","value":{"item":"floranshipdooralt2","count":1}},
+	{"op":"add","path":"/defaultItems/-","value":{"item":"glitchshipdooralt2","count":1}},
+	{"op":"add","path":"/defaultItems/-","value":{"item":"humanshipdooralt2","count":1}},
+	{"op":"add","path":"/defaultItems/-","value":{"item":"hylotlshipdooralt2","count":1}},
+	{"op":"add","path":"/defaultItems/-","value":{"item":"novakidshipdooralt2","count":1}},
+
 	{"op":"add","path":"/defaultItems/-","value":{"item":"apexhullsection1","count":1000} },
 	{"op":"add","path":"/defaultItems/-","value":{"item":"apexhullsection2","count":1000} },
 	{"op":"add","path":"/defaultItems/-","value":{"item":"apexhullsection3","count":1000} },
