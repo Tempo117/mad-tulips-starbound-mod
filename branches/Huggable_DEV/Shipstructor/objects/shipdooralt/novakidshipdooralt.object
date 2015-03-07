@@ -7,7 +7,7 @@
   "printable" : false,
   
   "description" : "A reinforced space-grade hatch that can be placed dynamically.",
-  "shortdescription" : "Novakid Ship Door",
+  "shortdescription" : "Novakid Ship Door 2",
   "race" : "human",
 
   "apexDescription" : "We use these doors on our ships.",
@@ -18,17 +18,17 @@
   "hylotlDescription" : "A basic door.",
 
 
-  "inventoryIcon" : "hylotlshipdooralticon.png",
+  "inventoryIcon" : "novakidshipdooralticon.png",
   "orientations" : [
     {
-      "dualImage" : "hylotlshipdooralt.png:closeWall",
+      "dualImage" : "novakidshipdooralt.png:closeWall",
       "imagePosition" : [-16, -16],
 
       "spaceScan" : 0.1,
       "anchors" : [ "top", "bottom" ]
     },
 	{
-      "dualImage" : "hylotlshipdooralt.png:closeFloor",
+      "dualImage" : "novakidshipdooralt.png:closeFloor",
       "imagePosition" : [-16, -16],
 
       "spaceScan" : 0.3,
@@ -47,7 +47,7 @@
     }
   },
   "animationParts" : {
-    "door" : "hylotlshipdooralt.png"
+    "door" : "novakidshipdooralt.png"
   },
   "animationPosition" : [-16, -16],
   

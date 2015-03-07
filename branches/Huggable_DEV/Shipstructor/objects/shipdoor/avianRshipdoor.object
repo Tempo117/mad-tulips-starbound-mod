@@ -1,5 +1,5 @@
 {
-  "objectName" : "avianRshipdoorr",
+  "objectName" : "avianRshipdoor",
   "rarity" : "Common",
 
   "category" : "door",
@@ -18,7 +18,7 @@
   "hylotlDescription" : "A basic door.",
 
 
-  "inventoryIcon" : "objects/ship/avianshipdoor/avianshipdooricon.png",
+  "inventoryIcon" : "avianRshipdooricon.png",
   "orientations" : [
     {
       "dualImage" : "avianRshipdoor.png:closeWall",

@@ -18,7 +18,7 @@
   "hylotlDescription" : "A basic door.",
 
 
-  "inventoryIcon" : "objects/ship/hylotlshipdoor/hylotlshipdooricon.png",
+  "inventoryIcon" : "hylotlRshipdooricon.png",
   "orientations" : [
     {
       "dualImage" : "hylotlRshipdoor.png:closeWall",

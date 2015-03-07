@@ -18,7 +18,7 @@
   "hylotlDescription" : "A basic door.",
 
 
-  "inventoryIcon" : "objects/ship/apexshipdoor/apexshipdooricon.png",
+  "inventoryIcon" : "apexRshipdooricon.png",
   "orientations" : [
     {
       "dualImage" : "apexRshipdoor.png:closeWall",
