@@ -41,7 +41,7 @@
           "DisplayState" : {
             "normal_operation" : {
               "properties" : {
-                "image" : "image": "<partImage>:default.<frame>",
+                "image" : "<partImage>:default.<frame>",
 				"direction" : "left",
                 "fullbright" : true
               }
@@ -70,7 +70,7 @@
           "DisplayState" : {
             "normal_operation" : {
               "properties" : {
-                "image" : "image": "<partImage>:default.<frame>",
+                "image" : "<partImage>:default.<frame>",
 				"direction" : "left"
               }
             },
@@ -102,7 +102,7 @@
             },
             "breach" : {
               "properties" : {
-                "image" : "image": "<partImage>:default.<frame>",
+                "image" : "<partImage>:default.<frame>",
 				"direction" : "left",
                 "fullbright" : true
               }
@@ -132,7 +132,7 @@
             },
             "breach" : {
               "properties" : {
-                "image" : "image": "<partImage>:default.<frame>",
+                "image" : "<partImage>:default.<frame>",
 				"direction" : "left"
               }
             },
@@ -163,7 +163,7 @@
             },
             "offline" : {
               "properties" : {
-                "image" : "image": "<partImage>:default.<frame>",
+                "image" : "<partImage>:default.<frame>",
 				"direction" : "left",
                 "fullbright" : true
               }
@@ -192,7 +192,7 @@
             },
             "offline" : {
               "properties" : {
-                "image" : "image": "<partImage>:default.<frame>",
+                "image" : "<partImage>:default.<frame>",
 				"direction" : "left"
               }
             },
@@ -223,14 +223,14 @@
             },
             "no_vent" : {
               "properties" : {
-                "image" : "image": "<partImage>:default.<frame>",
+                "image" : "<partImage>:default.<frame>",
 				"direction" : "left",
                 "fullbright" : true
               }
             }
           }
         }
-      }
+      },
       "O2_no_vent_found_lit" : {
         "properties" : {
           "centered" : false,
@@ -252,7 +252,7 @@
             },
             "no_vent" : {
               "properties" : {
-                "image" : "image": "<partImage>:default.<frame>",
+                "image" : "<partImage>:default.<frame>",
 				"direction" : "left"
               }
             }
