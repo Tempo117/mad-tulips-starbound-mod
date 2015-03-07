@@ -20,7 +20,7 @@
   "inventoryIcon" : "madtulip_shiplight_icon.png",
   "orientations" : [
     {
-      "imageLayers" : { { "image": "madtulip_shiplight.png:<color>.<frame>", "fullbright": true }, { "image": "madtulip_shiplight_lit.png:<color>.<frame>" } },
+      "imageLayers" : [ { "image": "madtulip_shiplight.png:<color>.<frame>", "fullbright": true }, { "image": "madtulip_shiplight_lit.png:<color>.<frame>" } ],
       "imagePosition" : [-8, 0],
       "animationCycle" : 0.5,
 
