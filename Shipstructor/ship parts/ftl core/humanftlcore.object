@@ -1,0 +1,60 @@
+{
+  "objectName" : "humanftlcore",
+  "rarity" : "Common",
+  "category" : "wire",
+  "price" : 10000,
+
+  "description" : "The Core Component of any Starcruiser",
+  "shortdescription" : "Human FTL Core",
+  "race" : "human",
+
+  "apexDescription" : "A rather basic warpdrive engine.",
+  "avianDescription" : "A human warpdrive engine.",
+  "floranDescription" : "Engine make ship go vreeeeeeeeeeeem.",
+  "glitchDescription" : "Identify. This is the ship's warpdrive engine.",
+  "humanDescription" : "An advanced warpdrive engine.",
+  "hylotlDescription" : "A human warpdrive engine. Not very economical.",
+
+  "lightColor" : [73, 73, 235],
+  
+  "particleEmitter" : {
+    "emissionRate" : 25.0,
+    "emissionVariance" : 0,
+
+    "particle" : {
+      "type" : "animated",
+      "animation" : "bluesparkle.animation",
+      "size" : 1.0,
+      "light" : [10, 150, 10],
+	    "position" : [0, 0.1],
+      "fade" : 0.9,
+      "initialVelocity" : [0.0, 10.0],
+      "finalVelocity" : [0.0, 5.0],
+      "approach" : [10, 1],
+      "timeToLive" : 0.585,
+      "layer" : "back"
+    },
+
+    "particleVariance" : {
+	  "position" : [1.25, 0],
+    "initialVelocity" : [0, 2.0]
+    }
+  },
+  
+  "inventoryIcon" : "humanftlcoreicon.png",
+  "orientations" : [
+
+    {
+      "image" : "humanftlcore.png:<color>.<frame>",
+      "imagePosition" : [-24, -8],
+      "frames" : 1,
+      "animationCycle" : 1,
+
+      "spaceScan" : 0.1,
+      "anchors" : [ "top", "bottom" ]
+    }
+  ],
+  
+  "soundEffect" : "/sfx/objects/shipengine.wav",
+  "soundEffectRadius" : 100
+}
