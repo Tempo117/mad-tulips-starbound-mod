@@ -3,54 +3,101 @@
   "rarity" : "Common",
 
   "category" : "door",
-  "price" : 10,
+  "price" : 2000,
   "printable" : false,
-  
-  "description" : "A reinforced space-grade hatch that can be placed dynamically.",
+
+  "description" : "A reinforced space-grade Air-Lock that can be placed dynamically.",
   "shortdescription" : "Floran Airlock",
-  "race" : "glitch",
+  "race" : "floran",
 
-  "apexDescription" : "We use these doors on our ships.",
-  "avianDescription" : "A door.",
-  "floranDescription" : "Door!",
-  "glitchDescription" : "Statement. A door.",
-  "humanDescription" : "Cool door.",
-  "hylotlDescription" : "A basic door.",
-
+  "apexDescription" : "This door looks strong enough to keep anything out... or everyone in.",
+  "avianDescription" : "A strong door. Not even the breeze could slip through.",
+  "floranDescription" : "Door of great ssstrength.",
+  "glitchDescription" : "Jealousy. Such strong materials.",
+  "humanDescription" : "A huge, heavy security door.",
+  "hylotlDescription" : "This looks strong enough to hold back the ocean.",
 
   "inventoryIcon" : "floranairlockicon.png",
   "orientations" : [
     {
-      "dualImage" : "floranairlock.png:closeWall",
-      "imagePosition" : [-16, -16],
-
+      "dualImage" : "floranairlock.png:default",
+      "imagePosition" : [-20, 0],
       "spaceScan" : 0.1,
-      "anchors" : [ "top", "bottom" ]
+      "anchors" : ["bottom", "top"],
+      "animationParts" :
+      {
+        "door" : "floranairlock.png"
+      },
+      "animationPosition" : [-20, 0]
     },
-	{
-      "dualImage" : "floranairlock.png:closeFloor",
-      "imagePosition" : [-16, -16],
-
-      "spaceScan" : 0.3,
-      "anchors" : [ "left", "right" ]
+    {
+      "dualImage" : "floranairlock4.png:default",
+      "imagePosition" : [-20, 0],
+      "spaceScan" : 0.1,
+      "anchors" : ["bottom", "top"],
+      "animationParts" :
+      {
+        "door" : "floranairlock4.png"
+      },
+      "animationPosition" : [-20, 0]
+    },
+    {
+      "dualImage" : "floranairlock6.png:default",
+      "imagePosition" : [-20, 0],
+      "spaceScan" : 0.1,
+      "anchors" : ["bottom", "top"],
+      "animationParts" :
+      {
+        "door" : "floranairlock6.png"
+      },
+      "animationPosition" : [-20, 0]
+    },
+    {
+      "dualImage" : "floranairlockh.png:default",
+      "imagePosition" : [0, -20],
+      "spaceScan" : 0.1,
+      "anchors" : ["left", "right"],
+      "animationParts" :
+      {
+        "door" : "floranairlockh.png"
+      },
+      "animationPosition" : [0, -20]
+    },
+    {
+      "dualImage" : "floranairlockh4.png:default",
+      "imagePosition" : [0, -20],
+      "spaceScan" : 0.1,
+      "anchors" : ["left", "right"],
+      "animationParts" :
+      {
+        "door" : "floranairlockh4.png"
+      },
+      "animationPosition" : [0, -20]
+    },
+    {
+      "dualImage" : "floranairlockh6.png:default",
+      "imagePosition" : [0, -20],
+      "spaceScan" : 0.1,
+      "anchors" : ["left", "right"],
+      "animationParts" :
+      {
+        "door" : "floranairlockh6.png"
+      },
+      "animationPosition" : [0, -20]
     }
   ],
 
-  "scripts" : [ "door.lua" ],
+  "scripts" : [ "/objects/wired/door/door.lua" ],
   "scriptDelta" : 5,
 
-  "animation" : "door.animation",
+  "animation" : "/objects/wired/door/door.animation",
   "animationCustom" : {
     "sounds" : {
-      "openSounds" : [ "/sfx/objects/apexcooldoor_open.wav" ],
-      "closeSounds" : [ "/sfx/objects/apexcooldoor_close.wav" ]
+      "open" : [ "/sfx/objects/apexcooldoor_open.wav" ],
+      "close" : [ "/sfx/objects/apexcooldoor_close.wav" ]
     }
   },
-  "animationParts" : {
-    "door" : "floranairlock.png"
-  },
-  "animationPosition" : [-16, -16],
-  
-  "inboundNodes" : [ [0, 1] ],
-  "outboundNodes" : [ [0, -1] ]
+
+  "inboundNodes" : [ [-1, 4] ],
+  "outboundNodes" : [ [0, 0] ]
 }

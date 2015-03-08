@@ -3,54 +3,101 @@
   "rarity" : "Common",
 
   "category" : "door",
-  "price" : 10,
+  "price" : 2000,
   "printable" : false,
-  
-  "description" : "A reinforced space-grade hatch that can be placed dynamically.",
+
+  "description" : "A reinforced space-grade Air-Lock that can be placed dynamically.",
   "shortdescription" : "Glitch Airlock",
   "race" : "glitch",
 
-  "apexDescription" : "We use these doors on our ships.",
-  "avianDescription" : "A door.",
-  "floranDescription" : "Door!",
-  "glitchDescription" : "Statement. A door.",
-  "humanDescription" : "Cool door.",
-  "hylotlDescription" : "A basic door.",
-
+  "apexDescription" : "This door looks strong enough to keep anything out... or everyone in.",
+  "avianDescription" : "A strong door. Not even the breeze could slip through.",
+  "floranDescription" : "Door of great ssstrength.",
+  "glitchDescription" : "Jealousy. Such strong materials.",
+  "humanDescription" : "A huge, heavy security door.",
+  "hylotlDescription" : "This looks strong enough to hold back the ocean.",
 
   "inventoryIcon" : "glitchairlockicon.png",
   "orientations" : [
     {
-      "dualImage" : "glitchairlock.png:closeWall",
-      "imagePosition" : [-16, -16],
-
+      "dualImage" : "glitchairlock.png:default",
+      "imagePosition" : [-20, 0],
       "spaceScan" : 0.1,
-      "anchors" : [ "top", "bottom" ]
+      "anchors" : ["bottom", "top"],
+      "animationParts" :
+      {
+        "door" : "glitchairlock.png"
+      },
+      "animationPosition" : [-20, 0]
     },
-	{
-      "dualImage" : "glitchairlock.png:closeFloor",
-      "imagePosition" : [-16, -16],
-
-      "spaceScan" : 0.3,
-      "anchors" : [ "left", "right" ]
+    {
+      "dualImage" : "glitchairlock4.png:default",
+      "imagePosition" : [-20, 0],
+      "spaceScan" : 0.1,
+      "anchors" : ["bottom", "top"],
+      "animationParts" :
+      {
+        "door" : "glitchairlock4.png"
+      },
+      "animationPosition" : [-20, 0]
+    },
+    {
+      "dualImage" : "glitchairlock6.png:default",
+      "imagePosition" : [-20, 0],
+      "spaceScan" : 0.1,
+      "anchors" : ["bottom", "top"],
+      "animationParts" :
+      {
+        "door" : "glitchairlock6.png"
+      },
+      "animationPosition" : [-20, 0]
+    },
+    {
+      "dualImage" : "glitchairlockh.png:default",
+      "imagePosition" : [0, -20],
+      "spaceScan" : 0.1,
+      "anchors" : ["left", "right"],
+      "animationParts" :
+      {
+        "door" : "glitchairlockh.png"
+      },
+      "animationPosition" : [0, -20]
+    },
+    {
+      "dualImage" : "glitchairlockh4.png:default",
+      "imagePosition" : [0, -20],
+      "spaceScan" : 0.1,
+      "anchors" : ["left", "right"],
+      "animationParts" :
+      {
+        "door" : "glitchairlockh4.png"
+      },
+      "animationPosition" : [0, -20]
+    },
+    {
+      "dualImage" : "glitchairlockh6.png:default",
+      "imagePosition" : [0, -20],
+      "spaceScan" : 0.1,
+      "anchors" : ["left", "right"],
+      "animationParts" :
+      {
+        "door" : "glitchairlockh6.png"
+      },
+      "animationPosition" : [0, -20]
     }
   ],
 
-  "scripts" : [ "door.lua" ],
+  "scripts" : [ "/objects/wired/door/door.lua" ],
   "scriptDelta" : 5,
 
-  "animation" : "door.animation",
+  "animation" : "/objects/wired/door/door.animation",
   "animationCustom" : {
     "sounds" : {
-      "openSounds" : [ "/sfx/objects/apexcooldoor_open.wav" ],
-      "closeSounds" : [ "/sfx/objects/apexcooldoor_close.wav" ]
+      "open" : [ "/sfx/objects/apexcooldoor_open.wav" ],
+      "close" : [ "/sfx/objects/apexcooldoor_close.wav" ]
     }
   },
-  "animationParts" : {
-    "door" : "glitchairlock.png"
-  },
-  "animationPosition" : [-16, -16],
-  
-  "inboundNodes" : [ [0, 1] ],
-  "outboundNodes" : [ [0, -1] ]
+
+  "inboundNodes" : [ [-1, 4] ],
+  "outboundNodes" : [ [0, 0] ]
 }
