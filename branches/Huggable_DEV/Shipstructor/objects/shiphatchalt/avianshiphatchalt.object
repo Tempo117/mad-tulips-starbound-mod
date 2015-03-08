@@ -1,0 +1,103 @@
+{
+  "objectName" : "avianshiphatchalt",
+  "rarity" : "Common",
+
+  "category" : "door",
+  "price" : 2000,
+  "printable" : false,
+
+  "description" : "A reinforced space-grade Air-Lock that can be placed dynamically.",
+  "shortdescription" : "Avian Ship Hatch Alt",
+  "race" : "avian",
+
+  "apexDescription" : "This door looks strong enough to keep anything out... or everyone in.",
+  "avianDescription" : "A strong door. Not even the breeze could slip through.",
+  "floranDescription" : "Door of great ssstrength.",
+  "glitchDescription" : "Jealousy. Such strong materials.",
+  "humanDescription" : "A huge, heavy security door.",
+  "hylotlDescription" : "This looks strong enough to hold back the ocean.",
+
+  "inventoryIcon" : "avianshiphatchalticon.png",
+  "orientations" : [
+    {
+      "dualImage" : "avianshiphatchalt.png:default",
+      "imagePosition" : [-20, 0],
+      "spaceScan" : 0.1,
+      "anchors" : ["bottom", "top"],
+      "animationParts" :
+      {
+        "door" : "avianshipatchalt.png"
+      },
+      "animationPosition" : [-20, 0]
+    },
+    {
+      "dualImage" : "avianshiphatchalt4.png:default",
+      "imagePosition" : [-20, 0],
+      "spaceScan" : 0.1,
+      "anchors" : ["bottom", "top"],
+      "animationParts" :
+      {
+        "door" : "avianshiphatchalt4.png"
+      },
+      "animationPosition" : [-20, 0]
+    },
+    {
+      "dualImage" : "avianshiphatchalt6.png:default",
+      "imagePosition" : [-20, 0],
+      "spaceScan" : 0.1,
+      "anchors" : ["bottom", "top"],
+      "animationParts" :
+      {
+        "door" : "avianshiphatchalt6.png"
+      },
+      "animationPosition" : [-20, 0]
+    },
+    {
+      "dualImage" : "avianshiphatchalth.png:default",
+      "imagePosition" : [0, -20],
+      "spaceScan" : 0.1,
+      "anchors" : ["left", "right"],
+      "animationParts" :
+      {
+        "door" : "avianshiphatchalth.png"
+      },
+      "animationPosition" : [0, -20]
+    },
+    {
+      "dualImage" : "avianshiphatchalth4.png:default",
+      "imagePosition" : [0, -20],
+      "spaceScan" : 0.1,
+      "anchors" : ["left", "right"],
+      "animationParts" :
+      {
+        "door" : "avianshiphatchalth4.png"
+      },
+      "animationPosition" : [0, -20]
+    },
+    {
+      "dualImage" : "avianshiphatchalth6.png:default",
+      "imagePosition" : [0, -20],
+      "spaceScan" : 0.1,
+      "anchors" : ["left", "right"],
+      "animationParts" :
+      {
+        "door" : "avianshiphatchalth6.png"
+      },
+      "animationPosition" : [0, -20]
+    }
+  ],
+
+  "scripts" : [ "/objects/wired/door/door.lua" ],
+  "scriptDelta" : 5,
+
+  "animation" : "/objects/wired/door/door.animation",
+  "animationCustom" : {
+    "sounds" : {
+      "open" : [ "/sfx/objects/apexcooldoor_open.wav" ],
+      "close" : [ "/sfx/objects/apexcooldoor_close.wav" ]
+    }
+  },
+
+  "inboundNodes" : [ [-1, 4] ],
+  "outboundNodes" : [ [0, 0] ]
+}
