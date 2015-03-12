@@ -1,6 +1,6 @@
 [
 	// defaultitems
-
+		
 	//defaultBlueprints
 	
 		{"op":"add","path":"/defaultBlueprints/tier1/-","value":{"item":"madtulip_mining_podTech-chip"}},
@@ -232,6 +232,7 @@
 		{"op":"add","path":"/defaultBlueprints/tier1/-","value":{"item":"madtulip_glitch_plating"}},
 		{"op":"add","path":"/defaultBlueprints/tier1/-","value":{"item":"madtulip_human_plating"}},
 		{"op":"add","path":"/defaultBlueprints/tier1/-","value":{"item":"madtulip_hylotl_plating"}},
+		{"op":"add","path":"/defaultBlueprints/tier1/-","value":{"item":"madtulip_novakid_plating"}},
 		
 		{"op":"add","path":"/defaultBlueprints/tier1/-","value":{"item":"madtulip_TS_apex_1"}},
 		{"op":"add","path":"/defaultBlueprints/tier1/-","value":{"item":"madtulip_TS_avian_1"}},
