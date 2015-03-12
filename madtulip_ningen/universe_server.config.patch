@@ -1,0 +1,12 @@
+[
+	// Ningen
+		{"op":"replace","path":"/speciesShips/ningen/0","value":"/ships/human/madtulip_human_ship_T0.structure"},
+		{"op":"replace","path":"/speciesShips/ningen/1","value":"/ships/human/madtulip_human_ship_T1.structure"},
+		{"op":"replace","path":"/speciesShips/ningen/2","value":"/ships/human/madtulip_human_ship_T2.structure"},
+		{"op":"replace","path":"/speciesShips/ningen/3","value":"/ships/human/madtulip_human_ship_T3.structure"},
+		{"op":"replace","path":"/speciesShips/ningen/4","value":"/ships/human/madtulip_human_ship_T3.structure"},
+		{"op":"replace","path":"/speciesShips/ningen/5","value":"/ships/human/madtulip_human_ship_T3.structure"},
+		{"op":"replace","path":"/speciesShips/ningen/6","value":"/ships/human/madtulip_human_ship_T3.structure"},
+		{"op":"replace","path":"/speciesShips/ningen/7","value":"/ships/human/madtulip_human_ship_T3.structure"},
+		{"op":"replace","path":"/speciesShips/ningen/8","value":"/ships/human/madtulip_human_ship_T3.structure"}
+]

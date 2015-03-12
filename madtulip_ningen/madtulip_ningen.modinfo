@@ -1,0 +1,12 @@
+{
+  "name" : "madtulip_ningen_compatibility",
+  "requires" : ["NingenRaceMod", "madtulip"],
+  "path" : ".",
+  "dependencies" : ["Modules in a Box", "madtulip", "NingenRaceMod"],
+  "metadata" : {
+		"displayName" : "Madulip - NingenRaceMod Compatibility Patch",
+		"author" : "MadTulip",
+		"version" : "1.0 or something",
+		"support_url" : ""
+  }
+}
